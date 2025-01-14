@@ -43,7 +43,7 @@
                 </figure>
             </a>
         </div>
-        <div class="product-category">
+        <!-- <div class="product-category">
             <a href="#">
                 <figure>
                     <img src="images/f5.png" width="273" height="273"
@@ -58,6 +58,6 @@
                         alt="category" />
                 </figure>
             </a>
-        </div>
+        </div> -->
     </div>
 </section>

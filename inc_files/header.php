@@ -21,7 +21,7 @@
                         </li>
                         <li>
                             <a href="demo3-shop.html">Pillar Technololgy</a>
-                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                            <!-- <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <a href="#" class="nolink">VARIATION 1</a>
@@ -76,11 +76,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- End .megamenu -->
+                            </div> -->
                         </li>
                         <li>
                             <a href="demo3-product.html">Our Brands</a>
-                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                            <!-- <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <a href="#" class="nolink">PRODUCT PAGES</a>
@@ -94,7 +94,7 @@
                                             <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
                                             <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li>
                                         </ul>
-                                    </div><!-- End .col-lg-4 -->
+                                    </div>
 
                                     <div class="col-lg-4">
                                         <a href="#" class="nolink">PRODUCT LAYOUTS</a>
@@ -109,7 +109,7 @@
                                             <li><a href="product-center-vertical.html">CENTER VERTICAL</a></li>
                                             <li><a href="#">BUILD YOUR OWN</a></li>
                                         </ul>
-                                    </div><!-- End .col-lg-4 -->
+                                    </div>
 
                                     <div class="col-lg-4 p-0">
                                         <div class="menu-banner menu-banner-2">
@@ -126,9 +126,9 @@
                                             </div>
                                             <a href="demo3-shop.html" class="btn btn-sm btn-dark">SHOP NOW</a>
                                         </div>
-                                    </div><!-- End .col-lg-4 -->
-                                </div><!-- End .row -->
-                            </div><!-- End .megamenu -->
+                                    </div>
+                                </div>
+                            </div> -->
                         </li>
                         <li class="active">
                             <a href="demo3.html">About Us</a>
@@ -166,9 +166,16 @@
             </div><!-- End .header-left -->
 
             <div class="header-right">
+                
+
+                <a href="#" class="header-icon header-icon-user" title="Login"><i
+                        class="icon-user-2"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <!-- <a href="wishlist.html" class="header-icon header-icon-wishlist" title="Wishlist"><i
+                        class="icon-wishlist-2"></i></a> -->
                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                    <form action="#" method="get">
+                    <!-- <form action="#" method="get">
                         <div class="header-search-wrapper">
                             <input type="search" class="form-control" name="q" id="q"
                                 placeholder="I'm searching for..." required="">
@@ -192,19 +199,13 @@
                                     <option value="34">- Boats</option>
                                     <option value="57">- Auto Tools &amp; Supplies</option>
                                 </select>
-                            </div><!-- End .select-custom -->
+                            </div>
                             <button class="btn text-dark icon-magnifier" type="submit"></button>
-                        </div><!-- End .header-search-wrapper -->
-                    </form>
+                        </div>
+                    </form> -->
                 </div>
 
-                <a href="login.html" class="header-icon header-icon-user" title="Login"><i
-                        class="icon-user-2"></i></a>
-
-                <a href="wishlist.html" class="header-icon header-icon-wishlist" title="Wishlist"><i
-                        class="icon-wishlist-2"></i></a>
-
-                <div class="dropdown cart-dropdown">
+                <!-- <div class="dropdown cart-dropdown">
                     <a href="#" class="dropdown-toggle dropdown-arrow cart-toggle" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         <i class="icon-cart-thick"></i>
@@ -218,8 +219,7 @@
 
                         <div class="dropdownmenu-wrapper custom-scrollbar">
                             <div class="dropdown-cart-header">Shopping Cart</div>
-                            <!-- End .dropdown-cart-header -->
-
+                            
                             <div class="dropdown-cart-products">
                                 <div class="product">
                                     <div class="product-details">
@@ -231,7 +231,7 @@
                                             <span class="cart-product-qty">1</span>
                                             × $99.00
                                         </span>
-                                    </div><!-- End .product-details -->
+                                    </div>
 
                                     <figure class="product-image-container">
                                         <a href="demo3-product.html" class="product-image">
@@ -241,7 +241,7 @@
 
                                         <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
                                     </figure>
-                                </div><!-- End .product -->
+                                </div>
 
                                 <div class="product">
                                     <div class="product-details">
@@ -253,7 +253,7 @@
                                             <span class="cart-product-qty">1</span>
                                             × $35.00
                                         </span>
-                                    </div><!-- End .product-details -->
+                                    </div>
 
                                     <figure class="product-image-container">
                                         <a href="demo3-product.html" class="product-image">
@@ -263,7 +263,7 @@
 
                                         <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
                                     </figure>
-                                </div><!-- End .product -->
+                                </div>
 
                                 <div class="product">
                                     <div class="product-details">
@@ -275,7 +275,7 @@
                                             <span class="cart-product-qty">1</span>
                                             × $35.00
                                         </span>
-                                    </div><!-- End .product-details -->
+                                    </div>
 
                                     <figure class="product-image-container">
                                         <a href="demo3-product.html" class="product-image">
@@ -284,24 +284,25 @@
                                         </a>
                                         <a href="#" class="btn-remove" title="Remove Product"><span>×</span></a>
                                     </figure>
-                                </div><!-- End .product -->
-                            </div><!-- End .cart-product -->
+                                </div>
+                            </div>
 
                             <div class="dropdown-cart-total">
                                 <span>SUBTOTAL:</span>
 
                                 <span class="cart-total-price float-right">$134.00</span>
-                            </div><!-- End .dropdown-cart-total -->
+                            </div>
 
                             <div class="dropdown-cart-action">
                                 <a href="cart.html" class="btn btn-gray btn-block view-cart">View
                                     Cart</a>
                                 <a href="checkout.html" class="btn btn-dark btn-block">Checkout</a>
-                            </div><!-- End .dropdown-cart-total -->
-                        </div><!-- End .dropdownmenu-wrapper -->
-                    </div><!-- End .dropdown-menu -->
-                </div><!-- End .dropdown -->
-            </div><!-- End .header-right -->
-        </div><!-- End .container -->
-    </div><!-- End .header-middle -->
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
 </header><!-- End .header -->
