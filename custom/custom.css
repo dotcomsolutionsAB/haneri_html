@@ -407,7 +407,7 @@ footer {
     padding-bottom: 2rem;
 }
 .footer_logo{
-    background-color: #fff;
+    /* background-color: #fff; */
     width: 220px;
     padding: 10px;
 }
@@ -431,31 +431,38 @@ footer .social-icon {
     /* display: flex;
     gap: 10px; */
 }
+.footer-bottom {
+    border-top: 0px solid #e7e7e7;
+}
 .footer .contact-widget {
     margin: 0 0 -1rem;
     display: flex;
     gap: 10px;
 }
 .center .widget-title{
-    text-align:center;
+    /* text-align:center; */
 }
 .widget .link-part{
     display: flex    ;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 footer .widget {
-    /* margin-bottom: 3rem; */
-    margin: 5px 20px;
-    padding: 0px 20px;
+    margin-bottom: 3rem;
+    /* margin: 5px 10px;
+    padding: 0px 10px; */
 }
 footer a:hover {
     color: #bab9b9;
 }
+footer a {
+    /* color: inherit; */
+    line-height: 2.4;
+}
 .center{
-    border-right: 2px solid;
-    border-left: 2px solid;
+    /* border-right: 2px solid;
+    border-left: 2px solid; */
     min-height: 160px;
     margin-bottom: 1rem !important;
 }
