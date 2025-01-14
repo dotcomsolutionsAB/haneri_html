@@ -53,7 +53,7 @@
             <?php include("inc_files/slider.php"); ?>
             
             <!-- Featured_products code -->
-            <section class="featured-products">
+            <section class="featured_products">
                 <h2>Featured Products</h2>
                 <div class="product-grid">
                     <div class="product">

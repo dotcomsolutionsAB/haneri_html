@@ -171,6 +171,7 @@
     line-height: 1.8;
     margin-bottom: 20px;
     color: #555;
+    text-align: justify;
 }
 
 .btn-know-more {
@@ -240,7 +241,7 @@
     align-items: center;
     width: 150px;
     height: 150px;
-    background: linear-gradient(45deg, #ebe5e594, transparent);
+    /* background: linear-gradient(45deg, #ebe5e594, transparent); */
 }
 
 .icon-item img {
@@ -474,12 +475,12 @@ footer a {
 }
 /* end footer */
 /* Featured Products */
-.featured-products {
+.featured_products {
     padding: 40px;
     text-align: center;
 }
 
-.featured-products h2 {
+.featured_products h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
