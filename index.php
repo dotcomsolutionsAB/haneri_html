@@ -53,7 +53,23 @@
             <?php include("inc_files/slider.php"); ?>
             
             <!-- Featured_products code -->
-            <?php include("inc_files/featured_products.php"); ?>
+            <section class="featured-products">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <a href="#"><img src="assets/images/f1.png" alt="Black Fan"></a>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img src="assets/images/f2.png" alt="Wooden Fan"></a>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img src="assets/images/f3.png" alt="White Fan"></a>
+                    </div>
+                    <div class="product">
+                        <a href="#"><img src="assets/images/f4.png" alt="Black Fan 2"></a>
+                    </div>
+                </div>
+            </section>
             
             <!-- About_haneri code -->
             <?php include("inc_files/about_haneri.php"); ?>

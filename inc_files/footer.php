@@ -109,7 +109,8 @@
 
         <div class="footer-bottom d-sm-flex align-items-center">
             <div class="footer-left">
-                <span class="footer-copyright">&copy; 2025 Dotcom Solutions. All rights reserved.</span>
+                <span class="footer-copyright">&copy; Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                <!-- <span class="footer-copyright">&copy; 2025 Dotcom Solutions. All rights reserved.</span> -->
             </div>
             <div class="footer-right ml-auto mt-1 mt-sm-0">
                 <div class="social-icons">
