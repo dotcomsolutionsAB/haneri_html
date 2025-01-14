@@ -533,3 +533,44 @@ footer a {
 }    
 /* End featured products */
 
+/* Blogs section */
+.blogs_section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.blogs_section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blogs-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.blog-item {
+    flex: 1 1 calc(30% - 20px);
+    max-width: 30%;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f5f5f5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.blog-item:hover {
+    transform: scale(1.05);
+}
+/* end Blogs section */
