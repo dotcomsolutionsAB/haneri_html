@@ -5,11 +5,11 @@
                 <button class="mobile-menu-toggler" type="button">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="index.html" class="logo">
+                <a href="index.php" class="logo">
                     <img src="images/Haneri Logo.png" alt="Porto Logo">
                 </a>
                 <div class="logo_div">
-                    <a href="index.html" class="logos">
+                    <a href="index.php" class="logos">
                         <img src="images/Haneri Logo.png" alt="Porto Logo">
                     </a>
                 </div>
@@ -17,10 +17,10 @@
                 <nav class="main-nav font2">
                     <ul class="menu">
                         <li class="active">
-                            <a href="demo3.html">Our Products</a>
+                            <a href="#">Our Products</a>
                         </li>
                         <li>
-                            <a href="demo3-shop.html">Pillar Technololgy</a>
+                            <a href="#">Pillar Technololgy</a>
                             <!-- <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -79,7 +79,7 @@
                             </div> -->
                         </li>
                         <li>
-                            <a href="demo3-product.html">Our Brands</a>
+                            <a href="#">Our Brands</a>
                             <!-- <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -131,10 +131,10 @@
                             </div> -->
                         </li>
                         <li class="active">
-                            <a href="demo3.html">About Us</a>
+                            <a href="#">About Us</a>
                         </li>
                         <li class="active">
-                            <a href="demo3.html">Support</a>
+                            <a href="#">Support</a>
                         </li>
                         <!-- <li>
                             <a href="#">About Us</a>
