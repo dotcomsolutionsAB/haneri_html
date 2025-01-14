@@ -15,7 +15,12 @@
 </div>
 <div class="sticky-info">
     <a href="#" class="">
-        <i class="icon-user-1"></i>Support
+        <i class="sicon-earphones-alt"></i>Support
+    </a>
+</div>
+<div class="sticky-info">
+    <a href="#" class="">
+        <i class="fab fa-whatsapp"></i>whatsapp
     </a>
 </div>
 <!-- <div class="sticky-info">
