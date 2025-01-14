@@ -57,16 +57,16 @@
                 <h2>Featured Products</h2>
                 <div class="product-grid">
                     <div class="product">
-                        <a href="#"><img src="assets/images/f1.png" alt="Black Fan"></a>
+                        <a href="#"><img src="images/f1.png" alt="Black Fan"></a>
                     </div>
                     <div class="product">
-                        <a href="#"><img src="assets/images/f2.png" alt="Wooden Fan"></a>
+                        <a href="#"><img src="images/f2.png" alt="Wooden Fan"></a>
                     </div>
                     <div class="product">
-                        <a href="#"><img src="assets/images/f3.png" alt="White Fan"></a>
+                        <a href="#"><img src="images/f3.png" alt="White Fan"></a>
                     </div>
                     <div class="product">
-                        <a href="#"><img src="assets/images/f4.png" alt="Black Fan 2"></a>
+                        <a href="#"><img src="images/f4.png" alt="Black Fan 2"></a>
                     </div>
                 </div>
             </section>
