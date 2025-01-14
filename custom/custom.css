@@ -477,7 +477,7 @@ footer a {
 /* Featured Products */
 .featured_products {
     padding: 40px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .featured_products h2 {
