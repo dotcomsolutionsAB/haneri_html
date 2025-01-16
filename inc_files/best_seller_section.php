@@ -18,7 +18,9 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <!-- <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                        View</a> -->
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
                 <!-- <div class="product-details">
@@ -62,7 +64,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
                 <!-- <div class="product-details">
@@ -99,7 +101,7 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -119,7 +121,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>                            
             </div>
@@ -136,7 +138,7 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -158,7 +160,7 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -176,7 +178,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -195,7 +197,7 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>                            
             </div>
@@ -215,7 +217,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -233,7 +235,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
@@ -252,7 +254,7 @@
                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                 class="icon-shopping-cart"></i></a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>                            
             </div>
@@ -272,7 +274,7 @@
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
-                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick
+                    <a href="#" class="btn-quickview" title="Quick View">Quick
                         View</a>
                 </figure>
             </div>
