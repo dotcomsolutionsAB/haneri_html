@@ -1,5 +1,5 @@
-<div class="container faq">
-    <div class="row">
+<div class="container">
+    <div class="row faq">
         <div class="col-lg-6">
             <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
             <div id="accordion">
