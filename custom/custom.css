@@ -392,6 +392,11 @@
 .card.card-accordion .card-header {
     font-family: 'Raleway';
 }
+.card.card-accordion p {
+    font-family: 'Raleway';
+    text-align: justify;
+}
+
 /* footer */
 footer {
     font-size: 1.3rem;
