@@ -385,11 +385,9 @@
 /* end faq style */
 
 
-.faq{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
+.faq .col-lg-6{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 .card.card-accordion .card-header {
     font-family: 'Raleway';
