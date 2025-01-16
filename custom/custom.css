@@ -384,6 +384,16 @@
 
 /* end faq style */
 
+
+.faq{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.card.card-accordion .card-header {
+    font-family: 'Raleway';
+}
 /* footer */
 footer {
     font-size: 1.3rem;
