@@ -2,7 +2,7 @@
     <div class="about-content">
         <div class="about-image">
             <!-- Replace this placeholder with the actual image -->
-            <img src="haneri-placeholder.jpg" alt="Haneri Image">
+            <img src="images/about13.jpg" alt="Haneri Image">
         </div>
         <div class="about-text">
             <div class="q_head">

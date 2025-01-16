@@ -4,7 +4,7 @@
         <div class="card card-accordion">
             <a class="card-header" href="#" data-toggle="collapse" data-target="#collapse1"
                 aria-expanded="true" aria-controls="collapse1">
-                What makes Haneri’s design approach different from other brands?
+                Q1: What makes Haneri’s design approach different from other brands?
             </a>
 
             <div id="collapse1" class="collapse show" data-parent="#accordion1">
@@ -15,7 +15,7 @@
         <div class="card card-accordion">
             <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse2"
                 aria-expanded="true" aria-controls="collapse2">
-                Q: How does Haneri ensure the quality and durability of its products?
+                Q2: How does Haneri ensure the quality and durability of its products?
             </a>
 
             <div id="collapse2" class="collapse" data-parent="#accordion1">
@@ -26,7 +26,7 @@
         <div class="card card-accordion">
             <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
                 aria-expanded="true" aria-controls="collapse3">
-                Q: Are Haneri products designed with sustainability in mind?
+                Q3: Are Haneri products designed with sustainability in mind?
             </a>
 
             <div id="collapse3" class="collapse" data-parent="#accordion1">
@@ -37,7 +37,7 @@
         <div class="card card-accordion">
             <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
                 aria-expanded="true" aria-controls="collapse4">
-                Q: What kind of technology is used in Haneri products?
+                Q4: What kind of technology is used in Haneri products?
             </a>
 
             <div id="collapse4" class="collapse" data-parent="#accordion1">
@@ -48,7 +48,7 @@
         <div class="card card-accordion">
             <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse5"
                 aria-expanded="true" aria-controls="collapse5">
-                Q: Are your products compatible with other smart home devices?
+                Q5: Are your products compatible with other smart home devices?
             </a>
 
             <div id="collapse5" class="collapse" data-parent="#accordion1">
@@ -59,7 +59,7 @@
         <div class="card card-accordion">
             <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse6"
                 aria-expanded="true" aria-controls="collapse6">
-                Q: Can I customize a Haneri product to suit my needs?
+                Q6: Can I customize a Haneri product to suit my needs?
             </a>
 
             <div id="collapse6" class="collapse" data-parent="#accordion1">
