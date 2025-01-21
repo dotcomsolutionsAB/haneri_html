@@ -1,9 +1,10 @@
 <style>
-    /* Container Styling */
+    /* General Container */
 .y {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    position: relative; /* Required for the fog effect */
 }
 
 /* Heading Styling */
@@ -17,7 +18,9 @@
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-out; /* Smooth fade-in effect */
+    z-index: 1;
 }
 
 /* Decorative Underline */
@@ -30,7 +33,46 @@
     height: 4px;
     background: linear-gradient(90deg, #007BFF, #00D4FF);
     border-radius: 2px;
+    z-index: -1;
 }
+
+/* Fog Effect */
+.y::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    width: 150%;
+    height: 150%;
+    background: url('https://i.ibb.co/VBDdtHf/fog.png') no-repeat center;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(20px);
+    animation: fogMove 5s infinite alternate ease-in-out;
+    z-index: 0; /* Appears behind the heading */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fogMove {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(20px);
+    }
+}
+
 
 </style>
 <div class="container y text-left">
