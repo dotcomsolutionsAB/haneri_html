@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>About Us</title>
+    <title>Pillar Technology</title>
 
     <meta name="keywords" content="HTML5 Template" />
     <meta name="description" content="Porto - Bootstrap eCommerce Template">
@@ -55,8 +55,8 @@
             </nav>
 
             <div class="container">
-                <section id="our-story">
-                    <?php include("inc_files/about/our_story_section.php"); ?>
+                <section id="air_curve_design">
+                    <?php include("inc_files/about/air_curve_design.php"); ?>
                 </section>
                 <br><br>
 
