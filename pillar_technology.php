@@ -60,6 +60,11 @@
                 </section>
                 <br><br>
 
+                <div class="container">
+                <section id="air_curve_design">
+                    <?php include("inc_files/pillar_technology/M.A.S.S.php"); ?>
+                </section>
+
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {
