@@ -23,7 +23,7 @@
 
 <div class="history-section pb-3">
     <div class="container">
-        <div class="row row-bg" id="vision">
+        <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
@@ -62,7 +62,7 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
-        <div class="row row-bg" id="mission">
+        <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
@@ -119,7 +119,7 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
-        <div class="row row-bg" id="values">
+        <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
@@ -136,11 +136,8 @@
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
+        </div>
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
 <div class="mb-3"></div><!-- margin -->
-
-<style>
-
-</style>
