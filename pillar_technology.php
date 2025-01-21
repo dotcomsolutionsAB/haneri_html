@@ -148,9 +148,6 @@
                     }
                     /* #00473e */
                 </style>
-                <section id="capabilities" class="capabilities-section">
-                    <?php include("inc_files/about/capabilities_section.php"); ?>
-                </section>
             </div>
         </main><!-- End .main -->
 
