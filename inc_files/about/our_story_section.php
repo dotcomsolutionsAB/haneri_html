@@ -45,33 +45,9 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
                 <h2>Vision</h2>
-                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                    vestibulum vitae
-                    congue
-                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                    porttitor
-                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                    Proin
-                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
-                </p>
-                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                    eget
-                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                    efficitur
-                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                    scelerisque.
-                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                    placerat.
-                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                    imperdiet
-                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                    purus
-                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.
-                </p>
+                <p class="mb-2">
+                    To redefine aspirational product experiences by creating beautifully crafted, technologically advanced, and accessible luxury solutions blending exceptional quality with an inclusive design that elevates everyday experiences for everyone.
+                </p>                
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
@@ -95,33 +71,34 @@
             <div class="col-xl-7 col-lg-6 order-lg-first">
                 <h2>Mission</h2>
                 <p class="mb-2">
-                    Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                    vestibulum vitae
-                    congue
-                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                    porttitor
-                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                    Proin
-                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
+                    We will achieve our mission by focusing on four key pillars:
                 </p>
 
-                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                    eget
-                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                    efficitur
-                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                    scelerisque.
-                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                    placerat.
-                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                    imperdiet
-                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                    purus
-                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
+                <p>
+                    <strong>1. Innovative Design and Engineering</strong><br>
+                    We will bring together talented designers and engineers to craft solutions that are as aesthetically pleasing as
+                    they are functional. By staying ahead of design trends and technological advancements, we ensure that each
+                    product is thoughtfully crafted to meet the evolving needs of the modern consumer.
+                </p>
+                <p>
+                    <strong>2. Commitment to Quality and Durability</strong><br>
+                    Quality will be at the core of everything we do. From materials to manufacturing processes, we will invest in
+                    ensuring that each product is built to last and provide a reliable experience over time.
+                </p>
+                <p>
+                    <strong>3. Accessibility and Inclusivity</strong><br>                    
+                    We believe luxury should be accessible to everyone. By designing products with a broad range of price points and
+                    functionality, we will make our solutions available to diverse consumers, considering various lifestyles, budgets,
+                    and preferences.
+                </p>
+                <p>
+                    <strong> 4. Exceptional Customer Experience</strong>
+                    We are dedicated to supporting our customers throughout their journey, from purchase to daily use and beyond.
+                    Through responsive customer service, educational resources, and aftercare support, we will ensure our
+                    customers feel valued and equipped to enjoy our solutions' benefits fully.
+                    Focusing on these pillars will transform aspirational living into a reality for every space, continuously elevating
+                    everyday experiences.
+                </p>
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
@@ -143,34 +120,25 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
-                <h2>Values</h2>
-                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                    vestibulum vitae
-                    congue
-                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                    porttitor
-                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                    Proin
-                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
-                </p>
+                <h2>Values (H.E.A.R.T.S)</h2>
+                <p><strong>1. Human-Centric Design</strong>
+                We focus on creating products that are intuitive, inclusive, and designed with real people in mind.</p>
 
-                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                    eget
-                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                    efficitur
-                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                    scelerisque.
-                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                    placerat.
-                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                    imperdiet
-                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                    purus
-                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
+                <p><strong>2. Excellence in Quality</strong>
+                We uphold the highest standards of craftsmanship, using durable materials for products that stand the test of time.</p>
+
+                <p><strong>3. Accessibility and Inclusivity</strong>
+                We believe luxury should be attainable for everyone, creating products that suit diverse lifestyles, needs, and budgets.</p>
+
+                <p><strong>4. Responsiveness to Consumer Needs</strong>
+                We listen and adapt to our customers’ needs, ensuring a seamless experience from purchase through long-term use.</p>
+
+                <p><strong>5. Transparency and Integrity</strong>
+                We operate with honesty and accountability, building trust through clear communication and ethical practices.</p>
+
+                <p><strong>6. Sustainability and Responsibility</strong>
+                We are committed to minimizing our environmental impact, choosing sustainable materials and processes to create a positive impact for future generations.</p>
+                
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 

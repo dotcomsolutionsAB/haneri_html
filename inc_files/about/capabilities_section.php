@@ -82,7 +82,7 @@
         </div>
     </div>
     <br>
-    <p>
+    <p style="text-align: justify;">
         With a relentless focus on R&D, superior manufacturing capabilities, and rigorous quality control, Haneri creates products that set a new benchmark in innovation, durability, and style. Accredited by leading national (ISO 9001:2019 , IS 45001 , IS 14001  BIS and BEE ) and international agencies, our labs and manufacturing facilities ensure compliance with the most stringent standards.
     </p>
     <br>

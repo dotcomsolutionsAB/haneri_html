@@ -96,7 +96,7 @@
                         flex: 1;
                         max-width: 600px;
                         text-align: left;
-                        padding: 20px;
+                        padding: 20px 0px;
                     }
 
                     .capability-content h2 {
@@ -109,6 +109,7 @@
                     .capability-content ul {
                         font-size: 14px;
                         line-height: 22px;
+                        text-align: justify;
                     }
 
                     .capability-content ul {
