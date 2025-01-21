@@ -141,6 +141,11 @@
                         margin-top: 40px;
                         color:rgb(37, 108, 99);
                     }
+                    .about .row.row-bg {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
                     /* #00473e */
                 </style>
                 <section id="capabilities" class="capabilities-section">

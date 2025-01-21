@@ -138,7 +138,7 @@
 
                 <p><strong>6. Sustainability and Responsibility</strong>
                 We are committed to minimizing our environmental impact, choosing sustainable materials and processes to create a positive impact for future generations.</p>
-                
+
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
@@ -146,3 +146,7 @@
 </div><!-- End .history-section -->
 
 <div class="mb-3"></div><!-- margin -->
+
+<style>
+    
+</style>
