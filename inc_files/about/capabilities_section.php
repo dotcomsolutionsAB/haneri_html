@@ -1,7 +1,7 @@
+<div class="container text-left">
+    <h1 class="font4 text-uppercase">CAPABILITIES</h1>
+</div><!-- End .container -->
 <div class="container">
-    <div class="container text-left">
-        <h1 class="font4 text-uppercase">CAPABILITIES</h1>
-    </div><!-- End .container -->
     <!-- Section 1: Excellence -->
     <div class="capability-row">
         <div class="capability-content">
