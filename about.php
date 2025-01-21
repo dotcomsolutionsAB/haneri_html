@@ -39,6 +39,7 @@
     <style>
         .page-header {
             padding: 1rem 0 1.2rem;
+            margin-top: 50px;
         }
         .banner-layer h1 {
             font-size: 80px;
