@@ -79,7 +79,7 @@
                         <a href="about.php">About Us</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
-                                <div class="col-lg-10">
+                                <div class="col-lg-12">
                                     <ul class="submenu">
                                         <li class="submenu-item">
                                             <a href="about.php#our-story">Our Story</a>
