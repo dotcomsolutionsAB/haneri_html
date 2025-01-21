@@ -23,23 +23,22 @@
     </div><!-- End .row -->
 </div><!-- End .container -->
 
-
 <div class="history-section pb-3">
     <div class="container">
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
@@ -60,16 +59,16 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
@@ -114,16 +113,16 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
@@ -153,16 +152,16 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
@@ -201,16 +200,16 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
@@ -254,14 +253,17 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
     </div><!-- End .row -->
-
-</div><!-- End .container -->
 </div><!-- End .history-section -->
-<h5 class="M.A.S.S-conclusion">
+<h5 class="mass_conclusion">
     <strong>Choose performance, not speed. Choose innovation, not myths.</strong>
 </h5>
 <div class="mb-3"></div><!-- margin -->
 
 <style>
-
+    .mass_conclusion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #336d6f;
+    }
 </style>
