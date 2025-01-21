@@ -18,22 +18,17 @@
                     <ul class="menu">
                         <li class="active">
                             <a href="#">Our Products</a>
-                        </li>
-                        <li>
-                            <a href="#">Pillar Technololgy</a>
-                            <!-- <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <a href="#" class="nolink">VARIATION 1</a>
                                         <ul class="submenu">
-                                            <li><a href="category.html">Fullwidth Banner</a></li>
-                                            <li><a href="category-banner-boxed-slider.html">Boxed Slider
-                                                    Banner</a>
+                                            <li><a href="#">Ceiling Fans</a></li>
+                                            <li><a href="category.html">Table Wall Pedestals</a></li>
+                                            <li><a href="category-banner-boxed-slider.html">Domestic Exhaust</a>
                                             </li>
-                                            <li><a href="category-banner-boxed-image.html">Boxed Image
-                                                    Banner</a>
+                                            <li><a href="category-banner-boxed-image.html">Personal</a>
                                             </li>
-                                            <li><a href="category.html">Left Sidebar</a></li>
+                                            <!-- <li><a href="category.html">Left Sidebar</a></li>
                                             <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
                                             <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
                                             <li><a href="category-horizontal-filter1.html">Horizontal
@@ -41,42 +36,31 @@
                                             </li>
                                             <li><a href="category-horizontal-filter2.html">Horizontal
                                                     Filter2</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <a href="#" class="nolink">VARIATION 2</a>
-                                        <ul class="submenu">
-                                            <li><a href="category-list.html">List Types</a></li>
-                                            <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll</a>
-                                            </li>
-                                            <li><a href="category.html">3 Columns Products</a></li>
-                                            <li><a href="category-4col.html">4 Columns Products</a></li>
-                                            <li><a href="category-5col.html">5 Columns Products</a></li>
-                                            <li><a href="category-6col.html">6 Columns Products</a></li>
-                                            <li><a href="category-7col.html">7 Columns Products</a></li>
-                                            <li><a href="category-8col.html">8 Columns Products</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 p-0">
-                                        <div class="menu-banner">
-                                            <figure>
-                                                <img src="assets/images/menu-banner.jpg" alt="Menu banner"
-                                                    width="300" height="300">
-                                            </figure>
-                                            <div class="banner-content">
-                                                <h4>
-                                                    <span class="">UP TO</span><br />
-                                                    <b class="">50%</b>
-                                                    <i>OFF</i>
-                                                </h4>
-                                                <a href="demo3-shop.html" class="btn btn-sm btn-dark">SHOP
-                                                    NOW</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Pillar Technololgy</a>
+                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <ul class="submenu">
+                                            <li><a href="#">Air Curve Design</a></li>
+                                            <li><a href="product.html">TurboSilent BLDC</a></li>
+                                            <li><a href="product-variable.html">M.A.S.S®</a></li>
+                                            <li><a href="product.html">LumiAmbience</a></li>
+                                            <li><a href="product.html">S.C.A.N</a></li>
+                                            <!-- <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
+                                            <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
+                                            <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
+                                            <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li> -->
+                                        </ul>
+                                    </div><!-- End .col-lg-4 -->
+                                </div>
+                            </div>
                         </li>
                         <li>
                             <a href="#">Our Brands</a>
@@ -132,6 +116,23 @@
                         </li>
                         <li class="active">
                             <a href="#">About Us</a>
+                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <ul class="submenu">
+                                            <li><a href="#">Our Story</a></li>
+                                            <li><a href="product.html">Vision & Mission</a></li>
+                                            <li><a href="product-variable.html">Values</a></li>
+                                            <li><a href="product.html">Capabilities</a></li>
+                                            <!-- <li><a href="product.html">S.C.A.N</a></li> -->
+                                            <!-- <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
+                                            <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
+                                            <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
+                                            <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                         <li class="active">
                             <a href="#">Support</a>
