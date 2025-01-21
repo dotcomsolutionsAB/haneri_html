@@ -111,7 +111,7 @@
 
                     .capability-content {
                         flex: 1;
-                        max-width: 700px;
+                        max-width: 300px;
                         text-align: left;
                         padding: 20px 0px;
                     }

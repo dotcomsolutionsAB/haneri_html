@@ -1,86 +1,85 @@
 <style>
     /* General Container */
-.y {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative; /* Required for the fog effect */
-}
-
-/* Heading Styling */
-.about_section {
-    font-size: 42px;
-    font-weight: 700;
-    color: #007BFF;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease-out; /* Smooth fade-in effect */
-    z-index: 1;
-}
-
-/* Decorative Underline */
-.about_section::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #007BFF, #00D4FF);
-    border-radius: 2px;
-    z-index: -1;
-}
-
-/* Fog Effect */
-.y::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -30px;
-    width: 150%;
-    height: 150%;
-    background: url('https://i.ibb.co/VBDdtHf/fog.png') no-repeat center;
-    background-size: cover;
-    opacity: 0.6;
-    filter: blur(20px);
-    animation: fogMove 5s infinite alternate ease-in-out;
-    z-index: 0; /* Appears behind the heading */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .y {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative; /* Required for the fog effect */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes fogMove {
-    from {
-        transform: translateX(-20px);
+    /* Heading Styling */
+    .about_section {
+        font-size: 42px;
+        font-weight: 700;
+        color: #007BFF;
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 1.5s ease-out; /* Smooth fade-in effect */
+        z-index: 1;
     }
-    to {
-        transform: translateX(20px);
+
+    /* Decorative Underline */
+    .about_section::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #007BFF, #00D4FF);
+        border-radius: 2px;
+        z-index: -1;
     }
-}
 
+    /* Fog Effect */
+    .y::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -30px;
+        width: 150%;
+        height: 150%;
+        background: url('https://i.ibb.co/VBDdtHf/fog.png') no-repeat center;
+        background-size: cover;
+        opacity: 0.6;
+        filter: blur(20px);
+        animation: fogMove 5s infinite alternate ease-in-out;
+        z-index: 0; /* Appears behind the heading */
+    }
 
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fogMove {
+        from {
+            transform: translateX(-20px);
+        }
+        to {
+            transform: translateX(20px);
+        }
+    }
 </style>
+
 <div class="container y text-left">
     <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
 </div><!-- End .container -->
-<div class="container">
+<div class="aab">
     <!-- Section 1: Excellence -->
-    <div class="capability-row">
+    <div class="capability-row col-lg-6">
         <div class="capability-content">
             <h2 class="capability-title">Excellence in Manufacturing, R&D, and Innovation</h2>
             <p>
@@ -93,7 +92,7 @@
     </div>
 
     <!-- Section 2: R&D -->
-    <div class="capability-row reverse">
+    <div class="capability-row reverse col-lg-6">
         <div class="capability-content">
             <h2 class="capability-title">Product-Specific R&D and Prototyping Facilities</h2>
             <p>
@@ -112,7 +111,7 @@
     </div>
 
     <!-- Section 3: Manufacturing -->
-    <div class="capability-row">
+    <div class="capability-row col-lg-6">
         <div class="capability-content">
             <h2 class="capability-title">Comprehensive Manufacturing Processes</h2>
             <p>
@@ -130,7 +129,7 @@
     </div>
 
     <!-- Section 4: Surface Finishing -->
-    <div class="capability-row reverse">
+    <div class="capability-row reverse col-lg-6">
         <div class="capability-content">
             <h2 class="capability-title">Superior Surface Finishing Capabilities</h2>
             <p>
@@ -147,7 +146,7 @@
     </div>
 
     <!-- Section 5: Tooling -->
-    <div class="capability-row">
+    <div class="capability-row col-lg-6">
         <div class="capability-content">
             <h2 class="capability-title">Design & Tooling Expertise</h2>
             <p>
