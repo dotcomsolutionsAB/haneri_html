@@ -7,7 +7,14 @@
 .page-header {
     padding: 1rem 0 1.2rem;
 }
-
+.about_section{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #315858;
+}
+.capabilities-section, .our-brands, .our-story {
+    text-align: justify;
+}
 
 .header-transparent {
     background: aliceblue;

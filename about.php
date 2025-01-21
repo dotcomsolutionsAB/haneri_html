@@ -100,7 +100,7 @@
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
-                        align-items: center;
+                        align-items: flex-start;
                         gap: 30px;
                         margin-bottom: 40px;
                     }
@@ -161,12 +161,16 @@
                     }
                     .about .row.row-bg {
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        align-items: flex-start;
                     }
                     .about-slider {
                         /* max-width: 580px; */
                         margin-bottom: 0rem;
+                    }
+                    .part_img{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                     /* #00473e */
                 </style>

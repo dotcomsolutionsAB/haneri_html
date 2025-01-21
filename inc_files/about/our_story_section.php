@@ -1,6 +1,6 @@
 <div class="page-header pt-3 bg-transparent">
     <div class="container text-left">
-        <h1 class="font4 text-uppercase">OUR STORY</h1>
+        <h1 class="font4 text-uppercase about_section">OUR STORY</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
@@ -103,7 +103,7 @@
         </div><!-- End .row -->
 
         <div class="row row-bg" id="values">
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-xl-5 col-lg-6 part_img">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="images/place.jpg"
@@ -148,5 +148,7 @@
 <div class="mb-3"></div><!-- margin -->
 
 <style>
-    
+    .container{
+        text-align: justify;
+    }
 </style>
