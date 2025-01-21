@@ -119,7 +119,7 @@
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 order-lg-first">
+            <div class="col-xl-7 col-lg-6">
                 <h2>The Science Behind Air Curve Design</h2>
                 <ul>
                 <li>
