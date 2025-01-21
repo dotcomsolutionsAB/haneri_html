@@ -110,7 +110,7 @@
                         <a href="support.php">Support</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-10">
                                     <ul class="submenu">
                                         <li>
                                             <a href="support.php#Help">Product Help</a>
