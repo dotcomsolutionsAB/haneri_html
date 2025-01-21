@@ -85,7 +85,7 @@
                     .capability-row {
                         display: flex;
                         flex-wrap: wrap;
-                        justify-content: center;
+                        justify-content: space-between;
                         align-items: center;
                         gap: 30px;
                         margin-bottom: 40px;
@@ -97,7 +97,7 @@
 
                     .capability-content {
                         flex: 1;
-                        max-width: 600px;
+                        max-width: 700px;
                         text-align: left;
                         padding: 20px 0px;
                     }
