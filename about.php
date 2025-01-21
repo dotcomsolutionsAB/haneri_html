@@ -66,6 +66,7 @@
                         <!-- <h2 class="page-intro font-weight-normal">Who we are</h2> -->
                         <h1 class="page-title font4">OUR Story</h1>
                         <div class="row row-bg">
+                            <h2 class="page-intro font-weight-normal">vision</h2>
                             <div class="col-md-12" id="vision">
                                 <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh, vestibulum
                                     vitae congue
@@ -93,7 +94,8 @@
                                     fermentum
                                     eget, aliquam vehicula ligula.</p>
                             </div><!-- End .col-md-6 -->
-
+                            <br>
+                            <h2 class="page-intro font-weight-normal">mission</h2>
                             <div class="col-md-12" id="mission">
                                 <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
                                     ullamcorper.
@@ -120,7 +122,8 @@
                                     sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui. Proin non pellentesque leo.
                                     Vestibulum varius laoreet posuere. Etiam fringilla diam odio.</p>
                             </div><!-- End .col-md-6 -->
-
+                            <br>
+                            <h2 class="page-intro font-weight-normal">values</h2>
                             <div class="col-md-12" id="values">
                                 <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
                                     ullamcorper.
