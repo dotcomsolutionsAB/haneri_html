@@ -64,9 +64,13 @@
                 <div class="container">
                     <section id="our-story">
                         <!-- <h2 class="page-intro font-weight-normal">Who we are</h2> -->
-                        <h1 class="page-title font4">OUR Story</h1>
+                        <a href="about.php#our-story">
+                            <h1 class="page-title font4">OUR Story</h1>
+                        </a>
                         <div class="row row-bg">
-                            <h2 class="page-intro font-weight-normal">vision</h2>
+                            <a href="about.php#vision">
+                                <h2 class="page-intro font-weight-normal">vision</h2>
+                            </a>
                             <div class="col-md-12" id="vision">
                                 <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh, vestibulum
                                     vitae congue
@@ -95,7 +99,9 @@
                                     eget, aliquam vehicula ligula.</p>
                             </div><!-- End .col-md-6 -->
                             <br>
-                            <h2 class="page-intro font-weight-normal">mission</h2>
+                            <a href="about.php#mission">
+                                <h2 class="page-intro font-weight-normal">mission</h2>
+                            </a>
                             <div class="col-md-12" id="mission">
                                 <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
                                     ullamcorper.
@@ -123,7 +129,9 @@
                                     Vestibulum varius laoreet posuere. Etiam fringilla diam odio.</p>
                             </div><!-- End .col-md-6 -->
                             <br>
-                            <h2 class="page-intro font-weight-normal">values</h2>
+                            <a href="about.php#values">
+                                <h2 class="page-intro font-weight-normal">values</h2>
+                            </a>
                             <div class="col-md-12" id="values">
                                 <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
                                     ullamcorper.
