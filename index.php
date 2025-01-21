@@ -44,8 +44,10 @@
 
 <body class="full-screen-slider">
     <div class="page-wrapper">
-        <?php include("inc_files/header.php"); ?>
-
+        <header class="header header-transparent">
+            <?php include("inc_files/header.php"); ?>
+        </header><!-- End .header -->
+        
         <?php include("inc_files/category_section.php"); ?>
                 
         <main class="main">
@@ -143,7 +145,7 @@
 
     <div class="sticky-navbar">
         <!-- Mobile sitky bottom nav -->
-         <?php include("inc_files/mobile_sticky_bottom_nav.php"); ?>
+        <?php include("inc_files/mobile_sticky_bottom_nav.php"); ?>
     </div>
 
     <!-- <div class="newsletter-popup mfp-hide bg-img" id="newsletter-popup-form"
