@@ -1,4 +1,39 @@
-<div class="container text-left">
+<style>
+    /* Container Styling */
+.y {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.about_section {
+    font-size: 42px;
+    font-weight: 700;
+    color: #007BFF;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative Underline */
+.about_section::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #007BFF, #00D4FF);
+    border-radius: 2px;
+}
+
+</style>
+<div class="container y text-left">
     <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
 </div><!-- End .container -->
 <div class="container">
