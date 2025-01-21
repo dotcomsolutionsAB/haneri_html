@@ -120,20 +120,31 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <ul class="submenu">
-                                            <li><a href="#">Our Story</a></li>
-                                            <li><a href="product.html">Vision & Mission</a></li>
-                                            <li><a href="product-variable.html">Values</a></li>
-                                            <li><a href="product.html">Capabilities</a></li>
-                                            <!-- <li><a href="product.html">S.C.A.N</a></li> -->
-                                            <!-- <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
-                                            <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
-                                            <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
-                                            <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li> -->
+                                            <li class="submenu-item">
+                                                <a href="#our-story">Our Story</a>
+                                                <div class="submenu-description">
+                                                    <a href="#vision" class="description-link">VISION</a> |
+                                                    <a href="#mission" class="description-link">MISSION</a> |
+                                                    <a href="#values" class="description-link">VALUES</a>
+                                                </div>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#our-brands">Our Brands</a>
+                                                <div class="submenu-description">
+                                                    <a href="#haner" class="description-link">Haner</a> |
+                                                    <a href="#bespoke" class="description-link">Bespoke</a> |
+                                                    <a href="#professional" class="description-link">Professional</a>
+                                                </div>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#capabilities">Capabilities</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
+
                         <li class="active">
                             <a href="#">Support</a>
                         </li>
