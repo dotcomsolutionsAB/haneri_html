@@ -146,6 +146,10 @@
                         align-items: center;
                         justify-content: center;
                     }
+                    .about-slider {
+                        /* max-width: 580px; */
+                        margin-bottom: 0rem;
+                    }
                     /* #00473e */
                 </style>
                 <section id="capabilities" class="capabilities-section">
