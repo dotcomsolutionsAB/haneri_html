@@ -56,15 +56,15 @@
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->

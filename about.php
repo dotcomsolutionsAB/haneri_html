@@ -127,12 +127,13 @@
                     /* Capability Images */
                     .capability-image {
                         flex: 1;
-                        max-width: 500px;
+                        max-width: 300px;
                     }
 
                     .capability-image img {
                         width: 100%;
-                        height: auto;
+                        height: 100%;
+                        object-fit: contain;
                         border-radius: 10px;
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                     }
