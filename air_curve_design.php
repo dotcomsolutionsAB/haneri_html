@@ -49,7 +49,8 @@
                 <div class="container">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="demo3.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Pillar Technology</li>
+                        <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Air Curve Design</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
@@ -58,99 +59,6 @@
                 <section id="air_curve_design">
                     <?php include("inc_files/pillar_technology/air_curve_design.php"); ?>
                 </section>
-                <br><br>                            
-                <section id="air_curve_design">
-                    <?php include("inc_files/pillar_technology/M.A.S.S.php"); ?>
-                </section>
-
-                <style type="text/css" media="all">
-                    /* General Section Styling */
-                    .capabilities-section {
-                        padding: 60px 20px;
-                        /*background-color: #f8f9fa;*/
-                        /* font-family: 'Roboto', sans-serif; */
-                        /*color: #333;*/
-                        text-align: center;
-                    }
-
-                    .section-title {
-                        font-size: 42px;
-                        font-weight: bold;
-                        margin-bottom: 40px;
-                        /*color: #222;*/
-                        text-transform: uppercase;
-                    }
-
-                    /* Capability Rows */
-                    .capability-row {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 30px;
-                        margin-bottom: 40px;
-                    }
-
-                    .capability-row.reverse {
-                        flex-direction: row-reverse;
-                    }
-
-                    .capability-content {
-                        flex: 1;
-                        max-width: 600px;
-                        text-align: left;
-                        padding: 20px 0px;
-                    }
-
-                    .capability-content h2 {
-                        margin-bottom: 2.6rem;
-                        font-weight: 400;
-                        font-size: 22px;
-                    }
-
-                    .capability-content p,
-                    .capability-content ul {
-                        font-size: 14px;
-                        line-height: 22px;
-                        text-align: justify;
-                    }
-
-                    .capability-content ul {
-                        list-style-type: disc;
-                        margin-left: 20px;
-                    }
-
-                    .capability-content ul li {
-                        margin-bottom: 10px;
-                    }
-
-                    /* Capability Images */
-                    .capability-image {
-                        flex: 1;
-                        max-width: 500px;
-                    }
-
-                    .capability-image img {
-                        width: 100%;
-                        height: auto;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                    }
-
-                    /* Conclusion */
-                    .capability-conclusion {
-                        font-size: 20px;
-                        font-weight: bold;
-                        margin-top: 40px;
-                        color:rgb(37, 108, 99);
-                    }
-                    .about .row.row-bg {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    /* #00473e */
-                </style>
             </div>
         </main><!-- End .main -->
 
