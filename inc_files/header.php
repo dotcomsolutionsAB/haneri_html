@@ -19,7 +19,7 @@
                         <a href="#">Our Products</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-10">
                                     <ul class="submenu">
                                         <li><a href="#">Ceiling Fans</a></li>
                                         <li><a href="category.html">Table Wall Pedestals</a></li>
@@ -45,7 +45,7 @@
                         <a href="#">Pillar Technololgy</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-10">
                                     <ul class="submenu">
                                         <li><a href="#">Air Curve Design</a></li>
                                         <li><a href="product.html">TurboSilent BLDC</a></li>
@@ -107,33 +107,33 @@
                     </li>
 
                     <li class="active">
-                        <a href="#">Support</a>
+                        <a href="support.php">Support</a>
+                        <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="support.php#Help">Product Help</a>
+                                            <div class="submenu-description">
+                                                <a href="support.php#FAQs" class="description-link">FAQs</a> |
+                                                <a href="support.php#Videos" class="description-link">Videos</a> |
+                                                <a href="support.php#Catalogues" class="description-link">Catalogues</a> |
+                                                <a href="support.php#Manuals" class="description-link">Manuals</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="support.php#Enquiry">Corporate Enquiry</a>
+                                            <div class="submenu-description">
+                                                <a href="support.php#FORM" class="description-link">FORM</a> 
+                                            </div>
+                                        </li>
+                                        <li><a href="contact.php">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </li>
-                    <!-- <li>
-                        <a href="#">About Us</a>
-                        <ul>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="cart.html">Shopping Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="dashboard.html">Dashboard</a></li>
-                            <li><a href="demo3-about.html">About Us</a></li>
-                            <li><a href="#">Blog</a>
-                                <ul>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="single.html">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="demo3-contact.html">Contact Us</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="forgot-password.html">Forgot Password</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="https://1.envato.market/DdLk5">Buy Porto!</a>
-                    </li> -->
                 </ul>
             </nav>
         </div><!-- End .header-left -->

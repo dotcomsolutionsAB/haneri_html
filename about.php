@@ -55,269 +55,189 @@
             </nav>
 
             <div class="container">
-                <div class="page-header pt-3 bg-transparent">
-                    <div class="container text-left">
-                        <h1 class="font4 text-uppercase">The New Way to Success</h1>
+                <section id="our-story">
+                    <div class="page-header pt-3 bg-transparent">
+                        <div class="container text-left">
+                            <h1 class="font4 text-uppercase">OUR Story</h1>
+                        </div><!-- End .container -->
+                    </div><!-- End .page-header -->
+
+                    <div class="container"> 
+                        <div class="row row-bg">                            
+                            <div class="col-md-12">
+                                <p class="mb-2">
+                                    Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions. Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your needs, including home, Office and commercial spaces.
+                                </p>
+                                <br>
+                                <p>
+                                    Motivated by a vision to empower and elevate, Haneri crafts solutions that simplify life while enriching spaces with beauty and sophistication. At its heart lies innovation, seamlessly combining cutting-edge technology, exceptional quality, and luxurious design—all made accessible to everyone.
+                                    It’s not just about creating products—it’s about committing to helping people live better, dream bigger, and turn their environments into havens of comfort and joy.
+                                </p>
+                                <br>
+                                <p>
+                                    With Haneri, the future of living begins now—where inspiration meets innovation, and the ordinary becomes extraordinary.
+                                </p>
+                            </div><!-- End .col-md-6 -->
+                        </div><!-- End .row -->                        
                     </div><!-- End .container -->
-                </div><!-- End .page-header -->
+                
 
-                <div class="container">
-                    <section id="our-story">
-                        <!-- <h2 class="page-intro font-weight-normal">Who we are</h2> -->
-                        <a href="about.php#our-story">
-                            <h1 class="page-title font4">OUR Story</h1>
-                        </a>
-                        <div class="row row-bg">
-                            <h2 class="page-intro font-weight-normal">
-                                <a href="about.php#vision">Vision</a>
-                            </h2>
-                            <div class="col-md-12" id="vision">
-                                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh, vestibulum
-                                    vitae congue
-                                    nec,
-                                    tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit. Nulla
-                                    dolor
-                                    libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus porttitor odio sodales
-                                    pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo egestas.
-                                    Pellentesque
-                                    sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui. Proin non pellentesque leo.
-                                    Vestibulum varius laoreet posuere. Etiam fringilla diam odio.</p>
+                    <div class="history-section pb-3">
+                        <div class="container">
+                            <h1 class="page-title font4">OUR HISTORY</h1>
+                            <div class="row row-bg" id="vision">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="about-slider owl-carousel owl-theme dots-simple">
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                    </div><!-- End .about-slider -->
+                                </div><!-- End .col-lg-5 -->
+                                <div class="col-xl-7 col-lg-6">
+                                    <h2>Vision</h2>
+                                    <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
+                                        vestibulum vitae
+                                        congue
+                                        nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
+                                        Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
+                                        porttitor
+                                        odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
+                                        egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
+                                        Proin
+                                        non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
+                                    </p>
+                                    <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
+                                        eget
+                                        commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
+                                        ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
+                                        porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
+                                        efficitur
+                                        vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
+                                        scelerisque.
+                                        Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
+                                        placerat.
+                                        Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
+                                        imperdiet
+                                        a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
+                                        purus
+                                        sem, dapibus eu fermentum eget, aliquam vehicula ligula.
+                                    </p>
+                                </div><!-- End .col-lg-7 -->
+                            </div><!-- End .row -->
 
-                                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo, eget
-                                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                                    ligula
-                                    mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam porta
-                                    iaculis
-                                    velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae, efficitur vitae dolor.
-                                    Integer ornare neque ac leo sollicitudin, at vestibulum ante scelerisque. Nullam ut elit
-                                    sed
-                                    lorem tempus feugiat in et lectus. Mauris interdum molestie placerat. Nullam dolor nunc,
-                                    elementum et tincidunt id, vestibulum quis turpis. Integer imperdiet a eros a laoreet.
-                                    Nam
-                                    mattis vel ligula non imperdiet. Suspendisse potenti. Fusce purus sem, dapibus eu
-                                    fermentum
-                                    eget, aliquam vehicula ligula.</p>
-                            </div><!-- End .col-md-6 -->
-                            <br>
-                            <h2 class="page-intro font-weight-normal">
-                                <a href="about.php#mission">Mission</a>
-                            </h2>
-                            <div class="col-md-12" id="mission">
-                                <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
-                                    ullamcorper.
-                                    Etiam
-                                    mattis blandit convallis. Suspendisse eu elementum leo. Vestibulum molestie nunc et
-                                    efficitur egestas. Vivamus arcu lectus, laoreet vel consectetur bibendum, elementum non
-                                    nunc. Proin porttitor velit odio, ac mattis quam tincidunt eget. Fusce semper nunc eget
-                                    efficitur efficitur. Nam ullamcorper, enim id tincidunt feugiat, velit mauris fermentum
-                                    nulla, at tempor eros turpis sit amet massa. Ut a semper lectus, sed hendrerit risus. In
-                                    hac
-                                    habitasse platea dictumst. Curabitur venenatis cursus posuere. Praesent turpis nisi,
-                                    aliquam
-                                    at facilisis non, sagittis vel urna. Donec diam lorem, feugiat vitae laoreet in,
-                                    sagittis a
-                                    lorem.</p>
-
-                                <p>Aliquam consectetur et lorem semper scelerisque. Proin est nibh, vestibulum vitae congue
-                                    nec,
-                                    tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit. Nulla
-                                    dolor
-                                    libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus porttitor odio sodales
-                                    pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo egestas.
-                                    Pellentesque
-                                    sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui. Proin non pellentesque leo.
-                                    Vestibulum varius laoreet posuere. Etiam fringilla diam odio.</p>
-                            </div><!-- End .col-md-6 -->
-                            <br>
-                            <h2 class="page-intro font-weight-normal">
-                                <a href="about.php#values">Values</a>
-                            </h2>
-                            <div class="col-md-12" id="values">
-                                <p class="mb-2">Quisque congue dignissim dui sed luctus. Morbi nec mi vitae magna finibus
-                                    ullamcorper.
-                                    Etiam
-                                    mattis blandit convallis. Suspendisse eu elementum leo. Vestibulum molestie nunc et
-                                    efficitur egestas. Vivamus arcu lectus, laoreet vel consectetur bibendum, elementum non
-                                    nunc. Proin porttitor velit odio, ac mattis quam tincidunt eget. Fusce semper nunc eget
-                                    efficitur efficitur. Nam ullamcorper, enim id tincidunt feugiat, velit mauris fermentum
-                                    nulla, at tempor eros turpis sit amet massa. Ut a semper lectus, sed hendrerit risus. In
-                                    hac
-                                    habitasse platea dictumst. Curabitur venenatis cursus posuere. Praesent turpis nisi,
-                                    aliquam
-                                    at facilisis non, sagittis vel urna. Donec diam lorem, feugiat vitae laoreet in,
-                                    sagittis a
-                                    lorem.</p>
-                                    <p>
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum nisi laboriosam voluptatibus rem id sunt temporibus quos. Dolor corrupti, maxime ratione error officiis cupiditate itaque, quos vero ea perferendis recusandae non? Vel iure distinctio enim ad eaque provident dignissimos ut placeat beatae adipisci pariatur exercitationem unde fuga, nisi harum minus consequatur id fugit nulla autem. Reiciendis laudantium voluptate quisquam mollitia omnis veritatis ex impedit at error delectus laborum, tempora velit officiis vero consectetur facere? Dolorem, quasi quo. Dolorem iusto ipsum ab repellat vero beatae sunt, libero culpa reiciendis unde numquam earum incidunt animi officia nisi? Reprehenderit amet magnam laboriosam quam molestias, dolores architecto reiciendis doloremque repellat nulla perferendis modi fugiat vel libero recusandae et esse, provident non delectus! Temporibus culpa eum, veniam cum eos architecto exercitationem obcaecati magnam quaerat, laudantium necessitatibus tempora delectus sit eaque ut? Sint, accusantium sed sunt quos dicta incidunt voluptates autem, aliquam animi saepe natus reprehenderit alias voluptatibus ullam molestias illum eaque maxime quis? Veritatis iure possimus aliquam minima veniam corrupti? Saepe eaque, libero non eius ex eligendi sequi nesciunt quasi possimus. Velit quisquam qui reiciendis quos sunt commodi in, beatae repellat voluptatum. Suscipit excepturi possimus ea est fugit modi totam ratione aliquam quos sequi? Placeat!
+                            <div class="row row-bg" id="mission">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="about-slider owl-carousel owl-theme dots-simple">
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                    </div><!-- End .about-slider -->
+                                </div><!-- End .col-lg-5 -->
+                                <div class="col-xl-7 col-lg-6 order-lg-first">
+                                    <h2>Mission</h2>
+                                    <p class="mb-2">
+                                        Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
+                                        vestibulum vitae
+                                        congue
+                                        nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
+                                        Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
+                                        porttitor
+                                        odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
+                                        egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
+                                        Proin
+                                        non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
                                     </p>
 
-                                <p>Aliquam consectetur et lorem semper scelerisque. Proin est nibh, vestibulum vitae congue
-                                    nec,
-                                    tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit. Nulla
-                                    dolor
-                                    libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus porttitor odio sodales
-                                    pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo egestas.
-                                    Pellentesque
-                                    sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui. Proin non pellentesque leo.
-                                    Vestibulum varius laoreet posuere. Etiam fringilla diam odio.</p>
-                            </div><!-- End .col-md-6 -->
-                        </div><!-- End .row -->
-                    </section>
-                </div><!-- End .container -->
+                                    <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
+                                        eget
+                                        commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
+                                        ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
+                                        porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
+                                        efficitur
+                                        vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
+                                        scelerisque.
+                                        Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
+                                        placerat.
+                                        Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
+                                        imperdiet
+                                        a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
+                                        purus
+                                        sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
+                                </div><!-- End .col-lg-7 -->
+                            </div><!-- End .row -->
 
-                <div class="history-section pb-3">
-                    <div class="container">
-                        <h1 class="page-title font4">OUR HISTORY</h1>
-                        <div class="row row-bg">
-                            <div class="col-xl-5 col-lg-6">
-                                <div class="about-slider owl-carousel owl-theme dots-simple">
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                </div><!-- End .about-slider -->
-                            </div><!-- End .col-lg-5 -->
-                            <div class="col-xl-7 col-lg-6">
-                                <h2>2014</h2>
-                                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                                    vestibulum vitae
-                                    congue
-                                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                                    porttitor
-                                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                                    Proin
-                                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
-                                </p>
+                            <div class="row row-bg" id="values">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="about-slider owl-carousel owl-theme dots-simple">
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                        <div class="about-slider-item">
+                                            <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
+                                                src="assets/images/lazy.png" alt="About image description">
+                                        </div>
+                                    </div><!-- End .about-slider -->
+                                </div><!-- End .col-lg-5 -->
+                                <div class="col-xl-7 col-lg-6">
+                                    <h2>Values</h2>
+                                    <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
+                                        vestibulum vitae
+                                        congue
+                                        nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
+                                        Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
+                                        porttitor
+                                        odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
+                                        egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
+                                        Proin
+                                        non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
+                                    </p>
 
-                                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                                    eget
-                                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                                    efficitur
-                                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                                    scelerisque.
-                                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                                    placerat.
-                                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                                    imperdiet
-                                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                                    purus
-                                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
-                            </div><!-- End .col-lg-7 -->
-                        </div><!-- End .row -->
+                                    <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
+                                        eget
+                                        commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
+                                        ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
+                                        porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
+                                        efficitur
+                                        vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
+                                        scelerisque.
+                                        Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
+                                        placerat.
+                                        Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
+                                        imperdiet
+                                        a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
+                                        purus
+                                        sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
+                                </div><!-- End .col-lg-7 -->
+                            </div><!-- End .row -->
 
-                        <div class="row row-bg">
-                            <div class="col-xl-5 col-lg-6">
-                                <div class="about-slider owl-carousel owl-theme dots-simple">
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                </div><!-- End .about-slider -->
-                            </div><!-- End .col-lg-5 -->
-                            <div class="col-xl-7 col-lg-6 order-lg-first">
-                                <h2>2015</h2>
-                                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                                    vestibulum vitae
-                                    congue
-                                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                                    porttitor
-                                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                                    Proin
-                                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
-                                </p>
+                        </div><!-- End .container -->
+                    </div><!-- End .history-section -->
 
-                                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                                    eget
-                                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                                    efficitur
-                                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                                    scelerisque.
-                                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                                    placerat.
-                                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                                    imperdiet
-                                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                                    purus
-                                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
-                            </div><!-- End .col-lg-7 -->
-                        </div><!-- End .row -->
-
-                        <div class="row row-bg">
-                            <div class="col-xl-5 col-lg-6">
-                                <div class="about-slider owl-carousel owl-theme dots-simple">
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                    <div class="about-slider-item">
-                                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                                            src="assets/images/lazy.png" alt="About image description">
-                                    </div>
-                                </div><!-- End .about-slider -->
-                            </div><!-- End .col-lg-5 -->
-                            <div class="col-xl-7 col-lg-6">
-                                <h2>2016</h2>
-                                <p class="mb-2">Aliquam consectetur et lorem semper scelerisque. Proin est nibh,
-                                    vestibulum vitae
-                                    congue
-                                    nec, tristique eu justo. Maecenas eu nunc lacinia, porta lorem vitae, viverra velit.
-                                    Nulla dolor libero, rhoncus quis luctus eu, fermentum sed leo. Morbi ut risus
-                                    porttitor
-                                    odio sodales pulvinar. Sed gravida nulla sed sapien vulputate, eget malesuada justo
-                                    egestas. Pellentesque sem mi, vulputate ac iaculis sit amet, sagittis feugiat dui.
-                                    Proin
-                                    non pellentesque leo. Vestibulum varius laoreet posuere. Etiam fringilla diam odio.
-                                </p>
-
-                                <p>Nulla felis nibh, bibendum a leo ut, egestas ornare felis. Nam pretium mauris justo,
-                                    eget
-                                    commodo est fringilla vel. Proin condimentum, lacus sit amet finibus gravida, sapien
-                                    ligula mattis leo, sit amet mattis leo lacus sit amet lectus. Nulla facilisi. Etiam
-                                    porta iaculis velit id pulvinar. Sed dolor odio, eleifend eget aliquam vitae,
-                                    efficitur
-                                    vitae dolor. Integer ornare neque ac leo sollicitudin, at vestibulum ante
-                                    scelerisque.
-                                    Nullam ut elit sed lorem tempus feugiat in et lectus. Mauris interdum molestie
-                                    placerat.
-                                    Nullam dolor nunc, elementum et tincidunt id, vestibulum quis turpis. Integer
-                                    imperdiet
-                                    a eros a laoreet. Nam mattis vel ligula non imperdiet. Suspendisse potenti. Fusce
-                                    purus
-                                    sem, dapibus eu fermentum eget, aliquam vehicula ligula.</p>
-                            </div><!-- End .col-lg-7 -->
-                        </div><!-- End .row -->
-                    </div><!-- End .container -->
-                </div><!-- End .history-section -->
-
-                <div class="mb-3"></div><!-- margin -->
+                    <div class="mb-3"></div><!-- margin -->
+                </section>
             </div>
         </main><!-- End .main -->
 
