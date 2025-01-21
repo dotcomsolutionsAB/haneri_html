@@ -1,3 +1,14 @@
+.breadcrumb-nav {
+    color: #000;
+    background: #94bfc612;
+    border-bottom: 3px solid #dfdfdf;
+    margin-bottom: 0.2rem;
+}
+.page-header {
+    padding: 1rem 0 1.2rem;
+}
+
+
 .header-transparent {
     background: aliceblue;
 }
@@ -45,7 +56,7 @@
 .banner-layer h1{
     font-size: 80px;
     color:#fff;
-    /* font-family: 'Barlow Condensed', sans-serif; */
+    font-family: 'Barlow Condensed', sans-serif;
 }
 .banner-layer h1 span{
     /* font-family: 'Raleway', sans-serif; */

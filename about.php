@@ -36,11 +36,24 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <style>
+        .page-header {
+            padding: 1rem 0 1.2rem;
+        }
+        .banner-layer h1 {
+            font-size: 80px;
+            color: #fff;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+        #our-story {
+            padding-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
     <div class="page-wrapper">
-        <header class="header">
+        <header class="header header-transparent">
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
 
