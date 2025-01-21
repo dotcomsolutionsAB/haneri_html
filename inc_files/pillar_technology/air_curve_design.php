@@ -80,35 +80,40 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 order-lg-first">
-                <h2>Mission</h2>
-                <p class="mb-2">
-                    We will achieve our mission by focusing on four key pillars:
-                </p>
+                <h2>The Science Behind Air Curve Design</h2>
 
                 <p>
-                    <strong>1. Innovative Design and Engineering</strong><br>
-                    We will bring together talented designers and engineers to craft solutions that are as aesthetically pleasing as
-                    they are functional. By staying ahead of design trends and technological advancements, we ensure that each
-                    product is thoughtfully crafted to meet the evolving needs of the modern consumer.
+                    <strong>1. Computational Fluid Dynamics (CFD):</strong><br>
+                    Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
                 </p>
                 <p>
-                    <strong>2. Commitment to Quality and Durability</strong><br>
-                    Quality will be at the core of everything we do. From materials to manufacturing processes, we will invest in
-                    ensuring that each product is built to last and provide a reliable experience over time.
+                    <strong>2. Prototyping and Testing</strong><br>
+                    Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
                 </p>
                 <p>
-                    <strong>3. Accessibility and Inclusivity</strong><br>
-                    We believe luxury should be accessible to everyone. By designing products with a broad range of price points and
-                    functionality, we will make our solutions available to diverse consumers, considering various lifestyles, budgets,
-                    and preferences.
+                    <strong>3. Iterative Design</strong><br>
+                    Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
+                </p>
+            </div>
+            <div class="col-xl-7 col-lg-6 order-lg-first">
+                <h2>Benefits for Customers
+                </h2>
+
+                <p>
+                    <strong>1. Enhanced Comfort:</strong><br>
+                    Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.
                 </p>
                 <p>
-                    <strong> 4. Exceptional Customer Experience</strong>
-                    We are dedicated to supporting our customers throughout their journey, from purchase to daily use and beyond.
-                    Through responsive customer service, educational resources, and aftercare support, we will ensure our
-                    customers feel valued and equipped to enjoy our solutions' benefits fully.
-                    Focusing on these pillars will transform aspirational living into a reality for every space, continuously elevating
-                    everyday experiences.
+                    <strong>2. Cost Savings:</strong><br>
+                    Energy-efficient operation translates to long-term savings on electricity bills.
+                </p>
+                <p>
+                    <strong>3. Sustainable Choice:</strong><br>
+                    Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.
+                </p>
+                <p>
+                    <strong>3. Modern Aesthetics:</strong><br>
+                    Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.
                 </p>
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
@@ -130,29 +135,6 @@
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6">
-                <h2>Values (H.E.A.R.T.S)</h2>
-                <p><strong>1. Human-Centric Design</strong>
-                    We focus on creating products that are intuitive, inclusive, and designed with real people in mind.</p>
-
-                <p><strong>2. Excellence in Quality</strong>
-                    We uphold the highest standards of craftsmanship, using durable materials for products that stand the test of time.</p>
-
-                <p><strong>3. Accessibility and Inclusivity</strong>
-                    We believe luxury should be attainable for everyone, creating products that suit diverse lifestyles, needs, and budgets.</p>
-
-                <p><strong>4. Responsiveness to Consumer Needs</strong>
-                    We listen and adapt to our customers’ needs, ensuring a seamless experience from purchase through long-term use.</p>
-
-                <p><strong>5. Transparency and Integrity</strong>
-                    We operate with honesty and accountability, building trust through clear communication and ethical practices.</p>
-
-                <p><strong>6. Sustainability and Responsibility</strong>
-                    We are committed to minimizing our environmental impact, choosing sustainable materials and processes to create a positive impact for future generations.</p>
-
-            </div><!-- End .col-lg-7 -->
-        </div><!-- End .row -->
-
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
