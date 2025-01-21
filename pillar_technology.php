@@ -63,6 +63,7 @@
                     <?php include("inc_files/pillar_technology/M.A.S.S.php"); ?>
                 </section>
 
+                <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {

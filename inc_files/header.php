@@ -48,7 +48,7 @@
                                 <div class="col-lg-10">
                                     <ul class="submenu">
                                         <li><a href="air_curve_design.php">Air Curve Design</a></li>
-                                        <li><a href="pillar_technology.php#turbosilent_bldc">TurboSilent BLDC</a></li>
+                                        <li><a href="turbosilent_bldc.php">TurboSilent BLDC</a></li>
                                         <li><a href="mass.php">M.A.S.S®</a></li>
                                         <li><a href="#">LumiAmbience</a></li>
                                         <li><a href="#">S.C.A.N</a></li>
