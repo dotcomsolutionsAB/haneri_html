@@ -587,3 +587,8 @@ footer a {
     transform: scale(1.05);
 }
 /* end Blogs section */
+
+
+.menu .megamenu.megamenu-3cols {
+    width: 280px;
+}
