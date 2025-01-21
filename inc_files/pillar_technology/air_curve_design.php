@@ -80,23 +80,6 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 order-lg-first">
-                <h2>The Science Behind Air Curve Design</h2>
-                <ul>
-                <li>
-                    <strong>1. Computational Fluid Dynamics (CFD):</strong><br>
-                    Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
-                </li>
-                <li>
-                    <strong>2. Prototyping and Testing</strong><br>
-                    Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
-                </li>
-                <li>
-                    <strong>3. Iterative Design</strong><br>
-                    Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
-                </li>
-                </ul>
-            </div>
-            <div class="col-xl-7 col-lg-6 order-lg-first">
                 <h2>Benefits for Customers
                 </h2>
                 <ul>
@@ -136,6 +119,23 @@
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
+            <div class="col-xl-7 col-lg-6 order-lg-first">
+                <h2>The Science Behind Air Curve Design</h2>
+                <ul>
+                <li>
+                    <strong>1. Computational Fluid Dynamics (CFD):</strong><br>
+                    Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
+                </li>
+                <li>
+                    <strong>2. Prototyping and Testing</strong><br>
+                    Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
+                </li>
+                <li>
+                    <strong>3. Iterative Design</strong><br>
+                    Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
+                </li>
+                </ul>
+            </div>
         </div>
     </div><!-- End .container -->
 </div><!-- End .history-section -->
