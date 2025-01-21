@@ -1,5 +1,5 @@
 <div class="container text-left">
-    <h1 class="font4 text-uppercase">OUR BRANDS</h1>
+    <h1 class="font4 text-uppercase about_section">OUR BRANDS</h1>
 </div><!-- End .container -->
 <div class="container">
     <!-- Section 1: Excellence -->

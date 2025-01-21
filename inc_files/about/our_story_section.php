@@ -1,6 +1,6 @@
 <div class="page-header pt-3 bg-transparent">
     <div class="container text-left">
-        <h1 class="font4 text-uppercase about_section">OUR STORY</h1>
+        <h1 class="text-uppercase about_section">OUR STORY</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
