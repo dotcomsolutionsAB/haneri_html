@@ -59,7 +59,10 @@
                     <?php include("inc_files/about/our_story_section.php"); ?>
                 </section>
                 <br><br>
-
+                <section id="our-brands">
+                    <?php include("inc_files/about/our-brands.php"); ?>
+                </section>
+                <br><br>
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {

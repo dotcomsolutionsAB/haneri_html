@@ -11,7 +11,7 @@
             </p>
         </div>
         <div class="capability-image">
-            <img src="images/excellence.jpg" alt="Excellence in Manufacturing">
+            <img src="images/place.jpg" alt="Excellence in Manufacturing">
         </div>
     </div>
 
@@ -30,7 +30,7 @@
             </ul>
         </div>
         <div class="capability-image">
-            <img src="images/research.jpg" alt="R&D and Prototyping Facilities">
+            <img src="images/place.jpg" alt="R&D and Prototyping Facilities">
         </div>
     </div>
 
@@ -48,7 +48,7 @@
             </ul>
         </div>
         <div class="capability-image">
-            <img src="images/manufacturing.jpg" alt="Comprehensive Manufacturing">
+            <img src="images/place.jpg" alt="Comprehensive Manufacturing">
         </div>
     </div>
 
@@ -65,7 +65,7 @@
             </ul>
         </div>
         <div class="capability-image">
-            <img src="images/finishing.jpg" alt="Surface Finishing Capabilities">
+            <img src="images/place.jpg" alt="Surface Finishing Capabilities">
         </div>
     </div>
 
@@ -78,7 +78,7 @@
             </p>
         </div>
         <div class="capability-image">
-            <img src="images/tooling.jpg" alt="Design & Tooling Expertise">
+            <img src="images/place.jpg" alt="Design & Tooling Expertise">
         </div>
     </div>
     <br>
