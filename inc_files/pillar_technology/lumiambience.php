@@ -2,7 +2,7 @@
     <h1 class="text-uppercase about_section">LumiAmbience</h1>
 </div>
 <style>
-    .brand-content h4{
+    .brand-content .points h4{
         margin: 0px;
         font-weight: 600;
         font-family: 'Barlow Condensed';
@@ -35,7 +35,7 @@
     <div class="brand-row reverse">
         <div class="brand-content">
             <h2>Key Features of LumiAmbience Technology</h2>
-            <div>
+            <div class="points">
                 <h4>Three-in-One Color Options:</h4>
                 <ul>
                     <li><strong>Warm White:</strong> Perfect for relaxed evenings or cosy settings, offering a soft, inviting glow.</li>
