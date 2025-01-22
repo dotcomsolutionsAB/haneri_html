@@ -17,7 +17,9 @@
 .menu .megamenu .submenu li:hover a {
     text-decoration: none;
 }
-
+.sf-with-ul{
+    display: none;
+}
 
 .header-transparent {
     background: aliceblue;
