@@ -73,6 +73,79 @@
                     <?php include("inc_files/about/our_story_section.php"); ?>
                 </section>
                 <br><br>
+                <style type="text/css" media="all">
+                    /* General Section Styling */
+                    .brands-section {
+                        padding: 50px 20px;
+                        background-color: #f9f9f9;
+                        text-align: center;
+                    }
+
+                    .brands-section .section-title {
+                        font-size: 36px;
+                        font-weight: bold;
+                        margin-bottom: 40px;
+                        text-transform: uppercase;
+                        color: #333;
+                    }
+
+                    /* Brand Rows */
+                    .brand-row-container {
+                        margin-bottom: 30px;
+                        padding: 20px;
+                        border: 1px solid #ddd;
+                        border-radius: 10px;
+                        background-color: #fff;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .brand-row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        gap: 20px;
+                    }
+
+                    .brand-row.reverse {
+                        flex-direction: row-reverse;
+                    }
+
+                    .brand-content {
+                        flex: 1;
+                        max-width: 50%;
+                        text-align: left;
+                        padding: 10px;
+                    }
+
+                    .brand-content p {
+                        font-size: 16px;
+                        line-height: 24px;
+                        text-align: justify;
+                        color: #555;
+                    }
+
+                    .brand-content strong {
+                        font-weight: bold;
+                        color: #222;
+                    }
+
+                    .brand-image {
+                        flex: 1;
+                        max-width: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .brand-image img {
+                        width: 100%;
+                        max-width: 300px;
+                        height: auto;
+                        object-fit: contain;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                    }
+                </style>
                 <section id="our-brands" class="capabilities-section">
                     <?php include("inc_files/about/our-brands.php"); ?>
                 </section>
