@@ -121,7 +121,7 @@
                         line-height: 24px;
                         text-align: justify;
                         color: #555;
-                        /* font-family: 'Barlow Condensed', sans-serif !important; */
+                        font-family: 'Barlow Condensed';
                     }
 
                     .brand-content strong {
@@ -206,6 +206,7 @@
                         font-size: 14px;
                         line-height: 22px;
                         text-align: justify;
+                        font-family: 'Barlow Condensed';
                     }
 
                     .capability-content ul {
