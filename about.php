@@ -84,7 +84,7 @@
                     }
                     .about p {
                         font-family: 'Barlow Condensed';
-                        font-size: 16px;
+                        font-size: 18px;
                     }
                 </style>
                 <section id="our-story" class="our_story">
@@ -134,7 +134,7 @@
                     }
 
                     .brand-content p {
-                        font-size: 16px;
+                        font-size: 18px;
                         line-height: 24px;
                         text-align: justify;
                         color: #555;
@@ -172,7 +172,7 @@
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {
-                        padding: 60px 20px;
+                        padding: 20px 20px;
                         text-align: center;
                     }
 
@@ -220,7 +220,7 @@
 
                     .capability-content p,
                     .capability-content ul {
-                        font-size: 16px;
+                        font-size: 18px;
                         line-height: 22px;
                         text-align: justify;
                         font-family: 'Barlow Condensed';
