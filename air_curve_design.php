@@ -71,12 +71,15 @@
                     font-weight: 400;
                 }
                 .contents ul{
-                    list-style-type: disc;
+                    list-style-type: auto;
                     margin-left: 20px;
                     font-size: 18px;
                     /* line-height: 22px; */
                     text-align: justify;
                     font-family: 'Barlow Condensed';
+                }    
+                .contents ul li{
+                    margin-bottom: 15px;
                 }
             </style>
             <div class="container">                

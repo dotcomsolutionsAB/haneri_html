@@ -95,28 +95,28 @@
                 <ul>
                     <li>
                         <strong>
-                            1. Enhanced Comfort:                        
+                              Enhanced Comfort:                        
                         </strong>
                         <br>
                         Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.
                     </li>
                     <li>
                         <strong>
-                            2. Cost Savings:                        
+                              Cost Savings:                        
                         </strong>
                         <br>
                         Energy-efficient operation translates to long-term savings on electricity bills.
                     </li>
                     <li>
                         <strong>
-                            3. Sustainable Choice:                        
+                              Sustainable Choice:                        
                         </strong>
                         <br>
                         Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.
                     </li>
                     <li>
                         <strong>
-                            3. Modern Aesthetics:                        
+                              Modern Aesthetics:                        
                         </strong>
                         <br>
                         Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.
@@ -147,21 +147,21 @@
                 <ul>
                 <li>
                     <strong>
-                        1. Computational Fluid Dynamics (CFD):
+                          Computational Fluid Dynamics (CFD):
                     </strong>
                     <br>
                     Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
                 </li>
                 <li>
                     <strong>
-                        2. Prototyping and Testing
+                          Prototyping and Testing
                     </strong>
                     <br>
                     Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
                 </li>
                 <li>
                     <strong>
-                        3. Iterative Design
+                          Iterative Design
                     </strong>
                     <br>
                     Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
