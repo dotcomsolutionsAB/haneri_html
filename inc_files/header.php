@@ -127,7 +127,7 @@
                                                 <a href="support.php#FORM" class="description-link">FORM</a> 
                                             </div>
                                         </li>
-                                        <li><a href="contact.php">Contact Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
                                     </ul>
                                 </div>
                                 
