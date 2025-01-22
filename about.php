@@ -80,7 +80,7 @@
             <div class="container">
                 <style>
                     .our_story{
-                        padding: 60px 20px;
+                        padding: 20px 20px;
                     }
                     .about p {
                         font-family: 'Barlow Condensed';
@@ -90,11 +90,10 @@
                 <section id="our-story" class="our_story">
                     <?php include("inc_files/about/our_story_section.php"); ?>
                 </section>
-                <br><br>
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .brands-section {
-                        padding: 50px 20px;
+                        padding: 20px 20px;
                         /* background-color: #f9f9f9; */
                         text-align: center;
                     }

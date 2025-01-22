@@ -82,3 +82,4 @@
         <strong>At Haneri, we don’t just make products—we craft experiences.</strong>
     </h5>
 </div>
+<div class="mb-3"></div><!-- margin -->
