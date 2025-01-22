@@ -67,6 +67,9 @@
                     padding: 20px 20px;
                     padding-top: 1rem;
                 }
+                .containe h2{
+                    font-weight: 400;
+                }
             </style>
             <div class="container">                
                 <section id="air_curve_design" class="air_curve_design">
