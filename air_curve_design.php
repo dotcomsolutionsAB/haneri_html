@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Pillar Technology</title>
+    <title>Air Curve Design</title>
     <?php include("inc_files/fav_icon_others.php"); ?>
     <script>
         WebFontConfig = {
@@ -29,11 +29,22 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <style>
+        .page-header {
+            padding: 1rem 0 3.2rem;
+            margin-top: 0px;
+        }
+        .banner-layer h1 {
+            font-size: 80px;
+            color: #fff;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
     <div class="page-wrapper">
-        <header class="header">
+        <header class="header header-transparent">
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
 
@@ -42,14 +53,23 @@
                 <div class="container">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="demo3.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li>
+                        <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
                         <li class="breadcrumb-item active" aria-current="page">Air Curve Design</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
-
-            <div class="container">
-                <section id="air_curve_design">
+            <style>
+                .about p {
+                    font-family: 'Barlow Condensed';
+                    font-size: 18px;
+                }
+                #our-story {
+                    padding: 20px 20px;
+                    padding-top: 1rem;
+                }
+            </style>
+            <div class="container">                
+                <section id="air_curve_design" class="air_curve_design">
                     <?php include("inc_files/pillar_technology/air_curve_design.php"); ?>
                 </section>
             </div>

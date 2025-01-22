@@ -40,9 +40,6 @@
             color: #fff;
             font-family: 'Barlow Condensed', sans-serif;
         }
-        #our-story {
-            padding-top: 1rem;
-        }
     </style>
 </head>
 
@@ -64,8 +61,9 @@
 
             <div class="container">
                 <style>
-                    .our_story{
+                    #our-story {
                         padding: 20px 20px;
+                        padding-top: 1rem;
                     }
                     .about p {
                         font-family: 'Barlow Condensed';

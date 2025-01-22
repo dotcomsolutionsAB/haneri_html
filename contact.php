@@ -34,7 +34,7 @@
 
 <body>
 	<div class="page-wrapper">
-		<header class="header">
+		<header class="header header-transparent">
 			<div class="header-top">
 				<div class="container">
 					<div class="header-left d-none d-sm-block">
