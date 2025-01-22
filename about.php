@@ -77,26 +77,25 @@
                     /* General Section Styling */
                     .brands-section {
                         padding: 50px 20px;
-                        background-color: #f9f9f9;
+                        /* background-color: #f9f9f9; */
                         text-align: center;
                     }
 
-                    .brands-section .section-title {
+                    /* .brands-section .section-title {
                         font-size: 36px;
                         font-weight: bold;
                         margin-bottom: 40px;
                         text-transform: uppercase;
                         color: #333;
-                    }
+                    } */
 
                     /* Brand Rows */
                     .brand-row-container {
                         margin-bottom: 30px;
-                        padding: 20px;
-                        border: 1px solid #ddd;
+                        padding: 20px 0px;
+                        /* border: 1px solid #ddd; */
                         border-radius: 10px;
                         background-color: #fff;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
                     }
 
                     .brand-row {
@@ -112,7 +111,7 @@
 
                     .brand-content {
                         flex: 1;
-                        max-width: 50%;
+                        max-width: 70%;
                         text-align: left;
                         padding: 10px;
                     }
@@ -122,16 +121,19 @@
                         line-height: 24px;
                         text-align: justify;
                         color: #555;
+                        /* font-family: 'Barlow Condensed', sans-serif !important; */
                     }
 
                     .brand-content strong {
-                        font-weight: bold;
+                        font-weight: lighter;
+                        font-family: 'Barlow Condensed';
                         color: #222;
+                        font-size: x-large;
                     }
 
                     .brand-image {
                         flex: 1;
-                        max-width: 50%;
+                        max-width: 30%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -239,7 +241,7 @@
                 </style>
 
                 <section id="capabilities" class="capabilities-section">
-                    <?php include("inc_files/capabilities_section.php"); ?>
+                    <?php include("inc_files/about/capabilities_section.php"); ?>
                 </section>
 
         </main><!-- End .main -->

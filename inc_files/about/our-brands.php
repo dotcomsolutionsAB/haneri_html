@@ -1,5 +1,5 @@
 <div class="containe text-left">
-    <h1 class="section-title">OUR BRANDS</h1>
+    <h1 class="text-uppercase about_section">OUR BRANDS</h1>
 </div>
 
 <!-- Row 1: Haneri -->
@@ -21,7 +21,7 @@
     <div class="brand-row reverse">
         <div class="brand-content">
             <p>
-                <strong>Haneri Bespoke:</strong> Embodies personalization at its finest, bringing individuality and style to your living or workspace. With a focus on allowing consumers to select colors, finishes, and materials crafted to their preferences, it bridges the gap between functionality and self-expression. Whether you're refreshing your home décor or conceptualizing a modern office, "Haneri Bespoke" transforms your vision into reality. It is more than a product; it's an extension of your personality, crafted to reflect your unique identity while seamlessly blending with your environment. Experience the art of personalized luxury, designed exclusively for you.
+                <strong>Haneri Bespoke </strong> Embodies personalization at its finest, bringing individuality and style to your living or workspace. With a focus on allowing consumers to select colors, finishes, and materials crafted to their preferences, it bridges the gap between functionality and self-expression. Whether you're refreshing your home décor or conceptualizing a modern office, "Haneri Bespoke" transforms your vision into reality. It is more than a product; it's an extension of your personality, crafted to reflect your unique identity while seamlessly blending with your environment. Experience the art of personalized luxury, designed exclusively for you.
             </p>
         </div>
         <div class="brand-image">
@@ -35,7 +35,7 @@
     <div class="brand-row">
         <div class="brand-content">
             <p>
-                <strong>Haneri Professional:</strong> Haneri Professional solutions are purpose-built to address the diverse and large-scale needs of industries and businesses. Engineered with precision, these products are designed to deliver exceptional performance and unwavering reliability, even in the most challenging environments. Crafted to endure rigorous demands, they combine robust durability with cutting-edge technology. By ensuring seamless functionality and consistent results, "Haneri Professional" empowers enterprises to enhance productivity, optimize operations, and achieve sustainable success with confidence.
+                <strong>Haneri Professional </strong> Haneri Professional solutions are purpose-built to address the diverse and large-scale needs of industries and businesses. Engineered with precision, these products are designed to deliver exceptional performance and unwavering reliability, even in the most challenging environments. Crafted to endure rigorous demands, they combine robust durability with cutting-edge technology. By ensuring seamless functionality and consistent results, "Haneri Professional" empowers enterprises to enhance productivity, optimize operations, and achieve sustainable success with confidence.
             </p>
         </div>
         <div class="brand-image">
