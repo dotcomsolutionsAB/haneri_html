@@ -1,10 +1,10 @@
 <div class="page-header pt-3 bg-transparent">
-    <div class="container text-left">
+    <div class="containe text-left">
         <h1 class="text-uppercase text-left about_section">Air Curve Design</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
-<div class="container">
+<div class="containe">
     <div class="row row-bg">
         <div class="col-md-12">
             <p class="mb-2">
@@ -22,7 +22,7 @@
 
 
 <div class="history-section pb-3">
-    <div class="container">
+    <div class="containe">
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
