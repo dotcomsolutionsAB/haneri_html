@@ -5,7 +5,6 @@
     .brand-content .points h4{
         margin: 0px;
         font-weight: 600;
-        font-family: 'Barlow Condensed';
     }
     .brand-content strong {
         font-weight: 600;
@@ -76,32 +75,32 @@
     <div class="brand-row">
         <div class="brand-content">
             <h2>The Science Behind LumiAmbience Technology</h2>
-            <div>
-                <h2>Advanced LED Engineering:</h2>
+            <div class="points">
+                <h4>Advanced LED Engineering:</h4>
                 <ul>
                     <li>LumiAmbience LEDs are crafted to produce precise colour temperatures, ensuring true-to-life illumination for each mode.</li>
                     <li>High-quality diodes enhance durability and reduce power consumption, aligning with energy-saving standards.</li>
                 </ul>
 
-                <h2>Proprietary Lens Diffuser Technology:</h2>
+                <h4>Proprietary Lens Diffuser Technology:</h4>
                 <ul>
                     <li>The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.</li>
                     <li>Optical-grade materials ensure consistent performance and long-term clarity.</li>
                 </ul>
 
-                <h2>Precision Circuitry:</h2>
+                <h4>Precision Circuitry:</h4>
                 <ul>
                     <li>Intelligent LED drivers enable smooth transitions between colour modes and brightness levels, offering users unparalleled control and customization.</li>
                 </ul>
 
-                <h2>Energy Optimization:</h2>
+                <h4>Energy Optimization:</h4>
                 <ul>
                     <li>Advanced power management minimizes energy wastage, ensuring high brightness with low power consumption.</li>
                 </ul>
-            </div>
-            <div class="brand-image">
-                <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
-            </div>
+            </div>            
+        </div>
+        <div class="brand-image">
+            <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
         </div>
     </div>
 </div>
