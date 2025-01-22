@@ -94,44 +94,45 @@
             </div>
         </div>
     </div>
+</div>
 
 <!-- Row 4: Benefits -->
-    <div class="brand-row-container">
-        <div class="brand-row reverse">
-            <div class="brand-content">
-                <h2>Benefits for Customers</h2>
-                <div>
-                    <h2>Customized Lighting for Every Occasion:</h2>
-                    <ul>
-                        <li>Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</li>
-                    </ul>
+<div class="brand-row-container">
+    <div class="brand-row reverse">
+        <div class="brand-content">
+            <h2>Benefits for Customers</h2>
+            <div>
+                <h2>Customized Lighting for Every Occasion:</h2>
+                <ul>
+                    <li>Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</li>
+                </ul>
 
-                    <h2>Enhanced Eye Comfort:</h2>
-                    <ul>
-                        <li>The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</li>
-                    </ul>
+                <h2>Enhanced Eye Comfort:</h2>
+                <ul>
+                    <li>The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</li>
+                </ul>
 
-                    <h2>Integrated Functionality:</h2>
-                    <ul>
-                        <li>Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</li>
-                    </ul>
+                <h2>Integrated Functionality:</h2>
+                <ul>
+                    <li>Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</li>
+                </ul>
 
-                    <h2>Energy Savings:</h2>
-                    <ul>
-                        <li>Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</li>
-                    </ul>
+                <h2>Energy Savings:</h2>
+                <ul>
+                    <li>Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</li>
+                </ul>
 
-                    <h2>Aesthetic Versatility:</h2>
-                    <ul>
-                        <li>The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="brand-image">
-                <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+                <h2>Aesthetic Versatility:</h2>
+                <ul>
+                    <li>The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</li>
+                </ul>
             </div>
         </div>
+        <div class="brand-image">
+            <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+        </div>
     </div>
+</div>
 
 <!-- Row 5: Why Choose? -->
 <div class="brand-row-container">
