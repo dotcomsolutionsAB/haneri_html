@@ -108,7 +108,7 @@
                     }
                     .brand-content h2{
                         font-weight: 400;
-                        margin-bottom: 0.2rem;
+                        margin-bottom: 1.2rem;
                     }
 
                     .brand-content p {
@@ -124,7 +124,8 @@
                         font-family: 'Barlow Condensed';
                     }
                     .brand-content strong {
-                        font-weight: lighter;
+                        font-weight: 600;
+                        font-size: 18px;
                     }
 
                     .brand-image {

@@ -1,7 +1,17 @@
 <div class="containe text-left">
     <h1 class="text-uppercase about_section">LumiAmbience</h1>
 </div>
-
+<style>
+    .brand-content h4{
+        margin: 0px;
+        font-weight: 600;
+        font-family: 'Barlow Condensed';
+    }
+    .brand-content strong {
+        font-weight: 600;
+        font-size: 18px;
+    }
+</style>
 <!-- Row 1: Haneri -->
 <div class="brand-row-container">
     <div class="brand-row">
