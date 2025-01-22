@@ -49,6 +49,15 @@
         #our-story {
             padding-top: 1rem;
         }
+        .mb-3{
+            background: #777;
+            /* width: 70%; */
+            height: 1px;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            margin: 5px 25%;
+        }
     </style>
 </head>
 
@@ -212,7 +221,7 @@
 
                     .capability-content p,
                     .capability-content ul {
-                        font-size: 14px;
+                        font-size: 16px;
                         line-height: 22px;
                         text-align: justify;
                         font-family: 'Barlow Condensed';
