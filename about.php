@@ -78,106 +78,195 @@
                 </section>
                 <br><br>
                 <style type="text/css" media="all">
-                    /* General Section Styling */
-                    .capabilities-section {
-                        padding: 60px 20px;
-                        /*background-color: #f8f9fa;*/
-                        /* font-family: 'Roboto', sans-serif; */
-                        /*color: #333;*/
-                        text-align: center;
-                    }
+    /* General Section Styling */
+    .capabilities-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
 
-                    .section-title {
-                        font-size: 42px;
-                        font-weight: bold;
-                        margin-bottom: 40px;
-                        /*color: #222;*/
-                        text-transform: uppercase;
-                    }
+    .section-title {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
 
-                    /* Capability Rows */
-                    .capability-row {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        align-items: flex-start;
-                        gap: 30px;
-                        margin-bottom: 40px;
-                    }
+    /* Capability Rows */
+    .capability-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
 
-                    .capability-row.reverse {
-                        flex-direction: row-reverse;
-                    }
+    .capability-row.reverse {
+        flex-direction: row-reverse;
+    }
 
-                    .capability-content {
-                        flex: 1;
-                        max-width: 300px;
-                        text-align: left;
-                        padding: 20px 0px;
-                    }
+    .capability-content {
+        flex: 1;
+        max-width: 300px;
+        text-align: left;
+        padding: 20px 0;
+    }
 
-                    .capability-content h2 {
-                        margin-bottom: 2.6rem;
-                        font-weight: 400;
-                        font-size: 22px;
-                    }
+    .capability-content h2 {
+        margin-bottom: 2.6rem;
+        font-weight: 400;
+        font-size: 22px;
+    }
 
-                    .capability-content p,
-                    .capability-content ul {
-                        font-size: 14px;
-                        line-height: 22px;
-                        text-align: justify;
-                    }
+    .capability-content p,
+    .capability-content ul {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: justify;
+    }
 
-                    .capability-content ul {
-                        list-style-type: disc;
-                        margin-left: 20px;
-                    }
+    .capability-content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
 
-                    .capability-content ul li {
-                        margin-bottom: 10px;
-                    }
+    .capability-content ul li {
+        margin-bottom: 10px;
+    }
 
-                    /* Capability Images */
-                    .capability-image {
-                        flex: 1;
-                        max-width: 300px;
-                    }
+    /* Capability Images */
+    .capability-image {
+        flex: 1;
+        max-width: 300px;
+    }
 
-                    .capability-image img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                    }
+    .capability-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-                    /* Conclusion */
-                    .capability-conclusion {
-                        font-size: 20px;
-                        font-weight: bold;
-                        margin-top: 40px;
-                        color:rgb(37, 108, 99);
-                    }
-                    .about .row.row-bg {
-                        display: flex;
-                        align-items: flex-start;
-                    }
-                    .about-slider {
-                        /* max-width: 580px; */
-                        margin-bottom: 0rem;
-                    }
-                    .part_img{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    /* #00473e */
-                </style>
-                <section id="capabilities" class="capabilities-section">
-                    <?php include("inc_files/about/capabilities_section.php"); ?>
-                </section>
+    /* Conclusion */
+    .capability-conclusion {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 40px;
+        color: rgb(37, 108, 99);
+    }
+
+    .about .row.row-bg {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .about-slider {
+        margin-bottom: 0;
+    }
+
+    .part_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<section id="capabilities" class="capabilities-section">
+    <div class="container text-left">
+        <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
+    </div>
+    <div class="aab">
+        <!-- Section 1: Excellence -->
+        <div class="capability-row col-lg-6">
+            <div class="capability-content">
+                <h2 class="capability-title">Excellence in Manufacturing, R&D, and Innovation</h2>
+                <p>
+                    At Haneri, we seamlessly integrate design, innovation, and precision manufacturing, ensuring every product exemplifies quality, functionality, and elegance.
+                </p>
             </div>
+            <div class="capability-image">
+                <img src="images/place.jpg" alt="Excellence in Manufacturing">
+            </div>
+        </div>
+
+        <!-- Section 2: R&D -->
+        <div class="capability-row reverse col-lg-6">
+            <div class="capability-content">
+                <h2 class="capability-title">Product-Specific R&D and Prototyping Facilities</h2>
+                <p>
+                    Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products that redefine everyday living. With specialized facilities for product-specific R&D and rapid prototyping, we bring ideas to life with unparalleled speed and accuracy. This includes:
+                </p>
+                <ul>
+                    <li>Advanced CFD laboratories for airflow and performance optimization</li>
+                    <li>3D CAD modeling and simulation for precise design validation</li>
+                    <li>In-house rapid prototyping capabilities for iterative design improvements</li>
+                    <li>Dedicated teams for testing and validating new technologies</li>
+                </ul>
+            </div>
+            <div class="capability-image">
+                <img src="images/place.jpg" alt="R&D and Prototyping Facilities">
+            </div>
+        </div>
+
+        <!-- Section 3: Manufacturing -->
+        <div class="capability-row col-lg-6">
+            <div class="capability-content">
+                <h2 class="capability-title">Comprehensive Manufacturing Processes</h2>
+                <p>
+                    Our robust manufacturing capabilities allow us to oversee every aspect of production.
+                </p>
+                <ul>
+                    <li>Injection Moulding</li>
+                    <li>Sheet Metal Forming</li>
+                    <li>Specialized assembly lines for FG and BLDC motors, including in-house BLDC magnet manufacturing</li>
+                </ul>
+            </div>
+            <div class="capability-image">
+                <img src="images/place.jpg" alt="Comprehensive Manufacturing">
+            </div>
+        </div>
+
+        <!-- Section 4: Surface Finishing -->
+        <div class="capability-row reverse col-lg-6">
+            <div class="capability-content">
+                <h2 class="capability-title">Superior Surface Finishing Capabilities</h2>
+                <p>
+                    Haneri’s advanced surface finishing ensures that every product meets the highest standards of aesthetics and longevity:
+                </p>
+                <ul>
+                    <li>Electroplating, Chrome Finish on Plastics, PU Paint, and Powder Coating</li>
+                    <li>Heat Transfer Printing, Hot Foiling, and Water Transfer Coating</li>
+                </ul>
+            </div>
+            <div class="capability-image">
+                <img src="images/place.jpg" alt="Surface Finishing Capabilities">
+            </div>
+        </div>
+
+        <!-- Section 5: Tooling -->
+        <div class="capability-row col-lg-6">
+            <div class="capability-content">
+                <h2 class="capability-title">Design & Tooling Expertise</h2>
+                <p>
+                    Our in-house tool room for mold manufacturing and sophisticated 3D CAD design capabilities empower us to innovate with precision. Every product benefits from our deep expertise in crafting tools and molds, ensuring seamless execution from concept to production.
+                </p>
+            </div>
+            <div class="capability-image">
+                <img src="images/place.jpg" alt="Design & Tooling Expertise">
+            </div>
+        </div>
+
+        <p style="text-align: justify; margin-top: 20px;">
+            With a relentless focus on R&D, superior manufacturing capabilities, and rigorous quality control, Haneri creates products that set a new benchmark in innovation, durability, and style. Accredited by leading national (ISO 9001:2019, IS 45001, IS 14001, BIS, and BEE) and international agencies, our labs and manufacturing facilities ensure compliance with the most stringent standards.
+        </p>
+
+        <h5 class="capability-conclusion">
+            <strong>At Haneri, we don’t just make products—we craft experiences.</strong>
+        </h5>
+    </div>
+</section>
+
         </main><!-- End .main -->
 
         <?php include("inc_files/footer.php"); ?>
