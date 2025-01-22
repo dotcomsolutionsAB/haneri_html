@@ -74,7 +74,8 @@
                         padding: 60px 20px;
                     }
                     .about p {
-                    font-family: 'Barlow Condensed';
+                        font-family: 'Barlow Condensed';
+                        font-size: 16px;
                     }
                 </style>
                 <section id="our-story" class="our_story">

@@ -76,7 +76,7 @@
                         }
                     </style>
                     <li class="active">
-                        <a href="about.php">About Us</a>
+                        <a href="#">About Us</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
                                 <div class="col-lg-12">
