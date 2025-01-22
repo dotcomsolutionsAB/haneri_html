@@ -12,7 +12,7 @@
                     Introducing Air Curve Design: Redefining Ceiling Fan Efficiency
                 </h2>
                 <p>
-                    At Haneri, innovation drives us to create products that are not only stylish but also deliver superior performance. Our revolutionary Air Curve Design technology transforms how ceiling fan blades are conceptualized, designed, and manufactured. With high-tech design and precision engineering, blades designed with Air Curve Design Technology offer unmatched air delivery, efficiency, and durability, showcasing the superiority of our product.
+                    At <strong>Haneri</strong>, innovation drives us to create products that are not only stylish but also deliver superior performance. Our revolutionary Air Curve Design technology transforms how ceiling fan blades are conceptualized, designed, and manufactured. With high-tech design and precision engineering, blades designed with Air Curve Design Technology offer unmatched air delivery, efficiency, and durability, showcasing the superiority of our product.
                 </p>
             </p>
             <br>
