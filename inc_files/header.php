@@ -82,23 +82,23 @@
                                 <div class="col-lg-12">
                                     <ul class="submenu">
                                         <li class="submenu-item">
-                                            <a href="about.php#our-story">Our Story</a>
+                                            <a href="our_story.php#our-story">Our Story</a>
                                             <div class="submenu-description">
-                                                <a href="about.php#vision" class="description-link">VISION</a> |
-                                                <a href="about.php#mission" class="description-link">MISSION</a> |
-                                                <a href="about.php#values" class="description-link">VALUES</a>
+                                                <a href="our_story.php#vision" class="description-link">VISION</a> |
+                                                <a href="our_story.php#mission" class="description-link">MISSION</a> |
+                                                <a href="our_story.php#values" class="description-link">VALUES</a>
                                             </div>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="about.php#our-brands">Our Brands</a>
+                                            <a href="our_brands.php#our-brands">Our Brands</a>
                                             <div class="submenu-description">
-                                                <a href="about.php#haner" class="description-link">Haner</a> |
-                                                <a href="about.php#bespoke" class="description-link">Bespoke</a> |
-                                                <a href="about.php#professional" class="description-link">Professional</a>
+                                                <a href="our_brands.php#haner" class="description-link">Haner</a> |
+                                                <a href="our_brands.php#bespoke" class="description-link">Bespoke</a> |
+                                                <a href="our_brands.php#professional" class="description-link">Professional</a>
                                             </div>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="about.php#capabilities">Capabilities</a>
+                                            <a href="capabilities.php#capabilities">Capabilities</a>
                                         </li>
                                     </ul>
                                 </div>

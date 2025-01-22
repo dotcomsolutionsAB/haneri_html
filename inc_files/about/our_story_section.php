@@ -1,10 +1,10 @@
 <div class="page-header pt-3 bg-transparent">
-    <div class="container text-left">
+    <div class="containe text-left">
         <h1 class="text-uppercase text-left about_section">OUR STORY</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
-<div class="container"> 
+<div class="containe"> 
     <div class="row row-bg">                            
         <div class="col-md-12">
             <p class="mb-2">
@@ -25,7 +25,7 @@
 
 
 <div class="history-section pb-3">
-    <div class="container">
+    <div class="containeres">
         <div class="row row-bg" id="vision">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
@@ -151,4 +151,11 @@
     .container{
         text-align: justify;
     }
+    .containeres{
+        padding: 0px 75px;
+    }
+    .history-section h2 {
+        margin-bottom: 1.6rem;
+    }
+    
 </style>
