@@ -146,7 +146,7 @@
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                     }
                 </style>
-                <section id="our-brands" class="capabilities-section">
+                <section id="our-brands" class="brands-section">
                     <?php include("inc_files/about/our-brands.php"); ?>
                 </section>
                 <br><br>
