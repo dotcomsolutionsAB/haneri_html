@@ -18,7 +18,7 @@
             <h2>Discover the Future of Fan Control with S.C.A.N Technology</h2>
             <div class="points">
                 <p>
-                    <strong>At Haneri,</strong> we've combined innovation with convenience in our state-of-the-art S.C.A.N Technology (Smooth Control , Advance Navigation). This technology, designed for the modern home, redefines your interaction with ceiling fans, offering an optional LED light for added convenience. With its sleek aesthetics and advanced functionality, this futuristic remote controller ensures seamless control, an enhanced user experience, and cutting-edge technology, all at your fingertips
+                    At<strong>Haneri,</strong> we've combined innovation with convenience in our state-of-the-art S.C.A.N Technology (Smooth Control , Advance Navigation). This technology, designed for the modern home, redefines your interaction with ceiling fans, offering an optional LED light for added convenience. With its sleek aesthetics and advanced functionality, this futuristic remote controller ensures seamless control, an enhanced user experience, and cutting-edge technology, all at your fingertips
                 </p>
                 <br>
                 <h2>
