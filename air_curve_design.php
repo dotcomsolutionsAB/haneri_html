@@ -37,7 +37,7 @@
         .banner-layer h1 {
             font-size: 80px;
             color: #fff;
-            font-family: 'Barlow Condensed', sans-serif;
+            font-family: Poppins,sans-serif;
         }
     </style>
 </head>
@@ -62,6 +62,7 @@
                 .about p {
                     font-family: 'Barlow Condensed';
                     font-size: 18px;
+                    color: #222529;
                 }
                 .air_curve_design {
                     padding: 20px 20px;
@@ -77,9 +78,13 @@
                     /* line-height: 22px; */
                     text-align: justify;
                     font-family: 'Barlow Condensed';
+                    color: #222529;
                 }    
                 .contents ul li{
                     margin-bottom: 15px;
+                }
+                strong{
+                    font-weight: 500;
                 }
             </style>
             <div class="container">                
