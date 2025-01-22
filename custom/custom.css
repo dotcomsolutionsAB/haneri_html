@@ -1,11 +1,9 @@
 .breadcrumb-nav {
     color: #000;
-    background: #94bfc612;
+    background: #f8f9fa;
     border-bottom: 3px solid #dfdfdf;
+    padding-top: 100px;
     margin-bottom: 0.2rem;
-}
-.page-header {
-    padding: 1rem 0 1.2rem;
 }
 .about_section{
     font-family: 'Raleway', sans-serif !important;
@@ -16,6 +14,10 @@
 .capabilities-section, .our-brands, .our-story {
     text-align: justify;
 }
+.menu .megamenu .submenu li:hover a {
+    text-decoration: none;
+}
+
 
 .header-transparent {
     background: aliceblue;
