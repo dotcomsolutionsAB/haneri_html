@@ -115,10 +115,10 @@
                     <li><strong>Breeze Mode:</strong> Powered by dynamic speed variation algorithms to mimic natural airflow.</li>
                     <li><strong>Turbo Mode:</strong> Leverages direct motor communication to maximize fan performance instantly.</li>
                 </ul>
-            </div>
-            <div class="brand-image">
-                <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
-            </div>
+            </div>            
+        </div>
+        <div class="brand-image">
+            <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
         </div>
     </div>
 
