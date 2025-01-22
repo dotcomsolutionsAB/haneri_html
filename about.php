@@ -69,7 +69,12 @@
             </nav>
 
             <div class="container">
-                <section id="our-story">
+                <style>
+                    .our_story{
+                        padding: 60px 20px;
+                    }
+                </style>
+                <section id="our-story" class="our_story">
                     <?php include("inc_files/about/our_story_section.php"); ?>
                 </section>
                 <br><br>
