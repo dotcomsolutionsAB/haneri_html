@@ -72,7 +72,7 @@
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .brands-section {
-                        padding: 50px 20px;
+                        padding: 20px 20px;
                         /* background-color: #f9f9f9; */
                         text-align: center;
                     }
@@ -113,7 +113,7 @@
                     }
 
                     .brand-content p {
-                        font-size: 16px;
+                        font-size: 18px;
                         line-height: 24px;
                         text-align: justify;
                         color: #555;

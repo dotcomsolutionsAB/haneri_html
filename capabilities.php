@@ -72,7 +72,7 @@
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {
-                        padding: 60px 20px;
+                        padding: 20px 20px;
                         text-align: center;
                     }
 
@@ -120,7 +120,7 @@
 
                     .capability-content p,
                     .capability-content ul {
-                        font-size: 14px;
+                        font-size: 18px;
                         line-height: 22px;
                         text-align: justify;
                         font-family: 'Barlow Condensed';

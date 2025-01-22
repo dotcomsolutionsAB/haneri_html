@@ -71,10 +71,11 @@
             <div class="container">
                 <style>
                     .our_story{
-                        padding: 60px 20px;
+                        padding: 20px 20px;
                     }
                     .about p {
                         font-family: 'Barlow Condensed';
+                        font-size: 18px;
                     }
                 </style>
                 <section id="our-story" class="our_story">
