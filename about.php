@@ -190,7 +190,7 @@
 
                     .capability-content {
                         flex: 1;
-                        max-width: 300px;
+                        max-width: 400px;
                         text-align: left;
                         padding: 20px 0;
                     }
@@ -221,7 +221,7 @@
                     /* Capability Images */
                     .capability-image {
                         flex: 1;
-                        max-width: 300px;
+                        max-width: 200px;
                     }
 
                     .capability-image img {
@@ -244,6 +244,7 @@
                 <section id="capabilities" class="capabilities-section">
                     <?php include("inc_files/about/capabilities_section.php"); ?>
                 </section>
+            </div>
 
         </main><!-- End .main -->
 
