@@ -111,27 +111,27 @@
         <div class="brand-content">
             <h2>Benefits for Customers</h2>
             <div>
-                <h2>Customized Lighting for Every Occasion:</h2>
+                <h4>Customized Lighting for Every Occasion:</h4>
                 <ul>
                     <li>Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</li>
                 </ul>
 
-                <h2>Enhanced Eye Comfort:</h2>
+                <h4>Enhanced Eye Comfort:</h4>
                 <ul>
                     <li>The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</li>
                 </ul>
 
-                <h2>Integrated Functionality:</h2>
+                <h4>Integrated Functionality:</h4>
                 <ul>
                     <li>Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</li>
                 </ul>
 
-                <h2>Energy Savings:</h2>
+                <h4>Energy Savings:</h4>
                 <ul>
                     <li>Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</li>
                 </ul>
 
-                <h2>Aesthetic Versatility:</h2>
+                <h4>Aesthetic Versatility:</h4>
                 <ul>
                     <li>The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</li>
                 </ul>
@@ -147,13 +147,14 @@
 <div class="brand-row-container">
     <div class="brand-row">
         <div class="brand-content">
-            <h2>Why Choose Haneri LumiAmbience Ceiling Fans?</h2>
+            <h4>Why Choose Haneri LumiAmbience Ceiling Fans?</h4>
             <p>
-            LumiAmbience Technology redefines what lighting can achieve, delivering advanced functionality and unparalleled comfort. With its unique lens diffuser, customizable colour options, and seamless integration with Haneri ceiling fans, LumiAmbience sets a new standard in lighting innovation. It’s not just about illumination—it’s about creating the perfect atmosphere for every moment.
+                LumiAmbience Technology redefines what lighting can achieve, delivering advanced functionality and unparalleled comfort. With its unique lens diffuser, customizable colour options, and seamless integration with Haneri ceiling fans, LumiAmbience sets a new standard in lighting innovation. It’s not just about illumination—it’s about creating the perfect atmosphere for every moment.
             </p>
             <br>
-            <h2>Experience LumiAmbience Technology Today!</h2>
-            <p>Transform your space with Haneri’s LumiAmbience-enabled ceiling fans. Experience lighting that adapts to your mood and lifestyle with the added elegance of Haneri’s cutting-edge design. Choose LumiAmbience Technology—where innovation meets ambience and lighting meets perfection.
+            <h4>Experience LumiAmbience Technology Today!</h4>
+            <p>
+                Transform your space with Haneri’s LumiAmbience-enabled ceiling fans. Experience lighting that adapts to your mood and lifestyle with the added elegance of Haneri’s cutting-edge design. Choose LumiAmbience Technology—where innovation meets ambience and lighting meets perfection.
             </p>
         </div>
         <div class="brand-image">
