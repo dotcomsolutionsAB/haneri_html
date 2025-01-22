@@ -24,6 +24,10 @@
 .header-transparent {
     background: aliceblue;
 }
+.sticky-header.header-middle.fixed {
+    height: 100px;
+    background: aliceblue;
+}
 .logo_div{
     width: 200px;
 }

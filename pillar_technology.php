@@ -40,7 +40,7 @@
 
 <body>
     <div class="page-wrapper">
-        <header class="header">
+        <header class="header header-transparent">
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
 

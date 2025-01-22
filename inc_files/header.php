@@ -82,7 +82,7 @@
                                 <div class="col-lg-12">
                                     <ul class="submenu">
                                         <li class="submenu-item">
-                                            <a href="our_story.php#our-story">Our Story</a>
+                                            <a href="our_story.php">Our Story</a>
                                             <div class="submenu-description">
                                                 <a href="our_story.php#vision" class="description-link">VISION</a> |
                                                 <a href="our_story.php#mission" class="description-link">MISSION</a> |
@@ -90,7 +90,7 @@
                                             </div>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="our_brands.php#our-brands">Our Brands</a>
+                                            <a href="our_brands.php">Our Brands</a>
                                             <div class="submenu-description">
                                                 <a href="our_brands.php#haner" class="description-link">Haner</a> |
                                                 <a href="our_brands.php#bespoke" class="description-link">Bespoke</a> |
@@ -98,7 +98,7 @@
                                             </div>
                                         </li>
                                         <li class="submenu-item">
-                                            <a href="capabilities.php#capabilities">Capabilities</a>
+                                            <a href="capabilities.php">Capabilities</a>
                                         </li>
                                     </ul>
                                 </div>
