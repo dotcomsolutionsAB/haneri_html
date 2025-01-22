@@ -70,6 +70,14 @@
                 .containe h2{
                     font-weight: 400;
                 }
+                .content ul{
+                    list-style-type: disc;
+                    margin-left: 20px;
+                    font-size: 18px;
+                    /* line-height: 22px; */
+                    text-align: justify;
+                    font-family: 'Barlow Condensed';
+                }
             </style>
             <div class="container">                
                 <section id="air_curve_design" class="air_curve_design">
