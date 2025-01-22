@@ -1,6 +1,6 @@
 <div class="page-header pt-3 bg-transparent">
     <div class="container text-left">
-        <h1 class="font4 text-uppercase">Air Curve Design</h1>
+        <h1 class="text-uppercase text-left about_section">Air Curve Design</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 

@@ -63,7 +63,7 @@
                     font-family: 'Barlow Condensed';
                     font-size: 18px;
                 }
-                #our-story {
+                .air_curve_design {
                     padding: 20px 20px;
                     padding-top: 1rem;
                 }
