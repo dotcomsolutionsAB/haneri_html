@@ -70,7 +70,7 @@
                 .containe h2{
                     font-weight: 400;
                 }
-                .content ul{
+                .contents ul{
                     list-style-type: disc;
                     margin-left: 20px;
                     font-size: 18px;
