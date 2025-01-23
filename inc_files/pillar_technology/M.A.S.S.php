@@ -212,19 +212,20 @@
                         Air delivery is measured in cubic meters per minute (CMM) or cubic feet per minute (CFM). It represents the actual volume of air a fan moves, which depends on factors like blade design, motor efficiency, and blade surface area—not just RPM.
                     </li>
                 </ul>
-
                 <h4>Wind Chill Effect:</h4>
                 <ul>
                     <li>
                         The cooling sensation you feel from a fan is not caused by air temperature changes but by the movement of air across your skin. This process, known as the wind chill effect, accelerates evaporation of sweat, making you feel cooler. The key is the quality and volume of airflow, not the speed at which blades rotate.
                     </li>
                 </ul>
+
                 <h2>
                     2. Factors That Actually Determine Air Delivery
                 </h2>
                 <h4>
                     Effective air delivery depends on the following engineering factors:
                 </h4>
+                <br>
                 <ul>
                     <li>
                         <strong>Blade Design and Aerodynamics:</strong>
@@ -259,6 +260,7 @@
                 <h4>
                     Operating a fan at excessively high RPM can lead to several issues:
                 </h4>
+                <br>
                 <ul>
                     <li><strong>Noise Pollution:</strong>
                         High RPM generates turbulence and mechanical noise, disrupting quiet environments like bedrooms or offices.
@@ -291,6 +293,7 @@
                 <h4>
                     Contrary to popular belief, low RPM fans with innovative designs can create superior comfort by leveraging the wind chill effect:
                 </h4>
+                <br>
                 <ul>
                     <li><strong>Smooth and Controlled Airflow:</strong>
                         Fans with Silent M.A.S.S Technology (More Air, Slow Speed) use aerodynamically optimized blades to deliver uniform airflow at reduced speeds, enhancing the wind chill effect without turbulence.
