@@ -11,11 +11,10 @@
         font-size: 18px;
     }
 </style>
-<!-- Row 1: S.C.A.N -->
+<!-- Row 1: -->
 <div class="brand-row-container">
     <div class="brand-row">
         <div class="brand-content">
-            <!-- <h2>Discover the Future of Fan Control with S.C.A.N Technology</h2> -->
             <div class="points">
                 <p>
                     <strong>Haneri</strong> is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions. Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your needs, including home, Office and commercial spaces.
@@ -37,7 +36,7 @@
     </div>
 </div>
 
-<!-- Row 2: Key Features -->
+<!-- Row 2: Introducing Silent M.A.S.S Technology: More Air, Slow Speed -->
 <div class="brand-row-container">
     <div class="brand-row reverse">
         <div class="brand-content">
@@ -60,7 +59,7 @@
     </div>
 </div>
 
-<!-- Row 3: Technology -->
+<!-- Row 3: Key Features of Silent M.A.S.S Technology -->
 <div class="brand-row-container">
     <div class="brand-row">
         <div class="brand-content">
@@ -95,22 +94,51 @@
             <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
         </div>        
     </div>
-    <div class="points">
-        <h2>The Science Behind Silent M.A.S.S Technology</h2>
-        <ul>
-            <li><strong>Aerodynamic Optimization with Air Curve Design:</strong>
-                Advanced blade profiles create an efficient pressure differential, maximizing air displacement while operating at slower speeds. The design minimizes resistance and turbulence, reducing energy wastage and noise.
-            </li>
-            <li><strong>High-Torque Motor Performance:</strong>
-                TurboSilent BLDC Motors leverage high torque generation to power blades effectively at low RPM, ensuring consistent airflow without overloading the system. Field-oriented control (FOC) and advanced motor algorithms enable precise speed regulation, maintaining performance consistency.
-            </li>
-            <li><strong>Integrated System Design:</strong>
-                The synergy between Air Curve Design and TurboSilent BLDC Motors ensures that every component is optimized for efficiency and performance, eliminating bottlenecks in airflow or energy transfer.
-            </li>
-            <li><strong>Energy Optimization:</strong>
-                Combined with energy-efficient motor controls and low-drag blade designs, Silent M.A.S.S Technology reduces power consumption significantly, contributing to lower operational costs and a smaller carbon footprint.
-            </li>
-        </ul>
+</div>
+<!-- Row : The Science Behind Silent M.A.S.S Technology -->
+<div class="brand-row-container">
+    <div class="brand-row">
+        <div class="brand-content">
+            <h2>The Science Behind Silent M.A.S.S Technology</h2>
+            <div class="points">
+                <h2>The Science Behind Silent M.A.S.S Technology</h2>
+                <ul>
+                    <li>
+                        <strong>
+                            Aerodynamic Optimization with Air Curve Design:
+                        </strong>
+                        Advanced blade profiles create an efficient pressure differential, maximizing air displacement while operating at slower speeds. The design minimizes resistance and turbulence, reducing energy wastage and noise.
+                    </li>
+                    <li>
+                        <strong>
+                            High-Torque Motor Performance:
+                        </strong>
+                        TurboSilent BLDC Motors leverage high torque generation to power blades effectively at low RPM, ensuring consistent airflow without overloading the system. Field-oriented control (FOC) and advanced motor algorithms enable precise speed regulation, maintaining performance consistency.
+                    </li>
+                    <li>
+                        <strong>
+                            Integrated System Design:
+                        </strong>
+                        The synergy between Air Curve Design and TurboSilent BLDC Motors ensures that every component is optimized for efficiency and performance, eliminating bottlenecks in airflow or energy transfer.
+                    </li>
+                    <li>
+                        <strong>
+                            Advanced Blade Aerodynamics:
+                        </strong>
+                        Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.
+                    </li>
+                    <li>
+                        <strong>
+                            Trademarked Technology:
+                        </strong>
+                        Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.
+                    </li>
+                </ul>
+            </div>      
+        </div>
+        <div class="brand-image">
+            <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
+        </div>        
     </div> 
 </div>
 
