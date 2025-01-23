@@ -40,9 +40,6 @@
             color: #fff;
             font-family: 'Barlow Condensed', sans-serif;
         }
-        #our-story {
-            padding-top: 1rem;
-        }
     </style>
 </head>
 
@@ -71,7 +68,10 @@
                         /* background-color: #f9f9f9; */
                         text-align: center;
                     }
-
+                    .mass {
+                        padding: 20px 20px;
+                        padding-top: 1rem;
+                    }
                     /* .brands-section .section-title {
                         font-size: 36px;
                         font-weight: bold;
@@ -150,7 +150,7 @@
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                     }
                 </style>                          
-                <section id="air_curve_design">
+                <section id="mass" class="mass">
                     <?php include("test.php"); ?>
                 </section>
             </div>
