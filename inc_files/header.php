@@ -85,16 +85,16 @@
                                             <a href="our_story.php">Our Story</a>
                                             <div class="submenu-description">
                                                 <a href="our_story.php#vision" class="description-link">VISION</a> |
-                                                <a href="our_story.php#mission" class="description-link">MISSION</a> |
-                                                <a href="our_story.php#values" class="description-link">VALUES</a>
+                                                <a href="our_story.php#mission" class="description-link"> MISSION</a> |
+                                                <a href="our_story.php#values" class="description-link"> VALUES</a>
                                             </div>
                                         </li>
                                         <li class="submenu-item">
                                             <a href="our_brands.php">Our Brands</a>
                                             <div class="submenu-description">
                                                 <a href="our_brands.php#haner" class="description-link">Haner</a> |
-                                                <a href="our_brands.php#bespoke" class="description-link">Bespoke</a> |
-                                                <a href="our_brands.php#professional" class="description-link">Professional</a>
+                                                <a href="our_brands.php#bespoke" class="description-link"> Bespoke</a> |
+                                                <a href="our_brands.php#professional" class="description-link"> Professional</a>
                                             </div>
                                         </li>
                                         <li class="submenu-item">
