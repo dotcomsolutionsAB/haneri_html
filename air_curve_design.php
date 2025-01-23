@@ -65,7 +65,7 @@
                     color: #222529;
                 }
                 .air_curve_design {
-                    padding: 20px 20px;
+                    padding: 20px 0px;
                     padding-top: 1rem;
                 }
                 .containe h2{

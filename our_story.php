@@ -62,7 +62,7 @@
             <div class="container">
                 <style>
                     #our-story {
-                        padding: 20px 20px;
+                        padding: 20px 0px;
                         padding-top: 1rem;
                     }
                     .about p {

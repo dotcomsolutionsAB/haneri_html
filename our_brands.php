@@ -66,7 +66,7 @@
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .brands-section {
-                        padding: 20px 20px;
+                        padding: 20px 0px;
                         /* background-color: #f9f9f9; */
                         text-align: center;
                     }
@@ -103,7 +103,7 @@
                         flex: 1;
                         max-width: 70%;
                         text-align: left;
-                        padding: 10px;
+                        padding: 10px 0px;
                     }
 
                     .brand-content p {

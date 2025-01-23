@@ -69,7 +69,7 @@
                         text-align: center;
                     }
                     .lumiambience {
-                        padding: 20px 20px;
+                        padding: 20px 0px;
                         padding-top: 1rem;
                     }
                     /* .brands-section .section-title {
@@ -104,7 +104,7 @@
                         flex: 1;
                         max-width: 65%;
                         text-align: left;
-                        padding: 10px;
+                        padding: 10px 0px;
                     }
                     .brand-content h2{
                         font-weight: 400;

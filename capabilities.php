@@ -64,7 +64,7 @@
                 <style type="text/css" media="all">
                     /* General Section Styling */
                     .capabilities-section {
-                        padding: 20px 20px;
+                        padding: 20px 0px;
                         text-align: center;
                     }
 
