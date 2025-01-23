@@ -152,7 +152,7 @@
                     }
                 </style>                          
                 <section id="mass" class="mass">
-                    <?php include("test.php"); ?>
+                    <?php include("inc_files/pillar_technology/mass_tech.php"); ?>
                 </section>
             </div>
         </main><!-- End .main -->
