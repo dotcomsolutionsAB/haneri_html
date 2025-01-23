@@ -47,7 +47,36 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-
+            <style>
+                .about p {
+                    font-family: 'Barlow Condensed';
+                    font-size: 18px;
+                    color: #222529;
+                }
+                .air_curve_design {
+                    padding: 20px 20px;
+                    padding-top: 1rem;
+                }
+                .containe h2{
+                    font-weight: 400;
+                }
+                .contents ul{
+                    list-style-type: auto;
+                    margin-left: 20px;
+                    font-size: 18px;
+                    /* line-height: 22px; */
+                    text-align: justify;
+                    font-family: 'Barlow Condensed';
+                    color: #222529;
+                }    
+                .contents ul li{
+                    margin-bottom: 15px;
+                }
+                strong{
+                    font-weight: 600;
+                    font-size: larger;
+                }
+            </style>
             <div class="container">                            
                 <section id="turbosilent_bldc">
                     <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>

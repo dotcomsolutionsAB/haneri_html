@@ -1,26 +1,30 @@
 <div class="page-header pt-3 bg-transparent">
     <div class="container text-left">
-        <h1 class="font4 text-uppercase">TurboSilent BLDC Technology</h1>
+        <h1 class="text-uppercase text-left about_section">TurboSilent BLDC Technology</h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
-<div class="container">
+<div class="containe">
     <div class="row row-bg">
         <div class="col-md-12">
             <p class="mb-2">
-            <h2>Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
-            <p>
-                At HANERI, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design not only delivers higher torque and exceptional durability but also ensures unmatched energy efficiency, setting a new benchmark for ceiling fan performance and contributing to a greener environment.</p>
+                <h2>
+                    Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency
+                </h2>
+                <p>
+                    At <strong>Haneri</strong>, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design not only delivers higher torque and exceptional durability but also ensures unmatched energy efficiency, setting a new benchmark for ceiling fan performance and contributing to a greener environment.
+                </p>
             </p>
             <br>
-            <p>
-                What is TurboSilent BLDC Technology?
+            <p class="mb-2">
+                <h2>
+                    What is TurboSilent BLDC Technology?
+                </h2>
+                <p>
+                    TurboSilent BLDC (Brushless Direct Current) Technology is an in-house developed motor system that employs high-tech electromagnetic and mechanical design principles. This cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering industry-leading reliability and precision that you can trust.
+                </p>
             </p>
-            <br>
-            <p>
-                TurboSilent BLDC (Brushless Direct Current) Technology is an in-house developed motor system that employs high-tech electromagnetic and mechanical design principles. This cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering industry-leading reliability and precision that you can trust.
-            </p>
-        </div><!-- End .col-md-6 -->
+        </div>
     </div><!-- End .row -->
 </div><!-- End .container -->
 
