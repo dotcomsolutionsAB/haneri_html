@@ -46,7 +46,11 @@
         <header class="header header-transparent">
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
-
+<style>
+    .minipopup-box{
+        display:none;
+    }
+</style>
         <main class="main">
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
@@ -69,13 +73,13 @@
                             <div class="row">
                                 <div class="col-md-4 product-single-gallery">
                                     <div class="product-slider-container">
-                                        <div class="label-group">
+                                        <!-- <div class="label-group">
                                             <div class="product-label label-hot">HOT</div>
-                                            <!---->
+                                            
                                             <div class="product-label label-sale">
                                                 -16%
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                                             <div class="product-item">
