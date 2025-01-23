@@ -141,10 +141,10 @@
 
                     .brand-image img {
                         width: 100%;
-                        max-width: 300px;
+                        max-width: 500px;
                         height: auto;
                         object-fit: contain;
-                        border-radius: 10px;
+                        border-radius: 0px;
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                     }
                 </style>
