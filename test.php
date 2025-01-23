@@ -101,36 +101,44 @@
         <div class="brand-content">
             <h2>The Science Behind Silent M.A.S.S Technology</h2>
             <div class="points">
-                <h2>The Science Behind Silent M.A.S.S Technology</h2>
+                <h4>
+                    Aerodynamic Optimization with Air Curve Design:
+                </h4>
                 <ul>
                     <li>
-                        <strong>
-                            Aerodynamic Optimization with Air Curve Design:
-                        </strong>
                         Advanced blade profiles create an efficient pressure differential, maximizing air displacement while operating at slower speeds. The design minimizes resistance and turbulence, reducing energy wastage and noise.
                     </li>
-                    <li>
-                        <strong>
-                            High-Torque Motor Performance:
-                        </strong>
+                <ul>
+                <h4>
+                    High-Torque Motor Performance:
+                </h4>
+                <ul>
+                    <li>                        
                         TurboSilent BLDC Motors leverage high torque generation to power blades effectively at low RPM, ensuring consistent airflow without overloading the system. Field-oriented control (FOC) and advanced motor algorithms enable precise speed regulation, maintaining performance consistency.
                     </li>
-                    <li>
-                        <strong>
-                            Integrated System Design:
-                        </strong>
+                </ul>
+                <h4>
+                    Integrated System Design:
+                </h4>
+                <ul>
+                    <li>                        
                         The synergy between Air Curve Design and TurboSilent BLDC Motors ensures that every component is optimized for efficiency and performance, eliminating bottlenecks in airflow or energy transfer.
                     </li>
+                </ul>
+                <h4>
+                    Advanced Blade Aerodynamics:
+                </h4>
+                <ul>
                     <li>
-                        <strong>
-                            Advanced Blade Aerodynamics:
-                        </strong>
+                        
                         Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.
                     </li>
-                    <li>
-                        <strong>
-                            Trademarked Technology:
-                        </strong>
+                </ul>
+                <h4>
+                    Trademarked Technology:
+                </h4>
+                <ul>
+                    <li>                        
                         Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.
                     </li>
                 </ul>
