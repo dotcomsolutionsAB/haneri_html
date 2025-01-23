@@ -35,35 +35,50 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6">
+            <div class="col-xl-7 col-lg-6 contents">
                 <h2>Unique Advantages of TurboSilent BLDC Technology</h2>
                 <ul>
-                    <li><strong>1. Higher Torque for Optimized Performance:</strong>
+                    <li>
+                        <strong>
+                            1. Higher Torque for Optimized Performance:
+                        </strong>
                         The TurboSilent motor stands out with its superior performance. It achieves higher torque through optimized magnetic flux density and reduced electromagnetic losses. Advanced stator and magnet designs enhance the torque constant (kT), providing superior air circulation, even at varying speeds.
                     </li>
-                    <li><strong>2. Long-Term Durability:</strong>
+                    <li>
+                        <strong>
+                            2. Long-Term Durability:
+                        </strong>
                         Designed for long-term durability, the TurboSilent motors are constructed with premium-grade laminations and heat-resistant winding materials to minimize core losses and thermal degradation. The motor is fitted with high-precision ball bearings and balanced rotor assemblies, reducing mechanical wear and extending operational life.
                     </li>
-                    <li><strong>3. Enhanced Energy Efficiency:</strong>
+                    <li>
+                        <strong>
+                            3. Enhanced Energy Efficiency:
+                        </strong>
                         TurboSilent motors utilize sinusoidal commutation to reduce current ripple and improve efficiency. Power electronics are optimized to deliver consistent performance while consuming up to 65% less energy than traditional motors.
                     </li>
-                    <li><strong>4. Thermal Management of Electronics:</strong>
+                    <li>
+                        <strong>
+                            4. Thermal Management of Electronics:
+                        </strong>
                         Electronics PCBs are made in India and have been tested according to Indian conditions. A key focus is the thermal management of critical components to ensure longer life and better performance.
                     </li>
-                    <li><strong>5. In-House Innovation and Testing:</strong>
+                    <li>
+                        <strong>
+                            5. In-House Innovation and Testing:
+                        </strong>
                         Developed using simulation tools for computational electromagnetic analysis (CEM). Rigorously validated under real-world conditions to ensure robustness across a wide range of operating environments.
                     </li>
                 </ul>
@@ -74,23 +89,28 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 order-lg-first">
-                <h2>The Science Behind TurboSilent BLDC Technology</h2>
+            <div class="col-xl-7 col-lg-6 order-lg-first contents">
+                <h2>
+                    The Science Behind TurboSilent BLDC Technology
+                </h2>
                 <ul>
-                    <li><strong>Electromagnetic Optimization:</strong>
+                    <li>
+                        <strong>
+                            Electromagnetic Optimization:
+                        </strong>
                         Uses Finite Element Analysis (FEA) to design and validate the magnetic circuit, maximizing flux density while minimizing losses.
                     </li>
                     <li><strong>Thermal Management:</strong>
@@ -102,7 +122,28 @@
                     <li><strong>Structural Engineering:</strong>
                         The magnet rotor dynamics are meticulously optimized, providing reassuring stability and minimizing resonance at all operating speeds. Lightweight, high-strength materials not only reduce the motor's overall weight but also enhance its durability and performance, achieving the perfect balance between these factors.
                     </li>
-                </ul>
+                </ul>                
+            </div>
+        </div><!-- End .row -->
+
+        <div class="row row-bg">
+            <div class="col-xl-5 col-lg-6">
+                <div class="about-slider owl-carousel owl-theme dots-simple">
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                </div><!-- End .about-slider -->
+            </div><!-- End .col-lg-5 -->
+            <div class="col-xl-7 col-lg-6 contents">
                 <h2>
                     Benefits for Customers
                 </h2>
@@ -123,27 +164,9 @@
                 <h2>
                     Why Choose HANERI TurboSilent Ceiling Fans?</h2>
                 <p>
-                    HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.</p>
+                    HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.
+                </p>
             </div>
-        </div><!-- End .row -->
-
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-3.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-2.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="assets/images/demoes/demo3/about/img-1.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
         </div><!-- End .container -->
     </div><!-- End .history-section -->
 
