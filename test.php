@@ -193,12 +193,15 @@
 
 <!-- Row 5: Benefits -->
 <div class="brand-row-container">
-    <div class="brand-row reverse">
-        <div class="brand-content">
-            <h2>Breaking the Myth: Speed Isn’t Everything</h2>
-            <p>
-                The belief that higher RPM (rotations per minute) equals better air delivery in ceiling fans is one of the most persistent myths in fan performance. While RPM contributes to fan operation, it is not the sole determinant of air delivery or cooling comfort. In fact, advanced engineering principles and natural phenomena like the wind chill effect show that high RPM is unnecessary for effective air circulation. Here's why:
-            </p>
+    <div class="head">
+        <h2>
+            Breaking the Myth: Speed Isn’t Everything</h2>
+        <p>
+            The belief that higher RPM (rotations per minute) equals better air delivery in ceiling fans is one of the most persistent myths in fan performance. While RPM contributes to fan operation, it is not the sole determinant of air delivery or cooling comfort. In fact, advanced engineering principles and natural phenomena like the wind chill effect show that high RPM is unnecessary for effective air circulation. Here's why:
+        </p>
+    </div>
+    <div class="brand-row reverse">        
+        <div class="brand-content">            
             <div class="points">                     
                 <h2>
                     1. Understanding Air Delivery and the Wind Chill Effect
@@ -271,7 +274,16 @@
                     </li>
                 </ul>
             </div>
-            <br>
+        </div>
+        <div class="brand-image">
+            <img src="images/place.jpg" alt="Haneri - Excellence in Manufacturing">
+        </div>
+    </div>
+</div>
+<!-- Row 7: Why Choose? -->
+<div class="brand-row-container">
+    <div class="brand-row reverse">
+        <div class="brand-content">
             <h2>
                 How Low RPM and Wind Chill Work Together
             </h2>
@@ -297,7 +309,7 @@
                     <br>
                     Conclusion
                     High RPM is not the key to effective air delivery or cooling comfort. Low RPM fans achieve superior performance without the drawbacks of noise, energy waste, and wear and tear by focusing on advanced blade design, efficient motors, and leveraging the natural wind chill effect. Haneri’s cutting-edge technologies, such as Silent M.A.S.S, prove that innovation and engineering excellence truly matter in delivering powerful, efficient, and quiet cooling.
-                </p>
+                </p>              
             </div>
         </div>
         <div class="brand-image">
