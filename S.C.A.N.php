@@ -140,8 +140,9 @@
                         flex: 1;
                         max-width: 30%;
                         display: flex;
-                        align-items: center;
+                        align-items: flex-start;
                         justify-content: center;
+                        padding-top: 15px;
                     }
 
                     .brand-image img {
