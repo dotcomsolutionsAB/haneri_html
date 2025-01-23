@@ -162,6 +162,7 @@
 
                                     <div class="product-desc">
                                         <p>
+                                            <strong>A Perfect Balance of Elegance and Performance</strong>
                                             The FengShui ceiling fan is a groundbreaking addition to modern living spaces, embodying the harmonious principles of balance, flow, and functionality. Inspired by the ancient art of Feng Shui, this fan is designed to enhance any room's energy and aesthetic appeal. - EXPAND AIR DELIVERY ASPECT
                                         </p>
                                     </div><!-- End .product-desc -->
@@ -170,7 +171,7 @@
                                         <!---->
                                         <li>
                                             SKU:
-                                            <strong>FENGSHUI-1-1-2</strong>
+                                            <strong>FENGSHUI</strong>
                                         </li>
 
                                         <li>

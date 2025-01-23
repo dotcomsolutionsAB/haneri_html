@@ -3,13 +3,15 @@
         <li class="nav-item">
             <a class="nav-link active" id="product-tab-desc" data-toggle="tab"
                 href="#product-desc-content" role="tab" aria-controls="product-desc-content"
-                aria-selected="true">Description</a>
+                aria-selected="true">Elegant Design
+                </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" id="product-tab-size" data-toggle="tab"
                 href="#product-size-content" role="tab" aria-controls="product-size-content"
-                aria-selected="true">Size Guide</a>
+                aria-selected="true">Silent & Efficient Performance
+                </a>
         </li>
 
         <li class="nav-item">
@@ -30,16 +32,10 @@
         <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
             aria-labelledby="product-tab-desc">
             <div class="product-desc-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    nostrud ipsum
-                    consectetur sed do, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
-                <ul>
+                <p>
+                    The FengShui fan stands out with its sleek, sculpted blades, creating an artistic statement while maintaining a fluidic form. The flowing lines and premium finish evoke a sense of calm and sophistication, complementing diverse interiors – from contemporary to classic. FengShui brings you the performance of Haneri's Air Curve Design technology in a modern and artistic design. 
+                </p>
+                <!-- <ul>
                     <li>Any Product types that You want - Simple,
                         Configurable</li>
                     <li>Downloadable/Digital Products, Virtual
@@ -51,72 +47,19 @@
                     minim
                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo
-                    consequat. </p>
+                    consequat. 
+                </p> -->
             </div><!-- End .product-desc-content -->
         </div><!-- End .tab-pane -->
 
         <div class="tab-pane fade" id="product-size-content" role="tabpanel"
             aria-labelledby="product-tab-size">
-            <div class="product-size-content">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="assets/images/products/single/body-shape.png"
-                            alt="body shape">
-                    </div><!-- End .col-md-4 -->
-
-                    <div class="col-md-8">
-                        <table class="table table-size">
-                            <thead>
-                                <tr>
-                                    <th>SIZE</th>
-                                    <th>CHEST(in.)</th>
-                                    <th>WAIST(in.)</th>
-                                    <th>HIPS(in.)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>XS</td>
-                                    <td>34-36</td>
-                                    <td>27-29</td>
-                                    <td>34.5-36.5</td>
-                                </tr>
-                                <tr>
-                                    <td>S</td>
-                                    <td>36-38</td>
-                                    <td>29-31</td>
-                                    <td>36.5-38.5</td>
-                                </tr>
-                                <tr>
-                                    <td>M</td>
-                                    <td>38-40</td>
-                                    <td>31-33</td>
-                                    <td>38.5-40.5</td>
-                                </tr>
-                                <tr>
-                                    <td>L</td>
-                                    <td>40-42</td>
-                                    <td>33-36</td>
-                                    <td>40.5-43.5</td>
-                                </tr>
-                                <tr>
-                                    <td>XL</td>
-                                    <td>42-45</td>
-                                    <td>36-40</td>
-                                    <td>43.5-47.5</td>
-                                </tr>
-                                <tr>
-                                    <td>XXL</td>
-                                    <td>45-48</td>
-                                    <td>40-44</td>
-                                    <td>47.5-51.5</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div><!-- End .row -->
-            </div><!-- End .product-size-content -->
-        </div><!-- End .tab-pane -->
+            <div class="product-desc-content">
+                <p>
+                    Equipped with Haneri's trademarked cutting-edge Turbo Silent BLDC motor and Silent MASS® technology, FengShui delivers superior air thrust with whisper-quiet operation and remarkable energy efficiency. Its aerodynamically engineered blade design ensures natural wind-like airflow, cooling your space evenly while consuming minimal power. Additionally, Fengshui's extra large 1320mm blade span makes it suitable for larger rooms without compromising air comfort. Fengshui’s plastic blades resist bending during cleaning over time, ensuring consistent airflow and silent operations  throughout the fan’s lifespan 
+                </p>
+            </div><!-- End .product-desc-content -->
+        </div>
 
         <div class="tab-pane fade" id="product-tags-content" role="tabpanel"
             aria-labelledby="product-tab-tags">
@@ -143,7 +86,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div><!-- End .tab-pane -->
+        </div>
 
         <div class="tab-pane fade" id="product-reviews-content" role="tabpanel"
             aria-labelledby="product-tab-reviews">
@@ -164,9 +107,9 @@
                                 <div class="ratings-container float-sm-right">
                                     <div class="product-ratings">
                                         <span class="ratings" style="width:60%"></span>
-                                        <!-- End .ratings -->
+                                        
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
+                                    </div>
                                 </div>
 
                                 <span class="comment-by">
@@ -213,7 +156,7 @@
                             <label>Your review <span class="required">*</span></label>
                             <textarea cols="5" rows="6"
                                 class="form-control form-control-sm"></textarea>
-                        </div><!-- End .form-group -->
+                        </div>
 
 
                         <div class="row">
@@ -222,7 +165,7 @@
                                     <label>Name <span class="required">*</span></label>
                                     <input type="text" class="form-control form-control-sm"
                                         required>
-                                </div><!-- End .form-group -->
+                                </div>
                             </div>
 
                             <div class="col-md-6 col-xl-12">
@@ -230,7 +173,7 @@
                                     <label>Email <span class="required">*</span></label>
                                     <input type="text" class="form-control form-control-sm"
                                         required>
-                                </div><!-- End .form-group -->
+                                </div>
                             </div>
 
                             <div class="col-md-6 col-xl-12">
@@ -248,8 +191,9 @@
 
                         <input type="submit" class="btn btn-primary" value="Submit">
                     </form>
-                </div><!-- End .add-product-review -->
-            </div><!-- End .product-reviews-content -->
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
