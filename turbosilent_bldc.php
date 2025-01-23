@@ -53,7 +53,7 @@
                     font-size: 18px;
                     color: #222529;
                 }
-                .air_curve_design {
+                .turbosilent_bldc {
                     padding: 20px 20px;
                     padding-top: 1rem;
                 }
@@ -78,7 +78,7 @@
                 }
             </style>
             <div class="container">                            
-                <section id="turbosilent_bldc">
+                <section id="turbosilent_bldc" class="turbosilent_bldc">
                     <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>
                 </section>
             </div>
