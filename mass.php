@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>M.A.S.S*</title>
+    <title>M.A.S.S®</title>
     <?php include("inc_files/fav_icon_others.php"); ?>
 
     <script>
@@ -55,7 +55,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="demo3.html">Home</a></li>
                         <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
-                        <li class="breadcrumb-item active" aria-current="page">M.A.S.S</li>
+                        <li class="breadcrumb-item active" aria-current="page">M.A.S.S®</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
