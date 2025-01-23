@@ -82,7 +82,7 @@
 
                     /* Brand Rows */
                     .brand-row-container {
-                        margin-bottom: 0px;
+                        margin-bottom: 30px;
                         padding: 20px 0px;
                         /* border: 1px solid #ddd; */
                         border-radius: 10px;
