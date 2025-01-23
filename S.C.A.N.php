@@ -104,7 +104,7 @@
 
                     .brand-content {
                         flex: 1;
-                        max-width: 70%;
+                        max-width: 65%;
                         text-align: left;
                         padding: 10px;
                     }
@@ -132,7 +132,7 @@
 
                     .brand-image {
                         flex: 1;
-                        max-width: 30%;
+                        max-width: 35%;
                         display: flex;
                         align-items: flex-start;
                         justify-content: center;
