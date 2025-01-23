@@ -195,15 +195,11 @@
 <div class="brand-row-container">
     <div class="brand-row reverse">
         <div class="brand-content">
-            <!-- <h2>Benefits for Customers
-            </h2> -->
-            <div class="points">
-                <h4>Breaking the Myth: Speed Isn’t Everything</h4>
-                <ul>
-                    <li>
-                        The belief that higher RPM (rotations per minute) equals better air delivery in ceiling fans is one of the most persistent myths in fan performance. While RPM contributes to fan operation, it is not the sole determinant of air delivery or cooling comfort. In fact, advanced engineering principles and natural phenomena like the wind chill effect show that high RPM is unnecessary for effective air circulation. Here's why:
-                    </li>
-                </ul>
+            <h2>Breaking the Myth: Speed Isn’t Everything</h2>
+            <p>
+                The belief that higher RPM (rotations per minute) equals better air delivery in ceiling fans is one of the most persistent myths in fan performance. While RPM contributes to fan operation, it is not the sole determinant of air delivery or cooling comfort. In fact, advanced engineering principles and natural phenomena like the wind chill effect show that high RPM is unnecessary for effective air circulation. Here's why:
+            </p>
+            <div class="points">                     
                 <h2>
                     1. Understanding Air Delivery and the Wind Chill Effect
                 </h2>
