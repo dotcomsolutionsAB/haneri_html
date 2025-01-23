@@ -82,7 +82,7 @@
 
                     /* Brand Rows */
                     .brand-row-container {
-                        margin-bottom: 30px;
+                        margin-bottom: 0px;
                         padding: 20px 0px;
                         /* border: 1px solid #ddd; */
                         border-radius: 10px;
@@ -105,12 +105,17 @@
                         max-width: 70%;
                         text-align: left;
                         padding: 10px;
+                        text-align: justify;
                     }
-                    .brand-content h2{
+                    .brand-content h2, .head h2{
                         font-weight: 400;
                         margin-bottom: 1.2rem;
                     }
-
+                    .head p {
+                        font-size: 18px;
+                        color: #222;
+                        font-family: 'Barlow Condensed';
+                    }
                     .brand-content p {
                         font-size: 18px;
                         line-height: 24px;
