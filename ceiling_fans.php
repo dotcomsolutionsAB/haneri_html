@@ -561,7 +561,7 @@
                     </div><!-- End .main-content -->
 
                     <!-- <div class="sidebar-overlay"></div>
-                    <div class="sidebar-toggle custom-sidebar-toggle"><i class="fas fa-sliders-h"></i></div> -->
+                    <div class="sidebar-toggle custom-sidebar-toggle"><i class="fas fa-sliders-h"></i></div>
                     <aside class="sidebar-product col-lg-3 mobile-sidebar">
                         <div class="sidebar-wrapper">
                             <div class="widget category-banner pt-0 pb-2 mt-0">
@@ -577,8 +577,8 @@
                                     <h3 class="coupon-sale-text font2 ml-0 mt-0"><sup>$</sup>199<sup>99</sup></h3>
                                     <a href="demo3-shop.html" class="btn btn-dark btn-xl ml-0" role="button">Shop
                                         Now</a>
-                                </div><!-- End .category-slide-content -->
-                            </div><!-- End .widget -->
+                                </div>
+                            </div>
 
                             <div class="widget widget-featured">
                                 <h3 class="widget-title">Featured</h3>
@@ -602,14 +602,14 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
@@ -625,14 +625,14 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
@@ -650,16 +650,16 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div><!-- End .featured-col -->
+                                        </div>
 
                                         <div class="featured-col">
                                             <div class="product-default left-details product-widget">
@@ -678,14 +678,14 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
@@ -703,14 +703,14 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
@@ -728,23 +728,23 @@
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
                                                             <span class="ratings" style="width:100%"></span>
-                                                            <!-- End .ratings -->
+                                                            
                                                             <span class="tooltiptext tooltip-top"></span>
-                                                        </div><!-- End .product-ratings -->
-                                                    </div><!-- End .ratings-container -->
+                                                        </div>
+                                                    </div>
                                                     <div class="price-box">
                                                         <span class="product-price">$49.00</span>
-                                                    </div><!-- End .price-box -->
-                                                </div><!-- End .product-details -->
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div><!-- End .featured-col -->
-                                    </div><!-- End .widget-featured-slider -->
-                                </div><!-- End .widget-body -->
-                            </div><!-- End .widget -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </aside>
-                </div><!-- End .row -->
-            </div><!-- End .container -->
+                    </aside> -->
+                </div>
+            </div>
 
             <div class="products-section pt-0">
                 <div class="container">
