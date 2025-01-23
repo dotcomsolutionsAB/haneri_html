@@ -63,7 +63,7 @@
                 <div class="container">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Our Brands</li>
+                        <li class="breadcrumb-item active" aria-current="page">S.C.A.N Technology</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
