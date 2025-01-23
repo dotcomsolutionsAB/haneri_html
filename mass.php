@@ -51,7 +51,7 @@
 
             <div class="container">                           
                 <section id="air_curve_design">
-                    <?php include("inc_files/pillar_technology/M.A.S.S.php"); ?>
+                    <?php include("test.php"); ?>
                 </section>
             </div>
         </main><!-- End .main -->

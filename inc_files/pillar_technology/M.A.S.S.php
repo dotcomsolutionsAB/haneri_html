@@ -1,6 +1,8 @@
 <div class="page-header pt-3 bg-transparent">
     <div class="container text-left">
-        <h1 class="font4 text-uppercase">M.A.S.S ( More Air, Slow Speed )</h1>
+        <h1 class="font4 text-uppercase">
+            M.A.S.S ( More Air, Slow Speed )
+        </h1>
     </div><!-- End .container -->
 </div><!-- End .page-header -->
 
@@ -243,7 +245,8 @@
                         Low-speed operation combined with powerful motors ensures that fans provide excellent air delivery while consuming less energy.
                     </li>
                 </ul>
-                <p>Modern innovations like Haneri’s Silent M.A.S.S Technology deliver superior air delivery through smart engineering, combining low-speed operation with advanced aerodynamics and motor efficiency. These technologies harness the wind chill effect to create cooling comfort that outperforms traditional high-RPM fans.
+                <p>
+                    Modern innovations like Haneri’s Silent M.A.S.S Technology deliver superior air delivery through smart engineering, combining low-speed operation with advanced aerodynamics and motor efficiency. These technologies harness the wind chill effect to create cooling comfort that outperforms traditional high-RPM fans.
 
                     The Bureau of Indian Standards (BIS) and other regulatory bodies measure air delivery in CMM or CFM rather than RPM. Fans with optimized designs often outperform high-RPM fans in delivering air, as RPM alone does not equate to effective airflow
                     <br>
