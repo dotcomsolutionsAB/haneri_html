@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-lg-10">
                                     <ul class="submenu">
-                                        <li><a href="#">Ceiling Fans</a></li>
+                                        <li><a href="ceiling_fans.php">Ceiling Fans</a></li>
                                         <li><a href="category.html">Table Wall Pedestals</a></li>
                                         <li><a href="category-banner-boxed-slider.html">Domestic Exhaust</a>
                                         </li>
@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="pillar_technology.php">Pillar Technololgy</a>
+                        <a href="#">Pillar Technololgy</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
                                 <div class="col-lg-10">
