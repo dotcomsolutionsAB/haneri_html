@@ -41,9 +41,6 @@
             color: #fff;
             font-family: 'Barlow Condensed', sans-serif;
         }
-        #our-story {
-            padding-top: 1rem;
-        }
     </style>
 </head>
 
@@ -62,7 +59,7 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-
+            
             <div class="container">                
                 <style type="text/css" media="all">
                     /* General Section Styling */
@@ -71,7 +68,10 @@
                         /* background-color: #f9f9f9; */
                         text-align: center;
                     }
-
+                    .lumiambience {
+                        padding: 20px 20px;
+                        padding-top: 1rem;
+                    }
                     /* .brands-section .section-title {
                         font-size: 36px;
                         font-weight: bold;
@@ -145,7 +145,7 @@
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                     }
                 </style>
-                <section id="our-brands" class="brands-section">
+                <section id="lumiambience" class="lumiambience">
                     <?php include("inc_files/pillar_technology/lumiambience.php"); ?>
                 </section>
             </div>
