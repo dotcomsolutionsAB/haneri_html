@@ -318,7 +318,7 @@
     </div>
 </div>
 
-<h4>
+<h4 style="text-align: center;  color: #1f7d71;">
     <strong>
         Choose performance, not speed. Choose innovation, not myths.
     </strong>
