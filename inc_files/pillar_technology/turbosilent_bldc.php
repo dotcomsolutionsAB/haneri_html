@@ -183,6 +183,55 @@
 
 <div class="mb-3"></div><!-- margin -->
 
-    <style>
+<style>
+    /* Main Heading Style */
+    .about_section {
+        color: #fff; /* White text color */
+        padding: 5px 0px; /* Spacing inside the heading */
+        position: relative; /* Enable pseudo-elements */
+        display: inline-block; /* Allow background to wrap the text */
+        background: linear-gradient(135deg, #047f89, #3a9aa2);
+        border-radius: 5px; /* Rounded corners */
+        overflow: hidden; /* Prevent overflow of child elements */
+    }
 
-    </style>
+    /* Geometric Decorative Element */
+    .about_section::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 210px;
+        height: 50px;
+        background: #f4f4f42e;
+        transform: rotate(45deg);
+        z-index: 100;
+    }
+
+    .about_section::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: -15px;
+        width: 230px;
+        height: 150px;
+        background: #dfdfdf;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+
+    /* Text Layer */
+    .about_section span {
+        position: relative; /* Ensure text is above pseudo-elements */
+        z-index: 2; /* Bring text to the front */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .about_section {
+            font-size: 2.5rem; /* Adjust font size for smaller screens */
+            padding: 15px 20px; /* Reduce padding */
+        }
+    }
+
+</style>

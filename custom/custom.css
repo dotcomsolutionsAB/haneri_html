@@ -8,7 +8,7 @@
 .about_section{
     font-family: 'Raleway', sans-serif !important;
     font-weight: 500 !important;
-    color: #315858 !important;
+    /* color: #315858 !important; */
     font-size: 5rem !important;
 }
 .capabilities-section, .our-brands, .our-story {

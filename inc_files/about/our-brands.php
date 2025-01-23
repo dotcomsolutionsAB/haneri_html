@@ -3,60 +3,54 @@
 </div>
 <style>
     /* Main Heading Style */
-.about_section {
-    font-family: 'Poppins', sans-serif; /* Stylish and clean font */
-    font-size: 3.5rem; /* Large heading size */
-    font-weight: 700; /* Extra bold text */
-    color: #fff; /* White text color */
-    text-transform: uppercase; /* Ensure text is uppercase */
-    padding: 20px 30px; /* Spacing inside the heading */
-    margin: 20px 0; /* Space around the heading */
-    position: relative; /* Enable pseudo-elements */
-    display: inline-block; /* Allow background to wrap the text */
-    background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Vibrant gradient background */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    overflow: hidden; /* Prevent overflow of child elements */
-}
-
-/* Geometric Decorative Element */
-.about_section::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent overlay */
-    transform: rotate(45deg); /* Create a diamond shape */
-    z-index: 1; /* Layer it below the text */
-}
-
-.about_section::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.1); /* Faint geometric accent */
-    transform: rotate(45deg); /* Diamond shape */
-    z-index: 1; /* Place below the text */
-}
-
-/* Text Layer */
-.about_section span {
-    position: relative; /* Ensure text is above pseudo-elements */
-    z-index: 2; /* Bring text to the front */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
     .about_section {
-        font-size: 2.5rem; /* Adjust font size for smaller screens */
-        padding: 15px 20px; /* Reduce padding */
+        color: #fff; /* White text color */
+        padding: 5px 0px; /* Spacing inside the heading */
+        position: relative; /* Enable pseudo-elements */
+        display: inline-block; /* Allow background to wrap the text */
+        background: linear-gradient(135deg, #047f89, #3a9aa2);
+        border-radius: 5px; /* Rounded corners */
+        overflow: hidden; /* Prevent overflow of child elements */
     }
-}
+
+    /* Geometric Decorative Element */
+    .about_section::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 210px;
+        height: 50px;
+        background: #f4f4f42e;
+        transform: rotate(45deg);
+        z-index: 100;
+    }
+
+    .about_section::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: -15px;
+        width: 230px;
+        height: 150px;
+        background: #dfdfdf;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+
+    /* Text Layer */
+    .about_section span {
+        position: relative; /* Ensure text is above pseudo-elements */
+        z-index: 2; /* Bring text to the front */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .about_section {
+            font-size: 2.5rem; /* Adjust font size for smaller screens */
+            padding: 15px 20px; /* Reduce padding */
+        }
+    }
 
 </style>
 <!-- Row 1: Haneri -->
