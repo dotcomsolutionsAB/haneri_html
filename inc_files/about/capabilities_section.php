@@ -93,16 +93,17 @@
         background: linear-gradient(135deg, #047f89, #3a9aa2);
         border-radius: 5px; /* Rounded corners */
         overflow: hidden; /* Prevent overflow of child elements */
+        width:100%;
     }
 
     /* Geometric Decorative Element */
     .about_section::before {
         content: '';
         position: absolute;
-        top: -10px;
+        top: -20px;
         left: -10px;
-        width: 210px;
-        height: 50px;
+        width: 260px;
+        height: 170px;
         background: #f4f4f42e;
         transform: rotate(45deg);
         z-index: 100;
