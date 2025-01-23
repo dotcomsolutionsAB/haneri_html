@@ -53,31 +53,31 @@
                 <ul>
                     <li>
                         <strong>
-                            1. Higher Torque for Optimized Performance:
+                            Higher Torque for Optimized Performance:
                         </strong>
                         The TurboSilent motor stands out with its superior performance. It achieves higher torque through optimized magnetic flux density and reduced electromagnetic losses. Advanced stator and magnet designs enhance the torque constant (kT), providing superior air circulation, even at varying speeds.
                     </li>
                     <li>
                         <strong>
-                            2. Long-Term Durability:
+                            Long-Term Durability:
                         </strong>
                         Designed for long-term durability, the TurboSilent motors are constructed with premium-grade laminations and heat-resistant winding materials to minimize core losses and thermal degradation. The motor is fitted with high-precision ball bearings and balanced rotor assemblies, reducing mechanical wear and extending operational life.
                     </li>
                     <li>
                         <strong>
-                            3. Enhanced Energy Efficiency:
+                            Enhanced Energy Efficiency:
                         </strong>
                         TurboSilent motors utilize sinusoidal commutation to reduce current ripple and improve efficiency. Power electronics are optimized to deliver consistent performance while consuming up to 65% less energy than traditional motors.
                     </li>
                     <li>
                         <strong>
-                            4. Thermal Management of Electronics:
+                            Thermal Management of Electronics:
                         </strong>
                         Electronics PCBs are made in India and have been tested according to Indian conditions. A key focus is the thermal management of critical components to ensure longer life and better performance.
                     </li>
                     <li>
                         <strong>
-                            5. In-House Innovation and Testing:
+                            In-House Innovation and Testing:
                         </strong>
                         Developed using simulation tools for computational electromagnetic analysis (CEM). Rigorously validated under real-world conditions to ensure robustness across a wide range of operating environments.
                     </li>
@@ -161,16 +161,27 @@
                         Meets stringent industry acoustic standards, ensuring negligible sound levels suitable for sensitive applications such as hospitals and libraries.
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div><!-- End .container -->
+</div><!-- End .history-section -->
+
+<div class="containe">
+    <div class="row row-bg">
+        <div class="col-md-12">
+            <p class="mb-2">
                 <h2>
-                    Why Choose HANERI TurboSilent Ceiling Fans?</h2>
+                    Why Choose HANERI TurboSilent Ceiling Fans?
+                </h2>
                 <p>
                     HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.
                 </p>
-            </div>
-        </div><!-- End .container -->
-    </div><!-- End .history-section -->
+            </p>
+        </div>
+    </div><!-- End .row -->
+</div><!-- End .container -->
 
-    <div class="mb-3"></div><!-- margin -->
+<div class="mb-3"></div><!-- margin -->
 
     <style>
 
