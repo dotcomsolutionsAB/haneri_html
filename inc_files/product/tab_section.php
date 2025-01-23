@@ -17,14 +17,22 @@
         <li class="nav-item">
             <a class="nav-link" id="product-tab-tags" data-toggle="tab"
                 href="#product-tags-content" role="tab" aria-controls="product-tags-content"
-                aria-selected="false">Additional
-                Information</a>
+                aria-selected="false">Mood and Comfort </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" id="product-tab-reviews" data-toggle="tab"
                 href="#product-reviews-content" role="tab"
-                aria-controls="product-reviews-content" aria-selected="false">Reviews (1)</a>
+                aria-controls="product-reviews-content" aria-selected="false">All-Season Adaptability
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="harmony" data-toggle="tab"
+                href="#harmony" role="tab"
+                aria-controls="harmony" aria-selected="false">A Symbol of Harmony
+
+            </a>
         </li>
     </ul>
 
@@ -56,143 +64,37 @@
             aria-labelledby="product-tab-size">
             <div class="product-desc-content">
                 <p>
-                    Equipped with Haneri's trademarked cutting-edge Turbo Silent BLDC motor and Silent MASS® technology, FengShui delivers superior air thrust with whisper-quiet operation and remarkable energy efficiency. Its aerodynamically engineered blade design ensures natural wind-like airflow, cooling your space evenly while consuming minimal power. Additionally, Fengshui's extra large 1320mm blade span makes it suitable for larger rooms without compromising air comfort. Fengshui’s plastic blades resist bending during cleaning over time, ensuring consistent airflow and silent operations  throughout the fan’s lifespan 
+                    Equipped with Haneri's trademarked cutting-edge <strong>Turbo Silent BLDC motor and Silent MASS® technology</strong>, FengShui delivers superior air thrust with whisper-quiet operation and remarkable energy efficiency. Its aerodynamically engineered blade design ensures natural wind-like airflow, cooling your space evenly while consuming minimal power. Additionally, Fengshui's extra large 1320mm blade span makes it suitable for larger rooms without compromising air comfort. Fengshui’s plastic blades resist bending during cleaning over time, ensuring consistent airflow and silent operations  throughout the fan’s lifespan 
                 </p>
             </div><!-- End .product-desc-content -->
         </div>
 
         <div class="tab-pane fade" id="product-tags-content" role="tabpanel"
             aria-labelledby="product-tab-tags">
-            <table class="table table-striped mt-2">
-                <tbody>
-                    <tr>
-                        <th>Weight</th>
-                        <td>23 kg</td>
-                    </tr>
-
-                    <tr>
-                        <th>Dimensions</th>
-                        <td>12 × 24 × 35 cm</td>
-                    </tr>
-
-                    <tr>
-                        <th>Color</th>
-                        <td>Black, Green, Indigo</td>
-                    </tr>
-
-                    <tr>
-                        <th>Size</th>
-                        <td>Large, Medium, Small</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="product-desc-content">
+                <p>
+                    FengShui doesn't just cool your room; it transforms it. Integrated with LumiAmbience LED lighting, fengshui enhances any space with customizable illumination in Warm, Cool, and Natural White tones. Its advanced S.C.A.N Technology remote offers intuitive control, allowing effortless adjustments to speed, lighting, and modes for ultimate convenience. 
+                </p>
+            </div><!-- End .product-desc-content -->
         </div>
 
         <div class="tab-pane fade" id="product-reviews-content" role="tabpanel"
             aria-labelledby="product-tab-reviews">
-            <div class="product-reviews-content">
-                <h3 class="reviews-title">1 review for Men Black Sports Shoes</h3>
+            <div class="product-desc-content">
+                <p>
+                    Built with rust-free, high-impact plastic blades, FengShui  is engineered to withstand varying environmental conditions, ensuring durability and consistent performance. The all-weather reverse mode adapts effortlessly to summer cooling and winter air circulation. It is designed with a coastal rating and is suitable for indoor and protected outdoor spaces, maintaining its sleek appearance and superior functionality over time. 
+                </p>
+            </div><!-- End .product-desc-content -->
+        </div>
 
-                <div class="comment-list">
-                    <div class="comments">
-                        <figure class="img-thumbnail">
-                            <img src="assets/images/blog/author.jpg" alt="author" width="80"
-                                height="80">
-                        </figure>
-
-                        <div class="comment-block">
-                            <div class="comment-header">
-                                <div class="comment-arrow"></div>
-
-                                <div class="ratings-container float-sm-right">
-                                    <div class="product-ratings">
-                                        <span class="ratings" style="width:60%"></span>
-                                        
-                                        <span class="tooltiptext tooltip-top"></span>
-                                    </div>
-                                </div>
-
-                                <span class="comment-by">
-                                    <strong>Joe Doe</strong> – April 12, 2018
-                                </span>
-                            </div>
-
-                            <div class="comment-content">
-                                <p>Excellent.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="add-product-review">
-                    <h3 class="review-title">Add a review</h3>
-
-                    <form action="#" class="comment-form m-0">
-                        <div class="rating-form">
-                            <label for="rating">Your rating <span
-                                    class="required">*</span></label>
-                            <span class="rating-stars">
-                                <a class="star-1" href="#">1</a>
-                                <a class="star-2" href="#">2</a>
-                                <a class="star-3" href="#">3</a>
-                                <a class="star-4" href="#">4</a>
-                                <a class="star-5" href="#">5</a>
-                            </span>
-
-                            <select name="rating" id="rating" required=""
-                                style="display: none;">
-                                <option value="">Rate…</option>
-                                <option value="5">Perfect</option>
-                                <option value="4">Good</option>
-                                <option value="3">Average</option>
-                                <option value="2">Not that bad</option>
-                                <option value="1">Very poor</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Your review <span class="required">*</span></label>
-                            <textarea cols="5" rows="6"
-                                class="form-control form-control-sm"></textarea>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-6 col-xl-12">
-                                <div class="form-group">
-                                    <label>Name <span class="required">*</span></label>
-                                    <input type="text" class="form-control form-control-sm"
-                                        required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-xl-12">
-                                <div class="form-group">
-                                    <label>Email <span class="required">*</span></label>
-                                    <input type="text" class="form-control form-control-sm"
-                                        required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-xl-12">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input"
-                                        id="save-name" />
-                                    <label class="custom-control-label mb-0"
-                                        for="save-name">Save my
-                                        name, email, and website in this browser for the next
-                                        time I
-                                        comment.</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                    </form>
-                </div>
-            </div>
+        <div class="tab-pane fade" id="harmony" role="tabpanel"
+            aria-labelledby="harmony">
+            <div class="product-desc-content">
+                <p>
+                    True to its name, Feng Shui brings balance to your home by seamlessly blending functionality, artistry, and environmental consciousness. Its eco-friendly design reflects a commitment to sustainability, making it an ideal choice for the discerning consumer. Meticulously crafted to be the centrepiece of your "fifth wall," Feng Shui is more than just a fan—it is a statement of extraordinary living. Its sleek, contemporary aesthetic, which blends seamlessly with any décor, elevates the ambience of your home while providing unmatched performance.
+                    Available in 4 stunning colour finish options, which suit a wide range of decor 
+                </p>
+            </div><!-- End .product-desc-content -->
         </div>
 
     </div>
