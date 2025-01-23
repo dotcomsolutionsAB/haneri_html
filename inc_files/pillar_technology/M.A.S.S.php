@@ -282,7 +282,7 @@
         </div>
     </div>
 </div>
-<!-- Row 7: Why Choose? -->
+<!-- Row 7: How Low RPM and Wind Chill Work Together -->
 <div class="brand-row-container">
     <div class="brand-row reverse">
         <div class="brand-content">
@@ -293,7 +293,7 @@
                 <h4>
                     Contrary to popular belief, low RPM fans with innovative designs can create superior comfort by leveraging the wind chill effect:
                 </h4>
-                <br>
+                <br><br>
                 <ul>
                     <li><strong>Smooth and Controlled Airflow:</strong>
                         Fans with Silent M.A.S.S Technology (More Air, Slow Speed) use aerodynamically optimized blades to deliver uniform airflow at reduced speeds, enhancing the wind chill effect without turbulence.
