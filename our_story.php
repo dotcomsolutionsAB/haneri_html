@@ -58,7 +58,8 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-            <div class="page-header pt-3 bg-transparent">
+            <!-- <div class="page-header pt-3 bg-transparent"> -->
+            <div class="heading">
                 <div class="containe text-left">
                     <h1 class="text-uppercase text-left about_section">OUR STORY</h1>
                 </div><!-- End .container -->

@@ -77,7 +77,8 @@
                     font-size: larger;
                 }
             </style>
-            <div class="page-header pt-3 bg-transparent">
+            <!-- <div class="page-header pt-3 bg-transparent"> -->
+            <div class="heading">
                 <div class="containe text-left">
                     <h1 class="text-uppercase text-left about_section">TurboSilent BLDC Technology</h1>
                 </div><!-- End .container -->
