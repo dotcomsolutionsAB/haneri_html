@@ -1,6 +1,4 @@
-<div class="containe text-left">
-    <h1 class="text-uppercase about_section">OUR BRANDS</h1>
-</div>
+
 
 <!-- Row 1: Haneri -->
 <div class="brand-row-container">

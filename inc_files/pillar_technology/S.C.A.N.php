@@ -1,6 +1,4 @@
-<div class="containe text-left">
-    <h1 class="text-uppercase about_section">S.C.A.N TECHNOLOGY </h1>
-</div>
+
 <style>
     .brand-content .points h4{
         margin: 0px;

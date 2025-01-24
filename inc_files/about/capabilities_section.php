@@ -1,6 +1,4 @@
-<div class="containe text-left">
-    <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
-</div>
+
 <div class="aab">
     <!-- Row 1 -->
     <div class="row-container">

@@ -60,8 +60,8 @@
                 </div><!-- End .container -->
             </nav>
             <div class="containe text-left">
-    <h1 class="text-uppercase about_section">M.A.S.S ( More Air, Slow Speed )</h1>
-</div>
+                <h1 class="text-uppercase about_section">M.A.S.S ( More Air, Slow Speed )</h1>
+            </div>
             <div class="container"> 
                 <style type="text/css" media="all">
                     /* General Section Styling */

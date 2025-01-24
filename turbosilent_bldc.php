@@ -77,6 +77,11 @@
                     font-size: larger;
                 }
             </style>
+            <div class="page-header pt-3 bg-transparent">
+                <div class="containe text-left">
+                    <h1 class="text-uppercase text-left about_section">TurboSilent BLDC Technology</h1>
+                </div><!-- End .container -->
+            </div><!-- End .page-header -->
             <div class="container">                            
                 <section id="turbosilent_bldc" class="turbosilent_bldc">
                     <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>

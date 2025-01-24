@@ -61,7 +61,9 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-
+            <div class="containe text-left">
+                <h1 class="text-uppercase about_section">OUR BRANDS</h1>
+            </div>
             <div class="container">                
                 <style type="text/css" media="all">
                     /* General Section Styling */

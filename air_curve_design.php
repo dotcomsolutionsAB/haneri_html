@@ -88,6 +88,11 @@
                     font-size: larger;
                 }
             </style>
+            <div class="page-header pt-3 bg-transparent">
+                <div class="containe text-left">
+                    <h1 class="text-uppercase text-left about_section">Air Curve Design</h1>
+                </div><!-- End .container -->
+            </div><!-- End .page-header -->
             <div class="container">                
                 <section id="air_curve_design" class="air_curve_design">
                     <?php include("inc_files/pillar_technology/air_curve_design.php"); ?>
