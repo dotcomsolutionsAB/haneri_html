@@ -52,25 +52,40 @@
                         <a href="#">Categories</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols categories">
                             <div class="row">
-                                <div class="col-lg-10">
-                                    <ul class="submenu">
-                                        <li><a href="ceiling_fans.php">Ceiling Fans</a></li>
-                                        <li><a href="category.html">Table Wall Pedestals</a></li>
-                                        <li><a href="category-banner-boxed-slider.html">Domestic Exhaust</a>
-                                        </li>
-                                        <li><a href="category-banner-boxed-image.html">Personal</a>
-                                        </li>
-                                        <!-- <li><a href="category.html">Left Sidebar</a></li>
-                                        <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
-                                        <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
-                                        <li><a href="category-horizontal-filter1.html">Horizontal
-                                                Filter1</a>
-                                        </li>
-                                        <li><a href="category-horizontal-filter2.html">Horizontal
-                                                Filter2</a>
-                                        </li> -->
-                                    </ul>
-                                </div>
+                            <section class="categories">
+    <div class="category">
+        <div class="img">
+            <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
+        </div>
+        <div class="text">
+            <p>Ceiling Fan</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
+        </div>                
+        <div class="text">
+            <p>Table Wall Pedestals</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
+        </div>
+        <div class="text">
+            <p>Domestic Exhaust</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Personal.png" alt="Personal">
+        </div>
+        <div class="text">
+            <p>Personal</p>
+        </div>
+    </div>
+</section>
                             </div>
                         </div>
                     </li>
