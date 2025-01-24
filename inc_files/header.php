@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     <style>
-                        .menu .megamenu.megamenu-3cols .categories {
+                        .menu .categories {
                             width: auto;
                             left: -270px;
                             width: 90vw;
