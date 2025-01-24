@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri - Excellence in Manufacturing">
+            <img src="images/section/Haneri_Homes.jpg" alt="Haneri - Excellence in Manufacturing">
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
             </p>
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+            <img src="images/section/Haneri_Bespoke.jpg" alt="Haneri Bespoke - Personalized Living">
         </div>
     </div>
 </div>
@@ -37,7 +37,7 @@
             </p>
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
+            <img src="images/section/Haneri_Professional.jpg" alt="Haneri Professional - Industrial Solutions">
         </div>
     </div>
 </div>
