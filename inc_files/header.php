@@ -59,7 +59,7 @@
                             height: 110px;
                         }
                         .img img{
-                            object-fit: contain;
+                            object-fit: contain !important;
                         }
                     </style>
                     <li class="active">
