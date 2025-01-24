@@ -41,6 +41,40 @@
                             </div>
                         </div>
                     </li>
+                    <style>
+                        .menu .megamenu.megamenu-3cols .categories {
+                            width: auto;
+                            left: -270px;
+                            width: 90vw;
+                            min-width: 300px;
+                        }
+                    </style>
+                    <li class="active">
+                        <a href="#">Categories</a>
+                        <div class="megamenu megamenu-fixed-width megamenu-3cols categories">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <ul class="submenu">
+                                        <li><a href="ceiling_fans.php">Ceiling Fans</a></li>
+                                        <li><a href="category.html">Table Wall Pedestals</a></li>
+                                        <li><a href="category-banner-boxed-slider.html">Domestic Exhaust</a>
+                                        </li>
+                                        <li><a href="category-banner-boxed-image.html">Personal</a>
+                                        </li>
+                                        <!-- <li><a href="category.html">Left Sidebar</a></li>
+                                        <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
+                                        <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
+                                        <li><a href="category-horizontal-filter1.html">Horizontal
+                                                Filter1</a>
+                                        </li>
+                                        <li><a href="category-horizontal-filter2.html">Horizontal
+                                                Filter2</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <a href="#">Pillar Technololgy</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
