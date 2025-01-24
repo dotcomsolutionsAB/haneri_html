@@ -142,8 +142,8 @@
             
 
             <a href="#" class="header-icon header-icon-user" title="Login"><i
-                    class="icon-user-2"></i></a>
-            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a>
+                    class="icon-user-2"></i></a> |  
+            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
             <!-- <a href="wishlist.html" class="header-icon header-icon-wishlist" title="Wishlist"><i
                     class="icon-wishlist-2"></i></a> -->
             <div class="header-search header-search-popup header-search-category d-none d-sm-block">
