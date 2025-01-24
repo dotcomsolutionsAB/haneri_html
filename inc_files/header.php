@@ -48,7 +48,7 @@
                             min-width: 300px;
                         }
                         .hover{
-                            padding-top: 30px !important;
+                            padding-top: 10px !important;
                             width: 100% !important;
                         }
                         .hov{
@@ -56,6 +56,9 @@
                         }
                         .hov a{
                             text-decoration:none;
+                        }
+                        .hov a:hover {
+                            background:#f8f9fa;
                         }
                         .category .img {
                             width: 100%;
