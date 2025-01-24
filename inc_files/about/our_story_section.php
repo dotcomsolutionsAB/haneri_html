@@ -153,7 +153,9 @@
     .history-section h2 {
         margin-bottom: 1.6rem;
     }
-    
+    .owl-dots{
+        display:none;
+    }
 </style>
 <style>
     /* Main Heading Style */
