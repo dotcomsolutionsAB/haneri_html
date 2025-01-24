@@ -51,6 +51,16 @@
                             padding-top: 30px !important;
                             width: 100% !important;
                         }
+                        .hov{
+                            width: 150px;
+                        }
+                        .category .img {
+                            width: 100%;
+                            height: 110px;
+                        }
+                        .img img{
+                            object-fit: contain;
+                        }
                     </style>
                     <li class="active">
                         <a href="#">Categories</a>
