@@ -43,8 +43,8 @@
                     </li>
                     <style>
                         .menu .categoryy {
-                            left: -385px !important;
-                            width: 90vw !important;
+                            left: -405px !important;
+                            width: 91vw !important;
                             min-width: 300px;
                         }
                         .hover{
