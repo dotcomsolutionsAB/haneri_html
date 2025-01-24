@@ -65,49 +65,53 @@
                         <?php include("inc_files/shop/tool_box.php"); ?>
                         
                         <div class="row">
-
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="">
-                                            <img src="images/place.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <!-- <div class="label-group">
-                                            <div class="product-label label-hot">HOT</div>
-                                            <div class="product-label label-sale">-20%</div>
-                                        </div> -->
-                                        <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="#" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="ceiling_fans.php" class="product-category">Celing Fans</a>
+                            <?php
+                                for ($i = 0; $i < 10; $i++) {
+                                    echo '
+                                        <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
+                                            <div class="product-default inner-quickview inner-icon">
+                                                <figure>
+                                                    <a href="">
+                                                        <img src="images/place.jpg" width="273"
+                                                            height="273" alt="productr" />
+                                                    </a>
+                                                    <!-- <div class="label-group">
+                                                        <div class="product-label label-hot">HOT</div>
+                                                        <div class="product-label label-sale">-20%</div>
+                                                    </div> -->
+                                                    <div class="btn-icon-group">
+                                                        <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                                                class="icon-shopping-cart"></i></a>
+                                                    </div>
+                                                    <a href="#" class="btn-quickview"
+                                                        title="Quick View">Quick
+                                                        View</a>
+                                                </figure>
+                                                <div class="product-details">
+                                                    <div class="category-wrap">
+                                                        <div class="category-list">
+                                                            <a href="ceiling_fans.php" class="product-category">Celing Fans</a>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="product-title">
+                                                        <a href="#">FENGSHUI</a>
+                                                    </h3>
+                                                    <div class="ratings-container">
+                                                        <div class="product-ratings">
+                                                            <span class="ratings" style="width:100%"></span>
+                                                            <span class="tooltiptext tooltip-top"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="price-box">
+                                                        <span class="old-price">₹2199.00</span>
+                                                        <span class="product-price">$3299.00</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <h3 class="product-title">
-                                            <a href="#">FENGSHUI</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="old-price">₹2199.00</span>
-                                            <span class="product-price">$3299.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                    ';
+                                }
+                            ?>
                             <!-- <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
