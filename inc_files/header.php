@@ -44,7 +44,7 @@
                     <style>
                         .menu .categoryy {
                             left: -405px !important;
-                            width: 91vw !important;
+                            width: 90vw !important;
                             min-width: 300px;
                         }
                         .hover{
