@@ -54,6 +54,9 @@
                         .hov{
                             width: 150px;
                         }
+                        .hov a{
+                            text-decoration:none;
+                        }
                         .category .img {
                             width: 100%;
                             height: 110px;
@@ -66,40 +69,48 @@
                         <a href="#">Categories</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                             <div class="row">
-                            <section class="categories hover">
-                                <div class="category hov">
-                                    <div class="img">
-                                        <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
-                                    </div>
-                                    <div class="text">
-                                        <p>Ceiling Fan</p>
-                                    </div>
-                                </div>
-                                <div class="category hov">
-                                    <div class="img">
-                                        <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
-                                    </div>                
-                                    <div class="text">
-                                        <p>Table Wall Pedestals</p>
-                                    </div>
-                                </div>
-                                <div class="category hov">
-                                    <div class="img">
-                                        <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
-                                    </div>
-                                    <div class="text">
-                                        <p>Domestic Exhaust</p>
-                                    </div>
-                                </div>
-                                <div class="category hov">
-                                    <div class="img">
-                                        <img src="images/Personal.png" alt="Personal">
-                                    </div>
-                                    <div class="text">
-                                        <p>Personal</p>
-                                    </div>
-                                </div>
-                            </section>
+                                <section class="categories hover">
+                                    <a href="ceiling_fans.php">
+                                        <div class="category hov">
+                                            <div class="img">
+                                                <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
+                                            </div>
+                                            <div class="text">
+                                                <p>Ceiling Fan</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="ceiling_fans.php">
+                                        <div class="category hov">
+                                            <div class="img">
+                                                <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
+                                            </div>                
+                                            <div class="text">
+                                                <p>Table Wall Pedestals</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="ceiling_fans.php">
+                                        <div class="category hov">
+                                            <div class="img">
+                                                <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
+                                            </div>
+                                            <div class="text">
+                                                <p>Domestic Exhaust</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="ceiling_fans.php">
+                                        <div class="category hov">
+                                            <div class="img">
+                                                <img src="images/Personal.png" alt="Personal">
+                                            </div>
+                                            <div class="text">
+                                                <p>Personal</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </section>
                             </div>
                         </div>
                     </li>
