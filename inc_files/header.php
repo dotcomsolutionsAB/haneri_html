@@ -43,7 +43,7 @@
                     </li>
                     <style>
                         .menu .categoryy {
-                            left: -320px !important;
+                            left: -370px !important;
                             width: 90vw !important;
                             min-width: 300px;
                         }
