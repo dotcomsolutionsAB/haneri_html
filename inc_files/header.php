@@ -47,7 +47,7 @@
                             width: 90vw !important;
                             min-width: 300px;
                         }
-                        .categories .hover{
+                        .hover{
                             padding-top: 30px !important;
                             width: 100% !important;
                         }
