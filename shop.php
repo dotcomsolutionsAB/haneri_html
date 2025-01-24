@@ -34,6 +34,14 @@
         .minipopup-box{
             display:none;
         }
+        .container .mb-3{
+            margin-top: 20px;
+        }
+        .category-banner {
+            position: relative;
+            margin-bottom: 0rem; 
+            margin-top: 3px;
+        }
     </style>
 </head>
 
