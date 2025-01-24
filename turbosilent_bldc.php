@@ -76,6 +76,9 @@
                     font-weight: 600;
                     font-size: larger;
                 }
+                .owl-dots{
+                    display:none;
+                }
             </style>
             <!-- <div class="page-header pt-3 bg-transparent"> -->
             <div class="heading">

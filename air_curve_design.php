@@ -39,6 +39,9 @@
             color: #fff;
             font-family: Poppins,sans-serif;
         }
+        .owl-dots{
+            display:none;
+        }
     </style>
 </head>
 
