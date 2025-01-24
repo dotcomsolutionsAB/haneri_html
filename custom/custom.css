@@ -22,6 +22,15 @@
 }
 
 
+.header-search {
+    margin-right: 1rem;
+    margin-left: 1.3rem;
+}
+.header-middle .header-right {
+    font-size: 30px;
+    font-weight: 100;
+    font-family: 'Open Sans';
+}
 .header-icon:not(:last-child) {
     margin-right: 1.3rem;
     margin-left: 1.3rem;
