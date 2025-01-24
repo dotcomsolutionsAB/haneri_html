@@ -282,7 +282,7 @@
                                     <h4 class="text-uppercase ml-0 mb-1">Off on Jackets</h4>
                                     <h5 class="text-uppercase d-block">Starting at</h5>
                                     <h3 class="coupon-sale-text font2 ml-0 mt-0"><sup>$</sup>199<sup>99</sup></h3>
-                                    <a href="demo3-shop.html" class="btn btn-dark btn-xl ml-0" role="button">Shop
+                                    <a href="#" class="btn btn-dark btn-xl ml-0" role="button">Shop
                                         Now</a>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                                         <div class="featured-col">
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-4.jpg"
                                                             width="75" height="75" alt="Product" />
                                                         <img src="assets/images/demoes/demo3/products/small/product-4-2.jpg"
@@ -304,7 +304,7 @@
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Black Men Shoes</a>
+                                                        <a href="#">Black Men Shoes</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -320,14 +320,14 @@
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-5.jpg"
                                                             width="75" height="75" alt="Product" />
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Porto Black Men Watch</a>
+                                                        <a href="#">Porto Black Men Watch</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -343,7 +343,7 @@
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-15.jpg"
                                                             width="75" height="75" alt="Product" />
                                                         <img src="assets/images/demoes/demo3/products/small/product-15-2.jpg"
@@ -352,7 +352,7 @@
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Brown-Black Men Casual Glasses</a>
+                                                        <a href="#">Brown-Black Men Casual Glasses</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -371,7 +371,7 @@
                                         <div class="featured-col">
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-16.jpg"
                                                             width="75" height="75" alt="Product" />
                                                         <img src="assets/images/demoes/demo3/products/small/product-16-2.jpg"
@@ -380,7 +380,7 @@
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Casual Spring Blue Shoes</a>
+                                                        <a href="#">Casual Spring Blue Shoes</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -396,7 +396,7 @@
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-17.jpg"
                                                             width="75" height="75" alt="Product" />
                                                         <img src="assets/images/demoes/demo3/products/small/product-17-2.jpg"
@@ -405,7 +405,7 @@
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Men Black Gentle Belt</a>
+                                                        <a href="#">Men Black Gentle Belt</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -421,7 +421,7 @@
                                             </div>
                                             <div class="product-default left-details product-widget">
                                                 <figure>
-                                                    <a href="demo3-product.html">
+                                                    <a href="#">
                                                         <img src="assets/images/demoes/demo3/products/small/product-18.jpg"
                                                             width="75" height="75" alt="Product" />
                                                         <img src="assets/images/demoes/demo3/products/small/product-18-2.jpg"
@@ -430,7 +430,7 @@
                                                 </figure>
                                                 <div class="product-details">
                                                     <h5 class="product-title">
-                                                        <a href="demo3-product.html">Ultimate 3D Bluetooth Speaker</a>
+                                                        <a href="#">Ultimate 3D Bluetooth Speaker</a>
                                                     </h5>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">

@@ -6,7 +6,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f5.png" width="273"
                             height="273" alt="productr" />
                     </a>
@@ -26,11 +26,11 @@
                 <!-- <div class="product-details">
                     <div class="category-wrap">
                         <div class="category-list">
-                            <a href="demo3-shop.html" class="product-category">category</a>
+                            <a href="#" class="product-category">category</a>
                         </div>
                     </div>
                     <h3 class="product-title">
-                        <a href="demo3-product.html">Women Shoes</a>
+                        <a href="#">Women Shoes</a>
                     </h3>
                     <div class="ratings-container">
                         <div class="product-ratings">
@@ -49,7 +49,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f6.png" width="273"
                             height="273" alt="productr" />
                         <img src="images/f6.png" width="273"
@@ -60,7 +60,7 @@
                         <div class="product-label label-sale">-20%</div>
                     </div> -->
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -70,11 +70,11 @@
                 <!-- <div class="product-details">
                     <div class="category-wrap">
                         <div class="category-list">
-                            <a href="demo3-shop.html" class="product-category">category</a>
+                            <a href="#" class="product-category">category</a>
                         </div>
                     </div>
                     <h3 class="product-title">
-                        <a href="demo3-product.html">Porto Transparent Images</a>
+                        <a href="#">Porto Transparent Images</a>
                     </h3>
                     <div class="ratings-container">
                         <div class="product-ratings">
@@ -93,7 +93,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f13.png" width="273"
                             height="273" alt="productr" />
                     </a>
@@ -110,14 +110,14 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f8.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-4-2.jpg" width="273"
                             height="273" alt="productr" /> -->
                     </a>
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -130,7 +130,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f9.png" width="273"
                             height="273" alt="productr" />
                     </a>
@@ -147,7 +147,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f10.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-6-2.jpg" width="273"
@@ -169,12 +169,12 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f11.png" width="273"
                             height="273" alt="productr" />
                     </a>
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -187,7 +187,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f12.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-8-2.jpg" width="273"
@@ -206,14 +206,14 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f13.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-9-2.jpg" width="273"
                             height="273" alt="productr" /> -->
                     </a>
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -226,12 +226,12 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f11.png" width="273"
                             height="273" alt="productr" />
                     </a>
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -244,7 +244,7 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f12.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-8-2.jpg" width="273"
@@ -263,14 +263,14 @@
             data-animation-delay="300" data-animation-duration="1000">
             <div class="product-default inner-quickview inner-icon">
                 <figure>
-                    <a href="demo3-product.html">
+                    <a href="#">
                         <img src="images/f13.png" width="273"
                             height="273" alt="productr" />
                         <!-- <img src="assets/images/demoes/demo3/products/product-9-2.jpg" width="273"
                             height="273" alt="productr" /> -->
                     </a>
                     <div class="btn-icon-group">
-                        <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                        <a href="#" class="btn-icon btn-add-cart"><i
                                 class="fa fa-arrow-right"></i>
                         </a>
                     </div>

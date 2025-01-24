@@ -9,7 +9,7 @@
 
             <!-- <h5 class="text-uppercase">Starting at<span
                     class="coupon-sale-text"><sup>$</sup>199<sup>99</sup></span></h5> -->
-            <a href="demo3-shop.html" class="btn btn-dark slider_btn btn-xl" role="button">Shop Now</a>
+            <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Shop Now</a>
         </div><!-- End .banner-layer -->
     </div><!-- End .home-slide -->
 
@@ -24,7 +24,7 @@
 
             <h5 class="text-uppercase d-inline-block mb-2 mb-sm-0">Starting at <span>$<em>19</em>99</span>
             </h5>
-            <a href="demo3-shop.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i
+            <a href="#" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i
                     class="fas fa-long-arrow-alt-right"></i></a>
         </div>
     </div> -->

@@ -6,5 +6,5 @@
 
     <h5 class="text-uppercase d-inline-block mb-1 pb-2">Starting at<span
             class="coupon-sale-text font2"><sup>$</sup>199<sup>99</sup></span></h5>
-    <a href="demo3-shop.html" class="btn btn-dark btn-xl ls-0" role="button">Shop Now</a>
+    <a href="#" class="btn btn-dark btn-xl ls-0" role="button">Shop Now</a>
 </div><!-- End .category-slide-content -->

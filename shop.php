@@ -145,7 +145,7 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="demo3-shop.html" class="product-category">category</a>
+                                                <a href="#" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">

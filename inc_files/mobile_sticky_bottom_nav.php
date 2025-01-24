@@ -32,12 +32,12 @@
 </div> -->
 
 <!-- <div class="sticky-info">
-    <a href="demo3.html">
+    <a href="#">
         <i class="icon-home"></i>Home
     </a>
 </div>
 <div class="sticky-info">
-    <a href="demo3-shop.html" class="">
+    <a href="#" class="">
         <i class="icon-bars"></i>Categories
     </a>
 </div>

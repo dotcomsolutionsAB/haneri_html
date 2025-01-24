@@ -6,7 +6,7 @@
     }">
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-1.jpg" width="273"
                         height="273" alt="productr" />
                 </a>
@@ -24,11 +24,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Women Shoes</a>
+                    <a href="#">Women Shoes</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">
@@ -44,7 +44,7 @@
         </div>
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-2.jpg" width="273"
                         height="273" alt="productr" />
                     <img src="assets/images/demoes/demo3/products/product-2-2.jpg" width="273"
@@ -55,7 +55,7 @@
                     <div class="product-label label-sale">-20%</div>
                 </div>
                 <div class="btn-icon-group">
-                    <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                    <a href="#" class="btn-icon btn-add-cart"><i
                             class="fa fa-arrow-right"></i>
                     </a>
                 </div>
@@ -65,11 +65,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Porto Transparent Images</a>
+                    <a href="#">Porto Transparent Images</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">
@@ -85,7 +85,7 @@
         </div>
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-3.jpg" width="273"
                         height="273" alt="productr" />
                 </a>
@@ -99,11 +99,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Ideapad</a>
+                    <a href="#">Ideapad</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">
@@ -119,14 +119,14 @@
         </div>
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-4.jpg" width="273"
                         height="273" alt="productr" />
                     <img src="assets/images/demoes/demo3/products/product-4-2.jpg" width="273"
                         height="273" alt="productr" />
                 </a>
                 <div class="btn-icon-group">
-                    <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
+                    <a href="#" class="btn-icon btn-add-cart"><i
                             class="fa fa-arrow-right"></i>
                     </a>
                 </div>
@@ -136,11 +136,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Black Men Shoes</a>
+                    <a href="#">Black Men Shoes</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">
@@ -156,7 +156,7 @@
         </div>
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-5.jpg" width="273"
                         height="273" alt="productr" />
                 </a>
@@ -170,11 +170,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Watch</a>
+                    <a href="#">Watch</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">
@@ -190,7 +190,7 @@
         </div>
         <div class="product-default inner-quickview inner-icon">
             <figure>
-                <a href="demo3-product.html">
+                <a href="#">
                     <img src="assets/images/demoes/demo3/products/product-6.jpg" width="273"
                         height="273" alt="productr" />
                     <img src="assets/images/demoes/demo3/products/product-6-2.jpg" width="273"
@@ -209,11 +209,11 @@
             <div class="product-details">
                 <div class="category-wrap">
                     <div class="category-list">
-                        <a href="demo3-shop.html" class="product-category">category</a>
+                        <a href="#" class="product-category">category</a>
                     </div>
                 </div>
                 <h3 class="product-title">
-                    <a href="demo3-product.html">Woman Dress</a>
+                    <a href="#">Woman Dress</a>
                 </h3>
                 <div class="ratings-container">
                     <div class="product-ratings">

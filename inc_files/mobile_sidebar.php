@@ -9,7 +9,7 @@
             <li><a href="#">About us</a></li>
             <li><a href="#">Support</a></li>
             <!-- <li>
-                <a href="demo3-shop.html">Categories</a>
+                <a href="#">Categories</a>
                 <ul>
                     <li><a href="category.html">Full Width Banner</a></li>
                     <li><a href="category-banner-boxed-slider.html">Boxed Slider Banner</a></li>
@@ -31,7 +31,7 @@
                 </ul>
             </li>
             <li>
-                <a href="demo3-product.html">Products</a>
+                <a href="#">Products</a>
                 <ul>
                     <li>
                         <a href="#" class="nolink">PRODUCT PAGES</a>
@@ -124,7 +124,7 @@
 
         <ul class="mobile-menu">
             <li><a href="login.html">My Account</a></li>
-            <li><a href="demo3-contact.html">Contact Us</a></li>
+            <li><a href="#">Contact Us</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="wishlist.html">My Wishlist</a></li>
             <li><a href="cart.html">Cart</a></li>

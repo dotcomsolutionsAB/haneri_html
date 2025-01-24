@@ -9,7 +9,7 @@
                     <div class="banner-layer banner-layer-bottom text-left">
                         <h3 class="m-b-2">Sunglasses Sale</h3>
                         <h4 class="m-b-3">See all and find yours</h4>
-                        <a href="demo3-shop.html" class="btn  btn-dark" role="button">Shop By Glasses</a>
+                        <a href="#" class="btn  btn-dark" role="button">Shop By Glasses</a>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="banner-layer banner-layer-top ">
                         <h3 class="mb-0">Cosmetics Trends</h3>
                         <h4 class="m-b-4">Browse in all our categories</h4>
-                        <a href="demo3-shop.html" class="btn  btn-dark" role="button">Shop By Glasses</a>
+                        <a href="#" class="btn  btn-dark" role="button">Shop By Glasses</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="banner-layer banner-layer-middle">
                         <h3 class="text-white m-b-1">Fashion Summer Sale</h3>
                         <h4 class="text-white m-b-4">Browse in all our categories</h4>
-                        <a href="demo3-shop.html" class="btn btn-light bg-white" role="button">Shop By
+                        <a href="#" class="btn btn-light bg-white" role="button">Shop By
                             Fashion</a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     <div class="banner-layer banner-layer-bottom banner-layer-boxed">
                         <h3 class="m-b-2">UP TO 70% IN ALL BAGS</h3>
                         <h4>Starting at $99</h4>
-                        <a href="demo3-shop.html" class="btn  btn-dark" role="button">Shop By Bags</a>
+                        <a href="#" class="btn  btn-dark" role="button">Shop By Bags</a>
                     </div>
                 </div>
             </div>
