@@ -644,3 +644,7 @@ footer a {
     min-width: 300px;
     width: fit-content;
 }
+
+.menu .megamenu .submenu a {
+    padding: 5px 5px 5px 5px;
+}
