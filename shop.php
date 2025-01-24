@@ -34,7 +34,7 @@
         .minipopup-box{
             display:none;
         }
-        .container .mb-3{
+        .sect {
             margin-top: 20px;
         }
         .category-banner {
@@ -62,7 +62,7 @@
                 </div><!-- End .container -->
             </nav>
 
-            <div class="container mb-3">
+            <div class="container mb-3 sect">
                 <div class="row">
                     <div class="col-lg-9 main-content">
                         <div class="category-banner pt-0 pb-2">
