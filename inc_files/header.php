@@ -47,7 +47,7 @@
                             width: 90vw !important;
                             min-width: 300px;
                         }
-                        .categories .hover{
+                        .hover{
                             padding-top: 30px;
                             width: 100%;
                         }
@@ -81,7 +81,7 @@
                         <a href="#">Categories</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                             <div class="row">
-                            <section class="categories hover">
+                            <section class="hover">
                                 <div class="hov">
                                     <div class="img">
                                         <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
