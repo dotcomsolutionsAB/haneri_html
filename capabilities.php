@@ -60,6 +60,9 @@
                 </div><!-- End .container -->
             </nav>
 
+            <div class="containe text-left">
+                <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
+            </div>
             <div class="container">                
                 <style type="text/css" media="all">
                     /* General Section Styling */
@@ -149,9 +152,6 @@
                         color: rgb(37, 108, 99);
                     }
                 </style>
-                <div class="containe text-left">
-                    <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
-                </div>
                 <section id="capabilities" class="capabilities-section">
                     <?php include("inc_files/about/capabilities_section.php"); ?>
                 </section>

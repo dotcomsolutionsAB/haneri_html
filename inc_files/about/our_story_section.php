@@ -159,7 +159,7 @@
     /* Main Heading Style */
     .about_section {
         color: #fff; /* White text color */
-        padding: 5px 0px; /* Spacing inside the heading */
+        padding: 5px 65px; /* Spacing inside the heading */
         position: relative; /* Enable pseudo-elements */
         display: inline-block; /* Allow background to wrap the text */
         background: linear-gradient(135deg, #047f89, #3a9aa2);
