@@ -43,7 +43,6 @@
                     </li>
                     <style>
                         .menu .categories {
-                            width: auto;
                             left: -270px;
                             width: 90vw;
                             min-width: 300px;
@@ -51,7 +50,7 @@
                     </style>
                     <li class="active">
                         <a href="#">Categories</a>
-                        <div class="megamenu megamenu-fixed-width megamenu-3cols categories">
+                        <div class="categories">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <ul class="submenu">
