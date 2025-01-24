@@ -50,15 +50,17 @@
                         .hover{
                             padding-top: 10px !important;
                             width: 100% !important;
+                            background:#fff;
                         }
                         .hov{
                             width: 150px;
                         }
                         .hov a{
-                            text-decoration:none;
+                            text-decoration: none; /* Remove underline */
+                            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
                         }
                         .hov a:hover {
-                            background:#f8f9fa;
+                            background-color:#f8f9fa;
                         }
                         .category .img {
                             width: 100%;
