@@ -641,5 +641,6 @@ footer a {
 
 
 .menu .megamenu.megamenu-3cols {
-    width: 300px;
+    min-width: 300px;
+    width: fit-content;
 }

@@ -50,7 +50,7 @@
                     </style>
                     <li class="active">
                         <a href="#">Categories</a>
-                        <div class="categories">
+                        <div class="megamenu megamenu-fixed-width megamenu-3cols categories">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <ul class="submenu">
