@@ -47,74 +47,49 @@
                             width: 90vw !important;
                             min-width: 300px;
                         }
-                        .hover{
+                        .categories .hover{
                             padding-top: 30px;
                             width: 100%;
-                        }
-                        .hov{
-                            text-align: center;
-                            width: 120px;
-                            height: 90px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                        }
-                        .hov .img {
-                            width: 100px;
-                            height: 110px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            flex-direction: column;
-                        }
-                        .hov .text {
-                            width: 100%;
-                            height: 50%;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            flex-direction: column;
                         }
                     </style>
                     <li class="active">
                         <a href="#">Categories</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                             <div class="row">
-                            <section class="hover">
-                                <div class="hov">
-                                    <div class="img">
-                                        <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
-                                    </div>
-                                    <div class="text">
-                                        <p>Ceiling Fan</p>
-                                    </div>
-                                </div>
-                                <div class="hov">
-                                    <div class="img">
-                                        <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
-                                    </div>                
-                                    <div class="text">
-                                        <p>Table Wall Pedestals</p>
-                                    </div>
-                                </div>
-                                <div class="hov">
-                                    <div class="img">
-                                        <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
-                                    </div>
-                                    <div class="text">
-                                        <p>Domestic Exhaust</p>
-                                    </div>
-                                </div>
-                                <div class="hov">
-                                    <div class="img">
-                                        <img src="images/Personal.png" alt="Personal">
-                                    </div>
-                                    <div class="text">
-                                        <p>Personal</p>
-                                    </div>
-                                </div>
-                            </section>
+                            <section class="categories hover">
+    <div class="category hov">
+        <div class="img">
+            <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
+        </div>
+        <div class="text">
+            <p>Ceiling Fan</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
+        </div>                
+        <div class="text">
+            <p>Table Wall Pedestals</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
+        </div>
+        <div class="text">
+            <p>Domestic Exhaust</p>
+        </div>
+    </div>
+    <div class="category">
+        <div class="img">
+            <img src="images/Personal.png" alt="Personal">
+        </div>
+        <div class="text">
+            <p>Personal</p>
+        </div>
+    </div>
+</section>
                             </div>
                         </div>
                     </li>
