@@ -62,7 +62,7 @@
                         </div><!-- End .category-slide -->
 
                         <!--Tool box code-->
-                        <?php include("inc_files/shop/tool_box.php"); ?>
+                        <?php include("inc_files/shop/toold_box.php"); ?>
                         
                         <div class="row">
                             <?php
