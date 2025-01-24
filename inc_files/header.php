@@ -16,7 +16,7 @@
             <nav class="main-nav font2">
                 <ul class="menu">
                     <li class="active">
-                        <a href="#">Our Products</a>
+                        <a href="shop.php">Our Products</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
                                 <div class="col-lg-10">
@@ -85,7 +85,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="ceiling_fans.php">
+                                    <a href="#">
                                         <div class="category hov">
                                             <div class="img">
                                                 <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
@@ -95,7 +95,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="ceiling_fans.php">
+                                    <a href="#">
                                         <div class="category hov">
                                             <div class="img">
                                                 <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
@@ -105,7 +105,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="ceiling_fans.php">
+                                    <a href="#">
                                         <div class="category hov">
                                             <div class="img">
                                                 <img src="images/Personal.png" alt="Personal">

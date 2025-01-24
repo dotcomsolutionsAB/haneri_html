@@ -55,7 +55,9 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php"><i class="icon-home"></i> Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">
+                            <!-- <i class="icon-home"></i>  -->
+                            Home</a></li>
                         <!-- <li class="breadcrumb-item"><a href="#">Electronics</a></li> -->
                         <li class="breadcrumb-item active" aria-current="page">Ceiling Fans</li>
                     </ol>
