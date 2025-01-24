@@ -21,11 +21,16 @@
     display: none;
 }
 
-
+.header-icon .icon-user-2 {
+    font-size: 18px;
+}
+.header-icon i {
+    font-size: 20px;
+}
 .header-search {
     margin-right: 1rem;
     margin-left: 1.3rem;
-    margin-top: 0px;
+    margin-top: -6px;
 }
 .header-middle .header-right {
     font-size: 30px;
@@ -35,9 +40,10 @@
 .header-icon:not(:last-child) {
     margin-right: 1.3rem;
     margin-left: 1.3rem;
+    margin-top: 5px;
 }
 .search-toggle i:before {
-    font-size: 25px;
+    font-size: 18px;
 }
 .header-transparent {
     background: aliceblue;
