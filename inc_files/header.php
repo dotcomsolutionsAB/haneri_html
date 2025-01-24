@@ -48,8 +48,8 @@
                             min-width: 300px;
                         }
                         .categories .hover{
-                            padding-top: 30px;
-                            width: 100%;
+                            padding-top: 30px !important;
+                            width: 100% !important;
                         }
                     </style>
                     <li class="active">
