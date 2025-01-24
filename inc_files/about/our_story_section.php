@@ -26,16 +26,16 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/section/Haneri_haVision_Image.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/section/Haneri_haVision_Image.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="assets/images/lazy.png" alt="About image description">
+                        <img class="owl-lazy" data-src="images/section/Haneri_haVision_Image.jpg"
+                            src="images/place.jpg" alt="About image description">
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->

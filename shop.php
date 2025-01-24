@@ -57,7 +57,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <!-- <li class="breadcrumb-item"><a href="#">Men</a></li> -->
-                        <li class="breadcrumb-item active" aria-current="page">Electronics</li>
+                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
