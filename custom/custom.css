@@ -25,6 +25,7 @@
 .header-search {
     margin-right: 1rem;
     margin-left: 1.3rem;
+    margin-top: 0px;
 }
 .header-middle .header-right {
     font-size: 30px;
