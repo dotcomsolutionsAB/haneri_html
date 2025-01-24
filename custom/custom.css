@@ -21,6 +21,14 @@
     display: none;
 }
 
+
+.header-icon:not(:last-child) {
+    margin-right: 1.3rem;
+    margin-left: 1.3rem;
+}
+.search-toggle i:before {
+    font-size: 25px;
+}
 .header-transparent {
     background: aliceblue;
 }
