@@ -48,24 +48,27 @@
             <!-- Slider code -->
             <?php include("inc_files/slider.php"); ?>
             
+            <div class="container">
+                <section class="featured_products">
+                    <h2>Featured Products</h2>
+                    <div class="product-grid">
+                        <div class="product">
+                            <a href="#"><img src="images/f1.png" alt="Black Fan"></a>
+                        </div>
+                        <div class="product">
+                            <a href="#"><img src="images/f2.png" alt="Wooden Fan"></a>
+                        </div>
+                        <div class="product">
+                            <a href="#"><img src="images/f3.png" alt="White Fan"></a>
+                        </div>
+                        <div class="product">
+                            <a href="#"><img src="images/f4.png" alt="Black Fan 2"></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <!-- Featured_products code -->
-            <section class="featured_products">
-                <h2>Featured Products</h2>
-                <div class="product-grid">
-                    <div class="product">
-                        <a href="#"><img src="images/f1.png" alt="Black Fan"></a>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="images/f2.png" alt="Wooden Fan"></a>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="images/f3.png" alt="White Fan"></a>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="images/f4.png" alt="Black Fan 2"></a>
-                    </div>
-                </div>
-            </section>
+            
             
             <!-- About_haneri code -->
             <?php include("inc_files/about_haneri.php"); ?>

@@ -63,7 +63,7 @@
                             text-decoration: none; /* Remove underline */                            
                         }
                         .hov:hover {
-                            background-color:#f8f9fa;
+                            /* background-color:#f8f9fa; */
                         }
                         .category .img {
                             width: 100%;
