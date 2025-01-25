@@ -434,6 +434,10 @@
     /* You can add form inputs or styles for the form here */
 }
 
+.mb-6 {
+    margin-bottom: 3rem !important;
+}
+
 
 /* end faq style */
 
