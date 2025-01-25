@@ -43,9 +43,11 @@
                     </li>
                     <style>
                         .menu .categoryy {
-                            left: -425px !important;
+                            left: -420px !important;
                             width: 91vw !important;
                             min-width: 300px;
+                            box-shadow: none;
+                            border: 0px solid #eee;
                         }
                         .hover{
                             padding-top: 10px !important;
