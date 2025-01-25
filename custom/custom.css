@@ -442,6 +442,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .faq .col-lg-6{
     width: 48%;
