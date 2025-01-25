@@ -113,20 +113,22 @@
             <!-- support_section code -->
 
             <!-- Blogs Section -->
-            <section class="blogs_section">
-                <h2>BLOGS</h2>
-                <div class="blogs-container">
-                    <div class="blog-item">
-                        <img src="images/f14.png" alt="Blog Image 1">
+            <div class="container">
+                <section class="blogs_section">
+                    <h2>BLOGS</h2>
+                    <div class="blogs-container">
+                        <div class="blog-item">
+                            <img src="images/f14.png" alt="Blog Image 1">
+                        </div>
+                        <div class="blog-item">
+                            <img src="images/f15.png" alt="Blog Image 2">
+                        </div>
+                        <div class="blog-item">
+                            <img src="images/f16.png" alt="Blog Image 3">
+                        </div>
                     </div>
-                    <div class="blog-item">
-                        <img src="images/f15.png" alt="Blog Image 2">
-                    </div>
-                    <div class="blog-item">
-                        <img src="images/f16.png" alt="Blog Image 3">
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
 
         </main><!-- End .main -->
