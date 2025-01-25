@@ -93,8 +93,8 @@
             <hr class="mt-3 mb-6">
 
             <section class="haneri-bespoke">
-                <div class="container">
-                    <div class="bespoke-content">
+                <div class="bespoke-content">
+                    <div class="container">
                         <div class="bespoke-text">
                             <h1>HANERI <br><span>BESPOKE</span></h1>
                         </div>
