@@ -438,7 +438,14 @@
     margin-bottom: 3rem !important;
 }
 
-
+#scroll-top.fixed {
+    border-radius: 50%;
+    background: rgb(49 88 88);
+}
+#scroll-top.fixed:hover {
+    color: #315858;
+    background: #a7bbbf;
+}
 /* end faq style */
 
 .faq{
