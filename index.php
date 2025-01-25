@@ -74,18 +74,18 @@
                 <!-- Why_choose_us code -->
                 <?php include("inc_files/why_choose_us.php"); ?>
 
-                <!-- Best_seller_section code -->
-                <?php include("inc_files/best_seller_section.php"); ?> 
+                 <!-- Theme_category_section code -->
 
             </div>
-            
+            <!-- Best_seller_section code -->
+            <?php include("inc_files/best_seller_section.php"); ?>
             
             
             
             
             
 
-            <!-- Theme_category_section code -->
+            
             
 
                        
@@ -93,12 +93,14 @@
             <hr class="mt-3 mb-6">
 
             <section class="haneri-bespoke">
-                <div class="bespoke-content">
-                    <div class="bespoke-text">
-                        <h1>HANERI <br><span>BESPOKE</span></h1>
-                    </div>
-                    <div class="bespoke-image">
-                        <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
+                <div class="container">
+                    <div class="bespoke-content">
+                        <div class="bespoke-text">
+                            <h1>HANERI <br><span>BESPOKE</span></h1>
+                        </div>
+                        <div class="bespoke-image">
+                            <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
+                        </div>
                     </div>
                 </div>
             </section>
