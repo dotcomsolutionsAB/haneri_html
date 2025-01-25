@@ -540,7 +540,7 @@ footer a {
 /* end footer */
 /* Featured Products */
 .featured_products {
-    padding: 40px;
+    padding: 40px 0px;
     /* text-align: center; */
 }
 
@@ -553,7 +553,7 @@ footer a {
 
 .product-grid {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 50px;
     flex-wrap: wrap;
 }

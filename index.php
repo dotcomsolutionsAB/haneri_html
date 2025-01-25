@@ -49,6 +49,7 @@
             <?php include("inc_files/slider.php"); ?>
             
             <div class="container">
+                <!-- Featured_products code -->
                 <section class="featured_products">
                     <h2>Featured Products</h2>
                     <div class="product-grid">
@@ -66,12 +67,16 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- About_haneri code -->
+                <?php include("inc_files/about_haneri.php"); ?>
+
+
             </div>
-            <!-- Featured_products code -->
             
             
-            <!-- About_haneri code -->
-            <?php include("inc_files/about_haneri.php"); ?>
+            
+            
             
             <!-- Why_choose_us code -->
             <?php include("inc_files/why_choose_us.php"); ?>
