@@ -164,7 +164,7 @@
 
                                     <div class="price-box">
                                         <span class="product-price">₨. 2199.00 - </span>
-                                        <span class="product-price">₨. 3299.00</span>
+                                        <span class="product-price">3299.00</span>
                                     </div><!-- End .price-box -->
 
                                     <div class="product-desc">
