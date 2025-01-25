@@ -111,8 +111,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="price-box">
-                                                        <span class="old-price">₹2199.00</span>
-                                                        <span class="product-price">$3299.00</span>
+                                                        <span class="old-price">₨. 3299.00</span>
+                                                        <span class="product-price">₨. 2199.00</span>
                                                     </div>
                                                 </div>
                                             </div>

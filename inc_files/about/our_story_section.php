@@ -148,7 +148,7 @@
         text-align: justify;
     }
     .containeres{
-        padding: 0px
+        padding: 0px;
     }
     .history-section h2 {
         margin-bottom: 1.6rem;
