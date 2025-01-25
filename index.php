@@ -71,6 +71,11 @@
                 <!-- About_haneri code -->
                 <?php include("inc_files/about_haneri.php"); ?>
 
+                <!-- Why_choose_us code -->
+                <?php include("inc_files/why_choose_us.php"); ?>
+
+                <!-- Best_seller_section code -->
+                <?php include("inc_files/best_seller_section.php"); ?> 
 
             </div>
             
@@ -78,14 +83,12 @@
             
             
             
-            <!-- Why_choose_us code -->
-            <?php include("inc_files/why_choose_us.php"); ?>
+            
 
             <!-- Theme_category_section code -->
             
 
-            <!-- Best_seller_section code -->
-            <?php include("inc_files/best_seller_section.php"); ?>            
+                       
 
             <hr class="mt-3 mb-6">
 
