@@ -179,7 +179,7 @@
         padding: 5px 65px; /* Spacing inside the heading */
         position: relative; /* Enable pseudo-elements */
         display: inline-block; /* Allow background to wrap the text */
-        background: linear-gradient(135deg, #047f89, #3a9aa2);
+        background: linear-gradient(135deg, #047f89, #315859);
         border-radius: 0px; /* Rounded corners */
         overflow: hidden; /* Prevent overflow of child elements */
         width:100%;

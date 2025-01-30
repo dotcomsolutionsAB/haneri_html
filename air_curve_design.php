@@ -64,7 +64,7 @@
             <style>
                 .about p {
                     font-family: 'Barlow Condensed';
-                    font-size: 18px;
+                    font-size: 22px;
                     color: #222529;
                 }
                 .air_curve_design {
@@ -73,6 +73,7 @@
                 }
                 .containe h2{
                     font-weight: 400;
+                    color: #315859;
                 }
                 .contents ul{
                     list-style-type: auto;
