@@ -66,6 +66,7 @@
                     font-family: 'Barlow Condensed';
                     font-size: 22px;
                     color: #222529;
+                    text-align: justify;
                 }
                 .air_curve_design {
                     padding: 20px 0px;
@@ -78,7 +79,7 @@
                 .contents ul{
                     list-style-type: auto;
                     margin-left: 20px;
-                    font-size: 18px;
+                    font-size: 22px;
                     /* line-height: 22px; */
                     text-align: justify;
                     font-family: 'Barlow Condensed';
