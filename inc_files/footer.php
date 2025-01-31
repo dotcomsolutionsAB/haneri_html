@@ -67,8 +67,8 @@
                             <ul class="link-part col-xl-12 mb-0">
                                 <li><a href="faqs.php">FAQs</a></li>
                                 <li><a href="privacy_policy.php">Privacy Policy</a></li>
-                                <li><a href="#">Shipping Policy</a></li>
-                                <li><a href="#">WIR Policy</a></li>
+                                <li><a href="shipping_policy.php">Shipping Policy</a></li>
+                                <li><a href="wir_policy.php">WIR Policy</a></li>
                             </ul>
                             <!-- <ul class="link-part col-xl-6">
                                 <li class="pl-xl-2 ml-xl-1"><a href="#">Orders History</a></li>

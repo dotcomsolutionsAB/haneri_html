@@ -57,7 +57,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
-                        <li class="breadcrumb-item active" aria-current="page">Privary Policy</li>
+                        <li class="breadcrumb-item active" aria-current="page">Shipping Policy</li>
                     </ol>
                 </div><!-- End .container -->
             </nav>
@@ -66,7 +66,7 @@
             </style>
             <div class="container">                
                 <div id="privacy_policy" class="privacy_policy">
-                    <?php include("inc_files/policy/privacy_policy.php"); ?>
+                    <?php include("inc_files/policy/shipping_policy.php"); ?>
                 </div>
             </div>
         </main><!-- End .main -->
