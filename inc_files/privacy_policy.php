@@ -22,7 +22,9 @@
       color: #333; /* Darker color for text */
       margin-bottom: 10px; /* Adds spacing below the heading */
     }
-
+    .content-section h3 {
+      font-size: 1.5rem;
+    }
     .content-section p {
       font-size: 16px; /* Sets font size for paragraphs in .content-section */
       color: #555; /* Slightly lighter text color */
@@ -35,10 +37,6 @@
       /* color: #333; */
     }
     .content-section h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .content-section h2 {
       font-size: 16px;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -46,7 +44,7 @@
 
     /* Global paragraph and list spacing */
     .content-section p {
-      margin-bottom: 15px;
+      margin-bottom: 0;
     }
     .content-section ul {
       margin: 10px 0;
@@ -59,44 +57,49 @@
     .content-section b {
       color: #000;
     }
+    .gaps{
+      height:10px;
+    }
   </style>
   <div class="content-section">
-    <h1>Privacy Policy</h1>
+    <div class="head-content">
+        <h3>Privacy Policy</h3>
 
-    <p>
-      At HANERI ELECTRICALS LLP and its subsidiaries ("we," "us," "our," or "HANERI"),
-      we are committed to safeguarding your privacy. This Privacy Policy (“Policy”)
-      outlines our practices regarding the collection, use, and processing of your
-      Personal Data when you interact with our services, products, and related web
-      applications (collectively referred to as “Products”).
-    </p>
+        <p>
+          At HANERI ELECTRICALS LLP and its subsidiaries ("we," "us," "our," or "HANERI"),
+          we are committed to safeguarding your privacy. This Privacy Policy (“Policy”)
+          outlines our practices regarding the collection, use, and processing of your
+          Personal Data when you interact with our services, products, and related web
+          applications (collectively referred to as “Products”).
+        </p>
+        <br class="gaps">
+        <h2>Scope of this Policy</h2>
 
-    <h2>Scope of this Policy</h2>
+        <p>This Policy applies to:</p>
+        <ul>
+          <li>Applications and websites hosted by HANERI ELECTRICALS LLP</li>
+          <li>Related services accessed through <a href="https://www.haneri.in">https://www.haneri.in</a></li>
+        </ul>
 
-    <p>This Policy applies to:</p>
-    <ul>
-      <li>Applications and websites hosted by HANERI ELECTRICALS LLP</li>
-      <li>Related services accessed through <a href="https://www.haneri.in">https://www.haneri.in</a></li>
-    </ul>
+        <p>In this Policy:</p>
+        <ul>
+          <li>
+            <strong>“Personal Data”</strong> refers to information that can identify an individual
+            either on its own or when combined with other data we have or collect through
+            third-party analytics tools.
+          </li>
+          <li>
+            <strong>“Smart Devices”</strong> are nonstandard computing devices with human-machine
+            interfaces and network connectivity, such as smart home appliances, wearables,
+            air purifiers, laptops, tablets, and desktop computers.
+          </li>
+          <li>
+            <strong>“Apps”</strong> are mobile applications developed by or for HANERI, enabling
+            users to remotely control Smart Devices and connect with the HANERI Platform.
+          </li>
+        </ul>
 
-    <p>In this Policy:</p>
-    <ul>
-      <li>
-        <strong>“Personal Data”</strong> refers to information that can identify an individual
-        either on its own or when combined with other data we have or collect through
-        third-party analytics tools.
-      </li>
-      <li>
-        <strong>“Smart Devices”</strong> are nonstandard computing devices with human-machine
-        interfaces and network connectivity, such as smart home appliances, wearables,
-        air purifiers, laptops, tablets, and desktop computers.
-      </li>
-      <li>
-        <strong>“Apps”</strong> are mobile applications developed by or for HANERI, enabling
-        users to remotely control Smart Devices and connect with the HANERI Platform.
-      </li>
-    </ul>
-
+    </div>
     <h3>Information We Collect</h3>
 
     <p>1. Information You Provide</p>
