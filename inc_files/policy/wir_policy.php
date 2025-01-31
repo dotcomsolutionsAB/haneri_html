@@ -33,12 +33,46 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Remote Controls and Blade Sets:</strong> 1-year warranty.</li>
             <li class="list-group-item"><strong>Mounting Kits, Down rods, and Canopies:</strong> 10 days warranty (against transit damage only).</li>
-        </ul>
+        </ul>        
         <p>Note: Warranty is applicable only for purchases made through authorized Haneri dealers, retailers, or official e-commerce platforms.</p>
         
         <h4 class="mt-4 text-primary">2. Warranty Terms</h4>
-        <p>The warranty period begins from the date of purchase and covers manufacturing defects under normal usage. Exclusions apply for improper handling, external regulators, liquid exposure, and environmental damage.</p>
-        
+        <p><strong> 1.	Coverage Period : </strong></p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">o	The warranty period begins from the date of purchase as per the original invoice.</li>
+            <li class="list-group-item">o	For serialized products, warranty is validated based on the serial number and invoice.</li>
+        </ul>
+        <p><strong> 2.	Scope of Warranty : </strong></p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">o	Covers manufacturing defects and functional failures under normal usage.</li>
+            <li class="list-group-item">o	Includes free repair or replacement of defective parts during the warranty period.</li>
+        </ul>
+        <p><strong> 3.	Exclusions : </strong></p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">o	Damage caused by improper installation, mishandling, unauthorized repairs, or modifications.</li>
+            <li class="list-group-item">o	Voltage fluctuations beyond 160V-250V.</li>
+            <li class="list-group-item">o	Use of external regulators with remote-controlled fans.</li>
+            <li class="list-group-item">o	Damage due to liquid exposure, pests, or external environmental factors.</li>
+            <li class="list-group-item">o	Normal wear and tear, including scratches, discoloration, or dents.</li>
+        </ul>
+        <p><strong> 4.	Additional Warranty Conditions : </strong></p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">o	For availing free home/onsite service, the product must be within the warranty period.</li>
+            <li class="list-group-item">o	For serialized products with Sticker/Printed Manufacture Month, warranty will be considered from the End User Sale Invoice date till the time period mentioned in the warranty table.</li>
+            <li class="list-group-item">o	For serialized products without Sticker/Printed Manufacture Month, the start date will be considered from the End User Sale Invoice date till the warranty period mentioned in the warranty table.</li>
+            <li class="list-group-item">o	For any query or complaint about the product, the customer needs to register a complaint only to the Company’s centralized call centre number provided below.</li>
+            <li class="list-group-item">o	End User Sale Invoice should have the following clearly mentioned:
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">	Valid GST Number</li>
+                <li class="list-group-item">	Complete address and contact number of the shop or platform from where the product was purchased</li>
+                <li class="list-group-item">	Date of purchase, Model & Serial number of the Product</li>
+              </ul>
+            </li>
+            <li class="list-group-item">o	The warranty period starts from the date of the original purchase of the SKU(s) by the first end-user. The invoice may consist of different SKU(s) having different warranty periods.</li>
+            <li class="list-group-item">o	The Company will not entertain any complaint with incomplete warranty details and service charge(s) as per company policy may apply.</li>
+        </ul>
+
+
         <h4 class="mt-4 text-primary">3. Claim Process</h4>
         <p>Customers can report claims by contacting Haneri Customer Support with invoice details and product serial numbers. Inspection and resolution, including repair, replacement, or refund, will be determined accordingly.</p>
         
