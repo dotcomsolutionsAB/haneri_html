@@ -29,10 +29,12 @@
         <p>Haneri Electricals LLP ("we," "our," or "us") is committed to ensuring customer satisfaction and confidence in our products. This Warranty and Refunds Policy provides clarity on the warranty coverage and refund/replacement terms for all Haneri products.</p>
         
         <h4 class="mt-4 text-primary">1. Warranty Offering</h4>
+        <p><strong>Accessories : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Remote Controls and Blade Sets:</strong> 1-year warranty.</li>
             <li class="list-group-item"><strong>Mounting Kits, Down rods, and Canopies:</strong> 10 days warranty (against transit damage only).</li>
         </ul>
+        <p>Note: Warranty is applicable only for purchases made through authorized Haneri dealers, retailers, or official e-commerce platforms.</p>
         
         <h4 class="mt-4 text-primary">2. Warranty Terms</h4>
         <p>The warranty period begins from the date of purchase and covers manufacturing defects under normal usage. Exclusions apply for improper handling, external regulators, liquid exposure, and environmental damage.</p>
