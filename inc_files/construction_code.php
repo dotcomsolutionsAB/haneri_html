@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
 
+    <style>
+        
         .construction-container {
             background-color: #ffffff;
             padding: 40px;
@@ -67,8 +50,7 @@
             }
         }
     </style>
-</head>
-<body>
+
     <div class="construction-container">
         <!-- Construction Icon -->
         <div class="icon">🚧</div>
@@ -85,8 +67,8 @@
 
     <!-- Optional JavaScript for Countdown Timer -->
     <script>
-        // Set the date we're counting down to (e.g., 10 days from now)
-        const countDownDate = new Date().getTime() + (10 * 24 * 60 * 60 * 1000);
+        // Set the date we're counting down to (4 hours from now)
+        const countDownDate = new Date().getTime() + (4 * 60 * 60 * 1000);
 
         // Update the countdown every 1 second
         const countdownFunction = setInterval(() => {
@@ -96,15 +78,14 @@
             // Find the distance between now and the countdown date
             const distance = countDownDate - now;
 
-            // Calculate days, hours, minutes, and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // Calculate hours, minutes, and seconds
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the result in the countdown element
             document.getElementById("countdown").innerHTML =
-                `Coming in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                `Coming in: ${hours}h ${minutes}m ${seconds}s`;
 
             // If the countdown is over, display a message
             if (distance < 0) {
@@ -113,5 +94,3 @@
             }
         }, 1000);
     </script>
-</body>
-</html>
