@@ -56,6 +56,10 @@
                             padding: 20px 320px;
                             justify-content: flex-start;
                         }
+                        .hover a:hover {
+                            background: repeating-radial-gradient(#43d4eb, #dfdfdf 100px);
+                            border-radius: 50%;
+                        }
                         .hov{
                             width: 150px;
                             transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
