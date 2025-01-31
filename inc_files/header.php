@@ -53,7 +53,7 @@
                             padding-top: 10px !important;
                             width: 100% !important;
                             background:#fff;
-                            padding: 20px 150px;
+                            padding: 20px 220px;
                             justify-content: flex-start;
                         }
                         .hov{
