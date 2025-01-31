@@ -43,7 +43,7 @@
                     </li> -->
                     <style>
                         .menu .categoryy {
-                            left: -50% !important;
+                            left: -25vw !important;
                             width: 100vw !important;
                             min-width: 100vw;
                             box-shadow: none;
