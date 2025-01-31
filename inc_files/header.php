@@ -15,7 +15,7 @@
 
             <nav class="main-nav font2">
                 <ul class="menu">
-                    <li class="active">
+                    <!-- <li class="active">
                         <a href="shop.php">Our Products</a>
                         <div class="megamenu megamenu-fixed-width megamenu-3cols">
                             <div class="row">
@@ -27,7 +27,7 @@
                                         </li>
                                         <li><a href="category-banner-boxed-image.html">Personal</a>
                                         </li>
-                                        <!-- <li><a href="category.html">Left Sidebar</a></li>
+                                        <li><a href="category.html">Left Sidebar</a></li>
                                         <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
                                         <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
                                         <li><a href="category-horizontal-filter1.html">Horizontal
@@ -35,17 +35,17 @@
                                         </li>
                                         <li><a href="category-horizontal-filter2.html">Horizontal
                                                 Filter2</a>
-                                        </li> -->
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                     <style>
                         .menu .categoryy {
-                            left: -420px !important;
-                            width: 91vw !important;
-                            min-width: 300px;
+                            left: -50vw;
+                            width: 100vw;
+                            min-width: 100%;
                             box-shadow: none;
                             border: 0px solid #eee;
                         }
