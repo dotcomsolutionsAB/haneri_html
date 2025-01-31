@@ -38,7 +38,7 @@
 
 <body class="full-screen-slider">
     <div class="page-wrapper">
-        <header class="header header-transparent">
+        <header class="header">
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
         

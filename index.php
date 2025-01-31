@@ -79,16 +79,7 @@
             </div>
             <!-- Best_seller_section code -->
             <?php include("inc_files/best_seller_section.php"); ?>
-            
-            
-            
-            
-            
-
-            
-            
-
-                       
+                                   
 
             <hr class="mt-3 mb-6">
 
