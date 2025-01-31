@@ -1,11 +1,18 @@
-<section class="container py-5">
-    <h2 class="text-center">Shipping Policy</h2>
+<style>
+    h2{
+        font-weight: 500;
+        font-family: system-ui;
+    }
+</style>
+
+<section class="py-5">
+    <h2 class="">Shipping Policy</h2>
     <p class="text-center">Effective Date: [Insert Date]</p>
     <p><strong>Haneri Electricals LLP</strong></p>
     <p>Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
     <p>Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
     
-    <hr>
+    <br>
     
     <h4>1. Shipping Destinations</h4>
     <ul>

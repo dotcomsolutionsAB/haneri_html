@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="contact-widget email">
                                     <p><i class="fas fa-envelope"></i></p>
-                                    <p><a href="mailto:mail@example.com">mail@example.com</a></p>
+                                    <p><a href="mailto:info@haneri.in">info@haneri.in</a></p>
                                 </div>
                                 <div class="contact-widget">
                                     <p><i class="fas fa-clock"></i></p>
