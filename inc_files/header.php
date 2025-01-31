@@ -45,7 +45,7 @@
                         .menu .categoryy {
                             left: -50vw;
                             width: 100vw;
-                            min-width: 100%;
+                            min-width: 100vw;
                             box-shadow: none;
                             border: 0px solid #eee;
                         }
