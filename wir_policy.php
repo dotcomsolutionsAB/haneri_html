@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Air Curve Design</title>
+    <title>Haneri - WIR Policy</title>
     <?php include("inc_files/fav_icon_others.php"); ?>
     <script>
         WebFontConfig = {

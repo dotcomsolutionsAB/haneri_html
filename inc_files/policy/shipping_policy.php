@@ -1,7 +1,16 @@
+<style>
+    .list-group-item {
+        border:0px solid rgba(0, 0, 0, .125);
+    }
+    .border-bottom {
+        border-bottom: 0px solid #dee2e6 !important;
+    }
+
+</style>
 <section class="py-5">
     <div class="card shadow-lg p-4">
-        <h2 class="text-center text-primary mb-3">Shipping Policy</h2>
-        <p class="text-center text-muted">Effective Date: [Insert Date]</p>
+        <h2 class="text-primary mb-3">Shipping Policy</h2>
+        <p class="text-muted">Effective Date: [Insert Date]</p>
         <div class="border-bottom mb-3"></div>
         
         <p><strong>Haneri Electricals LLP</strong></p>
