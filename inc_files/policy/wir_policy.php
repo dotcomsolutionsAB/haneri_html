@@ -14,8 +14,11 @@
     .text-primary {
         color: #1d696e !important;
     }
+    .mb-3 {
+        margin-bottom: 0rem !important;
+    }
 </style>
-<section class="container py-5">
+<section class="py-5">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary mb-3">Warranty, Installation and Refund Policy</h2>
         <p class="text-muted">Effective Date: 31.01.2025</p>
