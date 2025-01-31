@@ -66,7 +66,7 @@
             </style>
             <div class="container">                
                 <div id="wir_policy" class="wir_policy">
-                    <?php include("inc_files/policy/wir_policy.php"); ?>
+                    <?php include("inc_files/construction_code.php"); ?>
                 </div>
             </div>
         </main><!-- End .main -->
