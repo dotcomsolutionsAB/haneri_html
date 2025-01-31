@@ -65,9 +65,9 @@
                 
             </style>
             <div class="container">                
-                <section id="privacy_policy" class="privacy_policy">
+                <div id="privacy_policy" class="privacy_policy">
                     <?php include("inc_files/privacy_policy.php"); ?>
-                </section>
+                </div>
             </div>
         </main><!-- End .main -->
 
