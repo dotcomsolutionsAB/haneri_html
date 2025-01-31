@@ -5,13 +5,18 @@
             background-color: #ffffff;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+            max-width: 100vw;
+            height: 70vh;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 5.5rem;
             color: #333;
             margin-bottom: 20px;
         }
@@ -23,13 +28,13 @@
         }
 
         .icon {
-            font-size: 4rem;
+            font-size: 16rem;
             color: #ff6f61;
             margin-bottom: 20px;
         }
 
         .countdown {
-            font-size: 1.5rem;
+            font-size: 3.5rem;
             color: #333;
             margin-top: 20px;
         }
