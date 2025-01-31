@@ -30,7 +30,12 @@
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
     <style>
-        
+        .ss p{
+            font-size: 18px;
+        }
+        .ss a{
+            font-size:20px;
+        }
     </style>
 </head>
 
@@ -59,7 +64,8 @@
                         <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
                         <div id="accordion">
                             
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header" href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                                     What is Haneri?
                                 </a>
@@ -68,7 +74,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                     What is Haneri BeSpoke?
                                 </a>
@@ -77,7 +84,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                     What is MASS technology?
                                 </a>
@@ -86,7 +94,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                                     What is Air Curve Design?
                                 </a>
@@ -95,7 +104,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
                                     What makes Haneri fans unique?
                                 </a>
@@ -104,7 +114,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
                                     Where are Haneri fans manufactured?
                                 </a>
@@ -113,7 +124,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
                                     Are Haneri fans energy efficient?
                                 </a>
@@ -122,7 +134,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
                                     Do Haneri fans come with a warranty?
                                 </a>
@@ -131,7 +144,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
                                     What types of fans does Haneri offer?
                                 </a>
@@ -140,7 +154,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
                                     Do Haneri fans have remote control features?
                                 </a>
@@ -149,7 +164,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
                                     What is the "Mood Lighting" feature in Haneri fans?
                                 </a>
@@ -158,7 +174,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
                                     Are Haneri fans suitable for large rooms?
                                 </a>
@@ -167,7 +184,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
                                     Do Haneri fans come with advanced technology for quieter operation?
                                 </a>
@@ -176,7 +194,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
                                     What is the "More Air Slow Speed Technology"?
                                 </a>
@@ -185,7 +204,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
                                     How does Haneri ensure the durability of its products?
                                 </a>
@@ -194,7 +214,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
                                     Can I install Haneri fans myself?
                                 </a>
@@ -203,7 +224,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
                                     How do I clean and maintain my Haneri fan?
                                 </a>
@@ -212,7 +234,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
                                     Can I replace parts if needed?
                                 </a>
@@ -221,7 +244,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
                                     What should I do if my fan is not functioning correctly?
                                 </a>
@@ -230,7 +254,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
                                     Where can I buy Haneri fans?
                                 </a>
@@ -239,7 +264,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
                                     Do you offer free shipping?
                                 </a>
@@ -248,7 +274,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
                                     How can I register my Haneri fan for warranty?
                                 </a>
@@ -257,7 +284,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse23" aria-expanded="false" aria-controls="collapse23">
                                     How do I contact Haneri customer support?
                                 </a>
@@ -266,7 +294,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse24" aria-expanded="false" aria-controls="collapse24">
                                     Does Haneri provide after-sales service?
                                 </a>
@@ -275,7 +304,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse25" aria-expanded="false" aria-controls="collapse25">
                                     Why should I trust Haneri as a new brand?
                                 </a>
@@ -284,7 +314,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse26" aria-expanded="false" aria-controls="collapse26">
                                     How do you ensure the quality of Haneri products?
                                 </a>
@@ -293,7 +324,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse27" aria-expanded="false" aria-controls="collapse27">
                                     How does Haneri compare to established brands?
                                 </a>
@@ -302,7 +334,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse28" aria-expanded="false" aria-controls="collapse28">
                                     Are Haneri fans certified for safety and performance?
                                 </a>
@@ -311,7 +344,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse29" aria-expanded="false" aria-controls="collapse29">
                                     How do I know Haneri fans are reliable for long-term use?
                                 </a>
@@ -320,7 +354,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse30" aria-expanded="false" aria-controls="collapse30">
                                     What is your return and replacement policy?
                                 </a>
@@ -329,7 +364,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse31" aria-expanded="false" aria-controls="collapse31">
                                     Why is Haneri entering the market now?
                                 </a>
@@ -338,7 +374,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse32" aria-expanded="false" aria-controls="collapse32">
                                     How is Haneri engaging with its customers?
                                 </a>
@@ -347,7 +384,8 @@
                                 </div>
                             </div>
 
-                            <div class="card card-accordion">
+                            <br>
+                            <div class="card card-accordion ss">
                                 <a class="card-header collapsed" href="#" data-toggle="collapse" data-target="#collapse33" aria-expanded="false" aria-controls="collapse33">
                                     How does Haneri ensure transparency in its operations?
                                 </a>
