@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Air Curve Design</title>
+    <title>Haneri</title>
     <?php include("inc_files/fav_icon_others.php"); ?>
     <script>
         WebFontConfig = {
@@ -30,21 +30,7 @@
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
     <style>
-        .page-header {
-            padding: 1rem 0 3.2rem;
-            margin-top: 0px;
-        }
-        .banner-layer h1 {
-            font-size: 80px;
-            color: #fff;
-            font-family: Poppins,sans-serif;
-        }
-        .owl-dots{
-            display:none;
-        }
-        .card.card-accordion .card-header {
-            font-family: 'Raleway';
-        }
+        
     </style>
 </head>
 
