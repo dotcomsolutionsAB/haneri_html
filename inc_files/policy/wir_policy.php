@@ -17,6 +17,10 @@
     .mb-3 {
         margin-bottom: 0rem !important;
     }
+    p {
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+    }
 </style>
 <section class="py-5">
     <div class="card shadow-lg p-4">
@@ -74,30 +78,103 @@
 
 
         <h4 class="mt-4 text-primary">3. Claim Process</h4>
-        <p>Customers can report claims by contacting Haneri Customer Support with invoice details and product serial numbers. Inspection and resolution, including repair, replacement, or refund, will be determined accordingly.</p>
-        
-        <h4 class="mt-4 text-primary">4. Refund and Replacement Policy</h4>
-        <p>Refunds are valid for products with manufacturing defects within 15 days of purchase and will be processed through the original payment method.</p>
-        
-        <h4 class="mt-4 text-primary">5. Installation and Service Guidelines</h4>
-        <p>Free installation services are available in select locations. Customers must ensure proper site conditions and provide access for installation.</p>
-        
-        <h4 class="mt-4 text-primary">6. Additional Terms</h4>
+        <p><strong>1.	Reporting a Claim:</strong> </p>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Wobbling issues must be reported within 30 days of purchase.</li>
-            <li class="list-group-item">Claims for transit damage must be filed within 2 days of delivery.</li>
-            <li class="list-group-item">Repairs for out-of-warranty products will be chargeable, subject to spare parts availability.</li>
-            <li class="list-group-item">Haneri is not liable for delays due to circumstances beyond its control, including natural disasters, pandemics, or government restrictions.</li>
+          <li class="list-group-item">o	Contact Haneri Customer Support at [Insert Contact Details] or email info@haneri.in .</li>
+          <li class="list-group-item">o	Provide details including invoice, product serial number, and a description of the issue</li>
+        </ul>
+        <p><strong>2.	Inspection :</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	A service technician will inspect the product on-site or at an authorized service centre.</li>
+        </ul>
+        <p><strong>3.	Resolution:</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Products will be repaired, replaced, or refunded based on the technician’s assessment.</li>
+          <li class="list-group-item">o	Replacement units will carry the remaining warranty period of the original product.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">7. Customer Responsibilities</h4>
+        <h4 class="mt-4 text-primary">4. Additional Terms</h4>
+        <p><strong>•	Wobbling Issues:</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Claims must be reported within 30 days of purchase.</li>
+        </ul>
+        <p><strong>•	Transit Damage:</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Claims for transit damage must be filed within 2 days of delivery.</li>
+        </ul>
+        <p><strong>•	Service Outside Warranty:</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Repairs for out-of-warranty products will be chargeable, subject to spare parts availability.</li>
+        </ul>
+        <p><strong>•	Force Majeure:</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Haneri is not liable for delays or non-performance due to circumstances beyond its control, including natural disasters, pandemics, or government restrictions.</li>
+        </ul>
+                       
+        <h4 class="mt-4 text-primary">5. Customer Responsibilities</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Ensure correct installation and usage as per the user manual.</li>
             <li class="list-group-item">Provide necessary tools or access for service, such as ladders or clear workspaces.</li>
             <li class="list-group-item">Report any performance issues promptly to avoid further damage.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">8. Contact Us</h4>
+        <h4 class="mt-4 text-primary">Refund and Replacement Policy</h4>
+        <p><strong>1.	Eligibility</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Refunds or replacements are valid if:
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">	The product has a manufacturing defect within 15 days of purchase</li>
+              <li class="list-group-item">	The product was received damaged or defective.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>2.	Conditions</strong> </p>
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">o	The product must be returned in its original condition, with all accessories and packaging intact.</li>
+              <li class="list-group-item">o	Proof of purchase is mandatory for processing refunds or replacements.</li>
+          </li>
+        </ul>
+        <p><strong>3.	Process</strong> </p>
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">o	Reach out to Haneri Customer Support at [Insert Contact Details].</li>
+              <li class="list-group-item">o	Provide the purchase receipt and a description of the issue.</li>
+              <li class="list-group-item">o	After verification, the product may be inspected before processing a refund or replacement.</li>
+          </li>
+        </ul>
+        <p><strong>4.	Refunds</strong> </p>
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">o	Refunds will be processed through the original payment method within 15 business days.</li>
+          </li>
+        </ul>
+        
+        <h4 class="mt-4 text-primary">Installation and Service Guidelines</h4>
+        <p><strong>1.	Free Installation</strong> </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">o	Free installation services are available for select products and cities. Contact Haneri Customer Support to confirm availability.</li>
+          <li class="list-group-item">o	To avail of the free installation offer, customers need to call or email Haneri Customer Support (Call us at [Insert Contact Number] or Email: [Insert Email Address]).</li>
+          <li class="list-group-item">o	Working hours: 9 AM to 7 PM (Mon-Sat). We do not operate on public and national holidays.</li>
+          <li class="list-group-item">o	A Haneri Service Executive will verify if the offer is executable in your area.</li>
+          <li class="list-group-item">o	If your location is in a serviceable zone, the installation request will be registered. For non-serviceable locations, please refer to our installation video or guidelines.</li>
+          <li class="list-group-item">o	Installation will be completed within 48 hours of request registration.</li>
+          <li class="list-group-item">o	Turnaround time/SLA starts from the date and time the request is registered, after receiving all necessary details (Name, Number, Purchase details, Address with pin code, Serial number of the product, etc.).</li>
+          <li class="list-group-item">o	Free installation services are available for select products and cities. Contact Haneri Customer Support to confirm availability.</li>
+        </ul>
+        <p><strong>2.	Customer Responsibilities</strong> </p>
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">o	Ensure that power supply requirements are met as specified on the products.</li>
+              <li class="list-group-item">o	Ensure that there are no voltage fluctuations at the site.</li>
+              <li class="list-group-item">o	Provide necessary tools or access for installation, such as a ladder or clear workspace.</li>
+              <li class="list-group-item">o	Arrange for any additional modifications, such as false ceiling adjustments, at the customer’s expense.</li>
+          </li>
+        </ul>
+        <p><strong>3.	Service Limitations</strong> </p>
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">o	Haneri reserves the right to reject any service or installation request if the area is beyond our serviceable zones or if no authorized service centre is available.</li>
+              <li class="list-group-item">o	Haneri is not responsible for delays caused by force majeure events such as natural disasters, pandemics, or government restrictions.</li>
+          </li>
+        </ul>
+
+        <h4 class="mt-4 text-primary">Contact Us</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
             <li class="list-group-item">Phone: [Insert Contact Number]</li>
