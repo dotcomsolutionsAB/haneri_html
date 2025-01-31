@@ -522,9 +522,16 @@ footer .social-icon {
     border-top: 0px solid #e7e7e7;
 }
 .footer .contact-widget {
-    margin: 0 0 -1rem;
+    /* margin: 0 0 -1rem; */
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+.footer .contact-widget {
+    margin: 0rem;
+}
+footer p {
+    margin-bottom: 0rem;
 }
 .center .widget-title{
     /* text-align:center; */

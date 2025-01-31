@@ -53,7 +53,7 @@
                             padding-top: 10px !important;
                             width: 100% !important;
                             background:#fff;
-                            padding: 20px 320px;
+                            padding: 20px 310px;
                             justify-content: flex-start;
                         }
                         /* .hover a:hover {
