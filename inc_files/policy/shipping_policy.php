@@ -5,7 +5,15 @@
     .border-bottom {
         border-bottom: 0px solid #dee2e6 !important;
     }
-
+    .shadow-lg {
+        box-shadow: none;
+    }
+    .card{
+        border: 0px solid rgba(0, 0, 0, .125);
+    }
+    .text-primary {
+        color: #1d696e !important;
+    }
 </style>
 <section class="py-5">
     <div class="card shadow-lg p-4">
