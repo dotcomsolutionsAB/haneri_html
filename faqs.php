@@ -34,7 +34,7 @@
             font-size: 18px;
         }
         .ss a{
-            font-size:20px;
+            font-size:20px !important;
         }
     </style>
 </head>
