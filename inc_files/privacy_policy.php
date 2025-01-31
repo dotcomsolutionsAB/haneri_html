@@ -44,7 +44,7 @@
 
     /* Global paragraph and list spacing */
     .content-section p {
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
     .content-section ul {
       margin: 10px 0;
@@ -72,7 +72,6 @@
           Personal Data when you interact with our services, products, and related web
           applications (collectively referred to as “Products”).
         </p>
-        <br class="gaps">
         <h2>Scope of this Policy</h2>
 
         <p>This Policy applies to:</p>
