@@ -42,6 +42,9 @@
         .owl-dots{
             display:none;
         }
+        .card.card-accordion .card-header {
+            font-family: 'Raleway';
+        }
     </style>
 </head>
 

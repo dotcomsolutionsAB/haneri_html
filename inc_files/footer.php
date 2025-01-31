@@ -87,7 +87,8 @@
                                 <div class="contact-widget">
                                     <!-- <h4 class="widget-title">ADDRESS:</h4> -->
                                     <p><i class="fas fa-home"></i></p>
-                                    <p><span>700 001 Street Name, Kolkata, India</span></p>
+                                    <p><span>Elza International, Integrated Industrial Estate, 
+                                        <br> Sector 8A, BHEL Township, Haridwar, Uttarakhand 249403</span></p>
                                 </div>
                                 <div class="contact-widget">
                                     <p><i class="fas fa-phone"></i></p>
