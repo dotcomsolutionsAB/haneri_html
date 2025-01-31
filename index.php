@@ -42,7 +42,7 @@
             <?php include("inc_files/header.php"); ?>
         </header><!-- End .header -->
         
-        <?php include("inc_files/category_section.php"); ?>
+        <!-- Category section  -->
                 
         <main class="main">
             <!-- Slider code -->
