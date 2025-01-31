@@ -6,7 +6,7 @@
         border-bottom: 0px solid #dee2e6 !important;
     }
     .shadow-lg {
-        box-shadow: none;
+        box-shadow: none !important;
     }
     .card{
         border: 0px solid rgba(0, 0, 0, .125);
