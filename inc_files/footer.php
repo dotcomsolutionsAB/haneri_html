@@ -65,9 +65,10 @@
                         <h4 class="widget-title">Sample Menu</h4>
                         <div class="links link-parts row">
                             <ul class="link-part col-xl-12 mb-0">
+                                <li><a href="faqs.php">FAQs</a></li>
                                 <li><a href="privacy_policy.php">Privacy Policy</a></li>
-                                <li><a href="#">Menu</a></li>
-                                <li><a href="#">Menu</a></li>
+                                <li><a href="#">Shipping Policy</a></li>
+                                <li><a href="#">WIR Policy</a></li>
                             </ul>
                             <!-- <ul class="link-part col-xl-6">
                                 <li class="pl-xl-2 ml-xl-1"><a href="#">Orders History</a></li>
