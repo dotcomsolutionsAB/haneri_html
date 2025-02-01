@@ -134,7 +134,7 @@
             }
 
             /* 'Learn More' button */
-            .learn-more-btn {
+            /* .learn-more-btn {
                 display: inline-block;
                 background-color: #fff;
                 border: 1px solid rgb(213, 213, 213);
@@ -147,7 +147,7 @@
             .learn-more-btn:hover {
                 background-color: rgb(45, 142, 142);
                 color: #fff;
-            }
+            } */
 
             /* Responsive Styles */
             @media (max-width: 1024px) {
@@ -192,10 +192,10 @@
                     font-size: 14px;
                 }
 
-                .learn-more-btn {
+                /* .learn-more-btn {
                     padding: 0.6rem 0.8rem;
                     font-size: 14px;
-                }
+                } */
             }
         </style>
         <br>
@@ -209,15 +209,12 @@
                     <div class="custom-box">
                         <div class="icon-box">
                             <!-- Replace with your icon path/size -->
-                            <img src="images/place.jpg" alt="Enhanced Comfort" style="">
+                            <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2>Enhanced Comfort</h2>
                                 <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
-                            </div>
-                            <div class="btnn">
-                                <a href="#" class="learn-more-btn">Learn More </a>
                             </div>
                         </div>
                     </div>
@@ -227,15 +224,12 @@
                 <div class="col">
                     <div class="custom-box">
                         <div class="icon-box">
-                            <img src="images/place.jpg" alt="Cost Savings" style="">
+                            <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2>Cost Savings</h2>
                                 <p>Energy-efficient operation translates to long-term savings on electricity bills.</p> 
-                            </div>
-                            <div class="btnn">
-                                <a href="#" class="learn-more-btn">Learn More </a>
                             </div>           
                         </div>
                     </div>
@@ -245,15 +239,12 @@
                 <div class="col">
                     <div class="custom-box">
                     <div class="icon-box">
-                        <img src="images/place.jpg" alt="Sustainable Choice" style="">
+                        <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
                     </div>
                     <div class="custom-content">
                         <div class="txtt">
                             <h2>Sustainable Choice</h2>
                             <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
-                        </div>
-                        <div class="btnn">
-                            <a href="#" class="learn-more-btn">Learn More </a>
                         </div>
                     </div>
                     </div>
@@ -262,18 +253,15 @@
                 <!-- column 4 -->
                 <div class="col">
                     <div class="custom-box">
-                    <div class="icon-box">
-                        <img src="images/place.jpg" alt="Modern Aesthetics" style="">
-                    </div>
-                    <div class="custom-content">
-                        <div class="txtt">
-                            <h2>Modern Aesthetics</h2>
-                            <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                        <div class="icon-box">
+                            <img src="images/place.jpg" alt="Modern Aesthetics" style="">
                         </div>
-                        <div class="btnn">
-                            <a href="#" class="learn-more-btn">Learn More </a>
+                        <div class="custom-content">
+                            <div class="txtt">
+                                <h2>Modern Aesthetics</h2>
+                                <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -357,27 +345,27 @@
             <div class="col-xl-8 col-lg-6 contents">
                 <!-- <h2>The Science Behind Air Curve Design</h2> -->
                 <ul>
-                <li>
-                    <strong>
-                            Computational Fluid Dynamics (CFD):
-                    </strong>
-                    <br>
-                    Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
-                </li>
-                <li>
-                    <strong>
-                            Prototyping and Testing
-                    </strong>
-                    <br>
-                    Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
-                </li>
-                <li>
-                    <strong>
-                            Iterative Design
-                    </strong>
-                    <br>
-                    Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
-                </li>
+                    <li>
+                        <strong>
+                                Computational Fluid Dynamics (CFD):
+                        </strong>
+                        <br>
+                        Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
+                    </li>
+                    <li>
+                        <strong>
+                                Prototyping and Testing
+                        </strong>
+                        <br>
+                        Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
+                    </li>
+                    <li>
+                        <strong>
+                                Iterative Design
+                        </strong>
+                        <br>
+                        Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
+                    </li>
                 </ul>
             </div>
         </div>
