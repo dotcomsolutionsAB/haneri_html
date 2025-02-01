@@ -302,10 +302,20 @@
                 position: relative;
                 background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
                 /* height: 450px; */
-                display: flex;
+                /* display: flex; */
                 /* align-items: flex-end; */
                 /* justify-content: center; */
                 /* padding: 20px; */
+              }
+              .turbosilent_bldc::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+                z-index: 0; /* Places the overlay below the content */
               }
             </style>
             <div class="container">                            
