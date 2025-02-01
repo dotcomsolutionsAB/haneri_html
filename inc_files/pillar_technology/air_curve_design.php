@@ -85,8 +85,8 @@
 
     /* Each column (3 across by default) */
     .col {
-      flex: 1 1 calc(33.333% - 20px);
-      box-sizing: border-box;
+      /* flex: 1 1 calc(33.333% - 20px);
+      box-sizing: border-box; */
       /* for smaller screens, you can add media queries to stack columns */
     }
 
@@ -97,7 +97,7 @@
       background-color: #f9f9f9; /* or #fff if preferred */
       padding: 1.5rem;
       box-sizing: border-box;
-      min-height: 200px;         /* to ensure a bit of uniform height */
+      min-height: 350px;         /* to ensure a bit of uniform height */
     }
 
     /* Top-left icon box */
@@ -118,17 +118,23 @@
 
     /* Shift the text to the right so it doesn't overlap the icon box */
     .custom-content {
-      margin-left: 100px;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .custom-content h3 {
-      font-size: 1.25rem;
-      margin: 0 0 0.5rem;
+        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+        font-size: 22px;
+        font-weight: 700;
     }
 
     .custom-content p {
       margin: 0 0 1rem;
       color: #666;
+      font-size: 18px;
     }
 
     /* 'Learn More' button */
@@ -137,7 +143,7 @@
       background-color: #fff;
       border: 1px solid #009fe3;
       color: #009fe3;
-      padding: 0.4rem 1rem;
+      padding: 0.8rem 1rem;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
@@ -154,54 +160,64 @@
       }
     }
 </style>
-        <div class="row row-bg">
-        <div class="container">
-            <div class="eow rowws">
-            <!-- Column 1 -->
-            <div class="col">
-                <div class="custom-box">
-                <div class="icon-box">
-                    <!-- Replace with your icon path/size -->
-                    <img src="path/to/enhanced-comfort-icon.png" alt="Enhanced Comfort" style="width:40px;">
-                </div>
-                <div class="custom-content">
-                    <h3>Enhanced Comfort</h3>
-                    <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
-                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
-                </div>
-                </div>
+<div class="row row-bg">
+    <div class="eow rowws">
+    <!-- Column 1 -->
+    <div class="col">
+        <div class="custom-box">
+        <div class="icon-box">
+            <!-- Replace with your icon path/size -->
+            <img src="images/place.jpg" alt="Enhanced Comfort" style="width:40px;">
+        </div>
+        <div class="custom-content">
+            <div class="txtt">
+                <h2>Enhanced Comfort</h2>
+                <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
             </div>
-
-            <!-- Column 2 -->
-            <div class="col">
-                <div class="custom-box">
-                <div class="icon-box">
-                    <img src="path/to/cost-savings-icon.png" alt="Cost Savings" style="width:40px;">
-                </div>
-                <div class="custom-content">
-                    <h3>Cost Savings</h3>
-                    <p>Energy-efficient operation translates to long-term savings on electricity bills.</p>
-                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="col">
-                <div class="custom-box">
-                <div class="icon-box">
-                    <img src="path/to/sustainable-choice-icon.png" alt="Sustainable Choice" style="width:40px;">
-                </div>
-                <div class="custom-content">
-                    <h3>Sustainable Choice</h3>
-                    <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
-                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
-                </div>
-                </div>
-            </div>
+            <div class="btnn">
+                <a href="#" class="learn-more-btn">Learn More &rarr;</a>
             </div>
         </div>
         </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col">
+        <div class="custom-box">
+            <div class="icon-box">
+                <img src="images/place.jpg" alt="Cost Savings" style="width:40px;">
+            </div>
+            <div class="custom-content">
+                <div class="txtt">
+                    <h2>Cost Savings</h2>
+                    <p>Energy-efficient operation translates to long-term savings on electricity bills.</p> 
+                </div>
+                <div class="btnn">
+                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                </div>           
+            </div>
+        </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="col">
+        <div class="custom-box">
+        <div class="icon-box">
+            <img src="images/place.jpg" alt="Sustainable Choice" style="width:40px;">
+        </div>
+        <div class="custom-content">
+            <div class="txtt">
+                <h2>Sustainable Choice</h2>
+                <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+            </div>
+            <div class="btnn">
+                <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
 
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
