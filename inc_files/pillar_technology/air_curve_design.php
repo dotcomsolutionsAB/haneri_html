@@ -299,7 +299,7 @@
                 border-radius: 0px;
                 text-align: center;
                 min-width: 100%;
-                width: 470px;
+                width: 450px;
                 max-width: 500px;
                 color: white;
                 display: flex;
@@ -348,7 +348,7 @@
 
         </style>
         <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-xl-4 col-lg-6">
             <div class="work-together-section">
                 <div class="contentss">
                     <h2>LET'S WORK TOGETHER</h2>
@@ -360,7 +360,7 @@
                 </div>
                 </div>
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
+            <div class="col-xl-8 col-lg-6 contents">
                 <h2>The Science Behind Air Curve Design</h2>
                 <ul>
                 <li>
