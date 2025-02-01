@@ -223,9 +223,9 @@
 
     .content-container {
       position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 35px;
+      padding: 1rem;
       margin-top: 10vh;
       animation: fadeDown 1.2s ease forwards;
       opacity: 0;
@@ -241,25 +241,28 @@
     }
 
     .content-container h1 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+        font-size: 3.3rem;
+        margin-bottom: 1rem;
+        color: #fff;
     }
 
     .content-container h2 {
-      font-size: 1.6rem;
+      font-size: 2.6rem;
       margin: 2rem 0 1rem;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      color: #fff;
     }
 
     .content-container p {
       line-height: 1.7;
       margin-bottom: 1.2rem;
-      font-size: 1.05rem;
+      font-size: 2.2rem;
+      color: #fff;
     }
 
     .content-container strong {
       font-weight: 700;
+      font-size: 22px;
     }
   </style>
 
