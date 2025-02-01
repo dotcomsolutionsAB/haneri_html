@@ -307,11 +307,21 @@
                 /* justify-content: center; */
                 /* padding: 20px; */
               }
+              .turbosilent_bldc::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+                z-index: 0; /* Places the overlay below the content */
+              }
               .bg{
                 background-color:rgb(165 165 165 / 8%);
               }
             </style>
-            <div class="container bg">                            
+            <div class="container">                            
                 <section id="turbosilent_bldc" class="turbosilent_bldc">
                     <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>
                 </section>
