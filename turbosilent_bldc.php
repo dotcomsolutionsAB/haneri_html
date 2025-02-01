@@ -314,11 +314,8 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+                background: rgb(255, 255, 255); /* Black overlay with 50% opacity */
                 z-index: 0; /* Places the overlay below the content */
-              }
-              .bg{
-                background-color:rgb(165 165 165 / 8%);
               }
             </style>
             <div class="container">                            
