@@ -353,7 +353,7 @@
                 </div>
                 </div>
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
+            <div class="col-xl-8 col-lg-6 contents">
                 <!-- <h2>The Science Behind Air Curve Design</h2> -->
                 <ul>
                 <li>
