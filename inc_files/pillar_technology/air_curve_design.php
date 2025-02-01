@@ -230,7 +230,7 @@
         </div>
     </div>
 
-<br><br>
+    <br><br>
 
       <div class="row row-bg">
           <div class="col-xl-5 col-lg-6">
