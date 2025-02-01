@@ -306,6 +306,7 @@
                 justify-content: center;
                 align-items: center;
                 transition: all 0.3s ease;
+                gap: 15px;
             }
 
             /* Headline */
@@ -323,6 +324,7 @@
                 color: #315858;
                 font-weight: bold;
                 padding: 8px 15px;
+                font-size: 15px;
                 /* border-radius: 5px; */
                 text-decoration: none;
                 transition: all 0.3s ease;
@@ -332,8 +334,8 @@
                 width: 35%;
             }
             .work-together-section .contentss .contact-btn:hover {
-            background-color: #005c99;
-            color: white;
+                background-color: #005c99;
+                color: white;
             }
 
         </style>
