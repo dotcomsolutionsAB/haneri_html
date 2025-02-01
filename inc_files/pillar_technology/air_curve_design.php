@@ -286,6 +286,7 @@
                 position: relative;
                 background: url('images/place.jpg') center center/cover no-repeat;
                 height: 450px;
+                width: 450px;
                 display: flex;
                 align-items: flex-end;
                 justify-content: center;
@@ -299,7 +300,6 @@
                 border-radius: 0px;
                 text-align: center;
                 min-width: 100%;
-                width: 450px;
                 max-width: 500px;
                 color: white;
                 display: flex;
