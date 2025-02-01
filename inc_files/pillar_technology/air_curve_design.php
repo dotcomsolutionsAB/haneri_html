@@ -157,16 +157,18 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 520px) {
     .custom-box {
-        width: 100%; /* 1 item per row on mobile */
-        min-height: 300px;
-        padding: 1.2rem;
+        width: 100%;
+        min-height: 220px;
+        padding: 1.2rem 3.4rem;
     }
-
+    .rowws{
+        gap: 10px;
+    }
     .icon-box {
-        width: 60px;
-        height: 60px;
+        width: 75px;
+        height: 75px;
     }
 
     .icon-box img {
@@ -174,10 +176,14 @@
     }
 
     .custom-content {
-        margin-top: 80px;
-        height: auto;
+        margin-top: 75px;
+        height: 175px;
+        width: 260px;
     }
 
+    .custom-content .btnn{
+        padding-bottom: 23px;
+    }
     .custom-content h2 {
         font-size: 18px;
     }
