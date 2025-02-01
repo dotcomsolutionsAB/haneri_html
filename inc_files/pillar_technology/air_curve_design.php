@@ -335,7 +335,7 @@
                 width: 35%;
             }
             .work-together-section .contentss .contact-btn:hover {
-                background-color: #005c99;
+                background-color: #0affff99;
                 color: white;
             }
 
