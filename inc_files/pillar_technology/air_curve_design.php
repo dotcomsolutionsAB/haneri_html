@@ -150,53 +150,53 @@
             }
 
             /* Responsive Styles */
-@media (max-width: 1024px) {
-    .custom-box {
-        width: calc(50% - 20px); /* 2 items per row on tablets */
-        min-height: 320px;
-    }
-}
+            @media (max-width: 1024px) {
+                .custom-box {
+                    width: calc(50% - 20px); /* 2 items per row on tablets */
+                    min-height: 320px;
+                }
+            }
 
-@media (max-width: 520px) {
-    .custom-box {
-        width: 100%;
-        min-height: 220px;
-        padding: 1.2rem 3.4rem;
-    }
-    .rowws{
-        gap: 10px;
-    }
-    .icon-box {
-        width: 75px;
-        height: 75px;
-    }
+            @media (max-width: 520px) {
+                .custom-box {
+                    width: 100%;
+                    min-height: 220px;
+                    padding: 1.2rem 3.4rem;
+                }
+                .rowws{
+                    gap: 10px;
+                }
+                .icon-box {
+                    width: 75px;
+                    height: 75px;
+                }
 
-    .icon-box img {
-        width: 45px;
-    }
+                .icon-box img {
+                    width: 45px;
+                }
 
-    .custom-content {
-        margin-top: 75px;
-        height: 175px;
-        width: 260px;
-    }
+                .custom-content {
+                    margin-top: 75px;
+                    height: 175px;
+                    width: 260px;
+                }
 
-    .custom-content .btnn{
-        padding-bottom: 23px;
-    }
-    .custom-content h2 {
-        font-size: 18px;
-    }
+                .custom-content .btnn{
+                    padding-bottom: 23px;
+                }
+                .custom-content h2 {
+                    font-size: 18px;
+                }
 
-    .custom-content p {
-        font-size: 14px;
-    }
+                .custom-content p {
+                    font-size: 14px;
+                }
 
-    .learn-more-btn {
-        padding: 0.6rem 0.8rem;
-        font-size: 14px;
-    }
-}
+                .learn-more-btn {
+                    padding: 0.6rem 0.8rem;
+                    font-size: 14px;
+                }
+            }
         </style>
         <br>
         <div class="row-bg">
@@ -279,22 +279,75 @@
             </div>
         </div>
         <br><br>
+
+        <style>
+            /* Container styles */
+            .work-together-section {
+            position: relative;
+            background: url('images/place.jpg') center center/cover no-repeat;
+            height: 450px; /* Adjust height as needed */
+            display: flex;
+            align-items: flex-end; /* Align content at the bottom */
+            justify-content: center;
+            padding: 20px;
+            }
+
+            /* Content area */
+            .work-together-section .contentss {
+            background-color: rgba(0, 120, 200, 0.9); /* Semi-transparent blue background */
+            padding: 20px 40px;
+            border-radius: 8px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            color: white;
+            }
+
+            /* Headline */
+            .work-together-section .contentss h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px;
+            }
+
+            /* Contact button */
+            .work-together-section .contentss .contact-btn {
+            display: inline-block;
+            background-color: white;
+            color: #0078c8;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            }
+
+            .work-together-section .contentss .contact-btn:hover {
+            background-color: #005c99;
+            color: white;
+            }
+
+            .work-together-section .contentss .contact-btn span {
+            font-size: 18px;
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+            }
+
+            .work-together-section .contentss .contact-btn:hover span {
+            margin-left: 10px;
+            }
+
+        </style>
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
+            <div class="work-together-section">
+                <div class="contentss">
+                    <h2>LET'S WORK TOGETHER</h2>
+                    <a href="#" class="contact-btn">
+                    CONTACT US <span>&#x2192;</span>
+                    </a>
+                </div>
+                </div>
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
                 <h2>The Science Behind Air Curve Design</h2>
@@ -323,6 +376,9 @@
                 </ul>
             </div>
         </div>
+
+        
+
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
