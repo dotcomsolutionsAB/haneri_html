@@ -98,25 +98,30 @@
       min-height: 350px;         /* to ensure a bit of uniform height */
     }
     .custom-box:hover {
-        border: 1px solid #009fe3;
-        background-color: #f9f9f9;
+        border: 1px solid #315858;
+        background-color: #f6f6f6;
     }
     .custom-box:hover .icon-box {
-        border-bottom: 1px solid #009fe3;
-        border-right: 1px solid #009fe3;
+        border-bottom: 1px solid #315858;
+        border-right: 1px solid #315858;
     }
     /* Top-left icon box */
     .icon-box {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 80px;
-      height: 80px;
-      transform: translate(-1px, -1px); /* merges corner with outer border */
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        border-bottom: 1px solid grey;
+        border-right: 1px solid grey;
+        transform: translate(-1px, -1px); /* merges corner with outer border */
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-box img{
+        width:65px;
     }
 
     /* Shift the text to the right so it doesn't overlap the icon box */
@@ -171,7 +176,7 @@
         <div class="custom-box">
         <div class="icon-box">
             <!-- Replace with your icon path/size -->
-            <img src="images/place.jpg" alt="Enhanced Comfort" style="width:40px;">
+            <img src="images/place.jpg" alt="Enhanced Comfort" style="">
         </div>
         <div class="custom-content">
             <div class="txtt">
@@ -179,7 +184,7 @@
                 <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
             </div>
             <div class="btnn">
-                <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                <a href="#" class="learn-more-btn">Learn More </a>
             </div>
         </div>
         </div>
@@ -189,7 +194,7 @@
     <div class="col">
         <div class="custom-box">
             <div class="icon-box">
-                <img src="images/place.jpg" alt="Cost Savings" style="width:40px;">
+                <img src="images/place.jpg" alt="Cost Savings" style="">
             </div>
             <div class="custom-content">
                 <div class="txtt">
@@ -197,7 +202,7 @@
                     <p>Energy-efficient operation translates to long-term savings on electricity bills.</p> 
                 </div>
                 <div class="btnn">
-                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                    <a href="#" class="learn-more-btn">Learn More </a>
                 </div>           
             </div>
         </div>
@@ -207,7 +212,7 @@
     <div class="col">
         <div class="custom-box">
         <div class="icon-box">
-            <img src="images/place.jpg" alt="Sustainable Choice" style="width:40px;">
+            <img src="images/place.jpg" alt="Sustainable Choice" style="">
         </div>
         <div class="custom-content">
             <div class="txtt">
@@ -215,7 +220,7 @@
                 <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
             </div>
             <div class="btnn">
-                <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                <a href="#" class="learn-more-btn">Learn More </a>
             </div>
         </div>
         </div>
