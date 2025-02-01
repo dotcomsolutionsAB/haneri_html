@@ -170,15 +170,14 @@
 </div><!-- End .history-section -->
 
 <div class="containe">
-    <div class="row row-bg">
+    <div class="row row-bg why">
         <div class="col-md-12">
-            <p class="mb-2">
-                <h2>
-                    Why Choose HANERI TurboSilent Ceiling Fans?
-                </h2>
-                <p>
-                    HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.
-                </p>
+            <p class="mb-2"></p>
+            <h2>
+                Why Choose HANERI TurboSilent Ceiling Fans?
+            </h2>
+            <p>
+                HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.
             </p>
         </div>
     </div><!-- End .row -->
@@ -186,6 +185,17 @@
 
 <div class="mb-3"></div><!-- margin -->
 
+<style>
+    .why{
+        background: radial-gradient(#87a9a4, #00473e);
+        color: #fff;
+        border-radius: 15px;
+        box-shadow: 10px 10px 1px 1px #ccccccab;
+    }
+    .why p,h2{
+        color:#fff;
+    }
+</style>
 <style>
     /* Main Heading Style */
     .about_section {
