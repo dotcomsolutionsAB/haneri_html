@@ -283,45 +283,54 @@
         <style>
             /* Container styles */
             .work-together-section {
-            position: relative;
-            background: url('images/place.jpg') center center/cover no-repeat;
-            height: 500px; /* Adjust height as needed */
-            display: flex;
-            align-items: flex-end; /* Align content at the bottom */
-            justify-content: center;
-            /* padding: 20px; */
+                position: relative;
+                background: url('images/place.jpg') center center/cover no-repeat;
+                height: 450px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                padding: 0px;
             }
 
             /* Content area */
             .work-together-section .contentss {
-            background-color: rgba(0, 120, 200, 0.9); /* Semi-transparent blue background */
-            padding: 20px 40px;
-            border-radius: 8px;
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-            color: white;
+                background-color: rgb(49 88 88);
+                padding: 20px 30px;
+                border-radius: 0px;
+                text-align: center;
+                min-width: 100%;
+                width: 470px;
+                max-width: 500px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s ease;
             }
 
             /* Headline */
             .work-together-section .contentss h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 10px;
+                font-size: 24px;
+                font-weight: 500;
+                margin: 0px 0 10px;
+                color: #fff;
             }
 
             /* Contact button */
             .work-together-section .contentss .contact-btn {
-            display: inline-block;
-            background-color: white;
-            color: #0078c8;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+                display: inline-block;
+                background-color: white;
+                color: #315858;
+                font-weight: bold;
+                padding: 8px 15px;
+                /* border-radius: 5px; */
+                text-decoration: none;
+                transition: all 0.3s ease;
             }
 
+            .c{
+                width: 35%;
+            }
             .work-together-section .contentss .contact-btn:hover {
             background-color: #005c99;
             color: white;
