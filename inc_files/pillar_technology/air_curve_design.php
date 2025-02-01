@@ -285,11 +285,11 @@
             .work-together-section {
             position: relative;
             background: url('images/place.jpg') center center/cover no-repeat;
-            height: 450px; /* Adjust height as needed */
+            height: 500px; /* Adjust height as needed */
             display: flex;
             align-items: flex-end; /* Align content at the bottom */
             justify-content: center;
-            padding: 20px;
+            /* padding: 20px; */
             }
 
             /* Content area */
@@ -298,7 +298,7 @@
             padding: 20px 40px;
             border-radius: 8px;
             text-align: center;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             color: white;
             }
@@ -343,9 +343,11 @@
             <div class="work-together-section">
                 <div class="contentss">
                     <h2>LET'S WORK TOGETHER</h2>
-                    <a href="#" class="contact-btn">
-                    CONTACT US <span>&#x2192;</span>
-                    </a>
+                    <div class="c">
+                        <a href="#" class="contact-btn">
+                            CONTACT US <span>&#x2192;</span>
+                        </a>
+                    </div>
                 </div>
                 </div>
             </div><!-- End .col-lg-5 -->
