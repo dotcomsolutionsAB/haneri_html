@@ -70,7 +70,7 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
-        <div class="row row-bg">
+        <!-- <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
@@ -85,8 +85,8 @@
                         <img class="owl-lazy" data-src="images/place.jpg"
                             src="images/place.jpg" alt="About image description">
                     </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
+                </div>
+            </div>
             <div class="col-xl-7 col-lg-6 order-lg-first contents">
                 <h2>
                     Benefits for Customers
@@ -121,8 +121,117 @@
                         Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.
                     </li>
                 </ul>
-            </div><!-- End .col-lg-7 -->
-        </div><!-- End .row -->
+            </div>
+        </div> -->
+
+<style type="text/css" media="all">
+    .feature-box {
+    position: relative;
+    border: 1px solid #009fe3; /* Blue border to match your example */
+    padding: 1.5rem;
+    background-color: #fff; /* Light background or change as desired */
+    max-width: 600px;       /* Constrain width as needed */
+    margin: 1rem auto;      /* Center horizontally if you like */
+    }
+
+    /* The small box at the top-left corner */
+    .feature-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    border-bottom: 1px solid #009fe3;
+    border-right: 1px solid #009fe3;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Shift it slightly so the border lines up nicely with outer box: */
+    transform: translate(-1px, -1px);
+    }
+
+    .feature-icon img {
+    max-width: 60%;
+    max-height: 60%;
+    }
+
+    /* Push content to the right so it doesn't overlap the icon box */
+    .feature-content {
+    margin-left: 120px;
+    }
+
+    /* Heading styling */
+    .feature-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    }
+
+    /* List styling for bullet points */
+    .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    }
+
+    .feature-list li {
+    margin-bottom: 0.75rem;
+    }
+
+    /* Learn More button styling */
+    .learn-more-btn {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #009fe3;
+    color: #009fe3;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    }
+
+    .learn-more-btn:hover {
+    background-color: #009fe3;
+    color: #fff;
+    }
+
+</style>
+
+<div class="feature-box">
+  <!-- Icon Box in Top-Left Corner -->
+  <div class="feature-icon">
+    <img src="path/to/your-icon.png" alt="Feature Icon" />
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="feature-content">
+    <h2>BENEFITS FOR CUSTOMERS</h2>
+
+    <ul class="feature-list">
+      <li>
+        <strong>Enhanced Comfort:</strong>
+        Experience superior cooling with high air delivery,
+        ensuring a refreshing breeze in every corner of the room.
+      </li>
+      <li>
+        <strong>Cost Savings:</strong>
+        Energy-efficient operation translates to long-term savings on electricity bills.
+      </li>
+      <li>
+        <strong>Sustainable Choice:</strong>
+        Air Curve Design contributes to a greener, more sustainable
+        environment by reducing energy consumption.
+      </li>
+      <li>
+        <strong>Modern Aesthetics:</strong>
+        Sleek, innovative blade designs complement contemporary interiors,
+        adding a touch of sophistication to your space.
+      </li>
+    </ul>
+
+    <a href="#" class="learn-more-btn">LEARN MORE &rarr;</a>
+  </div>
+</div>
 
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
