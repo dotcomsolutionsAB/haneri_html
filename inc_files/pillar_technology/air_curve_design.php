@@ -143,17 +143,7 @@
         <br><br>
 
         <style>
-            /* Container styles */
-.work-together-section {
-    position: relative;
-    background: url('images/benifits/back.png') center center/cover no-repeat;
-    height: 500px;
-    width: 450px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0px;
-}
+            
 
         </style>
         <div class="row row-bg">
