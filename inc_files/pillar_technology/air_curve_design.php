@@ -315,6 +315,7 @@
                 font-weight: 500;
                 margin: 0px 0 10px;
                 color: #fff;
+                width:65%;
             }
 
             /* Contact button */
