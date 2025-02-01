@@ -130,7 +130,7 @@
     border: 1px solid #009fe3; /* Blue border to match your example */
     padding: 1.5rem;
     background-color: #fff; /* Light background or change as desired */
-    max-width: 600px;       /* Constrain width as needed */
+    max-width: 580px;       /* Constrain width as needed */
     margin: 1rem auto;      /* Center horizontally if you like */
     }
 
@@ -139,8 +139,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: 120px;
     border-bottom: 1px solid #009fe3;
     border-right: 1px solid #009fe3;
     background-color: #fff;
@@ -158,12 +158,13 @@
 
     /* Push content to the right so it doesn't overlap the icon box */
     .feature-content {
-    margin-left: 120px;
+        margin-top: 115px;
+        padding: 10px 35px;
     }
 
     /* Heading styling */
     .feature-content h2 {
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     }
 
@@ -232,6 +233,105 @@
     <a href="#" class="learn-more-btn">LEARN MORE &rarr;</a>
   </div>
 </div>
+
+<style>
+    .benefit-card {
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    transition: box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .benefit-icon {
+    width: 64px;      /* Adjust icon size as needed */
+    height: 64px;     /* Keep aspect ratio by removing if your icons are uniform */
+    margin-bottom: 1rem;
+    object-fit: contain; /* Ensures the icon scales nicely within the box */
+    }
+
+    .benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    }
+
+    .benefit-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0; /* Keep spacing tight or adjust to your liking */
+    }
+</style>
+    <div class="row row-bg">
+        <!-- Card 1 -->
+        <div class="col-md-3 mb-4">
+        <div class="benefit-card">
+            <img
+            src="path/to/enhanced-comfort-icon.png"
+            alt="Enhanced Comfort Icon"
+            class="benefit-icon"
+            />
+            <h3>Enhanced Comfort</h3>
+            <p>
+            Experience superior cooling with high air delivery,
+            ensuring a refreshing breeze in every corner of the room.
+            </p>
+        </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-3 mb-4">
+        <div class="benefit-card">
+            <img
+            src="path/to/cost-savings-icon.png"
+            alt="Cost Savings Icon"
+            class="benefit-icon"
+            />
+            <h3>Cost Savings</h3>
+            <p>
+            Energy-efficient operation translates to
+            long-term savings on electricity bills.
+            </p>
+        </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-3 mb-4">
+        <div class="benefit-card">
+            <img
+            src="path/to/sustainable-choice-icon.png"
+            alt="Sustainable Choice Icon"
+            class="benefit-icon"
+            />
+            <h3>Sustainable Choice</h3>
+            <p>
+            Air Curve Design contributes to a greener,
+            more sustainable environment by reducing energy consumption.
+            </p>
+        </div>
+        </div>
+
+        <!-- Card 4 (Remove if you only want three) -->
+        <div class="col-md-3 mb-4">
+        <div class="benefit-card">
+            <img
+            src="path/to/modern-aesthetics-icon.png"
+            alt="Modern Aesthetics Icon"
+            class="benefit-icon"
+            />
+            <h3>Modern Aesthetics</h3>
+            <p>
+            Sleek, innovative blade designs complement contemporary interiors,
+            adding a touch of sophistication to your space.
+            </p>
+        </div>
+        </div>
+    </div>
+
+
 
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
