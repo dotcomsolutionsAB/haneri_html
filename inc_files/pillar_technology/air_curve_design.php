@@ -93,12 +93,12 @@
             border: 1px solid #74787C;
         }
         .custom-box:hover {
-            border: 1px solid rgb(45, 142, 142);
+            border: 3px solid rgb(45, 142, 142);
             
         }
         .custom-box:hover .icon-box {
-            border-bottom: 1px solid rgb(45, 142, 142);
-            border-right: 1px solid rgb(45, 142, 142);
+            border-bottom: 3px solid rgb(45, 142, 142);
+            border-right: 3px solid rgb(45, 142, 142);
         }
         /* Top-left icon box */
         .icon-box {
