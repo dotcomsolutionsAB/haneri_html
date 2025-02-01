@@ -93,13 +93,18 @@
     /* Custom Box */
     .custom-box {
       position: relative;
-      border: 1px solid #009fe3; /* Blue border */
-      background-color: #f9f9f9; /* or #fff if preferred */
-      padding: 1.5rem;
+      padding: 1.5rem 3rem;
       box-sizing: border-box;
       min-height: 350px;         /* to ensure a bit of uniform height */
     }
-
+    .custom-box:hover {
+        border: 1px solid #009fe3;
+        background-color: #f9f9f9;
+    }
+    .custom-box:hover .icon-box {
+        border-bottom: 1px solid #009fe3;
+        border-right: 1px solid #009fe3;
+    }
     /* Top-left icon box */
     .icon-box {
       position: absolute;
@@ -107,8 +112,6 @@
       left: 0;
       width: 80px;
       height: 80px;
-      border-bottom: 1px solid #009fe3;
-      border-right: 1px solid #009fe3;
       transform: translate(-1px, -1px); /* merges corner with outer border */
       background-color: #fff;
       display: flex;
@@ -122,7 +125,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height:250px;
+        height:210px;
     }
 
     .custom-content h2 {
