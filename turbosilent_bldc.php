@@ -99,7 +99,7 @@
       overflow-y: hidden;
     }
 
-    .row-bg .ss{
+    .ss{
         width: 100%;
         height: 95vh;
     }
@@ -224,7 +224,7 @@
     .content-container {
       position: relative;
       max-width: 1200px;
-      margin: 0 35px;
+      margin: 0 55px;
       padding: 1rem;
       margin-top: 10vh;
       animation: fadeDown 1.2s ease forwards;
