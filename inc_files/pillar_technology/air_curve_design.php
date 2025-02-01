@@ -30,8 +30,8 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
+                        <img class="owl-lazy" data-src="images/f5.png"
+                            src="images/f5.png" alt="About image description">
                     </div>
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="images/place.jpg"
