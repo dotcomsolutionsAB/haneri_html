@@ -86,8 +86,8 @@
                     <h1 class="text-uppercase text-left about_section">TurboSilent BLDC Technology</h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
-            <br><br>
-            <style>
+
+<style>
     .wave-box {
       overflow-x: hidden;
       background: linear-gradient(135deg, #00473E, #011d19, #64f4e0);
@@ -123,7 +123,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 15vh;
+      height: 10vh;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 100% 100% 0 0;
       animation: wave1Move 6s infinite linear;
@@ -149,7 +149,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 20vh;
+      height: 15vh;
       background: rgba(255, 255, 255, 0.15);
       border-radius: 100% 100% 0 0;
       animation: wave2Move 8s infinite ease-in-out;
@@ -175,7 +175,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 25vh;
+      height: 20vh;
       background: rgba(255, 255, 255, 0.25);
       border-radius: 100% 100% 0 0;
       animation: wave3Move 10s infinite linear;
@@ -201,7 +201,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 30vh;
+      height: 27vh;
       background: rgba(255, 255, 255, 0.35);
       border-radius: 100% 100% 0 0;
       animation: wave4Move 12s infinite ease-in-out;
@@ -264,7 +264,7 @@
       font-weight: 700;
       font-size: 22px;
     }
-  </style>
+</style>
 
 <div class="containe wave-box">
     <div class="row row-bg ss">
