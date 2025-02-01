@@ -57,6 +57,28 @@
     box-shadow: 3px 3px 0px 0px;
 }
 
+@media (max-width: 768px) {
+    .work-together-section {
+      height: 300px;
+    }
+  
+    .work-together-section .contentss {
+      padding: 15px 20px;
+    }
+  
+    .work-together-section .contentss h2 {
+      font-size: 20px;
+    }
+  
+    .work-together-section .contentss .contact-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+
+
+
 
 
 .rowws {
