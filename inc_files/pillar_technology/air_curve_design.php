@@ -150,11 +150,11 @@
             }
         </style>
         <br>
-        <div class="row row-bg">
+        <div class="row-bg">
             <div class="containe">
                 <h2>Benefits for Customers</h2>
             </div>
-            <div class="eow rowws row row-bg">
+            <div class="eow rowws">
                 <!-- Column 1 -->
                 <div class="col">
                     <div class="custom-box">
