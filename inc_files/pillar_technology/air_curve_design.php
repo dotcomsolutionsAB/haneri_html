@@ -285,7 +285,7 @@
             .work-together-section {
                 position: relative;
                 background: url('images/place.jpg') center center/cover no-repeat;
-                height: 450px;
+                height: 500px;
                 width: 450px;
                 display: flex;
                 align-items: flex-end;
@@ -336,16 +336,6 @@
             color: white;
             }
 
-            .work-together-section .contentss .contact-btn span {
-            font-size: 18px;
-            margin-left: 5px;
-            transition: margin-left 0.3s ease;
-            }
-
-            .work-together-section .contentss .contact-btn:hover span {
-            margin-left: 10px;
-            }
-
         </style>
         <div class="row row-bg">
             <div class="col-xl-4 col-lg-6">
@@ -354,13 +344,13 @@
                     <h2>LET'S WORK TOGETHER</h2>
                     <div class="c">
                         <a href="#" class="contact-btn">
-                            CONTACT US <span>&#x2192;</span>
+                            CONTACT US 
                         </a>
                     </div>
                 </div>
                 </div>
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-8 col-lg-6 contents">
+            <div class="col-xl-7 col-lg-6 contents">
                 <h2>The Science Behind Air Curve Design</h2>
                 <ul>
                 <li>
