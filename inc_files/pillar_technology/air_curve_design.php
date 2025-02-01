@@ -70,268 +70,150 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
-        <!-- <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-6 order-lg-first contents">
-                <h2>
-                    Benefits for Customers
-                </h2>
-                <ul>
-                    <li>
-                        <strong>
-                              Enhanced Comfort:                        
-                        </strong>
-                        <br>
-                        Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.
-                    </li>
-                    <li>
-                        <strong>
-                              Cost Savings:                        
-                        </strong>
-                        <br>
-                        Energy-efficient operation translates to long-term savings on electricity bills.
-                    </li>
-                    <li>
-                        <strong>
-                              Sustainable Choice:                        
-                        </strong>
-                        <br>
-                        Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.
-                    </li>
-                    <li>
-                        <strong>
-                              Modern Aesthetics:                        
-                        </strong>
-                        <br>
-                        Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.
-                    </li>
-                </ul>
-            </div>
-        </div> -->
+        <div class="row row-bg">
+            <!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<style type="text/css" media="all">
-    .feature-box {
+<style>
+  .custom-box {
     position: relative;
-    border: 1px solid #009fe3; /* Blue border to match your example */
+    border: 1px solid #009fe3; /* border color to match your example */
     padding: 1.5rem;
-    background-color: #fff; /* Light background or change as desired */
-    max-width: 580px;       /* Constrain width as needed */
-    margin: 1rem auto;      /* Center horizontally if you like */
-    }
+    background-color: #f9f9f9; /* or use #fff if preferred */
+    margin-bottom: 2rem;
+  }
 
-    /* The small box at the top-left corner */
-    .feature-icon {
+  /* The top-left corner box for the icon */
+  .icon-box {
     position: absolute;
     top: 0;
     left: 0;
-    width: 130px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     border-bottom: 1px solid #009fe3;
     border-right: 1px solid #009fe3;
+    transform: translate(-1px, -1px); /* ensures shared corner lines up */
     background-color: #fff;
     display: flex;
-    justify-content: center;
     align-items: center;
-    /* Shift it slightly so the border lines up nicely with outer box: */
-    transform: translate(-1px, -1px);
-    }
+    justify-content: center;
+  }
 
-    .feature-icon img {
-    max-width: 60%;
-    max-height: 60%;
-    }
+  /* The small dot at the bottom-right */
+  .custom-box .custom-dot {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #009fe3;
+    border-radius: 50%;
+  }
 
-    /* Push content to the right so it doesn't overlap the icon box */
-    .feature-content {
-        margin-top: 115px;
-        padding: 10px 35px;
-    }
+  /* To avoid overlapping the icon box, nudge text to the right */
+  .custom-content {
+    margin-left: 100px;
+  }
 
-    /* Heading styling */
-    .feature-content h2 {
-    font-size: 3rem;
+  .custom-content h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-content p {
     margin-bottom: 1rem;
-    }
+    color: #666;
+  }
 
-    /* List styling for bullet points */
-    .feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    }
-
-    .feature-list li {
-    margin-bottom: 0.75rem;
-    }
-
-    /* Learn More button styling */
-    .learn-more-btn {
+  /* Button styling with hover effect */
+  .learn-more-btn {
     display: inline-block;
     background-color: #fff;
     border: 1px solid #009fe3;
     color: #009fe3;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    }
-
-    .learn-more-btn:hover {
+  }
+  .learn-more-btn:hover {
     background-color: #009fe3;
     color: #fff;
-    }
-
+  }
 </style>
 
-<div class="feature-box">
-  <!-- Icon Box in Top-Left Corner -->
-  <div class="feature-icon">
-    <img src="path/to/your-icon.png" alt="Feature Icon" />
-  </div>
+<div class="container">
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="custom-box">
+        <!-- Top-left icon box -->
+        <div class="icon-box">
+          <!-- Replace with your own icon path/size -->
+          <img src="path/to/enhanced-comfort-icon.png" alt="Enhanced Comfort" style="width:40px;">
+        </div>
 
-  <!-- Main Content Area -->
-  <div class="feature-content">
-    <h2>BENEFITS FOR CUSTOMERS</h2>
+        <!-- Main content area -->
+        <div class="custom-content">
+          <h3>Enhanced Comfort</h3>
+          <p>
+            Experience superior cooling with high air delivery,
+            ensuring a refreshing breeze in every corner of the room.
+          </p>
+          <a href="#" class="learn-more-btn">
+            Learn More &rarr;
+          </a>
+        </div>
 
-    <ul class="feature-list">
-      <li>
-        <strong>Enhanced Comfort:</strong>
-        Experience superior cooling with high air delivery,
-        ensuring a refreshing breeze in every corner of the room.
-      </li>
-      <li>
-        <strong>Cost Savings:</strong>
-        Energy-efficient operation translates to long-term savings on electricity bills.
-      </li>
-      <li>
-        <strong>Sustainable Choice:</strong>
-        Air Curve Design contributes to a greener, more sustainable
-        environment by reducing energy consumption.
-      </li>
-      <li>
-        <strong>Modern Aesthetics:</strong>
-        Sleek, innovative blade designs complement contemporary interiors,
-        adding a touch of sophistication to your space.
-      </li>
-    </ul>
+        <!-- Bottom-right dot -->
+        <div class="custom-dot"></div>
+      </div>
+    </div>
 
-    <a href="#" class="learn-more-btn">LEARN MORE &rarr;</a>
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="custom-box">
+        <div class="icon-box">
+          <img src="path/to/cost-savings-icon.png" alt="Cost Savings" style="width:40px;">
+        </div>
+        <div class="custom-content">
+          <h3>Cost Savings</h3>
+          <p>
+            Energy-efficient operation translates to
+            long-term savings on electricity bills.
+          </p>
+          <a href="#" class="learn-more-btn">
+            Learn More &rarr;
+          </a>
+        </div>
+        <div class="custom-dot"></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="custom-box">
+        <div class="icon-box">
+          <img src="path/to/sustainable-choice-icon.png" alt="Sustainable Choice" style="width:40px;">
+        </div>
+        <div class="custom-content">
+          <h3>Sustainable Choice</h3>
+          <p>
+            Air Curve Design contributes to a greener, more
+            sustainable environment by reducing energy consumption.
+          </p>
+          <a href="#" class="learn-more-btn">
+            Learn More &rarr;
+          </a>
+        </div>
+        <div class="custom-dot"></div>
+      </div>
+    </div>
   </div>
 </div>
 
-<style>
-    .benefit-card {
-    border: 1px solid #e3e3e3;
-    background-color: #fff;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    transition: box-shadow 0.2s;
-    }
-
-    .benefit-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .benefit-icon {
-    width: 64px;      /* Adjust icon size as needed */
-    height: 64px;     /* Keep aspect ratio by removing if your icons are uniform */
-    margin-bottom: 1rem;
-    object-fit: contain; /* Ensures the icon scales nicely within the box */
-    }
-
-    .benefit-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    }
-
-    .benefit-card p {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0; /* Keep spacing tight or adjust to your liking */
-    }
-</style>
-    <div class="row row-bg">
-        <!-- Card 1 -->
-        <div class="col-md-3 mb-4">
-        <div class="benefit-card">
-            <img
-            src="path/to/enhanced-comfort-icon.png"
-            alt="Enhanced Comfort Icon"
-            class="benefit-icon"
-            />
-            <h3>Enhanced Comfort</h3>
-            <p>
-            Experience superior cooling with high air delivery,
-            ensuring a refreshing breeze in every corner of the room.
-            </p>
         </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-3 mb-4">
-        <div class="benefit-card">
-            <img
-            src="path/to/cost-savings-icon.png"
-            alt="Cost Savings Icon"
-            class="benefit-icon"
-            />
-            <h3>Cost Savings</h3>
-            <p>
-            Energy-efficient operation translates to
-            long-term savings on electricity bills.
-            </p>
-        </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-3 mb-4">
-        <div class="benefit-card">
-            <img
-            src="path/to/sustainable-choice-icon.png"
-            alt="Sustainable Choice Icon"
-            class="benefit-icon"
-            />
-            <h3>Sustainable Choice</h3>
-            <p>
-            Air Curve Design contributes to a greener,
-            more sustainable environment by reducing energy consumption.
-            </p>
-        </div>
-        </div>
-
-        <!-- Card 4 (Remove if you only want three) -->
-        <div class="col-md-3 mb-4">
-        <div class="benefit-card">
-            <img
-            src="path/to/modern-aesthetics-icon.png"
-            alt="Modern Aesthetics Icon"
-            class="benefit-icon"
-            />
-            <h3>Modern Aesthetics</h3>
-            <p>
-            Sleek, innovative blade designs complement contemporary interiors,
-            adding a touch of sophistication to your space.
-            </p>
-        </div>
-        </div>
-    </div>
-
-
 
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
