@@ -122,9 +122,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height:250px;
     }
 
-    .custom-content h3 {
+    .custom-content h2 {
         font-size: 1.25rem;
         margin: 0 0 0.5rem;
         font-size: 22px;
