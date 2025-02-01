@@ -83,7 +83,7 @@
             box-sizing: border-box;
             min-height: 350px;         /* to ensure a bit of uniform height */
             background-color: #f6f6f6;
-            border: 1px solid #74787C;
+            border: 1px solid #74787c30;
         }
         .custom-box:hover {
             border: 2px solid rgb(45, 142, 142);
@@ -99,8 +99,8 @@
             left: 0;
             width: 80px;
             height: 80px;
-            border-bottom: 1px solid #74787C;
-            border-right: 1px solid #74787C;
+            border-bottom: 1px solid #74787c30;
+            border-right: 1px solid #74787c30;
             transform: translate(-1px, -1px); /* merges corner with outer border */
             background-color: #fff;
             display: flex;
