@@ -192,7 +192,7 @@
         border-radius: 15px;
         box-shadow: 10px 10px 1px 1px #ccccccab;
     }
-    .why p,h2{
+    .why p, .why h2{
         color:#fff;
     }
 </style>
