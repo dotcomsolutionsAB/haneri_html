@@ -69,9 +69,7 @@
                 </ul>
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
-        <style>
-            
-        </style>
+
         <br>
         <div class="row-bg">
             <div class="containe">
@@ -142,10 +140,6 @@
         </div>
         <br><br>
 
-        <style>
-            
-
-        </style>
         <div class="row row-bg">
             <div class="col-xl-4 col-lg-6">
             <div class="work-together-section">

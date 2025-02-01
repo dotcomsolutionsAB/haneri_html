@@ -96,43 +96,76 @@
             </div>
         </div><!-- End .row -->
 
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
+        <br>
+        <div class="row-bg">
+            <div class="containe">
+                <h2>Benefits for Customers</h2>
+            </div>
+            <div class="eow rowws">
+                <!-- Column 1 -->
+                <div class="col">
+                    <div class="custom-box">
+                        <div class="icon-box">
+                            <!-- Replace with your icon path/size -->
+                            <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
+                        </div>
+                        <div class="custom-content">
+                            <div class="txtt">
+                                <h2>Enhanced Comfort</h2>
+                                <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col">
+                    <div class="custom-box">
+                        <div class="icon-box">
+                            <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
+                        </div>
+                        <div class="custom-content">
+                            <div class="txtt">
+                                <h2>Cost Savings</h2>
+                                <p>Energy-efficient operation translates to long-term savings on electricity bills.</p> 
+                            </div>           
+                        </div>
                     </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col">
+                    <div class="custom-box">
+                    <div class="icon-box">
+                        <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
                     </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
-                <h2>
-                    Benefits for Customers
-                </h2>
-                <ul>
-                    <li><strong>Enhanced Cooling Performance:</strong>
-                        High torque output ensures rapid and consistent airflow delivery, optimized for varied room sizes and ceiling heights.
-                    </li>
-                    <li><strong>Operational Cost Savings:</strong>
-                        Energy efficiency translates to significant reductions in power consumption, aligning with green building standards and energy certifications.
-                    </li>
-                    <li><strong>Reliability in Extreme Conditions:</strong>
-                        Designed to operate in high-temperature environments without compromising on performance or longevity.
-                    </li>
-                    <li><strong>Noise-Free Operation:</strong>
-                        Meets stringent industry acoustic standards, ensuring negligible sound levels suitable for sensitive applications such as hospitals and libraries.
-                    </li>
-                </ul>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2>Sustainable Choice</h2>
+                            <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- column 4 -->
+                <div class="col">
+                    <div class="custom-box">
+                        <div class="icon-box">
+                            <img src="images/place.jpg" alt="Modern Aesthetics" style="">
+                        </div>
+                        <div class="custom-content">
+                            <div class="txtt">
+                                <h2>Modern Aesthetics</h2>
+                                <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <br>
+
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
