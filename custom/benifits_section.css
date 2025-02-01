@@ -57,9 +57,10 @@
     box-shadow: 3px 3px 0px 0px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 520px) {
     .work-together-section {
-      height: 300px;
+        height: 400px;
+        width: 100%;
     }
   
     .work-together-section .contentss {
@@ -67,12 +68,21 @@
     }
   
     .work-together-section .contentss h2 {
-      font-size: 20px;
+        font-size: 22px;
+        width: 100%;
+        display: flex;
+        text-align: start;
     }
-  
+    .c {
+        display: flex    ;
+        justify-content: flex-end;
+        width: 100%;
+    }
+      
     .work-together-section .contentss .contact-btn {
-      font-size: 14px;
-      padding: 8px 16px;
+        font-size: 18px;
+        padding: 12px 10px;
+        width: 140px;
     }
   }
   
