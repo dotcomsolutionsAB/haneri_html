@@ -75,6 +75,12 @@
                 background: rgba(8, 57, 25, 0.42); /* Black overlay with 50% opacity */
                 z-index: 0; /* Places the overlay below the content */
               }
+              .science .contents ul {
+                color:#fff;
+              }
+              .science h2 {
+                color:#fff;
+              }
         </style>
         <div class="row row-bg science">
             <div class="col-xl-5 col-lg-6">

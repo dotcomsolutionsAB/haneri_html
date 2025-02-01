@@ -314,7 +314,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgb(255, 255, 255); /* Black overlay with 50% opacity */
+                background: rgba(255, 255, 255, 0.02); /* Black overlay with 50% opacity */
                 z-index: 0; /* Places the overlay below the content */
               }
             </style>
