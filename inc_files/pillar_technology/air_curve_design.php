@@ -337,6 +337,7 @@
             .work-together-section .contentss .contact-btn:hover {
                 background-color: #0affff99;
                 color: white;
+                box-shadow: 3px 3px 0px 0px;
             }
 
         </style>
