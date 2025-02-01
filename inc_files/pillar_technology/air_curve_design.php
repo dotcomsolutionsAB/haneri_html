@@ -86,11 +86,11 @@
             border: 1px solid #74787c30;
         }
         .custom-box:hover {
-            border: 2px solid rgb(45, 142, 142);
+            border: 1px solid rgb(45, 142, 142);
             
         }
         .custom-box:hover .icon-box {
-            border: 2px solid rgb(45, 142, 142);
+            border: 1px solid rgb(45, 142, 142);
         }
         /* Top-left icon box */
         .icon-box {
