@@ -148,6 +148,49 @@
                 background-color: rgb(45, 142, 142);
                 color: #fff;
             }
+
+            /* Responsive Styles */
+@media (max-width: 1024px) {
+    .custom-box {
+        width: calc(50% - 20px); /* 2 items per row on tablets */
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-box {
+        width: 100%; /* 1 item per row on mobile */
+        min-height: 300px;
+        padding: 1.2rem;
+    }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-box img {
+        width: 45px;
+    }
+
+    .custom-content {
+        margin-top: 80px;
+        height: auto;
+    }
+
+    .custom-content h2 {
+        font-size: 18px;
+    }
+
+    .custom-content p {
+        font-size: 14px;
+    }
+
+    .learn-more-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 14px;
+    }
+}
         </style>
         <br>
         <div class="row-bg">
