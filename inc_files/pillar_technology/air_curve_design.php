@@ -69,150 +69,138 @@
                 </ul>
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
-
-        <div class="row row-bg">
-            <!-- Include Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 <style>
-  .custom-box {
-    position: relative;
-    border: 1px solid #009fe3; /* border color to match your example */
-    padding: 1.5rem;
-    background-color: #f9f9f9; /* or use #fff if preferred */
-    margin-bottom: 2rem;
-  }
+    /* Container and Row to handle layout */
+    .container {
+      max-width: 1200px; /* adjust as needed */
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-  /* The top-left corner box for the icon */
-  .icon-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    border-bottom: 1px solid #009fe3;
-    border-right: 1px solid #009fe3;
-    transform: translate(-1px, -1px); /* ensures shared corner lines up */
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .rowws {
+      display: flex;
+      flex-wrap: wrap; /* wrap on small screens */
+      gap: 20px;       /* space between columns */
+    }
 
-  /* The small dot at the bottom-right */
-  .custom-box .custom-dot {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 8px;
-    height: 8px;
-    background-color: #009fe3;
-    border-radius: 50%;
-  }
+    /* Each column (3 across by default) */
+    .col {
+      flex: 1 1 calc(33.333% - 20px);
+      box-sizing: border-box;
+      /* for smaller screens, you can add media queries to stack columns */
+    }
 
-  /* To avoid overlapping the icon box, nudge text to the right */
-  .custom-content {
-    margin-left: 100px;
-  }
+    /* Custom Box */
+    .custom-box {
+      position: relative;
+      border: 1px solid #009fe3; /* Blue border */
+      background-color: #f9f9f9; /* or #fff if preferred */
+      padding: 1.5rem;
+      box-sizing: border-box;
+      min-height: 200px;         /* to ensure a bit of uniform height */
+    }
 
-  .custom-content h3 {
-    font-size: 1.25rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
+    /* Top-left icon box */
+    .icon-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      border-bottom: 1px solid #009fe3;
+      border-right: 1px solid #009fe3;
+      transform: translate(-1px, -1px); /* merges corner with outer border */
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .custom-content p {
-    margin-bottom: 1rem;
-    color: #666;
-  }
+    /* Shift the text to the right so it doesn't overlap the icon box */
+    .custom-content {
+      margin-left: 100px;
+    }
 
-  /* Button styling with hover effect */
-  .learn-more-btn {
-    display: inline-block;
-    background-color: #fff;
-    border: 1px solid #009fe3;
-    color: #009fe3;
-    padding: 0.4rem 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .learn-more-btn:hover {
-    background-color: #009fe3;
-    color: #fff;
-  }
+    .custom-content h3 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .custom-content p {
+      margin: 0 0 1rem;
+      color: #666;
+    }
+
+    /* 'Learn More' button */
+    .learn-more-btn {
+      display: inline-block;
+      background-color: #fff;
+      border: 1px solid #009fe3;
+      color: #009fe3;
+      padding: 0.4rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .learn-more-btn:hover {
+      background-color: #009fe3;
+      color: #fff;
+    }
+
+    /* Responsive stacking on smaller screens (optional) */
+    @media (max-width: 768px) {
+      .col {
+        flex: 1 1 100%;
+      }
+    }
 </style>
+        <div class="row row-bg">
+        <div class="container">
+            <div class="eow rowws">
+            <!-- Column 1 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <!-- Replace with your icon path/size -->
+                    <img src="path/to/enhanced-comfort-icon.png" alt="Enhanced Comfort" style="width:40px;">
+                </div>
+                <div class="custom-content">
+                    <h3>Enhanced Comfort</h3>
+                    <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                </div>
+                </div>
+            </div>
 
-<div class="container">
-  <div class="row">
-    <!-- Card 1 -->
-    <div class="col-md-4">
-      <div class="custom-box">
-        <!-- Top-left icon box -->
-        <div class="icon-box">
-          <!-- Replace with your own icon path/size -->
-          <img src="path/to/enhanced-comfort-icon.png" alt="Enhanced Comfort" style="width:40px;">
-        </div>
+            <!-- Column 2 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <img src="path/to/cost-savings-icon.png" alt="Cost Savings" style="width:40px;">
+                </div>
+                <div class="custom-content">
+                    <h3>Cost Savings</h3>
+                    <p>Energy-efficient operation translates to long-term savings on electricity bills.</p>
+                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                </div>
+                </div>
+            </div>
 
-        <!-- Main content area -->
-        <div class="custom-content">
-          <h3>Enhanced Comfort</h3>
-          <p>
-            Experience superior cooling with high air delivery,
-            ensuring a refreshing breeze in every corner of the room.
-          </p>
-          <a href="#" class="learn-more-btn">
-            Learn More &rarr;
-          </a>
+            <!-- Column 3 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <img src="path/to/sustainable-choice-icon.png" alt="Sustainable Choice" style="width:40px;">
+                </div>
+                <div class="custom-content">
+                    <h3>Sustainable Choice</h3>
+                    <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+                    <a href="#" class="learn-more-btn">Learn More &rarr;</a>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-
-        <!-- Bottom-right dot -->
-        <div class="custom-dot"></div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="col-md-4">
-      <div class="custom-box">
-        <div class="icon-box">
-          <img src="path/to/cost-savings-icon.png" alt="Cost Savings" style="width:40px;">
-        </div>
-        <div class="custom-content">
-          <h3>Cost Savings</h3>
-          <p>
-            Energy-efficient operation translates to
-            long-term savings on electricity bills.
-          </p>
-          <a href="#" class="learn-more-btn">
-            Learn More &rarr;
-          </a>
-        </div>
-        <div class="custom-dot"></div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="col-md-4">
-      <div class="custom-box">
-        <div class="icon-box">
-          <img src="path/to/sustainable-choice-icon.png" alt="Sustainable Choice" style="width:40px;">
-        </div>
-        <div class="custom-content">
-          <h3>Sustainable Choice</h3>
-          <p>
-            Air Curve Design contributes to a greener, more
-            sustainable environment by reducing energy consumption.
-          </p>
-          <a href="#" class="learn-more-btn">
-            Learn More &rarr;
-          </a>
-        </div>
-        <div class="custom-dot"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
         </div>
 
         <div class="row row-bg">
