@@ -90,8 +90,7 @@
             
         }
         .custom-box:hover .icon-box {
-            border-bottom: 2px solid rgb(45, 142, 142);
-            border-right: 2px solid rgb(45, 142, 142);
+            border: 2px solid rgb(45, 142, 142);
         }
         /* Top-left icon box */
         .icon-box {
