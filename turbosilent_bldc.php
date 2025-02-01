@@ -175,7 +175,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 20vh;
+      height: 22vh;
       background: rgba(255, 255, 255, 0.25);
       border-radius: 100% 100% 0 0;
       animation: wave3Move 10s infinite linear;
@@ -201,7 +201,7 @@
       bottom: 0;
       left: 0;
       width: 200%;
-      height: 27vh;
+      height: 19vh;
       background: rgba(255, 255, 255, 0.35);
       border-radius: 100% 100% 0 0;
       animation: wave4Move 12s infinite ease-in-out;
