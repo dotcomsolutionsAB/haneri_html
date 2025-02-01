@@ -341,7 +341,7 @@
             <div class="col-xl-4 col-lg-6">
             <div class="work-together-section">
                 <div class="contentss">
-                    <h2>LET'S WORK TOGETHER</h2>
+                    <h2>The Science Behind Air Curve Design</h2>
                     <div class="c">
                         <a href="#" class="contact-btn">
                             CONTACT US 
@@ -351,7 +351,7 @@
                 </div>
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
-                <h2>The Science Behind Air Curve Design</h2>
+                <!-- <h2>The Science Behind Air Curve Design</h2> -->
                 <ul>
                 <li>
                     <strong>
