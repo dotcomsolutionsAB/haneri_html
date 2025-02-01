@@ -58,7 +58,7 @@
         <style>
             .science {
                 position: relative;
-                background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
+                background: url('../images/Slider1.jpg') center center/cover no-repeat;
                 /* height: 450px; */
                 /* display: flex; */
                 /* align-items: flex-end; */
