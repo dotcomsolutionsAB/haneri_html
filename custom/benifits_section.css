@@ -159,6 +159,9 @@
     font-weight: 700;
 }
 
+.custom-content h2{
+    color: #315859;
+}
 .custom-content p {
     margin: 0 0 1rem;
     color: #666;

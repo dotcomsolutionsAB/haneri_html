@@ -152,7 +152,7 @@
                 <div class="col">
                     <div class="custom-box">
                         <div class="icon-box">
-                            <img src="images/place.jpg" alt="Modern Aesthetics" style="">
+                            <img src="images/benifits/enh.jpeg" alt="Modern Aesthetics" style="">
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
