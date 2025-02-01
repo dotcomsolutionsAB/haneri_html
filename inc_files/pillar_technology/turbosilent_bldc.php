@@ -55,34 +55,7 @@
             </div><!-- End .col-lg-7 -->
         </div><!-- End .row -->
 
-        <style>
-            .science {
-                position: relative;
-                background: url('../images/Slider1.jpg') center center/cover no-repeat;
-                /* height: 450px; */
-                /* display: flex; */
-                /* align-items: flex-end; */
-                /* justify-content: center; */
-                /* padding: 20px; */
-              }
-              .science::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(8, 57, 25, 0.42); /* Black overlay with 50% opacity */
-                z-index: 0; /* Places the overlay below the content */
-              }
-              .science .contents ul {
-                color:#fff;
-              }
-              .science h2 {
-                color:#fff;
-              }
-        </style>
-        <div class="row row-bg science">
+        <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
