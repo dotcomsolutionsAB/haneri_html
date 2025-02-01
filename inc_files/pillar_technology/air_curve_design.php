@@ -76,13 +76,6 @@
             gap: 20px;       /* space between columns */
         }
 
-        /* Each column (3 across by default) */
-        .col {
-            /* flex: 1 1 calc(33.333% - 20px);
-            box-sizing: border-box; */
-            /* for smaller screens, you can add media queries to stack columns */
-        }
-
         /* Custom Box */
         .custom-box {
             position: relative;
@@ -155,13 +148,6 @@
         .learn-more-btn:hover {
             background-color: rgb(45, 142, 142);
             color: #fff;
-        }
-
-        /* Responsive stacking on smaller screens (optional) */
-        @media (max-width: 768px) {
-            .col {
-            flex: 1 1 100%;
-            }
         }
     </style>
     <br>
