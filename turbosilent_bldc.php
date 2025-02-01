@@ -87,215 +87,227 @@
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
 
-<style>
-    .wave-box {
-      overflow-x: hidden;
-      background: linear-gradient(135deg, #00473E, #011d19, #64f4e0);
-      background-size: 200% 200%;
-      animation: bgFlow 10s ease-in-out infinite;
-      position: relative;
-      color: #fff;
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
+            <style>
+                .wave-box {
+                  overflow-x: hidden;
+                  background: linear-gradient(135deg, #00473E, #011d19, #64f4e0);
+                  background-size: 200% 200%;
+                  animation: bgFlow 10s ease-in-out infinite;
+                  position: relative;
+                  color: #fff;
+                  overflow-x: hidden;
+                  overflow-y: hidden;
+                }
 
-    .ss{
-        width: 100%;
-        height: 95vh;
-    }
+                .ss{
+                    width: 100%;
+                    height: 95vh;
+                }
 
-    /* Gentle background gradient flow */
-    @keyframes bgFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+                /* Gentle background gradient flow */
+                @keyframes bgFlow {
+                  0% {
+                    background-position: 0% 50%;
+                  }
+                  50% {
+                    background-position: 100% 50%;
+                  }
+                  100% {
+                    background-position: 0% 50%;
+                  }
+                }
 
-    /* FIRST WAVE */
-    .wave1 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 10vh;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 100% 100% 0 0;
-      animation: wave1Move 6s infinite linear;
-      transform: translateX(0);
-      z-index: 1;
-    }
+                /* FIRST WAVE */
+                .wave1 {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 200%;
+                  height: 10vh;
+                  background: rgba(255, 255, 255, 0.08);
+                  border-radius: 100% 100% 0 0;
+                  animation: wave1Move 6s infinite linear;
+                  transform: translateX(0);
+                  z-index: 1;
+                }
 
-    @keyframes wave1Move {
-      0% {
-        transform: translateX(-50%) translateY(0);
-      }
-      50% {
-        transform: translateX(-45%) translateY(5px);
-      }
-      100% {
-        transform: translateX(-50%) translateY(0);
-      }
-    }
+                @keyframes wave1Move {
+                  0% {
+                    transform: translateX(-50%) translateY(0);
+                  }
+                  50% {
+                    transform: translateX(-45%) translateY(5px);
+                  }
+                  100% {
+                    transform: translateX(-50%) translateY(0);
+                  }
+                }
 
-    /* SECOND WAVE */
-    .wave2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 15vh;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 100% 100% 0 0;
-      animation: wave2Move 8s infinite ease-in-out;
-      transform: translateX(-25%);
-      z-index: 2;
-    }
+                /* SECOND WAVE */
+                .wave2 {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 200%;
+                  height: 15vh;
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 100% 100% 0 0;
+                  animation: wave2Move 8s infinite ease-in-out;
+                  transform: translateX(-25%);
+                  z-index: 2;
+                }
 
-    @keyframes wave2Move {
-      0% {
-        transform: translateX(-25%) translateY(0);
-      }
-      50% {
-        transform: translateX(-20%) translateY(10px);
-      }
-      100% {
-        transform: translateX(-25%) translateY(0);
-      }
-    }
+                @keyframes wave2Move {
+                  0% {
+                    transform: translateX(-25%) translateY(0);
+                  }
+                  50% {
+                    transform: translateX(-20%) translateY(10px);
+                  }
+                  100% {
+                    transform: translateX(-25%) translateY(0);
+                  }
+                }
 
-    /* THIRD WAVE */
-    .wave3 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 22vh;
-      background: rgba(255, 255, 255, 0.25);
-      border-radius: 100% 100% 0 0;
-      animation: wave3Move 10s infinite linear;
-      transform: translateX(-50%);
-      z-index: 3;
-    }
+                /* THIRD WAVE */
+                .wave3 {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 200%;
+                  height: 22vh;
+                  background: rgba(255, 255, 255, 0.25);
+                  border-radius: 100% 100% 0 0;
+                  animation: wave3Move 10s infinite linear;
+                  transform: translateX(-50%);
+                  z-index: 3;
+                }
 
-    @keyframes wave3Move {
-      0% {
-        transform: translateX(-50%) translateY(0);
-      }
-      50% {
-        transform: translateX(-45%) translateY(10px);
-      }
-      100% {
-        transform: translateX(-50%) translateY(0);
-      }
-    }
+                @keyframes wave3Move {
+                  0% {
+                    transform: translateX(-50%) translateY(0);
+                  }
+                  50% {
+                    transform: translateX(-45%) translateY(10px);
+                  }
+                  100% {
+                    transform: translateX(-50%) translateY(0);
+                  }
+                }
 
-    /* FOURTH WAVE */
-    .wave4 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 200%;
-      height: 19vh;
-      background: rgba(255, 255, 255, 0.35);
-      border-radius: 100% 100% 0 0;
-      animation: wave4Move 12s infinite ease-in-out;
-      transform: translateX(-75%);
-      z-index: 4;
-    }
+                /* FOURTH WAVE */
+                .wave4 {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 200%;
+                  height: 19vh;
+                  background: rgba(255, 255, 255, 0.35);
+                  border-radius: 100% 100% 0 0;
+                  animation: wave4Move 12s infinite ease-in-out;
+                  transform: translateX(-75%);
+                  z-index: 4;
+                }
 
-    @keyframes wave4Move {
-      0% {
-        transform: translateX(-75%) translateY(0);
-      }
-      50% {
-        transform: translateX(-70%) translateY(15px);
-      }
-      100% {
-        transform: translateX(-75%) translateY(0);
-      }
-    }
+                @keyframes wave4Move {
+                  0% {
+                    transform: translateX(-75%) translateY(0);
+                  }
+                  50% {
+                    transform: translateX(-70%) translateY(15px);
+                  }
+                  100% {
+                    transform: translateX(-75%) translateY(0);
+                  }
+                }
 
-    .content-container {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 55px;
-      padding: 1rem;
-      margin-top: 10vh;
-      animation: fadeDown 1.2s ease forwards;
-      opacity: 0;
-      transform: translateY(-20px);
-      z-index: 5;
-    }
+                .content-container {
+                  position: relative;
+                  max-width: 1200px;
+                  margin: 0 55px;
+                  padding: 1rem;
+                  margin-top: 10vh;
+                  animation: fadeDown 1.2s ease forwards;
+                  opacity: 0;
+                  transform: translateY(-20px);
+                  z-index: 5;
+                }
 
-    @keyframes fadeDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+                @keyframes fadeDown {
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
 
-    .content-container h1 {
-        font-size: 3.3rem;
-        margin-bottom: 1rem;
-        color: #fff;
-    }
+                .content-container h1 {
+                    font-size: 3.3rem;
+                    margin-bottom: 1rem;
+                    color: #fff;
+                }
 
-    .content-container h2 {
-      font-size: 2.6rem;
-      margin: 2rem 0 1rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-      color: #fff;
-    }
+                .content-container h2 {
+                  font-size: 2.6rem;
+                  margin: 2rem 0 1rem;
+                  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+                  color: #fff;
+                }
 
-    .content-container p {
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-      font-size: 2.2rem;
-      color: #fff;
-    }
+                .content-container p {
+                  line-height: 1.7;
+                  margin-bottom: 1.2rem;
+                  font-size: 2.2rem;
+                  color: #fff;
+                }
 
-    .content-container strong {
-      font-weight: 700;
-      font-size: 22px;
-    }
-</style>
+                .content-container strong {
+                  font-weight: 700;
+                  font-size: 22px;
+                }
+            </style>
 
-<div class="containe wave-box">
-    <div class="row row-bg ss">
-        <div class="col-md-12">
-            <p class="mb-2">
-            <!-- Wave background elements -->
-            <div class="wave1"></div>
-            <div class="wave2"></div>
-            <div class="wave3"></div>
-            <div class="wave4"></div>
-            <div class="content-container">
-                <h1>Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h1>
-                <p>
-                At Haneri, we redefine engineering excellence with our proprietary
-                <strong>TurboSilent BLDC Technology</strong>. This advanced motor design not only delivers
-                higher torque and exceptional durability but also ensures unmatched energy efficiency,
-                setting a new benchmark for ceiling fan performance and contributing to a greener environment.
-                </p>
-                <p class="mb-2">
-                <h2>What is TurboSilent BLDC Technology?</h2>
-                <p>
-                <strong>TurboSilent BLDC (Brushless Direct Current) Technology</strong> is an in-house developed
-                motor system that employs high-tech electromagnetic and mechanical design principles. This
-                cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended
-                motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering
-                industry-leading reliability and precision that you can trust.
-                </p>
-            </div>
-        </div>
-    </div><!-- End .row -->
-</div><!-- End .container -->
+            <div class="containe wave-box">
+                <div class="row row-bg ss">
+                    <div class="col-md-12">
+                        <p class="mb-2">
+                        <!-- Wave background elements -->
+                        <div class="wave1"></div>
+                        <div class="wave2"></div>
+                        <div class="wave3"></div>
+                        <div class="wave4"></div>
+                        <div class="content-container">
+                            <h1>Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h1>
+                            <p>
+                            At Haneri, we redefine engineering excellence with our proprietary
+                            <strong>TurboSilent BLDC Technology</strong>. This advanced motor design not only delivers
+                            higher torque and exceptional durability but also ensures unmatched energy efficiency,
+                            setting a new benchmark for ceiling fan performance and contributing to a greener environment.
+                            </p>
+                            <p class="mb-2">
+                            <h2>What is TurboSilent BLDC Technology?</h2>
+                            <p>
+                            <strong>TurboSilent BLDC (Brushless Direct Current) Technology</strong> is an in-house developed
+                            motor system that employs high-tech electromagnetic and mechanical design principles. This
+                            cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended
+                            motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering
+                            industry-leading reliability and precision that you can trust.
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+            
+            <style>
+              .turbosilent_bldc {
+                position: relative;
+                background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
+                /* height: 450px; */
+                display: flex;
+                /* align-items: flex-end; */
+                /* justify-content: center; */
+                /* padding: 20px; */
+              }
+            </style>
             <div class="container">                            
                 <section id="turbosilent_bldc" class="turbosilent_bldc">
                     <?php include("inc_files/pillar_technology/turbosilent_bldc.php"); ?>
