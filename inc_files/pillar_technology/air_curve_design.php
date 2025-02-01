@@ -149,6 +149,7 @@
         <div class="row row-bg">
             <div class="col-xl-4 col-lg-6">
             <div class="work-together-section">
+                <img src="../images/Logo1.png" alt="Work Together Image" class="fit-image" />
                 <div class="contentss">
                     <h2>The Science Behind Air Curve Design</h2>
                     <div class="c">

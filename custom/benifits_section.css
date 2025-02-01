@@ -1,14 +1,25 @@
 /* Container styles */
 .work-together-section {
     position: relative;
-    background: url('../images/Logo1.png') center center/cover no-repeat;
     height: 500px;
     width: 450px;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; /* Align content at the bottom */
     justify-content: center;
-    padding: 0px;
-}
+    padding: 0;
+    overflow: hidden; /* Ensures image doesn't overflow */
+  }
+  
+  /* Image styles */
+  .fit-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the entire image is visible */
+    z-index: -1; /* Places the image behind the content */
+  }
 
 /* Content area */
 .work-together-section .contentss {
