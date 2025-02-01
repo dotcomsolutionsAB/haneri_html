@@ -164,7 +164,7 @@
       font-size: 1.05rem;
     }
 
-    strong {
+    .content-container strong {
       font-weight: 700;
     }
   </style>
