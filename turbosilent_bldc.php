@@ -49,7 +49,7 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-            <style>
+            <!-- <style>
                 .about p {
                     font-family: 'Barlow Condensed';
                     font-size: 18px;
@@ -81,7 +81,7 @@
                 .owl-dots{
                     display:none;
                 }
-            </style>
+            </style> -->
             <!-- <div class="page-header pt-3 bg-transparent"> -->
             <div class="heading">
                 <div class="containe text-left">
