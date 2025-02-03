@@ -252,7 +252,11 @@ strong{
     }
 
   
-/* Body Main heading */
+    section {
+      padding-top: 0rem;
+      padding-bottom: 3rem;
+    }
+  /* Body Main heading */
     .primary{
       color:#00473E;
     }
