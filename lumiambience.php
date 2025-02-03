@@ -109,23 +109,23 @@
                         text-align: left;
                         padding: 10px 0px;
                     }
-                    .brand-content h2{
+                    /* .brand-content h2{
                         font-weight: 400;
                         margin-bottom: 1.2rem;
-                    }
+                    } */
 
-                    .brand-content p {
+                    /* .brand-content p {
                         font-size: 18px;
                         line-height: 24px;
                         text-align: justify;
                         color: #555;
                         font-family: 'Barlow Condensed';
-                    }
-                    .brand-content li{
+                    } */
+                    /* .brand-content li{
                         font-size: 18px;
                         color: #222;
                         font-family: 'Barlow Condensed';
-                    }
+                    } */
                     .brand-content strong {
                         font-weight: 600;
                         font-size: 18px;
