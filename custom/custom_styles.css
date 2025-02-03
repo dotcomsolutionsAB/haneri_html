@@ -240,10 +240,12 @@ Turbosilent
       font-size: 18px;
       font-family: 'Open Sans';
       text-align: justify;
+      line-height: 1.4;
     }
     .paragraph2{
       font-size: 18px;
       font-family: 'Open Sans';
+      line-height: 1.4;
     }
     .highlight_h1{
       font-weight: 700 !important;
