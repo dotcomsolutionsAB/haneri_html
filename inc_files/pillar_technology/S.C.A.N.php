@@ -5,7 +5,7 @@
             <h2 class="heading2 primary">Discover the Future of Fan Control with S.C.A.N Technology</h2>
             <div class="points">
                 <p class="paragraph1 margp dark">
-                    At<strong>Haneri,</strong> we've combined innovation with convenience in our state-of-the-art S.C.A.N Technology (Smooth Control , Advance Navigation). This technology, designed for the modern home, redefines your interaction with ceiling fans, offering an optional LED light for added convenience. With its sleek aesthetics and advanced functionality, this futuristic remote controller ensures seamless control, an enhanced user experience, and cutting-edge technology, all at your fingertips
+                    At<span class="highlight_p"> Haneri,</span> we've combined innovation with convenience in our state-of-the-art S.C.A.N Technology (Smooth Control , Advance Navigation). This technology, designed for the modern home, redefines your interaction with ceiling fans, offering an optional LED light for added convenience. With its sleek aesthetics and advanced functionality, this futuristic remote controller ensures seamless control, an enhanced user experience, and cutting-edge technology, all at your fingertips
                 </p>
                 <br>
                 <h2 class="heading2 primary">
@@ -108,41 +108,78 @@
             <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
         </div>
     </div>
+</div>
 
 <!-- Row 4: Benefits -->
-    <div class="brand-row-container">
-        <div class="brand-row reverse">
-            <div class="brand-content">
-                <h2 class="heading2 primary">Benefits for Customers
-                </h2>
-                <div class="points">
-                    <h4>Enhanced User Convenience:</h4>
-                    <ul class="ulclass dark list margp">
-                        <li>You can control every aspect of your ceiling fan and light with a single device, reducing complexity and enhancing user satisfaction.</li>
-                    </ul>
-
-                    <h4>Comfort and Customization:</h4>
-                    <ul class="ulclass dark list margp">
-                        <li>Tailor airflow and lighting to suit any mood or setting with speed modes, brightness control, and timer functions.</li>
-                    </ul>
-
-                    <h4>Energy Efficiency:</h4>
-                    <ul class="ulclass dark list margp">
-                        <li>Timer functions and advanced control logic help reduce energy consumption, lowering utility bills and environmental impact.</li>
-                    </ul>
-
-                    <h4>Modern Aesthetics:</h4>
-                    <ul class="ulclass dark list margp">
-                        <li>
-                            The sleek and futuristic design complements contemporary interiors, making it an attractive addition to your living space.</li>
-                    </ul>
+<div class="brand-row-container">
+    <div class="brand-row">
+        <h2 class="heading2 primary">Benefits for Customers</h2>
+        <div class="eow rowws">
+            <!-- Column 1 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <!-- Replace with your icon path/size -->
+                        <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Enhanced User Convenience:</h2>
+                            <p class="paragraph1 margp dark">You can control every aspect of your ceiling fan and light with a single device, reducing complexity and enhancing user satisfaction.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="brand-image">
-                <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+
+            <!-- Column 2 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Comfort and Customization:</h2>
+                            <p class="paragraph1 margp dark">Tailor airflow and lighting to suit any mood or setting with speed modes, brightness control, and timer functions.</p> 
+                        </div>           
+                    </div>
+                </div>
             </div>
+
+            <!-- Column 3 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
+                </div>
+                <div class="custom-content">
+                    <div class="txtt">
+                        <h2 class="heading2 primary highlight_h1">Energy Efficiency:</h2>
+                        <p class="paragraph1 margp dark">Timer functions and advanced control logic help reduce energy consumption, lowering utility bills and environmental impact.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- column 4 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <img src="images/benifits/enh.jpeg" alt="Modern Aesthetics" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Modern Aesthetics:</h2>
+                            <p class="paragraph1 margp dark">The sleek and futuristic design complements contemporary interiors, making it an attractive addition to your living space.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
+
 
 <!-- Row 5: Why Choose? -->
 <div class="containe">
