@@ -28,13 +28,13 @@
         <div class="brand-content">
             <h2 class="heading2 primary">Key Features of S.C.A.N Technology</h2>
             <div class="points">
-                <h4>Futuristic Design:</h4>
+                <h4 class="heading4 primary">Futuristic Design:</h4>
                 <ul class="ulclass dark list margp">
                     <li>The S.C.A.N remote controller, with its ergonomic design, intuitive button placement, and sleek, modern look, offers a convenient and comfortable user experience.</li>
                     <li>Its high-quality materials and lightweight form factor make it comfortable and durable for everyday use.</li>
                 </ul>
 
-                <h4>Comprehensive Fan Control:</h4>
+                <h4 class="heading4 primary">Comprehensive Fan Control:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Effortlessly adjust fan speed across multiple levels, giving you complete control over your cooling experience.</li>
                     <li>Includes two unique modes:
@@ -45,24 +45,24 @@
                     </li>
                 </ul>
 
-                <h4>LED Light Integration:</h4>
+                <h4 class="heading4 primary">LED Light Integration:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Control LED lights (where available) with the same remote, including switching on/off and changing the Colour Tones if the product is equipped with Haneri’s LumiAmbience Technology.</li>
                     <li>Synchronizes seamlessly with fans, offering complete control and convenience.</li>
                 </ul>
 
-                <h4>Advanced Timer Functionality:</h4>
+                <h4 class="heading4 primary">Advanced Timer Functionality:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Set programmable timers to automatically switch the fan or light on/off, optimizing energy efficiency and user comfort.</li>
                 </ul>
 
-                <h4>Reliable Radio Frequency Control:</h4>
+                <h4 class="heading4 primary">Reliable Radio Frequency Control:</h4>
                 <ul class="ulclass dark list margp">
                     <li>The S.C.A.N remote controller operates on advanced RF technology, ensuring reliable control from greater distances without requiring line-of-sight.</li>
                     <li>This gives you a secure and confident experience, and it eliminates signal interference for a smooth and responsive experience.</li>
                 </ul>
 
-                <h4>Power Efficiency:</h4>
+                <h4 class="heading4 primary">Power Efficiency:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Low-power RF communication ensures extended battery life for the remote controller.</li>
                 </ul>
@@ -80,24 +80,24 @@
         <div class="brand-content">
             <h2 class="heading2 primary">Benefits for Customers</h2>
             <div class="points">
-                <h4>Radio Frequency (RF) Innovation:</h4>
+                <h4 class="heading4 primary">Radio Frequency (RF) Innovation:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Operates on robust RF bands to provide uninterrupted control even through walls or obstructions.</li>
                     <li>Advanced signal encoding prevents interference from other wireless devices, ensuring reliability.</li>
                 </ul>
 
-                <h4>Integrated Microcontroller System:</h4>
+                <h4 class="heading4 primary">Integrated Microcontroller System:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Embedded microcontroller units (MCUs) process user inputs for instantaneous response.</li>
                     <li>The system supports multi-functional commands, enabling simultaneous fan speed and light adjustments.</li>
                 </ul>
 
-                <h4>Energy Optimization:</h4>
+                <h4 class="heading4 primary">Energy Optimization:</h4>
                 <ul class="ulclass dark list margp">
                     <li>Timer algorithms and innovative sleep modes ensure energy-efficient operation of both the remote and connected devices.</li>
                 </ul>
 
-                <h4>Multi-Mode Control Logic:</h4>
+                <h4 class="heading4 primary">Multi-Mode Control Logic:</h4>
                 <ul class="ulclass dark list margp">
                     <li><strong>Breeze Mode:</strong> Powered by dynamic speed variation algorithms to mimic natural airflow.</li>
                     <li><strong>Turbo Mode:</strong> Leverages direct motor communication to maximize fan performance instantly.</li>
