@@ -105,7 +105,7 @@
 .rowws {
     display: flex;
     flex-wrap: wrap; /* wrap on small screens */
-    gap: 20px;       /* space between columns */
+    gap: 10px;       /* space between columns */
 }
 
 /* Custom Box */
