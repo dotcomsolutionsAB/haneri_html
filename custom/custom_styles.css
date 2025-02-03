@@ -281,7 +281,7 @@ strong{
       font-family: 'Open Sans';
     }
     .highlight_h1{
-      font-weight: 700;
+      font-weight: 700 !important;
     }
     .highlight_p{
       font-weight: bold;
@@ -292,6 +292,10 @@ strong{
     }
     .ulclass li{
       margin-bottom: 10px;
+    }
+
+    .history-section h2 {
+      margin-bottom: 0rem;
     }
   /* Main Heading Style */
   .page_heading {
