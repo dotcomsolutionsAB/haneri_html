@@ -269,18 +269,21 @@ strong{
     .light{
       color: #fff;
     }
+    .left{
+      text-align: left;
+    }
     .heading1{
       font-size: 50px;
       font-family: 'Barlow Condensed';
     }
 
     .heading2{
-      font-size: 30px;
+      font-size: 27px;
       font-family: 'Barlow Condensed';
       font-weight: 500 !important;
     }
     .paragraph1{
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Open Sans';
       text-align: justify;
       color: #000;
@@ -296,7 +299,7 @@ strong{
       font-weight: bold;
     }
     .ulclass{
-      font-size: 20px;
+      font-size: 18px;
       font-family: 'Open Sans';
       text-align: justify;
     }

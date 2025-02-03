@@ -84,7 +84,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Enhanced Comfort</h2>
-                                <p class="dark paragraph1">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                                <p class="dark paragraph1 left">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Cost Savings</h2>
-                                <p class="dark paragraph1">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
+                                <p class="dark paragraph1 left">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
                             </div>           
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                     <div class="custom-content">
                         <div class="txtt">
                             <h2 class="primary heading2 highlight_h1">Sustainable Choice</h2>
-                            <p class="dark paragraph1">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+                            <p class="dark paragraph1 left">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
                         </div>
                     </div>
                     </div>
@@ -129,7 +129,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Modern Aesthetics</h2>
-                                <p class="dark paragraph1">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                                <p class="dark paragraph1 left">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
                             </div>
                         </div>
                     </div>
