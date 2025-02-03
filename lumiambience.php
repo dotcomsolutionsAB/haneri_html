@@ -63,8 +63,7 @@
             <div class="containe text-left">
                 <h1 class="text-uppercase page_heading heading1">LumiAmbience</h1>
             </div>
-            <div class="container">                
-                
+            <div class="container">              
                 <section id="lumiambience" class="lumiambience">
                     <?php include("inc_files/pillar_technology/lumiambience.php"); ?>
                 </section>
