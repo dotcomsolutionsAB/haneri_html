@@ -172,7 +172,7 @@
             </div>
 
             <!-- Column 5 -->
-            <div class="col">
+            <!-- <div class="col">
                 <div class="custom-box">
                 <div class="icon-box">
                     <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
@@ -184,7 +184,8 @@
                     </div>
                 </div>
                 </div>
-            </div>
+            </div> -->
+
         </div>
     </div>
 </div>
