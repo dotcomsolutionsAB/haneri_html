@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <link rel="stylesheet" href="custom/custom_styles.css">
     <style>
         .page-header {
             padding: 1rem 0 3.2rem;
@@ -76,13 +77,6 @@
                         padding: 20px 0px;
                         padding-top: 1rem;
                     }
-                    /* .brands-section .section-title {
-                        font-size: 36px;
-                        font-weight: bold;
-                        margin-bottom: 40px;
-                        text-transform: uppercase;
-                        color: #333;
-                    } */
 
                     /* Brand Rows */
                     .brand-row-container {
