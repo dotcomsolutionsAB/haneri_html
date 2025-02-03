@@ -265,6 +265,7 @@ strong{
     .heading1{
       font-size: 50px;
       font-family: 'Barlow Condensed';
+      font-weight: 500;
     }
 
     .heading2{

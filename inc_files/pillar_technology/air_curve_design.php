@@ -4,7 +4,7 @@
     <div class="row row-bg">
         <div class="col-md-12">
             <p class="mb-2"></p>
-            <h2 class="primary heading2 highlight_h1">
+            <h2 class="primary heading2 ">
                 Introducing Air Curve Design: Redefining Ceiling Fan Efficiency
             </h2>
             <p class="dark paragraph1">
@@ -12,7 +12,7 @@
             </p>
             <br>
             <p class="mb-2"></p>
-            <h2 class="primary heading2 highlight_h1">
+            <h2 class="primary heading2 ">
                 What is Air Curve Design?
             </h2>
             <p class="dark paragraph1">
