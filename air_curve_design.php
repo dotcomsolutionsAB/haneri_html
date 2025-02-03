@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/benifits_section.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <link rel="stylesheet" href="custom/custom_styles.css">
     <style>
         .page-header {
             padding: 1rem 0 3.2rem;
@@ -62,7 +63,7 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-            <style>
+            <!-- <style>
                 .about p {
                     font-family: 'Barlow Condensed';
                     font-size: 22px;
@@ -93,7 +94,7 @@
                     font-weight: 600;
                     font-size: larger;
                 }
-            </style>
+            </style> -->
             <!-- <div class="page-header pt-3 bg-transparent"> -->
             <div class="heading">
                 <div class="containe text-left">

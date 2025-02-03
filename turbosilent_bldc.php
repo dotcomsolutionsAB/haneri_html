@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="custom/responsive.css">    
     <link rel="stylesheet" href="custom/benifits_section.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <link rel="stylesheet" href="custom/custom_styles.css">
 </head>
 
 <body>
