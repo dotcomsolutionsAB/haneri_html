@@ -253,6 +253,15 @@ strong{
 
   
 /* Body Main heading */
+    .primary{
+      color:#00473E;
+    }
+    .dark{
+      color: #000;
+    }
+    .light{
+      color: #fff;
+    }
     .heading1{
       font-size: 50px;
       font-family: 'Barlow Condensed';
@@ -265,6 +274,7 @@ strong{
     .paragraph1{
       font-size: 20px;
       font-family: 'Open Sans';
+      color: #000;
     }
     .paragraph2{
       font-size: 18px;

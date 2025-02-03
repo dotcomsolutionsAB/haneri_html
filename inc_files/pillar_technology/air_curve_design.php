@@ -4,18 +4,18 @@
     <div class="row row-bg">
         <div class="col-md-12">
             <p class="mb-2"></p>
-            <h2 class="heading2">
+            <h2 class="dark heading2">
                 Introducing Air Curve Design: Redefining Ceiling Fan Efficiency
             </h2>
-            <p class="paragraph1">
+            <p class="dark paragraph1">
                 At <span class="highlight_p">Haneri</span>, innovation drives us to create products that are not only stylish but also deliver superior performance. Our revolutionary Air Curve Design technology transforms how ceiling fan blades are conceptualized, designed, and manufactured. With high-tech design and precision engineering, blades designed with Air Curve Design Technology offer unmatched air delivery, efficiency, and durability, showcasing the superiority of our product.
             </p>
             <br>
             <p class="mb-2"></p>
-            <h2 class="heading2">
+            <h2 class="dark heading2">
                 What is Air Curve Design?
             </h2>
-            <p class="paragraph1">
+            <p class="dark paragraph1">
                 <span class="highlight_p">Air Curve Design</span> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.
             </p>
         </div>
@@ -43,8 +43,8 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="heading2">Key Features of Air Curve Design</h2>
-                <ul class="ulclass">
+                <h2 class="dark heading2">Key Features of Air Curve Design</h2>
+                <ul class="dark ulclass">
                     <li>
                         <span class="highlight_p">High Air Delivery:</span>
                         Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.
@@ -72,7 +72,7 @@
         <br>
         <div class="row-bg">
             <div class="containe">
-                <h2 class="heading2">Benefits for Customers</h2>
+                <h2 class="dark heading2">Benefits for Customers</h2>
             </div>
             <div class="eow rowws">
                 <!-- Column 1 -->
@@ -83,8 +83,8 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="heading2 highlight_h1">Enhanced Comfort</h2>
-                                <p class="paragraph1">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                                <h2 class="dark heading2 highlight_h1">Enhanced Comfort</h2>
+                                <p class="dark paragraph1">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
                             </div>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="heading2 highlight_h1">Cost Savings</h2>
-                                <p class="paragraph1">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
+                                <h2 class="dark heading2 highlight_h1">Cost Savings</h2>
+                                <p class="dark paragraph1">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
                             </div>           
                         </div>
                     </div>
@@ -113,8 +113,8 @@
                     </div>
                     <div class="custom-content">
                         <div class="txtt">
-                            <h2 class="heading2 highlight_h1">Sustainable Choice</h2>
-                            <p class="paragraph1">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+                            <h2 class="dark heading2 highlight_h1">Sustainable Choice</h2>
+                            <p class="dark paragraph1">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
                         </div>
                     </div>
                     </div>
@@ -128,8 +128,8 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="heading2 highlight_h1">Modern Aesthetics</h2>
-                                <p class="paragraph1">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                                <h2 class="dark heading2 highlight_h1">Modern Aesthetics</h2>
+                                <p class="dark paragraph1">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
             <div class="work-together-section">
                 <img src="../images/Logo1.png" alt="Work Together Image" class="fit-image" />
                 <div class="contentss">
-                    <h2 class="heading2">The Science Behind Air Curve Design</h2>
+                    <h2 class="dark heading2">The Science Behind Air Curve Design</h2>
                     <div class="c">
                         <a href="#" class="contact-btn">
                             CONTACT US 
@@ -153,8 +153,8 @@
                 </div>
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-8 col-lg-6 contents">
-                <!-- <h2 class="heading2">The Science Behind Air Curve Design</h2> -->
-                <ul class="ulclass">
+                <!-- <h2 class="dark heading2">The Science Behind Air Curve Design</h2> -->
+                <ul class="dark ulclass ">
                     <li>
                         <span class="highlight_p">
                                 Computational Fluid Dynamics (CFD):
