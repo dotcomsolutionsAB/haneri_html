@@ -1,14 +1,3 @@
-
-<style>
-    .brand-content .points h4{
-        margin: 0px;
-        font-weight: 600;
-    }
-    .brand-content span {
-        font-weight: 600;
-        font-size: 18px;
-    }
-</style>
 <!-- Row 1: Haneri -->
 <div class="brand-row-container">
     <div class="brand-row">
@@ -57,7 +46,7 @@
                 </ul>
 
                 <h4 class="heading4 primary">Energy-Efficient LED System:</h4>
-                <ul class="ulclass">
+                <ul class="ulclass dark">
                     <li>LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.</li>
                 </ul>
             </div>
@@ -106,9 +95,7 @@
 <!-- Row 4: Benefits -->
 <div class="brand-row-container">
     <div class="brand-row reverse">
-        <div class="brand-content">
-            <h2 class="heading2">Benefits for Customers</h2>
-        </div>
+        <h2 class="heading2 primary">Benefits for Customers</h2>
         <div class="eow rowws">
             <!-- Column 1 -->
             <div class="col">
@@ -172,7 +159,7 @@
             </div>
 
             <!-- Column 5 -->
-            <!-- <div class="col">
+            <div class="col">
                 <div class="custom-box">
                 <div class="icon-box">
                     <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
@@ -184,7 +171,7 @@
                     </div>
                 </div>
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </div>

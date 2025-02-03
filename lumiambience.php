@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="custom/custom.css">
     <link rel="stylesheet" href="custom/custom_styles.css">
     <style>
-        .page-header {
+        /* .page-header {
             padding: 1rem 0 3.2rem;
             margin-top: 0px;
         }
@@ -41,7 +41,7 @@
             font-size: 80px;
             color: #fff;
             font-family: 'Barlow Condensed', sans-serif;
-        }
+        } */
     </style>
 </head>
 
@@ -64,67 +64,7 @@
                 <h1 class="text-uppercase page_heading heading1">LumiAmbience</h1>
             </div>
             <div class="container">                
-                <style type="text/css" media="all">
-                    /* General Section Styling */
-                    .brands-section {
-                        padding: 50px 20px;
-                        /* background-color: #f9f9f9; */
-                        text-align: center;
-                    }
-                    .lumiambience {
-                        padding: 20px 0px;
-                        padding-top: 1rem;
-                    }
-
-                    /* Brand Rows */
-                    .brand-row-container {
-                        margin-bottom: 30px;
-                        padding: 20px 0px;
-                        /* border: 1px solid #ddd; */
-                        border-radius: 10px;
-                        background-color: #fff;
-                    }
-
-                    .brand-row {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        gap: 20px;
-                    }
-
-                    .brand-row.reverse {
-                        flex-direction: row-reverse;
-                    }
-
-                    .brand-content {
-                        flex: 1;
-                        max-width: 65%;
-                        text-align: left;
-                        padding: 10px 0px;
-                    }
-                    .brand-content strong {
-                        font-weight: 600;
-                        font-size: 18px;
-                    }
-
-                    .brand-image {
-                        flex: 1;
-                        max-width: 35%;
-                        display: flex;
-                        align-items: flex-start;
-                        justify-content: center;
-                        padding-top: 15px;
-                    }
-
-                    .brand-image img {
-                        width: 100%;
-                        max-width: 500px;
-                        height: auto;
-                        object-fit: contain;
-                        border-radius: 0px;
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                    }
-                </style>
+                
                 <section id="lumiambience" class="lumiambience">
                     <?php include("inc_files/pillar_technology/lumiambience.php"); ?>
                 </section>
