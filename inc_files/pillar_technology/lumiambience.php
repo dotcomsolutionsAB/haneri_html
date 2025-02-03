@@ -108,35 +108,83 @@
     <div class="brand-row reverse">
         <div class="brand-content">
             <h2 class="heading2">Benefits for Customers</h2>
-            <div class="points">
-                <h4 class="heading primary4">Customized Lighting for Every Occasion:</h4>
-                <ul class="ulclass dark">
-                    <li>Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Enhanced Eye Comfort:</h4>
-                <ul class="ulclass dark">
-                    <li>The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Integrated Functionality:</h4>
-                <ul class="ulclass dark">
-                    <li>Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Energy Savings:</h4>
-                <ul class="ulclass dark">
-                    <li>Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Aesthetic Versatility:</h4>
-                <ul class="ulclass dark">
-                    <li>The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</li>
-                </ul>
-            </div>
         </div>
-        <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+        <div class="eow rowws">
+            <!-- Column 1 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <!-- Replace with your icon path/size -->
+                        <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Customized Lighting for Every Occasion</h2>
+                            <p class="paragraph1 dark">Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Enhanced Eye Comfort</h2>
+                            <p class="paragraph1 dark">The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</p> 
+                        </div>           
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
+                </div>
+                <div class="custom-content">
+                    <div class="txtt">
+                        <h2 class="heading2 primary highlight_h1">Integrated Functionality:</h2>
+                        <p class="paragraph1 dark">Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- column 4 -->
+            <div class="col">
+                <div class="custom-box">
+                    <div class="icon-box">
+                        <img src="images/benifits/enh.jpeg" alt="Modern Aesthetics" style="">
+                    </div>
+                    <div class="custom-content">
+                        <div class="txtt">
+                            <h2 class="heading2 primary highlight_h1">Energy Savings:</h2>
+                            <p class="paragraph1 dark">Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 5 -->
+            <div class="col">
+                <div class="custom-box">
+                <div class="icon-box">
+                    <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
+                </div>
+                <div class="custom-content">
+                    <div class="txtt">
+                        <h2 class="heading2 primary highlight_h1">Aesthetic Versatility:</h2>
+                        <p class="paragraph1 dark">The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
