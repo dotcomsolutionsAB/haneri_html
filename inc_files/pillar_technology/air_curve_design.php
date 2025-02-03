@@ -68,7 +68,7 @@
 
         <br>
         <div class="row-bg">
-            <div class="containe">
+            <div class="containe margp">
                 <h2 class="primary heading2">Benefits for Customers</h2>
             </div>
             <div class="eow rowws">
