@@ -282,6 +282,7 @@ strong{
     .paragraph1{
       font-size: 20px;
       font-family: 'Open Sans';
+      text-align: justify;
       color: #000;
     }
     .paragraph2{
@@ -297,6 +298,7 @@ strong{
     .ulclass{
       font-size: 20px;
       font-family: 'Open Sans';
+      text-align: justify;
     }
     .ulclass li{
       margin-bottom: 10px;
