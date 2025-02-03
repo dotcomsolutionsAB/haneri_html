@@ -259,6 +259,11 @@ strong{
     .owl-dots{
       display: none;
     }
+
+    .margp{
+      margin-top: 10px;
+      margin-bottom: 20px;  
+    }
   /* Body Main heading */
     .primary{
       color:#00473E;
@@ -281,6 +286,7 @@ strong{
       font-size: 27px;
       font-family: 'Barlow Condensed';
       font-weight: 500 !important;
+      line-height: 1;
     }
     .paragraph1{
       font-size: 18px;

@@ -6,14 +6,13 @@
             <h2 class="primary heading2 ">
                 Introducing Air Curve Design: Redefining Ceiling Fan Efficiency
             </h2>
-            <p class="dark paragraph1">
+            <p class="dark paragraph1 margp">
                 At <span class="highlight_p">Haneri</span>, innovation drives us to create products that are not only stylish but also deliver superior performance. Our revolutionary Air Curve Design technology transforms how ceiling fan blades are conceptualized, designed, and manufactured. With high-tech design and precision engineering, blades designed with Air Curve Design Technology offer unmatched air delivery, efficiency, and durability, showcasing the superiority of our product.
             </p>
-            <p class="mb-2"></p>
             <h2 class="primary heading2 ">
                 What is Air Curve Design?
             </h2>
-            <p class="dark paragraph1">
+            <p class="dark paragraph1 margp">
                 <span class="highlight_p">Air Curve Design</span> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.
             </p>
         </div>
@@ -82,7 +81,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Enhanced Comfort</h2>
-                                <p class="dark paragraph1 left">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                                <p class="dark paragraph1 left margp">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +96,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Cost Savings</h2>
-                                <p class="dark paragraph1 left">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
+                                <p class="dark paragraph1 left margp">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
                             </div>           
                         </div>
                     </div>
@@ -112,7 +111,7 @@
                     <div class="custom-content">
                         <div class="txtt">
                             <h2 class="primary heading2 highlight_h1">Sustainable Choice</h2>
-                            <p class="dark paragraph1 left">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
+                            <p class="dark paragraph1 left margp">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
                         </div>
                     </div>
                     </div>
@@ -127,7 +126,7 @@
                         <div class="custom-content">
                             <div class="txtt">
                                 <h2 class="primary heading2 highlight_h1">Modern Aesthetics</h2>
-                                <p class="dark paragraph1 left">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
+                                <p class="dark paragraph1 left margp">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
                             </div>
                         </div>
                     </div>
