@@ -6,7 +6,7 @@ Turbosilent
 
 
 /* Only For Turbo silent */
-.wave-box {
+  .wave-box {
     overflow-x: hidden;
     background: linear-gradient(135deg, #00473E, #011d19, #64f4e0);
     background-size: 200% 200%;
@@ -18,8 +18,8 @@ Turbosilent
   }
 
   .ss{
-      /* width: 100%; */
-      height: 80vh;
+    /* width: 100%; */
+    height: 80vh;
   }
 
   /* Gentle background gradient flow */
@@ -158,31 +158,6 @@ Turbosilent
     }
   }
 
-  /* .content-container h1 {
-      font-size: 3.3rem;
-      margin-bottom: 1rem;
-      color: #fff;
-  } */
-/* 
-  .content-container h2 {
-    font-size: 2.6rem;
-    margin: 2rem 0 1rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    color: #fff;
-  } */
-
-  /* .content-container p {
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-    font-size: 2.2rem;
-    color: #fff;
-  } */
-
-  /* .content-container strong {
-    font-weight: 700;
-    font-size: 22px;
-  } */
-
   .turbosilent_bldc {
     position: relative;
     background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
@@ -202,8 +177,6 @@ Turbosilent
     background: rgba(255, 255, 255, 0.02); /* Black overlay with 50% opacity */
     z-index: 0; /* Places the overlay below the content */
   }
-
-  /*  */
 
     .why{
     background: radial-gradient(#4a6a65, #00473e);
@@ -251,6 +224,10 @@ Turbosilent
       font-family: 'Barlow Condensed';
       font-weight: 500 !important;
       line-height: 1;
+    }
+    .heading4{
+      font-size: 22px;
+      font-family: 'Barlow Condensed';
     }
     .paragraph1{
       font-size: 18px;

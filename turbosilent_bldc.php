@@ -56,10 +56,6 @@
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
 
-            <style>
-               
-            </style>
-
             <div class="containe wave-box">
                 <div class="row row-bg ss">
                     <div class="col-md-12">

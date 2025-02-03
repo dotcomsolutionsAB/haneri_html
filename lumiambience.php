@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="custom/responsive.css">
     <link rel="stylesheet" href="custom/custom.css">
+    <link rel="stylesheet" href="custom/custom_styles.css">
     <style>
         .page-header {
             padding: 1rem 0 3.2rem;
@@ -60,7 +61,7 @@
                 </div><!-- End .container -->
             </nav>
             <div class="containe text-left">
-                <h1 class="text-uppercase about_section">LumiAmbience</h1>
+                <h1 class="text-uppercase page_heading heading1">LumiAmbience</h1>
             </div>
             <div class="container">                
                 <style type="text/css" media="all">
