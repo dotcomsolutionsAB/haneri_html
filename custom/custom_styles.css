@@ -290,6 +290,9 @@ strong{
       font-size: 20px;
       font-family: 'Open Sans';
     }
+    .ulclass li{
+      margin-bottom: 10px;
+    }
   /* Main Heading Style */
   .page_heading {
       color: #fff; /* White text color */
