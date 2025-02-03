@@ -204,6 +204,9 @@ Turbosilent
     .list{
       list-style: inside;
     }
+    .list li:before {
+      font-size: 18px;
+    }
   /* Body Main heading */
     .primary{
       color:#00473E;
