@@ -256,6 +256,9 @@ strong{
       padding-top: 0rem;
       padding-bottom: 3rem;
     }
+    .owl-dots{
+      display: none;
+    }
   /* Body Main heading */
     .primary{
       color:#00473E;
