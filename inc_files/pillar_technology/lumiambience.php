@@ -11,7 +11,7 @@
             <p class="paragraph1 margp dark">LumiAmbience Technology integrates a state-of-the-art 3-in-1 LED lighting system into select Haneri ceiling fans, allowing you to adapt your lighting to any mood or occasion. The system features Warm White, Cool White, and Natural White light modes, each engineered for specific settings. LumiAmbience stands apart with its proprietary lens diffuser that ensures even light distribution, eliminates harsh LED spots, and creates a soothing ambience for your space.</p>
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri - Excellence in Manufacturing">
+            <img src="images/f12.png" alt="Haneri - Excellence in Manufacturing">
         </div>
     </div>
 </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri Bespoke - Personalized Living">
+            <img src="images/f11.png" alt="Haneri Bespoke - Personalized Living">
         </div>
     </div>
 </div>
@@ -87,14 +87,14 @@
             </div>            
         </div>
         <div class="brand-image">
-            <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
+            <img src="images/f6.png" alt="Haneri Professional - Industrial Solutions">
         </div>
     </div>
 </div>
 
 <!-- Row 4: Benefits -->
 <div class="brand-row-container">
-    <div class="brand-row reverse">
+    <div class="brand-row">
         <h2 class="heading2 primary">Benefits for Customers</h2>
         <div class="eow rowws">
             <!-- Column 1 -->
