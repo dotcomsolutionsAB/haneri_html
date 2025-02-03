@@ -141,21 +141,31 @@
     </div>
 </div>
 
-<!-- Row 5: Why Choose? -->
-<div class="brand-row-container">
-    <div class="brand-row">
-        <div class="brand-content">
-            <div class="points">
-                <h2 class="heading2 primary">Why Choose Haneri LumiAmbience Ceiling Fans?</h2>
-                <p class="paragraph1">
-                    LumiAmbience Technology redefines what lighting can achieve, delivering advanced functionality and unparalleled comfort. With its unique lens diffuser, customizable colour options, and seamless integration with Haneri ceiling fans, LumiAmbience sets a new standard in lighting innovation. It’s not just about illumination—it’s about creating the perfect atmosphere for every moment.
-                </p>
-                <br>
-                <h2 class="heading2 primary">Experience LumiAmbience Technology Today!</h2>
-                <p class="paragraph1">
-                    Transform your space with Haneri’s LumiAmbience-enabled ceiling fans. Experience lighting that adapts to your mood and lifestyle with the added elegance of Haneri’s cutting-edge design. Choose LumiAmbience Technology—where innovation meets ambience and lighting meets perfection.
-                </p>
-            </div>
+
+<div class="containe">
+    <div class="row row-bg why">
+        <div class="col-md-12">
+            <p class="mb-2"></p>
+                <h2 class="heading2 light">
+                    Why Choose Haneri LumiAmbience Ceiling Fans?
+                </h2>
+            <p class="paragraph1 light">
+                LumiAmbience Technology redefines what lighting can achieve, delivering advanced functionality and unparalleled comfort. With its unique lens diffuser, customizable colour options, and seamless integration with Haneri ceiling fans, LumiAmbience sets a new standard in lighting innovation. It’s not just about illumination—it’s about creating the perfect atmosphere for every moment.
+            </p>
         </div>
-    </div>
-</div>
+    </div><!-- End .row -->
+</div><!-- End .container -->
+<br>
+<div class="containe">
+    <div class="row row-bg why">
+        <div class="col-md-12">
+            <p class="mb-2"></p>
+            <h2 class="heading2 light">
+                Experience LumiAmbience Technology Today!
+            </h2>
+            <p class="paragraph1 light">
+                Transform your space with Haneri’s LumiAmbience-enabled ceiling fans. Experience lighting that adapts to your mood and lifestyle with the added elegance of Haneri’s cutting-edge design. Choose LumiAmbience Technology—where innovation meets ambience and lighting meets perfection.
+            </p>
+        </div>
+    </div><!-- End .row -->
+</div><!-- End .container -->
