@@ -201,6 +201,9 @@ Turbosilent
       margin-top: 10px;
       margin-bottom: 20px;  
     }
+    .list{
+      list-style: inside;
+    }
   /* Body Main heading */
     .primary{
       color:#00473E;
