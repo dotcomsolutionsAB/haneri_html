@@ -111,9 +111,9 @@
 /* Custom Box */
 .custom-box {
     position: relative;
-    padding: 1.5rem 3rem;
+    padding: 1rem 2rem;
     box-sizing: border-box;
-    min-height: 350px;         /* to ensure a bit of uniform height */
+    min-height: 370px;         /* to ensure a bit of uniform height */
     background-color: #f6f6f6;
     border: 1px solid #74787c30;
 }
@@ -145,7 +145,7 @@
 
 /* Shift the text to the right so it doesn't overlap the icon box */
 .custom-content {
-    margin-top: 100px;
+    margin-top: 85px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
