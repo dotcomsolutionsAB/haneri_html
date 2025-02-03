@@ -19,7 +19,7 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="heading2 primary">Unique Advantages of TurboSilent BLDC Technology</h2>
+                <h2 class="heading2 primary margp">Unique Advantages of TurboSilent BLDC Technology</h2>
                 <ul class="ulclass">
                     <li>
                         <span class="highlight_p">
@@ -73,7 +73,7 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 order-lg-first contents">
-                <h2 class="heading2 primary">
+                <h2 class="heading2 primary margp">
                     The Science Behind TurboSilent BLDC Technology
                 </h2>
                 <ul class="ulclass">
@@ -99,7 +99,7 @@
         <br>
         <div class="row-bg">
             <div class="containe">
-                <h2 class="heading2 primary">Benefits for Customers</h2>
+                <h2 class="heading2 primary margp">Benefits for Customers</h2>
             </div>
             <div class="eow rowws">
                 <!-- Column 1 -->
