@@ -566,6 +566,6 @@ Turbosilent
       height: auto;
       object-fit: contain;
       border-radius: 0px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   }
 /* End Brand content row container css */
