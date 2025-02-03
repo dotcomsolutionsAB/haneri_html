@@ -41,7 +41,7 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
                 <h2 class="primary heading2">Key Features of Air Curve Design</h2>
-                <ul class="dark ulclass">
+                <ul class="dark ulclass margp">
                     <li>
                         <span class="highlight_p">High Air Delivery:</span>
                         Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.
@@ -151,7 +151,7 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-8 col-lg-6 contents">
                 <h2 class="primary heading2">The Science Behind Air Curve Design</h2>
-                <ul class="dark ulclass ">
+                <ul class="dark ulclass margp">
                     <li>
                         <span class="highlight_p">
                                 Computational Fluid Dynamics (CFD):
