@@ -106,7 +106,7 @@
                     </div>
                     <div class="custom-content">
                         <div class="txtt">
-                            <h2 class="heading2 primary highlight_h1">Customized Lighting for Every Occasion</h2>
+                            <h2 class="heading2 primary highlight_h1">Customized Lighting</h2>
                             <p class="paragraph1 margp dark">Switch between Warm White, Cool White, and Natural White to create the perfect ambience for relaxation, work, or social gatherings.</p>
                         </div>
                     </div>
