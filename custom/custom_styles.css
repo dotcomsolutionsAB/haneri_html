@@ -253,6 +253,29 @@ strong{
 
   
 /* Body Main heading */
+    .heading1{
+      font-size: 50px;
+      font-family: 'Barlow Condensed';
+    }
+
+    .heading2{
+      font-size: 30px;
+      font-family: 'Barlow Condensed';
+    }
+    .paragraph1{
+      font-size: 20px;
+      font-family: 'Open Sans';
+    }
+    .paragraph2{
+      font-size: 18px;
+      font-family: 'Open Sans';
+    }
+    .highlight_h1{
+      font-weight: 700;
+    }
+    .highlight_p{
+      font-weight: bold;
+    }
   /* Main Heading Style */
   .page_heading {
       color: #fff; /* White text color */
@@ -262,7 +285,7 @@ strong{
       background: linear-gradient(135deg, #047f89, #315859);
       border-radius: 0px; /* Rounded corners */
       overflow: hidden; /* Prevent overflow of child elements */
-      width:100%;
+      width:100%;      
   }
 
   /* Geometric Decorative Element */
