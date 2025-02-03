@@ -50,7 +50,7 @@
                 </div><!-- End .container -->
             </nav>
             <div class="containe text-left">
-                <h1 class="text-uppercase about_section">S.C.A.N TECHNOLOGY </h1>
+                <h1 class="text-uppercase page_heading">S.C.A.N TECHNOLOGY </h1>
             </div>
             <div class="container">   
                 <section id="scan" class="scan">
