@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="custom/custom.css">
     <link rel="stylesheet" href="custom/custom_styles.css">
     <style>
-        .page-header {
+        /* .page-header {
             padding: 1rem 0 3.2rem;
             margin-top: 0px;
         }
@@ -43,7 +43,7 @@
         }
         .owl-dots{
             display:none;
-        }
+        } */
     </style>
 </head>
 
@@ -66,7 +66,7 @@
             <!-- <div class="page-header pt-3 bg-transparent"> -->
             <div class="heading">
                 <div class="containe text-left">
-                    <h1 class="text-uppercase text-left about_section">Air Curve Design</h1>
+                    <h1 class="text-uppercase text-left page_heading">Air Curve Design</h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
             <div class="container">                
