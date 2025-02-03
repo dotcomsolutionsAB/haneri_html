@@ -19,7 +19,7 @@ Turbosilent
 
   .ss{
       width: 100%;
-      height: 95vh;
+      height: 90vh;
   }
 
   /* Gentle background gradient flow */
@@ -144,7 +144,7 @@ Turbosilent
     max-width: 1200px;
     margin: 0 55px;
     padding: 1rem;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     animation: fadeDown 1.2s ease forwards;
     opacity: 0;
     transform: translateY(-20px);
@@ -158,11 +158,11 @@ Turbosilent
     }
   }
 
-  .content-container h1 {
+  /* .content-container h1 {
       font-size: 3.3rem;
       margin-bottom: 1rem;
       color: #fff;
-  }
+  } */
 /* 
   .content-container h2 {
     font-size: 2.6rem;
@@ -178,10 +178,10 @@ Turbosilent
     color: #fff;
   } */
 
-  .content-container strong {
+  /* .content-container strong {
     font-weight: 700;
     font-size: 22px;
-  }
+  } */
 
   .turbosilent_bldc {
     position: relative;
