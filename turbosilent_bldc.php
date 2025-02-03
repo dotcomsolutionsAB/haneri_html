@@ -70,16 +70,16 @@
                         <div class="wave3"></div>
                         <div class="wave4"></div>
                         <div class="content-container">
-                            <h2 class="heading2">Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
-                            <p class="paragraph1">
+                            <h2 class="heading2 light">Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
+                            <p class="paragraph1 light">
                             At Haneri, we redefine engineering excellence with our proprietary
                             <span class="highlight_p">TurboSilent BLDC Technology</span>. This advanced motor design not only delivers
                             higher torque and exceptional durability but also ensures unmatched energy efficiency,
                             setting a new benchmark for ceiling fan performance and contributing to a greener environment.
                             </p>
                             <p class="mb-2">
-                            <h2 class="heading2">What is TurboSilent BLDC Technology?</h2>
-                            <p class="paragraph1">
+                            <h2 class="heading2 light">What is TurboSilent BLDC Technology?</h2>
+                            <p class="paragraph1 light">
                             <span class="highlight_p">TurboSilent BLDC (Brushless Direct Current) Technology</span> is an in-house developed
                             motor system that employs high-tech electromagnetic and mechanical design principles. This
                             cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended
