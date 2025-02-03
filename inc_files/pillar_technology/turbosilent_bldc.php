@@ -186,15 +186,7 @@
 <div class="mb-3"></div><!-- margin -->
 
 <style>
-    .why{
-        background: radial-gradient(#4a6a65, #00473e);
-        color: #fff;
-        border-radius: 15px;
-        box-shadow: 10px 10px 1px 1px #ccccccab;
-    }
-    .why p, .why h2{
-        color:#fff;
-    }
+    
 </style>
 <style>
     /* Main Heading Style */

@@ -37,3 +37,216 @@ strong{
 .owl-dots{
     display:none;
 }
+
+
+
+
+/* Only For Turbo silent */
+.wave-box {
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #00473E, #011d19, #64f4e0);
+    background-size: 200% 200%;
+    animation: bgFlow 10s ease-in-out infinite;
+    position: relative;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .ss{
+      width: 100%;
+      height: 95vh;
+  }
+
+  /* Gentle background gradient flow */
+  @keyframes bgFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* FIRST WAVE */
+  .wave1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 10vh;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 100% 100% 0 0;
+    animation: wave1Move 6s infinite linear;
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  @keyframes wave1Move {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-45%) translateY(5px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* SECOND WAVE */
+  .wave2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 15vh;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 100% 100% 0 0;
+    animation: wave2Move 8s infinite ease-in-out;
+    transform: translateX(-25%);
+    z-index: 2;
+  }
+
+  @keyframes wave2Move {
+    0% {
+      transform: translateX(-25%) translateY(0);
+    }
+    50% {
+      transform: translateX(-20%) translateY(10px);
+    }
+    100% {
+      transform: translateX(-25%) translateY(0);
+    }
+  }
+
+  /* THIRD WAVE */
+  .wave3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 22vh;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 100% 100% 0 0;
+    animation: wave3Move 10s infinite linear;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  @keyframes wave3Move {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-45%) translateY(10px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* FOURTH WAVE */
+  .wave4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 19vh;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 100% 100% 0 0;
+    animation: wave4Move 12s infinite ease-in-out;
+    transform: translateX(-75%);
+    z-index: 4;
+  }
+
+  @keyframes wave4Move {
+    0% {
+      transform: translateX(-75%) translateY(0);
+    }
+    50% {
+      transform: translateX(-70%) translateY(15px);
+    }
+    100% {
+      transform: translateX(-75%) translateY(0);
+    }
+  }
+
+  .content-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 55px;
+    padding: 1rem;
+    margin-top: 10vh;
+    animation: fadeDown 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+    z-index: 5;
+  }
+
+  @keyframes fadeDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .content-container h1 {
+      font-size: 3.3rem;
+      margin-bottom: 1rem;
+      color: #fff;
+  }
+
+  .content-container h2 {
+    font-size: 2.6rem;
+    margin: 2rem 0 1rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    color: #fff;
+  }
+
+  .content-container p {
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;
+    color: #fff;
+  }
+
+  .content-container strong {
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .turbosilent_bldc {
+    position: relative;
+    background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
+    /* height: 450px; */
+    /* display: flex; */
+    /* align-items: flex-end; */
+    /* justify-content: center; */
+    /* padding: 20px; */
+  }
+  .turbosilent_bldc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.02); /* Black overlay with 50% opacity */
+    z-index: 0; /* Places the overlay below the content */
+  }
+
+  /*  */
+
+  .why{
+    background: radial-gradient(#4a6a65, #00473e);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 10px 10px 1px 1px #ccccccab;
+    }
+    .why p, .why h2{
+        color:#fff;
+    }

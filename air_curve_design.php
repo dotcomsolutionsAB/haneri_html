@@ -63,38 +63,6 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-            <!-- <style>
-                .about p {
-                    font-family: 'Barlow Condensed';
-                    font-size: 22px;
-                    color: #222529;
-                    text-align: justify;
-                }
-                .air_curve_design {
-                    padding: 20px 0px;
-                    padding-top: 1rem;
-                }
-                .containe h2{
-                    font-weight: 400;
-                    color: #315859;
-                }
-                .contents ul{
-                    list-style-type: auto;
-                    margin-left: 20px;
-                    font-size: 22px;
-                    /* line-height: 22px; */
-                    text-align: justify;
-                    font-family: 'Barlow Condensed';
-                    color: #222529;
-                }    
-                .contents ul li{
-                    margin-bottom: 15px;
-                }
-                strong{
-                    font-weight: 600;
-                    font-size: larger;
-                }
-            </style> -->
             <!-- <div class="page-header pt-3 bg-transparent"> -->
             <div class="heading">
                 <div class="containe text-left">
