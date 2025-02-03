@@ -75,13 +75,6 @@
                         padding: 20px 0px;
                         padding-top: 1rem;
                     }
-                    /* .brands-section .section-title {
-                        font-size: 36px;
-                        font-weight: bold;
-                        margin-bottom: 40px;
-                        text-transform: uppercase;
-                        color: #333;
-                    } */
 
                     /* Brand Rows */
                     .brand-row-container {
@@ -109,23 +102,6 @@
                         text-align: left;
                         padding: 10px 0px;
                     }
-                    /* .brand-content h2{
-                        font-weight: 400;
-                        margin-bottom: 1.2rem;
-                    } */
-
-                    /* .brand-content p {
-                        font-size: 18px;
-                        line-height: 24px;
-                        text-align: justify;
-                        color: #555;
-                        font-family: 'Barlow Condensed';
-                    } */
-                    /* .brand-content li{
-                        font-size: 18px;
-                        color: #222;
-                        font-family: 'Barlow Condensed';
-                    } */
                     .brand-content strong {
                         font-weight: 600;
                         font-size: 18px;
