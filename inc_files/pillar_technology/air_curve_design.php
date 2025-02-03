@@ -143,7 +143,7 @@
             <div class="work-together-section">
                 <img src="../images/Logo1.png" alt="Work Together Image" class="fit-image" />
                 <div class="contentss">
-                    <h2 class="dark heading2">The Science Behind Air Curve Design</h2>
+                    <h2 class="dark heading2">Air Curve Design</h2>
                     <div class="c">
                         <a href="#" class="contact-btn">
                             CONTACT US 
@@ -153,7 +153,7 @@
                 </div>
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-8 col-lg-6 contents">
-                <!-- <h2 class="dark heading2">The Science Behind Air Curve Design</h2> -->
+                <h2 class="primary heading2">The Science Behind Air Curve Design</h2>
                 <ul class="dark ulclass ">
                     <li>
                         <span class="highlight_p">
