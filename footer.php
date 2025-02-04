@@ -137,7 +137,7 @@
     </div><!-- End .page-wrapper -->
 
     <div class="loading-overlay">
-        <!-- <?php include("../inc_files/loading.php"); ?> -->
+        <?php include("../inc_files/loading.php"); ?>
     </div>
 
     <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
