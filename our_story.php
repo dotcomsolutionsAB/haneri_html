@@ -15,17 +15,7 @@
             <h1 class="text-uppercase text-left about_section">OUR STORY</h1>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
-    <div class="container">
-        <style>
-            #our-story {
-                padding: 20px 0px;
-                padding-top: 1rem;
-            }
-            .about p {
-                font-family: 'Barlow Condensed';
-                font-size: 18px;
-            }
-        </style>
+    <div class="container">       
         <section id="our-story" class="our_story">
             <?php include("inc_files/about/our_story_section.php"); ?>
         </section>
