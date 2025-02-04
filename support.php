@@ -17,7 +17,7 @@
     </div><!-- End .page-header -->
     <div class="container">                
         <div id="Support" class="Support">
-            <?php include("inc_files/construction_code.php"); ?>
+            <?php include("inc_files/support_section.php"); ?>
         </div>
     </div>
 </main><!-- End .main -->

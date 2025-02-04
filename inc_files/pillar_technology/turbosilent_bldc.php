@@ -167,9 +167,7 @@
         <br>
 
     </div><!-- End .container -->
-</div><!-- End .history-section -->
 
-<div class="containe">
     <div class="row row-bg why">
         <div class="col-md-12">
             <p class="mb-2"></p>
@@ -181,7 +179,7 @@
             </p>
         </div>
     </div><!-- End .row -->
-</div><!-- End .container -->
+</div><!-- End .history-section -->
 
 <div class="mb-3"></div><!-- margin -->
 
