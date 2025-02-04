@@ -4,8 +4,8 @@
     <div class="row-container">
         <div class="capability-row">
             <div class="capability-content">
-                <h2 class="capability-title">Excellence in Manufacturing, R&D, and Innovation</h2>
-                <p>
+                <h2 class="heading2 primary">Excellence in Manufacturing, R&D, and Innovation</h2>
+                <p class="paragraph1">
                     At Haneri, we seamlessly integrate design, innovation, and precision manufacturing, ensuring every product exemplifies quality, functionality, and elegance.
                 </p>
             </div>
@@ -15,8 +15,8 @@
         </div>
         <div class="capability-row reverse">
             <div class="capability-content">
-                <h2 class="capability-title">Product-Specific R&D and Prototyping Facilities</h2>
-                <p>
+                <h2 class="heading2 primary">Product-Specific R&D and Prototyping Facilities</h2>
+                <p class="paragraph1">
                     Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products that redefine everyday living.
                 </p>
             </div>
@@ -30,8 +30,8 @@
     <div class="row-container">
         <div class="capability-row">
             <div class="capability-content">
-                <h2 class="capability-title">Comprehensive Manufacturing Processes</h2>
-                <p>
+                <h2 class="heading2 primary">Comprehensive Manufacturing Processes</h2>
+                <p class="paragraph1">
                     Our robust manufacturing capabilities allow us to oversee every aspect of production.
                 </p>
                 <ul>
@@ -46,8 +46,8 @@
         </div>
         <div class="capability-row reverse">
             <div class="capability-content">
-                <h2 class="capability-title">Superior Surface Finishing Capabilities</h2>
-                <p>
+                <h2 class="heading2 primary">Superior Surface Finishing Capabilities</h2>
+                <p class="paragraph1">
                     Haneri’s advanced surface finishing ensures that every product meets the highest standards of aesthetics and longevity.
                 </p>
             </div>
@@ -61,8 +61,8 @@
     <div class="row-container">
         <div class="capability-row">
             <div class="capability-content">
-                <h2 class="capability-title">Design & Tooling Expertise</h2>
-                <p>
+                <h2 class="heading2 primary">Design & Tooling Expertise</h2>
+                <p class="paragraph1">
                     Our in-house tool room for mold manufacturing and sophisticated 3D CAD design capabilities empower us to innovate with precision.
                 </p>
             </div>
