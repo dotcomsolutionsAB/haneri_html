@@ -303,7 +303,7 @@
         Modern innovations like Haneri’s Silent M.A.S.S Technology deliver superior air delivery through smart engineering, combining low-speed operation with advanced aerodynamics and motor efficiency. These technologies harness the wind chill effect to create cooling comfort that outperforms traditional high-RPM fans.
 
         The Bureau of Indian Standards (BIS) and other regulatory bodies measure air delivery in CMM or CFM rather than RPM. Fans with optimized designs often outperform high-RPM fans in delivering air, as RPM alone does not equate to effective airflow.
-        <br>
+        <br><br>
         <span class="highlight_p">Conclusion: </span>
         High RPM is not the key to effective air delivery or cooling comfort. Low RPM fans achieve superior performance without the drawbacks of noise, energy waste, and wear and tear by focusing on advanced blade design, efficient motors, and leveraging the natural wind chill effect. Haneri’s cutting-edge technologies, such as Silent M.A.S.S, prove that innovation and engineering excellence truly matter in delivering powerful, efficient, and quiet cooling.
     </p>
