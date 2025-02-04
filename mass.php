@@ -11,7 +11,7 @@
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left">
-        <h1 class="text-uppercase page_heading">M.A.S.S ( More Air, Slow Speed )</h1>
+        <h1 class="text-uppercase page_heading heading1">M.A.S.S ( More Air, Slow Speed )</h1>
     </div>
     <div class="container">                        
         <section id="mass" class="mass">
