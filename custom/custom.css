@@ -1711,36 +1711,6 @@ Turbosilent
     flex-direction: row-reverse;
 }
 
-.capability-content {
-    flex: 1;
-    max-width: 400px;
-    text-align: left;
-    padding: 20px 0;
-}
-
-.capability-content h2 {
-    margin-bottom: 2.6rem;
-    font-weight: 400;
-    font-size: 22px;
-}
-
-.capability-content p,
-.capability-content ul {
-    font-size: 18px;
-    line-height: 22px;
-    text-align: justify;
-    font-family: 'Barlow Condensed';
-}
-
-.capability-content ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-.capability-content ul li {
-    margin-bottom: 10px;
-}
-
 /* Capability Images */
 .capability-image {
     flex: 1;
