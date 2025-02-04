@@ -7,12 +7,12 @@
                 Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions. Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your needs, including home, Office and commercial spaces.
             </p>
             <br>
-            <p>
+            <p class="paragraph1">
                 Motivated by a vision to empower and elevate, Haneri crafts solutions that simplify life while enriching spaces with beauty and sophistication. At its heart lies innovation, seamlessly combining cutting-edge technology, exceptional quality, and luxurious design—all made accessible to everyone.
                 It’s not just about creating products—it’s about committing to helping people live better, dream bigger, and turn their environments into havens of comfort and joy.
             </p>
             <br>
-            <p>
+            <p class="paragraph1">
                 With Haneri, the future of living begins now—where inspiration meets innovation, and the ordinary becomes extraordinary.
             </p>
         </div><!-- End .col-md-6 -->
@@ -40,7 +40,7 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
-                <h2>Vision</h2>
+                <h2 class="heading2 primary">Vision</h2>
                 <p class="mb-2">
                     To redefine aspirational product experiences by creating beautifully crafted, technologically advanced, and accessible luxury solutions blending exceptional quality with an inclusive design that elevates everyday experiences for everyone.
                 </p>                
@@ -65,30 +65,30 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 order-lg-first">
-                <h2>Mission</h2>
+                <h2 class="heading2 primary">Mission</h2>
                 <p class="mb-2">
                     We will achieve our mission by focusing on four key pillars:
                 </p>
 
-                <p>
-                    <strong>1. Innovative Design and Engineering</strong><br>
+                <p class="paragraph1">
+                    <span class="highlight_p">1. Innovative Design and Engineering</span><br>
                     We will bring together talented designers and engineers to craft solutions that are as aesthetically pleasing as
                     they are functional. By staying ahead of design trends and technological advancements, we ensure that each
                     product is thoughtfully crafted to meet the evolving needs of the modern consumer.
                 </p>
-                <p>
-                    <strong>2. Commitment to Quality and Durability</strong><br>
+                <p class="paragraph1">
+                    <span class="highlight_p">2. Commitment to Quality and Durability</span><br>
                     Quality will be at the core of everything we do. From materials to manufacturing processes, we will invest in
                     ensuring that each product is built to last and provide a reliable experience over time.
                 </p>
-                <p>
-                    <strong>3. Accessibility and Inclusivity</strong><br>                    
+                <p class="paragraph1">
+                    <span class="highlight_p">3. Accessibility and Inclusivity</span><br>                    
                     We believe luxury should be accessible to everyone. By designing products with a broad range of price points and
                     functionality, we will make our solutions available to diverse consumers, considering various lifestyles, budgets,
                     and preferences.
                 </p>
-                <p>
-                    <strong> 4. Exceptional Customer Experience</strong>
+                <p class="paragraph1">
+                    <span class="highlight_p"> 4. Exceptional Customer Experience</span>
                     We are dedicated to supporting our customers throughout their journey, from purchase to daily use and beyond.
                     Through responsive customer service, educational resources, and aftercare support, we will ensure our
                     customers feel valued and equipped to enjoy our solutions' benefits fully.
@@ -116,23 +116,23 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
-                <h2>Values (H.E.A.R.T.S)</h2>
-                <p><strong>1. Human-Centric Design</strong>
+                <h2 class="heading2 primary">Values (H.E.A.R.T.S)</h2>
+                <p class="paragraph1"><span class="highlight_p">1. Human-Centric Design</span>
                 We focus on creating products that are intuitive, inclusive, and designed with real people in mind.</p>
 
-                <p><strong>2. Excellence in Quality</strong>
+                <p class="paragraph1"><span class="highlight_p">2. Excellence in Quality</span>
                 We uphold the highest standards of craftsmanship, using durable materials for products that stand the test of time.</p>
 
-                <p><strong>3. Accessibility and Inclusivity</strong>
+                <p class="paragraph1"><span class="highlight_p">3. Accessibility and Inclusivity</span>
                 We believe luxury should be attainable for everyone, creating products that suit diverse lifestyles, needs, and budgets.</p>
 
-                <p><strong>4. Responsiveness to Consumer Needs</strong>
+                <p class="paragraph1"><span class="highlight_p">4. Responsiveness to Consumer Needs</span>
                 We listen and adapt to our customers’ needs, ensuring a seamless experience from purchase through long-term use.</p>
 
-                <p><strong>5. Transparency and Integrity</strong>
+                <p class="paragraph1"><span class="highlight_p">5. Transparency and Integrity</span>
                 We operate with honesty and accountability, building trust through clear communication and ethical practices.</p>
 
-                <p><strong>6. Sustainability and Responsibility</strong>
+                <p class="paragraph1"><span class="highlight_p">6. Sustainability and Responsibility</span>
                 We are committed to minimizing our environmental impact, choosing sustainable materials and processes to create a positive impact for future generations.</p>
 
             </div><!-- End .col-lg-7 -->
@@ -142,71 +142,3 @@
 </div><!-- End .history-section -->
 
 <div class="mb-3"></div><!-- margin -->
-
-<style>
-    .container{
-        text-align: justify;
-    }
-    .containeres{
-        padding: 0px;
-    }
-    .history-section h2 {
-        margin-bottom: 1.6rem;
-    }
-    .owl-dots{
-        display:none;
-    }
-</style>
-<style>
-    /* Main Heading Style */
-    .about_section {
-        color: #fff; /* White text color */
-        padding: 5px 65px; /* Spacing inside the heading */
-        position: relative; /* Enable pseudo-elements */
-        display: inline-block; /* Allow background to wrap the text */
-        background: linear-gradient(135deg, #047f89, #3a9aa2);
-        border-radius: 0px; /* Rounded corners */
-        overflow: hidden; /* Prevent overflow of child elements */
-        width:100%;
-    }
-
-    /* Geometric Decorative Element */
-     .about_section::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: -10px;
-        width: 260px;
-        height: 170px;
-        background: #f4f4f42e;
-        transform: rotate(45deg);
-        z-index: 100;
-    }
-
-    .about_section::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        right: -15px;
-        width: 230px;
-        height: 150px;
-        background: #dfdfdf;
-        transform: rotate(45deg);
-        z-index: 1;
-    }
-
-    /* Text Layer */
-    .about_section span {
-        position: relative; /* Ensure text is above pseudo-elements */
-        z-index: 2; /* Bring text to the front */
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .about_section {
-            font-size: 2.5rem; /* Adjust font size for smaller screens */
-            padding: 15px 20px; /* Reduce padding */
-        }
-    }
-
-</style>
