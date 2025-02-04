@@ -1128,7 +1128,8 @@ Turbosilent
       font-weight: 700 !important;
     }
     .highlight_p{
-      font-weight: bold;
+      font-weight: 700 !important;
+      color:#00473E;
     }
     .ulclass{
         font-family: 'Open Sans';
