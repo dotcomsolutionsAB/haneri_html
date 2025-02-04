@@ -1117,9 +1117,12 @@ Turbosilent
         text-align: justify;
     }
     .paragraph2{
-      font-size: 18px;
-      font-family: 'Open Sans';
-      line-height: 1.4;
+        font-family: 'Open Sans';
+        font-size: 16px;
+          line-height: 1.8;
+          margin-bottom: 20px;
+          color: #555;
+          text-align: justify;
     }
     .highlight_h1{
       font-weight: 700 !important;
@@ -1128,9 +1131,13 @@ Turbosilent
       font-weight: bold;
     }
     .ulclass{
-      font-size: 18px;
-      font-family: 'Open Sans';
-      text-align: justify;
+        font-family: 'Open Sans';
+        font-size: 16px;
+          line-height: 1.8;
+          margin-bottom: 20px;
+          color: #555;
+          text-align: justify;
+      
     }
     .ulclass li{
       margin-bottom: 10px;
