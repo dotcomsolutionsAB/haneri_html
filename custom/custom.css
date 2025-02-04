@@ -1428,7 +1428,7 @@ Turbosilent
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 20px;
+      gap: 50px;
   }
   .brand-row.reverse {
       flex-direction: row-reverse;
