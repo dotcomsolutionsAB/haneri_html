@@ -7613,8 +7613,8 @@ body:not(.loaded) > :not(.loading-overlay) * {
 }
 
 ::selection {
-  background-color: #000;
-  color: #fff;
+  background-color: #f0f8fe;
+  color: #696969;
 }
 
 p {
