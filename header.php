@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Haneri</title>
-    <?php include("../inc_files/fav_icon_others.php"); ?>
+    <meta name="keywords" content="" />
+    <meta name="description" content="Haneri">
+    <meta name="author" content="Cognitive Branding">
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/x-icon" href="images/fav/favicon-32x32.png"> -->
 
     <script>
         WebFontConfig = {
