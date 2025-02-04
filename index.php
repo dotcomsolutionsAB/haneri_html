@@ -126,56 +126,6 @@
                 <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
             </div>
         </div>
-        
-        <div class="container">
-            <div class="row faq">
-                <div class="col-lg-6">
-                    <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
-                    <div id="accordion">
-                        <?php 
-                        $faqs = [
-                            ["id" => "collapseOne", "question" => "What makes Haneri’s design approach different from other brands?", "answer" => "At Haneri, our design philosophy integrates advanced engineering with aesthetics to create solutions that are visually striking and functionally superior..."],
-                            ["id" => "collapse2", "question" => "How does Haneri ensure the quality and durability of its products?", "answer" => "Each Haneri product undergoes extensive testing, uses high-quality materials, and meets global industry standards..."],
-                            ["id" => "collapse3", "question" => "Are Haneri products designed with sustainability in mind?", "answer" => "Sustainability is at the heart of our production process. We prioritize eco-friendly materials and energy-efficient manufacturing..."],
-                            ["id" => "collapse4", "question" => "What kind of technology is used in Haneri products?", "answer" => "Haneri leverages IoT integration, automation, and precision engineering to offer seamless, intuitive solutions..."],
-                            ["id" => "collapse5", "question" => "Are your products compatible with other smart home devices?", "answer" => "Many Haneri products integrate with smart home ecosystems like Alexa, Google Home, and IoT devices..."],
-                            ["id" => "collapse6", "question" => "Can I customize a Haneri product to suit my needs?", "answer" => "We offer customization options for select products. Contact our support team to discuss your requirements..."]
-                        ];
-                        foreach ($faqs as $faq) {
-                            echo "<div class='card card-accordion'>
-                                    <a class='card-header collapsed' href='#' data-toggle='collapse' data-target='#{$faq['id']}' aria-expanded='true' aria-controls='{$faq['id']}'>
-                                        {$faq['question']}
-                                    </a>
-                                    <div id='{$faq['id']}' class='collapse' data-parent='#accordion'>
-                                        <p>{$faq['answer']}</p>
-                                    </div>
-                                </div>";
-                        }
-                        ?>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="mt-6 mb-2">Send Us a Message</h2>
-                    <form class="mb-0" action="#">
-                        <div class="form-group">
-                            <label class="mb-1" for="contact-name">Your Name <span class="required">*</span></label>
-                            <input type="text" class="form-control" id="contact-name" name="contact-name" required />
-                        </div>
-                        <div class="form-group">
-                            <label class="mb-1" for="contact-email">Your E-mail <span class="required">*</span></label>
-                            <input type="email" class="form-control" id="contact-email" name="contact-email" required />
-                        </div>
-                        <div class="form-group">
-                            <label class="mb-1" for="contact-message">Your Message <span class="required">*</span></label>
-                            <textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message" required></textarea>
-                        </div>
-                        <div class="form-footer mb-0">
-                            <button type="submit" class="btn btn-dark font-weight-normal">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
         <!-- FAQ Section -->
         <div class="container">
