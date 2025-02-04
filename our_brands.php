@@ -1,30 +1,26 @@
-<?php include("../header.php"); ?>
+<?php include("header.php"); ?>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
-                <li class="breadcrumb-item active" aria-current="page">M.A.S.S®</li>
+                <li class="breadcrumb-item active" aria-current="page">Our Brands</li>
             </ol>
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left">
-        <h1 class="text-uppercase about_section">M.A.S.S ( More Air, Slow Speed )</h1>
+        <h1 class="text-uppercase about_section">OUR BRANDS</h1>
     </div>
-    <div class="container"> 
+    <div class="container">                
         <style type="text/css" media="all">
             /* General Section Styling */
             .brands-section {
-                padding: 50px 20px;
+                padding: 20px 0px;
                 /* background-color: #f9f9f9; */
                 text-align: center;
             }
-            .mass {
-                padding: 20px 0px;
-                padding-top: 1rem;
-            }
+
             /* .brands-section .section-title {
                 font-size: 36px;
                 font-weight: bold;
@@ -55,20 +51,11 @@
 
             .brand-content {
                 flex: 1;
-                max-width: 65%;
+                max-width: 70%;
                 text-align: left;
                 padding: 10px 0px;
-                text-align: justify;
             }
-            .brand-content h2, .head h2{
-                font-weight: 400;
-                margin-bottom: 1.2rem;
-            }
-            .head p {
-                font-size: 18px;
-                color: #222;
-                font-family: 'Barlow Condensed';
-            }
+
             .brand-content p {
                 font-size: 18px;
                 line-height: 24px;
@@ -76,38 +63,36 @@
                 color: #555;
                 font-family: 'Barlow Condensed';
             }
-            .brand-content li{
-                font-size: 18px;
-                color: #222;
-                font-family: 'Barlow Condensed';
-            }
+
             .brand-content strong {
-                font-weight: 600;
-                font-size: 18px;
+                font-weight: lighter;
+                font-family: 'Barlow Condensed';
+                color: #222;
+                font-size: x-large;
             }
 
             .brand-image {
                 flex: 1;
-                max-width: 35%;
+                max-width: 30%;
                 display: flex;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: center;
-                padding-top: 15px;
             }
 
             .brand-image img {
                 width: 100%;
-                max-width: 500px;
+                max-width: 300px;
                 height: auto;
                 object-fit: contain;
-                border-radius: 0px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
             }
-        </style>                          
-        <section id="mass" class="mass">
-            <?php include("inc_files/pillar_technology/mass_tech.php"); ?>
+        </style>
+        <section id="our-brands" class="brands-section">
+            <?php include("inc_files/about/our-brands.php"); ?>
         </section>
     </div>
+
 </main><!-- End .main -->
 
-<?php include("../footer.php"); ?>
+<?php include("footer.php"); ?>

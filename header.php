@@ -60,11 +60,11 @@
                         <nav class="main-nav font2">
                             <ul class="menu">
                                 <li class="active">
-                                    <a href="pages/ceiling_fans.php">Categories</a>
+                                    <a href="ceiling_fans.php">Categories</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                                         <div class="row">
                                             <section class="categories hover">
-                                                <a href="pages/ceiling_fans.php">
+                                                <a href="ceiling_fans.php">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
@@ -109,16 +109,16 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="pages/air_curve_design.php">Pillar Technololgy</a>
+                                    <a href="air_curve_design.php">Pillar Technololgy</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                         <div class="row">
                                             <div class="col-lg-10">
                                                 <ul class="submenu">
-                                                    <li><a href="pages/air_curve_design.php">Air Curve Design</a></li>
-                                                    <li><a href="pages/turbosilent_bldc.php">TurboSilent BLDC</a></li>
-                                                    <li><a href="pages/mass.php">M.A.S.S®</a></li>
-                                                    <li><a href="pages/lumiambience.php">LumiAmbience</a></li>
-                                                    <li><a href="pages/scan.php">S.C.A.N</a></li>
+                                                    <li><a href="air_curve_design.php">Air Curve Design</a></li>
+                                                    <li><a href="turbosilent_bldc.php">TurboSilent BLDC</a></li>
+                                                    <li><a href="mass.php">M.A.S.S®</a></li>
+                                                    <li><a href="lumiambience.php">LumiAmbience</a></li>
+                                                    <li><a href="scan.php">S.C.A.N</a></li>
                                                     <!-- <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
                                                     <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
                                                     <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
@@ -143,29 +143,29 @@
                                     }
                                 </style>
                                 <li class="active">
-                                    <a href="pages/our_story.php">About Us</a>
+                                    <a href="our_story.php">About Us</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <ul class="submenu">
                                                     <li class="submenu-item">
-                                                        <a href="pages/our_story.php">Our Story</a>
+                                                        <a href="our_story.php">Our Story</a>
                                                         <div class="submenu-description">
-                                                            <a href="pages/our_story.php#vision" class="description-link">VISION</a> |
-                                                            <a href="pages/our_story.php#mission" class="description-link"> MISSION</a> |
-                                                            <a href="pages/our_story.php#values" class="description-link"> VALUES</a>
+                                                            <a href="our_story.php#vision" class="description-link">VISION</a> |
+                                                            <a href="our_story.php#mission" class="description-link"> MISSION</a> |
+                                                            <a href="our_story.php#values" class="description-link"> VALUES</a>
                                                         </div>
                                                     </li>
                                                     <li class="submenu-item">
-                                                        <a href="pages/our_brands.php">Our Brands</a>
+                                                        <a href="our_brands.php">Our Brands</a>
                                                         <div class="submenu-description">
-                                                            <a href="pages/our_brands.php#haner" class="description-link">Haner</a> |
-                                                            <a href="pages/our_brands.php#bespoke" class="description-link"> Bespoke</a> |
-                                                            <a href="pages/our_brands.php#professional" class="description-link"> Professional</a>
+                                                            <a href="our_brands.php#haner" class="description-link">Haner</a> |
+                                                            <a href="our_brands.php#bespoke" class="description-link"> Bespoke</a> |
+                                                            <a href="our_brands.php#professional" class="description-link"> Professional</a>
                                                         </div>
                                                     </li>
                                                     <li class="submenu-item">
-                                                        <a href="pages/capabilities.php">Capabilities</a>
+                                                        <a href="capabilities.php">Capabilities</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -174,27 +174,27 @@
                                 </li>
 
                                 <li class="active">
-                                    <a href="pages/support.php">Support</a>
+                                    <a href="support.php">Support</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                         <div class="row">
                                             <div class="col-lg-10">
                                                 <ul class="submenu">
                                                     <li>
-                                                        <a href="pages/support.php">Product Help</a>
+                                                        <a href="support.php">Product Help</a>
                                                         <div class="submenu-description">
-                                                            <a href="pages/support.php#FAQs" class="description-link">FAQs</a> |
-                                                            <a href="pages/support.php#Videos" class="description-link">Videos</a> |
-                                                            <a href="pages/support.php#Catalogues" class="description-link">Catalogues</a> |
-                                                            <a href="pages/support.php#Manuals" class="description-link">Manuals</a>
+                                                            <a href="support.php#FAQs" class="description-link">FAQs</a> |
+                                                            <a href="support.php#Videos" class="description-link">Videos</a> |
+                                                            <a href="support.php#Catalogues" class="description-link">Catalogues</a> |
+                                                            <a href="support.php#Manuals" class="description-link">Manuals</a>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <a href="pages/support.php#Enquiry">Corporate Enquiry</a>
+                                                        <a href="support.php#Enquiry">Corporate Enquiry</a>
                                                         <div class="submenu-description">
-                                                            <a href="pages/support.php#FORM" class="description-link">FORM</a> 
+                                                            <a href="support.php#FORM" class="description-link">FORM</a> 
                                                         </div>
                                                     </li>
-                                                    <li><a href="pages/contact.php">Contact Us</a></li>
+                                                    <li><a href="contact.php">Contact Us</a></li>
                                                 </ul>
                                             </div>
                                             
