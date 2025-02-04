@@ -168,7 +168,7 @@
 
     </div><!-- End .container -->
 
-    <div class="row row-bg why">
+    <div class="row-bg why">
         <div class="col-md-12">
             <p class="mb-2"></p>
             <h2 class="heading2 light">
