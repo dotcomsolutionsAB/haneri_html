@@ -89,9 +89,9 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:60%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:60%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
+                                    </div>
 
                                     <a href="#" class="rating-link">( 6 Reviews )</a>
                                 </div><!-- End .ratings-container -->
@@ -99,9 +99,9 @@
                                 <hr class="short-divider">
 
                                 <div class="price-box">
-                                    <span class="old-price">$1,999.00</span>
-                                    <span class="new-price">$1,699.00</span>
-                                </div><!-- End .price-box -->
+                                    <span class="old-price">₹1,999.00</span>
+                                    <span class="new-price">₹1,699.00</span>
+                                </div>
 
                                 <div class="product-desc">
                                     <p>
@@ -112,15 +112,11 @@
 
                                 <ul class="single-info-list">
                                     <li>
-                                        SKU: <strong>654613612</strong>
-                                    </li>
-
-                                    <li>
                                         CATEGORY: <strong><a href="#" class="product-category">SHOES</a></strong>
                                     </li>
                                 </ul>
 
-                                <div class="product-filters-container">
+                                <!-- <div class="product-filters-container">
                                     <div class="product-single-filter">
                                         <label>Size:</label>
                                         <ul class="config-size-list">
@@ -159,7 +155,7 @@
                                         <label></label>
                                         <a class="font1 text-uppercase clear-btn" href="#">Clear</a>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="product-action">
                                     <div class="price-box product-filtered-price">
@@ -224,7 +220,7 @@
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
+                                    <!-- <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
                                         aria-labelledby="product-tab-desc">
                                         <div class="product-desc-content">
                                             <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -265,9 +261,9 @@
                                                             <h3>Dedicated Service</h3>
                                                             <p>Consult our specialists for help with an order,
                                                                 customization, or design advice</p>
-                                                        </div><!-- End .feature-box-content -->
-                                                    </div><!-- End .feature-box -->
-                                                </div><!-- End .col-md-4 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-sm-6 col-xl-4">
                                                     <div class="feature-box feature-box-simple text-center">
@@ -279,9 +275,9 @@
                                                             <h3>Free Returns</h3>
                                                             <p>Consult our specialists for help with an order,
                                                                 customization, or design advice</p>
-                                                        </div><!-- End .feature-box-content -->
-                                                    </div><!-- End .feature-box -->
-                                                </div><!-- End .col-md-4 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-sm-6 col-xl-4">
                                                     <div class="feature-box feature-box-simple text-center">
@@ -293,10 +289,10 @@
                                                             <h3>International Shipping</h3>
                                                             <p>Consult our specialists for help with an order,
                                                                 customization, or design advice</p>
-                                                        </div><!-- End .feature-box-content -->
-                                                    </div><!-- End .feature-box -->
-                                                </div><!-- End .col-md-4 -->
-                                            </div><!-- End .row -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -310,17 +306,17 @@
                                                 in reprehenderit in voluptate velit esse cillum dolore.Duis aute irure
                                                 dolor in reprehenderit in voluptate velit esse cillum dolore.
                                             </p>
-                                        </div><!-- End .product-desc-content -->
-                                    </div><!-- End .tab-pane -->
+                                        </div>
+                                    </div>End .tab-pane -->
 
-                                    <div class="tab-pane fade" id="product-size-content" role="tabpanel"
+                                    <!-- <div class="tab-pane fade" id="product-size-content" role="tabpanel"
                                         aria-labelledby="product-tab-size">
                                         <div class="product-size-content">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <img src="assets/images/products/single/body-shape.png"
                                                         alt="body shape">
-                                                </div><!-- End .col-md-4 -->
+                                                </div>
 
                                                 <div class="col-md-8">
                                                     <table class="table table-size">
@@ -372,9 +368,9 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                            </div><!-- End .row -->
-                                        </div><!-- End .product-size-content -->
-                                    </div><!-- End .tab-pane -->
+                                            </div>
+                                        </div>
+                                    </div>End .tab-pane -->
                                 </div><!-- End .tab-content -->
                             </div><!-- End .product-single-tabs -->
                         </div><!-- End .col-lg-6 -->
@@ -395,28 +391,28 @@
                                     <img src="assets/images/products/product-1-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <div class="label-group">
+                                <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
                                     <div class="product-label label-sale">-20%</div>
-                                </div>
+                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
                                     <a href="category.html" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Ultimate 3D Bluetooth Speaker</a>
+                                    <a href="product.html">Haneri AirElite AEW2</a>
                                 </h3>
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:80%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
                                 <div class="price-box">
-                                    <del class="old-price">$59.00</del>
-                                    <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
+                                    <del class="old-price">₹59.00</del>
+                                    <span class="product-price">₹49.00</span>
+                                </div>
                                 <div class="product-action">
                                     <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
@@ -426,7 +422,7 @@
                                     <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
-                            </div><!-- End .product-details -->
+                            </div>
                         </div>
 
                         <div class="product-default">
@@ -437,28 +433,28 @@
                                     <img src="assets/images/products/product-3-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <div class="label-group">
+                                <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
                                     <div class="product-label label-sale">-20%</div>
-                                </div>
+                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
                                     <a href="category.html" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Circled Ultimate 3D Speaker</a>
+                                    <a href="product.html">Haneri AirElite AEW3</a>
                                 </h3>
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:80%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
                                 <div class="price-box">
-                                    <del class="old-price">$59.00</del>
-                                    <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
+                                    <del class="old-price">₹59.00</del>
+                                    <span class="product-price">₹49.00</span>
+                                </div>
                                 <div class="product-action">
                                     <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
@@ -468,7 +464,7 @@
                                     <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
-                            </div><!-- End .product-details -->
+                            </div>
                         </div>
 
                         <div class="product-default">
@@ -479,28 +475,28 @@
                                     <img src="assets/images/products/product-7-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <div class="label-group">
+                                <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
                                     <div class="product-label label-sale">-20%</div>
-                                </div>
+                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
                                     <a href="category.html" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Brown-Black Men Casual Glasses</a>
+                                    <a href="product.html">Haneri AirLux ALR1</a>
                                 </h3>
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:80%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
                                 <div class="price-box">
-                                    <del class="old-price">$59.00</del>
-                                    <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
+                                    <del class="old-price">₹59.00</del>
+                                    <span class="product-price">₹49.00</span>
+                                </div>
                                 <div class="product-action">
                                     <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
@@ -510,7 +506,7 @@
                                     <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
-                            </div><!-- End .product-details -->
+                            </div>
                         </div>
 
                         <div class="product-default">
@@ -521,28 +517,28 @@
                                     <img src="assets/images/products/product-6-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <div class="label-group">
+                                <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
                                     <div class="product-label label-sale">-20%</div>
-                                </div>
+                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
                                     <a href="category.html" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Men Black Gentle Belt</a>
+                                    <a href="product.html">Haneri AirLux ALR2</a>
                                 </h3>
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:80%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
                                 <div class="price-box">
-                                    <del class="old-price">$59.00</del>
-                                    <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
+                                    <del class="old-price">₹59.00</del>
+                                    <span class="product-price">₹49.00</span>
+                                </div>
                                 <div class="product-action">
                                     <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
@@ -552,7 +548,7 @@
                                     <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
-                            </div><!-- End .product-details -->
+                            </div>
                         </div>
 
                         <div class="product-default">
@@ -563,28 +559,28 @@
                                     <img src="assets/images/products/product-4-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <div class="label-group">
+                                <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
                                     <div class="product-label label-sale">-20%</div>
-                                </div>
+                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
                                     <a href="category.html" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Blue Backpack for the Young - S</a>
+                                    <a href="product.html">Haneri Airlux ALR3</a>
                                 </h3>
-                                <div class="ratings-container">
+                                <!-- <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:80%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div> -->
                                 <div class="price-box">
-                                    <del class="old-price">$59.00</del>
-                                    <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
+                                    <del class="old-price">₹59.00</del>
+                                    <span class="product-price">₹49.00</span>
+                                </div>
                                 <div class="product-action">
                                     <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
@@ -594,7 +590,7 @@
                                     <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
-                            </div><!-- End .product-details -->
+                            </div>
                         </div>
                     </div><!-- End .products-slider -->
                 </div>
@@ -603,7 +599,7 @@
             <div class="container">
                 <hr class="mt-0 m-b-5" />
 
-                <div class="product-widgets-container row pb-2">
+                <!-- <div class="product-widgets-container row pb-2">
                     <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
                         <h4 class="section-sub-title">Featured Products</h4>
                         <div class="product-default left-details product-widget">
@@ -622,15 +618,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -648,15 +644,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top">5.00</span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -674,15 +670,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -704,15 +700,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top">5.00</span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -730,15 +726,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -756,15 +752,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top">5.00</span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -785,15 +781,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -812,15 +808,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top">5.00</span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -838,15 +834,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -867,15 +863,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -893,15 +889,15 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top">5.00</span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
 
                         <div class="product-default left-details product-widget">
@@ -919,18 +915,18 @@
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="ratings" style="width:100%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
+                                    </div>
+                                </div>
 
                                 <div class="price-box">
                                     <span class="product-price">$49.00</span>
-                                </div><!-- End .price-box -->
-                            </div><!-- End .product-details -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div><!-- End .row -->
+                </div>End .row -->
             </div>
         </main><!-- End .main -->
         <?php include("footer.php"); ?>
