@@ -158,20 +158,20 @@
                                 </div> -->
 
                                 <div class="product-action">
-                                    <div class="price-box product-filtered-price">
+                                    <!-- <div class="price-box product-filtered-price">
                                         <del class="old-price"><span>₹286.00</span></del>
                                         <span class="product-price">₹245.00</span>
-                                    </div>
+                                    </div> -->
 
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="text">
-                                    </div><!-- End .product-single-qty -->
+                                    </div>
 
                                     <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
                                         title="Add to Cart">Add to Cart</a>
 
                                     <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
-                                </div><!-- End .product-action -->
+                                </div><
 
                                 <hr class="divider mb-0 mt-0">
 
