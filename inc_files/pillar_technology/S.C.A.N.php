@@ -185,7 +185,7 @@
 <div class="containe">
     <div class="row-bg why">
         <div class="col-md-12">
-            <p class="mb-2"></p>
+            <p class="pb-2"></p>
                 <h2 class="heading2 light">
                     Why Choose HANERI S.C.A.N Technology?
                 </h2>
@@ -199,7 +199,7 @@
 <div class="containe">
     <div class="row-bg why">
         <div class="col-md-12">
-            <p class="mb-2"></p>
+            <p class="pb-2"></p>
                 <h2 class="heading2 light">
                     Experience S.C.A.N Technology Today!
                 </h2>
