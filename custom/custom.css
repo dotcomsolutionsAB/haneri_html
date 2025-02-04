@@ -1711,6 +1711,14 @@ Turbosilent
     flex-direction: row-reverse;
 }
 
+.capability-content {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+    padding: 20px 0;
+}
+
+
 /* Capability Images */
 .capability-image {
     flex: 1;
