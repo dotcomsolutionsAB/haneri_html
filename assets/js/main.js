@@ -1346,11 +1346,11 @@
 					if ( mpInstance.isOpen ) {
 						mpInstance.close();
 						setTimeout( function () {
-							Porto.newsletterPopup();
+							// Porto.newsletterPopup();
 						}, 360 );
 					}
 					else {
-						Porto.newsletterPopup();
+						// Porto.newsletterPopup();
 					}
 				}, 5000 );
 			}

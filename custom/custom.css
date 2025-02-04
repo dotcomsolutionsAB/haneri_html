@@ -6,7 +6,7 @@
     margin-bottom: 0.2rem;
 }
 .about_section{
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
     font-weight: 500 !important;
     color: #fff !important;
     font-size: 5rem !important;
@@ -62,7 +62,7 @@
     /* letter-spacing: .50px; */
     color: #141a1f;
     padding: 15px 15px 15px 15px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -81,7 +81,7 @@
 
 .slider_btn{
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: lighter;
     color: rgb(255, 255, 255);
     border-width: 2px;
@@ -257,7 +257,7 @@
     font-size: 74px;
     line-height: 1.0;
     color: #00473E;
-    font-family: system-ui;
+    font-family: "Barlow Condensed";
     font-size: 85px;
     font-weight: lighter;
 }
@@ -277,7 +277,7 @@
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .icons-container {
@@ -350,7 +350,7 @@
     line-height: 1;
     margin: 0;
     /* font-family: 'Barlow Condensed'; */
-    font-family: system-ui;
+    font-family: "Barlow Condensed";
     font-weight: lighter;
     color: #fff;
     letter-spacing: -2.5px;
@@ -359,7 +359,7 @@
 .bespoke-text span {
     font-weight: 600;
     display: block;
-    font-family: system-ui;
+    font-family: "Open Sans";
 }
 
 .bespoke-image {
@@ -463,10 +463,10 @@
     flex: none;
 }
 .card.card-accordion .card-header {
-    font-family: 'Raleway';
+    font-family: 'Barlow Condensed';
 }
 .card.card-accordion p {
-    font-family: 'Raleway';
+    font-family: 'Open Sans';
     text-align: justify;
 }
 
