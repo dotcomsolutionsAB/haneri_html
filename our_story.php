@@ -12,7 +12,7 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <h1 class="text-uppercase text-left about_section">OUR STORY</h1>
+            <h1 class="text-uppercase text-left page_heading heading1">OUR STORY</h1>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">       
