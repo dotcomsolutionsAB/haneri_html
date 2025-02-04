@@ -20,18 +20,12 @@
 		<div class="contact-info">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="ls-n-25 m-b-1">
+					<h2 class=" heading2 primary ls-n-25 m-b-1">
 						Contact Info
 					</h2>
 
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing
-						elit. Sed imperdiet libero id nisi euismod, sed
-						porta est consectetur. Vestibulum auctor felis eget
-						orci semper vestibulum. Pellentesque ultricies nibh
-						gravida, accumsan libero luctus, molestie nunc.L
-						orem ipsum dolor sit amet, consectetur adipiscing
-						elit.
+					<p class="paragraph1">
+					Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
 					</p>
 				</div>
 
@@ -39,8 +33,9 @@
 					<div class="feature-box text-center">
 						<i class="sicon-location-pin"></i>
 						<div class="feature-box-content">
-							<h3>Address</h3>
-							<h5>123 Wall Street, New York / NY</h5>
+							<h4 class="heading4 primary">Address</h4>
+							<h4 class="heading4 primary">Elza International, Integrated Industrial Estate,
+							Sector 8A, BHEL Township, Haridwar, Uttarakhand 249403</h5>
 						</div>
 					</div>
 				</div>
@@ -48,8 +43,8 @@
 					<div class="feature-box text-center">
 						<i class="fa fa-mobile-alt"></i>
 						<div class="feature-box-content">
-							<h3>Phone Number</h3>
-							<h5>(800) 123-4567</h5>
+							<h4 class="heading4 primary">Phone Number</h4>
+							<h4 class="heading4 primary">(123) 456-7890</h5>
 						</div>
 					</div>
 				</div>
@@ -57,8 +52,8 @@
 					<div class="feature-box text-center">
 						<i class="far fa-envelope"></i>
 						<div class="feature-box-content">
-							<h3>E-mail Address</h3>
-							<h5>porto@portotheme.com</h5>
+							<h4 class="heading4 primary">E-mail Address</h4>
+							<h4 class="heading4 primary">info@haneri.in</h5>
 						</div>
 					</div>
 				</div>
@@ -66,189 +61,63 @@
 					<div class="feature-box text-center">
 						<i class="far fa-calendar-alt"></i>
 						<div class="feature-box-content">
-							<h3>Working Days/Hours</h3>
-							<h5>Mon - Sun / 9:00AM - 8:00PM</h5>
+							<h4 class="heading4 primary">Working Days/Hours</h4>
+							<h4 class="heading4 primary">Mon - Sun / 9:00AM - 8:00PM</h5>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-lg-6">
-				<h2 class="mt-6 mb-2">Send Us a Message</h2>
-
-				<form class="mb-0" action="#">
-					<div class="form-group">
-						<label class="mb-1" for="contact-name">Your Name
-							<span class="required">*</span></label>
-						<input type="text" class="form-control" id="contact-name" name="contact-name"
-							required />
-					</div>
-
-					<div class="form-group">
-						<label class="mb-1" for="contact-email">Your E-mail
-							<span class="required">*</span></label>
-						<input type="email" class="form-control" id="contact-email" name="contact-email"
-							required />
-					</div>
-
-					<div class="form-group">
-						<label class="mb-1" for="contact-message">Your Message
-							<span class="required">*</span></label>
-						<textarea cols="30" rows="1" id="contact-message" class="form-control"
-							name="contact-message" required></textarea>
-					</div>
-
-					<div class="form-footer mb-0">
-						<button type="submit" class="btn btn-dark font-weight-normal">
-							Send Message
-						</button>
-					</div>
-				</form>
-			</div>
-
+		<!-- FAQ Section -->
+		<div class="row faq">
 			<div class="col-lg-6">
 				<h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
 				<div id="accordion">
-					<div class="card card-accordion">
-						<a class="card-header" href="#" data-toggle="collapse" data-target="#collapseOne"
-							aria-expanded="true" aria-controls="collapseOne">
-							Curabitur eget leo at velit imperdiet viaculis
-							vitaes?
-						</a>
-
-						<div id="collapseOne" class="collapse show" data-parent="#accordion">
-							<p>Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Curabitur eget leo at velit
-								imperdiet varius. In eu ipsum vitae velit
-								congue iaculis vitae at risus. Nullam tortor
-								nunc, bibendum vitae semper a, volutpat eget
-								massa.</p>
-						</div>
-					</div>
-
-					<div class="card card-accordion">
-						<a class="card-header collapsed" href="#" data-toggle="collapse"
-							data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-							Curabitur eget leo at velit imperdiet vague
-							iaculis vitaes?
-						</a>
-
-						<div id="collapseTwo" class="collapse" data-parent="#accordion">
-							<p>Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Curabitur eget leo at velit
-								imperdiet varius. In eu ipsum vitae velit
-								congue iaculis vitae at risus. Nullam tortor
-								nunc, bibendum vitae semper a, volutpat eget
-								massa. Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit. Integer
-								fringilla, orci sit amet posuere auctor,
-								orci eros pellentesque odio, nec
-								pellentesque erat ligula nec massa. Aenean
-								consequat lorem ut felis ullamcorper posuere
-								gravida tellus faucibus. Maecenas dolor
-								elit, pulvinar eu vehicula eu, consequat et
-								lacus. Duis et purus ipsum. In auctor mattis
-								ipsum id molestie. Donec risus nulla,
-								fringilla a rhoncus vitae, semper a massa.
-								Vivamus ullamcorper, enim sit amet consequat
-								laoreet, tortor tortor dictum urna, ut
-								egestas urna ipsum nec libero. Nulla justo
-								leo, molestie vel tempor nec, egestas at
-								massa. Aenean pulvinar, felis porttitor
-								iaculis pulvinar, odio orci sodales odio, ac
-								pulvinar felis quam sit.</p>
-						</div>
-					</div>
-
-					<div class="card card-accordion">
-						<a class="card-header collapsed" href="#" data-toggle="collapse"
-							data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-							Curabitur eget leo at velit imperdiet viaculis
-							vitaes?
-						</a>
-
-						<div id="collapseThree" class="collapse" data-parent="#accordion">
-							<p>Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Curabitur eget leo at velit
-								imperdiet varius. In eu ipsum vitae velit
-								congue iaculis vitae at risus. Nullam tortor
-								nunc, bibendum vitae semper a, volutpat eget
-								massa.</p>
-						</div>
-					</div>
-
-					<div class="card card-accordion">
-						<a class="card-header collapsed" href="#" data-toggle="collapse"
-							data-target="#collapseFour" aria-expanded="true" aria-controls="collapseThree">
-							Curabitur eget leo at velit imperdiet vague
-							iaculis vitaes?
-						</a>
-
-						<div id="collapseFour" class="collapse" data-parent="#accordion">
-							<p>Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Curabitur eget leo at velit
-								imperdiet varius. In eu ipsum vitae velit
-								congue iaculis vitae at risus. Nullam tortor
-								nunc, bibendum vitae semper a, volutpat eget
-								massa. Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit. Integer
-								fringilla, orci sit amet posuere auctor,
-								orci eros pellentesque odio, nec
-								pellentesque erat ligula nec massa. Aenean
-								consequat lorem ut felis ullamcorper posuere
-								gravida tellus faucibus. Maecenas dolor
-								elit, pulvinar eu vehicula eu, consequat et
-								lacus. Duis et purus ipsum. In auctor mattis
-								ipsum id molestie. Donec risus nulla,
-								fringilla a rhoncus vitae, semper a massa.
-								Vivamus ullamcorper, enim sit amet consequat
-								laoreet, tortor tortor dictum urna, ut
-								egestas urna ipsum nec libero. Nulla justo
-								leo, molestie vel tempor nec, egestas at
-								massa. Aenean pulvinar, felis porttitor
-								iaculis pulvinar, odio orci sodales odio, ac
-								pulvinar felis quam sit.</p>
-						</div>
-					</div>
-
-					<div class="card card-accordion">
-						<a class="card-header collapsed" href="#" data-toggle="collapse"
-							data-target="#collapseFive" aria-expanded="true" aria-controls="collapseThree">
-							Curabitur eget leo at velit imperdiet varius
-							iaculis vitaes?
-						</a>
-
-						<div id="collapseFive" class="collapse" data-parent="#accordion">
-							<p>Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Curabitur eget leo at velit
-								imperdiet varius. In eu ipsum vitae velit
-								congue iaculis vitae at risus. Nullam tortor
-								nunc, bibendum vitae semper a, volutpat eget
-								massa. Lorem ipsum dolor sit amet,
-								consectetur adipiscing elit. Integer
-								fringilla, orci sit amet posuere auctor,
-								orci eros pellentesque odio, nec
-								pellentesque erat ligula nec massa. Aenean
-								consequat lorem ut felis ullamcorper posuere
-								gravida tellus faucibus. Maecenas dolor
-								elit, pulvinar eu vehicula eu, consequat et
-								lacus. Duis et purus ipsum. In auctor mattis
-								ipsum id molestie. Donec risus nulla,
-								fringilla a rhoncus vitae, semper a massa.
-								Vivamus ullamcorper, enim sit amet consequat
-								laoreet, tortor tortor dictum urna, ut
-								egestas urna ipsum nec libero. Nulla justo
-								leo, molestie vel tempor nec, egestas at
-								massa. Aenean pulvinar, felis porttitor
-								iaculis pulvinar, odio orci sodales odio, ac
-								pulvinar felis quam sit.</p>
-						</div>
-					</div>
+					<?php 
+					$faqs = [
+						["id" => "collapseOne", "question" => "What makes Haneri’s design approach different from other brands?", "answer" => "At Haneri, our design philosophy integrates advanced engineering with aesthetics to create solutions that are visually striking and functionally superior..."],
+						["id" => "collapse2", "question" => "How does Haneri ensure the quality and durability of its products?", "answer" => "Each Haneri product undergoes extensive testing, uses high-quality materials, and meets global industry standards..."],
+						["id" => "collapse3", "question" => "Are Haneri products designed with sustainability in mind?", "answer" => "Sustainability is at the heart of our production process. We prioritize eco-friendly materials and energy-efficient manufacturing..."],
+						["id" => "collapse4", "question" => "What kind of technology is used in Haneri products?", "answer" => "Haneri leverages IoT integration, automation, and precision engineering to offer seamless, intuitive solutions..."],
+						["id" => "collapse5", "question" => "Are your products compatible with other smart home devices?", "answer" => "Many Haneri products integrate with smart home ecosystems like Alexa, Google Home, and IoT devices..."],
+						["id" => "collapse6", "question" => "Can I customize a Haneri product to suit my needs?", "answer" => "We offer customization options for select products. Contact our support team to discuss your requirements..."]
+					];
+					foreach ($faqs as $faq) {
+						echo "<div class='card card-accordion'>
+								<a class='card-header collapsed' href='#' data-toggle='collapse' data-target='#{$faq['id']}' aria-expanded='true' aria-controls='{$faq['id']}'>
+									{$faq['question']}
+								</a>
+								<div id='{$faq['id']}' class='collapse' data-parent='#accordion'>
+									<p class='paragraph1'>{$faq['answer']}</p>
+								</div>
+							</div>";
+					}
+					?>
 				</div>
 			</div>
+			<div class="col-lg-6">
+				<h2 class="mt-6 mb-2">Send Us a Message</h2>
+				<form class="mb-0" action="#">
+					<div class="form-group">
+						<label class="mb-1" for="contact-name">Your Name <span class="required">*</span></label>
+						<input type="text" class="form-control" id="contact-name" name="contact-name" required />
+					</div>
+					<div class="form-group">
+						<label class="mb-1" for="contact-email">Your E-mail <span class="required">*</span></label>
+						<input type="email" class="form-control" id="contact-email" name="contact-email" required />
+					</div>
+					<div class="form-group">
+						<label class="mb-1" for="contact-message">Your Message <span class="required">*</span></label>
+						<textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message" required></textarea>
+					</div>
+					<div class="form-footer mb-0">
+						<button type="submit" class="btn btn-dark font-weight-normal">Send Message</button>
+					</div>
+				</form>
+			</div>
 		</div>
+
 	</div>
 
 	<div class="mb-8"></div>

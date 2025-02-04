@@ -1741,3 +1741,7 @@ Turbosilent
     margin-top: 40px;
     color: rgb(37, 108, 99);
 }
+
+.feature-box i {
+    color:#5dcebf85;
+}
