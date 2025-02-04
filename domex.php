@@ -159,8 +159,8 @@
 
                                 <div class="product-action">
                                     <div class="price-box product-filtered-price">
-                                        <del class="old-price"><span>$286.00</span></del>
-                                        <span class="product-price">$245.00</span>
+                                        <del class="old-price"><span>₹286.00</span></del>
+                                        <span class="product-price">₹245.00</span>
                                     </div>
 
                                     <div class="product-single-qty">
@@ -596,10 +596,10 @@
                 </div>
             </div><!-- End .products-section -->
 
-            <div class="container">
+            <!-- <div class="container">
                 <hr class="mt-0 m-b-5" />
 
-                <!-- <div class="product-widgets-container row pb-2">
+                <div class="product-widgets-container row pb-2">
                     <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
                         <h4 class="section-sub-title">Featured Products</h4>
                         <div class="product-default left-details product-widget">
@@ -624,7 +624,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -650,7 +650,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -676,7 +676,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -706,7 +706,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -732,7 +732,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -758,7 +758,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -787,7 +787,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -814,7 +814,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -840,7 +840,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -869,7 +869,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -895,7 +895,7 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
@@ -921,13 +921,13 @@
                                 </div>
 
                                 <div class="price-box">
-                                    <span class="product-price">$49.00</span>
+                                    <span class="product-price">₹49.00</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>End .row -->
-            </div>
+                </div>End .row
+            </div> -->
         </main><!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
