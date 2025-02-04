@@ -72,7 +72,7 @@
 
             <!-- Why Choose Us section -->
             <section class="why-choose-us">
-                <h2>Why choose us</h2>
+            <h2 class="section-title ls-n-15 text-center pb-2 m-b-4">Why Choose Us</h2>
                 <div class="icons-container">
                     <div class="icon-item">
                         <img src="images/Logo1.png" alt="Quality">
