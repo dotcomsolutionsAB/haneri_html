@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("../header.php"); ?>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -57,4 +57,4 @@
     </div>
 </main><!-- End .main -->
 
-<?php include("footer.php"); ?>
+<?php include("../footer.php"); ?>
