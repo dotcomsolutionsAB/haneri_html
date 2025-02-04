@@ -34,7 +34,7 @@
                 <p class="paragraph1">
                     Our robust manufacturing capabilities allow us to oversee every aspect of production.
                 </p>
-                <ul class="ulclass">
+                <ul class="ulclass list">
                     <li>Injection Moulding</li>
                     <li>Sheet Metal Forming</li>
                     <li>Specialized assembly lines for FG and BLDC motors</li>
