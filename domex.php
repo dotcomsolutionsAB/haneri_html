@@ -472,8 +472,8 @@
                                 <a href="product.html">
                                     <img src="assets/images/products/product-7.jpg" width="451" height="451"
                                         alt="product">
-                                    <img src="assets/images/products/product-7-2.jpg" width="451" height="451"
-                                        alt="product">
+                                    <!-- <img src="assets/images/products/product-7-2.jpg" width="451" height="451"
+                                        alt="product"> -->
                                 </a>
                                 <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
@@ -514,8 +514,8 @@
                                 <a href="product.html">
                                     <img src="assets/images/products/product-6.jpg" width="451" height="451"
                                         alt="product">
-                                    <img src="assets/images/products/product-6-2.jpg" width="451" height="451"
-                                        alt="product">
+                                    <!-- <img src="assets/images/products/product-6-2.jpg" width="451" height="451"
+                                        alt="product"> -->
                                 </a>
                                 <!-- <div class="label-group">
                                     <div class="product-label label-hot">HOT</div>
