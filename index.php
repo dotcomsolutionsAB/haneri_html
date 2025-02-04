@@ -200,3 +200,15 @@
         </div>
     </main><!-- End .main -->
 <?php include("footer.php"); ?>
+
+<style>
+    .card.card-accordion .card-header:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-family: "porto";
+    transition: 0.35s;
+}
+</style>
