@@ -1560,3 +1560,27 @@ Turbosilent
 
 
 }
+
+
+.page-header {
+    padding: 1rem 0 3.2rem;
+    margin-top: 0px;
+}
+.banner-layer h1 {
+    font-size: 80px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.page-header {
+    padding: 1rem 0 3.2rem;
+    margin-top: 0px;
+}
+.banner-layer h1 {
+    font-size: 80px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+#our-story {
+    padding-top: 1rem;
+}
