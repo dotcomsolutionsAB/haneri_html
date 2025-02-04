@@ -20,7 +20,7 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
                 <h2 class="heading2 primary margp">Unique Advantages of TurboSilent BLDC Technology</h2>
-                <ul class="ulclass dark">
+                <ul class="ulclass">
                     <li>
                         <span class="highlight_p">
                             Higher Torque for Optimized Performance:
