@@ -7,12 +7,7 @@
                 <img class="slide-bg" src="images/Slider1.jpg"
                     style="background-color: #ecc;" alt="home banner">
                 <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
-                    <!-- <h2>Winter Fashion Trends</h2>
-                    <h3 class="text-uppercase mb-0">Get up to 30% off</h3> -->
                     <h1><strong>A true</strong><br><span> revolution</span></h1>
-
-                    <!-- <h5 class="text-uppercase">Starting at<span
-                            class="coupon-sale-text"><sup>$</sup>199<sup>99</sup></span></h5> -->
                     <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Shop Now</a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
@@ -201,14 +196,3 @@
     </main><!-- End .main -->
 <?php include("footer.php"); ?>
 
-<style>
-    .card.card-accordion .card-header:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-family: "porto";
-    transition: 0.35s;
-}
-</style>

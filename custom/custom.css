@@ -1745,3 +1745,7 @@ Turbosilent
 .feature-box i {
     color:#5dcebf85;
 }
+
+.search-toggle i:before {
+    font-weight: 600;
+}
