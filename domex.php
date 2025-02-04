@@ -171,7 +171,7 @@
                                         title="Add to Cart">Add to Cart</a>
 
                                     <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
-                                </div><
+                                </div>
 
                                 <hr class="divider mb-0 mt-0">
 
