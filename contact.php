@@ -34,7 +34,7 @@
 						<i class="sicon-location-pin"></i>
 						<div class="feature-box-content">
 							<h4 class="heading4 primary">Address</h4>
-							<h4 class="heading4 primary">Elza International, Integrated Industrial Estate,
+							<h4 class="paragraph1">Elza International, Integrated Industrial Estate,
 							Sector 8A, BHEL Township, Haridwar, Uttarakhand 249403</h5>
 						</div>
 					</div>
@@ -44,7 +44,7 @@
 						<i class="fa fa-mobile-alt"></i>
 						<div class="feature-box-content">
 							<h4 class="heading4 primary">Phone Number</h4>
-							<h4 class="heading4 primary">(123) 456-7890</h5>
+							<h4 class="paragraph1">(123) 456-7890</h5>
 						</div>
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 						<i class="far fa-envelope"></i>
 						<div class="feature-box-content">
 							<h4 class="heading4 primary">E-mail Address</h4>
-							<h4 class="heading4 primary">info@haneri.in</h5>
+							<h4 class="paragraph1">info@haneri.in</h5>
 						</div>
 					</div>
 				</div>
@@ -62,7 +62,7 @@
 						<i class="far fa-calendar-alt"></i>
 						<div class="feature-box-content">
 							<h4 class="heading4 primary">Working Days/Hours</h4>
-							<h4 class="heading4 primary">Mon - Sun / 9:00AM - 8:00PM</h5>
+							<h4 class="paragraph1">Mon - Sun / 9:00AM - 8:00PM</h5>
 						</div>
 					</div>
 				</div>
