@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="demo3-product.html">Women Shoes</a>
+                                            <a href="demo3-product.html">Haneri AirElite AEW</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -119,8 +119,8 @@
                                             </div><!-- End .product-ratings -->
                                         </div><!-- End .product-container -->
                                         <div class="price-box">
-                                            <span class="old-price">$59.00</span>
-                                            <span class="product-price">$49.00</span>
+                                            <span class="old-price">₹59.00</span>
+                                            <span class="product-price">₹49.00</span>
                                         </div><!-- End .price-box -->
                                     </div><!-- End .product-details -->
                                 </div>
@@ -129,15 +129,11 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="demo3-product.html">
-                                            <img src="assets/images/demoes/demo3/products/product-2.jpg" width="273"
+                                            <img src="assets/images/products/product-3.jpg" width="273"
                                                 height="273" alt="productr" />
-                                            <img src="assets/images/demoes/demo3/products/product-2-2.jpg" width="273"
+                                            <img src="assets/images/products/product-3-2.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
-                                        <div class="label-group">
-                                            <div class="product-label label-hot">HOT</div>
-                                            <div class="product-label label-sale">-20%</div>
-                                        </div>
                                         <div class="btn-icon-group">
                                             <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
                                                     class="fa fa-arrow-right"></i>
@@ -154,7 +150,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="demo3-product.html">Porto Transparent Images</a>
+                                            <a href="demo3-product.html">Haneri AirElite AEW3</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -163,8 +159,8 @@
                                             </div><!-- End .product-ratings -->
                                         </div><!-- End .product-container -->
                                         <div class="price-box">
-                                            <span class="old-price">$59.00</span>
-                                            <span class="product-price">$49.00</span>
+                                            <span class="old-price">₹59.00</span>
+                                            <span class="product-price">₹49.00</span>
                                         </div><!-- End .price-box -->
                                     </div><!-- End .product-details -->
                                 </div>
@@ -173,7 +169,7 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="demo3-product.html">
-                                            <img src="assets/images/demoes/demo3/products/product-3.jpg" width="273"
+                                            <img src="assets/images/products/product-6.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
@@ -191,7 +187,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="demo3-product.html">Ideapad</a>
+                                            <a href="demo3-product.html">Haneri AirLux ALR2</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -200,8 +196,8 @@
                                             </div><!-- End .product-ratings -->
                                         </div><!-- End .product-container -->
                                         <div class="price-box">
-                                            <span class="old-price">$59.00</span>
-                                            <span class="product-price">$49.00</span>
+                                            <span class="old-price">₹59.00</span>
+                                            <span class="product-price">₹49.00</span>
                                         </div><!-- End .price-box -->
                                     </div><!-- End .product-details -->
                                 </div>
