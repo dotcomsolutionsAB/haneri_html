@@ -448,7 +448,7 @@
 
                                 <div class="collapse show" id="widget-body-3">
                                     <div class="widget-body">
-                                        <form action="https://haneri.ongoingsites.xyz/domex">
+                                        <form action="#">
                                             <div class="price-slider-wrapper">
                                                 <div id="price-slider"></div><!-- End https://haneri.ongoingsites.xyz/domexprice-slider -->
                                             </div><!-- End .price-slider-wrapper -->
