@@ -206,7 +206,7 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="#">
-                                            <img src="assets/images/products/P7.jpg" width="273"
+                                            <img src="assets/images/products/product-7.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
