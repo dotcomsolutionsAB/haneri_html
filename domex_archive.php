@@ -5,7 +5,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
+                <!-- <li class="breadcrumb-item"><a href="https://haneri.ongoingsites.xyz/domex">Pillar Technology</a></li> -->
                 <li class="breadcrumb-item active" aria-current="page">Domex</li>
             </ol>
         </div><!-- End .container -->
@@ -23,7 +23,7 @@
 
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
-                                <a href="#" class="sidebar-toggle">
+                                <a href="https://haneri.ongoingsites.xyz/domex" class="sidebar-toggle">
                                     <svg data-name="Layer 3" id="Layer_3" viewBox="0 0 32 32"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <line x1="15" x2="26" y1="9" y2="9" class="cls-1"></line>
@@ -91,12 +91,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-1.jpg" width="500"
                                                 height="500" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirElite AEW</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirElite AEW</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -128,14 +128,14 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-3.jpg" width="273"
                                                 height="273" alt="productr" />
                                             <img src="assets/images/products/product-3-2.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart"><i
                                                     class="fa fa-arrow-right"></i>
                                             </a>
                                         </div>
@@ -146,11 +146,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirElite AEW3</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirElite AEW3</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -168,12 +168,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-6.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -183,11 +183,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirLux ALR2</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR2</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -205,12 +205,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-7.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -220,11 +220,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirLux ALR1</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR1</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -242,12 +242,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-8.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -257,11 +257,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirLux ALR3</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR3</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -279,12 +279,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-9.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -294,11 +294,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirLux ALW4</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALW4</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -316,12 +316,12 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
-                                        <a href="#">
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-10.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
-                                            <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
                                         <a href="ajax/product-quick-view.html" class="btn-quickview"
@@ -331,11 +331,11 @@
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">category</a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="#">Haneri AirLux APP1</a>
+                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux APP1</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -367,15 +367,15 @@
 
                             <ul class="pagination toolbox-item">
                                 <li class="page-item active">
-                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                    <a class="page-link" href="https://haneri.ongoingsites.xyz/domex">1 <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="https://haneri.ongoingsites.xyz/domex">2</a></li>
+                                <li class="page-item"><a class="page-link" href="https://haneri.ongoingsites.xyz/domex">3</a></li>
+                                <li class="page-item"><a class="page-link" href="https://haneri.ongoingsites.xyz/domex">4</a></li>
+                                <li class="page-item"><a class="page-link" href="https://haneri.ongoingsites.xyz/domex">5</a></li>
                                 <li class="page-item"><span class="page-link">...</span></li>
                                 <li class="page-item">
-                                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
+                                    <a class="page-link page-link-btn" href="https://haneri.ongoingsites.xyz/domex"><i class="icon-angle-right"></i></a>
                                 </li>
                             </ul>
                         </nav>
@@ -386,7 +386,7 @@
                         <div class="sidebar-wrapper">
                             <div class="widget">
                                 <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
+                                    <a data-toggle="collapse" href="https://haneri.ongoingsites.xyz/domexwidget-body-2" role="button" aria-expanded="true"
                                         aria-controls="widget-body-2">Categories</a>
                                 </h3>
 
@@ -394,7 +394,7 @@
                                     <div class="widget-body">
                                         <ul class="cat-list">
                                             <li>
-                                                <a href="#widget-category-1" class="collapsed" data-toggle="collapse"
+                                                <a href="https://haneri.ongoingsites.xyz/domexwidget-category-1" class="collapsed" data-toggle="collapse"
                                                     role="button" aria-expanded="false"
                                                     aria-controls="widget-category-1">
                                                     Accessories<span class="products-count">(3)</span>
@@ -408,7 +408,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <a href="#widget-category-2" class="collapsed" data-toggle="collapse"
+                                                <a href="https://haneri.ongoingsites.xyz/domexwidget-category-2" class="collapsed" data-toggle="collapse"
                                                     role="button" aria-expanded="false"
                                                     aria-controls="widget-category-2">
                                                     Electronics<span class="products-count">(4)</span>
@@ -422,7 +422,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <a href="#widget-category-3" class="collapsed" data-toggle="collapse"
+                                                <a href="https://haneri.ongoingsites.xyz/domexwidget-category-3" class="collapsed" data-toggle="collapse"
                                                     role="button" aria-expanded="false"
                                                     aria-controls="widget-category-3">
                                                     Fashion<span class="products-count">(2)</span>
@@ -442,15 +442,15 @@
 
                             <div class="widget widget-price">
                                 <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                                    <a data-toggle="collapse" href="https://haneri.ongoingsites.xyz/domexwidget-body-3" role="button" aria-expanded="true"
                                         aria-controls="widget-body-3">Price</a>
                                 </h3>
 
                                 <div class="collapse show" id="widget-body-3">
                                     <div class="widget-body">
-                                        <form action="#">
+                                        <form action="https://haneri.ongoingsites.xyz/domex">
                                             <div class="price-slider-wrapper">
-                                                <div id="price-slider"></div><!-- End #price-slider -->
+                                                <div id="price-slider"></div><!-- End https://haneri.ongoingsites.xyz/domexprice-slider -->
                                             </div><!-- End .price-slider-wrapper -->
 
                                             <div
@@ -469,7 +469,7 @@
 
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
+                                    <a data-toggle="collapse" href="https://haneri.ongoingsites.xyz/domexwidget-body-6" role="button" aria-expanded="true"
                                         aria-controls="widget-body-6">Color</a>
                                 </h3>
 
@@ -477,31 +477,31 @@
                                     <div class="widget-body">
                                         <ul class="config-swatch-list flex-column">
                                             <li class="active">
-                                                <a href="#" style="background-color: #dda756;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domexdda756;"></a>
                                                 <span>Brown</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #7bbad1;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domex7bbad1;"></a>
                                                 <span>Light-Blue</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #81d742;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domex81d742;"></a>
                                                 <span>Green</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #6085a5;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domex6085a5;"></a>
                                                 <span>Indego</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #333;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domex333;"></a>
                                                 <span>Black</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #0188cc;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domex0188cc;"></a>
                                                 <span>Blue</span>
                                             </li>
                                             <li>
-                                                <a href="#" style="background-color: #ab6e6e;"></a>
+                                                <a href="https://haneri.ongoingsites.xyz/domex" style="background-color: https://haneri.ongoingsites.xyz/domexab6e6e;"></a>
                                                 <span>Red</span>
                                             </li>
                                         </ul>
@@ -511,17 +511,17 @@
 
                             <div class="widget widget-size">
                                 <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
+                                    <a data-toggle="collapse" href="https://haneri.ongoingsites.xyz/domexwidget-body-5" role="button" aria-expanded="true"
                                         aria-controls="widget-body-5">Size</a>
                                 </h3>
 
                                 <div class="collapse show" id="widget-body-5">
                                     <div class="widget-body">
                                         <ul class="config-size-list">
-                                            <li class="active"><a href="#">XL</a></li>
-                                            <li><a href="#">L</a></li>
-                                            <li><a href="#">M</a></li>
-                                            <li><a href="#">S</a></li>
+                                            <li class="active"><a href="https://haneri.ongoingsites.xyz/domex">XL</a></li>
+                                            <li><a href="https://haneri.ongoingsites.xyz/domex">L</a></li>
+                                            <li><a href="https://haneri.ongoingsites.xyz/domex">M</a></li>
+                                            <li><a href="https://haneri.ongoingsites.xyz/domex">S</a></li>
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
@@ -529,14 +529,14 @@
 
                             <div class="widget widget-brand">
                                 <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
+                                    <a data-toggle="collapse" href="https://haneri.ongoingsites.xyz/domexwidget-body-7" role="button" aria-expanded="true"
                                         aria-controls="widget-body-7">Brand</a>
                                 </h3>
 
                                 <div class="collapse show" id="widget-body-7">
                                     <div class="widget-body pb-0">
                                         <ul class="cat-list">
-                                            <li><a href="#">Adidas</a></li>
+                                            <li><a href="https://haneri.ongoingsites.xyz/domex">Adidas</a></li>
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
