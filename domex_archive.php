@@ -92,8 +92,8 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="demo3-product.html">
-                                            <img src="assets/images/products/product-1.jpg" width="273"
-                                                height="273" alt="productr" />
+                                            <img src="assets/images/products/product-1.jpg" width="500"
+                                                height="500" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
                                             <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
