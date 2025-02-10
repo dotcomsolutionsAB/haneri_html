@@ -243,7 +243,7 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="#">
-                                            <img src="assets/images/products/P8.png" width="273"
+                                            <img src="assets/images/products/product-8.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
@@ -280,7 +280,7 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="#">
-                                            <img src="assets/images/products/P9.png" width="273"
+                                            <img src="assets/images/products/product-9.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
@@ -317,7 +317,7 @@
                                 <div class="product-default inner-quickview inner-icon">
                                     <figure>
                                         <a href="#">
-                                            <img src="assets/images/products/P10.png" width="273"
+                                            <img src="assets/images/products/product-10.jpg" width="273"
                                                 height="273" alt="productr" />
                                         </a>
                                         <div class="btn-icon-group">
