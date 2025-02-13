@@ -1810,3 +1810,7 @@ Turbosilent
 .cart_page .table.table-cart tr td, .table.table-cart tr th, .table.table-wishlist tr td, .table.table-wishlist tr th {
     vertical-align: middle;
 }
+
+[class*=" icon-"]:before, [class^=icon-]:before {
+    width: 1.5em;
+}
