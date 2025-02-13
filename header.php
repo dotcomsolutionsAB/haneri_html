@@ -215,9 +215,12 @@
                             <a href="profile.php" class="header-icon header-icon-user" title="Profile">
                                 <i class="icon-user-2"></i>
                             </a> |  
-                            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
-                            <a href="wishlist.php" class="header-icon header-icon-wishlist" title="Wishlist">
-                                <i class="icon-wishlist-2"></i>
+                            <a href="#" class="header-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a> | 
+                            <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
+                                <!-- <i class="icon-wishlist-2"></i> -->
+                                <i class="minicart-icon"></i>
                             </a> |
                             <a href="#" class="header-icon" id="logout-btn" title="Logout">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -249,7 +252,7 @@
                     <i class="icon-user-2"></i>
                 </a> |  
                 <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
-                <a href="wishlist.php" class="header-icon header-icon-wishlist" title="Wishlist">
+                <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
                     <i class="icon-wishlist-2"></i>
                 </a> |
                 <a href="#" class="header-icon" id="logout-btn" title="Logout">
