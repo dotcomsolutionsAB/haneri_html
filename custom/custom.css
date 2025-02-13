@@ -1671,7 +1671,7 @@ Turbosilent
 }
 .category .img {
     width: 100%;
-    height: 110px;
+    height: 110px !important;
 }
 .img img{
     object-fit: contain !important;
@@ -1817,6 +1817,11 @@ Turbosilent
 } */
 
 .cart_page ::selection {
-    background-color: rgb(204, 0, 24);
+    background-color: #00473e;
     color: #fff;
+}
+
+
+.checkout-progress-bar li.active a {
+    color: #00473e;
 }
