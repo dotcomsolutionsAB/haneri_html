@@ -1833,3 +1833,15 @@ Turbosilent
 .checkout-progress-bar li.active a {
     color: #00473e;
 }
+
+
+
+
+.header-middle {
+    display: flex;
+    padding: 2.5rem 0;
+    border-top: 1px solid #e7e7e7;
+}
+.main-nav .menu>li {
+    margin-right: 0px;
+}
