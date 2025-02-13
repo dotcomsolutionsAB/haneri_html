@@ -1816,7 +1816,7 @@ Turbosilent
     width: 1.5em;
 } */
 
-::selection {
-    background-color: #08C;
+.cart_page ::selection {
+    background-color: rgb(204, 0, 24);
     color: #fff;
 }
