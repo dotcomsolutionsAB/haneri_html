@@ -14,6 +14,11 @@
 								</div>
 
 								<form action="#">
+                                    <label for="register-mobile">
+										Mobbile
+										<span class="required">*</span>
+									</label>
+									<input type="mobile" class="form-input form-wide" id="register-mobile" required />
 									<label for="register-email">
 										Email address
 										<span class="required">*</span>
