@@ -2,16 +2,16 @@
 <?php include("configs/config.php"); ?> 
 
 <main class="main">
-    <div class="container">
+    <div class="container login-container">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li class="active">
-                <a href="cart.html">Shopping Cart</a>
+                <a href="cart.php">Shopping Cart</a>
             </li>
             <li>
                 <a href="checkout.html">Checkout</a>
             </li>
             <li class="disabled">
-                <a href="cart.html">Order Complete</a>
+                <a href="cart.php">Order Complete</a>
             </li>
         </ul>
 
@@ -213,7 +213,7 @@
                     </table>
 
                     <div class="checkout-methods">
-                        <a href="cart.html" class="btn btn-block btn-dark">Proceed to Checkout
+                        <a href="cart.php" class="btn btn-block btn-dark">Proceed to Checkout
                             <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div><!-- End .cart-summary -->
