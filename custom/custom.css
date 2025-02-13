@@ -1760,7 +1760,7 @@ Turbosilent
     justify-content: center;
     align-items: center;
 }
-.profile_page .feature-box {
+/* .profile_page .feature-box {
     color: #7b858a;
     font-size: 1.5rem;
     line-height: 2;
@@ -1813,4 +1813,9 @@ Turbosilent
 
 [class*=" icon-"]:before, [class^=icon-]:before {
     width: 1.5em;
+} */
+
+::selection {
+    background-color: #08C;
+    color: #fff;
 }
