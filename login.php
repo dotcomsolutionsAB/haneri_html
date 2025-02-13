@@ -27,16 +27,14 @@
 									<input type="password" class="form-input form-wide" id="login-password" required />
 
 									<div class="form-footer">
-										<div class="custom-control custom-checkbox mb-0">
-											<input type="checkbox" class="custom-control-input" id="lost-password" />
-											<label class="custom-control-label mb-0" for="lost-password">Remember
-												me</label>
-										</div>
+    <div class="custom-control custom-checkbox mb-0">
+        <input type="checkbox" class="custom-control-input" id="remember-me" name="remember_me" />
+        <label class="custom-control-label mb-0" for="remember-me">Remember me</label>
+    </div>
 
-										<a href="forgot-password.php"
-											class="forget-password text-dark form-footer-right">Forgot
-											Password?</a>
-									</div>
+    <a href="forgot-password.php" class="forget-password text-dark form-footer-right">Forgot Password?</a>
+</div>
+
 									<button type="submit" class="btn btn-dark btn-md w-100">
 										LOGIN
 									</button>
