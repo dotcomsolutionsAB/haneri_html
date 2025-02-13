@@ -2,7 +2,7 @@
 <?php include("configs/config.php"); ?> 
 
 <main class="main">
-	<div class="container account-container custom-account-container login-container">
+	<div class="container account-container custom-account-container padding_top_100">
 		<div class="row">
 			<div class="sidebar widget widget-dashboard mb-lg-0 mb-3 col-lg-3 order-0">
 				<h2 class="text-uppercase">My Account</h2>

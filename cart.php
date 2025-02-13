@@ -2,7 +2,7 @@
 <?php include("configs/config.php"); ?> 
 
 <main class="main">
-    <div class="container login-container">
+    <div class="container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li class="active">
                 <a href="cart.php">Shopping Cart</a>
