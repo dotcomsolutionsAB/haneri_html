@@ -32,6 +32,11 @@
                                 </a>
                             </div>
                             <button type="submit" class="btn btn-dark btn-md w-100">LOGIN</button>
+                            <p>Don't have an account yet!
+                                <a href="register.php" class="forget-password text-dark form-footer-right">
+                                    Register
+                                </a>
+                            </p>
                         </form>
 
                         <p id="error-message" class="text-danger mt-2" style="display: none;"></p>

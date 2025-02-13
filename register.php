@@ -34,8 +34,13 @@
 
 									<div class="form-footer mb-2">
 										<button type="submit" class="btn btn-dark btn-md w-100 mr-0">
-											Register
+											REGISTER
 										</button>
+                                        <p>Already have an account?
+                                            <a href="login.php" class="forget-password text-dark form-footer-right">
+                                                Login
+                                            </a>
+                                        </p>
 									</div>
 								</form>
 							</div>
