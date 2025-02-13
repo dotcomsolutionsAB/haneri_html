@@ -1900,3 +1900,6 @@ Turbosilent
     padding-bottom: 4.1rem;
     padding-top: 3.3rem;
 }
+footer a {
+    color: #fff !important;
+}
