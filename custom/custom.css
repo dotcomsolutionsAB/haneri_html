@@ -1855,7 +1855,9 @@ Turbosilent
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 600 !important;
-
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    letter-spacing: -0.25px !important;
 }
 
 @media (min-width: 992px) {
@@ -1887,4 +1889,14 @@ Turbosilent
 .sticky-header.header-middle.fixed {
     height: 100px !important;
     background: aliceblue;
+}
+.footer-middle {
+    border-top: 0px solid #e7e7e7;
+    padding-top: 1.4rem !important;
+    padding-bottom: 0.4rem !important;
+}
+.footer-bottom {
+    border-top: 0px solid #e7e7e7;
+    padding-bottom: 4.1rem;
+    padding-top: 3.3rem;
 }

@@ -1,5 +1,5 @@
 <?php include("header.php"); ?>
-<link rel="stylesheet" href="assets/css/style.min.css">
+
 <?php include("configs/config.php"); ?> 
 
 <main class="main cart_page">
@@ -226,5 +226,5 @@
 </main><!-- End .main -->
 
 
-
+<link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
