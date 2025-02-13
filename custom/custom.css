@@ -1749,3 +1749,8 @@ Turbosilent
 .search-toggle i:before {
     font-weight: 200 !important;
 }
+
+
+.padding_top_150{
+    padding-top: 125px;
+}

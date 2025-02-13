@@ -1,8 +1,8 @@
 <?php include("header.php"); ?>
 
 		<main class="main">
-			<!-- <div class="page-header">
-				<div class="container d-flex flex-column align-items-center">
+			<div class="page-header">
+				<!-- <div class="container d-flex flex-column align-items-center">
 					<nav aria-label="breadcrumb" class="breadcrumb-nav">
 						<div class="container">
 							<ol class="breadcrumb">
@@ -16,10 +16,10 @@
 					</nav>
 
 					<h1>My Account</h1>
-				</div>
-			</div> -->
+				</div> -->
+			</div>
 
-			<div class="container login-container">
+			<div class="container login-container padding_top_150">
 				<div class="row">
 					<div class="col-lg-10 mx-auto">
 						<div class="row">
