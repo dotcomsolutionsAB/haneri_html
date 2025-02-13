@@ -2,6 +2,8 @@
 <?php include("configs/config.php"); ?> 
 
 <main class="main">
+    <div class="page-header">
+    </div>
     <div class="container login-container padding_top_100">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -49,44 +51,44 @@
 </main>
 
 <script>
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
 
-    fetch("<?php echo BASE_URL; ?>/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: email, password: password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            localStorage.setItem("auth_token", data.data.token);
-            localStorage.setItem("user_name", data.data.name);
-            localStorage.setItem("user_role", data.data.role);
-            localStorage.setItem("user_id", data.data.id);
+        fetch("<?php echo BASE_URL; ?>/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: email, password: password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                localStorage.setItem("auth_token", data.data.token);
+                localStorage.setItem("user_name", data.data.name);
+                localStorage.setItem("user_role", data.data.role);
+                localStorage.setItem("user_id", data.data.id);
 
-            // Redirect based on role
-            if (data.data.role === "customer") {
-                window.location.href = "index.php"; // Redirect to customer dashboard
-            } else if (data.data.role === "admin") {
-                window.location.href = "admin/index.php"; // Redirect to admin dashboard
+                // Redirect based on role
+                if (data.data.role === "customer") {
+                    window.location.href = "index.php"; // Redirect to customer dashboard
+                } else if (data.data.role === "admin") {
+                    window.location.href = "admin/index.php"; // Redirect to admin dashboard
+                }
+            } else {
+                document.getElementById("error-message").innerText = data.message;
+                document.getElementById("error-message").style.display = "block";
             }
-        } else {
-            document.getElementById("error-message").innerText = data.message;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            document.getElementById("error-message").innerText = "Something went wrong. Please try again.";
             document.getElementById("error-message").style.display = "block";
-        }
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        document.getElementById("error-message").innerText = "Something went wrong. Please try again.";
-        document.getElementById("error-message").style.display = "block";
+        });
     });
-});
 </script>
 
 <?php include("footer.php"); ?>
