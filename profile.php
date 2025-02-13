@@ -50,16 +50,16 @@
 						<p>
 							Hello <strong class="text-dark">Editor</strong> (not
 							<strong class="text-dark">Editor</strong>?
-							<a href="login.html" class="btn btn-link ">Log out</a>)
+							<a href="login.html" class="btn btn-link alink">Log out</a>)
 						</p>
 
 						<p>
 							From your account dashboard you can view your
-							<a class="btn btn-link link-to-tab" href="#order">recent orders</a>,
+							<a class="btn btn-link alink link-to-tab" href="#order">recent orders</a>,
 							manage your
-							<a class="btn btn-link link-to-tab" href="#address">shipping and billing
+							<a class="btn btn-link alink link-to-tab" href="#address">shipping and billing
 								addresses</a>, and
-							<a class="btn btn-link link-to-tab" href="#edit">edit your password and account
+							<a class="btn btn-link alink link-to-tab" href="#edit">edit your password and account
 								details.</a>
 						</p>
 

@@ -1780,3 +1780,6 @@ Turbosilent
 .profile_page .feature-box i:hover {
     color: #0f9c85bb;
 }
+.profile_page .alink{
+    padding: 2px;
+}
