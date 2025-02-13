@@ -230,7 +230,7 @@
                             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> 
                         <?php endif; ?>
 
-                        |<div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                             <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                         </div>
                     </div>
@@ -254,7 +254,7 @@
                 </a> |
                 <a href="#" class="header-icon" id="logout-btn" title="Logout">
                     <i class="fas fa-sign-out-alt"></i>
-                </a>
+                </a> |
                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                 </div>
@@ -272,7 +272,7 @@
                 <a href="login.php" class="header-icon header-icon-user" title="Login">
                     <i class="icon-user-2"></i>
                 </a> |  
-                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                 </div>
