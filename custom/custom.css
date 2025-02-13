@@ -1912,5 +1912,5 @@ footer .social-icon {
     height: 5rem !important;
     font-size: 2.8rem !important;
     line-height: 4rem !important;
-    border: 0px solid #313438;
+    border: 0px solid #313438 !important;
 }
