@@ -1754,3 +1754,9 @@ Turbosilent
 .padding_top_100{
     padding-top: 100px;
 }
+
+.login_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
