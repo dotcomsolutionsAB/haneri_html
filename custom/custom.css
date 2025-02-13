@@ -1843,5 +1843,48 @@ Turbosilent
     border-top: 1px solid #e7e7e7;
 }
 .main-nav .menu>li {
-    margin-right: 0px;
+    margin-right: 0px !important;
+}
+.main-nav .menu>li>a {
+    font-size: 14px !important;
+    /* font-weight: 700; */
+    line-height: 20px;
+    /* letter-spacing: .50px; */
+    color: #141a1f;
+    padding: 15px 15px 15px 15px !important;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+
+}
+
+@media (min-width: 992px) {
+    .container {
+        /* padding-left: 10px; */
+        /* padding-right: 10px; */
+        padding-left: 4.28vw;
+        padding-right: 4.28vw;
+    }
+}
+.header-icon:not(:last-child) {
+    margin-right: 1.3rem !important;
+    margin-left: 1.3rem !important;
+    margin-top: 5px !important;
+}
+.header-icon i {
+    font-size: 20px !important;
+}
+@media (min-width: 1220px) {
+    .container {
+        max-width: 100% !important;
+        /* max-width: 1200px; */
+    }
+}
+[class*=" icon-"]:before, [class^=icon-]:before {
+    /* font-family: "Barlow Condensed" !important; */
+    font-family: "porto" !important;
+}
+.sticky-header.header-middle.fixed {
+    height: 100px !important;
+    background: aliceblue;
 }
