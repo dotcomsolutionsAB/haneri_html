@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
 
-<main class="main">
+<main class="main cart_page">
     <div class="container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li class="active">

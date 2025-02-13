@@ -1783,3 +1783,30 @@ Turbosilent
 .profile_page .alink{
     padding: 2px;
 }
+
+.cart_page .btn-remove {
+    position: relative;
+    top: -75px;
+    right: -80px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: #474747;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 2rem;
+}
+
+.cart_page .product-image-container{
+    margin: 0px;
+    width: 8rem;
+    position: relative;
+}
+
+.cart_page .table-cart td {
+    padding: 2rem 1rem;
+}
+.cart_page .table.table-cart tr td, .table.table-cart tr th, .table.table-wishlist tr td, .table.table-wishlist tr th {
+    vertical-align: middle;
+}
