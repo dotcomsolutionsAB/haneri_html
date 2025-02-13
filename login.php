@@ -31,9 +31,9 @@
                                     Forgot Password?
                                 </a>
                             </div>
-                            <button type="submit" class="btn btn-dark btn-md w-100">LOGIN</button>
+                            <button type="submit" class="btn btn-dark btn-md w-100 mb-2">LOGIN</button>
                             <br>
-                            <p>Don't have an account yet!
+                            <p class="text-center">Don't have an account yet?
                                 <a href="register.php" class="forget-password text-dark form-footer-right">
                                     Register
                                 </a>

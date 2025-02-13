@@ -37,7 +37,6 @@
 											REGISTER
 										</button>                                        
 									</div>
-                                    <br>
                                     <p>Already have an account?
                                         <a href="login.php" class="forget-password text-dark form-footer-right">
                                             Login
