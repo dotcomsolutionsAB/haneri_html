@@ -19,7 +19,7 @@
 				</div> -->
 			</div>
 
-			<div class="container login-container padding_top_150">
+			<div class="container login-container padding_top_100">
 				<div class="row">
 					<div class="col-lg-10 mx-auto">
 						<div class="row">
@@ -58,7 +58,7 @@
 								</form>
 							</div>
 
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								<div class="heading mb-1">
 									<h2 class="title">Register</h2>
 								</div>
@@ -83,7 +83,7 @@
 										</button>
 									</div>
 								</form>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
