@@ -230,7 +230,7 @@
                             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> 
                         <?php endif; ?>
 
-                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                        |<div class="header-search header-search-popup header-search-category d-none d-sm-block">
                             <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                         </div>
                     </div>

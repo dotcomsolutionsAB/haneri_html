@@ -35,7 +35,7 @@
                             </div>
                             <button type="submit" class="btn btn-dark btn-md w-100 mb-2">LOGIN</button>
                             <br>
-                            <p class="text-center">Don't have an account yet?
+                            <p class="">Don't have an account yet?
                                 <a href="register.php" class="forget-password text-dark form-footer-right">
                                     Register
                                 </a>
