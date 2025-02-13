@@ -1820,7 +1820,15 @@ Turbosilent
     background-color: #00473e;
     color: #fff;
 }
-
+.menu .megamenu img {
+    width: 40px;
+}
+.menu .megamenu {
+    box-shadow: none;
+}
+.main-nav .menu>li.active>a, .main-nav .menu>li>a:hover {
+    border-top-color: #d2691e00;
+}
 
 .checkout-progress-bar li.active a {
     color: #00473e;
