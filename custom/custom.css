@@ -1760,7 +1760,7 @@ Turbosilent
     justify-content: center;
     align-items: center;
 }
-/* .profile_page .feature-box {
+ .profile_page .feature-box {
     color: #7b858a;
     font-size: 1.5rem;
     line-height: 2;
@@ -1784,6 +1784,7 @@ Turbosilent
     padding: 2px;
 }
 
+/*
 .cart_page .btn-remove {
     position: relative;
     top: -75px;
