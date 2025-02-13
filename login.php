@@ -7,7 +7,7 @@
 			<div class="container login-container padding_top_100">
 				<div class="row">
 					<div class="col-lg-10 mx-auto">
-						<div class="login_container">
+						<div class="login_reg_container">
 							<div class="col-md-6">
 								<div class="heading mb-1">
 									<h2 class="title">Login</h2>
@@ -33,7 +33,7 @@
 												me</label>
 										</div>
 
-										<a href="forgot-password.html"
+										<a href="forgot-password.php"
 											class="forget-password text-dark form-footer-right">Forgot
 											Password?</a>
 									</div>
