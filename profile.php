@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
 
-<main class="main">
+<main class="main profile_page">
 	<div class="container account-container custom-account-container padding_top_100">
 		<div class="row">
 			<div class="sidebar widget widget-dashboard mb-lg-0 mb-3 col-lg-3 order-0">
