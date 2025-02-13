@@ -63,8 +63,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             localStorage.setItem("user_name", data.data.name);
             localStorage.setItem("user_role", data.data.role);
             localStorage.setItem("user_id", data.data.id);
-            
-            window.location.href = "dashboard.php"; // Redirect to dashboard or home page
+
+            // Redirect based on role
+            if (data.data.role === "customer") {
+                window.location.href = "index.php"; // Redirect to customer dashboard
+            } else if (data.data.role === "admin") {
+                window.location.href = "admin/index.php"; // Redirect to admin dashboard
+            }
         } else {
             document.getElementById("error-message").innerText = data.message;
             document.getElementById("error-message").style.display = "block";
