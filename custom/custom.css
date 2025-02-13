@@ -1839,7 +1839,7 @@ Turbosilent
 
 .header-middle {
     display: flex;
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 !important;
     border-top: 1px solid #e7e7e7;
 }
 .main-nav .menu>li {
@@ -1862,8 +1862,8 @@ Turbosilent
     .container {
         /* padding-left: 10px; */
         /* padding-right: 10px; */
-        padding-left: 4.28vw;
-        padding-right: 4.28vw;
+        padding-left: 4.28vw !important;
+        padding-right: 4.28vw !important;
     }
 }
 .header-icon:not(:last-child) {
@@ -1882,7 +1882,7 @@ Turbosilent
 }
 [class*=" icon-"]:before, [class^=icon-]:before {
     /* font-family: "Barlow Condensed" !important; */
-    font-family: "porto" !important;
+    /* font-family: "porto" !important; */
 }
 .sticky-header.header-middle.fixed {
     height: 100px !important;
