@@ -1777,6 +1777,6 @@ Turbosilent
     margin-bottom: 4rem;
     border: 4px solid #7b858a;
 }
-.profile_page .feature-box .feature-box i {
-    color: #3e8e8385;
+.profile_page .feature-box i:hover {
+    color: #0f9c85bb;
 }
