@@ -22,7 +22,7 @@
 									</div>
 
 									<div class="form-footer mb-0">
-										<a href="login.html">Click here to login</a>
+										<a href="login.php">Click here to login</a>
 
 										<button type="submit"
 											class="btn btn-md btn-primary form-footer-right font-weight-normal text-transform-none mr-0">
