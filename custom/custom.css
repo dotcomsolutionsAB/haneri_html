@@ -1821,13 +1821,13 @@ Turbosilent
     color: #fff;
 }
 .menu .megamenu img {
-    width: 40px;
+    width: 40px !important;
 }
 .menu .megamenu {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 .main-nav .menu>li.active>a, .main-nav .menu>li>a:hover {
-    border-top-color: #d2691e00;
+    border-top-color: #d2691e00 !important;
 }
 
 .checkout-progress-bar li.active a {
