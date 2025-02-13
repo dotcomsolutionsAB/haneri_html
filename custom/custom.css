@@ -1788,8 +1788,8 @@ Turbosilent
     position: relative;
     top: -75px;
     right: -80px;
-    width: 2rem;
-    height: 2rem;
+    width: 2rem !important;
+    height: 2rem !important;
     border-radius: 50%;
     color: #474747;
     background-color: #fff;
