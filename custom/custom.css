@@ -1896,15 +1896,15 @@ Turbosilent
     padding-bottom: 0.4rem !important;
 }
 .footer-bottom {
-    border-top: 0px solid #e7e7e7;
-    padding-bottom: 4.1rem;
-    padding-top: 3.3rem;
+    border-top: 0px solid #e7e7e7 !important;
+    padding-bottom: 4.1rem !important;
+    padding-top: 3.3rem !important;
 }
 footer a {
     color: #fff !important;
 }
 .footer-copyright {
-    color: #fff;
+    color: #fff !important;
 }
 footer .social-icon {
     border-radius: 50%;
