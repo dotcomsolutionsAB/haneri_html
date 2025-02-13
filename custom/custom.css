@@ -1903,3 +1903,14 @@ Turbosilent
 footer a {
     color: #fff !important;
 }
+.footer-copyright {
+    color: #fff;
+}
+footer .social-icon {
+    border-radius: 50%;
+    width: 5rem !important;
+    height: 5rem !important;
+    font-size: 2.8rem !important;
+    line-height: 4rem !important;
+    border: 0px solid #313438;
+}
