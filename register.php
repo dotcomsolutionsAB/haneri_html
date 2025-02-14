@@ -1,5 +1,5 @@
 <?php include("header.php"); ?>
-<?php include("config.php"); ?> 
+<?php include("configs/config.php"); ?> 
 
 <main class="main">
     <div class="container login-container padding_top_100">
