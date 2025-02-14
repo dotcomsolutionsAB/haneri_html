@@ -6,13 +6,13 @@
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li>
-                <a href="cart.html">Shopping Cart</a>
+                <a href="cart.php">Shopping Cart</a>
             </li>
             <li>
-                <a href="checkout.html">Checkout</a>
+                <a href="checkout.php">Checkout</a>
             </li>
             <li class="active">
-                <a href="#">Order Complete</a>
+                <a href="order-complete.php">Order Complete</a>
             </li>
         </ul>
 
