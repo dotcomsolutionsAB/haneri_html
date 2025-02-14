@@ -1922,7 +1922,7 @@ footer .social-icon {
 
 .main-nav .menu>li>a {
     border-top: 0px solid transparent !important;
-    border-bottom: px solid transparent !important; 
+    border-bottom: 0px solid transparent !important; 
 }
 
 .order_success_text{
@@ -1935,4 +1935,20 @@ footer .social-icon {
 .checkout-progress-bar li:last-child {
     pointer-events: none;
     pointer-events: auto;
+}
+
+.menu .megamenu.megamenu-3cols {
+    min-width: 300px;
+    width: fit-content !important;
+}
+
+.menu li>a {
+    /* display: block;
+    padding: 0.8rem 1.8rem;
+    transition: 0.2s ease-out; */
+    color: inherit !important;
+}
+
+.menu .megamenu .submenu li:hover a {
+    text-decoration: none !important;
 }
