@@ -11,7 +11,8 @@
             <li class="active">
                 <a href="checkout.php">Checkout</a>
             </li>
-            <li class="disabled">
+            <!-- <li class="disabled"> -->
+            <li>
                 <a href="order-complete.php">Order Complete</a>
             </li>
         </ul>
