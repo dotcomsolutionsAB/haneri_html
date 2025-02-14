@@ -16,9 +16,11 @@
             </li>
         </ul> -->
 
-        <div class="order-success-message text-center animate__animated animate__fadeIn">
-            <i class="fas fa-check-circle text-success fa-5x animate__animated animate__bounceIn"></i>
-            <h2 class="text-success mt-3 animate__animated animate__fadeInUp">Thank You! Your Order Has Been Placed Successfully.</h2>
+        <div class="order-success-message text-center animate__animated animate__fadeIn">            
+            <h2 class="text-success mt-3 animate__animated animate__fadeInUp">
+                Thank You! Your Order Has Been Placed Successfully.
+                <i class="fas fa-check-circle text-success fa-1x animate__animated animate__bounceIn order_success_text"></i>
+            </h2>
             <p class="lead animate__animated animate__fadeInUp">Your order ID is <strong class="order-id-highlight text-primary animate__animated animate__pulse animate__infinite">#123456</strong>. You will receive a confirmation email shortly.</p>
         </div>
 

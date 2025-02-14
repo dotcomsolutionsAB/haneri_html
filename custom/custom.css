@@ -1917,10 +1917,17 @@ footer .social-icon {
 .cart .badge-circle {
     top: 18px !important;
     left: auto !important;
-    right: 181px !important;
+    right: 195px !important;
 }
 
 .main-nav .menu>li>a {
     border-top: 0px solid transparent !important;
     border-bottom: px solid transparent !important; 
+}
+
+.order_success_text{
+    display: flex    ;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
 }
