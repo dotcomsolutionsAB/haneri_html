@@ -1931,3 +1931,8 @@ footer .social-icon {
     align-items: baseline;
     gap: 5px;
 }
+
+.checkout-progress-bar li:last-child {
+    pointer-events: none;
+    pointer-events: auto;
+}
