@@ -1937,10 +1937,10 @@ footer .social-icon {
     pointer-events: auto;
 }
 
-.menu .megamenu.megamenu-3cols {
+/* .menu .megamenu.megamenu-3cols {
     min-width: 300px;
     width: fit-content !important;
-}
+} */
 
 .menu li>a {
     /* display: block;
