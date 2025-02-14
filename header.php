@@ -253,15 +253,16 @@
                     <i class="icon-user-2"></i>
                 </a> |  
                 <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
-                <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
-                    <i class="icon-wishlist-2"></i>
-                </a> |
-                <a href="#" class="header-icon" id="logout-btn" title="Logout">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a> |
+                <a href="cart.php" class="header-icon" title="cart">
+                    <i class="minicart-icon"></i>
+                    <span class="cart-count badge-circle">3</span>
+                </a> |                
                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                </div>
+                </div> |
+                <a href="#" class="header-icon" id="logout-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
             `;
 
             document.getElementById("logout-btn").addEventListener("click", function() {
