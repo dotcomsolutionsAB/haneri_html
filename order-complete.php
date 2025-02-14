@@ -27,21 +27,21 @@
                         <tbody>
                             <tr>
                                 <td>Circled Ultimate 3D Speaker × <span class="product-qty">4</span></td>
-                                <td class="text-right">$1,040.00</td>
+                                <td class="text-right">₹ 1,040.00</td>
                             </tr>
                             <tr>
                                 <td>Fashion Computer Bag × <span class="product-qty">2</span></td>
-                                <td class="text-right">$418.00</td>
+                                <td class="text-right">₹ 418.00</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr class="cart-subtotal">
                                 <td><strong>Subtotal</strong></td>
-                                <td class="text-right">$1,458.00</td>
+                                <td class="text-right">₹ 1,458.00</td>
                             </tr>
                             <tr class="order-total">
                                 <td><strong>Total</strong></td>
-                                <td class="text-right text-danger font-weight-bold">$1,603.80</td>
+                                <td class="text-right text-danger font-weight-bold">₹ 1,603.80</td>
                             </tr>
                         </tfoot>
                     </table>

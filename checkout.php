@@ -311,7 +311,7 @@
                                 </td>
 
                                 <td class="price-col">
-                                    <span>$1,040.00</span>
+                                    <span>₹ 1,040.00</span>
                                 </td>
                             </tr>
 
@@ -324,7 +324,7 @@
                                 </td>
 
                                 <td class="price-col">
-                                    <span>$418.00</span>
+                                    <span>₹ 418.00</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -335,7 +335,7 @@
                                 </td>
 
                                 <td class="price-col">
-                                    <span>$1,458.00</span>
+                                    <span>₹ 1,458.00</span>
                                 </td>
                             </tr>
                             <tr class="order-shipping">
@@ -368,7 +368,7 @@
                                     <h4>Total</h4>
                                 </td>
                                 <td>
-                                    <b class="total-price"><span>$1,603.80</span></b>
+                                    <b class="total-price"><span>₹ 1,603.80</span></b>
                                 </td>
                             </tr>
                         </tfoot>
