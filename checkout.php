@@ -397,5 +397,5 @@
 <!-- End .main -->
 
 
-<!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
+<link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
