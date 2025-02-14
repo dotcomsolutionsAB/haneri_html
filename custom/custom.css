@@ -1917,6 +1917,7 @@ footer .social-icon {
 }
 
 .cart .badge-circle {
-    top: 1px !important;
-    left: 23px !important;
+    top: 18px !important;
+    left: auto !important;
+    right: 181px !important;
 }
