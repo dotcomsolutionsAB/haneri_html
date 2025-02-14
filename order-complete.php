@@ -2,7 +2,7 @@
 
 <?php include("configs/config.php"); ?> 
 
-<main class="main main-test order_complete">
+<main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li>
@@ -16,68 +16,64 @@
             </li>
         </ul>
 
-        <div class="order-success-message text-center">
-            <h2 class="text-success">Thank You! Your Order Has Been Placed Successfully.</h2>
-            <p class="lead">Your order ID is <strong>#123456</strong>. You will receive a confirmation email shortly.</p>
+        <div class="order-success-message text-center animate__animated animate__fadeIn">
+            <i class="fas fa-check-circle text-success fa-5x animate__animated animate__bounceIn"></i>
+            <h2 class="text-success mt-3 animate__animated animate__fadeInUp">Thank You! Your Order Has Been Placed Successfully.</h2>
+            <p class="lead animate__animated animate__fadeInUp">Your order ID is <strong class="order-id-highlight text-primary animate__animated animate__pulse animate__infinite">#123456</strong>. You will receive a confirmation email shortly.</p>
         </div>
 
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="order-details-box">
-                    <h3>Order Details</h3>
-                    <table class="table table-mini-cart">
+        <div class="row mt-5 d-flex align-items-stretch">
+            <div class="col-lg-6">
+                <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
+                    <h3 class="border-bottom pb-2 mb-3">Order Details</h3>
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th colspan="2">Product</th>
+                                <th>Product</th>
+                                <th class="text-right">Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="product-col">
-                                    <h3 class="product-title">Circled Ultimate 3D Speaker × <span class="product-qty">4</span></h3>
-                                </td>
-                                <td class="price-col">
-                                    <span>$1,040.00</span>
-                                </td>
+                                <td>Circled Ultimate 3D Speaker × <span class="product-qty">4</span></td>
+                                <td class="text-right">$1,040.00</td>
                             </tr>
                             <tr>
-                                <td class="product-col">
-                                    <h3 class="product-title">Fashion Computer Bag × <span class="product-qty">2</span></h3>
-                                </td>
-                                <td class="price-col">
-                                    <span>$418.00</span>
-                                </td>
+                                <td>Fashion Computer Bag × <span class="product-qty">2</span></td>
+                                <td class="text-right">$418.00</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr class="cart-subtotal">
-                                <td><h4>Subtotal</h4></td>
-                                <td class="price-col"><span>$1,458.00</span></td>
+                                <td><strong>Subtotal</strong></td>
+                                <td class="text-right">$1,458.00</td>
                             </tr>
                             <tr class="order-total">
-                                <td><h4>Total</h4></td>
-                                <td><b class="total-price"><span>$1,603.80</span></b></td>
+                                <td><strong>Total</strong></td>
+                                <td class="text-right text-danger font-weight-bold">$1,603.80</td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
             
-            <div class="col-lg-5">
-                <div class="customer-info-box">
-                    <h3>Billing & Shipping Details</h3>
+            <div class="col-lg-6">
+                <div class="customer-info-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInRight">
+                    <h3 class="border-bottom pb-2 mb-3">Billing & Shipping Details</h3>
                     <p><strong>Name:</strong> John Doe</p>
                     <p><strong>Email:</strong> johndoe@example.com</p>
                     <p><strong>Phone:</strong> +1 234 567 890</p>
                     <p><strong>Address:</strong> 123 Street, City, State, ZIP</p>
                 </div>
-                <div class="text-center mt-4">
-                    <a href="shop.html" class="btn btn-dark">Continue Shopping</a>
-                </div>
             </div>
+        </div>
+        
+        <div class="text-center mt-5 animate__animated animate__fadeInUp">
+            <a href="#" class="btn btn-lg btn-primary px-5">Continue Shopping</a>
         </div>
     </div>
 </main>
+
 
 
 
