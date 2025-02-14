@@ -77,7 +77,7 @@
 						<div class="mb-4"></div>
 
 						<div class="row row-lg">
-							<div class="col-6 col-md-4">
+							<div class="col-6 col-md-3">
 								<div class="feature-box text-center pb-4">
 									<a href="#order" class="link-to-tab"><i
 											class="sicon-social-dropbox"></i></a>
@@ -87,17 +87,7 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-4">
-								<div class="feature-box text-center pb-4">
-									<a href="#download" class="link-to-tab"><i
-											class="sicon-cloud-download"></i></a>
-									<div class=" feature-box-content">
-										<h3>DOWNLOADS</h3>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-6 col-md-4">
+							<div class="col-6 col-md-3">
 								<div class="feature-box text-center pb-4">
 									<a href="#address" class="link-to-tab"><i
 											class="sicon-location-pin"></i></a>
@@ -107,7 +97,7 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-4">
+							<div class="col-6 col-md-3">
 								<div class="feature-box text-center pb-4">
 									<a href="#edit" class="link-to-tab"><i class="icon-user-2"></i></a>
 									<div class="feature-box-content p-0">
@@ -116,16 +106,7 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-4">
-								<div class="feature-box text-center pb-4">
-									<a href="wishlist.html"><i class="sicon-heart"></i></a>
-									<div class="feature-box-content">
-										<h3>WISHLIST</h3>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-6 col-md-4">
+							<div class="col-6 col-md-3">
 								<div class="feature-box text-center pb-4">
 									<a href="login.html"><i class="sicon-logout"></i></a>
 									<div class="feature-box-content">
@@ -459,39 +440,39 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const authToken = localStorage.getItem("auth_token");
-    const userName = localStorage.getItem("user_name");
-    const userEmail = localStorage.getItem("user_email"); // Store email if available
+	document.addEventListener("DOMContentLoaded", function() {
+		const authToken = localStorage.getItem("auth_token");
+		const userName = localStorage.getItem("user_name");
+		const userEmail = localStorage.getItem("user_email"); // Store email if available
 
-    if (!authToken) {
-        // Redirect to login page if not logged in
-        window.location.href = "login.php";
-    } else {
-        // Update Profile Details
-        document.getElementById("user-name").textContent = userName;
-        document.getElementById("user-name-again").textContent = userName;
-        document.getElementById("profile-user-name").textContent = userName;
-        document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
-    }
+		if (!authToken) {
+			// Redirect to login page if not logged in
+			window.location.href = "login.php";
+		} else {
+			// Update Profile Details
+			document.getElementById("user-name").textContent = userName;
+			document.getElementById("user-name-again").textContent = userName;
+			document.getElementById("profile-user-name").textContent = userName;
+			document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
+		}
 
-    // Logout functionality
-    document.getElementById("logout-btn").addEventListener("click", function() {
-        logoutUser();
-    });
+		// Logout functionality
+		document.getElementById("logout-btn").addEventListener("click", function() {
+			logoutUser();
+		});
 
-    document.getElementById("logout-btn-alt").addEventListener("click", function() {
-        logoutUser();
-    });
+		document.getElementById("logout-btn-alt").addEventListener("click", function() {
+			logoutUser();
+		});
 
-    function logoutUser() {
-        localStorage.removeItem("auth_token");
-        localStorage.removeItem("user_name");
-        localStorage.removeItem("user_email");
-        localStorage.removeItem("user_role");
-        localStorage.removeItem("user_id");
-        window.location.href = "login.php"; // Redirect to login page after logout
-    }
-});
+		function logoutUser() {
+			localStorage.removeItem("auth_token");
+			localStorage.removeItem("user_name");
+			localStorage.removeItem("user_email");
+			localStorage.removeItem("user_role");
+			localStorage.removeItem("user_id");
+			window.location.href = "login.php"; // Redirect to login page after logout
+		}
+	});
 </script>
 <?php include("footer.php"); ?>
