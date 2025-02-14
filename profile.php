@@ -1,3 +1,14 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const authToken = localStorage.getItem("auth_token");
+
+		if (!authToken) {
+			// If no token, redirect to login page
+			window.location.href = "login.php";
+		}
+	});
+</script>
+
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
 
@@ -48,9 +59,9 @@
 				<div class="tab-pane fade show active" id="dashboard" role="tabpanel">
 					<div class="dashboard-content">
 						<p>
-							Hello <strong class="text-dark">Editor</strong> (not
-							<strong class="text-dark">Editor</strong>?
-							<a href="login.html" class="btn btn-link alink">Log out</a>)
+							Hello <strong class="text-dark" id="user-name">..</strong> (not
+							<strong class="text-dark" id="user-name-again">..</strong>?
+							<a href="login.html" class="btn btn-link alink" id="logout-btn-alt">Log out</a>)
 						</p>
 
 						<p>
@@ -447,5 +458,40 @@
 </main><!-- End .main -->
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const authToken = localStorage.getItem("auth_token");
+    const userName = localStorage.getItem("user_name");
+    const userEmail = localStorage.getItem("user_email"); // Store email if available
 
+    if (!authToken) {
+        // Redirect to login page if not logged in
+        window.location.href = "login.php";
+    } else {
+        // Update Profile Details
+        document.getElementById("user-name").textContent = userName;
+        document.getElementById("user-name-again").textContent = userName;
+        document.getElementById("profile-user-name").textContent = userName;
+        document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
+    }
+
+    // Logout functionality
+    document.getElementById("logout-btn").addEventListener("click", function() {
+        logoutUser();
+    });
+
+    document.getElementById("logout-btn-alt").addEventListener("click", function() {
+        logoutUser();
+    });
+
+    function logoutUser() {
+        localStorage.removeItem("auth_token");
+        localStorage.removeItem("user_name");
+        localStorage.removeItem("user_email");
+        localStorage.removeItem("user_role");
+        localStorage.removeItem("user_id");
+        window.location.href = "login.php"; // Redirect to login page after logout
+    }
+});
+</script>
 <?php include("footer.php"); ?>
