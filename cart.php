@@ -33,7 +33,7 @@
                             <tr class="product-row">
                                 <td>
                                     <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
+                                        <a href="#" class="product-image">
                                             <img src="assets/images/products/product-4.jpg" alt="product">
                                         </a>
 
@@ -42,22 +42,22 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="product.html">Men Watch</a>
+                                        <a href="#">Men Watch</a>
                                     </h5>
                                 </td>
-                                <td>$17.90</td>
+                                <td>₹ 199.00</td>
                                 <td>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="text">
                                     </div><!-- End .product-single-qty -->
                                 </td>
-                                <td class="text-right"><span class="subtotal-price">$17.90</span></td>
+                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
                             </tr>
 
                             <tr class="product-row">
                                 <td>
                                     <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
+                                        <a href="#" class="product-image">
                                             <img src="assets/images/products/product-3.jpg" alt="product">
                                         </a>
 
@@ -66,22 +66,22 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="product.html">Men Watch</a>
+                                        <a href="#">Men Watch</a>
                                     </h5>
                                 </td>
-                                <td>$17.90</td>
+                                <td>₹ 199.00</td>
                                 <td>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="text">
                                     </div><!-- End .product-single-qty -->
                                 </td>
-                                <td class="text-right"><span class="subtotal-price">$17.90</span></td>
+                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
                             </tr>
 
                             <tr class="product-row">
                                 <td>
                                     <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
+                                        <a href="#" class="product-image">
                                             <img src="assets/images/products/product-6.jpg" alt="product">
                                         </a>
 
@@ -90,16 +90,16 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="product.html">Men Black Gentle Belt</a>
+                                        <a href="#">Men Black Gentle Belt</a>
                                     </h5>
                                 </td>
-                                <td>$17.90</td>
+                                <td>₹ 199.00</td>
                                 <td>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="text">
                                     </div><!-- End .product-single-qty -->
                                 </td>
-                                <td class="text-right"><span class="subtotal-price">$17.90</span></td>
+                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
                             </tr>
                         </tbody>
 
@@ -142,7 +142,7 @@
                         <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>$17.90</td>
+                                <td>₹ 199.00</td>
                             </tr>
 
                             <tr>
@@ -208,14 +208,15 @@
                         <tfoot>
                             <tr>
                                 <td>Total</td>
-                                <td>$17.90</td>
+                                <td>₹ 199.00</td>
                             </tr>
                         </tfoot>
                     </table>
 
                     <div class="checkout-methods">
-                        <a href="cart.php" class="btn btn-block btn-dark">Proceed to Checkout
-                            <i class="fa fa-arrow-right"></i></a>
+                        <a href="checkout.php" class="btn btn-block btn-dark">Proceed to Checkout
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div><!-- End .cart-summary -->
             </div><!-- End .col-lg-4 -->

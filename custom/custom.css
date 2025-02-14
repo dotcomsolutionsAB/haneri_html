@@ -1855,8 +1855,6 @@ Turbosilent
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 600 !important;
-    border-top: 0px solid transparent;
-    border-bottom: 0px solid transparent;
     letter-spacing: -0.25px !important;
 }
 
@@ -1920,4 +1918,9 @@ footer .social-icon {
     top: 18px !important;
     left: auto !important;
     right: 181px !important;
+}
+
+.main-nav .menu>li>a {
+    border-top: 0px solid transparent !important;
+    border-bottom: px solid transparent !important; 
 }
