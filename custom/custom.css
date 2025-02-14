@@ -1915,3 +1915,8 @@ footer .social-icon {
     line-height: 4rem !important;
     border: 0px solid #313438 !important;
 }
+
+.cart .badge-circle {
+    top: 1px !important;
+    left: 23px !important;
+}
