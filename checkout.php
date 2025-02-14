@@ -3,7 +3,7 @@
 <?php include("configs/config.php"); ?> 
 
 <main class="main main-test checkout_page">
-    <div class="container checkout-container">
+    <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
             <li>
                 <a href="cart.html">Shopping Cart</a>
@@ -397,5 +397,5 @@
 <!-- End .main -->
 
 
-<link rel="stylesheet" href="assets/css/style.min.css">
+<!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
 <?php include("footer.php"); ?>
