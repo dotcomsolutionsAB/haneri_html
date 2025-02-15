@@ -4,8 +4,8 @@
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
         id="sidebar_header">
         <a class="dark:hidden" href="html/demo1.html">
-            <img class="default-logo min-h-[22px] max-w-none" src="assets/media/app/default-logo.svg" />
-            <img class="small-logo min-h-[22px] max-w-none" src="assets/media/app/mini-logo.svg" />
+            <img class="default-logo min-h-[22px] max-w-none" src="../uploads/Haneri Logo.png" />
+            <img class="small-logo min-h-[22px] max-w-none" src="../uploads/Haneri Logo.png" />
         </a>
         <a class="hidden dark:block" href="html/demo1.html">
             <img class="default-logo min-h-[22px] max-w-none" src="assets/media/app/default-logo-dark.svg" />
@@ -26,7 +26,7 @@
             <!-- Sidebar Menu -->
             <div class="menu flex flex-col grow gap-0.5" data-menu="true" data-menu-accordion-expand-all="false"
                 id="sidebar_menu">
-                <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                <!-- <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
                     <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]"
                         tabindex="0">
                         <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
@@ -71,7 +71,19 @@
                             </a>
                         </div>
                     </div>
+                </div> -->
+                <div class="menu-item">
+                    <a class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]"
+                        href="index.php">
+                        <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                            <i class="ki-filled ki-element-11 text-lg"></i>
+                        </span>
+                        <span class="menu-title text-sm font-medium text-gray-800 menu-link-hover:!text-primary">
+                            Dashboards
+                        </span>
+                    </a>
                 </div>
+
                 <div class="menu-item pt-2.25 pb-px">
                     <span class="menu-heading uppercase text-2sm font-medium text-gray-500 ps-[10px] pe-[10px]">
                         User
