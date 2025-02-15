@@ -351,17 +351,23 @@
                     </table>
 
                     <div class="payment-methods">
-                        <h4 class="">Payment methods</h4>
+                        <h4 class="mb-3">Payment Methods</h4>
+                        
                         <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
                             <!-- Payment Method Name -->
-                            <span class="fw-bold fs-14">Razorpay</span>
+                            <span class="fw-bold fs-6">
+                                Razorpay
+                            </span>
                             
                             <!-- Payment Method Icon -->
-                            <span class="rounded-circle h-40px ml-3 overflow-hidden">
-                                <img src="assets/images/payments/razorpay.png" class="img-fit h-100">
+                            <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
+                                <img src="assets/images/payments/razorpay.png" 
+                                    class="w-100 h-100 object-fit-cover" 
+                                    alt="Razorpay" />
                             </span>
                         </div>
                     </div>
+
 
                     <button type="submit" class="btn btn-dark btn-place-order" form="checkout-form">
                         Place order
