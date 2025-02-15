@@ -4,8 +4,8 @@
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
         id="sidebar_header">
         <a class="dark:hidden" href="html/demo1.html">
-            <img class="default-logo min-h-[22px] max-w-none" src="../uploads/Haneri Logo.png" />
-            <img class="small-logo min-h-[22px] max-w-none" src="../uploads/Haneri Logo.png" />
+            <img class="default-logo min-h-[22px] max-w-none" src="uploads/Haneri_Logo.png" />
+            <img class="small-logo min-h-[22px] max-w-none" src="uploads/Haneri_Logo.png" />
         </a>
         <a class="hidden dark:block" href="html/demo1.html">
             <img class="default-logo min-h-[22px] max-w-none" src="assets/media/app/default-logo-dark.svg" />
