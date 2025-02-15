@@ -26,11 +26,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Circled Ultimate 3D Speaker × <span class="product-qty">4</span></td>
+                                <td>Haneri AirElite AEW1 × <span class="product-qty">4</span></td>
                                 <td class="text-right">₹ 1,040.00</td>
                             </tr>
                             <tr>
-                                <td>Fashion Computer Bag × <span class="product-qty">2</span></td>
+                                <td>Haneri AirElite AEW1 × <span class="product-qty">2</span></td>
                                 <td class="text-right">₹ 418.00</td>
                             </tr>
                         </tbody>
@@ -54,7 +54,7 @@
                     <p><strong>Name:</strong> John Doe</p>
                     <p><strong>Email:</strong> johndoe@example.com</p>
                     <p><strong>Phone:</strong> +1 234 567 890</p>
-                    <p><strong>Address:</strong> 123 Street, City, State, ZIP</p>
+                    <p><strong>Address:</strong> 123 Street, City, State, Pincode</p>
                 </div>
             </div>
         </div>
