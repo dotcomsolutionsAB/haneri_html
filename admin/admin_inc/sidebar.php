@@ -49,7 +49,7 @@
                     <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]"
                         tabindex="0">
                         <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
-                            <i class="ki-filled ki-security-user text-lg">
+                            <i class="ki-filled ki-handcart text-lg">
                             </i>
                         </span>
                         <span
@@ -95,11 +95,10 @@
                     <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]"
                         tabindex="0">
                         <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
-                            <i class="ki-filled ki-security-user text-lg">
+                            <i class="ki-filled ki-note-2 text-lg">
                             </i>
                         </span>
-                        <span
-                            class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
+                        <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
                             Orders
                         </span>
                         <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
@@ -139,7 +138,7 @@
                     <div class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px]"
                         tabindex="0">
                         <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
-                            <i class="ki-filled ki-security-user text-lg">
+                            <i class="ki-filled ki-users text-lg">
                             </i>
                         </span>
                         <span
