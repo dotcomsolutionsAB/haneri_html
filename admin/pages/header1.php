@@ -1785,18 +1785,19 @@
                     </div>
                     <!-- End of Mobile Logo -->
                     <!-- Breadcrumbs -->
-                    <div class="flex [.header_&]:below-lg:hidden items-center gap-1.25 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0"
-                        data-reparent="true" data-reparent-mode="prepend|lg:prepend"
-                        data-reparent-target="#content_container|lg:#header_container">
-                        <span class="text-gray-700">
-                            My Account
-                        </span>
-                        <i class="ki-filled ki-right text-gray-500 text-3xs">
-                        </i>
-                        <span class="text-gray-700">
-                            Members & Roles
-                        </span>
-                    </div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb flex items-center gap-2 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0">
+                            <li class="breadcrumb-item text-gray-700">
+                                <a href="index.php" class="text-gray-700 hover:text-primary">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item text-gray-500">
+                                <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
+                            </li>
+                            <li class="breadcrumb-item text-gray-700 active" aria-current="page">
+                                <?php echo $current_page; ?>
+                            </li>
+                        </ol>
+                    </nav>
                     <!-- End of Breadcrumbs -->
                     <!-- Topbar -->
                     <div class="flex items-center gap-2 lg:gap-3.5">
