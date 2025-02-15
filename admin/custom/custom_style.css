@@ -4,3 +4,7 @@
 .small-logo {
     height: 10px;
 }
+
+.menu-item.active>.menu-link.menu-item-active\:bg-secondary-active {
+    background-color: var(--tw-secondary-active);
+}
