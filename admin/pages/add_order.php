@@ -1,8 +1,9 @@
 <base href="../">
-<?php include("header1.php"); ?>
 <?php 
 $current_page = "Add order"; // Dynamically set this based on the page
 ?>
+<?php include("header1.php"); ?>
+
             <!-- End of Header -->
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">
