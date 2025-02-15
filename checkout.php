@@ -125,13 +125,9 @@
                                 <label>Country / Region
                                     <abbr class="required" title="required">*</abbr></label>
                                 <select name="orderby" class="form-control">
-                                    <option value="" selected="selected">Vanuatu
+                                    <option value="" selected="selected">India
                                     </option>
-                                    <option value="1">Brunei</option>
-                                    <option value="2">Bulgaria</option>
-                                    <option value="3">Burkina Faso</option>
-                                    <option value="4">Burundi</option>
-                                    <option value="5">Cameroon</option>
+                                    <option value="1">Australia</option>
                                 </select>
                             </div>
 
@@ -154,17 +150,14 @@
                             <div class="select-custom">
                                 <label>State / County <abbr class="required" title="required">*</abbr></label>
                                 <select name="orderby" class="form-control">
-                                    <option value="" selected="selected">NY</option>
-                                    <option value="1">Brunei</option>
-                                    <option value="2">Bulgaria</option>
-                                    <option value="3">Burkina Faso</option>
-                                    <option value="4">Burundi</option>
-                                    <option value="5">Cameroon</option>
+                                    <option value="" selected="selected">Mumbai</option>
+                                    <option value="1">Delhi</option>
+                                    <option value="2">West Bengal</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label>Postcode / Zip
+                                <label>Pincode
                                     <abbr class="required" title="required">*</abbr></label>
                                 <input type="text" class="form-control" required />
                             </div>
@@ -235,12 +228,8 @@
                                     <div class="select-custom">
                                         <label>Country / Region <span class="required">*</span></label>
                                         <select name="orderby" class="form-control">
-                                            <option value="" selected="selected">Vanuatu</option>
-                                            <option value="1">Brunei</option>
-                                            <option value="2">Bulgaria</option>
-                                            <option value="3">Burkina Faso</option>
-                                            <option value="4">Burundi</option>
-                                            <option value="5">Cameroon</option>
+                                            <option value="" selected="selected">India</option>
+                                            <option value="1">Australia</option>
                                         </select>
                                     </div>
 
@@ -264,17 +253,14 @@
                                         <label>State / County <abbr class="required"
                                                 title="required">*</abbr></label>
                                         <select name="orderby" class="form-control">
-                                            <option value="" selected="selected">NY</option>
-                                            <option value="1">Brunei</option>
-                                            <option value="2">Bulgaria</option>
-                                            <option value="3">Burkina Faso</option>
-                                            <option value="4">Burundi</option>
-                                            <option value="5">Cameroon</option>
+                                            <option value="" selected="selected">Mumbai</option>
+                                            <option value="1">Delhi</option>
+                                            <option value="2">West Bengal</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Postcode / ZIP <abbr class="required"
+                                        <label>Pincode <abbr class="required"
                                                 title="required">*</abbr></label>
                                         <input type="text" class="form-control" required />
                                     </div>
@@ -305,7 +291,7 @@
                             <tr>
                                 <td class="product-col">
                                     <h3 class="product-title">
-                                        Circled Ultimate 3D Speaker ×
+                                        Haneri AirElite AEW1 ×
                                         <span class="product-qty">4</span>
                                     </h3>
                                 </td>
@@ -318,7 +304,7 @@
                             <tr>
                                 <td class="product-col">
                                     <h3 class="product-title">
-                                        Fashion Computer Bag ×
+                                        Haneri AirElite AEW1 ×
                                         <span class="product-qty">2</span>
                                     </h3>
                                 </td>
@@ -345,20 +331,10 @@
                                     <div class="form-group form-group-custom-control">
                                         <div class="custom-control custom-radio d-flex">
                                             <input type="radio" class="custom-control-input" name="radio" checked />
-                                            <label class="custom-control-label">Local Pickup</label>
+                                            <label class="custom-control-label">Free Shipping</label>
                                         </div>
                                         <!-- End .custom-checkbox -->
                                     </div>
-                                    <!-- End .form-group -->
-
-                                    <div class="form-group form-group-custom-control mb-0">
-                                        <div class="custom-control custom-radio d-flex mb-0">
-                                            <input type="radio" name="radio" class="custom-control-input">
-                                            <label class="custom-control-label">Flat Rate</label>
-                                        </div>
-                                        <!-- End .custom-checkbox -->
-                                    </div>
-                                    <!-- End .form-group -->
                                 </td>
 
                             </tr>
@@ -376,10 +352,14 @@
 
                     <div class="payment-methods">
                         <h4 class="">Payment methods</h4>
-                        <div class="info-box with-icon p-0">
-                            <p>
-                                Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.
-                            </p>
+                        <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
+                            <!-- Payment Method Name -->
+                            <span class="fw-bold fs-14">Razorpay</span>
+                            
+                            <!-- Payment Method Icon -->
+                            <span class="rounded-circle h-40px ml-3 overflow-hidden">
+                                <img src="assets/images/payments/razorpay.png" class="img-fit h-100">
+                            </span>
                         </div>
                     </div>
 

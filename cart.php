@@ -42,7 +42,7 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="#">Men Watch</a>
+                                        <a href="#">Haneri AirElite AEW1</a>
                                     </h5>
                                 </td>
                                 <td>₹ 199.00</td>
@@ -66,7 +66,7 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="#">Men Watch</a>
+                                        <a href="#">Haneri AirElite AEW1</a>
                                     </h5>
                                 </td>
                                 <td>₹ 199.00</td>
@@ -90,7 +90,7 @@
                                 </td>
                                 <td class="product-col">
                                     <h5 class="product-title">
-                                        <a href="#">Men Black Gentle Belt</a>
+                                        <a href="#">Haneri AirElite AEW1</a>
                                     </h5>
                                 </td>
                                 <td>₹ 199.00</td>
@@ -153,26 +153,15 @@
                                         <div class="custom-control custom-radio">
                                             <input type="radio" class="custom-control-input" name="radio"
                                                 checked>
-                                            <label class="custom-control-label">Local pickup</label>
-                                        </div><!-- End .custom-checkbox -->
-                                    </div><!-- End .form-group -->
-
-                                    <div class="form-group form-group-custom-control mb-0">
-                                        <div class="custom-control custom-radio mb-0">
-                                            <input type="radio" name="radio" class="custom-control-input">
-                                            <label class="custom-control-label">Flat rate</label>
+                                            <label class="custom-control-label">Free Shipping</label>
                                         </div><!-- End .custom-checkbox -->
                                     </div><!-- End .form-group -->
 
                                     <form action="#">
                                         <div class="form-group form-group-sm">
-                                            <label>Shipping to <strong>NY.</strong></label>
                                             <div class="select-custom">
                                                 <select class="form-control form-control-sm">
-                                                    <option value="USA">United States (US)</option>
-                                                    <option value="Turkey">Turkey</option>
-                                                    <option value="China">China</option>
-                                                    <option value="Germany">Germany</option>
+                                                    <option value="India">INDIA</option>
                                                 </select>
                                             </div><!-- End .select-custom -->
                                         </div><!-- End .form-group -->
@@ -180,9 +169,9 @@
                                         <div class="form-group form-group-sm">
                                             <div class="select-custom">
                                                 <select class="form-control form-control-sm">
-                                                    <option value="NY">New York</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="TX">Texas</option>
+                                                    <option value="NY">Mumbai</option>
+                                                    <option value="CA">Delhi</option>
+                                                    <option value="TX">West Bengal</option>
                                                 </select>
                                             </div><!-- End .select-custom -->
                                         </div><!-- End .form-group -->
@@ -194,7 +183,7 @@
 
                                         <div class="form-group form-group-sm">
                                             <input type="text" class="form-control form-control-sm"
-                                                placeholder="ZIP">
+                                                placeholder="Pin Code">
                                         </div><!-- End .form-group -->
 
                                         <button type="submit" class="btn btn-shop btn-update-total">
