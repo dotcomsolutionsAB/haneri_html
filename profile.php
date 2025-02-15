@@ -29,11 +29,6 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" id="download-tab" data-toggle="tab" href="#download" role="tab"
-							aria-controls="download" aria-selected="false">Downloads</a>
-					</li>
-
-					<li class="nav-item">
 						<a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab"
 							aria-controls="address" aria-selected="false">Addresses</a>
 					</li>
@@ -42,13 +37,6 @@
 						<a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab"
 							aria-controls="edit" aria-selected="false">Account
 							details</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="shop-address-tab" data-toggle="tab" href="#shipping" role="tab"
-							aria-controls="edit" aria-selected="false">Shopping Addres</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="wishlist.html">Wishlist</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="login.html">Logout</a>
@@ -149,18 +137,7 @@
 						</div>
 					</div>
 				</div><!-- End .tab-pane -->
-
-				<div class="tab-pane fade" id="download" role="tabpanel">
-					<div class="download-content">
-						<h3 class="account-sub-title d-none d-md-block"><i
-								class="sicon-cloud-download align-middle mr-3"></i>Downloads</h3>
-						<div class="download-table-container">
-							<p>No downloads available yet.</p> <a href="category.html"
-								class="btn btn-primary text-transform-none mb-2">GO SHOP</a>
-						</div>
-					</div>
-				</div><!-- End .tab-pane -->
-
+				
 				<div class="tab-pane fade" id="address" role="tabpanel">
 					<h3 class="account-sub-title d-none d-md-block mb-1"><i
 							class="sicon-location-pin align-middle mr-3"></i>Addresses</h3>
@@ -270,163 +247,6 @@
 								<button type="submit" class="btn btn-dark mr-0">
 									Save changes
 								</button>
-							</div>
-						</form>
-					</div>
-				</div><!-- End .tab-pane -->
-
-				<div class="tab-pane fade" id="billing" role="tabpanel">
-					<div class="address account-content mt-0 pt-2">
-						<h4 class="title">Billing address</h4>
-
-						<form class="mb-2" action="#">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>First name <span class="required">*</span></label>
-										<input type="text" class="form-control" required />
-									</div>
-								</div>
-
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Last name <span class="required">*</span></label>
-										<input type="text" class="form-control" required />
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label>Company </label>
-								<input type="text" class="form-control">
-							</div>
-
-							<div class="select-custom">
-								<label>Country / Region <span class="required">*</span></label>
-								<select name="orderby" class="form-control">
-									<option value="" selected="selected">British Indian Ocean Territory
-									</option>
-									<option value="1">Brunei</option>
-									<option value="2">Bulgaria</option>
-									<option value="3">Burkina Faso</option>
-									<option value="4">Burundi</option>
-									<option value="5">Cameroon</option>
-								</select>
-							</div>
-
-							<div class="form-group">
-								<label>Street address <span class="required">*</span></label>
-								<input type="text" class="form-control"
-									placeholder="House number and street name" required />
-								<input type="text" class="form-control"
-									placeholder="Apartment, suite, unit, etc. (optional)" required />
-							</div>
-
-							<div class="form-group">
-								<label>Town / City <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-group">
-								<label>State / Country <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-group">
-								<label>Postcode / ZIP <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-group mb-3">
-								<label>Phone <span class="required">*</span></label>
-								<input type="number" class="form-control" required />
-							</div>
-
-							<div class="form-group mb-3">
-								<label>Email address <span class="required">*</span></label>
-								<input type="email" class="form-control" placeholder="editor@gmail.com"
-									required />
-							</div>
-
-							<div class="form-footer mb-0">
-								<div class="form-footer-right">
-									<button type="submit" class="btn btn-dark py-4">
-										Save Address
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div><!-- End .tab-pane -->
-
-				<div class="tab-pane fade" id="shipping" role="tabpanel">
-					<div class="address account-content mt-0 pt-2">
-						<h4 class="title mb-3">Shipping Address</h4>
-
-						<form class="mb-2" action="#">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>First name <span class="required">*</span></label>
-										<input type="text" class="form-control" required />
-									</div>
-								</div>
-
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Last name <span class="required">*</span></label>
-										<input type="text" class="form-control" required />
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label>Company </label>
-								<input type="text" class="form-control">
-							</div>
-
-							<div class="select-custom">
-								<label>Country / Region <span class="required">*</span></label>
-								<select name="orderby" class="form-control">
-									<option value="" selected="selected">British Indian Ocean Territory
-									</option>
-									<option value="1">Brunei</option>
-									<option value="2">Bulgaria</option>
-									<option value="3">Burkina Faso</option>
-									<option value="4">Burundi</option>
-									<option value="5">Cameroon</option>
-								</select>
-							</div>
-
-							<div class="form-group">
-								<label>Street address <span class="required">*</span></label>
-								<input type="text" class="form-control"
-									placeholder="House number and street name" required />
-								<input type="text" class="form-control"
-									placeholder="Apartment, suite, unit, etc. (optional)" required />
-							</div>
-
-							<div class="form-group">
-								<label>Town / City <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-group">
-								<label>State / Country <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-group">
-								<label>Postcode / ZIP <span class="required">*</span></label>
-								<input type="text" class="form-control" required />
-							</div>
-
-							<div class="form-footer mb-0">
-								<div class="form-footer-right">
-									<button type="submit" class="btn btn-dark py-4">
-										Save Address
-									</button>
-								</div>
 							</div>
 						</form>
 					</div>
