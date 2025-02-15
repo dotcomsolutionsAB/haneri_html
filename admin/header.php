@@ -4,7 +4,7 @@
 <head>
     <!-- <base href="../../"> -->
     <title>
-        Metronic - Tailwind CSS
+        HENERI - Admin
     </title>
     <meta charset="utf-8" />
     <meta content="follow, index" name="robots" />
@@ -32,6 +32,8 @@
     <link href="assets/vendors/apexcharts/apexcharts.css" rel="stylesheet" />
     <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="custom/custom_style.css">
 </head>
 
 <body
