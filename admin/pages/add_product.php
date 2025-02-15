@@ -1,5 +1,6 @@
-<!-- <base href=""> -->
-<?php include("../header.php"); ?>
+<base href="../">
+<?php include("header1.php"); ?>
+
             <!-- End of Header -->
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">
@@ -619,4 +620,4 @@
             </main>
             <!-- End of Content -->
             <!-- Footer -->
-<?php include("../footer.php"); ?>
+<?php include("footer1.php"); ?>
