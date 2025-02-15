@@ -1,3 +1,4 @@
+<base href="../">
 <?php include("header.php"); ?>
             <!-- End of Header -->
             <!-- Content -->
