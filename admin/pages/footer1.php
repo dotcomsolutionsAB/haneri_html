@@ -38,7 +38,7 @@
         <!-- End of Wrapper -->
     </div>
     <!-- End of Main -->
-    <?php include("admin_inc/modals.php"); ?>
+    <?php include("../admin_inc/modals.php"); ?>
     <!-- End of Page -->
     <!-- Scripts -->
     <script src="assets/js/core.bundle.js">

@@ -2,7 +2,7 @@
 <html class="h-full" data-theme="true" data-theme-mode="light" dir="ltr" lang="en">
 
 <head>
-    <base href="../">
+    <!-- <base href="../"> -->
     <title>
         HENERI - Admin
     </title>
@@ -64,7 +64,7 @@
     <!-- Main -->
     <div class="flex grow">
         <!-- Sidebar -->
-        <?php include("admin_inc/sidebar.php"); ?>
+        <?php include("../admin_inc/sidebar.php"); ?>
         <!-- End of Sidebar -->
         <!-- Wrapper -->
         <div class="wrapper flex grow flex-col">
