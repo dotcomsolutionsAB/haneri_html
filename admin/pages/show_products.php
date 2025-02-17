@@ -45,7 +45,7 @@
                                             class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                         </i>
                                         <input class="input input-sm pl-8" data-datatable-search="#members_table"
-                                            placeholder="Search Members" type="text" />
+                                            placeholder="Search Product" type="text" />
                                     </div>
                                     <label class="switch switch-sm">
                                         <input class="order-2" name="check" type="checkbox" value="1" />
