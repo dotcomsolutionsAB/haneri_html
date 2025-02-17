@@ -1,4 +1,7 @@
 <base href="../">
+<?php 
+    $current_page = "Show Users"; // Dynamically set this based on the page
+?>
 <?php include("header1.php"); ?>
             <!-- End of Header -->
             <!-- Content -->
