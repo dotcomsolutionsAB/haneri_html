@@ -94,7 +94,7 @@
                                                         </span>
                                                     </th>
                                                     
-                                                    <th class="min-w-[100px]">
+                                                    <th class="min-w-[140px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">Amount</span>
                                                             <span class="sort-icon">
@@ -151,7 +151,7 @@
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="text-xs text-gray-700 font-normal">11199.00 </span>                                                                
                                                                 <span class="badge text-danger">
                                                                     Uppaid
                                                                 </span>
@@ -272,7 +272,7 @@
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="text-xs text-gray-700 font-normal">11199.00 </span>  
                                                                 <span class="badge text-primary">Paid</span>
                                                             </div>
                                                         </div>
@@ -389,7 +389,7 @@
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="text-xs text-gray-700 font-normal">11199.00 </span>  
                                                                 <span class="badge badge-outline">
                                                                     Declined
                                                                 </span>
@@ -508,7 +508,7 @@
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="text-xs text-gray-700 font-normal">11199.00 </span>  
                                                                 <span class="badge text-danger">
                                                                     Uppaid
                                                                 </span>
