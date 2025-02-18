@@ -123,47 +123,50 @@
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
-                                                            <div class="">
-                                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                                            </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name</a>
-                                                                <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
+                                                                <span class="text-xs text-gray-700 font-normal">17-02-2025 11:05 AM</span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex flex-wrap gap-2.5 mb-2">
-                                                            <span class="badge badge-sm badge-light badge-outline">
-                                                                Admin
-                                                            </span>   
+                                                            <span class="badge badge-sm badge-light badge-outline">20250217-11055472</span>   
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center gap-1.5 pb-2">
-                                                            <img alt="flag" class="h-4 rounded-full" src="assets/media/flags/estonia.svg">
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Brands
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Category: Category Name
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Price: 1660.00 /-
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">GM/ES/0045/24-25</span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-sm badge-outline badge-success">
-                                                            YES
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Tejraj Padmakar Rule</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Inhouse Order</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-2.5">
+                                                            <div class="flex flex-col gap-0.5">
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="badge text-danger">
+                                                                    Uppaid
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-primary badge-outline">
+                                                            In Progress
                                                         </span>
                                                     </td>
                                                     <td class="text-gray-800 font-normal">
-                                                        Flash offer Sale
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Cash on Delivery</span>
+                                                        </div>                                                        
                                                     </td>
                                                     <td class="w-[60px]">
                                                         <div class="menu" data-menu="true">
@@ -236,52 +239,51 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                </tr>
+                                                </tr>   
                                                 <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
-                                                            <div class="">
-                                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                                            </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name</a>
-                                                                <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
+                                                                <span class="text-xs text-gray-700 font-normal">17-02-2025 11:05 AM</span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex flex-wrap gap-2.5 mb-2">
-                                                            <span class="badge badge-sm badge-light badge-outline">
-                                                                Admin
-                                                            </span>   
+                                                            <span class="badge badge-sm badge-light badge-outline">20250217-11055472</span>   
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center gap-1.5 pb-2">
-                                                            <img alt="flag" class="h-4 rounded-full" src="assets/media/flags/estonia.svg">
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Brands
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Category: Category Name
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Price: 1660.00 /-
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">GM/ES/0045/24-25</span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-sm badge-outline badge-warning">
-                                                            YES
-                                                        </span>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Tejraj Padmakar Rule</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Inhouse Order</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-2.5">
+                                                            <div class="flex flex-col gap-0.5">
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="badge text-primary">Paid</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-success badge-outline">Complete</span>
                                                     </td>
                                                     <td class="text-gray-800 font-normal">
-                                                        Flash offer Sale
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Cash on Delivery</span>
+                                                        </div>                                                        
                                                     </td>
                                                     <td class="w-[60px]">
                                                         <div class="menu" data-menu="true">
@@ -354,56 +356,57 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                </tr>
+                                                </tr> 
                                                 <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
-                                                            <div class="">
-                                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                                            </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name</a>
-                                                                <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
+                                                                <span class="text-xs text-gray-700 font-normal">17-02-2025 11:05 AM</span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex flex-wrap gap-2.5 mb-2">
-                                                            <span class="badge badge-sm badge-light badge-outline">
-                                                                Admin
-                                                            </span>   
+                                                            <span class="badge badge-sm badge-light badge-outline">20250217-11055472</span>   
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center gap-1.5 pb-2">
-                                                            <img alt="flag" class="h-4 rounded-full" src="assets/media/flags/estonia.svg">
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Brands
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Category: Category Name
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Price: 1660.00 /-
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">GM/ES/0045/24-25</span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-sm badge-outline badge-primary">
-                                                            YES
-                                                        </span>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Tejraj Padmakar Rule</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Inhouse Order</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-2.5">
+                                                            <div class="flex flex-col gap-0.5">
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="badge badge-outline">
+                                                                    Declined
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-outline">Cancelled</span>
                                                     </td>
                                                     <td class="text-gray-800 font-normal">
-                                                        Flash offer Sale
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Cash on Delivery</span>
+                                                        </div>                                                        
                                                     </td>
                                                     <td class="w-[60px]">
                                                         <div class="menu" data-menu="true">
-                                                            <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                                                            <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                                                                 <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
                                                                     <i class="ki-filled ki-dots-vertical">
                                                                     </i>
@@ -472,56 +475,57 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                </tr>
+                                                </tr> 
                                                 <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
-                                                            <div class="">
-                                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                                            </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name</a>
-                                                                <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
+                                                                <span class="text-xs text-gray-700 font-normal">17-02-2025 11:05 AM</span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex flex-wrap gap-2.5 mb-2">
-                                                            <span class="badge badge-sm badge-light badge-outline">
-                                                                Admin
-                                                            </span>   
+                                                            <span class="badge badge-sm badge-light badge-outline">20250217-11055472</span>   
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="flex items-center gap-1.5 pb-2">
-                                                            <img alt="flag" class="h-4 rounded-full" src="assets/media/flags/estonia.svg">
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Brands
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Category: Category Name
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Price: 1660.00 /-
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">GM/ES/0045/24-25</span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="badge badge-sm badge-outline badge-danger">
-                                                            YES
-                                                        </span>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Tejraj Padmakar Rule</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Inhouse Order</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex items-center gap-2.5">
+                                                            <div class="flex flex-col gap-0.5">
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary pb-2" href="#">11199.00 /-</a>
+                                                                <span class="badge text-danger">
+                                                                    Uppaid
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-warning badge-outline">Prnding</span>
                                                     </td>
                                                     <td class="text-gray-800 font-normal">
-                                                        Flash offer Sale
+                                                        <div class="flex items-center gap-1.5 pb-2">
+                                                            <span class="text-xs text-gray-700 font-normal">Cash on Delivery</span>
+                                                        </div>                                                        
                                                     </td>
                                                     <td class="w-[60px]">
                                                         <div class="menu" data-menu="true">
-                                                            <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                                                            <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                                                                 <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
                                                                     <i class="ki-filled ki-dots-vertical">
                                                                     </i>
@@ -590,7 +594,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                </tr>
+                                                </tr>                                              
                                             </tbody>
                                         </table>
                                     </div>
