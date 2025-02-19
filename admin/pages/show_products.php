@@ -930,9 +930,8 @@
                             <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
                             <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
                             <td>
-                                <div class="text-gray-800 font-normal">${variantDetails}</div>
-                                <div class="text-gray-700 text-xs">Highest Price: ₹${highestPrice}</div>
-                                <div class="text-gray-700 text-xs">Lowest Price: ₹${lowestPrice}</div>
+                                <div class="text-gray-700 text-xs">${variantDetails}</div>
+                                <div class="text-gray-800 text-s pt-2">Highest Price: <b>₹${highestPrice} - ₹${lowestPrice}</b></div>
                             </td>
                             <td>
                                 <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
