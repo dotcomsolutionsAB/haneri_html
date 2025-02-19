@@ -1,4 +1,5 @@
 <base href="../">
+<?php include("../auth/url.php"); ?>
 <?php 
     $current_page = "Show Products"; // Dynamically set this based on the page
 ?>
@@ -58,7 +59,7 @@
                             <div class="card-body">
                                 <div data-datatable="true" data-datatable-page-size="10">
                                     <div class="scrollable-x-auto">
-                                        <table class="table table-border" data-datatable-table="true" id="members_table">
+                                        <table class="table table-border" data-datatable-table="true" id="products-table">
                                             <thead>
                                                 <tr>
                                                     <th class="w-[60px] text-center">
@@ -601,4 +602,303 @@
             </main>
             <!-- End of Content -->
             <!-- Footer -->
+    <!-- <script>
+        $(document).ready(function () {
+            const token = localStorage.getItem('authToken');
+
+            let itemsPerPage = 10; // Default items per page
+            let currentPage = 1; // Current page number
+            let totalItems = 0; // Total items from API response
+
+            const fetchProducts = () => {
+                const offset = (currentPage - 1) * itemsPerPage;
+
+                $.ajax({
+                    url: '<?php echo BASE_URL; ?>/products/get_products',
+                    type: 'POST',
+                    headers: { Authorization: `Bearer ${token}` },
+                    data: { search: '', limit: itemsPerPage, offset: offset},
+                    success: (response) => {
+                            if (response && response.data) {
+                                totalItems = response.total_records; // Assuming total items is part of the API response
+                                populateTable(response.data);
+                                updatePagination();
+                            } else {
+                                console.error("Unexpected response format:", response);
+                            }
+                    },
+                    error: (error) => {
+                            console.error("Error fetching data:", error);
+                    }
+                });
+            };
+
+            const populateTable = (data) => {
+                const tbody = $("#products-table tbody");
+                tbody.empty();
+
+                data.forEach((product) => {
+                    const row = `
+                    <tr>
+                            <td class="text-center">
+                                <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.product_code}" />
+                            </td>
+                            <td>
+                                <div class="flex items-center gap-2.5">
+                                <img alt="${product.product_name}" class="rounded-full size-7 shrink-0" 
+                                    src="${product.product_image ? `https://app.supersteelpowertools.com${product.product_image}` : 'assets/media/placeholder.png'}" />
+                                <div class="flex flex-col">
+                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
+                                        ${product.product_name}
+                                    </a>
+                                    <span class="text-2sm text-gray-700 font-normal">${product.product_code}</span>
+                                </div>
+                                </div>
+                            </td>
+                            <td class="text-gray-800 font-normal text-center">${product.basic}.00</td>
+                            <td class="text-gray-800 font-normal text-center">${product.gst}.00</td>
+                            <td class="text-gray-800 font-normal">${product.category || 'N/A'}</td>
+                    </tr>
+                    `;
+                tbody.append(row);
+                });
+            };
+
+            const updatePagination = () => {
+                const totalPages = Math.ceil(totalItems / itemsPerPage);
+                const pagination = $(".pagination");
+                pagination.empty();
+
+                const maxVisiblePages = 5; // Number of page buttons to show
+                const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+                // Ensure that the range always includes maxVisiblePages if possible
+                const adjustedStartPage = Math.max(1, Math.min(startPage, endPage - maxVisiblePages + 1));
+
+                // Previous button
+                if (currentPage > 1) {
+                    pagination.append(
+                        `<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`
+                    );
+                }
+
+                // Page numbers
+                for (let page = adjustedStartPage; page <= endPage; page++) {
+                    const isActive = page === currentPage ? "active" : "";
+                    pagination.append(
+                        `<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`
+                    );
+                }
+
+                // Next button
+                if (currentPage < totalPages) {
+                    pagination.append(
+                        `<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`
+                    );
+                }
+
+                $("#card-title").text(
+                    `Showing ${Math.min((currentPage - 1) * itemsPerPage + 1, totalItems)} to ${
+                        Math.min(currentPage * itemsPerPage, totalItems)
+                    } of ${totalItems} Products`
+                );
+            };
+            
+            // Handle pagination click
+            $(".pagination").on("click", "button", function () {
+            currentPage = parseInt($(this).data("page"));
+            fetchProducts();
+            });
+
+
+            // Handle items per page change
+            $("[data-datatable-size]").on("change", function () {
+                itemsPerPage = parseInt($(this).val());
+                currentPage = 1; // Reset to first page
+                fetchProducts();
+            });
+
+            // Initialize dropdown for items per page
+            const perPageSelect = $("[data-datatable-size]");
+            [10, 25, 50, 100].forEach((size) => {
+                perPageSelect.append(`<option value="${size}">${size}</option>`);
+            });
+            perPageSelect.val(itemsPerPage);
+
+            // Initial fetch
+            fetchProducts();
+        });
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            const token = localStorage.getItem('authToken');
+
+            let itemsPerPage = 10; // Default items per page
+            let currentPage = 1; // Current page number
+            let totalItems = 0; // Total items from API response
+
+            const fetchProducts = () => {
+                const offset = (currentPage - 1) * itemsPerPage;
+
+                $.ajax({
+                    url: '<?php echo BASE_URL; ?>/products/get_products',
+                    type: 'POST',
+                    headers: { Authorization: `Bearer ${token}` },
+                    data: { search: '', limit: itemsPerPage, offset: offset},
+                    success: (response) => {
+                            if (response && response.data) {
+                                totalItems = response.total_records; // Assuming total items is part of the API response
+                                populateTable(response.data);
+                                updatePagination();
+                            } else {
+                                console.error("Unexpected response format:", response);
+                            }
+                    },
+                    error: (error) => {
+                            console.error("Error fetching data:", error);
+                    }
+                });
+            };
+
+            const populateTable = (data) => {
+                const tbody = $("#products-table tbody");
+                tbody.empty();
+
+                data.forEach((product) => {
+                    const row = `
+                    <tr>
+                        <td class="text-center">
+                            <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-2.5">
+                                <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
+                                <div class="flex flex-col">
+                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
+                                        ${product.name}
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_price}.00</td>
+                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_tax}.00</td>
+                        <td class="text-gray-800 font-normal">${product.category.name}</td>
+                    </tr>
+                    `;
+                    tbody.append(row);
+                });
+            };
+
+            const updatePagination = () => {
+                const totalPages = Math.ceil(totalItems / itemsPerPage);
+                const pagination = $(".pagination");
+                pagination.empty();
+
+                if (currentPage > 1) {
+                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+                }
+
+                for (let page = 1; page <= totalPages; page++) {
+                    const isActive = page === currentPage ? "active" : "";
+                    pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
+                }
+
+                if (currentPage < totalPages) {
+                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+                }
+            };
+
+            $(".pagination").on("click", "button", function () {
+                currentPage = parseInt($(this).data("page"));
+                fetchProducts();
+            });
+
+            $("[data-datatable-size]").on("change", function () {
+                itemsPerPage = parseInt($(this).val());
+                currentPage = 1;
+                fetchProducts();
+            });
+
+            // Initialize dropdown for items per page
+            const perPageSelect = $("[data-datatable-size]");
+            [10, 25, 50, 100].forEach((size) => {
+                perPageSelect.append(`<option value="${size}">${size}</option>`);
+            });
+            perPageSelect.val(itemsPerPage);
+
+            fetchProducts();
+        });
+    </script>
+    <!-- Sync Products api -->
+    <!-- <script>     
+        const syncProducts = () => {
+            const token = localStorage.getItem('authToken');
+            if (!token) return alert('You are not authenticated.');
+
+            $('.loading-spinner').show(); // Show spinner for sync operation
+
+            $.ajax({
+                url: 'https://app.supersteelpowertools.com/api/fetch_products',
+                type: 'GET',
+                headers: { Authorization: `Bearer ${token}` },
+                success: () => {
+                        $('.loading-spinner').hide();
+                        fetchProducts(); // Refresh table after sync
+                },
+                error: () => {
+                        $('.loading-spinner').hide();
+                        alert('Failed to sync products.');
+                },
+            });
+        };
+        $('#syncProducts').on('click', syncProducts); // Attach sync button click event
+
+        const handleImageUpload = () => {
+            const token = localStorage.getItem('authToken');
+            if (!token) return alert('You are not authenticated.');
+
+            const productCode = $('#productCode').val();
+            const file = $('#imageFile')[0].files[0];
+
+            if (!file) return alert('Please select an image file.');
+
+            const formData = new FormData();
+            formData.append('product_code', productCode);
+            formData.append('product_image', file);
+
+            $.ajax({
+                url: 'https://app.supersteelpowertools.com/api/admin/upload_product',
+                type: 'POST',
+                headers: { Authorization: `Bearer ${token}` },
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: (response) => {
+                        const res = JSON.parse(response);
+                        if (res.message === 'Image uploaded successfully') {
+                            alert(res.message);
+                            $('#uploadModal').modal('hide');
+                            fetchProducts(); // Refresh the product list
+                        } else {
+                            alert('Failed to upload image.');
+                        }
+                },
+                error: () => {
+                        alert('Image upload failed.');
+                },
+            });
+        };
+        $('#uploadImageBtn').on('click', handleImageUpload);
+
+        // $('#syncProducts').on('click', syncProducts);
+
+        $('#logoutBtn').on('click', () => {
+            localStorage.removeItem('authToken');
+            alert('You have been logged out.');
+            window.location.href = 'index.php';
+        });
+
+        // $(document).ready(fetchProducts);
+    </script> -->
 <?php include("footer1.php"); ?>
