@@ -34,6 +34,7 @@
     <link href="assets/css/styles.css" rel="stylesheet" />
     
     <link rel="stylesheet" href="custom/custom_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 
 <body
