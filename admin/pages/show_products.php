@@ -742,7 +742,7 @@
                 const offset = (currentPage - 1) * itemsPerPage;
 
                 $.ajax({
-                    url: 'https://haneri.dotcombusiness.in/api/products/get_products',
+                    url: '<?php echo BASE_URL; ?>/products/get_products',
                     type: 'POST',
                     headers: { Authorization: `Bearer ${token}` },
                     data: { search: '', limit: itemsPerPage, offset: offset},

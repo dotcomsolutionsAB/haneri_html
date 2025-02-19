@@ -65,7 +65,7 @@
                                                     <th class="w-[60px] text-center">
                                                         <input class="checkbox checkbox-sm" data-datatable-check="true" type="checkbox">
                                                     </th>
-                                                    <th class="min-w-[300px]">
+                                                    <th class="min-w-[200px]">
                                                         <span class="sort asc">
                                                             <span class="sort-label text-gray-700 font-normal">Name</span>
                                                             <span class="sort-icon">
@@ -73,9 +73,11 @@
                                                         </span>
                                                     </th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Added By</th>
+                                                    <th class="text-gray-700 font-normal min-w-[100px]">Brand</th>
+                                                    <th class="text-gray-700 font-normal min-w-[100px]">Category</th>
                                                     <th class="min-w-[225px]">
                                                         <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Info</span>
+                                                            <span class="sort-label text-gray-700 font-normal">Variants</span>
                                                             <span class="sort-icon">
                                                             </span>
                                                         </span>
@@ -109,7 +111,7 @@
                                                                 <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
                                                             </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name</a>
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name - (HSN: 123456)</a>
                                                                 <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
                                                             </div>
                                                         </div>
