@@ -923,6 +923,7 @@
                                         <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
                                             ${product.name}
                                         </a>
+                                        <span class="text-gray-700 text-xs">${product.variant[0]?.hsn || "N/A"}</span>
                                     </div>
                                 </div>
                             </td>
@@ -931,7 +932,7 @@
                             <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
                             <td>
                                 <div class="text-gray-700 text-xs">${variantDetails}</div>
-                                <div class="text-gray-800 text-s pt-2">Highest Price: <b>₹${highestPrice} - ₹${lowestPrice}</b></div>
+                                <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
                             </td>
                             <td>
                                 <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
