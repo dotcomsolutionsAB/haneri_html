@@ -75,7 +75,7 @@
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Added By</th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Brand</th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Category</th>
-                                                    <th class="min-w-[165px]">
+                                                    <th class="min-w-[225px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">Variants Info</span>
                                                             <span class="sort-icon">
@@ -85,15 +85,6 @@
                                                     <th class="min-w-[100px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">Publish</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    <th class="min-w-[195px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">
-                                                                Features
-                                                            </span>
                                                             <span class="sort-icon">
                                                             </span>
                                                         </span>
@@ -906,7 +897,7 @@
                         // Extract variant types and values
                         variantDetails = product.variants
                             .map(v => `${v.variant_type}: ${v.variant_value}`)
-                            .join(", ");
+                            .join(",<br> ");
 
                         // Find highest and lowest selling prices
                         product.variants.forEach(variant => {
@@ -947,11 +938,6 @@
                                 <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
                                     ${product.is_active ? "Active" : "Inactive"}
                                 </span>
-                            </td>
-                            <td class="text-gray-800 font-normal">
-                                <div class="text-gray-700 text-xs>
-                                    ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
-                                </div>
                             </td>
                             <td class="w-[60px]">
                                 ${generateActionButtons(product)}
