@@ -111,7 +111,8 @@
                                                                 <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
                                                             </div>
                                                             <div class="flex flex-col gap-0.5">
-                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Name - (HSN: 123456)</a>
+                                                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">Product Name</a>
+                                                                <span class="text-xs text-gray-700 font-normal">HSN: 123456</span>
                                                                 <span class="text-xs text-gray-700 font-normal">13 Stock Available</span>
                                                             </div>
                                                         </div>
@@ -123,31 +124,37 @@
                                                             </span>   
                                                         </div>
                                                     </td>
+                                                    <td class="text-gray-800 font-normal">
+                                                        Brand Name
+                                                    </td>
+                                                    <td class="text-gray-800 font-normal">
+                                                        Category Name
+                                                    </td>
                                                     <td>
                                                         <div class="flex items-center gap-1.5 pb-2">
                                                             <img alt="flag" class="h-4 rounded-full" src="assets/media/flags/estonia.svg">
                                                             <span class="leading-none text-gray-800 font-normal">
-                                                                Brands
+                                                                Variant Type
                                                             </span>
                                                         </div>
                                                         <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Category: Category Name
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">Variant Value</span>
                                                         </div>
                                                         <div class="flex items-center gap-1.5 pb-2">        
-                                                            <span class="leading-none text-gray-800 font-normal">
-                                                                Price: 1660.00 /-
-                                                            </span>
+                                                            <span class="text-xs text-gray-700 font-normal">HSN</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-1.5 pb-2">        
+                                                            <span class="text-xs text-gray-700 font-normal">RP: regular_price + regular_tax</span>
+                                                            <span class="text-xs text-gray-700 font-normal">SP: selling_price + selling_tax</span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <span class="badge badge-sm badge-outline badge-success">
-                                                            YES
+                                                            is active
                                                         </span>
                                                     </td>
                                                     <td class="text-gray-800 font-normal">
-                                                        Flash offer Sale
+                                                        Action buttons
                                                     </td>
                                                     <td class="w-[60px]">
                                                         <div class="menu" data-menu="true">

@@ -762,60 +762,111 @@
             };
 
             const populateTable = (data) => {
-                const tbody = $("#products-table tbody");
-                tbody.empty();
+    const tbody = $("#products-table tbody");
+    tbody.empty();
 
-                data.forEach((product) => {
-                    if (!product.variants || product.variants.length === 0) {
-                        // Handle products with NO variants
-                        tbody.append(`
-                            <tr>
-                                <td class="text-center">
-                                    <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2.5">
-                                        <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
-                                        <div class="flex flex-col">
-                                            <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
-                                                ${product.name}
-                                            </a>
-                                        </div>
+    data.forEach((product) => {
+        if (!product.variants || product.variants.length === 0) {
+            // If the product has no variants, display as a single row
+            tbody.append(`
+                <tr>
+                    <td class="text-center">
+                        <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-2.5">
+                            <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                            <div class="flex flex-col gap-0.5">
+                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                    ${product.name}
+                                </a>
+                                <span class="text-xs text-gray-700 font-normal">HSN: N/A</span>
+                                <span class="text-xs text-gray-700 font-normal">Stock: N/A</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex flex-wrap gap-2.5 mb-2">
+                            <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+                        </div>
+                    </td>
+                    <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
+                    <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                    <td class="text-gray-800 font-normal">No Variants Available</td>
+                    <td>
+                        <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                            ${product.is_active ? "Active" : "Inactive"}
+                        </span>
+                    </td>
+                    <td class="text-gray-800 font-normal">-</td>
+                </tr>
+            `);
+        } else {
+            // Loop through each variant and create a row for them
+            product.variants.forEach((variant, index) => {
+                tbody.append(`
+                    <tr>
+                        <td class="text-center">
+                            ${index === 0 ? `<input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />` : ""}
+                        </td>
+                        <td>
+                            ${index === 0 ? `
+                                <div class="flex items-center gap-2.5">
+                                    <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                                    <div class="flex flex-col gap-0.5">
+                                        <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                            ${product.name}
+                                        </a>
+                                        <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+                                        <span class="text-xs text-gray-700 font-normal">Stock: ${variant.stock || "N/A"} Available</span>
                                     </div>
-                                </td>
-                                <td colspan="2" class="text-gray-800 font-normal text-center">No Variants Available</td>
-                                <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
-                            </tr>
-                        `);
-                    } else {
-                        // Loop through all variants of the product
-                        product.variants.forEach((variant, index) => {
-                            tbody.append(`
-                                <tr>
-                                    <td class="text-center">
-                                        ${index === 0 ? `<input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />` : ""}
-                                    </td>
-                                    <td>
-                                        ${index === 0 ? `
-                                            <div class="flex items-center gap-2.5">
-                                                <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
-                                                <div class="flex flex-col">
-                                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
-                                                        ${product.name}
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        ` : ""}
-                                    </td>
-                                    <td class="text-gray-800 font-normal text-center">${variant.selling_price || "N/A"}.00</td>
-                                    <td class="text-gray-800 font-normal text-center">${variant.selling_tax || "N/A"}.00</td>
-                                    <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
-                                </tr>
-                            `);
-                        });
-                    }
-                });
-            };
+                                </div>
+                            ` : ""}
+                        </td>
+                        <td>
+                            ${index === 0 ? `
+                                <div class="flex flex-wrap gap-2.5 mb-2">
+                                    <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+                                </div>
+                            ` : ""}
+                        </td>
+                        <td class="text-gray-800 font-normal">
+                            ${index === 0 ? product.brand?.name || "N/A" : ""}
+                        </td>
+                        <td class="text-gray-800 font-normal">
+                            ${index === 0 ? product.category?.name || "Uncategorized" : ""}
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="leading-none text-gray-800 font-normal">
+                                    ${variant.variant_type}: ${variant.variant_value}
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">RP: ${variant.regular_price || "N/A"} + ${variant.regular_tax || "N/A"}</span>
+                                <span class="text-xs text-gray-700 font-normal">SP: ${variant.selling_price || "N/A"} + ${variant.selling_tax || "N/A"}</span>
+                            </div>
+                        </td>
+                        <td>
+                            ${index === 0 ? `
+                                <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                                    ${product.is_active ? "Active" : "Inactive"}
+                                </span>
+                            ` : ""}
+                        </td>
+                        <td class="text-gray-800 font-normal">
+                            ${index === 0 ? "Action buttons" : ""}
+                        </td>
+                    </tr>
+                `);
+            });
+        }
+    });
+};
+
 
 
             const updatePagination = () => {
