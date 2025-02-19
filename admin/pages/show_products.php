@@ -923,7 +923,7 @@
                                         <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
                                             ${product.name}
                                         </a>
-                                        <span class="text-gray-700 text-xs">${product.variants[0]?.hsn || "N/A"}</span>
+                                        <span class="text-gray-700 text-xs pt-3">HSN : ${product.variants[0]?.hsn || "N/A"}</span>
                                     </div>
                                 </div>
                             </td>
@@ -1008,7 +1008,7 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link export-product" data-product-id="${product.id}" href="#">
+                                <a class="menu-link export-product" data-product-id="${product.variants?.product_id || "invalid"}" href="#">
                                     <span class="menu-icon"><i class="ki-filled ki-file-up"></i></span>
                                     <span class="menu-title">Export</span>
                                 </a>
@@ -1021,14 +1021,14 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link copy-product" data-product-id="${product.id}" href="#">
+                                <a class="menu-link copy-product" data-product-id="${product.variants?.product_id || "invalid"}" href="#">
                                     <span class="menu-icon"><i class="ki-filled ki-copy"></i></span>
                                     <span class="menu-title">Make a copy</span>
                                 </a>
                             </div>
                             <div class="menu-separator"></div>
                             <div class="menu-item">
-                                <a class="menu-link remove-product" data-product-id="${product.id}" href="#">
+                                <a class="menu-link remove-product" data-product-id="${product.variants?.product_id || "invalid"}" href="#">
                                     <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
                                     <span class="menu-title">Remove</span>
                                 </a>
