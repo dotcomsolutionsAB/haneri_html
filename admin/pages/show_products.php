@@ -732,103 +732,117 @@
     </script> -->
     <script>
         $(document).ready(function () {
-            const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem("authToken");
 
-            let itemsPerPage = 10; // Default items per page
-            let currentPage = 1; // Current page number
-            let totalItems = 0; // Total items from API response
+    if (!token) {
+        console.error("Auth token not found!");
+        return;
+    }
 
-            const fetchProducts = () => {
-                const offset = (currentPage - 1) * itemsPerPage;
+    let itemsPerPage = 10;
+    let currentPage = 1;
+    let totalItems = 0;
 
-                $.ajax({
-                    url: 'https://haneri.dotcombusiness.in/api/products/get_products',
-                    type: 'POST',
-                    headers: { Authorization: `Bearer ${token}` },
-                    data: { search: '', limit: itemsPerPage, offset: offset},
-                    success: (response) => {
-                            if (response && response.data) {
-                                totalItems = response.total_records; // Assuming total items is part of the API response
-                                populateTable(response.data);
-                                updatePagination();
-                            } else {
-                                console.error("Unexpected response format:", response);
-                            }
-                    },
-                    error: (error) => {
-                            console.error("Error fetching data:", error);
-                    }
+    const fetchProducts = () => {
+        const offset = (currentPage - 1) * itemsPerPage;
+
+        $.ajax({
+            url: "https://haneri.dotcombusiness.in/api/products/get_products",
+            type: "POST",
+            headers: { 
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+            },
+            data: JSON.stringify({ search: "", limit: itemsPerPage, offset: offset }), 
+            success: (response) => {
+                if (response && response.data) {
+                    totalItems = response.total_records || response.data.length;
+                    populateTable(response.data);
+                    updatePagination();
+                } else {
+                    console.error("Unexpected response format:", response);
+                }
+            },
+            error: (xhr, status, error) => {
+                console.error("AJAX Error:", {
+                    status: xhr.status,
+                    response: xhr.responseText,
+                    error: error
                 });
-            };
 
-            const populateTable = (data) => {
-                const tbody = $("#products-table tbody");
-                tbody.empty();
-
-                data.forEach((product) => {
-                    const row = `
-                    <tr>
-                        <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-2.5">
-                                <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
-                                <div class="flex flex-col">
-                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
-                                        ${product.name}
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_price}.00</td>
-                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_tax}.00</td>
-                        <td class="text-gray-800 font-normal">${product.category.name}</td>
-                    </tr>
-                    `;
-                    tbody.append(row);
-                });
-            };
-
-            const updatePagination = () => {
-                const totalPages = Math.ceil(totalItems / itemsPerPage);
-                const pagination = $(".pagination");
-                pagination.empty();
-
-                if (currentPage > 1) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
-                }
-
-                for (let page = 1; page <= totalPages; page++) {
-                    const isActive = page === currentPage ? "active" : "";
-                    pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
-                }
-
-                if (currentPage < totalPages) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
-                }
-            };
-
-            $(".pagination").on("click", "button", function () {
-                currentPage = parseInt($(this).data("page"));
-                fetchProducts();
-            });
-
-            $("[data-datatable-size]").on("change", function () {
-                itemsPerPage = parseInt($(this).val());
-                currentPage = 1;
-                fetchProducts();
-            });
-
-            // Initialize dropdown for items per page
-            const perPageSelect = $("[data-datatable-size]");
-            [10, 25, 50, 100].forEach((size) => {
-                perPageSelect.append(`<option value="${size}">${size}</option>`);
-            });
-            perPageSelect.val(itemsPerPage);
-
-            fetchProducts();
+                alert(`Error: ${xhr.status} - ${xhr.responseText}`);
+            },
         });
+    };
+
+    const populateTable = (data) => {
+        const tbody = $("#products-table tbody");
+        tbody.empty();
+
+        data.forEach((product) => {
+            const row = `
+            <tr>
+                <td class="text-center">
+                    <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
+                </td>
+                <td>
+                    <div class="flex items-center gap-2.5">
+                        <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
+                        <div class="flex flex-col">
+                            <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
+                                ${product.name}
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-gray-800 font-normal text-center">
+                    ${product.variants?.[0]?.selling_price || "N/A"}.00
+                </td>
+                <td class="text-gray-800 font-normal text-center">
+                    ${product.variants?.[0]?.selling_tax || "N/A"}.00
+                </td>
+                <td class="text-gray-800 font-normal">
+                    ${product.category?.name || "Uncategorized"}
+                </td>
+            </tr>
+            `;
+            tbody.append(row);
+        });
+    };
+
+    const updatePagination = () => {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const pagination = $(".pagination");
+        pagination.empty();
+
+        if (currentPage > 1) {
+            pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+        }
+
+        for (let page = 1; page <= totalPages; page++) {
+            const isActive = page === currentPage ? "active" : "";
+            pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
+        }
+
+        if (currentPage < totalPages) {
+            pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+        }
+    };
+
+    $(document).on("click", ".pagination button", function () {
+        currentPage = parseInt($(this).data("page"));
+        fetchProducts();
+    });
+
+    $("[data-datatable-size]").on("change", function () {
+        itemsPerPage = parseInt($(this).val());
+        currentPage = 1;
+        fetchProducts();
+    });
+
+    fetchProducts();
+});
+
     </script>
     <!-- Sync Products api -->
     <!-- <script>     
