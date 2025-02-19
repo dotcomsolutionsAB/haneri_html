@@ -75,7 +75,7 @@
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Added By</th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Brand</th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Category</th>
-                                                    <th class="min-w-[225px]">
+                                                    <th class="min-w-[195px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">Variants</span>
                                                             <span class="sort-icon">
@@ -89,7 +89,7 @@
                                                             </span>
                                                         </span>
                                                     </th>
-                                                    <th class="min-w-[165px]">
+                                                    <th class="min-w-[195px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">
                                                                 Features
@@ -103,7 +103,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <!-- <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
@@ -220,7 +220,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                </tr>
+                                                </tr> -->
                                                 <!-- <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
@@ -851,8 +851,20 @@
                                             <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
                                         </div>
                                         <div class="flex items-center gap-1.5 pb-2">
-                                            <span class="text-xs text-gray-700 font-normal">RP: ${variant.regular_price || "N/A"} + ${variant.regular_tax || "N/A"}</span>
-                                            <span class="text-xs text-gray-700 font-normal">SP: ${variant.selling_price || "N/A"} + ${variant.selling_tax || "N/A"}</span>
+                                            <span class="text-xs text-gray-700 font-normal">
+                                                RP: ₹${(
+                                                    (variant.regular_price ? parseFloat(variant.regular_price) : 0) + 
+                                                    (variant.regular_tax ? parseFloat(variant.regular_tax) : 0)
+                                                ).toFixed(2)}
+                                            </span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 pb-2">
+                                            <span class="text-xs text-gray-700 font-normal">
+                                                SP: ₹${(
+                                                    (variant.selling_price ? parseFloat(variant.selling_price) : 0) + 
+                                                    (variant.selling_tax ? parseFloat(variant.selling_tax) : 0)
+                                                ).toFixed(2)}
+                                            </span>
                                         </div>
                                     </td>
                                     <td>
