@@ -844,6 +844,7 @@
                                         ${index === 0 ? product.category?.name || "Uncategorized" : ""}
                                     </td>
                                     <td>
+                                    <div>
                                         <div class="flex items-center gap-1.5 pb-2">
                                             <span class="leading-none text-gray-800 font-normal">
                                                 ${variant.variant_type}: ${variant.variant_value}
@@ -868,6 +869,7 @@
                                                 ).toFixed(2)}
                                             </span>
                                         </div>
+                                    </div>
                                     </td>
                                     <td>
                                         ${index === 0 ? `
