@@ -732,7 +732,7 @@
     </script> -->
     <script>
         $(document).ready(function () {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem("auth_token");
 
     if (!token) {
         console.error("Auth token not found!");
