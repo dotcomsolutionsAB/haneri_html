@@ -1,5 +1,5 @@
 <base href="../">
-<?php include("../auth/url.php"); ?>
+<?php include("../../configs/config.php"); ?>
 <?php 
     $current_page = "Show Products"; // Dynamically set this based on the page
 ?>
@@ -742,7 +742,7 @@
                 const offset = (currentPage - 1) * itemsPerPage;
 
                 $.ajax({
-                    url: '<?php echo BASE_URL; ?>/products/get_products',
+                    url: 'https://haneri.dotcombusiness.in/api/products/get_products',
                     type: 'POST',
                     headers: { Authorization: `Bearer ${token}` },
                     data: { search: '', limit: itemsPerPage, offset: offset},
