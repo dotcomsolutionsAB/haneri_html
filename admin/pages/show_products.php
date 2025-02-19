@@ -65,7 +65,7 @@
                                                     <th class="w-[60px] text-center">
                                                         <input class="checkbox checkbox-sm" data-datatable-check="true" type="checkbox">
                                                     </th>
-                                                    <th class="min-w-[300px]">
+                                                    <th class="min-w-[200px]">
                                                         <span class="sort asc">
                                                             <span class="sort-label text-gray-700 font-normal">Name</span>
                                                             <span class="sort-icon">
@@ -73,9 +73,11 @@
                                                         </span>
                                                     </th>
                                                     <th class="text-gray-700 font-normal min-w-[100px]">Added By</th>
+                                                    <th class="text-gray-700 font-normal min-w-[100px]">Brand</th>
+                                                    <th class="text-gray-700 font-normal min-w-[100px]">Category</th>
                                                     <th class="min-w-[225px]">
                                                         <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Info</span>
+                                                            <span class="sort-label text-gray-700 font-normal">Variants</span>
                                                             <span class="sort-icon">
                                                             </span>
                                                         </span>
@@ -762,110 +764,178 @@
             };
 
             const populateTable = (data) => {
-    const tbody = $("#products-table tbody");
-    tbody.empty();
+                const tbody = $("#products-table tbody");
+                tbody.empty();
 
-    data.forEach((product) => {
-        if (!product.variants || product.variants.length === 0) {
-            // If the product has no variants, display as a single row
-            tbody.append(`
-                <tr>
-                    <td class="text-center">
-                        <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
-                    </td>
-                    <td>
-                        <div class="flex items-center gap-2.5">
-                            <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                            <div class="flex flex-col gap-0.5">
-                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
-                                    ${product.name}
-                                </a>
-                                <span class="text-xs text-gray-700 font-normal">HSN: N/A</span>
-                                <span class="text-xs text-gray-700 font-normal">Stock: N/A</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="flex flex-wrap gap-2.5 mb-2">
-                            <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
-                        </div>
-                    </td>
-                    <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
-                    <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
-                    <td class="text-gray-800 font-normal">No Variants Available</td>
-                    <td>
-                        <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
-                            ${product.is_active ? "Active" : "Inactive"}
-                        </span>
-                    </td>
-                    <td class="text-gray-800 font-normal">-</td>
-                </tr>
-            `);
-        } else {
-            // Loop through each variant and create a row for them
-            product.variants.forEach((variant, index) => {
-                tbody.append(`
-                    <tr>
-                        <td class="text-center">
-                            ${index === 0 ? `<input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />` : ""}
-                        </td>
-                        <td>
-                            ${index === 0 ? `
-                                <div class="flex items-center gap-2.5">
-                                    <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                    <div class="flex flex-col gap-0.5">
-                                        <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
-                                            ${product.name}
-                                        </a>
-                                        <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
-                                        <span class="text-xs text-gray-700 font-normal">Stock: ${variant.stock || "N/A"} Available</span>
+                data.forEach((product) => {
+                    if (!product.variants || product.variants.length === 0) {
+                        // If the product has no variants, display as a single row
+                        tbody.append(`
+                            <tr>
+                                <td class="text-center">
+                                    <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2.5">
+                                        <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                                        <div class="flex flex-col gap-0.5">
+                                            <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                                ${product.name}
+                                            </a>
+                                            <span class="text-xs text-gray-700 font-normal">HSN: N/A</span>
+                                            <span class="text-xs text-gray-700 font-normal">Stock: N/A</span>
+                                        </div>
                                     </div>
-                                </div>
-                            ` : ""}
-                        </td>
-                        <td>
-                            ${index === 0 ? `
-                                <div class="flex flex-wrap gap-2.5 mb-2">
-                                    <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
-                                </div>
-                            ` : ""}
-                        </td>
-                        <td class="text-gray-800 font-normal">
-                            ${index === 0 ? product.brand?.name || "N/A" : ""}
-                        </td>
-                        <td class="text-gray-800 font-normal">
-                            ${index === 0 ? product.category?.name || "Uncategorized" : ""}
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="leading-none text-gray-800 font-normal">
-                                    ${variant.variant_type}: ${variant.variant_value}
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
-                            </div>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">RP: ${variant.regular_price || "N/A"} + ${variant.regular_tax || "N/A"}</span>
-                                <span class="text-xs text-gray-700 font-normal">SP: ${variant.selling_price || "N/A"} + ${variant.selling_tax || "N/A"}</span>
-                            </div>
-                        </td>
-                        <td>
-                            ${index === 0 ? `
-                                <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
-                                    ${product.is_active ? "Active" : "Inactive"}
-                                </span>
-                            ` : ""}
-                        </td>
-                        <td class="text-gray-800 font-normal">
-                            ${index === 0 ? "Action buttons" : ""}
-                        </td>
-                    </tr>
-                `);
-            });
-        }
-    });
-};
+                                </td>
+                                <td>
+                                    <div class="flex flex-wrap gap-2.5 mb-2">
+                                        <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+                                    </div>
+                                </td>
+                                <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
+                                <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                                <td class="text-gray-800 font-normal">No Variants Available</td>
+                                <td>
+                                    <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                                        ${product.is_active ? "Active" : "Inactive"}
+                                    </span>
+                                </td>
+                                <td class="text-gray-800 font-normal">-</td>
+                            </tr>
+                        `);
+                    } else {
+                        // Loop through each variant and create a row for them
+                        product.variants.forEach((variant, index) => {
+                            tbody.append(`
+                                <tr>
+                                    <td class="text-center">
+                                        ${index === 0 ? `<input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />` : ""}
+                                    </td>
+                                    <td>
+                                        ${index === 0 ? `
+                                            <div class="flex items-center gap-2.5">
+                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                                                <div class="flex flex-col gap-0.5">
+                                                    <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                                        ${product.name}
+                                                    </a>
+                                                    <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+                                                    <span class="text-xs text-gray-700 font-normal">Stock: ${variant.stock || "N/A"} Available</span>
+                                                </div>
+                                            </div>
+                                        ` : ""}
+                                    </td>
+                                    <td>
+                                        ${index === 0 ? `
+                                            <div class="flex flex-wrap gap-2.5 mb-2">
+                                                <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+                                            </div>
+                                        ` : ""}
+                                    </td>
+                                    <td class="text-gray-800 font-normal">
+                                        ${index === 0 ? product.brand?.name || "N/A" : ""}
+                                    </td>
+                                    <td class="text-gray-800 font-normal">
+                                        ${index === 0 ? product.category?.name || "Uncategorized" : ""}
+                                    </td>
+                                    <td>
+                                        <div class="flex items-center gap-1.5 pb-2">
+                                            <span class="leading-none text-gray-800 font-normal">
+                                                ${variant.variant_type}: ${variant.variant_value}
+                                            </span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 pb-2">
+                                            <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 pb-2">
+                                            <span class="text-xs text-gray-700 font-normal">RP: ${variant.regular_price || "N/A"} + ${variant.regular_tax || "N/A"}</span>
+                                            <span class="text-xs text-gray-700 font-normal">SP: ${variant.selling_price || "N/A"} + ${variant.selling_tax || "N/A"}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        ${index === 0 ? `
+                                            <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                                                ${product.is_active ? "Active" : "Inactive"}
+                                            </span>
+                                        ` : ""}
+                                    </td>
+                                    <td class="w-[60px]">
+                                        <div class="menu" data-menu="true">
+                                            <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                                                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                                                    <i class="ki-filled ki-dots-vertical">
+                                                    </i>
+                                                </button>
+                                                <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
+                                                    <div class="menu-item">
+                                                        <a class="menu-link" href="#">
+                                                            <span class="menu-icon">
+                                                                <i class="ki-filled ki-search-list">
+                                                                </i>
+                                                            </span>
+                                                            <span class="menu-title">
+                                                                View
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-item">
+                                                        <a class="menu-link" href="#">
+                                                            <span class="menu-icon">
+                                                                <i class="ki-filled ki-file-up">
+                                                                </i>
+                                                            </span>
+                                                            <span class="menu-title">
+                                                                Export
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-separator">
+                                                    </div>
+                                                    <div class="menu-item">
+                                                        <a class="menu-link" href="#">
+                                                            <span class="menu-icon">
+                                                                <i class="ki-filled ki-pencil">
+                                                                </i>
+                                                            </span>
+                                                            <span class="menu-title">
+                                                                Edit
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-item">
+                                                        <a class="menu-link" href="#">
+                                                            <span class="menu-icon">
+                                                                <i class="ki-filled ki-copy">
+                                                                </i>
+                                                            </span>
+                                                            <span class="menu-title">
+                                                                Make a copy
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="menu-separator">
+                                                    </div>
+                                                    <div class="menu-item">
+                                                        <a class="menu-link" href="#">
+                                                            <span class="menu-icon">
+                                                                <i class="ki-filled ki-trash">
+                                                                </i>
+                                                            </span>
+                                                            <span class="menu-title">
+                                                                Remove
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            `);
+                        });
+                    }
+                });
+            };
 
 
 
