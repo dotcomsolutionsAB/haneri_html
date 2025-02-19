@@ -991,6 +991,7 @@
     </script>
     <script>
         const generateActionButtons = (product) => {
+            const productId = product.variants?.[0]?.product_id || "invalid";
             return `
                 <div class="menu" data-menu="true">
                     <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
@@ -1008,7 +1009,7 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link export-product" data-product-id="${product.variants[0]?.product_id || "invalid"}" href="export_product.php?${product.variants?.product_id || "#"}">
+                                <a class="menu-link export-product" data-product-id="${productId || "invalid"}" href="export_product.php?${productId || "#"}">
                                     <span class="menu-icon"><i class="ki-filled ki-file-up"></i></span>
                                     <span class="menu-title">Export</span>
                                 </a>
@@ -1021,14 +1022,14 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link copy-product" data-product-id="${product.variants[0]?.product_id || "invalid"}" href="copy_product.php?${product.variants?.product_id || "#"}">
+                                <a class="menu-link copy-product" data-product-id="${productId || "invalid"}" href="copy_product.php?${productId || "#"}">
                                     <span class="menu-icon"><i class="ki-filled ki-copy"></i></span>
                                     <span class="menu-title">Make a copy</span>
                                 </a>
                             </div>
                             <div class="menu-separator"></div>
                             <div class="menu-item">
-                                <a class="menu-link remove-product" data-product-id="${product.variants[0]?.product_id || "invalid"}" href="remove_product.php?${product.variants?.product_id || "#"}">
+                                <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="remove_product.php?${productId || "#"}">
                                     <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
                                     <span class="menu-title">Remove</span>
                                 </a>
