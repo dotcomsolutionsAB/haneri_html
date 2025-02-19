@@ -766,29 +766,57 @@
                 tbody.empty();
 
                 data.forEach((product) => {
-                    const row = `
-                    <tr>
-                        <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-2.5">
-                                <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
-                                <div class="flex flex-col">
-                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
-                                        ${product.name}
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_price}.00</td>
-                        <td class="text-gray-800 font-normal text-center">${product.variants[0].selling_tax}.00</td>
-                        <td class="text-gray-800 font-normal">${product.category.name}</td>
-                    </tr>
-                    `;
-                    tbody.append(row);
+                    if (!product.variants || product.variants.length === 0) {
+                        // Handle products with NO variants
+                        tbody.append(`
+                            <tr>
+                                <td class="text-center">
+                                    <input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2.5">
+                                        <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
+                                        <div class="flex flex-col">
+                                            <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
+                                                ${product.name}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td colspan="2" class="text-gray-800 font-normal text-center">No Variants Available</td>
+                                <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                            </tr>
+                        `);
+                    } else {
+                        // Loop through all variants of the product
+                        product.variants.forEach((variant, index) => {
+                            tbody.append(`
+                                <tr>
+                                    <td class="text-center">
+                                        ${index === 0 ? `<input class="checkbox checkbox-sm" type="checkbox" value="${product.slug}" />` : ""}
+                                    </td>
+                                    <td>
+                                        ${index === 0 ? `
+                                            <div class="flex items-center gap-2.5">
+                                                <img alt="${product.name}" class="rounded-full size-7 shrink-0" src="assets/media/placeholder.png" />
+                                                <div class="flex flex-col">
+                                                    <a class="text-sm font-medium text-gray-900 hover:text-primary-active mb-px">
+                                                        ${product.name}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        ` : ""}
+                                    </td>
+                                    <td class="text-gray-800 font-normal text-center">${variant.selling_price || "N/A"}.00</td>
+                                    <td class="text-gray-800 font-normal text-center">${variant.selling_tax || "N/A"}.00</td>
+                                    <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                                </tr>
+                            `);
+                        });
+                    }
                 });
             };
+
 
             const updatePagination = () => {
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
