@@ -92,7 +92,7 @@
                                                     <th class="min-w-[165px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">
-                                                                Recent Offers
+                                                                Features
                                                             </span>
                                                             <span class="sort-icon">
                                                             </span>
@@ -800,6 +800,9 @@
                                         ${product.is_active ? "Active" : "Inactive"}
                                     </span>
                                 </td>
+                                <td class="text-gray-800 font-normal">
+                                    ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
+                                </td>
                                 <td class="text-gray-800 font-normal">-</td>
                             </tr>
                         `);
@@ -858,6 +861,9 @@
                                                 ${product.is_active ? "Active" : "Inactive"}
                                             </span>
                                         ` : ""}
+                                    </td>
+                                    <td class="text-gray-800 font-normal">
+                                        ${index === 0 && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : ""}
                                     </td>
                                     <td class="w-[60px]">
                                         <div class="menu" data-menu="true">
