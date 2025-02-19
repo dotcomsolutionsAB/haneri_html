@@ -101,7 +101,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <!-- <tr>
+                                                <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
@@ -219,7 +219,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <!-- <tr>
                                                     <td class="text-center"><input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="1"></td>
                                                     <td>
                                                         <div class="flex items-center gap-2.5">
