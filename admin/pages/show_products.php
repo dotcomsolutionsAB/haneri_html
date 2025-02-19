@@ -949,7 +949,9 @@
                                 </span>
                             </td>
                             <td class="text-gray-800 font-normal">
-                                ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
+                                <div class="text-gray-700 text-xs>
+                                    ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
+                                </div>
                             </td>
                             <td class="w-[60px]">
                                 ${generateActionButtons(product)}
