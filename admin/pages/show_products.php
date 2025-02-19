@@ -923,7 +923,7 @@
                                         <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
                                             ${product.name}
                                         </a>
-                                        <span class="text-gray-700 text-xs">${product.variant[0]?.hsn || "N/A"}</span>
+                                        <span class="text-gray-700 text-xs">${product.variants[0]?.hsn || "N/A"}</span>
                                     </div>
                                 </div>
                             </td>
