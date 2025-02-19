@@ -763,133 +763,199 @@
                 });
             };
 
+            // const populateTable = (data) => {
+            //     const tbody = $("#products-table tbody");
+            //     tbody.empty();
+
+            //     data.forEach((product) => {
+            //         if (!product.variants || product.variants.length === 0) {
+            //             // If the product has no variants, display as a single row
+            //             tbody.append(`
+            //                 <tr>
+            //                     <td class="text-center">
+            //                         <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
+            //                     </td>
+            //                     <td>
+            //                         <div class="flex items-center gap-2.5">
+            //                             <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+            //                             <div class="flex flex-col gap-0.5">
+            //                                 <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+            //                                     ${product.name}
+            //                                 </a>
+            //                                 <span class="text-xs text-gray-700 font-normal">HSN: N/A</span>
+            //                                 <span class="text-xs text-gray-700 font-normal">Stock: N/A</span>
+            //                             </div>
+            //                         </div>
+            //                     </td>
+            //                     <td>
+            //                         <div class="flex flex-wrap gap-2.5 mb-2">
+            //                             <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+            //                         </div>
+            //                     </td>
+            //                     <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
+            //                     <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+            //                     <td class="text-gray-800 font-normal">No Variants Available</td>
+            //                     <td>
+            //                         <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+            //                             ${product.is_active ? "Active" : "Inactive"}
+            //                         </span>
+            //                     </td>
+            //                     <td class="text-gray-800 font-normal">
+            //                         ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
+            //                     </td>
+            //                     <td class="w-[60px]">
+            //                         ${generateActionButtons(product)}
+            //                     </td>
+            //                 </tr>
+            //             `);
+            //         } else {
+            //             // Loop through each variant and create a row for them
+            //             product.variants.forEach((variant, index) => {
+            //                 tbody.append(`
+            //                     <tr>
+            //                         <td class="text-center">
+            //                             ${index === 0 ? `<input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />` : ""}
+            //                         </td>
+            //                         <td>
+            //                             ${index === 0 ? `
+            //                                 <div class="flex items-center gap-2.5">
+            //                                     <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+            //                                     <div class="flex flex-col gap-0.5">
+            //                                         <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+            //                                             ${product.name}
+            //                                         </a>
+            //                                         <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+            //                                         <span class="text-xs text-gray-700 font-normal">Stock: ${variant.stock || "N/A"} Available</span>
+            //                                     </div>
+            //                                 </div>
+            //                             ` : ""}
+            //                         </td>
+            //                         <td>
+            //                             ${index === 0 ? `
+            //                                 <div class="flex flex-wrap gap-2.5 mb-2">
+            //                                     <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
+            //                                 </div>
+            //                             ` : ""}
+            //                         </td>
+            //                         <td class="text-gray-800 font-normal">
+            //                             ${index === 0 ? product.brand?.name || "N/A" : ""}
+            //                         </td>
+            //                         <td class="text-gray-800 font-normal">
+            //                             ${index === 0 ? product.category?.name || "Uncategorized" : ""}
+            //                         </td>
+            //                         <td>
+            //                         <div>
+            //                             <div class="flex items-center gap-1.5 pb-2">
+            //                                 <span class="leading-none text-gray-800 font-normal">
+            //                                     ${variant.variant_type}: ${variant.variant_value}
+            //                                 </span>
+            //                             </div>
+            //                             <div class="flex items-center gap-1.5 pb-2">
+            //                                 <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
+            //                             </div>
+            //                             <div class="flex items-center gap-1.5 pb-2">
+            //                                 <span class="text-xs text-gray-700 font-normal">
+            //                                     RP: ₹${(
+            //                                         (variant.regular_price ? parseFloat(variant.regular_price) : 0) + 
+            //                                         (variant.regular_tax ? parseFloat(variant.regular_tax) : 0)
+            //                                     ).toFixed(2)}
+            //                                 </span>
+            //                             </div>
+            //                             <div class="flex items-center gap-1.5 pb-2">
+            //                                 <span class="text-xs text-gray-700 font-normal">
+            //                                     SP: ₹${(
+            //                                         (variant.selling_price ? parseFloat(variant.selling_price) : 0) + 
+            //                                         (variant.selling_tax ? parseFloat(variant.selling_tax) : 0)
+            //                                     ).toFixed(2)}
+            //                                 </span>
+            //                             </div>
+            //                         </div>
+            //                         </td>
+            //                         <td>
+            //                             ${index === 0 ? `
+            //                                 <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+            //                                     ${product.is_active ? "Active" : "Inactive"}
+            //                                 </span>
+            //                             ` : ""}
+            //                         </td>
+            //                         <td class="text-gray-800 font-normal">
+            //                             <span class="text-xs text-gray-700 font-normal">    
+            //                                 ${index === 0 && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : ""}
+            //                             </span>
+            //                         </td>
+            //                         <td class="w-[60px]">
+            //                             ${index === 0 ? generateActionButtons(product) : ""}
+            //                         </td>
+            //                     </tr>
+            //                 `);
+            //             });
+            //         }
+            //     });
+            // };
             const populateTable = (data) => {
                 const tbody = $("#products-table tbody");
                 tbody.empty();
 
                 data.forEach((product) => {
-                    if (!product.variants || product.variants.length === 0) {
-                        // If the product has no variants, display as a single row
-                        tbody.append(`
-                            <tr>
-                                <td class="text-center">
-                                    <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
-                                </td>
-                                <td>
-                                    <div class="flex items-center gap-2.5">
-                                        <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                        <div class="flex flex-col gap-0.5">
-                                            <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
-                                                ${product.name}
-                                            </a>
-                                            <span class="text-xs text-gray-700 font-normal">HSN: N/A</span>
-                                            <span class="text-xs text-gray-700 font-normal">Stock: N/A</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex flex-wrap gap-2.5 mb-2">
-                                        <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
-                                    </div>
-                                </td>
-                                <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
-                                <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
-                                <td class="text-gray-800 font-normal">No Variants Available</td>
-                                <td>
-                                    <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
-                                        ${product.is_active ? "Active" : "Inactive"}
-                                    </span>
-                                </td>
-                                <td class="text-gray-800 font-normal">
-                                    ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
-                                </td>
-                                <td class="w-[60px]">
-                                    ${generateActionButtons(product)}
-                                </td>
-                            </tr>
-                        `);
-                    } else {
-                        // Loop through each variant and create a row for them
-                        product.variants.forEach((variant, index) => {
-                            tbody.append(`
-                                <tr>
-                                    <td class="text-center">
-                                        ${index === 0 ? `<input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />` : ""}
-                                    </td>
-                                    <td>
-                                        ${index === 0 ? `
-                                            <div class="flex items-center gap-2.5">
-                                                <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
-                                                <div class="flex flex-col gap-0.5">
-                                                    <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
-                                                        ${product.name}
-                                                    </a>
-                                                    <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
-                                                    <span class="text-xs text-gray-700 font-normal">Stock: ${variant.stock || "N/A"} Available</span>
-                                                </div>
-                                            </div>
-                                        ` : ""}
-                                    </td>
-                                    <td>
-                                        ${index === 0 ? `
-                                            <div class="flex flex-wrap gap-2.5 mb-2">
-                                                <span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span>
-                                            </div>
-                                        ` : ""}
-                                    </td>
-                                    <td class="text-gray-800 font-normal">
-                                        ${index === 0 ? product.brand?.name || "N/A" : ""}
-                                    </td>
-                                    <td class="text-gray-800 font-normal">
-                                        ${index === 0 ? product.category?.name || "Uncategorized" : ""}
-                                    </td>
-                                    <td>
-                                    <div>
-                                        <div class="flex items-center gap-1.5 pb-2">
-                                            <span class="leading-none text-gray-800 font-normal">
-                                                ${variant.variant_type}: ${variant.variant_value}
-                                            </span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5 pb-2">
-                                            <span class="text-xs text-gray-700 font-normal">HSN: ${variant.hsn || "N/A"}</span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5 pb-2">
-                                            <span class="text-xs text-gray-700 font-normal">
-                                                RP: ₹${(
-                                                    (variant.regular_price ? parseFloat(variant.regular_price) : 0) + 
-                                                    (variant.regular_tax ? parseFloat(variant.regular_tax) : 0)
-                                                ).toFixed(2)}
-                                            </span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5 pb-2">
-                                            <span class="text-xs text-gray-700 font-normal">
-                                                SP: ₹${(
-                                                    (variant.selling_price ? parseFloat(variant.selling_price) : 0) + 
-                                                    (variant.selling_tax ? parseFloat(variant.selling_tax) : 0)
-                                                ).toFixed(2)}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    </td>
-                                    <td>
-                                        ${index === 0 ? `
-                                            <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
-                                                ${product.is_active ? "Active" : "Inactive"}
-                                            </span>
-                                        ` : ""}
-                                    </td>
-                                    <td class="text-gray-800 font-normal">
-                                        <span class="text-xs text-gray-700 font-normal">    
-                                            ${index === 0 && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : ""}
-                                        </span>
-                                    </td>
-                                    <td class="w-[60px]">
-                                        ${index === 0 ? generateActionButtons(product) : ""}
-                                    </td>
-                                </tr>
-                            `);
+                    // Get variant details
+                    let variantDetails = "";
+                    let highestPrice = 0;
+                    let lowestPrice = Infinity;
+
+                    if (product.variants && product.variants.length > 0) {
+                        // Extract variant types and values
+                        variantDetails = product.variants
+                            .map(v => `${v.variant_type}: ${v.variant_value}`)
+                            .join(", ");
+
+                        // Find highest and lowest selling prices
+                        product.variants.forEach(variant => {
+                            let sellingPrice = parseFloat(variant.selling_price) || 0;
+                            if (sellingPrice > highestPrice) highestPrice = sellingPrice;
+                            if (sellingPrice < lowestPrice) lowestPrice = sellingPrice;
                         });
+                    } else {
+                        variantDetails = "No Variants Available";
+                        lowestPrice = highestPrice = "N/A"; // If no variants exist
                     }
+
+                    // Append a single row for each product
+                    tbody.append(`
+                        <tr>
+                            <td class="text-center">
+                                <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
+                            </td>
+                            <td>
+                                <div class="flex items-center gap-2.5">
+                                    <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                                    <div class="flex flex-col gap-0.5">
+                                        <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                            ${product.name}
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span></td>
+                            <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
+                            <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                            <td>
+                                <div class="text-gray-800 font-normal">${variantDetails}</div>
+                                <div class="text-gray-700 text-xs">Highest Price: ₹${highestPrice}</div>
+                                <div class="text-gray-700 text-xs">Lowest Price: ₹${lowestPrice}</div>
+                            </td>
+                            <td>
+                                <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                                    ${product.is_active ? "Active" : "Inactive"}
+                                </span>
+                            </td>
+                            <td class="text-gray-800 font-normal">
+                                ${product.features && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : "No Features Available"}
+                            </td>
+                            <td class="w-[60px]">
+                                ${generateActionButtons(product)}
+                            </td>
+                        </tr>
+                    `);
                 });
             };
 
