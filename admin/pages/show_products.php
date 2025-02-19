@@ -877,7 +877,9 @@
                                         ` : ""}
                                     </td>
                                     <td class="text-gray-800 font-normal">
-                                        ${index === 0 && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : ""}
+                                        <span class="text-xs text-gray-700 font-normal">    
+                                            ${index === 0 && product.features.length > 0 ? product.features.map(f => `${f.feature_name}: ${f.feature_value}`).join("<br>") : ""}
+                                        </span>
                                     </td>
                                     <td class="w-[60px]">
                                         ${index === 0 ? generateActionButtons(product) : ""}
