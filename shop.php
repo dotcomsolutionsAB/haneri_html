@@ -89,42 +89,8 @@
                         </nav>
 
                         <div class="row">
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon" id="product-table">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-1.jpg" width="500"
-                                                height="500" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="demo3-shop.html" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirElite AEW</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col products-table">
+                                <!-- products showing here  -->
                             </div>
                         </div>
 
@@ -362,7 +328,7 @@
                 
                 // Append a single row for each product
                 tbody.append(`
-                    <div class="product-default inner-quickview inner-icon" id="product-table">
+                    <div class="product-default inner-quickview inner-icon" id="pro-table">
                         <figure>
                             <a href="https://haneri.ongoingsites.xyz/domex">
                                 <img src="assets/images/products/product-1.jpg" width="500"
