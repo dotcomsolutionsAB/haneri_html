@@ -97,7 +97,11 @@
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Brands</label>
-                                        <input class="input" placeholder="ABCD" type="text" value="">
+                                        <select class="select">
+                                            <option>Brand 1</option>
+                                            <option>Brand 2</option>
+                                            <option>Brand 3</option>
+                                        </select>
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Tags</label>
