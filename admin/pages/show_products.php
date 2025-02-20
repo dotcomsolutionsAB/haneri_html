@@ -370,10 +370,8 @@
                     pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
                 }
 
-                $("#card-title").text(
-                    `Showing ${Math.min((currentPage - 1) * itemsPerPage + 1, totalItems)} to ${
-                            Math.min(currentPage * itemsPerPage, totalItems)
-                    } of ${totalItems} Products`
+                $("#count-products").text(
+                    `COUNT : ${totalItems} Products`
                 );
             };
 
