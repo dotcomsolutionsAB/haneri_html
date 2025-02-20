@@ -369,16 +369,16 @@
             pagination.empty();
 
             if (currentPage > 1) {
-                pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+                pagination.append(`<button class="page-link" data-page="${currentPage - 1}">Previous</button>`);
             }
 
             for (let page = 1; page <= totalPages; page++) {
                 const isActive = page === currentPage ? "active" : "";
-                pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
+                pagination.append(`<button class="page-link ${isActive}" data-page="${page}">${page}</button>`);
             }
 
             if (currentPage < totalPages) {
-                pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+                pagination.append(`<button class="page-link" data-page="${currentPage + 1}">Next</button>`);
             }
         };
 
