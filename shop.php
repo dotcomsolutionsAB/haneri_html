@@ -89,7 +89,7 @@
 
                         <div class="row">
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
+                                <div class="product-default inner-quickview inner-icon" id="product-table">
                                     <figure>
                                         <a href="https://haneri.ongoingsites.xyz/domex">
                                             <img src="assets/images/products/product-1.jpg" width="500"
@@ -125,231 +125,6 @@
                                     </div><!-- End .product-details -->
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-3.jpg" width="273"
-                                                height="273" alt="productr" />
-                                            <img src="assets/images/products/product-3-2.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart"><i
-                                                    class="fa fa-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirElite AEW3</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-6.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR2</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-7.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR1</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-8.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALR3</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-9.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux ALW4</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
-                                    <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
-                                            <img src="assets/images/products/product-10.jpg" width="273"
-                                                height="273" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                            title="Quick View">Quick
-                                            View</a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="https://haneri.ongoingsites.xyz/domex" class="product-category">category</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="https://haneri.ongoingsites.xyz/domex">Haneri AirLux APP1</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div><!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="old-price">₹59.00</span>
-                                            <span class="product-price">₹49.00</span>
-                                        </div><!-- End .price-box -->
-                                    </div><!-- End .product-details -->
-                                </div>
-                            </div>
                         </div>
 
                         <nav class="toolbox toolbox-pagination">
@@ -357,16 +132,16 @@
                                 <label>Show:</label>
 
                                 <div class="select-custom">
-                                    <select name="count" class="form-control">
-                                        <option value="12">12</option>
-                                        <option value="24">24</option>
-                                        <option value="36">36</option>
+                                    <select name="perpage" class="form-control" data-datatable-size="true">
+                                        <option value="12">10</option>
+                                        <option value="24">15</option>
+                                        <option value="36">25</option>
                                     </select>
                                 </div><!-- End .select-custom -->
                             </div><!-- End .toolbox-item -->
 
                             <ul class="pagination toolbox-item">
-                                <li class="page-item active">
+                                <!-- <li class="page-item active">
                                     <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -376,7 +151,7 @@
                                 <li class="page-item"><span class="page-link">...</span></li>
                                 <li class="page-item">
                                     <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div><!-- End .main-content -->
@@ -546,7 +321,127 @@
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </main>
+<script>
+    $(document).ready(function () {
+        const token = localStorage.getItem('auth_token');
 
+        let itemsPerPage = 10; // Default items per page
+        let currentPage = 1; // Current page number
+        let totalItems = 0; // Total items from API response
+
+        const fetchProducts = () => {
+            const offset = (currentPage - 1) * itemsPerPage;
+
+            $.ajax({
+                url: '<?php echo BASE_URL; ?>/products/get_products',
+                type: 'POST',
+                headers: { Authorization: `Bearer ${token}` },
+                data: { search: '', limit: itemsPerPage, offset: offset},
+                success: (response) => {
+                        if (response && response.data) {
+                            totalItems = response.total_records; // Assuming total items is part of the API response
+                            populateTable(response.data);
+                            updatePagination();
+                        } else {
+                            console.error("Unexpected response format:", response);
+                        }
+                },
+                error: (error) => {
+                        console.error("Error fetching data:", error);
+                }
+            });
+        };
+
+        
+        const populateTable = (data) => {
+            const tbody = $("#products-table");
+            tbody.empty();
+
+            data.forEach((product) => {
+                
+                // Append a single row for each product
+                tbody.append(`
+                    <div class="product-default inner-quickview inner-icon" id="product-table">
+                        <figure>
+                            <a href="https://haneri.ongoingsites.xyz/domex">
+                                <img src="assets/images/products/product-1.jpg" width="500"
+                                    height="500" alt="productr" />
+                            </a>
+                            <div class="btn-icon-group">
+                                <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
+                                        class="icon-shopping-cart"></i></a>
+                            </div>
+                            <a href="domex/${product.slug}" class="btn-quickview"
+                                title="Quick View">Quick
+                                View</a>
+                        </figure>
+                        <div class="product-details">
+                            <div class="category-wrap">
+                                <div class="category-list">
+                                    <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">
+                                <a href="domex/${product.slug}">${product.name}</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="product-ratings">
+                                    <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div><!-- End .product-ratings -->
+                            </div><!-- End .product-container -->
+                            <div class="price-box">
+                                <span class="old-price">${product.variant[0].selling_price || "00"}</span>
+                                <span class="product-price">${product.variant[0].regular_price || "00"}</span>
+                            </div><!-- End .price-box -->
+                        </div><!-- End .product-details -->
+                    </div>
+                `);
+            });
+        };
+
+
+
+        const updatePagination = () => {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const pagination = $(".pagination");
+            pagination.empty();
+
+            if (currentPage > 1) {
+                pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+            }
+
+            for (let page = 1; page <= totalPages; page++) {
+                const isActive = page === currentPage ? "active" : "";
+                pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
+            }
+
+            if (currentPage < totalPages) {
+                pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+            }
+        };
+
+        $(".pagination").on("click", "button", function () {
+            currentPage = parseInt($(this).data("page"));
+            fetchProducts();
+        });
+
+        $("[data-datatable-size]").on("change", function () {
+            itemsPerPage = parseInt($(this).val());
+            currentPage = 1;
+            fetchProducts();
+        });
+
+        // Initialize dropdown for items per page
+        const perPageSelect = $("[data-datatable-size]");
+        [10, 25, 50, 100].forEach((size) => {
+            perPageSelect.append(`<option value="${size}">${size}</option>`);
+        });
+        perPageSelect.val(itemsPerPage);
+
+        fetchProducts();
+    });
+</script>
             <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
