@@ -2312,7 +2312,7 @@
                                         </div>
                                         <div class="menu-item px-4 py-1.5">
                                             <a class="btn btn-sm btn-light justify-center"
-                                                href="../logout.php">
+                                                href="logout.php">
                                                 Log out
                                             </a>
                                         </div>

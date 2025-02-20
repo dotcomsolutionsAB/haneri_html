@@ -1,4 +1,5 @@
 <base href="../">
+<?php include("../../configs/auth_check.php"); ?>
 <?php 
     $current_page = "Add Order"; // Dynamically set this based on the page
 ?>
