@@ -89,7 +89,7 @@
                         </nav>
 
                         <div class="row">
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col products-table">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" id="products-table">
                                 <!-- products showing here  -->
                             </div>
                         </div>
@@ -100,9 +100,7 @@
 
                                 <div class="select-custom">
                                     <select name="perpage" class="form-control" data-datatable-size="true">
-                                        <option value="12">10</option>
-                                        <option value="24">15</option>
-                                        <option value="36">25</option>
+                                        <!-- options for each page count product -->
                                     </select>
                                 </div><!-- End .select-custom -->
                             </div><!-- End .toolbox-item -->
@@ -325,7 +323,13 @@
             tbody.empty();
 
             data.forEach((product) => {
-                
+                // Check if the product has an image, otherwise use a placeholder
+                    let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
+
+                    // Ensure variants exist before accessing them
+                    let regularPrice = product.variants?.[0]?.regular_price || "00";
+                    let sellingPrice = product.variants?.[0]?.selling_price || "00";
+
                 // Append a single row for each product
                 tbody.append(`
                     <div class="product-default inner-quickview inner-icon" id="pro-table">
@@ -356,11 +360,12 @@
                                     <span class="ratings" style="width:100%"></span><!-- End .ratings -->
                                     <span class="tooltiptext tooltip-top"></span>
                                 </div><!-- End .product-ratings -->
-                            </div><!-- End .product-container -->
+                            </div>
                             <div class="price-box">
-                                
-                            </div><!-- End .price-box -->
-                        </div><!-- End .product-details -->
+                                <span class="old-price">${sellingPrice}</span>
+                                <span class="product-price">${regularPrice}</span>
+                            </div>
+                        </div>
                     </div>
                 `);
             });
