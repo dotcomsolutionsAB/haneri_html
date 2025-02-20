@@ -1,5 +1,6 @@
 <?php include("header.php"); ?>
-
+<?php include("configs/auth_check.php"); ?>
+<?php include("configs/config.php"); ?>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
