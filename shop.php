@@ -358,8 +358,7 @@
                                 </div><!-- End .product-ratings -->
                             </div><!-- End .product-container -->
                             <div class="price-box">
-                                <span class="old-price">${product.variants?.[0].selling_price || "00"}</span>
-                                <span class="product-price">${product.variants?.[0].regular_price || "00"}</span>
+                                
                             </div><!-- End .price-box -->
                         </div><!-- End .product-details -->
                     </div>
