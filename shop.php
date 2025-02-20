@@ -274,135 +274,133 @@
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </main>
-<script>
-    $(document).ready(function () {
-        const token = localStorage.getItem('auth_token');
+        <script>
+            $(document).ready(function () {
+                const token = localStorage.getItem('auth_token');
 
-        let itemsPerPage = 10; // Default items per page
-        let currentPage = 1; // Current page number
-        let totalItems = 0; // Total items from API response
+                let itemsPerPage = 10; // Default items per page
+                let currentPage = 1; // Current page number
+                let totalItems = 0; // Total items from API response
 
-        const fetchProducts = () => {
-            const offset = (currentPage - 1) * itemsPerPage;
+                const fetchProducts = () => {
+                    const offset = (currentPage - 1) * itemsPerPage;
 
-            $.ajax({
-                url: '<?php echo BASE_URL; ?>/products/get_products',
-                type: 'POST',
-                headers: { Authorization: `Bearer ${token}` },
-                data: { search: '', limit: itemsPerPage, offset: offset},
-                success: (response) => {
-                        if (response && response.data) {
-                            totalItems = response.total_records; // Assuming total items is part of the API response
-                            populateTable(response.data);
-                            updatePagination();
-                        } else {
-                            console.error("Unexpected response format:", response);
+                    $.ajax({
+                        url: '<?php echo BASE_URL; ?>/products/get_products',
+                        type: 'POST',
+                        headers: { Authorization: `Bearer ${token}` },
+                        data: { search: '', limit: itemsPerPage, offset: offset},
+                        success: (response) => {
+                                if (response && response.data) {
+                                    totalItems = response.total_records; // Assuming total items is part of the API response
+                                    populateTable(response.data);
+                                    updatePagination();
+                                } else {
+                                    console.error("Unexpected response format:", response);
+                                }
+                        },
+                        error: (error) => {
+                                console.error("Error fetching data:", error);
                         }
-                },
-                error: (error) => {
-                        console.error("Error fetching data:", error);
-                }
-            });
-        };
+                    });
+                };
 
-        
-        const populateTable = (data) => {
-            const tbody = $("#products-table");
-            tbody.empty();
+                
+                const populateTable = (data) => {
+                    const tbody = $("#products-table");
+                    tbody.empty();
 
-            data.forEach((product) => {
-                // Check if the product has an image, otherwise use a placeholder
-                    let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
+                    data.forEach((product) => {
+                        // Check if the product has an image, otherwise use a placeholder
+                            let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
 
-                    // Ensure variants exist before accessing them
-                    let regularPrice = product.variants?.[0]?.regular_price || "00";
-                    let sellingPrice = product.variants?.[0]?.selling_price || "00";
+                            // Ensure variants exist before accessing them
+                            let regularPrice = product.variants?.[0]?.regular_price || "00";
+                            let sellingPrice = product.variants?.[0]?.selling_price || "00";
 
-                // Append a single row for each product
-                tbody.append(`
-                    <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
-                        <div class="product-default inner-quickview inner-icon" id="pro-table">
-                            <figure>
-                                <a href="https://haneri.ongoingsites.xyz/domex">
-                                    <img src="assets/images/products/product-1.jpg" width="500"
-                                        height="500" alt="productr" />
-                                </a>
-                                <div class="btn-icon-group">
-                                    <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                            class="icon-shopping-cart"></i></a>
-                                </div>
-                                <a href="domex/${product.slug}" class="btn-quickview"
-                                    title="Quick View">Quick
-                                    View</a>
-                            </figure>
-                            <div class="product-details">
-                                <div class="category-wrap">
-                                    <div class="category-list">
-                                        <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                        // Append a single row for each product
+                        tbody.append(`
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
+                                <div class="product-default inner-quickview inner-icon" id="pro-table">
+                                    <figure>
+                                        <a href="https://haneri.ongoingsites.xyz/domex">
+                                            <img src="assets/images/products/product-1.jpg" width="500"
+                                                height="500" alt="productr" />
+                                        </a>
+                                        <div class="btn-icon-group">
+                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
+                                                    class="icon-shopping-cart"></i></a>
+                                        </div>
+                                        <a href="domex/${product.slug}" class="btn-quickview"
+                                            title="Quick View">Quick
+                                            View</a>
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                                            </div>
+                                        </div>
+                                        <h3 class="product-title">
+                                            <a href="domex/${product.slug}">${product.name}</a>
+                                        </h3>
+                                        <div class="ratings-container">
+                                            <div class="product-ratings">
+                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div><!-- End .product-ratings -->
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="old-price">${sellingPrice}</span>
+                                            <span class="product-price">${regularPrice}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <h3 class="product-title">
-                                    <a href="domex/${product.slug}">${product.name}</a>
-                                </h3>
-                                <div class="ratings-container">
-                                    <div class="product-ratings">
-                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                        <span class="tooltiptext tooltip-top"></span>
-                                    </div><!-- End .product-ratings -->
-                                </div>
-                                <div class="price-box">
-                                    <span class="old-price">${sellingPrice}</span>
-                                    <span class="product-price">${regularPrice}</span>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                `);
+                        `);
+                    });
+                };
+
+                const updatePagination = () => {
+                    const totalPages = Math.ceil(totalItems / itemsPerPage);
+                    const pagination = $(".pagination");
+                    pagination.empty();
+
+                    if (currentPage > 1) {
+                        pagination.append(`<button class="page-link pagi" data-page="${currentPage - 1}">Previous</button>`);
+                    }
+
+                    for (let page = 1; page <= totalPages; page++) {
+                        const isActive = page === currentPage ? "active" : "";
+                        pagination.append(`<button class="page-link pagi ${isActive}" data-page="${page}">${page}</button>`);
+                    }
+
+                    if (currentPage < totalPages) {
+                        pagination.append(`<button class="page-link pagi" data-page="${currentPage + 1}">Next</button>`);
+                    }
+                };
+
+                $(".pagination").on("click", "button", function () {
+                    currentPage = parseInt($(this).data("page"));
+                    fetchProducts();
+                });
+
+                $("[data-datatable-size]").on("change", function () {
+                    itemsPerPage = parseInt($(this).val());
+                    currentPage = 1;
+                    fetchProducts();
+                });
+
+                // Initialize dropdown for items per page
+                const perPageSelect = $("[data-datatable-size]");
+                [10, 20, 40, 60, 100].forEach((size) => {
+                    perPageSelect.append(`<option value="${size}">${size}</option>`);
+                });
+                perPageSelect.val(itemsPerPage);
+
+                fetchProducts();
             });
-        };
-
-
-
-        const updatePagination = () => {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const pagination = $(".pagination");
-            pagination.empty();
-
-            if (currentPage > 1) {
-                pagination.append(`<button class="page-link pagi" data-page="${currentPage - 1}">Previous</button>`);
-            }
-
-            for (let page = 1; page <= totalPages; page++) {
-                const isActive = page === currentPage ? "active" : "";
-                pagination.append(`<button class="page-link pagi ${isActive}" data-page="${page}">${page}</button>`);
-            }
-
-            if (currentPage < totalPages) {
-                pagination.append(`<button class="page-link pagi" data-page="${currentPage + 1}">Next</button>`);
-            }
-        };
-
-        $(".pagination").on("click", "button", function () {
-            currentPage = parseInt($(this).data("page"));
-            fetchProducts();
-        });
-
-        $("[data-datatable-size]").on("change", function () {
-            itemsPerPage = parseInt($(this).val());
-            currentPage = 1;
-            fetchProducts();
-        });
-
-        // Initialize dropdown for items per page
-        const perPageSelect = $("[data-datatable-size]");
-        [10, 20, 40, 60, 100].forEach((size) => {
-            perPageSelect.append(`<option value="${size}">${size}</option>`);
-        });
-        perPageSelect.val(itemsPerPage);
-
-        fetchProducts();
-    });
-</script>
+        </script>
             <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
