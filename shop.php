@@ -88,10 +88,8 @@
                             </div><!-- End .toolbox-right -->
                         </nav>
 
-                        <div class="row">
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" id="products-table">
-                                <!-- products showing here  -->
-                            </div>
+                        <div class="row" id="products-table">
+                            <!-- products showing here  -->
                         </div>
 
                         <nav class="toolbox toolbox-pagination">
@@ -106,17 +104,7 @@
                             </div><!-- End .toolbox-item -->
 
                             <ul class="pagination toolbox-item">
-                                <!-- <li class="page-item active">
-                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><span class="page-link">...</span></li>
-                                <li class="page-item">
-                                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
-                                </li> -->
+                                
                             </ul>
                         </nav>
                     </div><!-- End .main-content -->
@@ -332,38 +320,40 @@
 
                 // Append a single row for each product
                 tbody.append(`
-                    <div class="product-default inner-quickview inner-icon" id="pro-table">
-                        <figure>
-                            <a href="https://haneri.ongoingsites.xyz/domex">
-                                <img src="assets/images/products/product-1.jpg" width="500"
-                                    height="500" alt="productr" />
-                            </a>
-                            <div class="btn-icon-group">
-                                <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                        class="icon-shopping-cart"></i></a>
-                            </div>
-                            <a href="domex/${product.slug}" class="btn-quickview"
-                                title="Quick View">Quick
-                                View</a>
-                        </figure>
-                        <div class="product-details">
-                            <div class="category-wrap">
-                                <div class="category-list">
-                                    <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
+                        <div class="product-default inner-quickview inner-icon" id="pro-table">
+                            <figure>
+                                <a href="https://haneri.ongoingsites.xyz/domex">
+                                    <img src="assets/images/products/product-1.jpg" width="500"
+                                        height="500" alt="productr" />
+                                </a>
+                                <div class="btn-icon-group">
+                                    <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
+                                            class="icon-shopping-cart"></i></a>
                                 </div>
-                            </div>
-                            <h3 class="product-title">
-                                <a href="domex/${product.slug}">${product.name}</a>
-                            </h3>
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div><!-- End .product-ratings -->
-                            </div>
-                            <div class="price-box">
-                                <span class="old-price">${sellingPrice}</span>
-                                <span class="product-price">${regularPrice}</span>
+                                <a href="domex/${product.slug}" class="btn-quickview"
+                                    title="Quick View">Quick
+                                    View</a>
+                            </figure>
+                            <div class="product-details">
+                                <div class="category-wrap">
+                                    <div class="category-list">
+                                        <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                                    </div>
+                                </div>
+                                <h3 class="product-title">
+                                    <a href="domex/${product.slug}">${product.name}</a>
+                                </h3>
+                                <div class="ratings-container">
+                                    <div class="product-ratings">
+                                        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                        <span class="tooltiptext tooltip-top"></span>
+                                    </div><!-- End .product-ratings -->
+                                </div>
+                                <div class="price-box">
+                                    <span class="old-price">${sellingPrice}</span>
+                                    <span class="product-price">${regularPrice}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
