@@ -17,6 +17,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
     .variant p{
         padding: 5px;
@@ -24,6 +25,10 @@
         font-size: 18px;
         color: #000;
         font-weight: 600;
+    }
+    .variant.selected {
+        background-color: black;
+        color: white;
     }
 </style>
 <!-- Product Detail Page -->
@@ -60,23 +65,26 @@
                         // Load Variants
                         const variantsContainer = document.querySelector('.variants');
                         variantsContainer.innerHTML = data.data.variants.map(variant => 
-                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price})">
+                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
                                 <p>${variant.variant_type}</p>
                             </div>`
                         ).join('');
-
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
             }
         });
 
-        function updateVariant(variantId, variantValue, sellingPrice, regularPrice) {
+        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
             document.getElementById('product-price').textContent = `₹${sellingPrice}`;
             document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
             document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
             document.getElementById('regular-price').textContent = `₹${regularPrice}`;
             document.getElementById('selected-variant').value = variantId;
+            
+            // Remove selected class from all variants and add to the clicked one
+            document.querySelectorAll('.variant').forEach(variant => variant.classList.remove('selected'));
+            element.classList.add('selected');
         }
 
         function updatePrice() {
@@ -96,7 +104,7 @@
             const quantity = document.getElementById('quantity').value;
             const token = localStorage.getItem('auth_token');
 
-            fetch(`<?php echo BASE_URL; ?>/abc/create`, {
+            fetch(`<?php echo BASE_URL; ?>/cart/add`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`,
