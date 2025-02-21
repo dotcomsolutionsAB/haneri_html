@@ -27,8 +27,8 @@
         font-weight: 600;
     }
     .variant.selected {
-        background-color: black;
-        color: white;
+        background-color: black !important;
+        color: white !important;
     }
 </style>
 <!-- Product Detail Page -->
