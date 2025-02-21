@@ -206,7 +206,7 @@
                                             aria-selected="true">Features</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="product-tab-desc" data-toggle="tab"
+                                        <a class="nav-link" id="product-tab-desc" data-toggle="tab"
                                             href="#product-desc-content" role="tab" aria-controls="product-desc-content"
                                             aria-selected="true">Applications</a>
                                     </li>
@@ -228,8 +228,8 @@
                                     <div class="tab-pane fade show active" id="product-tabs-features" role="tabpanel"
                                         aria-labelledby="product-features">
                                         <div class="product-tabs-features">
-                                            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                                do eiusmod
+                                            <p class="mb-1">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                             </p>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -301,7 +301,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade show" id="product-desc-content" role="tabpanel"
+                                    <div class="tab-pane fade" id="product-desc-content" role="tabpanel"
                                         aria-labelledby="product-tab-desc">
                                         <div class="product-desc-content">
                                             <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
