@@ -23,6 +23,9 @@
         font-size: 18px;
         color: #fff;
         font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        line-height: 1.5;
     }
     .variant.selected {
         background-color: #0c9a9a !important;
@@ -37,8 +40,11 @@
         align-items: center;
         flex-direction: row;
     }
-    .selected_variant p{
+    .select_variant p{
         margin: 0px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        line-height: 1.5;
     }
 </style>
 <!-- Product Detail Page -->
