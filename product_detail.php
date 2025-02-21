@@ -25,7 +25,7 @@
 
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">
-                        <div class="col-lg-6 product-single-gallery">
+                        <div class="col-lg-4 product-single-gallery">
                             <div class="sidebar-wrapper">
                                 <div class="product-slider-container">
                                     <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
@@ -72,7 +72,7 @@
                             </div>
                         </div><!-- End .col-lg-6 -->
 
-                        <div class="col-lg-6 pb-1">
+                        <div class="col-lg-8 pb-1">
                             <div class="single-product-custom-block">
                                 <div class="porto-block">
                                     <h5 class="porto-heading d-inline-block">Free Shipping</h5>
@@ -307,7 +307,7 @@
                                                 dolor in reprehenderit in voluptate velit esse cillum dolore.
                                             </p>
                                         </div>
-                                    </div>End .tab-pane
+                                    </div>
 
                                     <div class="tab-pane fade" id="product-size-content" role="tabpanel" aria-labelledby="product-tab-size">
                                         <div class="product-size-content">
@@ -369,7 +369,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>End .tab-pane
+                                    </div>
                                 </div><!-- End .tab-content -->
                             </div><!-- End .product-single-tabs -->
                         </div><!-- End .col-lg-6 -->
