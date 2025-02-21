@@ -60,10 +60,11 @@
                         // Load Variants
                         const variantsContainer = document.querySelector('.variants');
                         variantsContainer.innerHTML = data.data.variants.map(variant => 
-                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_value}', ${variant.selling_price}, ${variant.regular_price})">
+                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price})">
                                 <p>${variant.variant_type}</p>
                             </div>`
                         ).join('');
+
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
@@ -221,7 +222,7 @@
                                 <input type="hidden" id="selected-variant" value="">
                                 <div class="variants">
                                     <div class="variant">
-                                        <p></p>                                        
+                                        <p>variant ..</p>                                        
                                     </div>
                                 </div>
                                 <div class="price-box">
