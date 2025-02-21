@@ -69,10 +69,10 @@
                         document.getElementById('product-title').textContent = data.data.name;
                         document.getElementById('product-category').textContent = data.data.category;
                         document.getElementById('product-brand').textContent = data.data.brand;
-                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}.00`;
+                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}.00`;
                         document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
-                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
+                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}.00`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
                         document.querySelector('.about_section').textContent = data.data.name;
@@ -91,11 +91,11 @@
             }
         });
 
-        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
-            document.getElementById('product-price').textContent = `₹${sellingPrice}`;
-            document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
+        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {.00
+            document.getElementById('product-price').textContent = `₹${sellingPrice}.00`;
+            document.getElementById('selling-price').textContent = `₹${sellingPrice}.00`;
             document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
-            document.getElementById('regular-price').textContent = `₹${regularPrice}`;
+            document.getElementById('regular-price').textContent = `₹${regularPrice}.00`;
             document.getElementById('selected-variant').value = variantId;
             
             // Remove selected class from all variants and add to the clicked one
@@ -244,7 +244,7 @@
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
                                 <div class="select_variant">
-                                    <p>Select The Variant</p>
+                                    <p>Select The Variant:</p>
                                     <input type="hidden" id="selected-variant" value="">
                                     <div class="variants">                                    
                                         <div class="variant">
