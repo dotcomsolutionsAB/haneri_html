@@ -10,7 +10,7 @@
         margin-bottom: 20px;
     }
     .variant{
-        background: #dfdfdf;
+        background: #222529;
         width: fit-content;
         padding: 0px 10px;
         height: fit-content;
@@ -27,7 +27,7 @@
         font-weight: 600;
     }
     .variant.selected {
-        background-color: #41c0c08a  !important;
+        background-color: #0c9a9a !important;
     }
 </style>
 <!-- Product Detail Page -->
@@ -228,6 +228,7 @@
                                 </ul>
                                 <input type="hidden" id="selected-variant" value="">
                                 <div class="variants">
+                                    <h4>Select The Variant</h4>
                                     <div class="variant">
                                         <p>variant ..</p>                                        
                                     </div>
