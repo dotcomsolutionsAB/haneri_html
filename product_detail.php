@@ -5,7 +5,6 @@
     .variants{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
         gap: 10px;
     }
     .variant{
@@ -29,13 +28,17 @@
         background-color: #0c9a9a !important;
     }
     .select_variant{
-        display:flex;
+        display: flex;
         flex-wrap: wrap;
         width: 100%;
         gap: 10px;
         margin-bottom: 20px;
-        justify-content:center;
-        align-items:center;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: row;
+    }
+    .selected_variant p{
+        margin: 0px;
     }
 </style>
 <!-- Product Detail Page -->
