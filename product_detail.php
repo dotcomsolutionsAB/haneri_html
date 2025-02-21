@@ -201,6 +201,11 @@
                             <div class="product-single-tabs">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
+                                        <a class="nav-link active" id="product-features" data-toggle="tab"
+                                            href="#product-tabs-features" role="tab" aria-controls="product-tabs-features"
+                                            aria-selected="true">Applications</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link active" id="product-tab-desc" data-toggle="tab"
                                             href="#product-desc-content" role="tab" aria-controls="product-desc-content"
                                             aria-selected="true">Applications</a>
@@ -220,6 +225,88 @@
                                 </ul>
 
                                 <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="product-tabs-features" role="tabpanel"
+                                        aria-labelledby="product-features">
+                                        <div class="product-tabs-features">
+                                            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                                do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                                occaecat.
+                                            </p>
+                                            <img src="assets/images/products/single/product-img.jpg" alt="image desc" class="float-right" />
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore.
+                                            </p>
+                                            <ul>
+                                                <li>Any Product types that You want - Simple, Configurable</li>
+                                                <li>Downloadable/Digital Products, Virtual Products</li>
+                                                <li>Inventory Management with Backordered items</li>
+                                            </ul>
+                                            <div class="row justify-content-center">
+                                                <div class="col-sm-6 col-xl-4">
+                                                    <div class="feature-box feature-box-simple text-center">
+                                                        <div class="feature-icon">
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+
+                                                        <div class="feature-box-content">
+                                                            <h3>Dedicated Service</h3>
+                                                            <p>Consult our specialists for help with an order,
+                                                                customization, or design advice</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6 col-xl-4">
+                                                    <div class="feature-box feature-box-simple text-center">
+                                                        <div class="feature-icon">
+                                                            <i class="fa fa-reply"></i>
+                                                        </div>
+
+                                                        <div class="feature-box-content">
+                                                            <h3>Free Returns</h3>
+                                                            <p>Consult our specialists for help with an order,
+                                                                customization, or design advice</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6 col-xl-4">
+                                                    <div class="feature-box feature-box-simple text-center">
+                                                        <div class="feature-icon">
+                                                            <i class="fa fa-paper-plane"></i>
+                                                        </div>
+
+                                                        <div class="feature-box-content">
+                                                            <h3>International Shipping</h3>
+                                                            <p>Consult our specialists for help with an order,
+                                                                customization, or design advice</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore. Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                                in reprehenderit in voluptate velit esse cillum dolore.Duis aute irure
+                                                dolor in reprehenderit in voluptate velit esse cillum dolore.
+                                            </p>
+                                        </div>
+                                    </div>
+
                                     <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
                                         aria-labelledby="product-tab-desc">
                                         <div class="product-desc-content">
