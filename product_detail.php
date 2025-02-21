@@ -69,10 +69,10 @@
                         document.getElementById('product-title').textContent = data.data.name;
                         document.getElementById('product-category').textContent = data.data.category;
                         document.getElementById('product-brand').textContent = data.data.brand;
-                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}.00`;
-                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}.00`;
+                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
                         document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
-                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}.00`;
+                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
                         document.querySelector('.about_section').textContent = data.data.name;
