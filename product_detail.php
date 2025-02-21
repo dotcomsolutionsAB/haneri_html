@@ -21,7 +21,7 @@
                     if (data.success) {
                         document.getElementById('product-title').textContent = data.data.name;
                         document.getElementById('product-category').textContent = data.data.category;
-                        document.getElementById('product-category').textContent = data.data.brand;
+                        document.getElementById('product-brand').textContent = data.data.brand;
                         document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
@@ -136,13 +136,13 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
-                                <div class="price-box">
+                                <!-- <div class="price-box">
                                     <span class="new-price" id="product-price">₹0.00</span>
-                                </div>
+                                </div> -->
                                 <div class="product-desc">
                                     <p id="product-description">Loading...</p>
                                 </div>
-                                
+
                                 <div class="product-action">
                                     <div class="price-box product-filtered-price">
                                         <del class="old-price"><span>₹286.00</span></del>
