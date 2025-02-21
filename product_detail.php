@@ -136,13 +136,12 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
-                                <!-- <div class="price-box">
+                                <div class="price-box">
                                     <span class="new-price" id="product-price">₹0.00</span>
-                                </div> -->
+                                </div>
                                 <div class="product-desc">
                                     <p id="product-description">Loading...</p>
                                 </div>
-
                                 <div class="product-action">
                                     <div class="price-box product-filtered-price">
                                         <del class="old-price"><span>₹286.00</span></del>
@@ -183,7 +182,7 @@
                                     <i class="icon-wishlist-2"></i>
                                     <span>Add to Wishlist</span>
                                 </a>
-
+                                
                                 <div class="product-single-tabs">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
