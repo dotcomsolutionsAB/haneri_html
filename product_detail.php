@@ -24,6 +24,7 @@
                         document.getElementById('product-brand').textContent = data.data.brand;
                         document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
                         document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
                         document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
@@ -149,7 +150,7 @@
                                         <del class="old-price">
                                             <span id="regular-price"></span>
                                         </del>
-                                        <span class="product-price" id="selling-price"></span>
+                                        <span class="product-price" id="selling-price" data-price="0"></span>
                                     </div>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
@@ -765,9 +766,14 @@
 
 <script>
     function updatePrice() {
-        const quantity = document.getElementById('quantity').value;
-        const sellingPrice = parseFloat(document.getElementById('selling-price').dataset.price);
-        const updatedPrice = (quantity * sellingPrice).toFixed(2);
-        document.getElementById('selling-price').textContent = `₹${updatedPrice}`;
+        const quantity = parseFloat(document.getElementById('quantity').value) || 1;
+        const sellingPriceElement = document.getElementById('selling-price');
+        const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
+
+        if (!isNaN(sellingPrice)) {
+            const updatedPrice = (quantity * sellingPrice).toFixed(2);
+            sellingPriceElement.textContent = `₹${updatedPrice}`;
+        }
     }
+
 </script>
