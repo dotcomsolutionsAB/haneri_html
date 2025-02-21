@@ -140,6 +140,9 @@
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
                                 <div class="price-box">
+                                    <del class="old-price">
+                                        <span id="regular-price">₹0.00</span>
+                                    </del>
                                     <span class="new-price" id="product-price">₹0.00</span>
                                 </div>
                                 <div class="product-desc">
@@ -147,10 +150,7 @@
                                 </div>
                                 <div class="product-action">
                                     <div class="price-box">
-                                        <del class="old-price">
-                                            <span id="regular-price"></span>
-                                        </del>
-                                        <span class="product-price" id="selling-price" data-price="0"></span>
+                                        <span class="product-price" id="selling-price" data-price="0">₹0.00</span>
                                     </div>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
