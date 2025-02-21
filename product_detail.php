@@ -61,7 +61,7 @@
                         const variantsContainer = document.querySelector('.variants');
                         variantsContainer.innerHTML = data.data.variants.map(variant => 
                             `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_value}', ${variant.selling_price}, ${variant.regular_price})">
-                                <p>${variant.variant_value}</p>
+                                <p>${variant.variant_type}</p>
                             </div>`
                         ).join('');
                     }
@@ -218,20 +218,10 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
-                                <input type="text" id="selected-variant" value="">
+                                <input type="hidden" id="selected-variant" value="">
                                 <div class="variants">
                                     <div class="variant">
-                                        <p>Variant 1</p>
-                                        
-                                    </div>
-                                    <div class="variant">
-                                        <p>Variant 2</p>
-                                    </div>
-                                    <div class="variant">
-                                        <p>Variant 3</p>
-                                    </div>
-                                    <div class="variant">
-                                        <p>Variant 4</p>
+                                        <p></p>                                        
                                     </div>
                                 </div>
                                 <div class="price-box">
