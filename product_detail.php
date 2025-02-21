@@ -21,11 +21,13 @@
                     if (data.success) {
                         document.getElementById('product-title').textContent = data.data.name;
                         document.getElementById('product-category').textContent = data.data.category;
+                        document.getElementById('product-category').textContent = data.data.brand;
                         document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
 
-                        document.getElementByClass('breadcrumb-title').textContent = data.data.name;
+                        document.querySelector('.breadcrumb-title').textContent = data.data.name;
+
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
