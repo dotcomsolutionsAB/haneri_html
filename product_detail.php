@@ -139,6 +139,20 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
+                                <div class="variants">
+                                    <div class="variant">
+                                        <p>Variant 1</p>
+                                    </div>
+                                    <div class="variant">
+                                        <p>Variant 2</p>
+                                    </div>
+                                    <div class="variant">
+                                        <p>Variant 3</p>
+                                    </div>
+                                    <div class="variant">
+                                        <p>Variant 4</p>
+                                    </div>
+                                </div>
                                 <div class="price-box">
                                     <del class="old-price">
                                         <span id="regular-price">₹0.00</span>
