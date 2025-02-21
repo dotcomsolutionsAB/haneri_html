@@ -324,7 +324,7 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.name}')">
+                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
                                             <img src="assets/images/products/product-1.jpg" width="500"
                                                 height="500" alt="productr" />
                                         </a>
@@ -408,7 +408,7 @@
         </script>
         <script>
             function openProductDetail(productId) {
-                window.location.href = 'product_detail.php?name=' + productId;
+                window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
             <!-- End .main -->
