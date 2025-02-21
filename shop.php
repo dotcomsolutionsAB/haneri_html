@@ -21,7 +21,7 @@
             <div class="container mb-3">
                 <div class="row">
                     <div class="col-lg-9 main-content">
-
+                        <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
                                 <a href="https://haneri.ongoingsites.xyz/domex" class="sidebar-toggle">
@@ -68,11 +68,11 @@
                                     <label>Show:</label>
 
                                     <div class="select-custom">
-                                        <select name="count" class="form-control">
-                                            <option value="20">20</option>
+                                        <select name="perpage" class="form-control" data-datatable-size="true">
+                                            <!-- <option value="20">20</option>
                                             <option value="30">30</option>
                                             <option value="40">40</option>
-                                            <option value="50">50</option>
+                                            <option value="50">50</option> -->
                                         </select>
                                     </div><!-- End .select-custom -->
                                 </div><!-- End .toolbox-item -->
@@ -87,6 +87,7 @@
                                 </div><!-- End .layout-modes -->
                             </div><!-- End .toolbox-right -->
                         </nav>
+                        <!-- End Mobile view -->
 
                         <div class="row" id="products-table">
                             <!-- products showing here  -->
