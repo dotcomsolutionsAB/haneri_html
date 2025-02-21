@@ -67,7 +67,7 @@
 
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">
-                        <div class="col-lg-4 product-single-gallery">
+                        <div class="col-lg-5 product-single-gallery">
                             <div class="sidebar-wrapper">
                                 <div class="product-slider-container">
                                     <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8 pb-1">
+                        <div class="col-lg-7 pb-1">
                             <div class="single-product-custom-block">
                                 <div class="porto-block">
                                     <h5 class="porto-heading d-inline-block">Free Shipping</h5>
