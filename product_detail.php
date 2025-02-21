@@ -155,9 +155,6 @@
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
-                                    <!-- <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
-                                    </div> -->
 
                                     <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
                                         title="Add to Cart">Add to Cart</a>
@@ -198,7 +195,53 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="product-tabs-features">
-                                            <ul id="features-list"></ul>
+                                            <div class="product-desc-content">
+                                                <ul id="features-list"></ul>
+                                                
+                                                <div class="row justify-content-center">
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="feature-box feature-box-simple text-center">
+                                                            <div class="feature-icon">
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+
+                                                            <div class="feature-box-content">
+                                                                <h3>Dedicated Service</h3>
+                                                                <p>Consult our specialists for help with an order,
+                                                                    customization, or design advice</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="feature-box feature-box-simple text-center">
+                                                            <div class="feature-icon">
+                                                                <i class="fa fa-reply"></i>
+                                                            </div>
+
+                                                            <div class="feature-box-content">
+                                                                <h3>Free Returns</h3>
+                                                                <p>Consult our specialists for help with an order,
+                                                                    customization, or design advice</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="feature-box feature-box-simple text-center">
+                                                            <div class="feature-icon">
+                                                                <i class="fa fa-paper-plane"></i>
+                                                            </div>
+
+                                                            <div class="feature-box-content">
+                                                                <h3>International Shipping</h3>
+                                                                <p>Consult our specialists for help with an order,
+                                                                    customization, or design advice</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
