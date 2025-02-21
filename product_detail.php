@@ -59,7 +59,7 @@
 
         <main class="main">
 
-            <div class="product-single-container product-single-default product-full-width">
+            <div class="container product-single-container product-single-default product-full-width">
                 <div class="cart-message d-none">
                     "<strong class="single-cart-notice breadcrumb-title"></strong>" 
                     <span> has been added to your cart.</span>
@@ -250,7 +250,16 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-
+            <style>
+                .product-desc-content .feature-box p {
+                    font-size: 14px;
+                    line-height: 27px;
+                    color: #4a505e;
+                    letter-spacing: 0;
+                    text-align: justify;
+                }
+                
+            </style>
             <div class="container-fluid">
                 <div class="products-section pt-0">
                     <h2 class="section-title">Related Products</h2>
