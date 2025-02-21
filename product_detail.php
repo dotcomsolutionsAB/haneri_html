@@ -136,6 +136,7 @@
             .then(data => {
                 if (data.success) {
                     alert("Product added to cart successfully!");
+                    localStorage.setItem('user_id', data.data.user_id);
                 }
             })
             .catch(error => console.error('Error adding product to cart:', error));
