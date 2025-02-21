@@ -275,7 +275,7 @@
                                         title="Add to Cart" onclick="addToCart()">Add to Cart</a>
 
 
-                                    <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
+                                    <a href="cart.php" class="btn btn-gray view-cart d-none">View cart</a>
                                 </div>
 
                                 <hr class="divider mb-0 mt-0">
