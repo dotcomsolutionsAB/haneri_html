@@ -227,16 +227,12 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="product-tabs-features" role="tabpanel"
                                         aria-labelledby="product-features">
-                                        <div class="product-tabs-features">
+                                        <div class="product-desc-content">
                                             <p class="mb-1">
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                             </p>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore.
                                             </p>
                                             <ul>
                                                 <li>Any Product types that You want - Simple, Configurable</li>
