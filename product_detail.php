@@ -2,38 +2,7 @@
 <?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?>
 
-<!-- Product Detail Page -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        const token = localStorage.getItem('auth_token');
-        if (productId) {
-            fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
-                method: "POST",
-                headers: { Authorization: `Bearer ${token}`
-                    // "Azar": "your-custom-header-value"
-                },
-                body: JSON.stringify({ product_id: productId })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('product-title').textContent = data.data.name;
-                        document.getElementById('product-category').textContent = data.data.category;
-                        document.getElementById('product-brand').textContent = data.data.brand;
-                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                        document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
-                        document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
-                        document.querySelector('.about_section').textContent = data.data.name;
-                        document.querySelector('.breadcrumb-title').textContent = data.data.name;
-                        
-                    }
-                })
-                .catch(error => console.error('Error fetching product details:', error));
-        }
-    });
-</script>
+
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -143,13 +112,16 @@
                                     <p id="product-description">Loading...</p>
                                 </div>
                                 <div class="product-action">
-                                    <div class="price-box product-filtered-price">
-                                        <span class="new-price" id="product-price">₹0.00</span>
+                                    <div class="price-box">
+                                        <del class="old-price"><span id="regular-price">₹${product.regularPrice}</span></del>
+                                        <span class="product-price" id="selling-price">₹${product.sellingPrice}</span>
                                     </div>
-
                                     <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
+                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
+                                    <!-- <div class="product-single-qty">
+                                        <input class="horizontal-quantity form-control" type="text">
+                                    </div> -->
 
                                     <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
                                         title="Add to Cart">Add to Cart</a>
@@ -755,3 +727,44 @@
         <!-- End .footer -->
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
+
+<script>
+    function updatePrice() {
+        const quantity = document.getElementById('quantity').value;
+        const sellingPrice = parseFloat(document.getElementById('selling-price').dataset.price);
+        const updatedPrice = (quantity * sellingPrice).toFixed(2);
+        document.getElementById('selling-price').textContent = `₹${updatedPrice}`;
+    }
+</script>
+<!-- Product Detail Page -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const token = localStorage.getItem('auth_token');
+        if (productId) {
+            fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
+                method: "POST",
+                headers: { Authorization: `Bearer ${token}`
+                    // "Azar": "your-custom-header-value"
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('product-title').textContent = data.data.name;
+                        document.getElementById('product-category').textContent = data.data.category;
+                        document.getElementById('product-brand').textContent = data.data.brand;
+                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
+                        document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
+                        document.querySelector('.about_section').textContent = data.data.name;
+                        document.querySelector('.breadcrumb-title').textContent = data.data.name;
+                        
+                    }
+                })
+                .catch(error => console.error('Error fetching product details:', error));
+        }
+    });
+</script>
