@@ -220,7 +220,7 @@
                                 </ul>
 
                                 <div class="tab-content">
-                                    <!-- <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
+                                    <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
                                         aria-labelledby="product-tab-desc">
                                         <div class="product-desc-content">
                                             <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -307,9 +307,9 @@
                                                 dolor in reprehenderit in voluptate velit esse cillum dolore.
                                             </p>
                                         </div>
-                                    </div>End .tab-pane -->
+                                    </div>
 
-                                    <!-- <div class="tab-pane fade" id="product-size-content" role="tabpanel"
+                                    <div class="tab-pane fade" id="product-size-content" role="tabpanel"
                                         aria-labelledby="product-tab-size">
                                         <div class="product-size-content">
                                             <div class="row">
@@ -370,7 +370,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>End .tab-pane -->
+                                    </div>
                                 </div><!-- End .tab-content -->
                             </div><!-- End .product-single-tabs -->
                         </div><!-- End .col-lg-6 -->
