@@ -1,21 +1,47 @@
 <?php include("header.php"); ?>
 <?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?>
-
+<style>
+    .variants{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .variant{
+        background: #dfdfdf;
+        width: fit-content;
+        padding: 0px 10px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .variant p{
+        padding: 5px;
+        margin: 0px;
+        font-size: 18px;
+        color: #000;
+        font-weight: 600;
+    }
+</style>
 <!-- Product Detail Page -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        const token = localStorage.getItem('auth_token');
-        if (productId) {
-            fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
-                method: "POST",
-                headers: { Authorization: `Bearer ${token}`
-                    // "Azar": "your-custom-header-value"
-                },
-                body: JSON.stringify({ product_id: productId })
-            })
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const token = localStorage.getItem('auth_token');
+            
+            if (productId) {
+                fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ product_id: productId })
+                })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -31,12 +57,65 @@
                         document.querySelector('.about_section').textContent = data.data.name;
                         document.querySelector('.breadcrumb-title').textContent = data.data.name;
                         
+                        // Load Variants
+                        const variantsContainer = document.querySelector('.variants');
+                        variantsContainer.innerHTML = data.data.variants.map(variant => 
+                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_value}', ${variant.selling_price}, ${variant.regular_price})">
+                                <p>${variant.variant_value}</p>
+                            </div>`
+                        ).join('');
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
+            }
+        });
+
+        function updateVariant(variantId, variantValue, sellingPrice, regularPrice) {
+            document.getElementById('product-price').textContent = `₹${sellingPrice}`;
+            document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
+            document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
+            document.getElementById('regular-price').textContent = `₹${regularPrice}`;
+            document.getElementById('selected-variant').value = variantId;
         }
-    });
-</script>
+
+        function updatePrice() {
+            const quantity = parseFloat(document.getElementById('quantity').value) || 1;
+            const sellingPriceElement = document.getElementById('selling-price');
+            const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
+
+            if (!isNaN(sellingPrice)) {
+                const updatedPrice = (quantity * sellingPrice).toFixed(2);
+                sellingPriceElement.textContent = `₹${updatedPrice}`;
+            }
+        }
+
+        function addToCart() {
+            const productId = new URLSearchParams(window.location.search).get('id');
+            const variantId = document.getElementById('selected-variant').value;
+            const quantity = document.getElementById('quantity').value;
+            const token = localStorage.getItem('auth_token');
+
+            fetch(`<?php echo BASE_URL; ?>/abc/create`, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    variant_id: variantId || null,
+                    quantity: quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Product added to cart successfully!");
+                }
+            })
+            .catch(error => console.error('Error adding product to cart:', error));
+        }
+    </script>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -139,34 +218,11 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
-                                <style>
-                                    .variants{
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        width: 100%;
-                                        gap: 10px;
-                                        margin-bottom: 20px;
-                                    }
-                                    .variant{
-                                        background: #dfdfdf;
-                                        width: fit-content;
-                                        padding: 0px 10px;
-                                        height: fit-content;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                    }
-                                    .variant p{
-                                        padding: 5px;
-                                        margin: 0px;
-                                        font-size: 18px;
-                                        color: #000;
-                                        font-weight: 600;
-                                    }
-                                </style>
+                                <input type="text" id="selected-variant" value="">
                                 <div class="variants">
                                     <div class="variant">
                                         <p>Variant 1</p>
+                                        
                                     </div>
                                     <div class="variant">
                                         <p>Variant 2</p>
@@ -855,16 +911,4 @@
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
 
-<script>
-    function updatePrice() {
-        const quantity = parseFloat(document.getElementById('quantity').value) || 1;
-        const sellingPriceElement = document.getElementById('selling-price');
-        const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
 
-        if (!isNaN(sellingPrice)) {
-            const updatedPrice = (quantity * sellingPrice).toFixed(2);
-            sellingPriceElement.textContent = `₹${updatedPrice}`;
-        }
-    }
-
-</script>
