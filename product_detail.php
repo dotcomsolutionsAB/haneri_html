@@ -8,80 +8,204 @@
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         const token = localStorage.getItem('auth_token');
-
         if (productId) {
             fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
                 method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "application/json"
+                headers: { Authorization: `Bearer ${token}`
+                    // "Azar": "your-custom-header-value"
                 },
                 body: JSON.stringify({ product_id: productId })
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('product-title').textContent = data.data.name;
-                    document.getElementById('product-category').textContent = data.data.category;
-                    document.getElementById('product-brand').textContent = data.data.brand;
-                    document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                    document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                    document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
-                    document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
-                    document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
-                    document.querySelector('.about_section').textContent = data.data.name;
-                    document.querySelector('.breadcrumb-title').textContent = data.data.name;
-                }
-            })
-            .catch(error => console.error('Error fetching product details:', error));
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('product-title').textContent = data.data.name;
+                        document.getElementById('product-category').textContent = data.data.category;
+                        document.getElementById('product-brand').textContent = data.data.brand;
+                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
+                        document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
+                        document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
+                        document.querySelector('.about_section').textContent = data.data.name;
+                        document.querySelector('.breadcrumb-title').textContent = data.data.name;
+                        
+                    }
+                })
+                .catch(error => console.error('Error fetching product details:', error));
         }
     });
 </script>
 
-    <main class="main about">
-        <nav aria-label="breadcrumb" class="breadcrumb-nav">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item active breadcrumb-title" id="breadcrumb-title" aria-current="page">Loading...</li>
-                </ol>
-            </div>
-        </nav>
-        
-        <div class="container text-left">
-            <h1 class="text-uppercase about_section">Product Details</h1>
-        </div>
-        
-        <div class="product-single-container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 product-single-gallery">
-                        <div class="product-slider-container">
-                            <div class="product-single-carousel">
-                                <div class="product-item"><img class="product-single-image" src="assets/images/products/zoom/product-1-big.jpg" width="915" height="915" alt="product" /></div>
-                                <div class="product-item"><img class="product-single-image" src="assets/images/products/zoom/product-2-big.jpg" width="915" height="915" alt="product" /></div>
-                                <div class="product-item"><img class="product-single-image" src="assets/images/products/zoom/product-3-big.jpg" width="915" height="915" alt="product" /></div>
+<main class="main about">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
+                <li class="breadcrumb-item active breadcrumb-title" id="breadcrumb-title" aria-current="page">
+                    Load...
+                </li>
+            </ol>
+        </div><!-- End .container -->
+    </nav>
+    <div class="containe text-left">
+        <h1 class="text-uppercase about_section">
+            Product Details
+        </h1>
+    </div>
+    <div class="page-wrapper">
+
+        <main class="main">
+
+            <div class="product-single-container product-single-default product-full-width">
+                <div class="cart-message d-none">
+                    "<strong class="single-cart-notice breadcrumb-title"></strong>" 
+                    <span> has been added to your cart.</span>
+                </div>
+
+                <div class="container-fluid pl-lg-0 padding-right-lg">
+                    <div class="row">
+                        <div class="col-lg-4 product-single-gallery">
+                            <div class="sidebar-wrapper">
+                                <div class="product-slider-container">
+                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                                        <div class="product-item">
+                                            <img class="product-single-image"
+                                                src="assets/images/products/zoom/product-1-big.jpg"
+                                                data-zoom-image="assets/images/products/zoom/product-1-big.jpg"
+                                                width="915" height="915" alt="product" />
+                                        </div>
+                                        <div class="product-item">
+                                            <img class="product-single-image"
+                                                src="assets/images/products/zoom/product-2-big.jpg"
+                                                data-zoom-image="assets/images/products/zoom/product-2-big.jpg"
+                                                width="915" height="915" alt="product" />
+                                        </div>
+                                        <div class="product-item">
+                                            <img class="product-single-image"
+                                                src="assets/images/products/zoom/product-3-big.jpg"
+                                                data-zoom-image="assets/images/products/zoom/product-3-big.jpg"
+                                                width="915" height="915" alt="product" />
+                                        </div>
+                                    </div>
+                                    <!-- End .product-single-carousel -->
+                                    <span class="prod-full-screen">
+                                        <i class="icon-plus"></i>
+                                    </span>
+                                </div>
+                                <div class="prod-thumbnail owl-dots transparent-dots flex-column"
+                                    id='carousel-custom-dots'>
+                                    <div class="owl-dot">
+                                        <img src="assets/images/products/zoom/product-1.jpg" width="98" height="98"
+                                            alt="product" />
+                                    </div>
+                                    <div class="owl-dot">
+                                        <img src="assets/images/products/zoom/product-2.jpg" width="98" height="98"
+                                            alt="product" />
+                                    </div>
+                                    <div class="owl-dot">
+                                        <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98"
+                                            alt="product" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 pb-1">
+                            <div class="single-product-custom-block">
+                                <div class="porto-block">
+                                    <h5 class="porto-heading d-inline-block">Free Shipping</h5>
+                                    <h5 class="porto-heading d-inline-block">100% Money Back Guarantee</h5>
+                                    <h5 class="porto-heading d-inline-block">Online Support 24/7</h5>
+                                </div>
+                            </div>
+
+                            <div class="product-single-details mb-1">
+                                <h1 class="product-title" id="product-title">Loading...</h1>
+
+                                <div class="ratings-container">
+                                    <div class="product-ratings">
+                                        <span class="ratings" style="width:60%"></span>
+                                        <span class="tooltiptext tooltip-top"></span>
+                                    </div>
+                                    <a href="#" class="rating-link">( 6 Reviews )</a>
+                                </div><!-- End .ratings-container -->
+
+                                <ul class="single-info-list">
+                                    <li>Category: <strong><span id="product-category">Loading...</span></strong></li>
+                                </ul>
+
+                                <ul class="single-info-list">
+                                    <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
+                                </ul>
+                                <div class="price-box">
+                                    <span class="new-price" id="product-price">₹0.00</span>
+                                </div>
+                                <div class="product-desc">
+                                    <p id="product-description">Loading...</p>
+                                </div>
+                                <div class="product-action">
+                                    <div class="price-box">
+                                        <del class="old-price">
+                                            <span id="regular-price"></span>
+                                        </del>
+                                        <span class="product-price" id="selling-price"></span>
+                                    </div>
+                                    <div class="product-single-qty">
+                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
+                                    </div>
+                                    <!-- <div class="product-single-qty">
+                                        <input class="horizontal-quantity form-control" type="text">
+                                    </div> -->
+
+                                    <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
+                                        title="Add to Cart">Add to Cart</a>
+
+                                    <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
+                                </div>
+
+                                <hr class="divider mb-0 mt-0">
+
+                                <div class="product-single-share custom-product-single-share">
+                                    <label class="sr-only">Share:</label>
+
+                                    <div class="social-icons mt-0">
+                                        <a href="#" class="social-icon social-facebook icon-facebook" target="_blank"
+                                            title="Facebook"></a>
+                                        <a href="#" class="social-icon social-twitter icon-twitter" target="_blank"
+                                            title="Twitter"></a>
+                                        <a href="#" class="social-icon social-linkedin fab fa-linkedin-in"
+                                            target="_blank" title="Linkedin"></a>
+                                        <a href="#" class="social-icon social-gplus fab fa-google-plus-g"
+                                            target="_blank" title="Google +"></a>
+                                        <a href="#" class="social-icon social-mail icon-mail-alt" target="_blank"
+                                            title="Mail"></a>
+                                    </div><!-- End .social-icons -->
+                                </div><!-- End .product single-share -->
+
+                                <a href="wishlist.html" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
+                                    title="Add to Wishlist">
+                                    <i class="icon-wishlist-2"></i>
+                                    <span>Add to Wishlist</span>
+                                </a>
+                                
+                                <div class="product-single-tabs">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="product-features" data-toggle="tab" href="#product-tabs-features" role="tab">Features</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="product-tabs-features">
+                                            <ul id="features-list"></ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <h1 id="product-title">Loading...</h1>
-                        <ul class="single-info-list">
-                            <li>Category: <strong><span id="product-category">Loading...</span></strong></li>
-                            <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
-                        </ul>
-                        <div class="price-box">
-                            <del class="old-price"><span id="regular-price">₹0.00</span></del>
-                            <span class="new-price" id="selling-price">₹0.00</span>
-                        </div>
-                        <p id="product-description">Loading...</p>
-                        <ul id="features-list"></ul>
-                        <a href="cart.html" class="btn btn-dark">Add to Cart</a>
-                        <a href="wishlist.html" class="btn-icon-wish">Add to Wishlist</a>
-                    </div>
-                </div>
+                </div><!-- End .product-single-container -->
             </div>
-        </div>
 
             <div class="container-fluid">
                 <div class="products-section pt-0">
