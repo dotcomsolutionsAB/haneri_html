@@ -324,7 +324,7 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
-                                        <a href="https://haneri.ongoingsites.xyz/domex">
+                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.id}')">
                                             <img src="assets/images/products/product-1.jpg" width="500"
                                                 height="500" alt="productr" />
                                         </a>
@@ -332,7 +332,7 @@
                                             <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
-                                        <a href="domex/${product.slug}" class="btn-quickview"
+                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.id}')""
                                             title="Quick View">Quick
                                             View</a>
                                     </figure>
@@ -343,7 +343,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="domex/${product.slug}">${product.name}</a>
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.id}')">${product.name}</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -401,6 +401,11 @@
 
                 fetchProducts();
             });
+        </script>
+        <script>
+            function openProductDetail(productId) {
+                window.location.href = 'product_detail.php?id=' + productId;
+            }
         </script>
             <!-- End .main -->
         <?php include("footer.php"); ?>
