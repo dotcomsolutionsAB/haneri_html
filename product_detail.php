@@ -139,6 +139,31 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
+                                <style>
+                                    .variants{
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        width: 100%;
+                                        gap: 10px;
+                                        margin-bottom: 20px;
+                                    }
+                                    .variant{
+                                        background: #dfdfdf;
+                                        width: fit-content;
+                                        padding: 0px 10px;
+                                        height: fit-content;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                    .variant p{
+                                        padding: 5px;
+                                        margin: 0px;
+                                        font-size: 18px;
+                                        color: #000;
+                                        font-weight: 600;
+                                    }
+                                </style>
                                 <div class="variants">
                                     <div class="variant">
                                         <p>Variant 1</p>
