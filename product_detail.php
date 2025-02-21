@@ -143,6 +143,47 @@
                                     <p id="product-description">Loading...</p>
                                 </div>
                                 
+                                <div class="product-action">
+                                    <div class="price-box product-filtered-price">
+                                        <del class="old-price"><span>₹286.00</span></del>
+                                        <span class="product-price">₹245.00</span>
+                                    </div>
+
+                                    <div class="product-single-qty">
+                                        <input class="horizontal-quantity form-control" type="text">
+                                    </div>
+
+                                    <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
+                                        title="Add to Cart">Add to Cart</a>
+
+                                    <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
+                                </div>
+
+                                <hr class="divider mb-0 mt-0">
+
+                                <div class="product-single-share custom-product-single-share">
+                                    <label class="sr-only">Share:</label>
+
+                                    <div class="social-icons mt-0">
+                                        <a href="#" class="social-icon social-facebook icon-facebook" target="_blank"
+                                            title="Facebook"></a>
+                                        <a href="#" class="social-icon social-twitter icon-twitter" target="_blank"
+                                            title="Twitter"></a>
+                                        <a href="#" class="social-icon social-linkedin fab fa-linkedin-in"
+                                            target="_blank" title="Linkedin"></a>
+                                        <a href="#" class="social-icon social-gplus fab fa-google-plus-g"
+                                            target="_blank" title="Google +"></a>
+                                        <a href="#" class="social-icon social-mail icon-mail-alt" target="_blank"
+                                            title="Mail"></a>
+                                    </div><!-- End .social-icons -->
+                                </div><!-- End .product single-share -->
+
+                                <a href="wishlist.html" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
+                                    title="Add to Wishlist">
+                                    <i class="icon-wishlist-2"></i>
+                                    <span>Add to Wishlist</span>
+                                </a>
+
                                 <div class="product-single-tabs">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
