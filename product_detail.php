@@ -23,12 +23,11 @@
         padding: 5px;
         margin: 0px;
         font-size: 18px;
-        color: #000;
+        color: #fff;
         font-weight: 600;
     }
     .variant.selected {
-        background-color: black !important;
-        color: white !important;
+        background-color: #41c0c08a  !important;
     }
 </style>
 <!-- Product Detail Page -->
@@ -250,8 +249,9 @@
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
 
-                                    <a href="cart.html" class="btn btn-dark add-cart icon-shopping-cart mr-2"
-                                        title="Add to Cart">Add to Cart</a>
+                                    <a href="javascript:void(0);" class="btn btn-dark add-cart icon-shopping-cart mr-2"
+                                        title="Add to Cart" onclick="addToCart()">Add to Cart</a>
+
 
                                     <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
                                 </div>
