@@ -7,12 +7,11 @@
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
+        const token = localStorage.getItem('auth_token');
         if (productId) {
             fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
+                headers: { Authorization: `Bearer ${token}`
                     // "Azar": "your-custom-header-value"
                 },
                 body: JSON.stringify({ product_id: productId })
