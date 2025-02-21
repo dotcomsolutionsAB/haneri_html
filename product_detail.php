@@ -203,7 +203,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" id="product-features" data-toggle="tab"
                                             href="#product-tabs-features" role="tab" aria-controls="product-tabs-features"
-                                            aria-selected="true">Applications</a>
+                                            aria-selected="true">Features</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" id="product-tab-desc" data-toggle="tab"
@@ -230,13 +230,7 @@
                                         <div class="product-tabs-features">
                                             <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                                occaecat.
                                             </p>
-                                            <img src="assets/images/products/single/product-img.jpg" alt="image desc" class="float-right" />
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -307,7 +301,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel"
+                                    <div class="tab-pane fade show" id="product-desc-content" role="tabpanel"
                                         aria-labelledby="product-tab-desc">
                                         <div class="product-desc-content">
                                             <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
