@@ -1,4 +1,5 @@
 <?php include("header.php"); ?>
+<?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?>
 
 <!-- Product Detail Page -->
@@ -10,7 +11,8 @@
             fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
                     // "Azar": "your-custom-header-value"
                 },
                 body: JSON.stringify({ product_id: productId })
