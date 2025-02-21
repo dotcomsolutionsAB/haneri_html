@@ -113,8 +113,8 @@
                                 </div>
                                 <div class="product-action">
                                     <div class="price-box">
-                                        <del class="old-price"><span id="regular-price">₹${product.regularPrice}</span></del>
-                                        <span class="product-price" id="selling-price">₹${product.sellingPrice}</span>
+                                        <del class="old-price"><span id="regular-price"></span></del>
+                                        <span class="product-price" id="selling-price"></span>
                                     </div>
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
@@ -757,6 +757,8 @@
                         document.getElementById('product-category').textContent = data.data.category;
                         document.getElementById('product-brand').textContent = data.data.brand;
                         document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('selling_price').textContent = `₹${data.data.variants[0].selling_price}`;
+                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
                         document.querySelector('.about_section').textContent = data.data.name;
