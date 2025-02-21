@@ -7,7 +7,6 @@
         flex-wrap: wrap;
         width: 100%;
         gap: 10px;
-        margin-bottom: 20px;
     }
     .variant{
         background: #222529;
@@ -28,6 +27,15 @@
     }
     .variant.selected {
         background-color: #0c9a9a !important;
+    }
+    .select_variant{
+        display:flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content:center;
+        align-items:center;
     }
 </style>
 <!-- Product Detail Page -->
@@ -226,13 +234,16 @@
                                 <ul class="single-info-list">
                                     <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
                                 </ul>
-                                <input type="hidden" id="selected-variant" value="">
-                                <div class="variants">
-                                    <h4>Select The Variant</h4>
-                                    <div class="variant">
-                                        <p>variant ..</p>                                        
+                                <div class="select_variant">
+                                    <p>Select The Variant</p>
+                                    <input type="hidden" id="selected-variant" value="">
+                                    <div class="variants">                                    
+                                        <div class="variant">
+                                            <p>variant ..</p>                                        
+                                        </div>
                                     </div>
                                 </div>
+                                
                                 <div class="price-box">
                                     <del class="old-price">
                                         <span id="regular-price">₹0.00</span>
