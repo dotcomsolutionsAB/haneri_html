@@ -25,9 +25,9 @@
                         document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
                         document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
                         document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
-
+                        document.querySelector('.about_section').textContent = data.data.name;
                         document.querySelector('.breadcrumb-title').textContent = data.data.name;
-
+                        
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
@@ -48,8 +48,8 @@
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left">
-        <h1 class="text-uppercase about_section breadcrumb-title">
-            Load...
+        <h1 class="text-uppercase about_section">
+            Product Details
         </h1>
     </div>
     <div class="page-wrapper">
