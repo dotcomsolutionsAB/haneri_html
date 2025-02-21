@@ -1,11 +1,12 @@
 <?php include("header.php"); ?>
+<?php include("configs/config.php"); ?>
 <!-- Product Detail Page -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         if (productId) {
-            fetch(`{{base_url}}/api/products/get_products/${productId}`)
+            fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {

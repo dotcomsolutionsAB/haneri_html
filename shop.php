@@ -332,7 +332,7 @@
                                             <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
                                                     class="icon-shopping-cart"></i></a>
                                         </div>
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.name}')""
+                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')""
                                             title="Quick View">Quick
                                             View</a>
                                     </figure>
@@ -343,7 +343,7 @@
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.name}')">${product.name}</a>
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">${product.name}</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
