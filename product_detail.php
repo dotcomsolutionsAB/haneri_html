@@ -3,7 +3,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
+        const productId = urlParams.get('name');
         if (productId) {
             fetch(`{{base_url}}/api/products/get_products/${productId}`)
                 .then(response => response.json())
