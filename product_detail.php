@@ -144,8 +144,7 @@
                                 </div>
                                 <div class="product-action">
                                     <div class="price-box product-filtered-price">
-                                        <del class="old-price"><span>₹286.00</span></del>
-                                        <span class="product-price">₹245.00</span>
+                                        <span class="new-price" id="product-price">₹0.00</span>
                                     </div>
 
                                     <div class="product-single-qty">
