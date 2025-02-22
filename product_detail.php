@@ -1,5 +1,4 @@
 <?php include("header.php"); ?>
-<?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?>
 <style>
     .variants{
@@ -123,7 +122,7 @@
             fetch(`<?php echo BASE_URL; ?>/cart/add`, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${token}`,
+                    // "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({

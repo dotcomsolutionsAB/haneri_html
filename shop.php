@@ -1,5 +1,4 @@
 <?php include("header.php"); ?>
-<?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -277,7 +276,7 @@
         </main>
         <script>
             $(document).ready(function () {
-                const token = localStorage.getItem('auth_token');
+                // const token = localStorage.getItem('auth_token');
 
                 let itemsPerPage = 10; // Default items per page
                 let currentPage = 1; // Current page number
@@ -289,7 +288,7 @@
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
-                        headers: { Authorization: `Bearer ${token}` },
+                        // headers: { Authorization: `Bearer ${token}` },
                         data: { search: '', limit: itemsPerPage, offset: offset},
                         success: (response) => {
                                 if (response && response.data) {
