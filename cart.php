@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
             let userId = localStorage.getItem('user_id');
@@ -13,9 +13,13 @@
             
             if (token) {
                 requestData.headers["Authorization"] = `Bearer ${token}`;
-            } else if (userId) {
+            } 
+            
+            if (userId) {
                 requestData.body = JSON.stringify({ cart_id: userId });
-            } else {
+            }
+            
+            if (!token && !userId) {
                 console.log("No auth_token or user_id found");
                 return;
             }
