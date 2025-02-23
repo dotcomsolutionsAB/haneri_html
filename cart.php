@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
-            let userId = localStorage.getItem('user_id');
+            let userId = localStorage.getItem('guest_id');
             // alert(userId);
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
