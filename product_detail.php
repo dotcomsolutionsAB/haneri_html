@@ -141,12 +141,9 @@
                 if (data.success) {
                     alert("Product added to cart successfully!");
                     const userId = data.data.user_id;
-                    if (token) {
-                        localStorage.setItem('user_id', userId);
-                    }else{
-                        localStorage.setItem('guest_id', String(userId));
+                    if (userId) {
+                        localStorage.setItem(token ? 'user_id' : 'guest_id', String(userId));
                     }
-                    
                 }
             })
             .catch(error => console.error('Error adding product to cart:', error));
