@@ -2,12 +2,12 @@
 <?php include("configs/config.php"); ?> 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const userId = localStorage.getItem('user_id');
-        
-        if (userId) {
-            document.getElementById('cart-user-id').textContent = `User ID: ${userId}`;
+        const g_Id = localStorage.getItem('guest_id');
+        const U_Id = localStorage.getItem('user_id');
+        if (g_Id) {
+            document.getElementById('cart-user-id').textContent = `User ID: ${g_Id}`;
         } else {
-            console.warn("User ID not found in localStorage.");
+            console.warn(U_Id);
         }
     });
 
