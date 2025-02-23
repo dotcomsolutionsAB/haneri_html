@@ -96,10 +96,10 @@
         });
 
         function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {.00
-            document.getElementById('product-price').textContent = `₹${sellingPrice}.00`;
-            document.getElementById('selling-price').textContent = `₹${sellingPrice}.00`;
+            document.getElementById('product-price').textContent = `₹${sellingPrice}`;
+            document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
             document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
-            document.getElementById('regular-price').textContent = `₹${regularPrice}.00`;
+            document.getElementById('regular-price').textContent = `₹${regularPrice}`;
             document.getElementById('selected-variant').value = variantId;
             
             // Remove selected class from all variants and add to the clicked one

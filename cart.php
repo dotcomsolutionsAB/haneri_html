@@ -1,5 +1,19 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const userId = localStorage.getItem('user_id');
+        
+        if (userId) {
+            document.getElementById('cart-user-id').textContent = `User ID: ${userId}`;
+        } else {
+            console.warn("User ID not found in localStorage.");
+        }
+    });
+
+</script>
+<p id="cart-user-id">Loading user...</p>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
