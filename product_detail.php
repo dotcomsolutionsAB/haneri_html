@@ -162,7 +162,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log("API response received:", data);
-                if (data.success) {
+                if (data && data.data) {
                     alert("Product added to cart successfully!");
                     const userId = data.data.user_id;
                     console.log("User ID from API:", userId);
@@ -177,6 +177,7 @@
                 } else {
                     console.error("API response unsuccessful:", data);
                 }
+
             })
             .catch(error => console.error('Error adding product to cart:', error));
         }
