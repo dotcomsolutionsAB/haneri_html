@@ -1,5 +1,4 @@
 <?php include("header.php"); ?>
-<?php include("configs/auth_check.php"); ?>
 <?php include("configs/config.php"); ?> 
 <script>
         document.addEventListener("DOMContentLoaded", function() {
