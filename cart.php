@@ -4,6 +4,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
             let userId = localStorage.getItem('user_id');
+            alert(userId);
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
                 method: "POST",
