@@ -1,7 +1,71 @@
 <?php include("header.php"); ?>
 
 <?php include("configs/config.php"); ?> 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let token = localStorage.getItem('auth_token');
+        let userId = localStorage.getItem('user_id');
+        let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+        let requestData = {};
+        
+        if (token) {
+            requestData = { headers: { "Authorization": `Bearer ${token}` } };
+        } else if (userId) {
+            requestData = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ cart_id: userId })
+            };
+        } else {
+            console.log("No auth_token or user_id found");
+            return;
+        }
 
+        fetch(apiUrl, requestData)
+            .then(response => response.json())
+            .then(data => {
+                if (data.data && data.data.length > 0) {
+                    let cartTableBody = document.querySelector(".table-cart tbody");
+                    cartTableBody.innerHTML = "";
+                    
+                    data.data.forEach(item => {
+                        let variantInfo = item.variant ? `${item.variant.variant_type}: ${item.variant.variant_value}` : "No Variant";
+                        let subtotal = (item.quantity * item.variant.selling_price).toFixed(2);
+
+                        let row = `
+                            <tr class="product-row">
+                                <td>
+                                    <figure class="product-image-container">
+                                        <a href="#" class="product-image">
+                                            <img src="assets/images/products/product-placeholder.jpg" alt="product">
+                                        </a>
+                                        <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
+                                    </figure>
+                                </td>
+                                <td class="product-col">
+                                    <h5 class="product-title">
+                                        <a href="#">${item.product.name}</a>
+                                    </h5>
+                                    <p>${variantInfo}</p>
+                                </td>
+                                <td>₹ ${item.variant.selling_price}</td>
+                                <td>
+                                    <div class="product-single-qty">
+                                        <input class="horizontal-quantity form-control" type="text" value="${item.quantity}" readonly>
+                                    </div>
+                                </td>
+                                <td class="text-right"><span class="subtotal-price">₹ ${subtotal}</span></td>
+                            </tr>
+                        `;
+                        cartTableBody.insertAdjacentHTML("beforeend", row);
+                    });
+                } else {
+                    document.querySelector(".table-cart tbody").innerHTML = "<tr><td colspan='5' class='text-center'>No items in cart</td></tr>";
+                }
+            })
+            .catch(error => console.error("Error fetching cart items:", error));
+    });
+</script>
 <main class="main cart_page">
     <div class="container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
@@ -30,77 +94,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="product-row">
-                                <td>
-                                    <figure class="product-image-container">
-                                        <a href="#" class="product-image">
-                                            <img src="assets/images/products/product-4.jpg" alt="product">
-                                        </a>
-
-                                        <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
-                                    </figure>
-                                </td>
-                                <td class="product-col">
-                                    <h5 class="product-title">
-                                        <a href="#">Haneri AirElite AEW1</a>
-                                    </h5>
-                                </td>
-                                <td>₹ 199.00</td>
-                                <td>
-                                    <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
-                                    </div><!-- End .product-single-qty -->
-                                </td>
-                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
-                            </tr>
-
-                            <tr class="product-row">
-                                <td>
-                                    <figure class="product-image-container">
-                                        <a href="#" class="product-image">
-                                            <img src="assets/images/products/product-3.jpg" alt="product">
-                                        </a>
-
-                                        <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
-                                    </figure>
-                                </td>
-                                <td class="product-col">
-                                    <h5 class="product-title">
-                                        <a href="#">Haneri AirElite AEW1</a>
-                                    </h5>
-                                </td>
-                                <td>₹ 199.00</td>
-                                <td>
-                                    <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
-                                    </div><!-- End .product-single-qty -->
-                                </td>
-                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
-                            </tr>
-
-                            <tr class="product-row">
-                                <td>
-                                    <figure class="product-image-container">
-                                        <a href="#" class="product-image">
-                                            <img src="assets/images/products/product-6.jpg" alt="product">
-                                        </a>
-
-                                        <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
-                                    </figure>
-                                </td>
-                                <td class="product-col">
-                                    <h5 class="product-title">
-                                        <a href="#">Haneri AirElite AEW1</a>
-                                    </h5>
-                                </td>
-                                <td>₹ 199.00</td>
-                                <td>
-                                    <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
-                                    </div><!-- End .product-single-qty -->
-                                </td>
-                                <td class="text-right"><span class="subtotal-price">₹ 199.00</span></td>
-                            </tr>
+                            <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
                         </tbody>
 
 

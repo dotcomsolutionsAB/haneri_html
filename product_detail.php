@@ -57,7 +57,7 @@
                 fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
                     method: "POST",
                     headers: {
-                        "Authorization": `Bearer ${token}`,
+                        // "Authorization": `Bearer ${token}`,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({ product_id: productId })
