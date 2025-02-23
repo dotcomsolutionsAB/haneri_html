@@ -138,9 +138,12 @@
             })
             .then(response => response.json())
             .then(data => {
+                console.log("API response received:", data);
                 if (data.success) {
                     alert("Product added to cart successfully!");
                     const userId = data.data.user_id;
+                    console.log("User ID from API:", userId);
+
                     if (token) {
                         localStorage.setItem('user_id', userId);
                         console.log("Stored under user_id:", userId);
@@ -148,7 +151,10 @@
                         localStorage.setItem('guest_id', String(userId));
                         console.log("Stored under guest_id:", userId);
                     }
+                } else {
+                    console.error("API response unsuccessful:", data);
                 }
+
 
             })
             .catch(error => console.error('Error adding product to cart:', error));

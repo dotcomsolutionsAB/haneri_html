@@ -4,16 +4,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const guestId = localStorage.getItem('guest_id');
     const userId = localStorage.getItem('user_id');
-    const cartUserIdElem = document.getElementById('cart-user-id');
+    const idToDisplay = guestId || userId;
+    console.log("Retrieved ID:", idToDisplay);
 
-    if (guestId) {
-        cartUserIdElem.textContent = `User ID: ${guestId}`;
-    } else if (userId) {
-        cartUserIdElem.textContent = `User ID: ${userId}`;
-    } else {
-        console.warn("No user ID found in localStorage.");
-    }
-});
+    });
 
 
 </script>
