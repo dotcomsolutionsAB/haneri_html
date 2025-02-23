@@ -79,11 +79,16 @@
                         
                         // Load Variants
                         const variantsContainer = document.querySelector('.variants');
-                        variantsContainer.innerHTML = data.data.variants.map(variant => 
-                            `<div class="variant" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
+                        variantsContainer.innerHTML = data.data.variants.map((variant, index) => 
+                            `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
                                 <p>${variant.variant_type}</p>
                             </div>`
                         ).join('');
+                        
+                        // Select first variant by default
+                        if (data.data.variants.length > 0) {
+                            updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, document.querySelector('.variant'));
+                        }
                     }
                 })
                 .catch(error => console.error('Error fetching product details:', error));
