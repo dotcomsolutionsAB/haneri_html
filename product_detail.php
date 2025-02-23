@@ -134,7 +134,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Product added to cart successfully!");
+                    alert("Product added to cart successfully!" . data.data.user_id);
                     localStorage.setItem('user_id', data.data.user_id);
                 }
             })
