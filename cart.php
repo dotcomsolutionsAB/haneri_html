@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
             
             if (userId) {
-                requestData.body = JSON.stringify({ cart_id: userId });
+                requestData.body = JSON.stringify({ user_id: userId });
             }
             
             if (!token && !userId) {
