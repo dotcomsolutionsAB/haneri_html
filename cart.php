@@ -1,15 +1,20 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const g_Id = localStorage.getItem('guest_id');
-        const U_Id = localStorage.getItem('user_id');
-        if (g_Id) {
-            document.getElementById('cart-user-id').textContent = `User ID: ${g_Id}`;
-        } else {
-            console.warn(U_Id);
-        }
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    const guestId = localStorage.getItem('guest_id');
+    const userId = localStorage.getItem('user_id');
+    const cartUserIdElem = document.getElementById('cart-user-id');
+
+    if (guestId) {
+        cartUserIdElem.textContent = `User ID: ${guestId}`;
+    } else if (userId) {
+        cartUserIdElem.textContent = `User ID: ${userId}`;
+    } else {
+        console.warn("No user ID found in localStorage.");
+    }
+});
+
 
 </script>
 
