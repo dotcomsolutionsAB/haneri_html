@@ -13,12 +13,12 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
-            let guestId = localStorage.getItem('guest_id');
+            let guestId = '3b45869d-3765-4b51-8040-0feb601a6259';
             let backendDomain = "https://haneri.dotcombusiness.in";
-            
+            console.log("ID: ", guestId);
             // If there is no auth token and guestId exists, store it in cookies for the backend domain
             if (!token && guestId) {
-                document.cookie = `cart_id=3b45869d-3765-4b51-8040-0feb601a6259; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
+                document.cookie = `cart_id=; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
             }
             
             let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
