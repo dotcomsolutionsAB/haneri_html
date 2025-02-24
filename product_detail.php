@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<style>
+<!-- <style>
     .variants{
         display: flex;
         flex-wrap: wrap;
@@ -45,7 +45,7 @@
         font-size: 1.2rem;
         line-height: 1.5;
     }
-</style>
+</style> -->
 <!-- Product Detail Page -->
 <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -117,70 +117,69 @@
                 sellingPriceElement.textContent = `₹${updatedPrice}`;
             }
         }
-        // Wait until the DOM is fully loaded
-        document.addEventListener("DOMContentLoaded", function() {
-            // Bind the event listener to the button
-            const addCartBtn = document.getElementById('add-to-cart-btn');
-            if (addCartBtn) {
-                addCartBtn.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default anchor behavior
-                    addToCart();
-                });
-            } else {
-                console.error("Add to Cart button not found.");
-            }
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Bind the event listener to the button
+    const addCartBtn = document.getElementById('add-to-cart-btn');
+    if (addCartBtn) {
+        addCartBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            addToCart();
         });
+    } else {
+        console.error("Add to Cart button not found.");
+    }
+});
 
-        function addToCart() {
-            // Log at the start to verify the function is called only once per click
-            console.log("addToCart() function invoked.");
+function addToCart() {
+    // Log at the start to verify the function is called only once per click
+    console.log("addToCart() function invoked.");
 
-            const productId = new URLSearchParams(window.location.search).get('id');
-            const variantIdElem = document.getElementById('selected-variant');
-            const quantityElem = document.getElementById('quantity');
+    const productId = new URLSearchParams(window.location.search).get('id');
+    const variantIdElem = document.getElementById('selected-variant');
+    const quantityElem = document.getElementById('quantity');
 
-            if (!productId || !variantIdElem || !quantityElem) {
-                console.error("Required elements not found or productId missing.");
-                return;
+    if (!productId || !variantIdElem || !quantityElem) {
+        console.error("Required elements not found or productId missing.");
+        return;
+    }
+
+    const variantId = variantIdElem.value;
+    const quantity = quantityElem.value;
+    const token = localStorage.getItem('auth_token');
+
+    fetch(`<?php echo BASE_URL; ?>/cart/add`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            product_id: productId,
+            variant_id: variantId || null,
+            quantity: quantity
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("API response received:", data);
+        if (data.success) {
+            alert("Product added to cart successfully!");
+            const userId = data.data.user_id;
+            console.log("User ID from API:", userId);
+
+            if (token) {
+                localStorage.setItem('user_id', userId);
+                console.log("Stored under user_id:", userId);
+            } else {
+                localStorage.setItem('guest_id', String(userId));
+                console.log("Stored under guest_id:", userId);
             }
-
-            const variantId = variantIdElem.value;
-            const quantity = quantityElem.value;
-            const token = localStorage.getItem('auth_token');
-
-            fetch(`<?php echo BASE_URL; ?>/cart/add`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    product_id: productId,
-                    variant_id: variantId || null,
-                    quantity: quantity
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("API response received:", data);
-                if (data && data.data) {
-                    alert("Product added to cart successfully!");
-                    const userId = data.data.user_id;
-                    console.log("User ID from API:", userId);
-
-                    if (token) {
-                        localStorage.setItem('user_id', userId);
-                        console.log("Stored under user_id:", userId);
-                    } else {
-                        localStorage.setItem('guest_id', String(userId));
-                        console.log("Stored under guest_id:", userId);
-                    }
-                } else {
-                    console.error("API response unsuccessful:", data);
-                }
-
-            })
-            .catch(error => console.error('Error adding product to cart:', error));
+        } else {
+            console.error("API response unsuccessful:", data);
         }
+    })
+    .catch(error => console.error('Error adding product to cart:', error));
+}
 
         // function addToCart() {
         //     const productId = new URLSearchParams(window.location.search).get('id');
