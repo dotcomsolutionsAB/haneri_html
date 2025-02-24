@@ -25,11 +25,12 @@
                         <h2 class="step-title">Billing details</h2>
                         <div class="addresses">
                             <div class="address">                            
-                                <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
+                                <div class="vvv">
+                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
+                                </div>
                                 
                                 <div id="collapseNew" class="collapse">
                                     <div class="address_box">
-                                        Address 1
                                         <div class="add_box_1">
                                             <div class="col-lg-5">
                                                 <p>Name</p>
@@ -55,7 +56,6 @@
                                         </div>                                        
                                     </div>
                                     <div class="address_box">
-                                        Address 1
                                         <div class="add_box_1">
                                             <div class="col-lg-5">
                                                 <p>Name</p>
@@ -84,6 +84,10 @@
                             </div>
                         </div>
                         <style>
+                            .vvv{
+                                display:flex;
+                                justify-content:end;
+                            }
                             .selects{
                                 height: 100%;
                                 display: flex;
