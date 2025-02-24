@@ -16,18 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
-            let guestId = localStorage.getItem('guest_id');
+            let g_Id = localStorage.getItem('guest_id');
             
             // If there is no auth token and guestId exists, store it in cookies
-            if (!token && guestId) {
-                document.cookie = `cart_id=${guestId}; path=/; domain=haneri.dotcombusiness.in; SameSite=None; Secure`;
+            if (!token && g_Id) {
+                document.cookie = `cart_id=${g_Id}; path=/; domain=haneri.dotcombusiness.in; SameSite=None; Secure`;
             }
             
             let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
             let requestData = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                credentials: "include" // Ensure cookies are sent with request
+                credentials: "omit" // Ensure cookies are sent with request
             };
             
             if (token) {
