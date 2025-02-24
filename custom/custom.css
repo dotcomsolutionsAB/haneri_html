@@ -1,3 +1,10 @@
+.heading_1{
+    font-size: 30px;
+    color: #315859;
+    text-align: left;
+    font-weight: 500;
+    font-family: 'Barlow-Condensed';
+}
 .breadcrumb-nav {
     color: #000;
     background: #f8f9fa;
@@ -1134,7 +1141,7 @@ Turbosilent
     }
     .highlight_p{
       font-weight: 700 !important;
-      color:#00473E;
+      color:#464646;
     }
     .ulclass{
         font-family: 'Open Sans';

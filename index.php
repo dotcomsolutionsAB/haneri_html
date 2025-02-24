@@ -16,7 +16,7 @@
         <div class="container">
             <!-- Featured Products section -->
             <section class="featured_products">
-                <h2>Featured Products</h2>
+                <h2 class="heading_1">Featured Products</h2>
                 <div class="product-grid">
                     <?php 
                     $products = [
@@ -67,7 +67,7 @@
 
             <!-- Why Choose Us section -->
             <section class="why-choose-us">
-            <h2 class="section-title ls-n-15 text-center pb-2 m-b-4">Why Choose Us</h2>
+            <h2 class="heading_1">Why Choose Us</h2>
                 <div class="icons-container">
                     <div class="icon-item">
                         <img src="images/Logo1.png" alt="Quality">
@@ -83,7 +83,7 @@
         </div>
 
         <section class="container pb-3 mb-1">
-            <h2 class="section-title ls-n-15 text-center pb-2 m-b-4">Best Sellers</h2>
+            <h2 class="heading_1">Best Sellers</h2>
             <div class="row py-4">
                 <?php 
                 $best_sellers = [
@@ -126,7 +126,7 @@
         <div class="container">
             <div class="row faq">
                 <div class="col-lg-6">
-                    <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
+                    <h2 class="heading_1">Frequently Asked Questions</h2>
                     <div id="accordion">
                         <?php 
                         $faqs = [
@@ -151,7 +151,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="mt-6 mb-2">Send Us a Message</h2>
+                    <h2 class="heading_1">Send Us a Message</h2>
                     <form class="mb-0" action="#">
                         <div class="form-group">
                             <label class="mb-1" for="contact-name">Your Name <span class="required">*</span></label>
@@ -176,7 +176,7 @@
         <!-- Blogs Section -->
         <div class="container">
             <section class="blogs_section">
-                <h2>BLOGS</h2>
+                <h2 class="heading_1">BLOGS</h2>
                 <div class="blogs-container">
                     <?php 
                     $blogs = [
