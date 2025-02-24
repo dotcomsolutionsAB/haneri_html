@@ -30,6 +30,8 @@
         border-radius: 10px;
     }
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
@@ -45,102 +47,102 @@
             </li>
         </ul>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-$(document).ready(function () {
-    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-    const baseUrl = "<?php echo BASE_URL; ?>/address";
+    $(document).ready(function () {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const baseUrl = "<?php echo BASE_URL; ?>/address";
 
-    function fetchAddresses() {
-        $.ajax({
-            url: baseUrl,
-            type: "GET",
-            headers: { "Authorization": `Bearer ${authToken}` },
-            success: function (response) {
-                if (response.data.length > 0) {
-                    let addressHTML = "";
-                    response.data.forEach(address => {
-                        let isChecked = address.is_default ? "checked" : "";
-                        addressHTML += `
-                            <div class="address_box">
-                                <div class="add_box_1">
-                                    <div class="col-lg-5">
-                                        <p><strong>Name:</strong> ${address.name}</p>
-                                        <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                        <input type="hidden" name="is_default" value="${address.is_default}">
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                        <p>
-                                            <strong>Location:</strong> 
-                                            <span>${address.country}</span>, 
-                                            <span>${address.state}</span>, 
-                                            <span>${address.city}</span>
-                                        </p>
-                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="selects">
-                                            <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                        </div>                                                
-                                    </div>
-                                </div>                                        
-                            </div>
-                        `;
-                    });
-                    $("#collapseNew").html(addressHTML).addClass("show");
-                } else {
-                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+        function fetchAddresses() {
+            $.ajax({
+                url: baseUrl,
+                type: "GET",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    if (response.data.length > 0) {
+                        let addressHTML = "";
+                        response.data.forEach(address => {
+                            let isChecked = address.is_default ? "checked" : "";
+                            addressHTML += `
+                                <div class="address_box">
+                                    <div class="add_box_1">
+                                        <div class="col-lg-5">
+                                            <p><strong>Name:</strong> ${address.name}</p>
+                                            <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                            <input type="hidden" name="is_default" value="${address.is_default}">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                            <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                            <p>
+                                                <strong>Location:</strong> 
+                                                <span>${address.country}</span>, 
+                                                <span>${address.state}</span>, 
+                                                <span>${address.city}</span>
+                                            </p>
+                                            <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="selects">
+                                                <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                            </div>                                                
+                                        </div>
+                                    </div>                                        
+                                </div>
+                            `;
+                        });
+                        $("#collapseNew").html(addressHTML).addClass("show");
+                    } else {
+                        $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                    }
+                },
+                error: function () {
+                    console.error("Error fetching addresses.");
                 }
-            },
-            error: function () {
-                console.error("Error fetching addresses.");
-            }
-        });
-    }
-
-    $("#addAddressBtn").click(function () {
-        let addressData = {
-            name: $("#name").val(),
-            contact_no: $("#contact_no").val(),
-            address_line1: $("#address_line1").val(),
-            address_line2: $("#address_line2").val(),
-            city: $("#city").val(),
-            state: $("#state").val(),
-            country: $("#country").val(),
-            postal_code: $("#postal_code").val(),
-            is_default: true
-        };
-
-        if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
-            alert("Please fill all required fields.");
-            return;
+            });
         }
 
-        $.ajax({
-            url: "<?php echo BASE_URL; ?>/address/register",
-            type: "POST",
-            headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
-            data: JSON.stringify(addressData),
-            success: function (response) {
-                if (response.message.includes("success")) {
-                    // alert("Address added successfully!");
-                    $("#checkout-form")[0].reset(); // Reset form fields
-                    $("#collapseFour").removeClass("show"); // Hide add address form
-                    fetchAddresses(); // Refresh the address list
-                } else {
+        $("#addAddressBtn").click(function () {
+            let addressData = {
+                name: $("#name").val(),
+                contact_no: $("#contact_no").val(),
+                address_line1: $("#address_line1").val(),
+                address_line2: $("#address_line2").val(),
+                city: $("#city").val(),
+                state: $("#state").val(),
+                country: $("#country").val(),
+                postal_code: $("#postal_code").val(),
+                is_default: true
+            };
+
+            if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            $.ajax({
+                url: "<?php echo BASE_URL; ?>/address/register",
+                type: "POST",
+                headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+                data: JSON.stringify(addressData),
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        // alert("Address added successfully!");
+                        $("#checkout-form")[0].reset(); // Reset form fields
+                        $("#collapseFour").removeClass("show"); // Hide add address form
+                        fetchAddresses(); // Refresh the address list
+                    } else {
+                        alert("Failed to add address. Please try again.");
+                    }
+                },
+                error: function () {
                     alert("Failed to add address. Please try again.");
                 }
-            },
-            error: function () {
-                alert("Failed to add address. Please try again.");
-            }
+            });
         });
-    });
 
-    fetchAddresses(); // Load addresses on page load
-});
+        fetchAddresses(); // Load addresses on page load
+    });
 </script>
         <div class="row">
            
