@@ -13,35 +13,24 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
-            let userId = localStorage.getItem('guest_id');
-            // let cartId = getCookie('cart_id');
+            let guestId = localStorage.getItem('guest_id');
             
-            // If userId is not set but cartId is available in cookies, store it in localStorage
-            if (userId) {
-                // userId = cartId;
-                // localStorage.setItem('guest_id', userId);
-                setCookie('cart_id', userId, 365); // Store the guest_id in the cart_id cookie
+            // If there is no auth token and guestId exists, store it in cookies
+            if (!token && guestId) {
+                setCookie('cart_id', guestId, 365);
             }
             
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({})
+                headers: { "Content-Type": "application/json" }
             };
             
             if (token) {
                 requestData.headers["Authorization"] = `Bearer ${token}`;
-            } else if (userId) {
-                requestData.body = JSON.stringify({ cart_id: userId });
-            }
-            
-            if (!token && !userId) {
-                console.log("No auth_token or cart_id found");
-                return;
             }
             
             fetch(apiUrl, requestData)
@@ -89,11 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 .catch(error => console.error("Error fetching cart items:", error));
         });
         
-        // function getCookie(name) {
-        //     let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        //     return match ? match[2] : null;
-        // }
-
         function setCookie(name, value, days) {
             let expires = "";
             if (days) {
