@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
             is_default
         };
 
-        fetch("{{base_url}}/address/register", {
+        fetch("<?php echo BASE_URL; ?>/address/register", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${authToken}`,
