@@ -86,8 +86,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + value + "; path=/; domain=haneri.dotcombusiness.in; SameSite=None; Secure" + expires;
+            document.cookie = name + "=" + value + "; path=/; domain=.dotcombusiness.in; SameSite=None; Secure" + expires;
         }
+
     </script>
 <main class="main cart_page">
     <div class="container padding_top_100">
