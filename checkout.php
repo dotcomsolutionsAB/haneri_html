@@ -93,10 +93,10 @@
         <div class="row">
         <div class="col-lg-7">
             <h4>Returning customer?
-                <button data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link btn-toggle">Login</button>
+                <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">Login</button>
             </h4>
 
-            <div id="collapseOne" class="collapse">
+            <div id="collapseNew" class="collapse">
                 <div class="login-section feature-box">
                     <div class="feature-box-content">
                         <form action="#" id="login-form">
