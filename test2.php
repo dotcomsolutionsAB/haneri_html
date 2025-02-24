@@ -125,7 +125,7 @@ $(document).ready(function () {
             data: JSON.stringify(addressData),
             success: function (response) {
                 if (response.message.includes("success")) {
-                    alert("Address added successfully!");
+                    // alert("Address added successfully!");
                     $("#checkout-form")[0].reset(); // Reset form fields
                     $("#collapseFour").removeClass("show"); // Hide add address form
                     fetchAddresses(); // Refresh the address list
@@ -237,7 +237,67 @@ $(document).ready(function () {
                 </ul>
             </div>
             <!-- End .col-lg-8 -->
+            <script>
+                $(document).ready(function () {
+                    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+                    const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
 
+                    function fetchCartItems() {
+                        $.ajax({
+                            url: cartUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            success: function (response) {
+                                if (response.data.length > 0) {
+                                    let cartHTML = "";
+                                    let subtotal = 0;
+                                    let total = 0;
+
+                                    response.data.forEach(item => {
+                                        let productName = item.product.name;
+                                        let quantity = item.quantity;
+                                        let price = parseFloat(item.variant.selling_price);
+                                        let tax = parseFloat(item.variant.selling_tax);
+                                        let itemTotal = (price + tax) * quantity;
+
+                                        subtotal += (price * quantity);
+                                        total += itemTotal;
+
+                                        cartHTML += `
+                                            <tr>
+                                                <td class="product-col">
+                                                    <h3 class="product-title">
+                                                        ${productName} × <span class="product-qty">${quantity}</span>
+                                                    </h3>
+                                                </td>
+                                                <td class="price-col">
+                                                    <span>₹ ${itemTotal.toFixed(2)}</span>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    });
+
+                                    $("#cart-items").html(cartHTML);
+                                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                                    $("#total").text(`₹ ${total.toFixed(2)}`);
+                                } else {
+                                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                                    $("#subtotal").text("₹ 0.00");
+                                    $("#total").text("₹ 0.00");
+                                }
+                            },
+                            error: function () {
+                                console.error("Error fetching cart items.");
+                            }
+                        });
+                    }
+
+                    fetchCartItems(); // Load cart items on page load
+                });
+            </script>
             <div class="col-lg-5">
                 <div class="order-summary">
                     <h3>YOUR ORDER</h3>
@@ -248,94 +308,50 @@ $(document).ready(function () {
                                 <th colspan="2">Product</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="product-col">
-                                    <h3 class="product-title">
-                                        Haneri AirElite AEW1 ×
-                                        <span class="product-qty">4</span>
-                                    </h3>
-                                </td>
-
-                                <td class="price-col">
-                                    <span>₹ 1,040.00</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="product-col">
-                                    <h3 class="product-title">
-                                        Haneri AirElite AEW1 ×
-                                        <span class="product-qty">2</span>
-                                    </h3>
-                                </td>
-
-                                <td class="price-col">
-                                    <span>₹ 418.00</span>
-                                </td>
-                            </tr>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be inserted here dynamically -->
                         </tbody>
                         <tfoot>
                             <tr class="cart-subtotal">
-                                <td>
-                                    <h4>Subtotal</h4>
-                                </td>
-
-                                <td class="price-col">
-                                    <span>₹ 1,458.00</span>
-                                </td>
+                                <td><h4>Subtotal</h4></td>
+                                <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
                             </tr>
+
                             <tr class="order-shipping">
                                 <td class="text-left" colspan="2">
                                     <h4 class="m-b-sm">Shipping</h4>
-
                                     <div class="form-group form-group-custom-control">
                                         <div class="custom-control custom-radio d-flex">
                                             <input type="radio" class="custom-control-input" name="radio" checked />
                                             <label class="custom-control-label">Free Shipping</label>
                                         </div>
-                                        <!-- End .custom-checkbox -->
                                     </div>
                                 </td>
-
                             </tr>
 
                             <tr class="order-total">
-                                <td>
-                                    <h4>Total</h4>
-                                </td>
-                                <td>
-                                    <b class="total-price"><span>₹ 1,603.80</span></b>
-                                </td>
+                                <td><h4>Total</h4></td>
+                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
                             </tr>
                         </tfoot>
                     </table>
 
                     <div class="payment-methods">
                         <h4 class="mb-3">Payment Methods</h4>
-                        
                         <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
-                            <!-- Payment Method Name -->
-                            <span class="fw-bold fs-6">
-                                Razorpay
-                            </span>
-                            
-                            <!-- Payment Method Icon -->
+                            <span class="fw-bold fs-6">Razorpay</span>
                             <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
-                                <img src="assets/images/payments/razorpay.png" 
-                                    class="w-100 h-100 object-fit-cover" 
-                                    alt="Razorpay" />
+                                <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
                             </span>
                         </div>
                     </div>
-
 
                     <button type="submit" class="btn btn-dark btn-place-order" form="checkout-form">
                         Place order
                     </button>
                 </div>
-                <!-- End .cart-summary -->
             </div>
+
             <!-- End .col-lg-4 -->
         </div>
         <!-- End .row -->
