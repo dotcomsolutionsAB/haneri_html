@@ -21,7 +21,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-    const baseUrl = "{{base_url}}/address";
+    const baseUrl = "<?php echo BASE_URL; ?>/address";
 
     fetch(baseUrl, {
         method: "GET",

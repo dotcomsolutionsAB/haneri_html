@@ -21,7 +21,7 @@
                 document.cookie = `cart_id=${guestId}; path=/; domain=${backendDomain}; SameSite=None; Secure`;
             }
             
-            let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
+            let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
