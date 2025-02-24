@@ -17,79 +17,6 @@
             </li>
         </ul>
 
-        <div class="login-form-container">
-            <h4>Returning customer?
-                <button data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link btn-toggle">Login</button>
-            </h4>
-
-            <div id="collapseOne" class="collapse">
-                <div class="login-section feature-box">
-                    <div class="feature-box-content">
-                        <form action="#" id="login-form">
-                            <p>
-                                If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.
-                            </p>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="mb-0 pb-1">Username or email <span
-                                                class="required">*</span></label>
-                                        <input type="email" class="form-control" required />
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="mb-0 pb-1">Password <span
-                                                class="required">*</span></label>
-                                        <input type="password" class="form-control" required />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn">LOGIN</button>
-
-                            <div class="form-footer mb-1">
-                                <div class="custom-control custom-checkbox mb-0 mt-0">
-                                    <input type="checkbox" class="custom-control-input" id="lost-password" />
-                                    <label class="custom-control-label mb-0" for="lost-password">Remember
-                                        me</label>
-                                </div>
-
-                                <a href="forgot-password.html" class="forget-password">Lost your password?</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="checkout-discount">
-            <h4>Have a coupon?
-                <button data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link btn-toggle">ENTER YOUR CODE</button>
-            </h4>
-
-            <div id="collapseTwo" class="collapse">
-                <div class="feature-box">
-                    <div class="feature-box-content">
-                        <p>If you have a coupon code, please apply it below.</p>
-
-                        <form action="#">
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm w-auto" placeholder="Coupon code" required="" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-sm mt-0" type="submit">
-                                        Apply Coupon
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
            
             <div class="col-lg-7">
@@ -122,6 +49,11 @@
                                                 </p>
                                                 <p>Postal Code</p>
                                             </div>
+                                            <div class="col-lg-2">
+                                                <div class="selects">
+                                                    <input type="radio" name="address_select" class="sel">
+                                                </div>                                                
+                                            </div>
                                         </div>                                        
                                     </div>
                                     <div class="address_box">
@@ -144,7 +76,9 @@
                                                 <p>Postal Code</p>
                                             </div>
                                             <div class="col-lg-2">
-                                                <input type="checkbox" name="address_select">
+                                                <div class="selects">
+                                                    <input type="radio" name="address_select" class="sel">
+                                                </div>                                                
                                             </div>
                                         </div>                                        
                                     </div>
@@ -152,6 +86,10 @@
                             </div>
                         </div>
                         <style>
+                            .selects .sel{
+                                width: 40px;
+                                height: 40px;
+                            }
                             .address_box{
                                 background: antiquewhite;
                                 padding: 5px 15px;
