@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // If there is no auth token and guestId exists, store it in cookies
             if (!token && guestId) {
-                setCookie('cart_id', guestId, 365);
+                document.cookie = `cart_id=${guestId}; path=/; SameSite=None; Secure`;
             }
             
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
@@ -79,15 +79,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 .catch(error => console.error("Error fetching cart items:", error));
         });
         
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + value + "; path=/; domain=.dotcombusiness.in; SameSite=None; Secure" + expires;
-        }
+        // function setCookie(name, value, days) {
+        //     let expires = "";
+        //     if (days) {
+        //         let date = new Date();
+        //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //         expires = "; expires=" + date.toUTCString();
+        //     }
+        //     document.cookie = name + "=" + value + "; path=/; domain=.dotcombusiness.in; SameSite=None; Secure" + expires;
+        // }
 
     </script>
 <main class="main cart_page">
