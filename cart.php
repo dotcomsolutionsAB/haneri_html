@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // If there is no auth token and guestId exists, store it in cookies
             if (!token && guestId) {
-                document.cookie = `cart_id=${guestId}; path=/; SameSite=None; Secure`;
+                document.cookie = `cart_id=${guestId}; path=/; domain=.dotcombusiness.in; SameSite=None; Secure`;
+
             }
             
-            let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+            let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
             let requestData = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
