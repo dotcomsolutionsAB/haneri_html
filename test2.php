@@ -1,7 +1,35 @@
 <?php include("header.php"); ?>
 
 <?php include("configs/config.php"); ?> 
-
+<style>
+    .vvv{
+        display:flex;
+        justify-content:end;
+    }
+    .selects{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .selects .sel{
+        width: 40px;
+        height: 40px;
+    }
+    .address_box{
+        /* background: antiquewhite; */
+        /* padding: 5px 15px; */
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .add_box_1{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0px;
+        background: #f4f4f4;
+        border-radius: 10px;
+    }
+</style>
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
@@ -17,173 +45,101 @@
             </li>
         </ul>
 
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-        const baseUrl = "<?php echo BASE_URL; ?>/address";
-
-        fetch(baseUrl, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${authToken}`,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.data.length > 0) {
-                const addressContainer = document.getElementById("collapseNew");
-                addressContainer.innerHTML = ""; // Clear previous content
-
-                data.data.forEach((address, index) => {
-                    let isChecked = address.is_default ? "checked" : "";
-                    let addressHTML = `
-                        <div class="address_box">
-                            <div class="add_box_1">
-                                <div class="col-lg-5">
-                                    <p><strong>Name:</strong> ${address.name}</p>
-                                    <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                    <p><strong>Email:</strong> N/A</p>
-                                    <input type="hidden" name="is_default" value="${address.is_default}">
-                                </div>
-                                <div class="col-lg-5">
-                                    <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                    <p>
-                                        <strong>Location:</strong> 
-                                        <span>${address.country}</span>, 
-                                        <span>${address.state}</span>, 
-                                        <span>${address.city}</span>
-                                    </p>
-                                    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="selects">
-                                        <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                    </div>                                                
-                                </div>
-                            </div>                                        
-                        </div>
-                    `;
-                    addressContainer.innerHTML += addressHTML;
-                });
-            } else {
-                document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
-            }
-        })
-        .catch(error => console.error("Error fetching addresses:", error));
-    });
-</script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
     const authToken = localStorage.getItem('auth_token'); // Replace with actual token
     const baseUrl = "<?php echo BASE_URL; ?>/address";
 
     function fetchAddresses() {
-        fetch(baseUrl, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${authToken}`,
-                "Content-Type": "application/json"
+        $.ajax({
+            url: baseUrl,
+            type: "GET",
+            headers: { "Authorization": `Bearer ${authToken}` },
+            success: function (response) {
+                if (response.data.length > 0) {
+                    let addressHTML = "";
+                    response.data.forEach(address => {
+                        let isChecked = address.is_default ? "checked" : "";
+                        addressHTML += `
+                            <div class="address_box">
+                                <div class="add_box_1">
+                                    <div class="col-lg-5">
+                                        <p><strong>Name:</strong> ${address.name}</p>
+                                        <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                        <input type="hidden" name="is_default" value="${address.is_default}">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                        <p>
+                                            <strong>Location:</strong> 
+                                            <span>${address.country}</span>, 
+                                            <span>${address.state}</span>, 
+                                            <span>${address.city}</span>
+                                        </p>
+                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="selects">
+                                            <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                        </div>                                                
+                                    </div>
+                                </div>                                        
+                            </div>
+                        `;
+                    });
+                    $("#collapseNew").html(addressHTML).addClass("show");
+                } else {
+                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                }
+            },
+            error: function () {
+                console.error("Error fetching addresses.");
             }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.data.length > 0) {
-                const addressContainer = document.getElementById("collapseNew");
-                addressContainer.innerHTML = ""; // Clear previous content
-
-                data.data.forEach((address, index) => {
-                    let isChecked = address.is_default ? "checked" : "";
-                    let addressHTML = `
-                        <div class="address_box">
-                            <div class="add_box_1">
-                                <div class="col-lg-5">
-                                    <p><strong>Name:</strong> ${address.name}</p>
-                                    <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                    <p><strong>Email:</strong> N/A</p>
-                                    <input type="hidden" name="is_default" value="${address.is_default}">
-                                </div>
-                                <div class="col-lg-5">
-                                    <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                    <p>
-                                        <strong>Location:</strong> 
-                                        <span>${address.country}</span>, 
-                                        <span>${address.state}</span>, 
-                                        <span>${address.city}</span>
-                                    </p>
-                                    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="selects">
-                                        <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                    </div>                                                
-                                </div>
-                            </div>                                        
-                        </div>
-                    `;
-                    addressContainer.innerHTML += addressHTML;
-                });
-            } else {
-                document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
-            }
-        })
-        .catch(error => console.error("Error fetching addresses:", error));
+        });
     }
 
-    document.getElementById("addAddressBtn").addEventListener("click", function () {
-        const name = document.getElementById("name").value;
-        const contact_no = document.getElementById("contact_no").value;
-        const address_line1 = document.getElementById("address_line1").value;
-        const address_line2 = document.getElementById("address_line2").value;
-        const city = document.getElementById("city").value;
-        const state = document.getElementById("state").value;
-        const country = document.getElementById("country").value;
-        const postal_code = document.getElementById("postal_code").value;
-        const is_default = true; // Always setting new address as default
+    $("#addAddressBtn").click(function () {
+        let addressData = {
+            name: $("#name").val(),
+            contact_no: $("#contact_no").val(),
+            address_line1: $("#address_line1").val(),
+            address_line2: $("#address_line2").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            country: $("#country").val(),
+            postal_code: $("#postal_code").val(),
+            is_default: true
+        };
 
-        if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+        if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
             alert("Please fill all required fields.");
             return;
         }
 
-        const addressData = {
-            name,
-            contact_no,
-            address_line1,
-            address_line2,
-            city,
-            state,
-            postal_code,
-            country,
-            is_default
-        };
-
-        fetch("<?php echo BASE_URL; ?>/address/register", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${authToken}`,
-                "Content-Type": "application/json"
+        $.ajax({
+            url: "<?php echo BASE_URL; ?>/address/register",
+            type: "POST",
+            headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+            data: JSON.stringify(addressData),
+            success: function (response) {
+                if (response.message.includes("success")) {
+                    alert("Address added successfully!");
+                    $("#checkout-form")[0].reset(); // Reset form fields
+                    $("#collapseFour").removeClass("show"); // Hide add address form
+                    fetchAddresses(); // Refresh the address list
+                } else {
+                    alert("Failed to add address. Please try again.");
+                }
             },
-            body: JSON.stringify(addressData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message === "Address added successfully!") {
-                alert("Address added successfully!");
-                fetchAddresses(); // Refresh the address list
-                document.getElementById("checkout-form").reset(); // Reset form fields
-            } else {
+            error: function () {
                 alert("Failed to add address. Please try again.");
             }
-        })
-        .catch(error => console.error("Error adding address:", error));
+        });
     });
 
-    // Load addresses on page load
-    fetchAddresses();
+    fetchAddresses(); // Load addresses on page load
 });
 </script>
         <div class="row">
@@ -200,89 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div id="collapseNew" class="collapse">
                                     <!-- Addresses will be dynamically added here -->
                                 </div>
-                                <!-- <div id="collapseNew" class="collapse">
-                                    <div class="address_box">
-                                        <div class="add_box_1">
-                                            <div class="col-lg-5">
-                                                <p>Name</p>
-                                                <p>Contact No</p>
-                                                <p>Email</p>
-                                                <input type="text" name="is_default" value="true">
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <p>Address 1</p>
-                                                <p>Address 2</p>
-                                                <p>
-                                                    <span>Country</span>
-                                                    <span>State</span>
-                                                    <span>City</span>
-                                                </p>
-                                                <p>Postal Code</p>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="selects">
-                                                    <input type="radio" name="address_select" class="sel">
-                                                </div>                                                
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                    <div class="address_box">
-                                        <div class="add_box_1">
-                                            <div class="col-lg-5">
-                                                <p>Name</p>
-                                                <p>Contact No</p>
-                                                <p>Email</p>
-                                                <input type="text" name="is_default" value="true">
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <p>Address 1</p>
-                                                <p>Address 2</p>
-                                                <p>
-                                                    <span>Country</span>
-                                                    <span>State</span>
-                                                    <span>City</span>
-                                                </p>
-                                                <p>Postal Code</p>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="selects">
-                                                    <input type="radio" name="address_select" class="sel">
-                                                </div>                                                
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
-                        <style>
-                            .vvv{
-                                display:flex;
-                                justify-content:end;
-                            }
-                            .selects{
-                                height: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                            }
-                            .selects .sel{
-                                width: 40px;
-                                height: 40px;
-                            }
-                            .address_box{
-                                /* background: antiquewhite; */
-                                /* padding: 5px 15px; */
-                                border-radius: 10px;
-                                margin-bottom: 15px;
-                            }
-                            .add_box_1{
-                                display: flex;
-                                justify-content: space-between;
-                                padding: 15px 0px;
-                                background: #f4f4f4;
-                                border-radius: 10px;
-                            }
-                        </style>
+                       
                         <form action="#" id="checkout-form">
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-0">
@@ -355,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
                             </div>
                         </form>
+
 
                     </li>
                 </ul>
