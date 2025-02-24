@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", function() {
     const guestId = localStorage.getItem('guest_id');
     const userId = localStorage.getItem('user_id');
@@ -10,17 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-</script>
+</script> -->
 
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
-            let g_Id = localStorage.getItem('guest_id');
+            let guestId = localStorage.getItem('guest_id');
+            let backendDomain = "haneri.dotcombusiness.in";
             
-            // If there is no auth token and guestId exists, store it in cookies
-            if (!token && g_Id) {
-                document.cookie = `cart_id=${g_Id}; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
+            // If there is no auth token and guestId exists, store it in cookies for the backend domain
+            if (!token && guestId) {
+                document.cookie = `cart_id=${guestId}; path=/; domain=${backendDomain}; SameSite=None; Secure`;
             }
             
             let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
@@ -78,17 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .catch(error => console.error("Error fetching cart items:", error));
         });
-        
-        // function setCookie(name, value, days) {
-        //     let expires = "";
-        //     if (days) {
-        //         let date = new Date();
-        //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        //         expires = "; expires=" + date.toUTCString();
-        //     }
-        //     document.cookie = name + "=" + value + "; path=/; domain=.dotcombusiness.in; SameSite=None; Secure" + expires;
-        // }
-
     </script>
 <main class="main cart_page">
     <div class="container padding_top_100">
