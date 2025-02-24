@@ -97,14 +97,17 @@
                                 height: 40px;
                             }
                             .address_box{
-                                background: antiquewhite;
-                                padding: 5px 15px;
+                                /* background: antiquewhite; */
+                                /* padding: 5px 15px; */
+                                border-radius: 10px;
+                                margin-bottom: 15px;
                             }
                             .add_box_1{
                                 display: flex;
                                 justify-content: space-between;
-                                padding: 5px 0px;
-                                background: azure;
+                                padding: 15px 0px;
+                                background: #f4f4f4;
+                                border-radius: 10px;
                             }
                         </style>
                         <form action="#" id="checkout-form">
