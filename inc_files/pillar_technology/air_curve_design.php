@@ -154,7 +154,7 @@
                 <ul class="dark ulclass margp">
                     <li>
                         <span class="highlight_p">
-                                Computational Fluid Dynamics (CFD):
+                                Computational Fluid Dynamics (CFD)
                         </span>
                         <br>
                         Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
