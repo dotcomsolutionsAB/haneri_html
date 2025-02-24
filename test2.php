@@ -17,6 +17,65 @@
             </li>
         </ul>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+    const baseUrl = "{{base_url}}/address";
+
+    fetch(baseUrl, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${authToken}`,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.data.length > 0) {
+            const addressContainer = document.getElementById("collapseNew");
+            addressContainer.innerHTML = ""; // Clear previous content
+
+            data.data.forEach((address, index) => {
+                let isChecked = address.is_default ? "checked" : "";
+                let addressHTML = `
+                    <div class="address_box">
+                        <div class="add_box_1">
+                            <div class="col-lg-5">
+                                <p><strong>Name:</strong> ${address.name}</p>
+                                <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                <p><strong>Email:</strong> N/A</p>
+                                <input type="hidden" name="is_default" value="${address.is_default}">
+                            </div>
+                            <div class="col-lg-5">
+                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                <p>
+                                    <strong>Location:</strong> 
+                                    <span>${address.country}</span>, 
+                                    <span>${address.state}</span>, 
+                                    <span>${address.city}</span>
+                                </p>
+                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="selects">
+                                    <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                </div>                                                
+                            </div>
+                        </div>                                        
+                    </div>
+                `;
+                addressContainer.innerHTML += addressHTML;
+            });
+        } else {
+            document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
+        }
+    })
+    .catch(error => console.error("Error fetching addresses:", error));
+});
+</script>
+
         <div class="row">
            
             <div class="col-lg-7">
@@ -28,59 +87,61 @@
                                 <div class="vvv">
                                     <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
                                 </div>
-                                
                                 <div id="collapseNew" class="collapse">
-                                    <div class="address_box">
-                                        <div class="add_box_1">
-                                            <div class="col-lg-5">
-                                                <p>Name</p>
-                                                <p>Contact No</p>
-                                                <p>Email</p>
-                                                <input type="text" name="is_default"> true
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <p>Address 1</p>
-                                                <p>Address 2</p>
-                                                <p>
-                                                    <span>Country</span>
-                                                    <span>State</span>
-                                                    <span>City</span>
-                                                </p>
-                                                <p>Postal Code</p>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="selects">
-                                                    <input type="radio" name="address_select" class="sel">
-                                                </div>                                                
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                    <div class="address_box">
-                                        <div class="add_box_1">
-                                            <div class="col-lg-5">
-                                                <p>Name</p>
-                                                <p>Contact No</p>
-                                                <p>Email</p>
-                                                <input type="text" name="is_default"> true
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <p>Address 1</p>
-                                                <p>Address 2</p>
-                                                <p>
-                                                    <span>Country</span>
-                                                    <span>State</span>
-                                                    <span>City</span>
-                                                </p>
-                                                <p>Postal Code</p>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <div class="selects">
-                                                    <input type="radio" name="address_select" class="sel">
-                                                </div>                                                
-                                            </div>
-                                        </div>                                        
-                                    </div>
+                                    <!-- Addresses will be dynamically added here -->
                                 </div>
+                                <!-- <div id="collapseNew" class="collapse">
+                                    <div class="address_box">
+                                        <div class="add_box_1">
+                                            <div class="col-lg-5">
+                                                <p>Name</p>
+                                                <p>Contact No</p>
+                                                <p>Email</p>
+                                                <input type="text" name="is_default" value="true">
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <p>Address 1</p>
+                                                <p>Address 2</p>
+                                                <p>
+                                                    <span>Country</span>
+                                                    <span>State</span>
+                                                    <span>City</span>
+                                                </p>
+                                                <p>Postal Code</p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="selects">
+                                                    <input type="radio" name="address_select" class="sel">
+                                                </div>                                                
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="address_box">
+                                        <div class="add_box_1">
+                                            <div class="col-lg-5">
+                                                <p>Name</p>
+                                                <p>Contact No</p>
+                                                <p>Email</p>
+                                                <input type="text" name="is_default" value="true">
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <p>Address 1</p>
+                                                <p>Address 2</p>
+                                                <p>
+                                                    <span>Country</span>
+                                                    <span>State</span>
+                                                    <span>City</span>
+                                                </p>
+                                                <p>Postal Code</p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="selects">
+                                                    <input type="radio" name="address_select" class="sel">
+                                                </div>                                                
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                         <style>
