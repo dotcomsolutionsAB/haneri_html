@@ -144,131 +144,35 @@
                         <h2 class="step-title">Billing details</h2>
 
                         <form action="#" id="checkout-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>First name
-                                            <abbr class="required" title="required">*</abbr>
-                                        </label>
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Last name
-                                            <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" required />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Company name (optional)</label>
-                                <input type="text" class="form-control" />
-                            </div>
-
-                            <div class="select-custom">
-                                <label>Country / Region
-                                    <abbr class="required" title="required">*</abbr></label>
-                                <select name="orderby" class="form-control">
-                                    <option value="" selected="selected">India
-                                    </option>
-                                    <option value="1">Australia</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group mb-1 pb-2">
-                                <label>Street address
-                                    <abbr class="required" title="required">*</abbr></label>
-                                <input type="text" class="form-control" placeholder="House number and street name" required />
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apartment, suite, unite, etc. (optional)" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label>Town / City
-                                    <abbr class="required" title="required">*</abbr></label>
-                                <input type="text" class="form-control" required />
-                            </div>
-
-                            <div class="select-custom">
-                                <label>State / County <abbr class="required" title="required">*</abbr></label>
-                                <select name="orderby" class="form-control">
-                                    <option value="" selected="selected">Mumbai</option>
-                                    <option value="1">Delhi</option>
-                                    <option value="2">West Bengal</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Pincode
-                                    <abbr class="required" title="required">*</abbr></label>
-                                <input type="text" class="form-control" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone <abbr class="required" title="required">*</abbr></label>
-                                <input type="tel" class="form-control" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label>Email address
-                                    <abbr class="required" title="required">*</abbr></label>
-                                <input type="email" class="form-control" required />
-                            </div>
-
-                            <div class="form-group mb-1">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="create-account" />
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseThree" aria-controls="collapseThree" for="create-account">Create an
-                                        account?</label>
-                                </div>
-                            </div>
-
-                            <div id="collapseThree" class="collapse">
-                                <div class="form-group">
-                                    <label>Create account password
-                                        <abbr class="required" title="required">*</abbr></label>
-                                    <input type="password" placeholder="Password" class="form-control" required />
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-0">
-                                    <input type="checkbox" class="custom-control-input" id="different-shipping" />
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour" for="different-shipping">Ship to a
-                                        different
-                                        address?</label>
-
-
+                                    <input type="checkbox" class="custom-control-input" id="different-shipping">
+                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour" for="different-shipping" aria-expanded="true">Ship to a
+                                        Add address?
+                                    </label>
                                 </div>
                             </div>
 
-                            <div id="collapseFour" class="collapse">
+                            <div id="collapseFour" class="collapse show" style="">
                                 <div class="shipping-info">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>First name <abbr class="required"
-                                                        title="required">*</abbr></label>
-                                                <input type="text" class="form-control" required />
+                                                <label>Name<abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" required="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Last name <abbr class="required"
-                                                        title="required">*</abbr></label>
-                                                <input type="text" class="form-control" required />
+                                                <label> Contact No <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" required="">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Company name (optional)</label>
+                                        <label>Address 2 (optional)</label>
                                         <input type="text" class="form-control">
                                     </div>
 
@@ -281,24 +185,19 @@
                                     </div>
 
                                     <div class="form-group mb-1 pb-2">
-                                        <label>Street address <abbr class="required"
-                                                title="required">*</abbr></label>
-                                        <input type="text" class="form-control" placeholder="House number and street name" required />
+                                        <label>Address 1<abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" placeholder="House number and street name" required="">
                                     </div>
 
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Apartment, suite, unit, etc. (optional)" required />
-                                    </div>
+                                    
 
                                     <div class="form-group">
-                                        <label>Town / City <abbr class="required"
-                                                title="required">*</abbr></label>
-                                        <input type="text" class="form-control" required />
+                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" required="">
                                     </div>
 
                                     <div class="select-custom">
-                                        <label>State / County <abbr class="required"
-                                                title="required">*</abbr></label>
+                                        <label>State / County <abbr class="required" title="required">*</abbr></label>
                                         <select name="orderby" class="form-control">
                                             <option value="" selected="selected">Mumbai</option>
                                             <option value="1">Delhi</option>
@@ -307,9 +206,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Pincode <abbr class="required"
-                                                title="required">*</abbr></label>
-                                        <input type="text" class="form-control" required />
+                                        <label>Pincode <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" required="">
                                     </div>
                                 </div>
                             </div>
