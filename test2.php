@@ -24,11 +24,9 @@
                     <li>
                         <h2 class="step-title">Billing details</h2>
                         <div class="addresses">
-                            <div class="address">
-                                <h4>Show Address
-                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SELECT ADDRESS</button>
-                                </h4>
-
+                            <div class="address">                            
+                                <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
+                                
                                 <div id="collapseNew" class="collapse">
                                     <div class="address_box">
                                         Address 1
