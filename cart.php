@@ -1,17 +1,14 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const guestId = localStorage.getItem('guest_id');
-    const userId = localStorage.getItem('user_id');
-    const idToDisplay = guestId || userId;
-    console.log("Retrieved ID:", idToDisplay);
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const guestId = localStorage.getItem('guest_id');
+            const userId = localStorage.getItem('user_id');
+            const idToDisplay = guestId || userId;
+            console.log("Retrieved ID:", idToDisplay);
 
-    });
-
-
-</script>
-
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let requestData = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                credentials: "include" // Ensure cookies are sent with request
+                // credentials: "include" // Ensure cookies are sent with request
             };
             
             if (token) {
