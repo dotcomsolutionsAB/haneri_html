@@ -17,7 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
             let userId = localStorage.getItem('guest_id');
-            // alert(userId);
+            // let cartId = getCookie('cart_id');
+            
+            // If userId is not set but cartId is available in cookies, store it in localStorage
+            if (userId) {
+                // userId = cartId;
+                // localStorage.setItem('guest_id', userId);
+                setCookie('cart_id', userId, 365); // Store the guest_id in the cart_id cookie
+            }
+            
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
                 method: "POST",
@@ -27,17 +35,15 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (token) {
                 requestData.headers["Authorization"] = `Bearer ${token}`;
-            } 
-            
-            if (userId) {
-                requestData.body = JSON.stringify({ user_id: userId });
+            } else if (userId) {
+                requestData.body = JSON.stringify({ cart_id: userId });
             }
             
             if (!token && !userId) {
-                console.log("No auth_token or user_id found");
+                console.log("No auth_token or cart_id found");
                 return;
             }
-
+            
             fetch(apiUrl, requestData)
                 .then(response => response.json())
                 .then(data => {
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         data.data.forEach(item => {
                             let variantInfo = item.variant ? `${item.variant.variant_type}: ${item.variant.variant_value}` : "No Variant";
                             let subtotal = (item.quantity * item.variant.selling_price).toFixed(2);
-
+                            
                             let row = `
                                 <tr class="product-row">
                                     <td>
@@ -82,6 +88,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .catch(error => console.error("Error fetching cart items:", error));
         });
+        
+        // function getCookie(name) {
+        //     let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        //     return match ? match[2] : null;
+        // }
+
+        // function setCookie(name, value, days) {
+        //     let expires = "";
+        //     if (days) {
+        //         let date = new Date();
+        //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //         expires = "; expires=" + date.toUTCString();
+        //     }
+        //     document.cookie = name + "=" + value + "; path=/" + expires;
+        // }
     </script>
 <main class="main cart_page">
     <div class="container padding_top_100">
