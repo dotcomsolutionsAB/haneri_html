@@ -1,7 +1,50 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
 <style>
-    
+    .variants{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .variant{
+        background: #222529;
+        width: fit-content;
+        padding: 0px 10px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .variant p{
+        padding: 5px;
+        margin: 0px;
+        font-size: 18px;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+    .variant.selected {
+        background-color: #0c9a9a !important;
+    }
+    .select_variant{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 20px;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: row;
+    }
+    .select_variant p{
+        margin: 0px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
 </style>
 <!-- Product Detail Page -->
 <script>
@@ -129,7 +172,6 @@
                         console.log("Stored under user_id:", userId);
                     } else {
                         localStorage.setItem('guest_id', String(userId));
-                        document.cookie = `cart_id=3b45869d-3765-4b51-8040-0feb601a6259; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
                         console.log("Stored under guest_id:", userId);
                     }
                 } else {
