@@ -151,6 +151,7 @@ function addToCart() {
     fetch(`<?php echo BASE_URL; ?>/cart/add`, {
         method: "POST",
         headers: {
+            "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
