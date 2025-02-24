@@ -18,64 +18,174 @@
         </ul>
 
 
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const baseUrl = "<?php echo BASE_URL; ?>/address";
+
+        fetch(baseUrl, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.data.length > 0) {
+                const addressContainer = document.getElementById("collapseNew");
+                addressContainer.innerHTML = ""; // Clear previous content
+
+                data.data.forEach((address, index) => {
+                    let isChecked = address.is_default ? "checked" : "";
+                    let addressHTML = `
+                        <div class="address_box">
+                            <div class="add_box_1">
+                                <div class="col-lg-5">
+                                    <p><strong>Name:</strong> ${address.name}</p>
+                                    <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                    <p><strong>Email:</strong> N/A</p>
+                                    <input type="hidden" name="is_default" value="${address.is_default}">
+                                </div>
+                                <div class="col-lg-5">
+                                    <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                    <p>
+                                        <strong>Location:</strong> 
+                                        <span>${address.country}</span>, 
+                                        <span>${address.state}</span>, 
+                                        <span>${address.city}</span>
+                                    </p>
+                                    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="selects">
+                                        <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                    </div>                                                
+                                </div>
+                            </div>                                        
+                        </div>
+                    `;
+                    addressContainer.innerHTML += addressHTML;
+                });
+            } else {
+                document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
+            }
+        })
+        .catch(error => console.error("Error fetching addresses:", error));
+    });
+</script> -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const authToken = localStorage.getItem('auth_token'); // Replace with actual token
     const baseUrl = "<?php echo BASE_URL; ?>/address";
 
-    fetch(baseUrl, {
-        method: "GET",
-        headers: {
-            "Authorization": `Bearer ${authToken}`,
-            "Content-Type": "application/json"
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.data.length > 0) {
-            const addressContainer = document.getElementById("collapseNew");
-            addressContainer.innerHTML = ""; // Clear previous content
+    function fetchAddresses() {
+        fetch(baseUrl, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.data.length > 0) {
+                const addressContainer = document.getElementById("collapseNew");
+                addressContainer.innerHTML = ""; // Clear previous content
 
-            data.data.forEach((address, index) => {
-                let isChecked = address.is_default ? "checked" : "";
-                let addressHTML = `
-                    <div class="address_box">
-                        <div class="add_box_1">
-                            <div class="col-lg-5">
-                                <p><strong>Name:</strong> ${address.name}</p>
-                                <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                <p><strong>Email:</strong> N/A</p>
-                                <input type="hidden" name="is_default" value="${address.is_default}">
-                            </div>
-                            <div class="col-lg-5">
-                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                <p>
-                                    <strong>Location:</strong> 
-                                    <span>${address.country}</span>, 
-                                    <span>${address.state}</span>, 
-                                    <span>${address.city}</span>
-                                </p>
-                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="selects">
-                                    <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                </div>                                                
-                            </div>
-                        </div>                                        
-                    </div>
-                `;
-                addressContainer.innerHTML += addressHTML;
-            });
-        } else {
-            document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
+                data.data.forEach((address, index) => {
+                    let isChecked = address.is_default ? "checked" : "";
+                    let addressHTML = `
+                        <div class="address_box">
+                            <div class="add_box_1">
+                                <div class="col-lg-5">
+                                    <p><strong>Name:</strong> ${address.name}</p>
+                                    <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                    <p><strong>Email:</strong> N/A</p>
+                                    <input type="hidden" name="is_default" value="${address.is_default}">
+                                </div>
+                                <div class="col-lg-5">
+                                    <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                    <p>
+                                        <strong>Location:</strong> 
+                                        <span>${address.country}</span>, 
+                                        <span>${address.state}</span>, 
+                                        <span>${address.city}</span>
+                                    </p>
+                                    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="selects">
+                                        <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                    </div>                                                
+                                </div>
+                            </div>                                        
+                        </div>
+                    `;
+                    addressContainer.innerHTML += addressHTML;
+                });
+            } else {
+                document.getElementById("collapseNew").innerHTML = "<p>No addresses found.</p>";
+            }
+        })
+        .catch(error => console.error("Error fetching addresses:", error));
+    }
+
+    document.getElementById("addAddressBtn").addEventListener("click", function () {
+        const name = document.getElementById("name").value;
+        const contact_no = document.getElementById("contact_no").value;
+        const address_line1 = document.getElementById("address_line1").value;
+        const address_line2 = document.getElementById("address_line2").value;
+        const city = document.getElementById("city").value;
+        const state = document.getElementById("state").value;
+        const country = document.getElementById("country").value;
+        const postal_code = document.getElementById("postal_code").value;
+        const is_default = true; // Always setting new address as default
+
+        if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+            alert("Please fill all required fields.");
+            return;
         }
-    })
-    .catch(error => console.error("Error fetching addresses:", error));
+
+        const addressData = {
+            name,
+            contact_no,
+            address_line1,
+            address_line2,
+            city,
+            state,
+            postal_code,
+            country,
+            is_default
+        };
+
+        fetch("{{base_url}}/address/register", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(addressData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === "Address added successfully!") {
+                alert("Address added successfully!");
+                fetchAddresses(); // Refresh the address list
+                document.getElementById("checkout-form").reset(); // Reset form fields
+            } else {
+                alert("Failed to add address. Please try again.");
+            }
+        })
+        .catch(error => console.error("Error adding address:", error));
+    });
+
+    // Load addresses on page load
+    fetchAddresses();
 });
 </script>
-
         <div class="row">
            
             <div class="col-lg-7">
@@ -177,76 +287,75 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-0">
                                     <input type="checkbox" class="custom-control-input" id="different-shipping">
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
-                                        Ship to a Add address?
+                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour"
+                                        aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
+                                        Ship to an Additional Address?
                                     </label>
                                 </div>
                             </div>
 
-                            <div id="collapseFour" class="collapse" style="">
+                            <div id="collapseFour" class="collapse">
                                 <div class="shipping-info">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name<abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" required="">
+                                                <input type="text" class="form-control" id="name" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label> Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" required="">
+                                                <input type="text" class="form-control" id="contact_no" required>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Address 2 (optional)</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-
-                                    <div class="select-custom">
-                                        <label>Country / Region <span class="required">*</span></label>
-                                        <select name="orderby" class="form-control">
-                                            <option value="" selected="selected">India</option>
-                                            <option value="1">Australia</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group mb-1 pb-2">
                                         <label>Address 1<abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" placeholder="House number and street name" required="">
+                                        <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
                                     </div>
 
-                                    
+                                    <div class="form-group">
+                                        <label>Address 2 (optional)</label>
+                                        <input type="text" class="form-control" id="address_line2">
+                                    </div>
 
                                     <div class="form-group">
                                         <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" required="">
+                                        <input type="text" class="form-control" id="city" required>
                                     </div>
 
-                                    <div class="select-custom">
-                                        <label>State / County <abbr class="required" title="required">*</abbr></label>
-                                        <select name="orderby" class="form-control">
-                                            <option value="" selected="selected">Mumbai</option>
-                                            <option value="1">Delhi</option>
-                                            <option value="2">West Bengal</option>
+                                    <div class="form-group">
+                                        <label>State <abbr class="required" title="required">*</abbr></label>
+                                        <select class="form-control" id="state">
+                                            <option value="Mumbai" selected>Mumbai</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Country <span class="required">*</span></label>
+                                        <select class="form-control" id="country">
+                                            <option value="India" selected>India</option>
+                                            <option value="Australia">Australia</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Pincode <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" required="">
+                                        <input type="text" class="form-control" id="postal_code" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" id="addAddressBtn">Add</button>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="order-comments">Order notes (optional)</label>
-                                <textarea class="form-control" placeholder="Notes about your order, e.g. special notes for delivery." required></textarea>
-                            </div>
                         </form>
+
                     </li>
                 </ul>
             </div>
