@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // If there is no auth token and guestId exists, store it in cookies
             if (!token && g_Id) {
-                document.cookie = `cart_id=${g_Id}; path=/; domain=haneri.dotcombusiness.in; SameSite=None; Secure`;
+                document.cookie = `cart_id=${g_Id}; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
             }
             
             let apiUrl = "https://haneri.dotcombusiness.in/api/cart/fetch";
             let requestData = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                credentials: "omit" // Ensure cookies are sent with request
+                credentials: "include" // Ensure cookies are sent with request
             };
             
             if (token) {
