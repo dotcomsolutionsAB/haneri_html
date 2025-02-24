@@ -128,7 +128,7 @@
                         localStorage.setItem('user_id', userId);
                         console.log("Stored under user_id:", userId);
                     } else {
-                        localStorage.setItem('guest_id', userId);
+                        localStorage.setItem('guest_id', String(userId));
                         document.cookie = `cart_id=${userId}; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
                         console.log("Stored under guest_id:", userId);
                     }
