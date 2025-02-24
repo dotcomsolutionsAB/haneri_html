@@ -129,7 +129,7 @@
                         console.log("Stored under user_id:", userId);
                     } else {
                         localStorage.setItem('guest_id', String(userId));
-                        document.cookie = `cart_id=${userId}; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
+                        document.cookie = `cart_id=3b45869d-3765-4b51-8040-0feb601a6259; path=/; domain=https://haneri.dotcombusiness.in; SameSite=None; Secure`;
                         console.log("Stored under guest_id:", userId);
                     }
                 } else {
