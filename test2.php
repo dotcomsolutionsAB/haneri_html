@@ -320,14 +320,15 @@ $(document).ready(function () {
                                 <td><h4>Subtotal</h4></td>
                                 <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
                             </tr>
+                            
+                            <tr class="cart-tax">
+                                <td><h4>Tax</h4></td>
+                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
+                            </tr>
 
                             <tr class="order-total">
                                 <td><h4>Total</h4></td>
                                 <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
-                            </tr>
-                            <tr class="cart-tax">
-                                <td><h4>Tax</h4></td>
-                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
                             </tr>
 
                             <tr class="order-shipping">
