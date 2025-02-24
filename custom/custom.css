@@ -1101,10 +1101,12 @@ Turbosilent
     }
 
     .heading2{
-      font-size: 27px;
+      font-size: 30px;
       font-family: 'Barlow Condensed';
-      font-weight: 600 !important;
+      font-weight: 500 !important;
       line-height: 1;
+      color: #315859;
+      text-align: left;
     }
     .heading4{
       font-size: 22px;
