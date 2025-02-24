@@ -138,7 +138,7 @@
                 </div>
             </div>
         </div>
-            <!-- <div class="col-lg-7">
+            <div class="col-lg-7">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
@@ -321,7 +321,7 @@
                         </form>
                     </li>
                 </ul>
-            </div> -->
+            </div>
             <!-- End .col-lg-8 -->
 
             <div class="col-lg-5">
