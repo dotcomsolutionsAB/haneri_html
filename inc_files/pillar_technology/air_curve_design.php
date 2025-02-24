@@ -43,23 +43,23 @@
                 <h2 class="primary heading2">Key Features of Air Curve Design</h2>
                 <ul class="dark ulclass margp">
                     <li>
-                        <span class="highlight_p">High Air Delivery:</span>
+                        <span class="highlight_p">High Air Delivery</span>
                         Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.
                     </li>
                     <li>
-                        <span class="highlight_p">Energy Efficiency:</span>
+                        <span class="highlight_p">Energy Efficiency</span>
                         The aerodynamic profile of Air Curve blades optimizes drag, reducing the load on the motor and ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful cooling experience while saving on electricity bills.
                     </li>
                     <li>
-                        <span class="highlight_p">Advanced Materials:</span>
+                        <span class="highlight_p">Advanced Materials</span>
                         Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight for efficient rotation. You can trust in the longevity of your cooling solution.
                     </li>
                     <li>
-                        <span class="highlight_p">Precision Manufacturing:</span>
+                        <span class="highlight_p">Precision Manufacturing</span>
                         Our state-of-the-art manufacturing processes ensure the highest uniformity and balance, reducing noise and vibrations during operation. You can count on a consistently quiet and smooth performance.
                     </li>
                     <li>
-                        <span class="highlight_p">Silent Performance:</span>
+                        <span class="highlight_p">Silent Performance</span>
                         The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and professional settings.
                     </li>
                 </ul>
