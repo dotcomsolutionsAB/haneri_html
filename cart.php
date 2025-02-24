@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-<script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             let token = localStorage.getItem('auth_token');
             let guestId = localStorage.getItem('guest_id');
@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
             let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
             let requestData = {
                 method: "POST",
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "application/json" },
+                credentials: "include" // Ensure cookies are sent with request
             };
             
             if (token) {
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + value + "; path=/" + expires;
+            document.cookie = name + "=" + value + "; path=/; SameSite=None; Secure" + expires;
         }
     </script>
 <main class="main cart_page">
