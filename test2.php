@@ -237,67 +237,71 @@ $(document).ready(function () {
                 </ul>
             </div>
             <!-- End .col-lg-8 -->
-            <script>
-                $(document).ready(function () {
-                    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-                    const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+<script>
+    $(document).ready(function () {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
 
-                    function fetchCartItems() {
-                        $.ajax({
-                            url: cartUrl,
-                            type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
-                            success: function (response) {
-                                if (response.data.length > 0) {
-                                    let cartHTML = "";
-                                    let subtotal = 0;
-                                    let total = 0;
+        function fetchCartItems() {
+            $.ajax({
+                url: cartUrl,
+                type: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json"
+                },
+                success: function (response) {
+                    if (response.data.length > 0) {
+                        let cartHTML = "";
+                        let subtotal = 0;
+                        let totalTax = 0;
+                        let total = 0;
 
-                                    response.data.forEach(item => {
-                                        let productName = item.product.name;
-                                        let quantity = item.quantity;
-                                        let price = parseFloat(item.variant.selling_price);
-                                        let tax = parseFloat(item.variant.selling_tax);
-                                        let itemTotal = (price + tax) * quantity;
+                        response.data.forEach(item => {
+                            let productName = item.product.name;
+                            let quantity = item.quantity;
+                            let price = parseFloat(item.variant.selling_price);
+                            let tax = parseFloat(item.variant.selling_tax);
+                            let itemTotal = (price + tax) * quantity;
 
-                                        subtotal += (price * quantity);
-                                        total += itemTotal;
+                            subtotal += (price * quantity);
+                            totalTax += (tax * quantity);
+                            total += itemTotal;
 
-                                        cartHTML += `
-                                            <tr>
-                                                <td class="product-col">
-                                                    <h3 class="product-title">
-                                                        ${productName} × <span class="product-qty">${quantity}</span>
-                                                    </h3>
-                                                </td>
-                                                <td class="price-col">
-                                                    <span>₹ ${itemTotal.toFixed(2)}</span>
-                                                </td>
-                                            </tr>
-                                        `;
-                                    });
-
-                                    $("#cart-items").html(cartHTML);
-                                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                                    $("#total").text(`₹ ${total.toFixed(2)}`);
-                                } else {
-                                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                                    $("#subtotal").text("₹ 0.00");
-                                    $("#total").text("₹ 0.00");
-                                }
-                            },
-                            error: function () {
-                                console.error("Error fetching cart items.");
-                            }
+                            cartHTML += `
+                                <tr>
+                                    <td class="product-col">
+                                        <h3 class="product-title">
+                                            ${productName} × <span class="product-qty">${quantity}</span>
+                                        </h3>
+                                    </td>
+                                    <td class="price-col">
+                                        <span>₹ ${itemTotal.toFixed(2)}</span>
+                                    </td>
+                                </tr>
+                            `;
                         });
-                    }
 
-                    fetchCartItems(); // Load cart items on page load
-                });
-            </script>
+                        $("#cart-items").html(cartHTML);
+                        $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                        $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                        $("#total").text(`₹ ${total.toFixed(2)}`);
+                    } else {
+                        $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                        $("#subtotal").text("₹ 0.00");
+                        $("#total-tax").text("₹ 0.00");
+                        $("#total").text("₹ 0.00");
+                    }
+                },
+                error: function () {
+                    console.error("Error fetching cart items.");
+                }
+            });
+        }
+
+        fetchCartItems(); // Load cart items on page load
+    });
+</script>
             <div class="col-lg-5">
                 <div class="order-summary">
                     <h3>YOUR ORDER</h3>
@@ -317,6 +321,15 @@ $(document).ready(function () {
                                 <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
                             </tr>
 
+                            <tr class="order-total">
+                                <td><h4>Total</h4></td>
+                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
+                            </tr>
+                            <tr class="cart-tax">
+                                <td><h4>Tax</h4></td>
+                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
+                            </tr>
+
                             <tr class="order-shipping">
                                 <td class="text-left" colspan="2">
                                     <h4 class="m-b-sm">Shipping</h4>
@@ -329,10 +342,6 @@ $(document).ready(function () {
                                 </td>
                             </tr>
 
-                            <tr class="order-total">
-                                <td><h4>Total</h4></td>
-                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
-                            </tr>
                         </tfoot>
                     </table>
 
