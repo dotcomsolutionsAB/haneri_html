@@ -1156,6 +1156,7 @@ Turbosilent
     }
     .ulclass li{
       margin-bottom: 10px;
+      text-align: left;
     }
 
     /* .history-section h2 {
