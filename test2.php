@@ -91,69 +91,141 @@
         </div>
 
         <div class="row">
-        <div class="col-lg-7">
-            <h4>Returning customer?
-                <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">Login</button>
-            </h4>
+            <div class="col-lg-7">
+                <h4>Returning customer?
+                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">Login</button>
+                </h4>
 
-            <div id="collapseNew" class="collapse">
-                <div class="login-section feature-box">
-                    <div class="feature-box-content">
-                        <form action="#" id="login-form">
-                            <p>
-                                If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.
-                            </p>
+                <div id="collapseNew" class="collapse">
+                    <div class="login-section feature-box">
+                        <div class="feature-box-content">
+                            <form action="#" id="login-form">
+                                <p>
+                                    If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.
+                                </p>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="mb-0 pb-1">Username or email <span
-                                                class="required">*</span></label>
-                                        <input type="email" class="form-control" required />
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="mb-0 pb-1">Username or email <span
+                                                    class="required">*</span></label>
+                                            <input type="email" class="form-control" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="mb-0 pb-1">Password <span
+                                                    class="required">*</span></label>
+                                            <input type="password" class="form-control" required />
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="mb-0 pb-1">Password <span
-                                                class="required">*</span></label>
-                                        <input type="password" class="form-control" required />
+                                <button type="submit" class="btn">LOGIN</button>
+
+                                <div class="form-footer mb-1">
+                                    <div class="custom-control custom-checkbox mb-0 mt-0">
+                                        <input type="checkbox" class="custom-control-input" id="lost-password" />
+                                        <label class="custom-control-label mb-0" for="lost-password">Remember
+                                            me</label>
                                     </div>
+
+                                    <a href="forgot-password.html" class="forget-password">Lost your password?</a>
                                 </div>
-                            </div>
-
-                            <button type="submit" class="btn">LOGIN</button>
-
-                            <div class="form-footer mb-1">
-                                <div class="custom-control custom-checkbox mb-0 mt-0">
-                                    <input type="checkbox" class="custom-control-input" id="lost-password" />
-                                    <label class="custom-control-label mb-0" for="lost-password">Remember
-                                        me</label>
-                                </div>
-
-                                <a href="forgot-password.html" class="forget-password">Lost your password?</a>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
             <div class="col-lg-7">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
+                        <div class="addresses">
+                            <div class="address">
+                                <h4>Show Address
+                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SELECT ADDRESS</button>
+                                </h4>
 
+                                <div id="collapseNew" class="collapse">
+                                    <div class="address-box">
+                                        Address 1
+                                        <div class="add-box-1">
+                                            <div class="col-lg-3">
+                                                <p>Name</p>
+                                                <p>Contact No</p>
+                                                <p>Email</p>
+                                                <input type="text" name="is_default"> true
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p>Address 1</p>
+                                                <p>Address 2</p>
+                                                <p>
+                                                    <span>Country</span>
+                                                    <span>State</span>
+                                                    <span>City</span>
+                                                </p>
+                                                <p>Postal Code</p>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="address-box">
+                                        Address 1
+                                        <div class="add-box-1">
+                                            <div class="col-lg-3">
+                                                <p>Name</p>
+                                                <p>Contact No</p>
+                                                <p>Email</p>
+                                                <input type="text" name="is_default"> true
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p>Address 1</p>
+                                                <p>Address 2</p>
+                                                <p>
+                                                    <span>Country</span>
+                                                    <span>State</span>
+                                                    <span>City</span>
+                                                </p>
+                                                <p>Postal Code</p>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="address-box">
+                                        Address 1
+                                        <div class="add-box-1">
+                                            <div class="col-lg-3">
+                                                <p>Name</p>
+                                                <p>Contact No</p>
+                                                <p>Email</p>
+                                                <input type="text" name="is_default"> true
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <p>Address 1</p>
+                                                <p>Address 2</p>
+                                                <p>
+                                                    <span>Country</span>
+                                                    <span>State</span>
+                                                    <span>City</span>
+                                                </p>
+                                                <p>Postal Code</p>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <form action="#" id="checkout-form">
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mt-0">
                                     <input type="checkbox" class="custom-control-input" id="different-shipping">
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour" for="different-shipping" aria-expanded="true">Ship to a
-                                        Add address?
+                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour" aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
+                                        Ship to a Add address?
                                     </label>
                                 </div>
                             </div>
 
-                            <div id="collapseFour" class="collapse show" style="">
+                            <div id="collapseFour" class="collapse" style="">
                                 <div class="shipping-info">
                                     <div class="row">
                                         <div class="col-md-6">
