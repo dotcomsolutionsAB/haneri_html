@@ -326,7 +326,7 @@ $(document).ready(function () {
                                 <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
                             </tr>
 
-                            <tr class="order-total">
+                            <tr class="order-total" style="width: 50%;">
                                 <td><h4>Total</h4></td>
                                 <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
                             </tr>
