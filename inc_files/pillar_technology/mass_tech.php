@@ -50,7 +50,7 @@
     <div class="brand-row">
         <div class="brand-content">
             <h4 class="heading2 primary">Key Features of Silent M.A.S.S Technology</h2>
-            <div class="points">
+            <div class="">
                 <h4 class="highlight_p">High Air Delivery at Low RPM</h4>
                 <ul class="ulclass">
                     <li>Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
