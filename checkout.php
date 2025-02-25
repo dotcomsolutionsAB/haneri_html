@@ -35,7 +35,7 @@
         gap: 15px;
     }
     .form-group .in{
-        width:300px
+        width:300px !important;
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
