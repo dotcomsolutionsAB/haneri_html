@@ -68,7 +68,7 @@
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                                         <div class="row">
                                             <section class="categories hover">
-                                                <a href="ceiling_fans.php">
+                                                <a href="shop.php">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
@@ -78,7 +78,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="#">
+                                                <a href="shop.php">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
@@ -88,7 +88,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="#">
+                                                <a href="shop.php">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
@@ -98,7 +98,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="#">
+                                                <a href="shop.php">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Personal.png" alt="Personal">

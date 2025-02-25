@@ -254,20 +254,20 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                                         <div class="product-item">
                                             <img class="product-single-image"
-                                                src="assets/images/products/zoom/product-1-big.jpg"
-                                                data-zoom-image="assets/images/products/zoom/product-1-big.jpg"
+                                                src="images/f1.png"
+                                                data-zoom-image="images/f1.png"
                                                 width="915" height="915" alt="product" />
                                         </div>
                                         <div class="product-item">
                                             <img class="product-single-image"
-                                                src="assets/images/products/zoom/product-2-big.jpg"
-                                                data-zoom-image="assets/images/products/zoom/product-2-big.jpg"
+                                                src="images/f2.png"
+                                                data-zoom-image="images/f2.png"
                                                 width="915" height="915" alt="product" />
                                         </div>
                                         <div class="product-item">
                                             <img class="product-single-image"
-                                                src="assets/images/products/zoom/product-3-big.jpg"
-                                                data-zoom-image="assets/images/products/zoom/product-3-big.jpg"
+                                                src="images/f3.png"
+                                                data-zoom-image="images/f3.png"
                                                 width="915" height="915" alt="product" />
                                         </div>
                                     </div>
