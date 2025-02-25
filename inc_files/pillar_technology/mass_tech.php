@@ -50,31 +50,23 @@
     <div class="brand-row">
         <div class="brand-content">
             <h4 class="heading2 primary">Key Features of Silent M.A.S.S Technology</h2>
-            <div class="points">
-            <span class="highlight_p">High Air Delivery at Low RPM</span>
-                <ul class="ulclass">
-                    <li>Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
-                </ul>
-
-                <span class="highlight_p">>Ultra-Quiet Operation</span>
-                <ul class="ulclass">
-                    <li>The low RPM operation, combined with Efficient Torque output from the TurboSilent BLDC Motor, eliminates mechanical noise, creating an ultra-quiet cooling experience. Streamlined blade profiles reduce turbulence, further contributing to silent performance.</li>
-                </ul>
-
-                <span class="highlight_p">Enhanced Motor Efficiency<</span>
-                <ul class="ulclass">
-                    <li>TurboSilent BLDC motors utilize advanced electromagnetic design for optimal torque-to-RPM ratios, ensuring seamless operation at low speeds. The electronic controller, made in India for Indian conditions, minimizes energy losses, making the system highly efficient and cost-effective.</li>
-                </ul>
-
-                <span class="highlight_p">Advanced Blade Aerodynamics</span>
-                <ul class="ulclass">
-                    <li>Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.</li>
-                </ul>
-                <span class="highlight_p">Trademarked Technology</span>
-                <ul class="ulclass">
-                    <li>Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.</li>
-                </ul>
-            </div>      
+            <ul class="ulclass">
+            <li><span class="highlight_p">High Air Delivery at Low RPM</span>
+                    Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
+            </li>        
+            <li><span class="highlight_p">Ultra-Quiet Operation</span>
+                    The low RPM operation, combined with Efficient Torque output from the TurboSilent BLDC Motor, eliminates mechanical noise, creating an ultra-quiet cooling experience. Streamlined blade profiles reduce turbulence, further contributing to silent performance.</li>
+            </li>
+            <li><span class="highlight_p">Enhanced Motor Efficiency</span>
+                    TurboSilent BLDC motors utilize advanced electromagnetic design for optimal torque-to-RPM ratios, ensuring seamless operation at low speeds. The electronic controller, made in India for Indian conditions, minimizes energy losses, making the system highly efficient and cost-effective.</li>
+            </li>
+            <li><span class="highlight_p">Advanced Blade Aerodynamics</span>
+                    Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.</li>
+            </li> 
+            <li><span class="highlight_p">Trademarked Technology</span>
+                    Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.</li>
+            </li> 
+            </ul>   
         </div>
         <div class="brand-image">
             <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
@@ -142,30 +134,25 @@
         <div class="brand-content">
             <h4 class="heading2 primary">Benefits for Customers
             </h2>
-            <div class="points">
+            <div class="ulclass">
             <span class="highlight_p">Enhanced Cooling Comfort</span>
-                <ul class="ulclass">
                     <li>Powerful airflow achieved at lower RPM ensures a cooling experience that is both efficient and soothing.</li>
                 </ul>
 
                 <span class="highlight_p">Quiet Operation for Peaceful Environments</span>
-                <ul class="ulclass">
                     <li>Reduced turbulence and noise make Silent M.A.S.S ideal for bedrooms, offices, and libraries where silence is a priority.</li>
                 </ul>
 
                 <span class="highlight_p">Energy Savings</span>
-                <ul class="ulclass">
                     <li>Optimized motor and blade integration results in significantly reduced power consumption, saving on electricity bills over time.</li>
                 </ul>
 
                 <span class="highlight_p">Durability and Longevity</span>
-                <ul class="ulclass">
                     <li>
                     Reduced wear and tear on motors and blades due to low-speed operation ensures extended product life and reliability.</li>
                 </ul>
 
                 <span class="highlight_p">Sustainability</span>
-                <ul class="ulclass">
                     <li>
                     Lower energy usage aligns with eco-friendly practices, making Silent M.A.S.S an environmentally responsible choice.</li>
                 </ul>
