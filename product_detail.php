@@ -49,7 +49,7 @@
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const token = localStorage.getItem('auth_token');
@@ -57,6 +57,7 @@
     const viewCartBtn = $('#view-cart-btn');
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
+    let cartItemId = null; // Store the cart item ID
 
     if (productId) {
         $.ajax({
@@ -102,7 +103,6 @@
         $('#regular-price').text(`₹${regularPrice}`);
         $('#selected-variant').val(variantId);
 
-        // Remove selected class from all variants and add to the clicked one
         $('.variant').removeClass('selected');
         $(element).addClass('selected');
     }
@@ -130,6 +130,7 @@
                         addCartBtn.hide();
                         viewCartBtn.show();
                         quantityElem.val(cartItem.quantity);
+                        cartItemId = cartItem.id;
                         updatePrice();
                     } else {
                         addCartBtn.show();
@@ -145,8 +146,7 @@
         });
     }
 
-    // Check cart on page load
-    checkCart();
+    checkCart(); // Check cart on page load
 
     function addToCart() {
         console.log("addToCart() function invoked.");
@@ -164,19 +164,8 @@
                 console.log("API response received:", data);
                 if (data.success) {
                     alert("Product added to cart successfully!");
-
-                    if (token) {
-                        localStorage.setItem('user_id', data.data.user_id);
-                    } else {
-                        localStorage.setItem('guest_id', String(data.data.user_id));
-                        document.cookie = `cart_id=${data.data.user_id}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
-                    }
-
-                    // Hide add-to-cart button & show view-cart button
                     addCartBtn.hide();
                     viewCartBtn.show();
-
-                    // Update price & quantity dynamically
                     checkCart();
                 } else {
                     console.error("API response unsuccessful:", data);
@@ -188,14 +177,41 @@
         });
     }
 
+    function updateCartQuantity() {
+        const newQuantity = quantityElem.val() || 1;
+
+        if (!cartItemId) {
+            console.error("Cart item ID is missing.");
+            return;
+        }
+
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+            type: "POST",
+            headers: { "Authorization": `Bearer ${token}` },
+            contentType: "application/json",
+            data: JSON.stringify({ quantity: newQuantity }),
+            success: function (data) {
+                console.log("Cart quantity updated:", data);
+                updatePrice();
+            },
+            error: function (error) {
+                console.error("Error updating cart quantity:", error);
+            }
+        });
+    }
+
     addCartBtn.click(function (e) {
         e.preventDefault();
         addToCart();
     });
 
-    quantityElem.change(updatePrice);
+    quantityElem.change(function () {
+        updateCartQuantity();
+    });
 });
 </script>
+
 
 
 
