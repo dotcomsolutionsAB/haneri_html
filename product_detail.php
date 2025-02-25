@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                         Add to Cart
                                     </a>
 
-                                    <a href="cart.php" class="btn btn-gray view-cart d-none" id="view-cart-btn">View cart</a>
+                                    <a href="cart.php" class="btn btn-gray view-cart" id="view-cart-btn">View cart</a>
                                 </div>
 
                                 <hr class="divider mb-0 mt-0">
