@@ -51,122 +51,120 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-$(document).ready(function () {
-    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-    const baseUrl = "<?php echo BASE_URL; ?>/address";
+    $(document).ready(function () {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const baseUrl = "<?php echo BASE_URL; ?>/address";
 
-    function fetchAddresses() {
-        $.ajax({
-            url: baseUrl,
-            type: "GET",
-            headers: { "Authorization": `Bearer ${authToken}` },
-            success: function (response) {
-                if (response.data.length > 0) {
-                    let addressHTML = "";
-                    response.data.forEach(address => {
-                        let isChecked = address.is_default ? "checked" : "";
-                        addressHTML += `
-                            <div class="address_box">
-                                <div class="add_box_1">
-                                    <div class="col-lg-5">
-                                        <p><strong>Name:</strong> ${address.name}</p>
-                                        <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                        <input type="hidden" name="is_default" value="${address.is_default}">
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                        <p>
-                                            <strong>Location:</strong> 
-                                            <span>${address.country}</span>, 
-                                            <span>${address.state}</span>, 
-                                            <span>${address.city}</span>
-                                        </p>
-                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="selects">
-                                            <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                        </div>                                                  
-                                    </div>
-                                </div>                                        
-                            </div>
-                        `;
-                    });
-                    $("#collapseNew").html(addressHTML).addClass("show");
-                } else {
-                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+        function fetchAddresses() {
+            $.ajax({
+                url: baseUrl,
+                type: "GET",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    if (response.data.length > 0) {
+                        let addressHTML = "";
+                        response.data.forEach(address => {
+                            let isChecked = address.is_default ? "checked" : "";
+                            addressHTML += `
+                                <div class="address_box">
+                                    <div class="add_box_1">
+                                        <div class="col-lg-5">
+                                            <p><strong>Name:</strong> ${address.name}</p>
+                                            <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                            <input type="hidden" name="is_default" value="${address.is_default}">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                            <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                            <p>
+                                                <strong>Location:</strong> 
+                                                <span>${address.country}</span>, 
+                                                <span>${address.state}</span>, 
+                                                <span>${address.city}</span>
+                                            </p>
+                                            <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="selects">
+                                                <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                            </div>                                                  
+                                        </div>
+                                    </div>                                        
+                                </div>
+                            `;
+                        });
+                        $("#collapseNew").html(addressHTML).addClass("show");
+                    } else {
+                        $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                    }
+                },
+                error: function () {
+                    console.error("Error fetching addresses.");
                 }
-            },
-            error: function () {
-                console.error("Error fetching addresses.");
-            }
-        });
-    }
+            });
+        }
 
-    // Open modal when checkbox is clicked
-    $("#different-shipping").change(function () {
-        if ($(this).is(":checked")) {
+        // Open modal when link is clicked
+        $("#openAddressModal").click(function (e) {
+            e.preventDefault();
             $("#addressModal").modal("show");
-        }
-    });
+        });
 
-    $("#addAddressBtn").click(function () {
-        let addressData = {
-            name: $("#name").val(),
-            contact_no: $("#contact_no").val(),
-            address_line1: $("#address_line1").val(),
-            address_line2: $("#address_line2").val(),
-            city: $("#city").val(),
-            state: $("#state").val(),
-            country: $("#country").val(),
-            postal_code: $("#postal_code").val(),
-            is_default: true
-        };
+        $("#addAddressBtn").click(function () {
+            let addressData = {
+                name: $("#name").val(),
+                contact_no: $("#contact_no").val(),
+                address_line1: $("#address_line1").val(),
+                address_line2: $("#address_line2").val(),
+                city: $("#city").val(),
+                state: $("#state").val(),
+                country: $("#country").val(),
+                postal_code: $("#postal_code").val(),
+                is_default: true
+            };
 
-        if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
-            alert("Please fill all required fields.");
-            return;
-        }
+            if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
+                alert("Please fill all required fields.");
+                return;
+            }
 
-        $.ajax({
-            url: "<?php echo BASE_URL; ?>/address/register",
-            type: "POST",
-            headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
-            data: JSON.stringify(addressData),
-            success: function (response) {
-                if (response.message.includes("success")) {
-                    $("#checkout-form")[0].reset(); // Reset form fields
-                    $("#addressModal").modal("hide"); // Close modal
-                    fetchAddresses(); // Refresh address list
-                } else {
+            $.ajax({
+                url: "<?php echo BASE_URL; ?>/address/register",
+                type: "POST",
+                headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+                data: JSON.stringify(addressData),
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        $("#checkout-form")[0].reset(); // Reset form fields
+                        $("#addressModal").modal("hide"); // Close modal
+                        fetchAddresses(); // Refresh address list
+                    } else {
+                        alert("Failed to add address. Please try again.");
+                    }
+                },
+                error: function () {
                     alert("Failed to add address. Please try again.");
                 }
-            },
-            error: function () {
-                alert("Failed to add address. Please try again.");
-            }
+            });
         });
-    });
 
-    fetchAddresses(); // Load addresses on page load
-});
+        fetchAddresses(); // Load addresses on page load
+    });
 </script>
+
         <div class="row">
            
             <div class="col-lg-7">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
-                        
+
                         <div class="form-group">
-                            <div class="custom-control custom-checkbox mt-0">
-                                <input type="checkbox" class="custom-control-input" id="different-shipping">
-                                <label class="custom-control-label" for="different-shipping">
-                                    Ship to an Additional Address?
-                                </label>
-                            </div>
+                            <a href="#" id="openAddressModal" class="text-primary">
+                                Ship to an Additional Address?
+                            </a>
                         </div>
+
 
                         <!-- Address Modal -->
                         <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
