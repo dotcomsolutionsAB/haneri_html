@@ -111,27 +111,21 @@
             <h4 class="heading2 primary">Benefits for Customers
             </h2>
             <div class="ulclass">
-            <span class="highlight_p">Enhanced Cooling Comfort</span>
-                    <li>Powerful airflow achieved at lower RPM ensures a cooling experience that is both efficient and soothing.</li>
-                </ul>
-
-                <span class="highlight_p">Quiet Operation for Peaceful Environments</span>
-                    <li>Reduced turbulence and noise make Silent M.A.S.S ideal for bedrooms, offices, and libraries where silence is a priority.</li>
-                </ul>
-
-                <span class="highlight_p">Energy Savings</span>
-                    <li>Optimized motor and blade integration results in significantly reduced power consumption, saving on electricity bills over time.</li>
-                </ul>
-
-                <span class="highlight_p">Durability and Longevity</span>
-                    <li>
+            <li><span class="highlight_p">Enhanced Cooling Comfort</span>
+                    Powerful airflow achieved at lower RPM ensures a cooling experience that is both efficient and soothing.</li>
+            </li>
+            <li><span class="highlight_p">Quiet Operation for Peaceful Environments</span>
+                    Reduced turbulence and noise make Silent M.A.S.S ideal for bedrooms, offices, and libraries where silence is a priority.</li>
+            </li>
+                    <li><span class="highlight_p">Energy Savings</span>
+                    Optimized motor and blade integration results in significantly reduced power consumption, saving on electricity bills over time.</li>
+            </li>
+                    <li><span class="highlight_p">Durability and Longevity</span>
                     Reduced wear and tear on motors and blades due to low-speed operation ensures extended product life and reliability.</li>
-                </ul>
-
-                <span class="highlight_p">Sustainability</span>
-                    <li>
+            </li>
+                    <li><span class="highlight_p">Sustainability</span>
                     Lower energy usage aligns with eco-friendly practices, making Silent M.A.S.S an environmentally responsible choice.</li>
-                </ul>
+            </li>
             </div>
         </div>
         <div class="brand-image">
