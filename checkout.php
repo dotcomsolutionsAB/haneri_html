@@ -159,6 +159,15 @@ $(document).ready(function () {
                     <li>
                         <h2 class="step-title">Billing details</h2>
                         
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox mt-0">
+                                <input type="checkbox" class="custom-control-input" id="different-shipping">
+                                <label class="custom-control-label" for="different-shipping">
+                                    Ship to an Additional Address?
+                                </label>
+                            </div>
+                        </div>
+
                         <!-- Address Modal -->
                         <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -236,6 +245,80 @@ $(document).ready(function () {
                                 </div>
                             </div>
                         </div>
+                       
+                        <!-- <form action="#" id="checkout-form">
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mt-0">
+                                    <input type="checkbox" class="custom-control-input" id="different-shipping">
+                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour"
+                                        aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
+                                        Ship to an Additional Address?
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="collapseFour" class="collapse">
+                                <div class="shipping-info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Name<abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="name" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label> Contact No <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="contact_no" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Address 1<abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Address 2 (optional)</label>
+                                        <input type="text" class="form-control" id="address_line2">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>State <abbr class="required" title="required">*</abbr></label>
+                                        <select class="form-control" id="state">
+                                            <option value="Mumbai" selected>Mumbai</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Country <span class="required">*</span></label>
+                                        <select class="form-control" id="country">
+                                            <option value="India" selected>India</option>
+                                            <option value="Australia">Australia</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Pincode <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" id="postal_code" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" id="addAddressBtn">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> -->
+
 
                     </li>
                 </ul>
