@@ -80,7 +80,7 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="primary heading2 highlight_h1">Enhanced Comfort</h2>
+                            <span class="highlight_p">Enhanced Comfort</span>
                                 <p class="dark paragraph1 left margp">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
                             </div>
                         </div>
