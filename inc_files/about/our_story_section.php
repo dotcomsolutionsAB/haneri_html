@@ -71,24 +71,24 @@
                 </p>
 
                 <p class="paragraph1">
-                    <span class="highlight_p">1. Innovative Design and Engineering</span><br>
+                    <span class="highlight_p">Innovative Design and Engineering</span>
                     We will bring together talented designers and engineers to craft solutions that are as aesthetically pleasing as
                     they are functional. By staying ahead of design trends and technological advancements, we ensure that each
                     product is thoughtfully crafted to meet the evolving needs of the modern consumer.
                 </p>
                 <p class="paragraph1">
-                    <span class="highlight_p">2. Commitment to Quality and Durability</span><br>
+                    <span class="highlight_p">Commitment to Quality and Durability</span>
                     Quality will be at the core of everything we do. From materials to manufacturing processes, we will invest in
                     ensuring that each product is built to last and provide a reliable experience over time.
                 </p>
                 <p class="paragraph1">
-                    <span class="highlight_p">3. Accessibility and Inclusivity</span><br>                    
+                    <span class="highlight_p">Accessibility and Inclusivity</span>                   
                     We believe luxury should be accessible to everyone. By designing products with a broad range of price points and
                     functionality, we will make our solutions available to diverse consumers, considering various lifestyles, budgets,
                     and preferences.
                 </p>
                 <p class="paragraph1">
-                    <span class="highlight_p"> 4. Exceptional Customer Experience</span>
+                    <span class="highlight_p">Exceptional Customer Experience</span>
                     We are dedicated to supporting our customers throughout their journey, from purchase to daily use and beyond.
                     Through responsive customer service, educational resources, and aftercare support, we will ensure our
                     customers feel valued and equipped to enjoy our solutions' benefits fully.
@@ -117,22 +117,22 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
                 <h2 class="heading2 primary">Values (H.E.A.R.T.S)</h2>
-                <p class="paragraph1"><span class="highlight_p">1. Human-Centric Design</span>
+                <p class="paragraph1"><span class="highlight_p">Human-Centric Design</span>
                 We focus on creating products that are intuitive, inclusive, and designed with real people in mind.</p>
 
-                <p class="paragraph1"><span class="highlight_p">2. Excellence in Quality</span>
+                <p class="paragraph1"><span class="highlight_p">Excellence in Quality</span>
                 We uphold the highest standards of craftsmanship, using durable materials for products that stand the test of time.</p>
 
-                <p class="paragraph1"><span class="highlight_p">3. Accessibility and Inclusivity</span>
+                <p class="paragraph1"><span class="highlight_p">Accessibility and Inclusivity</span>
                 We believe luxury should be attainable for everyone, creating products that suit diverse lifestyles, needs, and budgets.</p>
 
-                <p class="paragraph1"><span class="highlight_p">4. Responsiveness to Consumer Needs</span>
+                <p class="paragraph1"><span class="highlight_p">Responsiveness to Consumer Needs</span>
                 We listen and adapt to our customers’ needs, ensuring a seamless experience from purchase through long-term use.</p>
 
-                <p class="paragraph1"><span class="highlight_p">5. Transparency and Integrity</span>
+                <p class="paragraph1"><span class="highlight_p">Transparency and Integrity</span>
                 We operate with honesty and accountability, building trust through clear communication and ethical practices.</p>
 
-                <p class="paragraph1"><span class="highlight_p">6. Sustainability and Responsibility</span>
+                <p class="paragraph1"><span class="highlight_p">Sustainability and Responsibility</span>
                 We are committed to minimizing our environmental impact, choosing sustainable materials and processes to create a positive impact for future generations.</p>
 
             </div><!-- End .col-lg-7 -->
