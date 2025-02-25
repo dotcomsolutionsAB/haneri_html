@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const viewCartBtn = $('#view-cart-btn');
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
+    const singlePriceElem = $('#product-price');
     let cartItemId = null; // Store the cart item ID
 
     if (productId) {
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     priceElem.text(`₹${data.data.variants[0].selling_price}`);
                     priceElem.attr("data-price", data.data.variants[0].selling_price);
                     $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
+                    $('#product-price').text(`₹${data.data.variants[0].selling_price}`);
                     $('#product-description').html(data.data.description || 'No description available');
                     $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                     $('.about_section, .breadcrumb-title').text(data.data.name);
@@ -163,7 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
             success: function (data) {
                 console.log("API response received:", data);
                 if (data.success) {
-                    alert("Product added to cart successfully!");
+                    // Reload the page after successful cart addition
+                    location.reload();
                     addCartBtn.hide();
                     viewCartBtn.show();
                     checkCart();
