@@ -11,7 +11,7 @@
     </script>
 
 
-<!-- <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         let token = localStorage.getItem('auth_token');
         let guestId = localStorage.getItem('guest_id');
@@ -68,7 +68,7 @@
                                     <td>
                                         <figure class="product-image-container">
                                             <a href="#" class="product-image">
-                                                <img src="${productImage}" alt="product">
+                                                <img src="images/f2.png" alt="product">
                                             </a>
                                         </figure>
                                     </td>
@@ -176,180 +176,6 @@
                     success: function (data) {
                         console.log("Item removed from cart:", data);
                         fetchCart(); // Refresh cart after deletion
-                    },
-                    error: function (error) {
-                        console.error("Error removing cart item:", error);
-                    }
-                });
-            }
-        };
-    });
-</script> -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let token = localStorage.getItem('auth_token');
-        let guestId = localStorage.getItem('guest_id');
-        let backendDomain = "https://haneri.dotcombusiness.in";
-
-        if (!token && guestId) {
-            document.cookie = `cart_id=${guestId}; path=/; domain=${backendDomain}; SameSite=None; Secure`;
-        }
-
-        let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
-
-        // Product images array (assuming order is consistent with cart items)
-        let pro_img = [
-            "f1.png", "f2.png", "f3.png", "f4.png", "f5.png",
-            "f6.png", "f7.png", "f8.png", "f9.png", "f10.png"
-        ];
-
-        fetchCart();
-
-        function fetchCart() {
-            $.ajax({
-                url: apiUrl,
-                type: "POST",
-                headers: { "Authorization": token ? `Bearer ${token}` : "" },
-                contentType: "application/json",
-                success: function (data) {
-                    if (data.data && data.data.length > 0) {
-                        let cartTableBody = document.querySelector(".table-cart tbody");
-                        let totalsTableBody = document.querySelector(".table-totals tbody");
-                        let totalsTableFoot = document.querySelector(".table-totals tfoot");
-
-                        cartTableBody.innerHTML = "";
-                        totalsTableBody.innerHTML = "";
-                        totalsTableFoot.innerHTML = "";
-
-                        let subtotal = 0;
-                        let totalTax = 0;
-
-                        data.data.forEach((item, index) => {
-                            let variantInfo = item.variant ? `${item.variant.variant_type}: ${item.variant.variant_value}` : "No Variant";
-                            let itemPrice = parseFloat(item.variant.selling_price) || 0;
-                            let itemTax = parseFloat(item.variant.selling_tax) || 0;
-                            let itemSubtotal = (item.quantity * itemPrice).toFixed(2);
-                            let itemTotalTax = (item.quantity * itemTax).toFixed(2);
-                            
-                            // Use the indexed image, fallback to a placeholder if index is out of range
-                            let productImage = index < pro_img.length ? `assets/images/products/${pro_img[index]}` : "assets/images/products/product-placeholder.jpg";
-
-                            subtotal += parseFloat(itemSubtotal);
-                            totalTax += parseFloat(itemTotalTax);
-
-                            let row = `
-                                <tr class="product-row" data-cart-id="${item.id}">
-                                    <td>
-                                        <figure class="product-image-container">
-                                            <a href="#" class="product-image">
-                                                <img src="${productImage}" alt="product">
-                                            </a>
-                                        </figure>
-                                    </td>
-                                    <td class="product-col">
-                                        <h5 class="product-title">
-                                            <a href="#">${item.product.name}</a>
-                                        </h5>
-                                        <p>${variantInfo}</p>
-                                    </td>
-                                    <td>₹ ${itemPrice.toFixed(2)}</td>
-                                    <td>
-                                        <div class="product-single-qty">
-                                            <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                                <span class="input-group-btn input-group-prepend">
-                                                    <button class="btn btn-outline btn-down-icon bootstrap-touchspin-down" type="button" onclick="updateCartQuantity(${item.id}, 'decrease')">-</button>
-                                                </span>
-                                                <input class="horizontal-quantity form-control" type="number" value="${item.quantity}" min="1" onchange="updateCartQuantity(${item.id}, 'input', this.value)">
-                                                <span class="input-group-btn input-group-append">
-                                                    <button class="btn btn-outline btn-up-icon bootstrap-touchspin-up" type="button" onclick="updateCartQuantity(${item.id}, 'increase')">+</button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right"><span class="subtotal-price">₹ ${itemSubtotal}</span></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-danger btn-sm" onclick="removeCartItem(${item.id})">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            `;
-                            cartTableBody.insertAdjacentHTML("beforeend", row);
-                        });
-
-                        let grandTotal = subtotal + totalTax;
-
-                        totalsTableBody.innerHTML = `
-                            <tr>
-                                <td>Subtotal</td>
-                                <td>₹ ${subtotal.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Tax</td>
-                                <td>₹ ${totalTax.toFixed(2)}</td>
-                            </tr>
-                        `;
-
-                        totalsTableFoot.innerHTML = `
-                            <tr>
-                                <td><strong>Total</strong></td>
-                                <td><strong>₹ ${grandTotal.toFixed(2)}</strong></td>
-                            </tr>
-                        `;
-                    } else {
-                        document.querySelector(".table-cart tbody").innerHTML = "<tr><td colspan='6' class='text-center'>No items in cart</td></tr>";
-                        document.querySelector(".table-totals tbody").innerHTML = "<tr><td colspan='2' class='text-center'>No totals to display</td></tr>";
-                        document.querySelector(".table-totals tfoot").innerHTML = "";
-                    }
-                },
-                error: function (error) {
-                    console.error("Error fetching cart items:", error);
-                }
-            });
-        }
-
-        window.updateCartQuantity = function(cartId, action, value = null) {
-            let row = document.querySelector(`tr[data-cart-id="${cartId}"]`);
-            let quantityInput = row.querySelector(".horizontal-quantity");
-            let currentQuantity = parseInt(quantityInput.value);
-
-            if (action === "increase") {
-                currentQuantity += 1;
-            } else if (action === "decrease" && currentQuantity > 1) {
-                currentQuantity -= 1;
-            } else if (action === "input") {
-                currentQuantity = parseInt(value);
-                if (isNaN(currentQuantity) || currentQuantity < 1) currentQuantity = 1;
-            }
-
-            quantityInput.value = currentQuantity;
-
-            $.ajax({
-                url: `<?php echo BASE_URL; ?>/cart/update/${cartId}`,
-                type: "POST",
-                headers: { "Authorization": token ? `Bearer ${token}` : "" },
-                contentType: "application/json",
-                data: JSON.stringify({ quantity: currentQuantity }),
-                success: function (data) {
-                    console.log("Cart quantity updated:", data);
-                    fetchCart();
-                },
-                error: function (error) {
-                    console.error("Error updating cart quantity:", error);
-                }
-            });
-        };
-
-        window.removeCartItem = function(cartId) {
-            if (confirm("Are you sure you want to remove this item from your cart?")) {
-                $.ajax({
-                    url: `<?php echo BASE_URL; ?>/cart/remove/${cartId}`,
-                    type: "POST",
-                    headers: { "Authorization": token ? `Bearer ${token}` : "" },
-                    contentType: "application/json",
-                    success: function (data) {
-                        console.log("Item removed from cart:", data);
-                        fetchCart();
                     },
                     error: function (error) {
                         console.error("Error removing cart item:", error);
