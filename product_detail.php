@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
-    const cartItemId = $('#cartId');
+    const cartItemIds = $('#cartId');
     let cartItemId = null; // Store the cart item ID
 
     if (productId) {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         viewCartBtn.show();
                         quantityElem.val(cartItem.quantity);
                         // cartItemId = cartItem.id;
-                        cartItemId.hide();
+                        cartItemIds.hide();
                         updatePrice();
                     } else {
                         addCartBtn.show();
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 location.reload();
                 if (data.success) {
                     // Reload the page after successful cart addition
-                    cartItemId.hide();
+                    cartItemIds.hide();
                     addCartBtn.hide();
                     viewCartBtn.show();
                     checkCart();
