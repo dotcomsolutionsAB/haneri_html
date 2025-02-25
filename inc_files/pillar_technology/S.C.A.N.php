@@ -39,8 +39,8 @@
                     <li>Effortlessly adjust fan speed across multiple levels, giving you complete control over your cooling experience.</li>
                     <li>Includes two unique modes:
                         <ul class="ulclass dark list margp">
-                            <li><strong>Breeze Mode:</strong> Simulates natural airflow patterns, creating a relaxing and refreshing environment.</li>
-                            <li><strong>Turbo Speed Mode:</strong> Activates maximum fan speed for quick and powerful cooling.</li>
+                            <li><strong>Breeze Mode</strong> Simulates natural airflow patterns, creating a relaxing and refreshing environment.</li>
+                            <li><strong>Turbo Speed Mode</strong> Activates maximum fan speed for quick and powerful cooling.</li>
                         </ul>
                     </li>
                 </ul>
@@ -99,8 +99,8 @@
 
                 <h4 class="heading4 primary">Multi-Mode Control Logic:</h4>
                 <ul class="ulclass dark list margp">
-                    <li><strong>Breeze Mode:</strong> Powered by dynamic speed variation algorithms to mimic natural airflow.</li>
-                    <li><strong>Turbo Mode:</strong> Leverages direct motor communication to maximize fan performance instantly.</li>
+                    <li><strong>Breeze Mode</strong> Powered by dynamic speed variation algorithms to mimic natural airflow.</li>
+                    <li><strong>Turbo Mode</strong> Leverages direct motor communication to maximize fan performance instantly.</li>
                 </ul>
             </div>            
         </div>
