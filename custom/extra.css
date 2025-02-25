@@ -1025,10 +1025,10 @@ Turbosilent
     .highlight_p{
       font-weight: 700 !important;
       color:#464646;
+      font-size: 16px !important;
     }
     .ulclass{
         font-family: 'Open Sans';
-        font-size: 16px;
           line-height: 1.8;
           margin-bottom: 20px;
           color: #555;
