@@ -164,9 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
             data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
             success: function (data) {
                 console.log("API response received:", data);
+                location.reload();
                 if (data.success) {
                     // Reload the page after successful cart addition
-                    location.reload();
+                    
                     addCartBtn.hide();
                     viewCartBtn.show();
                     checkCart();
