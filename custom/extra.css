@@ -1736,6 +1736,8 @@ Turbosilent
     display: flex;
     padding: 2.5rem 0 !important;
     border-top: 1px solid #e7e7e7;
+    color: #555555;
+    background-color: #fff;
 }
 .main-nav .menu>li {
     margin-right: 0px !important;
