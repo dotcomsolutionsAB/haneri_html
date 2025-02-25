@@ -29,16 +29,16 @@
             <h2 class="heading2 primary">Key Features of S.C.A.N Technology</h2>
             <div class="points">
                 <h4 class="heading4 primary">Futuristic Design:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>The S.C.A.N remote controller, with its ergonomic design, intuitive button placement, and sleek, modern look, offers a convenient and comfortable user experience.</li>
                     <li>Its high-quality materials and lightweight form factor make it comfortable and durable for everyday use.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Comprehensive Fan Control:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Effortlessly adjust fan speed across multiple levels, giving you complete control over your cooling experience.</li>
                     <li>Includes two unique modes:
-                        <ul class="ulclass dark list margp">
+                        <ul class="ulclass">
                             <li><strong>Breeze Mode</strong> Simulates natural airflow patterns, creating a relaxing and refreshing environment.</li>
                             <li><strong>Turbo Speed Mode</strong> Activates maximum fan speed for quick and powerful cooling.</li>
                         </ul>
@@ -46,24 +46,24 @@
                 </ul>
 
                 <h4 class="heading4 primary">LED Light Integration:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Control LED lights (where available) with the same remote, including switching on/off and changing the Colour Tones if the product is equipped with Haneri’s LumiAmbience Technology.</li>
                     <li>Synchronizes seamlessly with fans, offering complete control and convenience.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Advanced Timer Functionality:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Set programmable timers to automatically switch the fan or light on/off, optimizing energy efficiency and user comfort.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Reliable Radio Frequency Control:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>The S.C.A.N remote controller operates on advanced RF technology, ensuring reliable control from greater distances without requiring line-of-sight.</li>
                     <li>This gives you a secure and confident experience, and it eliminates signal interference for a smooth and responsive experience.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Power Efficiency:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Low-power RF communication ensures extended battery life for the remote controller.</li>
                 </ul>
             </div>
