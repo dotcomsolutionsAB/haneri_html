@@ -110,7 +110,8 @@
         <div class="brand-content">
             <h4 class="heading2 primary">Benefits for Customers
             </h2>
-            <div class="ulclass">
+            <div class="points">
+            <ul class="ulclass">
             <li><span class="highlight_p">Enhanced Cooling Comfort</span>
                     Powerful airflow achieved at lower RPM ensures a cooling experience that is both efficient and soothing.</li>
             </li>
@@ -126,6 +127,7 @@
                     <li><span class="highlight_p">Sustainability</span>
                     Lower energy usage aligns with eco-friendly practices, making Silent M.A.S.S an environmentally responsible choice.</li>
             </li>
+            </ul>
             </div>
         </div>
         <div class="brand-image">
