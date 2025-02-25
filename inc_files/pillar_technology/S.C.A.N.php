@@ -81,24 +81,24 @@
             <h2 class="heading2 primary">Benefits for Customers</h2>
             <div class="points">
                 <h4 class="heading4 primary">Radio Frequency (RF) Innovation:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Operates on robust RF bands to provide uninterrupted control even through walls or obstructions.</li>
                     <li>Advanced signal encoding prevents interference from other wireless devices, ensuring reliability.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Integrated Microcontroller System:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Embedded microcontroller units (MCUs) process user inputs for instantaneous response.</li>
                     <li>The system supports multi-functional commands, enabling simultaneous fan speed and light adjustments.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Energy Optimization:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Timer algorithms and innovative sleep modes ensure energy-efficient operation of both the remote and connected devices.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Multi-Mode Control Logic:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li><strong>Breeze Mode</strong> Powered by dynamic speed variation algorithms to mimic natural airflow.</li>
                     <li><strong>Turbo Mode</strong> Leverages direct motor communication to maximize fan performance instantly.</li>
                 </ul>
