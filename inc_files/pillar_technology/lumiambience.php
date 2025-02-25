@@ -23,30 +23,30 @@
             <h2 class="heading2 primary">Key Features of LumiAmbience Technology</h2>
             <div class="points">
                 <h4 class="heading4 primary">Three-in-One Color Options:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li><span class="highlight_p">Warm White</span> Perfect for relaxed evenings or cosy settings, offering a soft, inviting glow.</li>
                     <li><span class="highlight_p">Cool White</span> Ideal for productivity-focused environments, providing bright and energizing illumination.</li>
                     <li><span class="highlight_p">Natural White</span> Mimics natural daylight, creating a balanced, comfortable ambience for versatile use.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Eye-Comforting Lens Diffuser:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>LumiAmbience’s proprietary diffuser eliminates visible LED spots, ensuring a smooth, uniform light spread that reduces eye strain and enhances visual comfort.</li>
                     <li>The diffuser technology creates a soft glow that transforms harsh lighting into a calming experience.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Optimized Light Spread:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Engineered to illuminate spaces evenly, LumiAmbience ensures every corner is lit with consistent brightness, avoiding dark patches or harsh shadows.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Integrated Control:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Seamlessly manage lighting modes, brightness levels, and fan settings with Haneri’s advanced remote systems, including S.C.A.N Technology.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Energy-Efficient LED System:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.</li>
                 </ul>
             </div>
@@ -64,24 +64,24 @@
             <h2 class="heading2 primary">The Science Behind LumiAmbience Technology</h2>
             <div class="points">
                 <h4 class="heading4 primary">Advanced LED Engineering:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>LumiAmbience LEDs are crafted to produce precise colour temperatures, ensuring true-to-life illumination for each mode.</li>
                     <li>High-quality diodes enhance durability and reduce power consumption, aligning with energy-saving standards.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Proprietary Lens Diffuser Technology:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.</li>
                     <li>Optical-grade materials ensure consistent performance and long-term clarity.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Precision Circuitry:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Intelligent LED drivers enable smooth transitions between colour modes and brightness levels, offering users unparalleled control and customization.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Energy Optimization:</h4>
-                <ul class="ulclass dark list margp">
+                <ul class="ulclass">
                     <li>Advanced power management minimizes energy wastage, ensuring high brightness with low power consumption.</li>
                 </ul>
             </div>            
@@ -122,7 +122,7 @@
                     <div class="custom-content">
                         <div class="txtt">
                             <h2 class="heading2 primary highlight_h1">Enhanced Eye Comfort</h2>
-                            <p class="paragraph1 margp dark">The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</p> 
+                            <p class="paragraph1">The proprietary diffuser ensures even, soft light that minimizes eye fatigue and creates a visually pleasant environment.</p> 
                         </div>           
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="custom-content">
                     <div class="txtt">
                         <h2 class="heading2 primary highlight_h1">Integrated Functionality:</h2>
-                        <p class="paragraph1 margp dark">Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</p>
+                        <p class="paragraph1">Seamlessly blending lighting and fan control into one intuitive system enhances convenience and design appeal.</p>
                     </div>
                 </div>
                 </div>
@@ -152,7 +152,7 @@
                     <div class="custom-content">
                         <div class="txtt">
                             <h2 class="heading2 primary highlight_h1">Energy Savings:</h2>
-                            <p class="paragraph1 margp dark">Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</p>
+                            <p class="paragraph1">Efficient LED technology reduces energy consumption, lowering electricity bills and eco-friendly operation.</p>
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                 <div class="custom-content">
                     <div class="txtt">
                         <h2 class="heading2 primary highlight_h1">Aesthetic Versatility:</h2>
-                        <p class="paragraph1 margp dark">The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</p>
+                        <p class="paragraph1">The sleek lighting design integrates seamlessly with Haneri’s ceiling fans, enhancing the visual appeal of your space.</p>
                     </div>
                 </div>
                 </div>
