@@ -117,13 +117,103 @@
                 sellingPriceElement.textContent = `₹${updatedPrice}`;
             }
         }
-// Wait until the DOM is fully loaded
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Bind the event listener to the button
     const addCartBtn = document.getElementById('add-to-cart-btn');
+    const viewCartBtn = document.getElementById('view-cart-btn');
+
+    const productId = new URLSearchParams(window.location.search).get('id');
+    const token = localStorage.getItem('auth_token');
+
+    if (!productId) {
+        console.error("Product ID is missing.");
+        return;
+    }
+
+    // Function to check if the product is in the cart
+    function checkCart() {
+        fetch(`<?php echo BASE_URL; ?>/cart/fetch`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data.length > 0) {
+                const productInCart = data.data.some(item => item.product_id == productId);
+                
+                if (productInCart) {
+                    addCartBtn.style.display = "none";
+                    viewCartBtn.style.display = "inline-block";
+                } else {
+                    addCartBtn.style.display = "inline-block";
+                    viewCartBtn.style.display = "none";
+                }
+            }
+        })
+        .catch(error => console.error("Error checking cart:", error));
+    }
+
+    // Check cart on page load
+    checkCart();
+
+    // Add to cart function
+    function addToCart() {
+        console.log("addToCart() function invoked.");
+
+        const variantIdElem = document.getElementById('selected-variant');
+        const quantityElem = document.getElementById('quantity');
+
+        if (!variantIdElem || !quantityElem) {
+            console.error("Required elements not found.");
+            return;
+        }
+
+        const variantId = variantIdElem.value;
+        const quantity = quantityElem.value;
+
+        fetch(`<?php echo BASE_URL; ?>/cart/add`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                product_id: productId,
+                variant_id: variantId || null,
+                quantity: quantity
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("API response received:", data);
+            if (data.success) {
+                alert("Product added to cart successfully!");
+
+                if (token) {
+                    localStorage.setItem('user_id', data.data.user_id);
+                } else {
+                    localStorage.setItem('guest_id', String(data.data.user_id));
+                    document.cookie = `cart_id=${data.data.user_id}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
+                }
+
+                // Hide add-to-cart button & show view-cart button
+                addCartBtn.style.display = "none";
+                viewCartBtn.style.display = "inline-block";
+            } else {
+                console.error("API response unsuccessful:", data);
+            }
+        })
+        .catch(error => console.error('Error adding product to cart:', error));
+    }
+
+    // Bind add-to-cart button event
     if (addCartBtn) {
         addCartBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default anchor behavior
+            e.preventDefault();
             addToCart();
         });
     } else {
@@ -131,68 +221,43 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function addToCart() {
-    // Log at the start to verify the function is called only once per click
-    console.log("addToCart() function invoked.");
 
-    const productId = new URLSearchParams(window.location.search).get('id');
-    const variantIdElem = document.getElementById('selected-variant');
-    const quantityElem = document.getElementById('quantity');
 
-    if (!productId || !variantIdElem || !quantityElem) {
-        console.error("Required elements not found or productId missing.");
-        return;
-    }
-
-    const variantId = variantIdElem.value;
-    const quantity = quantityElem.value;
-    const token = localStorage.getItem('auth_token');
-
-    fetch(`<?php echo BASE_URL; ?>/cart/add`, {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            product_id: productId,
-            variant_id: variantId || null,
-            quantity: quantity
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("API response received:", data);
-        if (data.success) {
-            alert("Product added to cart successfully!");
-            const userId = data.data.user_id;
-            console.log("User ID from API:", userId);
-
-            if (token) {
-                localStorage.setItem('user_id', userId);
-                console.log("Stored under user_id:", userId);
-            } else {
-                localStorage.setItem('guest_id', String(userId));
-                document.cookie = `cart_id=${userId}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
-                console.log("Stored under guest_id:", userId);
-            }
-        } else {
-            console.error("API response unsuccessful:", data);
-        }
-    })
-    .catch(error => console.error('Error adding product to cart:', error));
-}
+        // // Wait until the DOM is fully loaded
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     // Bind the event listener to the button
+        //     const addCartBtn = document.getElementById('add-to-cart-btn');
+        //     if (addCartBtn) {
+        //         addCartBtn.addEventListener('click', function(e) {
+        //             e.preventDefault(); // Prevent default anchor behavior
+        //             addToCart();
+        //         });
+        //     } else {
+        //         console.error("Add to Cart button not found.");
+        //     }
+        // });
 
         // function addToCart() {
+        //     // Log at the start to verify the function is called only once per click
+        //     console.log("addToCart() function invoked.");
+
         //     const productId = new URLSearchParams(window.location.search).get('id');
-        //     const variantId = document.getElementById('selected-variant').value;
-        //     const quantity = document.getElementById('quantity').value;
+        //     const variantIdElem = document.getElementById('selected-variant');
+        //     const quantityElem = document.getElementById('quantity');
+
+        //     if (!productId || !variantIdElem || !quantityElem) {
+        //         console.error("Required elements not found or productId missing.");
+        //         return;
+        //     }
+
+        //     const variantId = variantIdElem.value;
+        //     const quantity = quantityElem.value;
         //     const token = localStorage.getItem('auth_token');
 
         //     fetch(`<?php echo BASE_URL; ?>/cart/add`, {
         //         method: "POST",
         //         headers: {
-        //             // "Authorization": `Bearer ${token}`,
+        //             "Authorization": `Bearer ${token}`,
         //             "Content-Type": "application/json"
         //         },
         //         body: JSON.stringify({
@@ -214,17 +279,16 @@ function addToCart() {
         //                 console.log("Stored under user_id:", userId);
         //             } else {
         //                 localStorage.setItem('guest_id', String(userId));
+        //                 document.cookie = `cart_id=${userId}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
         //                 console.log("Stored under guest_id:", userId);
         //             }
         //         } else {
         //             console.error("API response unsuccessful:", data);
         //         }
-
-
         //     })
         //     .catch(error => console.error('Error adding product to cart:', error));
         // }
-    </script>
+</script>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -360,7 +424,7 @@ function addToCart() {
                                         Add to Cart
                                     </a>
 
-                                    <a href="cart.php" class="btn btn-gray view-cart d-none">View cart</a>
+                                    <a href="cart.php" class="btn btn-gray view-cart d-none" id="view-cart-btn">View cart</a>
                                 </div>
 
                                 <hr class="divider mb-0 mt-0">
