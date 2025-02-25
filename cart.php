@@ -317,7 +317,7 @@
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/cart/update/${cartId}`,
-                type: "POST",
+                type: "DELETE",
                 headers: { "Authorization": token ? `Bearer ${token}` : "" },
                 contentType: "application/json",
                 data: JSON.stringify({ quantity: currentQuantity }),
