@@ -51,26 +51,26 @@
         <div class="brand-content">
             <h4 class="heading2 primary">Key Features of Silent M.A.S.S Technology</h2>
             <div class="points">
-                <h4 class="highlight_p">High Air Delivery at Low RPM:</h4>
+                <h4 class="highlight_p">High Air Delivery at Low RPM</h4>
                 <ul class="ulclass">
                     <li>Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
                 </ul>
 
-                <h4 class="highlight_p">Ultra-Quiet Operation:</h4>
+                <h4 class="highlight_p">Ultra-Quiet Operation</h4>
                 <ul class="ulclass">
                     <li>The low RPM operation, combined with Efficient Torque output from the TurboSilent BLDC Motor, eliminates mechanical noise, creating an ultra-quiet cooling experience. Streamlined blade profiles reduce turbulence, further contributing to silent performance.</li>
                 </ul>
 
-                <h4 class="highlight_p">Enhanced Motor Efficiency:</h4>
+                <h4 class="highlight_p">Enhanced Motor Efficiency</h4>
                 <ul class="ulclass">
                     <li>TurboSilent BLDC motors utilize advanced electromagnetic design for optimal torque-to-RPM ratios, ensuring seamless operation at low speeds. The electronic controller, made in India for Indian conditions, minimizes energy losses, making the system highly efficient and cost-effective.</li>
                 </ul>
 
-                <h4 class="highlight_p">Advanced Blade Aerodynamics:</h4>
+                <h4 class="highlight_p">Advanced Blade Aerodynamics</h4>
                 <ul class="ulclass">
                     <li>Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.</li>
                 </ul>
-                <h4 class="highlight_p">Trademarked Technology:</h4>
+                <h4 class="highlight_p">Trademarked Technology</h4>
                 <ul class="ulclass">
                     <li>Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.</li>
                 </ul>
