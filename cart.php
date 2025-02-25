@@ -90,7 +90,7 @@
                 <a href="order-complete.php">Order Complete</a>
             </li>
         </ul>
-        <p id="cart-user-id">Loading user...</p>
+        <!-- <p id="cart-user-id">Loading user...</p> -->
         <div class="row">
             <div class="col-lg-8">
                 <div class="cart-table-container">

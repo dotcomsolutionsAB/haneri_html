@@ -246,117 +246,119 @@
             const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
             function fetchCartItems() {
-                $.ajax({
-                    url: cartUrl,
-                    type: "POST",
-                    headers: {
-                        "Authorization": `Bearer ${authToken}`,
-                        "Content-Type": "application/json"
-                    },
-                    success: function (response) {
-                        if (response.data.length > 0) {
-                            let cartHTML = "";
-                            let subtotal = 0;
-                            let totalTax = 0;
-                            let total = 0;
+        $.ajax({
+            url: cartUrl,
+            type: "POST",
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            },
+            success: function (response) {
+                if (response.data.length > 0) {
+                    let cartHTML = "";
+                    let subtotal = 0;
+                    let totalTax = 0;
+                    let total = 0;
 
-                            response.data.forEach(item => {
-                                let productName = item.product.name;
-                                let quantity = item.quantity;
-                                let price = parseFloat(item.variant.selling_price);
-                                let tax = parseFloat(item.variant.selling_tax);
-                                let itemTotal = (price + tax) * quantity;
+                    response.data.forEach(item => {
+                        let productName = item.product.name;
+                        let quantity = item.quantity;
+                        let price = parseFloat(item.variant.selling_price);
+                        let tax = parseFloat(item.variant.selling_tax);
+                        let itemTotal = (price + tax) * quantity;
 
-                                subtotal += (price * quantity);
-                                totalTax += (tax * quantity);
-                                total += itemTotal;
+                        subtotal += (price * quantity);
+                        totalTax += (tax * quantity);
+                        total += itemTotal;
 
-                                cartHTML += `
-                                    <tr>
-                                        <td class="product-col">
-                                            <h3 class="product-title">
-                                                ${productName} × <span class="product-qty">${quantity}</span>
-                                            </h3>
-                                        </td>
-                                        <td class="price-col">
-                                            <span>₹ ${itemTotal.toFixed(2)}</span>
-                                        </td>
-                                    </tr>
-                                `;
-                            });
+                        cartHTML += `
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        ${productName} × <span class="product-qty">${quantity}</span>
+                                    </h3>
+                                </td>
+                                <td class="price-col">
+                                    <span>₹ ${itemTotal.toFixed(2)}</span>
+                                </td>
+                            </tr>
+                        `;
+                    });
 
-                            $("#cart-items").html(cartHTML);
-                            $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                            $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                            $("#total").text(`₹ ${total.toFixed(2)}`);
-                        } else {
-                            $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                            $("#subtotal").text("₹ 0.00");
-                            $("#total-tax").text("₹ 0.00");
-                            $("#total").text("₹ 0.00");
-                        }
-                    },
-                    error: function () {
-                        console.error("Error fetching cart items.");
-                    }
-                });
-            }
-
-            function getSelectedAddress() {
-                let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
-
-                if (selectedRadio.length === 0) {
-                    alert("Please select a shipping address.");
-                    return null;
+                    $("#cart-items").html(cartHTML);
+                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                    $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                    $("#total").text(`₹ ${total.toFixed(2)}`);
+                } else {
+                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                    $("#subtotal").text("₹ 0.00");
+                    $("#total-tax").text("₹ 0.00");
+                    $("#total").text("₹ 0.00");
                 }
-
-                let name = selectedRadio.find(".col-lg-5 p strong:contains('Name')").parent().text().replace("Name:", "").trim();
-                let contactNo = selectedRadio.find(".col-lg-5 p strong:contains('Contact No')").parent().text().replace("Contact No:", "").trim();
-                let email = selectedRadio.find(".col-lg-5 p strong:contains('Email')").parent().text().replace("Email:", "").trim();
-                let address1 = selectedRadio.find(".col-lg-5 p strong:contains('Address 1')").parent().text().replace("Address 1:", "").trim();
-                let address2 = selectedRadio.find(".col-lg-5 p strong:contains('Address 2')").parent().text().replace("Address 2:", "").trim() || "";
-                let city = selectedRadio.find(".col-lg-5 p strong:contains('Location') span:nth-child(3)").text().trim();
-                let state = selectedRadio.find(".col-lg-5 p strong:contains('Location') span:nth-child(2)").text().trim();
-                let country = selectedRadio.find(".col-lg-5 p strong:contains('Location') span:nth-child(1)").text().trim();
-                let postalCode = selectedRadio.find(".col-lg-5 p strong:contains('Postal Code')").parent().text().replace("Postal Code:", "").trim();
-
-                let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
-
-                return shippingAddress;
+            },
+            error: function () {
+                console.error("Error fetching cart items.");
             }
+        });
+    }
 
-            $("#placeOrderBtn").click(function () {
-                let shippingAddress = getSelectedAddress();
-                if (!shippingAddress) return;
+    function getSelectedAddress() {
+        let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
 
-                let orderData = {
-                    status: "pending",
-                    payment_status: "pending",
-                    shipping_address: shippingAddress
-                };
+        if (selectedRadio.length === 0) {
+            alert("Please select a shipping address.");
+            return null;
+        }
 
-                $.ajax({
-                    url: orderUrl,
-                    type: "POST",
-                    headers: {
-                        "Authorization": `Bearer ${authToken}`,
-                        "Content-Type": "application/json"
-                    },
-                    data: JSON.stringify(orderData),
-                    success: function (response) {
-                        if (response.message.includes("success")) {
-                            alert("Order placed successfully!");
-                        } else {
-                            alert("Failed to place order. Please try again.");
-                        }
-                    },
-                    error: function () {
-                        alert("Failed to place order. Please try again.");
-                    }
-                });
-            });
+        let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+        let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+        let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+        let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+        let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+        let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+        let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+        let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+        let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
 
-            fetchCartItems(); // Load cart items on page load
+        let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+
+        return shippingAddress;
+    }
+
+    $("#placeOrderBtn").click(function (event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        let shippingAddress = getSelectedAddress();
+        if (!shippingAddress) return;
+
+        let orderData = {
+            status: "pending",
+            payment_status: "pending",
+            shipping_address: shippingAddress
+        };
+
+        $.ajax({
+            url: orderUrl,
+            type: "POST",
+            headers: {
+                "Authorization": `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            },
+            data: JSON.stringify(orderData),
+            success: function (response) {
+                if (response.message.includes("success")) {
+                    alert("Order placed successfully!");
+                } else {
+                    alert("Failed to place order. Please try again.");
+                }
+            },
+            error: function () {
+                alert("Failed to place order. Please try again.");
+            }
+        });
+    });
+
+    fetchCartItems(); // Load cart items on page load
         });
     </script>
 
