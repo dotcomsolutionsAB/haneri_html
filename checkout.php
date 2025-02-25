@@ -37,6 +37,10 @@
     .check-form .in{
         width:300px !important;
     }
+    .btt{
+        width:100%;
+        
+    }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -231,7 +235,7 @@
                                                 <input type="text" class="form-control" id="postal_code" required>
                                             </div>
 
-                                            <div class="form-group text-end">
+                                            <div class="form-group text-end btt">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                                 <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
                                             </div>
