@@ -1045,18 +1045,17 @@ Turbosilent
     } */
   /* Main Heading Style */
   .page_heading {
-      color: #fff; /* White text color */
+      color: #047f89; /* White text color */
       padding: 5px 65px; /* Spacing inside the heading */
       position: relative; /* Enable pseudo-elements */
       display: inline-block; /* Allow background to wrap the text */
-      background: linear-gradient(135deg, #047f89, #315859);
       border-radius: 0px; /* Rounded corners */
       overflow: hidden; /* Prevent overflow of child elements */
       width:100%;      
   }
 
   /* Geometric Decorative Element */
-   .page_heading::before {
+   /* .page_heading::before {
       content: '';
       position: absolute;
       top: -20px;
@@ -1066,7 +1065,7 @@ Turbosilent
       background: #f4f4f42e;
       transform: rotate(45deg);
       z-index: 100;
-  }
+  } */
 
   .page_heading::after {
       content: '';
