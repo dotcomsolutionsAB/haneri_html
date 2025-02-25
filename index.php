@@ -114,7 +114,7 @@
 
         <div class="bespoke-content">
             <div class="bespoke-text">
-                <h1>HANERI <br><span>BESPOKE</span></h1>
+                <img src="/assets/images/Haneri_Bespoke.jpg">
             </div>
             <div class="bespoke-image">
                 <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
