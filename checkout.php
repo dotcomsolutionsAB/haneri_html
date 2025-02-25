@@ -34,7 +34,7 @@
         flex-wrap: wrap;
         gap: 15px;
     }
-    .form-group .in{
+    .check-form .in{
         width:300px !important;
     }
 </style>
