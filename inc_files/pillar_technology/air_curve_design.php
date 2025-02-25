@@ -80,8 +80,11 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                            <span class="highlight_p">Enhanced Comfort</span>
-                                <p class="dark paragraph1 left margp">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
+                            <ul class="dark ulclass margp">
+                            <li><span class="highlight_p">Enhanced Comfort</span>
+                                Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.
+                            </li>
+                            </ul>
                             </div>
                         </div>
                     </div>
