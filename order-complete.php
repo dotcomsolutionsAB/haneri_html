@@ -1,14 +1,18 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-
+<style>
+    .left-head{
+        width:200px;
+    }
+</style>
 <?php
-$order_id = $_GET['order_id'] ?? 'N/A';
-$total_amount = $_GET['total_amount'] ?? 'N/A';
-$shipping_address = $_GET['shipping_address'] ?? 'N/A';
-$payment_id = $_GET['payment_id'] ?? 'N/A';
-$name = $_GET['name'] ?? 'N/A';
-$email = $_GET['email'] ?? 'N/A';
-$phone = $_GET['phone'] ?? 'N/A';
+    $order_id = $_GET['order_id'] ?? 'N/A';
+    $total_amount = $_GET['total_amount'] ?? 'N/A';
+    $shipping_address = $_GET['shipping_address'] ?? 'N/A';
+    $payment_id = $_GET['payment_id'] ?? 'N/A';
+    $name = $_GET['name'] ?? 'N/A';
+    $email = $_GET['email'] ?? 'N/A';
+    $phone = $_GET['phone'] ?? 'N/A';
 ?>
 
 <main class="main main-test checkout_page">
@@ -33,33 +37,33 @@ $phone = $_GET['phone'] ?? 'N/A';
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th class="text-right">#<?= $order_id ?></th>
+                                <th class="text-left">#<?= $order_id ?></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Total Amount</strong></td>
-                                <td class="text-right">₹<?= $total_amount ?></td>
+                                <td class="left-head"><strong>Total Amount</strong></td>
+                                <td class="text-left">₹<?= $total_amount ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Shipping Address</strong></td>
-                                <td class="text-right"><?= urldecode($shipping_address) ?></td>
+                                <td class="left-head"><strong>Shipping Address</strong></td>
+                                <td class="text-left"><?= urldecode($shipping_address) ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Payment ID</strong></td>
-                                <td class="text-right"><?= $payment_id ?></td>
+                                <td class="left-head"><strong>Payment ID</strong></td>
+                                <td class="text-left"><?= $payment_id ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Customer Name</strong></td>
-                                <td class="text-right"><?= urldecode($name) ?></td>
+                                <td class="left-head"><strong>Customer Name</strong></td>
+                                <td class="text-left"><?= urldecode($name) ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Email</strong></td>
-                                <td class="text-right"><?= urldecode($email) ?></td>
+                                <td class="left-head"><strong>Email</strong></td>
+                                <td class="text-left"><?= urldecode($email) ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Phone</strong></td>
-                                <td class="text-right"><?= $phone ?></td>
+                                <td class="left-head"><strong>Phone</strong></td>
+                                <td class="text-left"><?= $phone ?></td>
                             </tr>
                         </tbody>
                     </table>
