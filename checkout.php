@@ -370,7 +370,8 @@
                 data: JSON.stringify(orderData),
                 success: function (response) {
                     if (response.message.includes("success")) {
-                        alert("Order placed successfully!");
+                        // Redirect to order complete page with order details
+                        window.location.href = `order-complete.php?user_id=${response.data.user_id}&total_amount=${response.data.total_amount}&shipping_address=${encodeURIComponent(response.data.shipping_address)}`;
                     } else {
                         alert("Failed to place order. Please try again.");
                     }
@@ -379,6 +380,7 @@
                     alert("Failed to place order. Please try again.");
                 }
             });
+
         });
 
         fetchCartItems(); // Load cart items on page load
