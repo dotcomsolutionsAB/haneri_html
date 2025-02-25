@@ -48,80 +48,79 @@
 </style> -->
 <!-- Product Detail Page -->
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
-            const token = localStorage.getItem('auth_token');
-            
-            if (productId) {
-                fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
-                    method: "POST",
-                    headers: {
-                        // "Authorization": `Bearer ${token}`,
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ product_id: productId })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('product-title').textContent = data.data.name;
-                        document.getElementById('product-category').textContent = data.data.category;
-                        document.getElementById('product-brand').textContent = data.data.brand;
-                        document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                        document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                        document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
-                        document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
-                        document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
-                        document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
-                        document.querySelector('.about_section').textContent = data.data.name;
-                        document.querySelector('.breadcrumb-title').textContent = data.data.name;
-                        
-                        // Load Variants
-                        const variantsContainer = document.querySelector('.variants');
-                        variantsContainer.innerHTML = data.data.variants.map((variant, index) => 
-                            `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
-                                <p>${variant.variant_type}</p>
-                            </div>`
-                        ).join('');
-                        
-                        // Select first variant by default
-                        if (data.data.variants.length > 0) {
-                            updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, document.querySelector('.variant'));
-                        }
-                    }
-                })
-                .catch(error => console.error('Error fetching product details:', error));
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const token = localStorage.getItem('auth_token');
+    
+    if (productId) {
+        fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ product_id: productId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById('product-title').textContent = data.data.name;
+                document.getElementById('product-category').textContent = data.data.category;
+                document.getElementById('product-brand').textContent = data.data.brand;
+                document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
+                document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
+                document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
+                document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
+                document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
+                document.querySelector('.about_section').textContent = data.data.name;
+                document.querySelector('.breadcrumb-title').textContent = data.data.name;
+
+                // Load Variants
+                const variantsContainer = document.querySelector('.variants');
+                variantsContainer.innerHTML = data.data.variants.map((variant, index) => 
+                    `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
+                        <p>${variant.variant_type}</p>
+                    </div>`
+                ).join('');
+
+                // Select first variant by default
+                if (data.data.variants.length > 0) {
+                    updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, document.querySelector('.variant'));
+                }
             }
-        });
+        })
+        .catch(error => console.error('Error fetching product details:', error));
+    }
+});
 
-        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {.00
-            document.getElementById('product-price').textContent = `₹${sellingPrice}`;
-            document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
-            document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
-            document.getElementById('regular-price').textContent = `₹${regularPrice}`;
-            document.getElementById('selected-variant').value = variantId;
-            
-            // Remove selected class from all variants and add to the clicked one
-            document.querySelectorAll('.variant').forEach(variant => variant.classList.remove('selected'));
-            element.classList.add('selected');
-        }
+function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
+    document.getElementById('product-price').textContent = `₹${sellingPrice}`;
+    document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
+    document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
+    document.getElementById('regular-price').textContent = `₹${regularPrice}`;
+    document.getElementById('selected-variant').value = variantId;
 
-        function updatePrice() {
-            const quantity = parseFloat(document.getElementById('quantity').value) || 1;
-            const sellingPriceElement = document.getElementById('selling-price');
-            const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
+    // Remove selected class from all variants and add to the clicked one
+    document.querySelectorAll('.variant').forEach(variant => variant.classList.remove('selected'));
+    element.classList.add('selected');
+}
 
-            if (!isNaN(sellingPrice)) {
-                const updatedPrice = (quantity * sellingPrice).toFixed(2);
-                sellingPriceElement.textContent = `₹${updatedPrice}`;
-            }
-        }
+function updatePrice() {
+    const quantity = parseFloat(document.getElementById('quantity').value) || 1;
+    const sellingPriceElement = document.getElementById('selling-price');
+    const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
 
+    if (!isNaN(sellingPrice)) {
+        const updatedPrice = (quantity * sellingPrice).toFixed(2);
+        sellingPriceElement.textContent = `₹${updatedPrice}`;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const addCartBtn = document.getElementById('add-to-cart-btn');
     const viewCartBtn = document.getElementById('view-cart-btn');
+    const quantityElem = document.getElementById('quantity');
 
     const productId = new URLSearchParams(window.location.search).get('id');
     const token = localStorage.getItem('auth_token');
@@ -143,14 +142,24 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             if (data.data && data.data.length > 0) {
-                const productInCart = data.data.some(item => item.product_id == productId);
-                
-                if (productInCart) {
+                const cartItem = data.data.find(item => item.product_id == productId);
+
+                if (cartItem) {
                     addCartBtn.style.display = "none";
                     viewCartBtn.style.display = "inline-block";
+
+                    // Update quantity to the one in the cart
+                    if (quantityElem) {
+                        quantityElem.value = cartItem.quantity;
+                    }
                 } else {
                     addCartBtn.style.display = "inline-block";
                     viewCartBtn.style.display = "none";
+
+                    // Default quantity is always 1
+                    if (quantityElem) {
+                        quantityElem.value = 1;
+                    }
                 }
             }
         })
@@ -165,15 +174,13 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("addToCart() function invoked.");
 
         const variantIdElem = document.getElementById('selected-variant');
-        const quantityElem = document.getElementById('quantity');
-
         if (!variantIdElem || !quantityElem) {
             console.error("Required elements not found.");
             return;
         }
 
         const variantId = variantIdElem.value;
-        const quantity = quantityElem.value;
+        const quantity = quantityElem.value || 1; // Ensure at least 1 quantity
 
         fetch(`<?php echo BASE_URL; ?>/cart/add`, {
             method: "POST",
@@ -203,6 +210,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Hide add-to-cart button & show view-cart button
                 addCartBtn.style.display = "none";
                 viewCartBtn.style.display = "inline-block";
+
+                // Update quantity input field with the new quantity in the cart
+                if (quantityElem) {
+                    quantityElem.value = quantity;
+                }
             } else {
                 console.error("API response unsuccessful:", data);
             }
@@ -220,75 +232,8 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Add to Cart button not found.");
     }
 });
-
-
-
-        // // Wait until the DOM is fully loaded
-        // document.addEventListener("DOMContentLoaded", function() {
-        //     // Bind the event listener to the button
-        //     const addCartBtn = document.getElementById('add-to-cart-btn');
-        //     if (addCartBtn) {
-        //         addCartBtn.addEventListener('click', function(e) {
-        //             e.preventDefault(); // Prevent default anchor behavior
-        //             addToCart();
-        //         });
-        //     } else {
-        //         console.error("Add to Cart button not found.");
-        //     }
-        // });
-
-        // function addToCart() {
-        //     // Log at the start to verify the function is called only once per click
-        //     console.log("addToCart() function invoked.");
-
-        //     const productId = new URLSearchParams(window.location.search).get('id');
-        //     const variantIdElem = document.getElementById('selected-variant');
-        //     const quantityElem = document.getElementById('quantity');
-
-        //     if (!productId || !variantIdElem || !quantityElem) {
-        //         console.error("Required elements not found or productId missing.");
-        //         return;
-        //     }
-
-        //     const variantId = variantIdElem.value;
-        //     const quantity = quantityElem.value;
-        //     const token = localStorage.getItem('auth_token');
-
-        //     fetch(`<?php echo BASE_URL; ?>/cart/add`, {
-        //         method: "POST",
-        //         headers: {
-        //             "Authorization": `Bearer ${token}`,
-        //             "Content-Type": "application/json"
-        //         },
-        //         body: JSON.stringify({
-        //             product_id: productId,
-        //             variant_id: variantId || null,
-        //             quantity: quantity
-        //         })
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log("API response received:", data);
-        //         if (data.success) {
-        //             alert("Product added to cart successfully!");
-        //             const userId = data.data.user_id;
-        //             console.log("User ID from API:", userId);
-
-        //             if (token) {
-        //                 localStorage.setItem('user_id', userId);
-        //                 console.log("Stored under user_id:", userId);
-        //             } else {
-        //                 localStorage.setItem('guest_id', String(userId));
-        //                 document.cookie = `cart_id=${userId}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
-        //                 console.log("Stored under guest_id:", userId);
-        //             }
-        //         } else {
-        //             console.error("API response unsuccessful:", data);
-        //         }
-        //     })
-        //     .catch(error => console.error('Error adding product to cart:', error));
-        // }
 </script>
+
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
