@@ -370,8 +370,17 @@
                 data: JSON.stringify(orderData),
                 success: function (response) {
                     if (response.message.includes("success")) {
-                        // Redirect to order complete page with order details
-                        window.location.href = `order-complete.php?user_id=${response.data.user_id}&total_amount=${response.data.total_amount}&shipping_address=${encodeURIComponent(response.data.shipping_address)}`;
+                        let orderDetails = response.data.data;
+
+                        let orderId = orderDetails.order_id;
+                        let razorpayOrderId = orderDetails.razorpay_order_id;
+                        let totalAmount = orderDetails.total_amount;
+                        let userName = orderDetails.name;
+                        let userEmail = orderDetails.email;
+                        let userPhone = orderDetails.phone;
+
+                        // Open Razorpay Payment Popup
+                        openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
                     } else {
                         alert("Failed to place order. Please try again.");
                     }
@@ -380,72 +389,100 @@
                     alert("Failed to place order. Please try again.");
                 }
             });
-
         });
+
+        function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
+            var options = {
+                "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
+                "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
+                "currency": "INR",
+                "name": "Haneri",
+                "description": `Order ID: ${orderId}`,
+                "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
+                "order_id": order_id, // Razorpay Order ID
+                "handler": function(response) {
+                    alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+
+                    // Redirect to order complete page with payment ID and order details
+                    window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
+                },
+                "prefill": {
+                    "name": name,
+                    "email": email,
+                    "contact": phone
+                },
+                "theme": {
+                    "color": "#f0f8fe"
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
 
         fetchCartItems(); // Load cart items on page load
     });
 </script>
 
-<!-- Order Summary Section -->
-<div class="col-lg-5">
-    <div class="order-summary">
-        <h3>YOUR ORDER</h3>
+            <!-- Order Summary Section -->
+            <div class="col-lg-5">
+                <div class="order-summary">
+                    <h3>YOUR ORDER</h3>
 
-        <table class="table table-mini-cart">
-            <thead>
-                <tr>
-                    <th colspan="2">Product</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Cart items will be inserted here dynamically -->
-            </tbody>
-            <tfoot>
-                <tr class="cart-subtotal">
-                    <td><h4>Subtotal</h4></td>
-                    <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
-                </tr>
+                    <table class="table table-mini-cart">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Product</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be inserted here dynamically -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="cart-subtotal">
+                                <td><h4>Subtotal</h4></td>
+                                <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
+                            </tr>
 
-                <tr class="cart-tax">
-                    <td><h4>Tax</h4></td>
-                    <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
-                </tr>
+                            <tr class="cart-tax">
+                                <td><h4>Tax</h4></td>
+                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
+                            </tr>
 
-                <tr class="order-total">
-                    <td><h4>Total</h4></td>
-                    <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
-                </tr>
+                            <tr class="order-total">
+                                <td><h4>Total</h4></td>
+                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
+                            </tr>
 
-                <tr class="order-shipping">
-                    <td class="text-left" colspan="2">
-                        <h4 class="m-b-sm">Shipping</h4>
-                        <div class="form-group form-group-custom-control">
-                            <div class="custom-control custom-radio d-flex">
-                                <input type="radio" class="custom-control-input" name="radio" checked />
-                                <label class="custom-control-label">Free Shipping</label>
-                            </div>
+                            <tr class="order-shipping">
+                                <td class="text-left" colspan="2">
+                                    <h4 class="m-b-sm">Shipping</h4>
+                                    <div class="form-group form-group-custom-control">
+                                        <div class="custom-control custom-radio d-flex">
+                                            <input type="radio" class="custom-control-input" name="radio" checked />
+                                            <label class="custom-control-label">Free Shipping</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="payment-methods">
+                        <h4 class="mb-3">Payment Methods</h4>
+                        <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
+                            <span class="fw-bold fs-6">Razorpay</span>
+                            <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
+                                <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
+                            </span>
                         </div>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+                    </div>
 
-        <div class="payment-methods">
-            <h4 class="mb-3">Payment Methods</h4>
-            <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
-                <span class="fw-bold fs-6">Razorpay</span>
-                <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
-                    <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
-                </span>
+                    <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
+                        Place order
+                    </button>
+                </div>
             </div>
-        </div>
-
-        <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
-            Place order
-        </button>
-    </div>
-</div>
 
 
             <!-- End .col-lg-4 -->
