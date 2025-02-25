@@ -50,6 +50,7 @@
     <div class="brand-row">
         <div class="brand-content">
             <h4 class="heading2 primary">Key Features of Silent M.A.S.S Technology</h2>
+            <ul class="ulclass">
             <li><span class="highlight_p">High Air Delivery at Low RPM</span>
                     Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
             </li>        
@@ -64,7 +65,8 @@
             </li> 
             <li><span class="highlight_p">Trademarked Technology</span>
                     Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.</li>
-            </li>    
+            </li> 
+            </ul>   
         </div>
         <div class="brand-image">
             <img src="images/place.jpg" alt="Haneri Professional - Industrial Solutions">
