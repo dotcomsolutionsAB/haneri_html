@@ -48,101 +48,109 @@
         </ul>
 
 
-<script>
-    $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-        const baseUrl = "<?php echo BASE_URL; ?>/address";
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        function fetchAddresses() {
-            $.ajax({
-                url: baseUrl,
-                type: "GET",
-                headers: { "Authorization": `Bearer ${authToken}` },
-                success: function (response) {
-                    if (response.data.length > 0) {
-                        let addressHTML = "";
-                        response.data.forEach(address => {
-                            let isChecked = address.is_default ? "checked" : "";
-                            addressHTML += `
-                                <div class="address_box">
-                                    <div class="add_box_1">
-                                        <div class="col-lg-5">
-                                            <p><strong>Name:</strong> ${address.name}</p>
-                                            <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                            <input type="hidden" name="is_default" value="${address.is_default}">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                            <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                            <p>
-                                                <strong>Location:</strong> 
-                                                <span>${address.country}</span>, 
-                                                <span>${address.state}</span>, 
-                                                <span>${address.city}</span>
-                                            </p>
-                                            <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="selects">
-                                                <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                            </div>                                                
-                                        </div>
-                                    </div>                                        
-                                </div>
-                            `;
-                        });
-                        $("#collapseNew").html(addressHTML).addClass("show");
-                    } else {
-                        $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
-                    }
-                },
-                error: function () {
-                    console.error("Error fetching addresses.");
+<script>
+$(document).ready(function () {
+    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+    const baseUrl = "<?php echo BASE_URL; ?>/address";
+
+    function fetchAddresses() {
+        $.ajax({
+            url: baseUrl,
+            type: "GET",
+            headers: { "Authorization": `Bearer ${authToken}` },
+            success: function (response) {
+                if (response.data.length > 0) {
+                    let addressHTML = "";
+                    response.data.forEach(address => {
+                        let isChecked = address.is_default ? "checked" : "";
+                        addressHTML += `
+                            <div class="address_box">
+                                <div class="add_box_1">
+                                    <div class="col-lg-5">
+                                        <p><strong>Name:</strong> ${address.name}</p>
+                                        <p><strong>Contact No:</strong> ${address.contact_no}</p>
+                                        <input type="hidden" name="is_default" value="${address.is_default}">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                        <p>
+                                            <strong>Location:</strong> 
+                                            <span>${address.country}</span>, 
+                                            <span>${address.state}</span>, 
+                                            <span>${address.city}</span>
+                                        </p>
+                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="selects">
+                                            <input type="radio" name="address_select" class="sel" ${isChecked}>
+                                        </div>                                                  
+                                    </div>
+                                </div>                                        
+                            </div>
+                        `;
+                    });
+                    $("#collapseNew").html(addressHTML).addClass("show");
+                } else {
+                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
                 }
-            });
+            },
+            error: function () {
+                console.error("Error fetching addresses.");
+            }
+        });
+    }
+
+    // Open modal when checkbox is clicked
+    $("#different-shipping").change(function () {
+        if ($(this).is(":checked")) {
+            $("#addressModal").modal("show");
+        }
+    });
+
+    $("#addAddressBtn").click(function () {
+        let addressData = {
+            name: $("#name").val(),
+            contact_no: $("#contact_no").val(),
+            address_line1: $("#address_line1").val(),
+            address_line2: $("#address_line2").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            country: $("#country").val(),
+            postal_code: $("#postal_code").val(),
+            is_default: true
+        };
+
+        if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
+            alert("Please fill all required fields.");
+            return;
         }
 
-        $("#addAddressBtn").click(function () {
-            let addressData = {
-                name: $("#name").val(),
-                contact_no: $("#contact_no").val(),
-                address_line1: $("#address_line1").val(),
-                address_line2: $("#address_line2").val(),
-                city: $("#city").val(),
-                state: $("#state").val(),
-                country: $("#country").val(),
-                postal_code: $("#postal_code").val(),
-                is_default: true
-            };
-
-            if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
-                alert("Please fill all required fields.");
-                return;
-            }
-
-            $.ajax({
-                url: "<?php echo BASE_URL; ?>/address/register",
-                type: "POST",
-                headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
-                data: JSON.stringify(addressData),
-                success: function (response) {
-                    if (response.message.includes("success")) {
-                        // alert("Address added successfully!");
-                        $("#checkout-form")[0].reset(); // Reset form fields
-                        $("#collapseFour").removeClass("show"); // Hide add address form
-                        fetchAddresses(); // Refresh the address list
-                    } else {
-                        alert("Failed to add address. Please try again.");
-                    }
-                },
-                error: function () {
+        $.ajax({
+            url: "<?php echo BASE_URL; ?>/address/register",
+            type: "POST",
+            headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+            data: JSON.stringify(addressData),
+            success: function (response) {
+                if (response.message.includes("success")) {
+                    $("#checkout-form")[0].reset(); // Reset form fields
+                    $("#addressModal").modal("hide"); // Close modal
+                    fetchAddresses(); // Refresh address list
+                } else {
                     alert("Failed to add address. Please try again.");
                 }
-            });
+            },
+            error: function () {
+                alert("Failed to add address. Please try again.");
+            }
         });
-
-        fetchAddresses(); // Load addresses on page load
     });
+
+    fetchAddresses(); // Load addresses on page load
+});
 </script>
         <div class="row">
            
@@ -150,6 +158,74 @@
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
+                        
+                        <!-- Address Modal -->
+                        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="checkout-form">
+                                            <div class="form-group">
+                                                <label>Name <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="name" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Contact No <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="contact_no" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Address 1 <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Address 2 (optional)</label>
+                                                <input type="text" class="form-control" id="address_line2">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Town / City <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="city" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>State <abbr class="required" title="required">*</abbr></label>
+                                                <select class="form-control" id="state">
+                                                    <option value="Mumbai" selected>Mumbai</option>
+                                                    <option value="Delhi">Delhi</option>
+                                                    <option value="West Bengal">West Bengal</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Country <span class="required">*</span></label>
+                                                <select class="form-control" id="country">
+                                                    <option value="India" selected>India</option>
+                                                    <option value="Australia">Australia</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Pincode <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="postal_code" required>
+                                            </div>
+
+                                            <div class="form-group text-end">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="addresses">
                             <div class="address">                            
                                 <div class="vvv">
