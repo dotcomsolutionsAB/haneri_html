@@ -47,192 +47,156 @@
     }
 </style> -->
 <!-- Product Detail Page -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const token = localStorage.getItem('auth_token');
-    
+    const addCartBtn = $('#add-to-cart-btn');
+    const viewCartBtn = $('#view-cart-btn');
+    const quantityElem = $('#quantity');
+    const priceElem = $('#selling-price');
+
     if (productId) {
-        fetch(`<?php echo BASE_URL; ?>/products/get_products/${productId}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ product_id: productId }),
+            success: function (data) {
+                if (data.success) {
+                    $('#product-title').text(data.data.name);
+                    $('#product-category').text(data.data.category);
+                    $('#product-brand').text(data.data.brand);
+                    priceElem.text(`₹${data.data.variants[0].selling_price}`);
+                    priceElem.attr("data-price", data.data.variants[0].selling_price);
+                    $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
+                    $('#product-description').html(data.data.description || 'No description available');
+                    $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
+                    $('.about_section, .breadcrumb-title').text(data.data.name);
+
+                    // Load Variants
+                    const variantsContainer = $('.variants');
+                    variantsContainer.html(data.data.variants.map((variant, index) => 
+                        `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
+                            <p>${variant.variant_type}</p>
+                        </div>`
+                    ).join(''));
+
+                    // Select first variant by default
+                    if (data.data.variants.length > 0) {
+                        updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, $('.variant').first()[0]);
+                    }
+                }
             },
-            body: JSON.stringify({ product_id: productId })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                document.getElementById('product-title').textContent = data.data.name;
-                document.getElementById('product-category').textContent = data.data.category;
-                document.getElementById('product-brand').textContent = data.data.brand;
-                document.getElementById('product-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                document.getElementById('selling-price').textContent = `₹${data.data.variants[0].selling_price}`;
-                document.getElementById('selling-price').setAttribute("data-price", data.data.variants[0].selling_price);
-                document.getElementById('regular-price').textContent = `₹${data.data.variants[0].regular_price}`;
-                document.getElementById('product-description').innerHTML = data.data.description || 'No description available';
-                document.getElementById('features-list').innerHTML = data.data.features.map(f => `<li>${f.feature_value}</li>`).join('');
-                document.querySelector('.about_section').textContent = data.data.name;
-                document.querySelector('.breadcrumb-title').textContent = data.data.name;
-
-                // Load Variants
-                const variantsContainer = document.querySelector('.variants');
-                variantsContainer.innerHTML = data.data.variants.map((variant, index) => 
-                    `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
-                        <p>${variant.variant_type}</p>
-                    </div>`
-                ).join('');
-
-                // Select first variant by default
-                if (data.data.variants.length > 0) {
-                    updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, document.querySelector('.variant'));
-                }
+            error: function (error) {
+                console.error('Error fetching product details:', error);
             }
-        })
-        .catch(error => console.error('Error fetching product details:', error));
-    }
-});
-
-function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
-    document.getElementById('product-price').textContent = `₹${sellingPrice}`;
-    document.getElementById('selling-price').textContent = `₹${sellingPrice}`;
-    document.getElementById('selling-price').setAttribute("data-price", sellingPrice);
-    document.getElementById('regular-price').textContent = `₹${regularPrice}`;
-    document.getElementById('selected-variant').value = variantId;
-
-    // Remove selected class from all variants and add to the clicked one
-    document.querySelectorAll('.variant').forEach(variant => variant.classList.remove('selected'));
-    element.classList.add('selected');
-}
-
-function updatePrice() {
-    const quantity = parseFloat(document.getElementById('quantity').value) || 1;
-    const sellingPriceElement = document.getElementById('selling-price');
-    const sellingPrice = parseFloat(sellingPriceElement.getAttribute("data-price")) || 0;
-
-    if (!isNaN(sellingPrice)) {
-        const updatedPrice = (quantity * sellingPrice).toFixed(2);
-        sellingPriceElement.textContent = `₹${updatedPrice}`;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const addCartBtn = document.getElementById('add-to-cart-btn');
-    const viewCartBtn = document.getElementById('view-cart-btn');
-    const quantityElem = document.getElementById('quantity');
-
-    const productId = new URLSearchParams(window.location.search).get('id');
-    const token = localStorage.getItem('auth_token');
-
-    if (!productId) {
-        console.error("Product ID is missing.");
-        return;
+        });
     }
 
-    // Function to check if the product is in the cart
+    function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
+        priceElem.text(`₹${sellingPrice}`);
+        priceElem.attr("data-price", sellingPrice);
+        $('#regular-price').text(`₹${regularPrice}`);
+        $('#selected-variant').val(variantId);
+
+        // Remove selected class from all variants and add to the clicked one
+        $('.variant').removeClass('selected');
+        $(element).addClass('selected');
+    }
+
+    function updatePrice() {
+        const quantity = parseFloat(quantityElem.val()) || 1;
+        const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
+
+        if (!isNaN(sellingPrice)) {
+            const updatedPrice = (quantity * sellingPrice).toFixed(2);
+            priceElem.text(`₹${updatedPrice}`);
+        }
+    }
+
     function checkCart() {
-        fetch(`<?php echo BASE_URL; ?>/cart/fetch`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.data && data.data.length > 0) {
-                const cartItem = data.data.find(item => item.product_id == productId);
-
-                if (cartItem) {
-                    addCartBtn.style.display = "none";
-                    viewCartBtn.style.display = "inline-block";
-
-                    // Update quantity to the one in the cart
-                    if (quantityElem) {
-                        quantityElem.value = cartItem.quantity;
-                    }
-                } else {
-                    addCartBtn.style.display = "inline-block";
-                    viewCartBtn.style.display = "none";
-
-                    // Default quantity is always 1
-                    if (quantityElem) {
-                        quantityElem.value = 1;
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/cart/fetch`,
+            type: "POST",
+            headers: { "Authorization": `Bearer ${token}` },
+            contentType: "application/json",
+            success: function (data) {
+                if (data.data && data.data.length > 0) {
+                    const cartItem = data.data.find(item => item.product_id == productId);
+                    if (cartItem) {
+                        addCartBtn.hide();
+                        viewCartBtn.show();
+                        quantityElem.val(cartItem.quantity);
+                        updatePrice();
+                    } else {
+                        addCartBtn.show();
+                        viewCartBtn.hide();
+                        quantityElem.val(1);
+                        updatePrice();
                     }
                 }
+            },
+            error: function (error) {
+                console.error("Error checking cart:", error);
             }
-        })
-        .catch(error => console.error("Error checking cart:", error));
+        });
     }
 
     // Check cart on page load
     checkCart();
 
-    // Add to cart function
     function addToCart() {
         console.log("addToCart() function invoked.");
 
-        const variantIdElem = document.getElementById('selected-variant');
-        if (!variantIdElem || !quantityElem) {
-            console.error("Required elements not found.");
-            return;
-        }
+        const variantId = $('#selected-variant').val();
+        const quantity = quantityElem.val() || 1;
 
-        const variantId = variantIdElem.value;
-        const quantity = quantityElem.value || 1; // Ensure at least 1 quantity
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/cart/add`,
+            type: "POST",
+            headers: { "Authorization": `Bearer ${token}` },
+            contentType: "application/json",
+            data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
+            success: function (data) {
+                console.log("API response received:", data);
+                if (data.success) {
+                    alert("Product added to cart successfully!");
 
-        fetch(`<?php echo BASE_URL; ?>/cart/add`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                product_id: productId,
-                variant_id: variantId || null,
-                quantity: quantity
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("API response received:", data);
-            if (data.success) {
-                alert("Product added to cart successfully!");
+                    if (token) {
+                        localStorage.setItem('user_id', data.data.user_id);
+                    } else {
+                        localStorage.setItem('guest_id', String(data.data.user_id));
+                        document.cookie = `cart_id=${data.data.user_id}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
+                    }
 
-                if (token) {
-                    localStorage.setItem('user_id', data.data.user_id);
+                    // Hide add-to-cart button & show view-cart button
+                    addCartBtn.hide();
+                    viewCartBtn.show();
+
+                    // Update price & quantity dynamically
+                    checkCart();
                 } else {
-                    localStorage.setItem('guest_id', String(data.data.user_id));
-                    document.cookie = `cart_id=${data.data.user_id}; path=/; domain="https://haneri.dotcombusiness.in"; SameSite=None; Secure`;
+                    console.error("API response unsuccessful:", data);
                 }
-
-                // Hide add-to-cart button & show view-cart button
-                addCartBtn.style.display = "none";
-                viewCartBtn.style.display = "inline-block";
-
-                // Update quantity input field with the new quantity in the cart
-                if (quantityElem) {
-                    quantityElem.value = quantity;
-                }
-            } else {
-                console.error("API response unsuccessful:", data);
+            },
+            error: function (error) {
+                console.error('Error adding product to cart:', error);
             }
-        })
-        .catch(error => console.error('Error adding product to cart:', error));
+        });
     }
 
-    // Bind add-to-cart button event
-    if (addCartBtn) {
-        addCartBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            addToCart();
-        });
-    } else {
-        console.error("Add to Cart button not found.");
-    }
+    addCartBtn.click(function (e) {
+        e.preventDefault();
+        addToCart();
+    });
+
+    quantityElem.change(updatePrice);
 });
 </script>
+
 
 
 <main class="main about">
