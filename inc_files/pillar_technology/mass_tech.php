@@ -151,17 +151,13 @@
                 <h4 class="heading2 primary">
                     1. Understanding Air Delivery and the Wind Chill Effect
                 </h2>
-                <span class="highlight_p">Air Delivery (CMM/CFM)</span>
                 <ul class="ulclass">
-                    <li>
+                <li><span class="highlight_p">Air Delivery (CMM/CFM)</span>
                         Air delivery is measured in cubic meters per minute (CMM) or cubic feet per minute (CFM). It represents the actual volume of air a fan moves, which depends on factors like blade design, motor efficiency, and blade surface area—not just RPM.
-                    </li>
-                </ul>
-                <span class="highlight_p">Wind Chill Effect</span>
-                <ul class="ulclass">
-                    <li>
+                </li>
+                <li><span class="highlight_p">Wind Chill Effect</span>
                         The cooling sensation you feel from a fan is not caused by air temperature changes but by the movement of air across your skin. This process, known as the wind chill effect, accelerates evaporation of sweat, making you feel cooler. The key is the quality and volume of airflow, not the speed at which blades rotate.
-                    </li>
+                </li>
                 </ul>
 
                 <h4 class="heading2 primary">
