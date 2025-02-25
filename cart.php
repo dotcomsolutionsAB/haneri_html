@@ -89,6 +89,12 @@
 
         let apiUrl = "<?php echo BASE_URL; ?>/cart/fetch";
 
+        // Product images array (assuming order is consistent with cart items)
+        let pro_img = [
+            "f1.png", "f2.png", "f3.png", "f4.png", "f5.png",
+            "f6.png", "f7.png", "f8.png", "f9.png", "f10.png"
+        ];
+
         fetchCart();
 
         function fetchCart() {
@@ -117,6 +123,9 @@
                             let itemSubtotal = (item.quantity * itemPrice).toFixed(2);
                             let itemTotalTax = (item.quantity * itemTax).toFixed(2);
 
+                            // Use the indexed image, fallback to a placeholder if index is out of range
+                            let productImage = index < pro_img.length ? `images/${pro_img[index]}` : "assets/images/products/product-placeholder.jpg";
+
                             subtotal += parseFloat(itemSubtotal);
                             totalTax += parseFloat(itemTotalTax);
 
@@ -125,7 +134,7 @@
                                     <td>
                                         <figure class="product-image-container">
                                             <a href="#" class="product-image">
-                                                <img src="assets/images/products/product-placeholder.jpg" alt="product">
+                                                <img src="${productImage}" alt="product">
                                             </a>
                                         </figure>
                                     </td>
