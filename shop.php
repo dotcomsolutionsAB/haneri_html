@@ -321,9 +321,14 @@
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            <img src="assets/images/products/product-1.jpg" width="500"
-                                                height="500" alt="productr" />
-                                        </a>                                        
+                                            <img src="${
+                                                product.category?.id == 1 ? 'images/f1.png' :
+                                                product.category?.id == 2 ? 'images/f2.png' :
+                                                product.category?.id == 3 ? 'images/f3.png' :
+                                                'assets/images/products/product-1.jpg' // Default image
+                                            }" width="500" height="500" alt="product" />
+                                        </a>
+                                      
                                     </figure>
                                     <div class="product-details">
                                         <div class="category-wrap">
