@@ -50,27 +50,27 @@
     <div class="brand-row">
         <div class="brand-content">
             <h4 class="heading2 primary">Key Features of Silent M.A.S.S Technology</h2>
-            <div class="">
-                <h4 class="highlight_p">High Air Delivery at Low RPM</h4>
+            <div class="points">
+            <span class="highlight_p">High Air Delivery at Low RPM</span>
                 <ul class="ulclass">
                     <li>Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.</li>
                 </ul>
 
-                <h4 class="highlight_p">Ultra-Quiet Operation</h4>
+                <span class="highlight_p">>Ultra-Quiet Operation</span>
                 <ul class="ulclass">
                     <li>The low RPM operation, combined with Efficient Torque output from the TurboSilent BLDC Motor, eliminates mechanical noise, creating an ultra-quiet cooling experience. Streamlined blade profiles reduce turbulence, further contributing to silent performance.</li>
                 </ul>
 
-                <h4 class="highlight_p">Enhanced Motor Efficiency</h4>
+                <span class="highlight_p">Enhanced Motor Efficiency<</span>
                 <ul class="ulclass">
                     <li>TurboSilent BLDC motors utilize advanced electromagnetic design for optimal torque-to-RPM ratios, ensuring seamless operation at low speeds. The electronic controller, made in India for Indian conditions, minimizes energy losses, making the system highly efficient and cost-effective.</li>
                 </ul>
 
-                <h4 class="highlight_p">Advanced Blade Aerodynamics</h4>
+                <span class="highlight_p">Advanced Blade Aerodynamics</span>
                 <ul class="ulclass">
                     <li>Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.</li>
                 </ul>
-                <h4 class="highlight_p">Trademarked Technology</h4>
+                <span class="highlight_p">Trademarked Technology</span>
                 <ul class="ulclass">
                     <li>Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.</li>
                 </ul>
@@ -87,42 +87,42 @@
         <div class="brand-content">
             <h4 class="heading2 primary">The Science Behind Silent M.A.S.S Technology</h2>
             <div class="points">
-                <h4 class="highlight_p">
+                <span class="highlight_p">
                     Aerodynamic Optimization with Air Curve Design
-                </h4>
+                </span>
                 <ul class="ulclass">
                     <li>
                         Advanced blade profiles create an efficient pressure differential, maximizing air displacement while operating at slower speeds. The design minimizes resistance and turbulence, reducing energy wastage and noise.
                     </li>
                 <ul class="ulclass">
-                <h4 class="highlight_p">
+                <span class="highlight_p">
                     High-Torque Motor Performance
-                </h4>
+                </span>
                 <ul class="ulclass">
                     <li>                        
                         TurboSilent BLDC Motors leverage high torque generation to power blades effectively at low RPM, ensuring consistent airflow without overloading the system. Field-oriented control (FOC) and advanced motor algorithms enable precise speed regulation, maintaining performance consistency.
                     </li>
                 </ul>
-                <h4 class="highlight_p">
+                <span class="highlight_p">
                     Integrated System Design
-                </h4>
+                </span>
                 <ul class="ulclass">
                     <li>                        
                         The synergy between Air Curve Design and TurboSilent BLDC Motors ensures that every component is optimized for efficiency and performance, eliminating bottlenecks in airflow or energy transfer.
                     </li>
                 </ul>
-                <h4 class="highlight_p">
+                <span class="highlight_p">
                     Advanced Blade Aerodynamics
-                </h4>
+                </span>
                 <ul class="ulclass">
                     <li>
                         
                         Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.
                     </li>
                 </ul>
-                <h4 class="highlight_p">
+                <span class="highlight_p">
                     Trademarked Technology
-                </h4>
+                </span>
                 <ul class="ulclass">
                     <li>                        
                         Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.
@@ -143,28 +143,28 @@
             <h4 class="heading2 primary">Benefits for Customers
             </h2>
             <div class="points">
-                <h4 class="highlight_p">Enhanced Cooling Comfort</h4>
+            <span class="highlight_p">Enhanced Cooling Comfort</span>
                 <ul class="ulclass">
                     <li>Powerful airflow achieved at lower RPM ensures a cooling experience that is both efficient and soothing.</li>
                 </ul>
 
-                <h4 class="highlight_p">Quiet Operation for Peaceful Environments</h4>
+                <span class="highlight_p">Quiet Operation for Peaceful Environments</span>
                 <ul class="ulclass">
                     <li>Reduced turbulence and noise make Silent M.A.S.S ideal for bedrooms, offices, and libraries where silence is a priority.</li>
                 </ul>
 
-                <h4 class="highlight_p">Energy Savings:</h4>
+                <span class="highlight_p">Energy Savings</span>
                 <ul class="ulclass">
                     <li>Optimized motor and blade integration results in significantly reduced power consumption, saving on electricity bills over time.</li>
                 </ul>
 
-                <h4 class="highlight_p">Durability and Longevity</h4>
+                <span class="highlight_p">Durability and Longevity</span>
                 <ul class="ulclass">
                     <li>
                     Reduced wear and tear on motors and blades due to low-speed operation ensures extended product life and reliability.</li>
                 </ul>
 
-                <h4 class="highlight_p">Sustainability</h4>
+                <span class="highlight_p">Sustainability</span>
                 <ul class="ulclass">
                     <li>
                     Lower energy usage aligns with eco-friendly practices, making Silent M.A.S.S an environmentally responsible choice.</li>
@@ -192,13 +192,13 @@
                 <h4 class="heading2 primary">
                     1. Understanding Air Delivery and the Wind Chill Effect
                 </h2>
-                <h4 class="highlight_p">Air Delivery (CMM/CFM):</h4>
+                <span class="highlight_p">Air Delivery (CMM/CFM)</span>
                 <ul class="ulclass">
                     <li>
                         Air delivery is measured in cubic meters per minute (CMM) or cubic feet per minute (CFM). It represents the actual volume of air a fan moves, which depends on factors like blade design, motor efficiency, and blade surface area—not just RPM.
                     </li>
                 </ul>
-                <h4 class="highlight_p">Wind Chill Effect:</h4>
+                <span class="highlight_p">Wind Chill Effect</span>
                 <ul class="ulclass">
                     <li>
                         The cooling sensation you feel from a fan is not caused by air temperature changes but by the movement of air across your skin. This process, known as the wind chill effect, accelerates evaporation of sweat, making you feel cooler. The key is the quality and volume of airflow, not the speed at which blades rotate.
