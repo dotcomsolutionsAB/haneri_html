@@ -61,8 +61,8 @@
             </li>
         </ul>
 
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -167,19 +167,15 @@
 </script>
 
         <div class="row">
-           
             <div class="col-lg-7">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
-
                         <div class="form-group">
                             <a href="#" id="openAddressModal" class="text-primary">
                                 Add another Address?
                             </a>
                         </div>
-
-
                         <!-- Address Modal -->
                         <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -246,11 +242,10 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="addresses">
                             <div class="address">                            
                                 <div class="vvv">
-                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
+                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle"></button>
                                 </div>
                                 <div id="collapseNew" class="collapse">
                                     <!-- Addresses will be dynamically added here -->
@@ -261,168 +256,167 @@
                 </ul>
             </div>
             <!-- End .col-lg-8 -->
+            <script>
+                $(document).ready(function () {
+                    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+                    const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+                    const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
-<script>
-    $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-        const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
-        const orderUrl = "<?php echo BASE_URL; ?>/orders";
+                    function fetchCartItems() {
+                        $.ajax({
+                            url: cartUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            success: function (response) {
+                                if (response.data.length > 0) {
+                                    let cartHTML = "";
+                                    let subtotal = 0;
+                                    let totalTax = 0;
+                                    let total = 0;
 
-        function fetchCartItems() {
-            $.ajax({
-                url: cartUrl,
-                type: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Content-Type": "application/json"
-                },
-                success: function (response) {
-                    if (response.data.length > 0) {
-                        let cartHTML = "";
-                        let subtotal = 0;
-                        let totalTax = 0;
-                        let total = 0;
+                                    response.data.forEach(item => {
+                                        let productName = item.product.name;
+                                        let quantity = item.quantity;
+                                        let price = parseFloat(item.variant.selling_price);
+                                        let tax = parseFloat(item.variant.selling_tax);
+                                        let itemTotal = (price + tax) * quantity;
 
-                        response.data.forEach(item => {
-                            let productName = item.product.name;
-                            let quantity = item.quantity;
-                            let price = parseFloat(item.variant.selling_price);
-                            let tax = parseFloat(item.variant.selling_tax);
-                            let itemTotal = (price + tax) * quantity;
+                                        subtotal += (price * quantity);
+                                        totalTax += (tax * quantity);
+                                        total += itemTotal;
 
-                            subtotal += (price * quantity);
-                            totalTax += (tax * quantity);
-                            total += itemTotal;
+                                        cartHTML += `
+                                            <tr>
+                                                <td class="product-col">
+                                                    <h3 class="product-title">
+                                                        ${productName} × <span class="product-qty">${quantity}</span>
+                                                    </h3>
+                                                </td>
+                                                <td class="price-col">
+                                                    <span>₹ ${itemTotal.toFixed(2)}</span>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    });
 
-                            cartHTML += `
-                                <tr>
-                                    <td class="product-col">
-                                        <h3 class="product-title">
-                                            ${productName} × <span class="product-qty">${quantity}</span>
-                                        </h3>
-                                    </td>
-                                    <td class="price-col">
-                                        <span>₹ ${itemTotal.toFixed(2)}</span>
-                                    </td>
-                                </tr>
-                            `;
+                                    $("#cart-items").html(cartHTML);
+                                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                                    $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                                    $("#total").text(`₹ ${total.toFixed(2)}`);
+                                } else {
+                                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                                    $("#subtotal").text("₹ 0.00");
+                                    $("#total-tax").text("₹ 0.00");
+                                    $("#total").text("₹ 0.00");
+                                }
+                            },
+                            error: function () {
+                                console.error("Error fetching cart items.");
+                            }
                         });
-
-                        $("#cart-items").html(cartHTML);
-                        $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                        $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                        $("#total").text(`₹ ${total.toFixed(2)}`);
-                    } else {
-                        $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                        $("#subtotal").text("₹ 0.00");
-                        $("#total-tax").text("₹ 0.00");
-                        $("#total").text("₹ 0.00");
                     }
-                },
-                error: function () {
-                    console.error("Error fetching cart items.");
-                }
-            });
-        }
 
-        function getSelectedAddress() {
-            let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
+                    function getSelectedAddress() {
+                        let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
 
-            if (selectedRadio.length === 0) {
-                alert("Please select a shipping address.");
-                return null;
-            }
+                        if (selectedRadio.length === 0) {
+                            alert("Please select a shipping address.");
+                            return null;
+                        }
 
-            let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-            let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-            let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-            let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-            let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-            let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-            let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-            let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-            let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+                        let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+                        let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+                        let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+                        let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+                        let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+                        let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+                        let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+                        let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+                        let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
 
-            let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+                        let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
 
-            return shippingAddress;
-        }
-
-        $("#placeOrderBtn").click(function (event) {
-            event.preventDefault(); // Prevent form from submitting normally
-
-            let shippingAddress = getSelectedAddress();
-            if (!shippingAddress) return;
-
-            let orderData = {
-                status: "pending",
-                payment_status: "pending",
-                shipping_address: shippingAddress
-            };
-
-            $.ajax({
-                url: orderUrl,
-                type: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Content-Type": "application/json"
-                },
-                data: JSON.stringify(orderData),
-                success: function (response) {
-                    if (response.message.includes("success")) {
-                        let orderDetails = response.data.data;
-
-                        let orderId = orderDetails.order_id;
-                        let razorpayOrderId = orderDetails.razorpay_order_id;
-                        let totalAmount = orderDetails.total_amount;
-                        let userName = orderDetails.name;
-                        let userEmail = orderDetails.email;
-                        let userPhone = orderDetails.phone;
-
-                        // Open Razorpay Payment Popup
-                        openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
-                    } else {
-                        alert("Failed to place order. Please try again.");
+                        return shippingAddress;
                     }
-                },
-                error: function () {
-                    alert("Failed to place order. Please try again.");
-                }
-            });
-        });
 
-        function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
-            var options = {
-                "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
-                "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
-                "currency": "INR",
-                "name": "Haneri",
-                "description": `Order ID: ${orderId}`,
-                "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
-                "order_id": order_id, // Razorpay Order ID
-                "handler": function(response) {
-                    alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                    $("#placeOrderBtn").click(function (event) {
+                        event.preventDefault(); // Prevent form from submitting normally
 
-                    // Redirect to order complete page with payment ID and order details
-                    window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
-                },
-                "prefill": {
-                    "name": name,
-                    "email": email,
-                    "contact": phone
-                },
-                "theme": {
-                    "color": "#f0f8fe"
-                }
-            };
+                        let shippingAddress = getSelectedAddress();
+                        if (!shippingAddress) return;
 
-            var rzp = new Razorpay(options);
-            rzp.open();
-        }
+                        let orderData = {
+                            status: "pending",
+                            payment_status: "pending",
+                            shipping_address: shippingAddress
+                        };
 
-        fetchCartItems(); // Load cart items on page load
-    });
-</script>
+                        $.ajax({
+                            url: orderUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(orderData),
+                            success: function (response) {
+                                if (response.message.includes("success")) {
+                                    let orderDetails = response.data.data;
+
+                                    let orderId = orderDetails.order_id;
+                                    let razorpayOrderId = orderDetails.razorpay_order_id;
+                                    let totalAmount = orderDetails.total_amount;
+                                    let userName = orderDetails.name;
+                                    let userEmail = orderDetails.email;
+                                    let userPhone = orderDetails.phone;
+
+                                    // Open Razorpay Payment Popup
+                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
+                                } else {
+                                    alert("Failed to place order. Please try again.");
+                                }
+                            },
+                            error: function () {
+                                alert("Failed to place order. Please try again.");
+                            }
+                        });
+                    });
+
+                    function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
+                        var options = {
+                            "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
+                            "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
+                            "currency": "INR",
+                            "name": "Haneri",
+                            "description": `Order ID: ${orderId}`,
+                            "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
+                            "order_id": order_id, // Razorpay Order ID
+                            "handler": function(response) {
+                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+
+                                // Redirect to order complete page with payment ID and order details
+                                window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
+                            },
+                            "prefill": {
+                                "name": name,
+                                "email": email,
+                                "contact": phone
+                            },
+                            "theme": {
+                                "color": "#f0f8fe"
+                            }
+                        };
+
+                        var rzp = new Razorpay(options);
+                        rzp.open();
+                    }
+
+                    fetchCartItems(); // Load cart items on page load
+                });
+            </script>
 
             <!-- Order Summary Section -->
             <div class="col-lg-5">
@@ -483,8 +477,6 @@
                     </button>
                 </div>
             </div>
-
-
             <!-- End .col-lg-4 -->
         </div>
         <!-- End .row -->
@@ -492,7 +484,6 @@
     <!-- End .container -->
 </main>
 <!-- End .main -->
-
 
 <link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
