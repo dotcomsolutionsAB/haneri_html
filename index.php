@@ -15,7 +15,7 @@
         
         <div class="container">
             <!-- Featured Products section -->
-            <section class="featured_products">
+            <section class="heading_1">
                 <h2 class="heading_1">Featured Products</h2>
                 <div class="product-grid">
                     <?php 
