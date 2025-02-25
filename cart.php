@@ -127,7 +127,6 @@
                                             <a href="#" class="product-image">
                                                 <img src="assets/images/products/product-placeholder.jpg" alt="product">
                                             </a>
-                                            <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
                                         </figure>
                                     </td>
                                     <td class="product-col">
@@ -151,6 +150,11 @@
                                         </div>
                                     </td>
                                     <td class="text-right"><span class="subtotal-price">₹ ${itemSubtotal}</span></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-danger btn-sm" onclick="removeCartItem(${item.id})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
                                 </tr>
                             `;
                             cartTableBody.insertAdjacentHTML("beforeend", row);
@@ -176,7 +180,7 @@
                             </tr>
                         `;
                     } else {
-                        document.querySelector(".table-cart tbody").innerHTML = "<tr><td colspan='5' class='text-center'>No items in cart</td></tr>";
+                        document.querySelector(".table-cart tbody").innerHTML = "<tr><td colspan='6' class='text-center'>No items in cart</td></tr>";
                         document.querySelector(".table-totals tbody").innerHTML = "<tr><td colspan='2' class='text-center'>No totals to display</td></tr>";
                         document.querySelector(".table-totals tfoot").innerHTML = "";
                     }
@@ -218,8 +222,27 @@
                 }
             });
         };
+
+        window.removeCartItem = function(cartId) {
+            if (confirm("Are you sure you want to remove this item from your cart?")) {
+                $.ajax({
+                    url: `<?php echo BASE_URL; ?>/cart/remove/${cartId}`,
+                    type: "POST",
+                    headers: { "Authorization": token ? `Bearer ${token}` : "" },
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log("Item removed from cart:", data);
+                        fetchCart(); // Refresh cart after deletion
+                    },
+                    error: function (error) {
+                        console.error("Error removing cart item:", error);
+                    }
+                });
+            }
+        };
     });
 </script>
+
 
 
 <main class="main cart_page">
@@ -252,12 +275,10 @@
                         <tbody>
                             <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
                         </tbody>
-
-
                         <tfoot>
                             <tr>
                                 <td colspan="5" class="clearfix">
-                                    <div class="float-left">
+                                    <div class="float-right">
                                         <div class="cart-discount">
                                             <form action="#">
                                                 <div class="input-group">
@@ -271,12 +292,6 @@
                                             </form>
                                         </div>
                                     </div><!-- End .float-left -->
-
-                                    <div class="float-right">
-                                        <button type="submit" class="btn btn-shop btn-update-cart">
-                                            Update Cart
-                                        </button>
-                                    </div><!-- End .float-right -->
                                 </td>
                             </tr>
                         </tfoot>
@@ -292,18 +307,18 @@
                         <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>₹ 199.00</td>
+                                <td>₹ 00.00</td>
                             </tr>
                             <tr>
                                 <td>Tax</td>
-                                <td>₹ 199.00</td>
+                                <td>₹ 00.00</td>
                             </tr>
                         </tbody>
 
                         <tfoot>
                             <tr>
                                 <td>Total</td>
-                                <td>₹ 199.00</td>
+                                <td>₹ 00.00</td>
                             </tr>
                         </tfoot>
                     </table>
