@@ -10,9 +10,6 @@
             </ol>
         </div><!-- End .container -->
     </nav>
-    <div class="containe text-left">
-        <h1 class="text-uppercase about_section">Domex</h1>
-    </div>
     <div class="page-wrapper">
 
     <main class="main">
@@ -264,7 +261,7 @@
                                 <div class="collapse show" id="widget-body-7">
                                     <div class="widget-body pb-0">
                                         <ul class="cat-list">
-                                            <li><a href="#">Adidas</a></li>
+                                            <li><a href="#">Haneri</a></li>
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
@@ -326,14 +323,7 @@
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
                                             <img src="assets/images/products/product-1.jpg" width="500"
                                                 height="500" alt="productr" />
-                                        </a>
-                                        <div class="btn-icon-group">
-                                            <a href="https://haneri.ongoingsites.xyz/domex" class="btn-icon btn-add-cart product-type-simple"><i
-                                                    class="icon-shopping-cart"></i></a>
-                                        </div>
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')""
-                                            title="Quick View">Quick
-                                            View</a>
+                                        </a>                                        
                                     </figure>
                                     <div class="product-details">
                                         <div class="category-wrap">
