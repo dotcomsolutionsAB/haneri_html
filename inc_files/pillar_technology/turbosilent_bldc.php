@@ -126,7 +126,7 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="highlight_p">Cost Savings</h2>
+                                <h2 class="heading2 primary highlight_h1">Cost Savings</h2>
                                 <p class="paragraph1 dark">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
                             </div>           
                         </div>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="custom-content">
                         <div class="txtt">
-                            <h2 class="highlight_p">Sustainable Choice</h2>
+                            <h2 class="heading2 primary highlight_h1">Sustainable Choice</h2>
                             <p class="paragraph1 dark">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                                <h2 class="highlight_p">Modern Aesthetics</h2>
+                                <h2 class="heading2 primary highlight_h1">Modern Aesthetics</h2>
                                 <p class="paragraph1 dark">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
                             </div>
                         </div>
