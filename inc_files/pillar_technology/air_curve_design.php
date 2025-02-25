@@ -80,11 +80,8 @@
                         </div>
                         <div class="custom-content">
                             <div class="txtt">
-                            <ul class="dark ulclass margp">
-                            <li><span class="highlight_p">Enhanced Comfort</span>
-                                Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.
-                            </li>
-                            </ul>
+                                <h2 class="primary heading2 highlight_h1">Enhanced Comfort</h2>
+                                <p class="dark paragraph1 left margp">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
                             </div>
                         </div>
                     </div>
@@ -159,21 +156,18 @@
                         <span class="highlight_p">
                                 Computational Fluid Dynamics (CFD)
                         </span>
-                        <br>
                         Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
                     </li>
                     <li>
                         <span class="highlight_p">
                                 Prototyping and Testing
                         </span>
-                        <br>
                         Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
                     </li>
                     <li>
                         <span class="highlight_p">
                                 Iterative Design
                         </span>
-                        <br>
                         Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
                     </li>
                 </ul>
