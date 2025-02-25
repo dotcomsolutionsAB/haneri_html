@@ -227,7 +227,7 @@
             if (confirm("Are you sure you want to remove this item from your cart?")) {
                 $.ajax({
                     url: `<?php echo BASE_URL; ?>/cart/remove/${cartId}`,
-                    type: "POST",
+                    type: "DELETE",
                     headers: { "Authorization": token ? `Bearer ${token}` : "" },
                     contentType: "application/json",
                     success: function (data) {
