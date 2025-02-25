@@ -29,6 +29,14 @@
         background: #f4f4f4;
         border-radius: 10px;
     }
+    .check-form{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .form-group .in{
+        width:300px
+    }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -161,7 +169,7 @@
 
                         <div class="form-group">
                             <a href="#" id="openAddressModal" class="text-primary">
-                                Ship to an Additional Address?
+                                Add another Address?
                             </a>
                         </div>
 
@@ -175,33 +183,33 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="checkout-form">
-                                            <div class="form-group">
+                                        <form id="checkout-form" class="check-form">
+                                            <div class="form-group in">
                                                 <label>Name <abbr class="required" title="required">*</abbr></label>
                                                 <input type="text" class="form-control" id="name" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Contact No <abbr class="required" title="required">*</abbr></label>
                                                 <input type="text" class="form-control" id="contact_no" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Address 1 <abbr class="required" title="required">*</abbr></label>
                                                 <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Address 2 (optional)</label>
                                                 <input type="text" class="form-control" id="address_line2">
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Town / City <abbr class="required" title="required">*</abbr></label>
                                                 <input type="text" class="form-control" id="city" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>State <abbr class="required" title="required">*</abbr></label>
                                                 <select class="form-control" id="state">
                                                     <option value="Mumbai" selected>Mumbai</option>
@@ -210,7 +218,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Country <span class="required">*</span></label>
                                                 <select class="form-control" id="country">
                                                     <option value="India" selected>India</option>
@@ -218,7 +226,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group in">
                                                 <label>Pincode <abbr class="required" title="required">*</abbr></label>
                                                 <input type="text" class="form-control" id="postal_code" required>
                                             </div>
