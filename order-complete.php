@@ -4,6 +4,9 @@
     .left-head{
         width:200px;
     }
+    .j-center{
+        justify-content:center;
+    }
 </style>
 <?php
     $order_id = $_GET['order_id'] ?? 'N/A';
@@ -29,8 +32,8 @@
             <p class="lead animate__animated animate__fadeInUp"><strong>Payment ID:</strong> <?= $payment_id ?></p>
         </div>
 
-        <div class="row mt-5 d-flex align-items-stretch">
-            <div class="col-lg-6">
+        <div class="row mt-5 d-flex align-items-stretch j-center">
+            <div class="col-lg-8">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
                     <h3 class="border-bottom pb-2 mb-3">Order Details</h3>
                     <table class="table table-striped">
