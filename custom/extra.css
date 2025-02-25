@@ -1067,7 +1067,7 @@ Turbosilent
       z-index: 100;
   } */
 
-  .page_heading::after {
+  /* .page_heading::after {
       content: '';
       position: absolute;
       bottom: -10px;
@@ -1077,7 +1077,7 @@ Turbosilent
       background: #dfdfdf;
       transform: rotate(45deg);
       z-index: 1;
-  }
+  } */
 
   /* Text Layer */
   .page_heading span {
