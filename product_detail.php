@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
+    const cartItemId = $('#cartId');
     let cartItemId = null; // Store the cart item ID
 
     if (productId) {
@@ -132,7 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         addCartBtn.hide();
                         viewCartBtn.show();
                         quantityElem.val(cartItem.quantity);
-                        cartItemId = cartItem.id;
+                        // cartItemId = cartItem.id;
+                        cartItemId.hide();
                         updatePrice();
                     } else {
                         addCartBtn.show();
@@ -167,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 location.reload();
                 if (data.success) {
                     // Reload the page after successful cart addition
-                    
+                    cartItemId.hide();
                     addCartBtn.hide();
                     viewCartBtn.show();
                     checkCart();
@@ -343,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="price-box">
                                         <span class="product-price" id="selling-price" data-price="0">₹0.00</span>
                                     </div>
-                                    <div class="product-single-qty">
+                                    <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
 
