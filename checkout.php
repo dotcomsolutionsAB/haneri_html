@@ -38,8 +38,10 @@
         width:300px !important;
     }
     .btt{
-        width:100%;
-        
+        width: 615px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -190,17 +192,17 @@
                                         <form id="checkout-form" class="check-form">
                                             <div class="form-group in">
                                                 <label>Name <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="name" required>
+                                                <input type="text" class="form-control" id="name">
                                             </div>
 
                                             <div class="form-group in">
                                                 <label>Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="contact_no" required>
+                                                <input type="text" class="form-control" id="contact_no">
                                             </div>
 
                                             <div class="form-group in">
                                                 <label>Address 1 <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
+                                                <input type="text" class="form-control" id="address_line1" placeholder="House number and street name">
                                             </div>
 
                                             <div class="form-group in">
@@ -210,7 +212,7 @@
 
                                             <div class="form-group in">
                                                 <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="city" required>
+                                                <input type="text" class="form-control" id="city">
                                             </div>
 
                                             <div class="form-group in">
@@ -232,7 +234,7 @@
 
                                             <div class="form-group in">
                                                 <label>Pincode <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="postal_code" required>
+                                                <input type="text" class="form-control" id="postal_code">
                                             </div>
 
                                             <div class="form-group text-end btt">
@@ -255,267 +257,194 @@
                                 </div>
                             </div>
                         </div>
-                       
-                        <!-- <form action="#" id="checkout-form">
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox mt-0">
-                                    <input type="checkbox" class="custom-control-input" id="different-shipping">
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour"
-                                        aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
-                                        Ship to an Additional Address?
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div id="collapseFour" class="collapse">
-                                <div class="shipping-info">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Name<abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="name" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label> Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="contact_no" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Address 1<abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Address 2 (optional)</label>
-                                        <input type="text" class="form-control" id="address_line2">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="city" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>State <abbr class="required" title="required">*</abbr></label>
-                                        <select class="form-control" id="state">
-                                            <option value="Mumbai" selected>Mumbai</option>
-                                            <option value="Delhi">Delhi</option>
-                                            <option value="West Bengal">West Bengal</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Country <span class="required">*</span></label>
-                                        <select class="form-control" id="country">
-                                            <option value="India" selected>India</option>
-                                            <option value="Australia">Australia</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Pincode <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="postal_code" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-primary" id="addAddressBtn">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> -->
-
-
                     </li>
                 </ul>
             </div>
             <!-- End .col-lg-8 -->
-    <script>
-        $(document).ready(function () {
-            const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-            const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
-            const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
-            function fetchCartItems() {
-        $.ajax({
-            url: cartUrl,
-            type: "POST",
-            headers: {
-                "Authorization": `Bearer ${authToken}`,
-                "Content-Type": "application/json"
-            },
-            success: function (response) {
-                if (response.data.length > 0) {
-                    let cartHTML = "";
-                    let subtotal = 0;
-                    let totalTax = 0;
-                    let total = 0;
+<script>
+    $(document).ready(function () {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+        const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
-                    response.data.forEach(item => {
-                        let productName = item.product.name;
-                        let quantity = item.quantity;
-                        let price = parseFloat(item.variant.selling_price);
-                        let tax = parseFloat(item.variant.selling_tax);
-                        let itemTotal = (price + tax) * quantity;
+        function fetchCartItems() {
+            $.ajax({
+                url: cartUrl,
+                type: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json"
+                },
+                success: function (response) {
+                    if (response.data.length > 0) {
+                        let cartHTML = "";
+                        let subtotal = 0;
+                        let totalTax = 0;
+                        let total = 0;
 
-                        subtotal += (price * quantity);
-                        totalTax += (tax * quantity);
-                        total += itemTotal;
+                        response.data.forEach(item => {
+                            let productName = item.product.name;
+                            let quantity = item.quantity;
+                            let price = parseFloat(item.variant.selling_price);
+                            let tax = parseFloat(item.variant.selling_tax);
+                            let itemTotal = (price + tax) * quantity;
 
-                        cartHTML += `
-                            <tr>
-                                <td class="product-col">
-                                    <h3 class="product-title">
-                                        ${productName} × <span class="product-qty">${quantity}</span>
-                                    </h3>
-                                </td>
-                                <td class="price-col">
-                                    <span>₹ ${itemTotal.toFixed(2)}</span>
-                                </td>
-                            </tr>
-                        `;
-                    });
+                            subtotal += (price * quantity);
+                            totalTax += (tax * quantity);
+                            total += itemTotal;
 
-                    $("#cart-items").html(cartHTML);
-                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                    $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                    $("#total").text(`₹ ${total.toFixed(2)}`);
-                } else {
-                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                    $("#subtotal").text("₹ 0.00");
-                    $("#total-tax").text("₹ 0.00");
-                    $("#total").text("₹ 0.00");
+                            cartHTML += `
+                                <tr>
+                                    <td class="product-col">
+                                        <h3 class="product-title">
+                                            ${productName} × <span class="product-qty">${quantity}</span>
+                                        </h3>
+                                    </td>
+                                    <td class="price-col">
+                                        <span>₹ ${itemTotal.toFixed(2)}</span>
+                                    </td>
+                                </tr>
+                            `;
+                        });
+
+                        $("#cart-items").html(cartHTML);
+                        $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                        $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                        $("#total").text(`₹ ${total.toFixed(2)}`);
+                    } else {
+                        $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                        $("#subtotal").text("₹ 0.00");
+                        $("#total-tax").text("₹ 0.00");
+                        $("#total").text("₹ 0.00");
+                    }
+                },
+                error: function () {
+                    console.error("Error fetching cart items.");
                 }
-            },
-            error: function () {
-                console.error("Error fetching cart items.");
-            }
-        });
-    }
-
-    function getSelectedAddress() {
-        let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
-
-        if (selectedRadio.length === 0) {
-            alert("Please select a shipping address.");
-            return null;
+            });
         }
 
-        let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-        let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-        let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-        let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-        let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-        let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-        let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-        let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-        let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+        function getSelectedAddress() {
+            let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
 
-        let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+            if (selectedRadio.length === 0) {
+                alert("Please select a shipping address.");
+                return null;
+            }
 
-        return shippingAddress;
-    }
+            let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+            let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+            let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+            let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+            let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+            let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+            let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+            let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+            let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
 
-    $("#placeOrderBtn").click(function (event) {
-        event.preventDefault(); // Prevent form from submitting normally
+            let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
 
-        let shippingAddress = getSelectedAddress();
-        if (!shippingAddress) return;
+            return shippingAddress;
+        }
 
-        let orderData = {
-            status: "pending",
-            payment_status: "pending",
-            shipping_address: shippingAddress
-        };
+        $("#placeOrderBtn").click(function (event) {
+            event.preventDefault(); // Prevent form from submitting normally
 
-        $.ajax({
-            url: orderUrl,
-            type: "POST",
-            headers: {
-                "Authorization": `Bearer ${authToken}`,
-                "Content-Type": "application/json"
-            },
-            data: JSON.stringify(orderData),
-            success: function (response) {
-                if (response.message.includes("success")) {
-                    alert("Order placed successfully!");
-                } else {
+            let shippingAddress = getSelectedAddress();
+            if (!shippingAddress) return;
+
+            let orderData = {
+                status: "pending",
+                payment_status: "pending",
+                shipping_address: shippingAddress
+            };
+
+            $.ajax({
+                url: orderUrl,
+                type: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json"
+                },
+                data: JSON.stringify(orderData),
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        alert("Order placed successfully!");
+                    } else {
+                        alert("Failed to place order. Please try again.");
+                    }
+                },
+                error: function () {
                     alert("Failed to place order. Please try again.");
                 }
-            },
-            error: function () {
-                alert("Failed to place order. Please try again.");
-            }
+            });
         });
+
+        fetchCartItems(); // Load cart items on page load
     });
+</script>
 
-    fetchCartItems(); // Load cart items on page load
-        });
-    </script>
+<!-- Order Summary Section -->
+<div class="col-lg-5">
+    <div class="order-summary">
+        <h3>YOUR ORDER</h3>
 
-            <div class="col-lg-5">
-                <div class="order-summary">
-                    <h3>YOUR ORDER</h3>
+        <table class="table table-mini-cart">
+            <thead>
+                <tr>
+                    <th colspan="2">Product</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be inserted here dynamically -->
+            </tbody>
+            <tfoot>
+                <tr class="cart-subtotal">
+                    <td><h4>Subtotal</h4></td>
+                    <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
+                </tr>
 
-                    <table class="table table-mini-cart">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Product</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cart-items">
-                            <!-- Cart items will be inserted here dynamically -->
-                        </tbody>
-                        <tfoot>
-                            <tr class="cart-subtotal">
-                                <td><h4>Subtotal</h4></td>
-                                <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
-                            </tr>
-                            
-                            <tr class="cart-tax">
-                                <td><h4>Tax</h4></td>
-                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
-                            </tr>
+                <tr class="cart-tax">
+                    <td><h4>Tax</h4></td>
+                    <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
+                </tr>
 
-                            <tr class="order-total" style="width: 50%;">
-                                <td><h4>Total</h4></td>
-                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
-                            </tr>
+                <tr class="order-total">
+                    <td><h4>Total</h4></td>
+                    <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
+                </tr>
 
-                            <tr class="order-shipping">
-                                <td class="text-left" colspan="2">
-                                    <h4 class="m-b-sm">Shipping</h4>
-                                    <div class="form-group form-group-custom-control">
-                                        <div class="custom-control custom-radio d-flex">
-                                            <input type="radio" class="custom-control-input" name="radio" checked />
-                                            <label class="custom-control-label">Free Shipping</label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </tfoot>
-                    </table>
-
-                    <div class="payment-methods">
-                        <h4 class="mb-3">Payment Methods</h4>
-                        <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
-                            <span class="fw-bold fs-6">Razorpay</span>
-                            <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
-                                <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
-                            </span>
+                <tr class="order-shipping">
+                    <td class="text-left" colspan="2">
+                        <h4 class="m-b-sm">Shipping</h4>
+                        <div class="form-group form-group-custom-control">
+                            <div class="custom-control custom-radio d-flex">
+                                <input type="radio" class="custom-control-input" name="radio" checked />
+                                <label class="custom-control-label">Free Shipping</label>
+                            </div>
                         </div>
-                    </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
 
-                    <button type="submit" class="btn btn-dark btn-place-order" form="checkout-form">
-                        Place order
-                    </button>
-                </div>
+        <div class="payment-methods">
+            <h4 class="mb-3">Payment Methods</h4>
+            <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
+                <span class="fw-bold fs-6">Razorpay</span>
+                <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
+                    <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
+                </span>
             </div>
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
+            Place order
+        </button>
+    </div>
+</div>
+
 
             <!-- End .col-lg-4 -->
         </div>
