@@ -358,7 +358,7 @@
             <li class="active">
                 <a href="cart.php">Shopping Cart</a>
             </li>
-            <li>
+            <li class="disabled">
                 <a href="checkout.php">Checkout</a>
             </li>
             <li class="disabled">

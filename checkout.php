@@ -56,7 +56,7 @@
                 <a href="checkout.php">Checkout</a>
             </li>
             <!-- <li class="disabled"> -->
-            <li>
+            <li class="disabled">
                 <a href="order-complete.php">Order Complete</a>
             </li>
         </ul>
