@@ -6,7 +6,7 @@
         display:flex;
         justify-content:end;
     }
-    .selects{
+    /* .selects{
         height: 100%;
         display: flex;
         align-items: center;
@@ -17,8 +17,6 @@
         height: 40px;
     }
     .address_box{
-        /* background: antiquewhite; */
-        /* padding: 5px 15px; */
         border-radius: 10px;
         margin-bottom: 15px;
     }
@@ -28,11 +26,12 @@
         padding: 15px 0px;
         background: #f4f4f4;
         border-radius: 10px;
-    }
+    } */
     .check-form{
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
     }
     .check-form .in{
         width:300px !important;
