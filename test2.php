@@ -473,7 +473,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body custom-modal">
+                                    <div class="modal-body">
                                         <form id="checkout-form" class="check-form">
                                             <div class="form-group in">
                                                 <label class="labl">Name <abbr class="required" title="required">*</abbr></label>
