@@ -214,7 +214,7 @@
                                         </div>
                                     </div>
                                     <div class='btns'>
-                                        <a href='{$blog['link']}' class='read-more-button'>Read More</a>
+                                        <a href='{$blog['link']}' class='btn-danger read-more-button'>Read More</a>
                                     </div>
                                 </div>
                             ";
@@ -229,8 +229,34 @@
 <style>
  .blog-item{
     min-height: 470px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
  } 
  .contents{
-    
+    min-height: 430px;
+    display: flex;
+    background: antiquewhite;
+    justify-content: space-between;
+    flex-direction: column;
  }  
+ .blog-content{
+    height: 100%;
+ }
+ .btns{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .btns a{
+
+ }
+ .blog-image{
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+ }
 </style>
