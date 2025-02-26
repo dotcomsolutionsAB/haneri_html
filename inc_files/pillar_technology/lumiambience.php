@@ -29,19 +29,17 @@
                     <li><span class="highlight_p">Cool White</span> Ideal for productivity-focused environments, providing bright and energizing illumination.</li>
                     <li><span class="highlight_p">Natural White</span> Mimics natural daylight, creating a balanced, comfortable ambience for versatile use.</li>
                 </ul>
-                <li><span class="highlight_p">Eye-Comforting Lens Diffuser
+                <li><span class="highlight_p">Eye-Comforting Lens Diffuser</li>
                     LumiAmbience’s proprietary diffuser eliminates visible LED spots, ensuring a smooth, uniform light spread that reduces eye strain and enhances visual comfort.
                     The diffuser technology creates a soft glow that transforms harsh lighting into a calming experience.
-                </li>
-                <li><span class="highlight_p">Optimized Light Spread
+                <li><span class="highlight_p">Optimized Light Spread</li>
                     Engineered to illuminate spaces evenly, LumiAmbience ensures every corner is lit with consistent brightness, avoiding dark patches or harsh shadows.
-                </li>
-                <li><span class="highlight_p">Integrated Control
+                <li><span class="highlight_p">Integrated Control</li>
                     Seamlessly manage lighting modes, brightness levels, and fan settings with Haneri’s advanced remote systems, including S.C.A.N Technology.</li>
-                </li>
-                <li><span class="highlight_p">Energy-Efficient LED System
+
+                <li><span class="highlight_p">Energy-Efficient LED System</li>
                     LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.</li>
-                </li>
+
                 </ul>
             </div>
         </div>
