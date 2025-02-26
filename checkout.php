@@ -62,7 +62,7 @@
   .address-card {
     /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
-    min-width: 400px;
+    max-width: 420px;
     margin: 1rem auto;               /* Center the card with a bit of spacing */
     display: block;                  /* Ensures the label can wrap block elements */
     background-color: #fff;
@@ -231,7 +231,6 @@
                     });
                 }
 
-
                 window.deleteAddress = function (id) { 
                     if (!confirm("Are you sure you want to delete this address?")) {
                         return;
@@ -277,6 +276,7 @@
 
                     $("#updateAddressModal").modal("show");
                 };
+
                 $(document).ready(function () {
                     // Close modal when clicking the 'X' button
                     $(".close").click(function () {
@@ -290,7 +290,6 @@
                         }
                     });
                 });
-
 
                 window.updateAddress = function () {
                     let id = $("#update_address_id").val();
@@ -609,28 +608,6 @@
                         });
                     }
 
-                    // function getSelectedAddress() {
-                    //     let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
-
-                    //     if (selectedRadio.length === 0) {
-                    //         alert("Please select a shipping address.");
-                    //         return null;
-                    //     }
-
-                    //     let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-                    //     let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-                    //     let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-                    //     let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-                    //     let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-                    //     let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-                    //     let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-                    //     let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-                    //     let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
-
-                    //     let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
-
-                    //     return shippingAddress;
-                    // }
                     function getSelectedAddress() {
                         let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");
 
@@ -658,7 +635,6 @@
 
                         return shippingAddress;
                     }
-
 
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault(); // Prevent form from submitting normally
