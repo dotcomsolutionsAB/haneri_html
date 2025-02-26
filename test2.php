@@ -228,7 +228,7 @@
 
 <style>
  .blog-item{
-    min-height: 470px;
+    min-height: 480px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -237,6 +237,7 @@
     border-radius: 10px;
     padding: 1em 1.6em;
     font-size: 12px;
+    margin-bottom: 10px;
  }
  .contents{
     min-height: 430px;
@@ -253,6 +254,9 @@
     text-align: justify;
     padding: 0px 15px;
 
+ }
+ .blog-content h3{
+    margin-top: 20px;
  }
  .btns{
     height: 100%;
