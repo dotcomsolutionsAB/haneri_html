@@ -82,6 +82,7 @@
                     <span class="highlight_p">Energy Optimization</span>
                     Advanced power management minimizes energy wastage, ensuring high brightness with low power consumption.
                     </li>
+            </ul>
                 </div>            
         </div>
         <div class="brand-image">
