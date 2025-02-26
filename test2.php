@@ -192,7 +192,7 @@
   .address-card {
     /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
-    max-width: 450px;
+    /* max-width: 450px; */
     margin: 1rem auto;               /* Center the card with a bit of spacing */
     display: block;                  /* Ensures the label can wrap block elements */
     background-color: #fff;
@@ -212,7 +212,7 @@
 
   /* Gradient header section */
   .card-header {
-    background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
+    background: linear-gradient(135deg, #00473e 0%, #02494299 100%)
     color: #fff;
     padding: 16px;
   }
@@ -221,11 +221,13 @@
     margin: 0;
     font-size: 1.2rem;
     font-weight: 500;
+    color:#fff;
   }
 
   .card-phone {
     margin: 4px 0 0;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
+    color:#fff;
   }
 
   /* Body section for address details */
@@ -375,14 +377,14 @@
                                             <span class="footer-label">Select Address</span>
                                         </div>
                                         <div class="btbt">
-                                            <!-- Delete Button -->
-                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
                                             <!-- Update Button -->
                                             <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
                                                 <i class="fas fa-edit"></i>
                                             </button>
+                                            <!-- Delete Button -->
+                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>                                            
                                         </div>
                                     </div>
                                 </label>
