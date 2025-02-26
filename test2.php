@@ -212,7 +212,7 @@
 
   /* Gradient header section */
   .card-header {
-    background: : #118677e0;
+    background: #118677e0 !important;
     color: #fff;
     padding: 16px;
   }
