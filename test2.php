@@ -256,6 +256,20 @@
   .footer-label {
     font-size: 0.95rem;
   }
+  .red{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .cardf{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btn-danger{
+    color: #ff0e00;
+    background-color: transparent;
+  }
 </style>
 
 
@@ -288,18 +302,20 @@
                                         <p><strong>Postal Code:</strong> ${address.postal_code}</p>
                                         <input type="hidden" name="is_default" value="${address.is_default}">
                                     </div>
-                                    <div class="card-footer">
-                                        <input
+                                    <div class="card-footer cardf">
+                                        <div class="red">
+                                            <input
                                             type="radio"
                                             id="addressRadio${index}"
                                             name="address_select"
                                             class="select-radio"
                                             ${isChecked}
-                                        >
-                                        <span class="footer-label">Select Address</span>
+                                            >
+                                            <span class="footer-label">Select Address</span>
+                                        </div>
                                         <!-- Delete Button -->
-                                        <button type="button" class="delete-btn" onclick="deleteAddress(${address.id})">
-                                            Delete
+                                        <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
                                 </label>
