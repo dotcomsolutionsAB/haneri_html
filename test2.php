@@ -374,14 +374,16 @@
                                             >
                                             <span class="footer-label">Select Address</span>
                                         </div>
-                                        <!-- Delete Button -->
-                                        <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                        <!-- Update Button -->
-                                        <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </button>
+                                        <div class="btbt">
+                                            <!-- Delete Button -->
+                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            <!-- Update Button -->
+                                            <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </label>
                             `;
