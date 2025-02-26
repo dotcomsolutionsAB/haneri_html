@@ -314,10 +314,16 @@
                                             >
                                             <span class="footer-label">Select Address</span>
                                         </div>
-                                        <!-- Delete Button -->
-                                        <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
+                                        <div class="btbt">
+                                            <!-- Update Button -->
+                                            <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <!-- Delete Button -->
+                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </label>
                             `;
@@ -357,6 +363,83 @@
         };
 
         fetchAddresses();
+
+        window.openUpdateModal = function (id) {
+            $.ajax({
+                url: `${baseUrl}/${id}`,
+                type: "GET",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    let address = response.data;
+
+                    $("#update_address_id").val(address.id);
+                    $("#update_name").val(address.name);
+                    $("#update_contact_no").val(address.contact_no);
+                    $("#update_address_line1").val(address.address_line1);
+                    $("#update_address_line2").val(address.address_line2);
+                    $("#update_city").val(address.city);
+                    $("#update_state").val(address.state);
+                    $("#update_postal_code").val(address.postal_code);
+                    $("#update_country").val(address.country);
+
+                    $("#updateAddressModal").modal("show");
+                },
+                error: function () {
+                    alert("Failed to fetch address details.");
+                }
+            });
+        };
+
+        window.updateAddress = function () {
+            let id = $("#update_address_id").val();
+            let updatedData = {
+                name: $("#update_name").val(),
+                contact_no: $("#update_contact_no").val(),
+                address_line1: $("#update_address_line1").val(),
+                address_line2: $("#update_address_line2").val(),
+                city: $("#update_city").val(),
+                state: $("#update_state").val(),
+                postal_code: $("#update_postal_code").val(),
+                country: $("#update_country").val(),
+                is_default: true // Hidden field, always true
+            };
+
+            if (
+                !updatedData.name ||
+                !updatedData.contact_no ||
+                !updatedData.address_line1 ||
+                !updatedData.city ||
+                !updatedData.state ||
+                !updatedData.country ||
+                !updatedData.postal_code
+            ) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            $.ajax({
+                url: `${baseUrl}/update/${id}`,
+                type: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json"
+                },
+                data: JSON.stringify(updatedData),
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        alert("Address updated successfully.");
+                        $("#updateAddressModal").modal("hide");
+                        fetchAddresses(); // Refresh address list
+                    } else {
+                        alert("Failed to update address. Please try again.");
+                    }
+                },
+                error: function () {
+                    alert("Failed to update address. Please try again.");
+                }
+            });
+        };
+
 
         // Open modal when link is clicked
         $("#openAddressModal").click(function (e) {
@@ -417,6 +500,58 @@
         fetchAddresses();
     });
 </script>
+<!-- Update Address Modal -->
+<div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Update Address</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="update_address_id">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="update_name">
+                </div>
+                <div class="form-group">
+                    <label>Contact No</label>
+                    <input type="text" class="form-control" id="update_contact_no">
+                </div>
+                <div class="form-group">
+                    <label>Address Line 1</label>
+                    <input type="text" class="form-control" id="update_address_line1">
+                </div>
+                <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control" id="update_address_line2">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" id="update_city">
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <input type="text" class="form-control" id="update_state">
+                </div>
+                <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" class="form-control" id="update_postal_code">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" id="update_country">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" onclick="updateAddress()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
