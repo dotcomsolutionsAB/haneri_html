@@ -330,35 +330,26 @@
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
                                 <div class="address-wrapper">
-  <div class="address-card">
-    <div class="card-header">
-      <h3 class="card-title">${address.name}</h3>
-      <p class="card-phone">${address.contact_no}</p>
-    </div>
-    <div class="card-body">
-      <p><strong>Address 1:</strong> ${address.address_line1}</p>
-      <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-      <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-      <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-      <input type="hidden" name="is_default" value="${address.is_default}">
-    </div>
-    <div class="card-footer">
-      <label class="radio-container">
-        <!-- Radio button -->
-        <input 
-          type="radio" 
-          name="address_select" 
-          class="select-radio"
-          ${isChecked} 
-        />
-        <span class="custom-radio"></span>
-        Select Address
-      </label>
-    </div>
-  </div>
-</div>
-
-
+                                    <div class="address-card">
+                                        <label class="address-card" for="addressRadio${address.id}">
+                                            <div class="card-header">
+                                                <h3 class="card-title">${address.name}</h3>
+                                                <p class="card-phone">${address.contact_no}</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                                <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+                                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                                <input type="hidden" name="is_default" value="${address.is_default}">
+                                            </div>
+                                            <div class="card-footer">
+                                                <input type="radio" name="address_select" class="select-radio" ${isChecked} />
+                                                <span class="custom-radio"></span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
                             `;
                         });
                         $("#collapseNew").html(addressHTML).addClass("show");
