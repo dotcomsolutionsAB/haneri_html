@@ -232,6 +232,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    border-radius: 50px;
     background:rgb(0 0 0 / 15%);
  } 
  .read-more-button{
