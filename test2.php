@@ -164,6 +164,7 @@
     }
 
 </style> -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <main class="main main-test checkout_page">
@@ -184,23 +185,24 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- ADD THIS STYLESHEET TO YOUR <head> OR A LINKED CSS FILE -->
+<!-- Place this stylesheet in your <head> or a linked CSS file -->
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
   .address-card {
+    /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
     max-width: 450px;
-    margin: 1rem auto;
-    display: block;                  /* <label> usage */
+    margin: 1rem auto;               /* Center the card with a bit of spacing */
+    display: block;                  /* Ensures the label can wrap block elements */
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
+    cursor: pointer;                 /* Pointer to show it's clickable */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none;           /* Remove any text decoration from label */
+    color: inherit;                  /* Inherit normal text color */
   }
 
   .address-card:hover {
@@ -208,6 +210,7 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   }
 
+  /* Gradient header section */
   .card-header {
     background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
     color: #fff;
@@ -225,52 +228,41 @@
     font-size: 0.9rem;
   }
 
+  /* Body section for address details */
   .card-body {
     padding: 16px;
     line-height: 1.5;
   }
-
   .card-body p {
     margin: 0.5rem 0;
   }
 
+  /* Footer section for the radio input or extra controls */
   .card-footer {
     background-color: #f9f9f9;
     padding: 12px 16px;
     display: flex;
     align-items: center;
-    gap: 8px; /* space between radio, text, and icons */
+    gap: 8px;   /* Space between radio and text */
   }
 
-  /* Radio styling (optional) */
+  /* Radio styling (optional enhancements) */
   .select-radio {
     width: 18px;
     height: 18px;
-    accent-color: #478ed1; 
-    cursor: pointer;
+    accent-color: #478ed1; /* Modern browsers color the radio */
+    cursor: pointer;       
   }
-
   .footer-label {
     font-size: 0.95rem;
   }
-
-  /* Remove icon styling */
-  .remove-address-icon {
-    margin-left: auto; /* push trash icon to the far right */
-    color: #c00;
-    cursor: pointer;
-  }
-  
-  /* Optional hover color for the trash icon */
-  .remove-address-icon:hover {
-    color: #a00;
-  }
 </style>
 
-<!-- YOUR SCRIPT (jQuery) -->
+
+<!-- Your existing jQuery script with minimal changes -->
 <script>
     $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with your actual token
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
         const baseUrl = "<?php echo BASE_URL; ?>/address";
 
         function fetchAddresses() {
@@ -279,13 +271,17 @@
                 type: "GET",
                 headers: { "Authorization": `Bearer ${authToken}` },
                 success: function (response) {
-                    if (response.data && response.data.length > 0) {
+                    if (response.data.length > 0) {
                         let addressHTML = "";
+                        // Use .forEach((address, index) => ...)
                         response.data.forEach((address, index) => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <!-- Wrap entire card in a label for click-to-select -->
-                                <label class="address-card" for="addressRadio${address.id}">
+                                <!-- 
+                                  Replace the outer <div> with <label> 
+                                  for="addressRadio${index}" to tie the label to the radio
+                                -->
+                                <label class="address-card" for="addressRadio${index}">
                                     <div class="card-header">
                                         <h3 class="card-title">${address.name}</h3>
                                         <p class="card-phone">${address.contact_no}</p>
@@ -298,20 +294,15 @@
                                         <input type="hidden" name="is_default" value="${address.is_default}">
                                     </div>
                                     <div class="card-footer">
-                                        <!-- Radio to select this address -->
+                                        <!-- Attach a unique ID to the radio -->
                                         <input
                                             type="radio"
-                                            id="addressRadio${address.id}"
+                                            id="addressRadio${index}"
                                             name="address_select"
                                             class="select-radio"
                                             ${isChecked}
-                                        />
+                                        >
                                         <span class="footer-label">Select Address</span>
-                                        
-                                        <!-- Trash icon for removing the address -->
-                                        <i class="fa fa-trash remove-address-icon"
-                                           data-id="${address.id}"
-                                           title="Remove Address"></i>
                                     </div>
                                 </label>
                             `;
@@ -327,31 +318,12 @@
             });
         }
 
-        // =========== Handle Remove Address ===========
-        // We attach event to the document so new icons are also bound
-        $(document).on('click', '.remove-address-icon', function(event) {
-            event.stopPropagation(); // Prevent radio button from being selected
-
-            let addressId = $(this).data('id');
-            if(!confirm("Are you sure you want to delete this address?")) {
-                return;
-            }
-            // Send DELETE request
-            $.ajax({
-                url: baseUrl + "/" + addressId,
-                type: "DELETE",
-                headers: { "Authorization": `Bearer ${authToken}` },
-                success: function (response) {
-                    // Refresh address list on success or show a message
-                    fetchAddresses();
-                },
-                error: function () {
-                    alert("Failed to delete address. Please try again.");
-                }
-            });
+        // Open modal when link is clicked
+        $("#openAddressModal").click(function (e) {
+            e.preventDefault();
+            $("#addressModal").modal("show");
         });
 
-        // =========== Add Address ===========
         $("#addAddressBtn").click(function () {
             let addressData = {
                 name: $("#name").val(),
@@ -365,7 +337,6 @@
                 is_default: true
             };
 
-            // Simple validation
             if (
               !addressData.name || 
               !addressData.contact_no || 
@@ -388,10 +359,10 @@
                 },
                 data: JSON.stringify(addressData),
                 success: function (response) {
-                    if (response.message && response.message.includes("success")) {
-                        $("#checkout-form")[0].reset();
-                        $("#addressModal").modal("hide");
-                        fetchAddresses(); // Refresh addresses
+                    if (response.message.includes("success")) {
+                        $("#checkout-form")[0].reset(); // Reset form fields
+                        $("#addressModal").modal("hide"); // Close modal
+                        fetchAddresses(); // Refresh address list
                     } else {
                         alert("Failed to add address. Please try again.");
                     }
@@ -402,17 +373,10 @@
             });
         });
 
-        // =========== Modal Trigger ===========
-        $("#openAddressModal").click(function (e) {
-            e.preventDefault();
-            $("#addressModal").modal("show");
-        });
-
-        // =========== Fetch on Page Load ===========
+        // Load addresses on page load
         fetchAddresses();
     });
 </script>
-
 
 
         <div class="row">
