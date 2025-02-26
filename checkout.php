@@ -44,6 +44,99 @@
         align-items: center;        
     }
 </style>
+<style>
+    /* CSS */
+
+/* Wrapper to ensure proper spacing between multiple address boxes */
+.address-wrapper {
+  margin-bottom: 1rem;
+}
+
+/* Main container for each address “card” */
+.address-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect (optional) */
+.address-box:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* 
+   For wider screens, display sections side by side 
+   with a gap in between. Adjust breakpoint as needed.
+*/
+@media (min-width: 768px) {
+  .address-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Basic styling for text within each address box */
+.info-section, .location-section {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .info-section, .location-section {
+    margin-bottom: 0; /* Remove bottom margin when in row layout */
+  }
+}
+
+.address-name,
+.address-phone {
+  margin: 0.25rem 0;
+}
+
+.location-section p {
+  margin: 0.25rem 0;
+}
+
+/* 
+   The radio section container to center the radio button
+   in the last column.
+*/
+.select-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .select-section {
+    margin-top: 0; /* Keep it aligned in row layout */
+  }
+}
+
+/* Style your radio input to look bigger or more modern */
+.select-radio {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Example form styling if you have a form wrapping multiple addresses */
+.check-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.check-form .in {
+  width: 300px !important;
+}
+
+</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <main class="main main-test checkout_page">
@@ -80,31 +173,31 @@
                         response.data.forEach(address => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <div class="address_box">
-                                    <div class="add_box_1">
-                                        <div class="col-lg-5">
-                                            <p><strong>Name:</strong> ${address.name}</p>
-                                            <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                            <input type="hidden" name="is_default" value="${address.is_default}">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                            <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                            <p>
-                                                <strong>Location:</strong> 
-                                                <span>${address.country}</span>, 
-                                                <span>${address.state}</span>, 
-                                                <span>${address.city}</span>
-                                            </p>
-                                            <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="selects">
-                                                <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                            </div>                                                  
-                                        </div>
-                                    </div>                                        
-                                </div>
+                                <!-- HTML -->
+<div class="address-wrapper">
+  <div class="address-box">
+    <div class="info-section">
+      <p class="address-name"><strong>${address.name}</strong></p>
+      <p class="address-phone"><strong>${address.contact_no}</strong></p>
+      <input type="hidden" name="is_default" value="${address.is_default}">
+    </div>
+    <div class="location-section">
+      <p><strong>Address 1:</strong> ${address.address_line1}</p>
+      <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+      <p>
+        <strong>Location:</strong> 
+        <span>${address.country}</span>, 
+        <span>${address.state}</span>, 
+        <span>${address.city}</span>
+      </p>
+      <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+    </div>
+    <div class="select-section">
+      <input type="radio" name="address_select" class="select-radio" ${isChecked}>
+    </div>
+  </div>
+</div>
+
                             `;
                         });
                         $("#collapseNew").html(addressHTML).addClass("show");
