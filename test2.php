@@ -184,24 +184,23 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Place this stylesheet in your <head> or a linked CSS file -->
+<!-- ADD THIS STYLESHEET TO YOUR <head> OR A LINKED CSS FILE -->
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
   .address-card {
-    /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
     max-width: 450px;
-    margin: 1rem auto;               /* Center the card with a bit of spacing */
-    display: block;                  /* Ensures the label can wrap block elements */
+    margin: 1rem auto;
+    display: block;                  /* <label> usage */
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;                 /* Pointer to show it's clickable */
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;           /* Remove any text decoration from label */
-    color: inherit;                  /* Inherit normal text color */
+    text-decoration: none;
+    color: inherit;
   }
 
   .address-card:hover {
@@ -209,7 +208,6 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   }
 
-  /* Gradient header section */
   .card-header {
     background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
     color: #fff;
@@ -227,49 +225,49 @@
     font-size: 0.9rem;
   }
 
-  /* Body section for address details */
   .card-body {
     padding: 16px;
     line-height: 1.5;
   }
+
   .card-body p {
     margin: 0.5rem 0;
   }
 
-  /* Footer section for the radio input or extra controls */
   .card-footer {
     background-color: #f9f9f9;
     padding: 12px 16px;
     display: flex;
     align-items: center;
-    gap: 8px;   /* Space between radio and text */
+    gap: 8px; /* space between radio, text, and icons */
   }
 
-  /* Radio styling (optional enhancements) */
+  /* Radio styling (optional) */
   .select-radio {
     width: 18px;
     height: 18px;
-    accent-color: #478ed1; /* Modern browsers color the radio */
-    cursor: pointer;       
+    accent-color: #478ed1; 
+    cursor: pointer;
   }
+
   .footer-label {
     font-size: 0.95rem;
   }
-    /* Remove icon styling */
-    .remove-address-icon {
-        margin-left: auto; /* push trash icon to the far right */
-        color: #c00;
-        cursor: pointer;
-    }
-    
-    /* Optional hover color for the trash icon */
-    .remove-address-icon:hover {
-        color: #a00;
-    }
+
+  /* Remove icon styling */
+  .remove-address-icon {
+    margin-left: auto; /* push trash icon to the far right */
+    color: #c00;
+    cursor: pointer;
+  }
+  
+  /* Optional hover color for the trash icon */
+  .remove-address-icon:hover {
+    color: #a00;
+  }
 </style>
 
-
-<!-- Your existing jQuery script with minimal changes -->
+<!-- YOUR SCRIPT (jQuery) -->
 <script>
     $(document).ready(function () {
         const authToken = localStorage.getItem('auth_token'); // Replace with your actual token
@@ -414,6 +412,7 @@
         fetchAddresses();
     });
 </script>
+
 
 
         <div class="row">
