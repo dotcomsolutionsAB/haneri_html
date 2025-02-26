@@ -212,7 +212,7 @@
 
   /* Gradient header section */
   .card-header {
-    background: linear-gradient(135deg, #00473e 0%, #02494299 100%)
+    background: : #118677e0;
     color: #fff;
     padding: 16px;
   }
