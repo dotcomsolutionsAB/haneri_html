@@ -1,32 +1,10 @@
 <?php include("header.php"); ?>
-
 <?php include("configs/config.php"); ?> 
 <style>
     .vvv{
         display:flex;
         justify-content:end;
     }
-    /* .selects{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .selects .sel{
-        width: 40px;
-        height: 40px;
-    }
-    .address_box{
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-    .add_box_1{
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 0px;
-        background: #f4f4f4;
-        border-radius: 10px;
-    } */
     .check-form{
         display: flex;
         flex-wrap: wrap;
@@ -39,8 +17,38 @@
     .btt{
         width: 615px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;        
+    }
+    .show{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap:10px;
+    }
+    .update-modal{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .inp{
+        height: 40px;
+        border-radius: 10px;
+    }
+    .labl{
+        font-size: 1.2rem;
+    }
+    .modal-content{
+        border-radius: 15px !important;
+        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35);
+        margin-top: 90px;
+    }
+    .form-group{
+        margin-bottom: 0.7rem;
+    }
+    .dft{
+        padding: 0.5em 1em;
+        border-radius: 10px;
+        background: #0b4c44e6;
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -53,7 +61,7 @@
   .address-card {
     /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
-    /* max-width: 450px; */
+    min-width: 400px;
     margin: 1rem auto;               /* Center the card with a bit of spacing */
     display: block;                  /* Ensures the label can wrap block elements */
     background-color: #fff;
@@ -73,7 +81,7 @@
 
   /* Gradient header section */
   .card-header {
-    background: #118677e0 !important;
+    background:#315858 !important;
     color: #fff;
     padding: 16px;
   }
@@ -161,65 +169,6 @@
             $(document).ready(function () {
                 const authToken = localStorage.getItem('auth_token'); // Replace with actual token
                 const baseUrl = "<?php echo BASE_URL; ?>/address";
-
-                // function fetchAddresses() {
-                //     $.ajax({
-                //         url: baseUrl,
-                //         type: "GET",
-                //         headers: { "Authorization": `Bearer ${authToken}` },
-                //         success: function (response) {
-                //             if (response.data.length > 0) {
-                //                 let addressHTML = "";
-                //                 response.data.forEach((address, index) => {
-                //                     let isChecked = address.is_default ? "checked" : "";
-                //                     addressHTML += `
-                //                         <label class="address-card" for="addressRadio${index}">
-                //                             <div class="card-header">
-                //                                 <h3 class="card-title">${address.name}</h3>
-                //                                 <p class="card-phone">${address.contact_no}</p>
-                //                             </div>
-                //                             <div class="card-body">
-                //                                 <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                //                                 <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                //                                 <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-                //                                 <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                //                                 <input type="hidden" name="is_default" value="${address.is_default}">
-                //                             </div>
-                //                             <div class="card-footer cardf">
-                //                                 <div class="red">
-                //                                     <input
-                //                                     type="radio"
-                //                                     id="addressRadio${index}"
-                //                                     name="address_select"
-                //                                     class="select-radio"
-                //                                     ${isChecked}
-                //                                     >
-                //                                     <span class="footer-label">Select Address</span>
-                //                                 </div>
-                //                                 <div class="btbt">
-                //                                     <!-- Update Button -->
-                //                                     <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
-                //                                         <i class="fas fa-edit"></i> Edit
-                //                                     </button>
-                //                                     <!-- Delete Button -->
-                //                                     <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-                //                                         <i class="fas fa-trash"></i>
-                //                                     </button>
-                //                                 </div>
-                //                             </div>
-                //                         </label>
-                //                     `;
-                //                 });
-                //                 $("#collapseNew").html(addressHTML).addClass("show");
-                //             } else {
-                //                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
-                //             }
-                //         },
-                //         error: function () {
-                //             console.error("Error fetching addresses.");
-                //         }
-                //     });
-                // }
                 let addressList = []; // Store addresses in memory
 
                 function fetchAddresses() {
@@ -461,39 +410,39 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body update-modal">
                         <input type="hidden" id="update_address_id">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" id="update_name">
+                            <label class="labl">Name</label>
+                            <input type="text" class="form-control inp" id="update_name">
                         </div>
                         <div class="form-group">
-                            <label>Contact No</label>
-                            <input type="text" class="form-control" id="update_contact_no">
+                            <label class="labl">Contact No</label>
+                            <input type="text" class="form-control inp" id="update_contact_no">
                         </div>
                         <div class="form-group">
-                            <label>Address Line 1</label>
-                            <input type="text" class="form-control" id="update_address_line1">
+                            <label class="labl">Address Line 1</label>
+                            <input type="text" class="form-control inp" id="update_address_line1">
                         </div>
                         <div class="form-group">
-                            <label>Address Line 2</label>
-                            <input type="text" class="form-control" id="update_address_line2">
+                            <label class="labl">Address Line 2</label>
+                            <input type="text" class="form-control inp" id="update_address_line2">
                         </div>
                         <div class="form-group">
-                            <label>City</label>
-                            <input type="text" class="form-control" id="update_city">
+                            <label class="labl">City</label>
+                            <input type="text" class="form-control inp" id="update_city">
                         </div>
                         <div class="form-group">
-                            <label>State</label>
-                            <input type="text" class="form-control" id="update_state">
+                            <label class="labl">State</label>
+                            <input type="text" class="form-control inp" id="update_state">
                         </div>
                         <div class="form-group">
-                            <label>Postal Code</label>
-                            <input type="text" class="form-control" id="update_postal_code">
+                            <label class="labl">Postal Code</label>
+                            <input type="text" class="form-control inp" id="update_postal_code">
                         </div>
                         <div class="form-group">
-                            <label>Country</label>
-                            <input type="text" class="form-control" id="update_country">
+                            <label class="labl">Country</label>
+                            <input type="text" class="form-control inp" id="update_country">
                         </div>
                     </div>
                     <div class="modal-footer">
