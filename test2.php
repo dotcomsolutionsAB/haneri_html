@@ -333,11 +333,11 @@
             });
         }
 
-        function deleteAddress(id) {
+        window.deleteAddress = function (id) { 
             if (!confirm("Are you sure you want to delete this address?")) {
                 return;
             }
-            
+
             $.ajax({
                 url: `${baseUrl}/${id}`,
                 type: "DELETE",
@@ -354,7 +354,9 @@
                     alert("Failed to delete address. Please try again.");
                 }
             });
-        }
+        };
+
+        fetchAddresses();
 
         // Open modal when link is clicked
         $("#openAddressModal").click(function (e) {
