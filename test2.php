@@ -455,7 +455,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
@@ -737,7 +737,7 @@
             </script>
 
             <!-- Order Summary Section -->
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="order-summary">
                     <h3>YOUR ORDER</h3>
 

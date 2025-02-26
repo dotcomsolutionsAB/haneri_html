@@ -13,6 +13,7 @@
     }
     .check-form .in{
         width:300px !important;
+        margin-bottom: 0.7rem !important;
     }
     .btt{
         width: 615px;
@@ -454,7 +455,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-8">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
@@ -469,40 +470,40 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body custom-modal">
+                                    <div class="modal-body">
                                         <form id="checkout-form" class="check-form">
                                             <div class="form-group in">
-                                                <label>Name <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="name">
+                                                <label class="labl">Name <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control inp" id="name">
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="contact_no">
+                                                <label class="labl">Contact No <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control inp" id="contact_no">
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Address 1 <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="address_line1" placeholder="House number and street name">
+                                                <label class="labl">Address 1 <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control inp" id="address_line1" placeholder="House number and street name">
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Address 2 (optional)</label>
-                                                <input type="text" class="form-control" id="address_line2">
+                                                <label class="labl">Address 2 (optional)</label>
+                                                <input type="text" class="form-control inp" id="address_line2">
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="city">
+                                                <label class="labl">Town / City <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control inp" id="city">
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>State <abbr class="required" title="required">*</abbr></label>
-                                                <select class="form-control" id="state">
+                                                <label class="labl">State <abbr class="required" title="required">*</abbr></label>
+                                                <select class="form-control inp" id="state">
                                                     <option value="Mumbai" selected>Mumbai</option>
                                                     <option value="Delhi">Delhi</option>
                                                     <option value="West Bengal">West Bengal</option>
@@ -510,16 +511,16 @@
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Country <span class="required">*</span></label>
-                                                <select class="form-control" id="country">
+                                                <label class="labl">Country <span class="required">*</span></label>
+                                                <select class="form-control inp" id="country">
                                                     <option value="India" selected>India</option>
                                                     <option value="Australia">Australia</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group in">
-                                                <label>Pincode <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="postal_code">
+                                                <label class="labl">Pincode <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control inp" id="postal_code">
                                             </div>
 
                                             <div class="form-group text-end btt">
@@ -736,7 +737,7 @@
             </script>
 
             <!-- Order Summary Section -->
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="order-summary">
                     <h3>YOUR ORDER</h3>
 
