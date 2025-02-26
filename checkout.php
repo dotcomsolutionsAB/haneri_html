@@ -690,7 +690,7 @@
                             "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
                             "order_id": order_id, // Razorpay Order ID
                             "handler": function(response) {
-                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                                // alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
 
                                 // Redirect to order complete page with payment ID and order details
                                 window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
