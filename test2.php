@@ -29,7 +29,141 @@
         background: #f4f4f4;
         border-radius: 10px;
     }
+    .check-form{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .check-form .in{
+        width:300px !important;
+    }
+    .btt{
+        width: 615px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+    }
 </style>
+<style>
+    /* Import a Google Font for a modern look (optional) */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+/* Wrapper to manage multiple address cards */
+.address-wrapper {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* The card container for each address */
+.address-card {
+  max-width: 450px;          /* Adjust as needed or remove for fluid width */
+  margin: 0 auto;            /* Center card if a fixed width is set */
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to lift the card a bit */
+.address-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Gradient header section */
+.card-header {
+  background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
+  color: #fff;
+  padding: 16px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card-phone {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+/* Body section for address details */
+.card-body {
+  padding: 16px;
+  line-height: 1.5;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+}
+
+/* Footer section for selection or additional actions */
+.card-footer {
+  background-color: #f9f9f9;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Adjust if more elements are added */
+}
+
+/* RADIO INPUT STYLING */
+/* A container for the radio & custom circle */
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 32px;  /* Space for the custom radio */
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+}
+
+/* Hide the default radio visually */
+.select-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* The “fake” radio circle */
+.custom-radio {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+/* When the radio is checked, change color of the custom circle */
+.radio-container input:checked ~ .custom-radio {
+  background-color: #478ed1;
+}
+
+/* Show an inner dot when checked */
+.radio-container input:checked ~ .custom-radio::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Optional hover effect on the radio circle */
+.radio-container:hover .custom-radio {
+  background-color: #b3b3b3;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
@@ -40,268 +174,378 @@
                 <a href="checkout.php">Checkout</a>
             </li>
             <!-- <li class="disabled"> -->
-            <li>
+            <li class="disabled">
                 <a href="order-complete.php">Order Complete</a>
             </li>
         </ul>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-$(document).ready(function () {
-    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-    const baseUrl = "<?php echo BASE_URL; ?>/address";
+    $(document).ready(function () {
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const baseUrl = "<?php echo BASE_URL; ?>/address";
 
-    function fetchAddresses() {
-        $.ajax({
-            url: baseUrl,
-            type: "GET",
-            headers: { "Authorization": `Bearer ${authToken}` },
-            success: function (response) {
-                if (response.data.length > 0) {
-                    let addressHTML = "";
-                    response.data.forEach(address => {
-                        let isChecked = address.is_default ? "checked" : "";
-                        addressHTML += `
-                            <div class="address_box">
-                                <div class="add_box_1">
-                                    <div class="col-lg-5">
-                                        <p><strong>Name:</strong> ${address.name}</p>
-                                        <p><strong>Contact No:</strong> ${address.contact_no}</p>
-                                        <input type="hidden" name="is_default" value="${address.is_default}">
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                        <p>
-                                            <strong>Location:</strong> 
-                                            <span>${address.country}</span>, 
-                                            <span>${address.state}</span>, 
-                                            <span>${address.city}</span>
-                                        </p>
-                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="selects">
-                                            <input type="radio" name="address_select" class="sel" ${isChecked}>
-                                        </div>                                                
-                                    </div>
-                                </div>                                        
-                            </div>
-                        `;
-                    });
-                    $("#collapseNew").html(addressHTML).addClass("show");
-                } else {
-                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+        function fetchAddresses() {
+            $.ajax({
+                url: baseUrl,
+                type: "GET",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    if (response.data.length > 0) {
+                        let addressHTML = "";
+                        response.data.forEach(address => {
+                            let isChecked = address.is_default ? "checked" : "";
+                            addressHTML += `
+                                <div class="address-wrapper">
+  <div class="address-card">
+    <!-- Card Header with gradient background -->
+    <div class="card-header">
+      <h3 class="card-title">${address.name}</h3>
+      <p class="card-phone">${address.contact_no}</p>
+    </div>
+
+    <!-- Card Body for address lines -->
+    <div class="card-body">
+      <p><strong>Address 1:</strong> ${address.address_line1}</p>
+      <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+      <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+      <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+      <!-- Hidden field for 'is_default' -->
+      <input type="hidden" name="is_default" value="${address.is_default}">
+    </div>
+
+    <!-- Card Footer with a radio button -->
+    <div class="card-footer">
+      <label class="radio-container">
+        <input 
+          type="radio" 
+          name="address_select" 
+          class="select-radio"
+          ${isChecked} 
+        />
+        <span class="custom-radio"></span>
+        Select Address
+      </label>
+    </div>
+  </div>
+</div>
+
+                            `;
+                        });
+                        $("#collapseNew").html(addressHTML).addClass("show");
+                    } else {
+                        $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                    }
+                },
+                error: function () {
+                    console.error("Error fetching addresses.");
                 }
-            },
-            error: function () {
-                console.error("Error fetching addresses.");
-            }
-        });
-    }
-
-    $("#addAddressBtn").click(function () {
-        let addressData = {
-            name: $("#name").val(),
-            contact_no: $("#contact_no").val(),
-            address_line1: $("#address_line1").val(),
-            address_line2: $("#address_line2").val(),
-            city: $("#city").val(),
-            state: $("#state").val(),
-            country: $("#country").val(),
-            postal_code: $("#postal_code").val(),
-            is_default: true
-        };
-
-        if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
-            alert("Please fill all required fields.");
-            return;
+            });
         }
 
-        $.ajax({
-            url: "<?php echo BASE_URL; ?>/address/register",
-            type: "POST",
-            headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
-            data: JSON.stringify(addressData),
-            success: function (response) {
-                if (response.message.includes("success")) {
-                    // alert("Address added successfully!");
-                    $("#checkout-form")[0].reset(); // Reset form fields
-                    $("#collapseFour").removeClass("show"); // Hide add address form
-                    fetchAddresses(); // Refresh the address list
-                } else {
+        // Open modal when link is clicked
+        $("#openAddressModal").click(function (e) {
+            e.preventDefault();
+            $("#addressModal").modal("show");
+        });
+
+        $("#addAddressBtn").click(function () {
+            let addressData = {
+                name: $("#name").val(),
+                contact_no: $("#contact_no").val(),
+                address_line1: $("#address_line1").val(),
+                address_line2: $("#address_line2").val(),
+                city: $("#city").val(),
+                state: $("#state").val(),
+                country: $("#country").val(),
+                postal_code: $("#postal_code").val(),
+                is_default: true
+            };
+
+            if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            $.ajax({
+                url: "<?php echo BASE_URL; ?>/address/register",
+                type: "POST",
+                headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+                data: JSON.stringify(addressData),
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        $("#checkout-form")[0].reset(); // Reset form fields
+                        $("#addressModal").modal("hide"); // Close modal
+                        fetchAddresses(); // Refresh address list
+                    } else {
+                        alert("Failed to add address. Please try again.");
+                    }
+                },
+                error: function () {
                     alert("Failed to add address. Please try again.");
                 }
-            },
-            error: function () {
-                alert("Failed to add address. Please try again.");
-            }
+            });
         });
-    });
 
-    fetchAddresses(); // Load addresses on page load
-});
+        fetchAddresses(); // Load addresses on page load
+    });
 </script>
+
         <div class="row">
-           
             <div class="col-lg-7">
                 <ul class="checkout-steps">
                     <li>
                         <h2 class="step-title">Billing details</h2>
+                        <div class="form-group">
+                            <a href="#" id="openAddressModal" class="text-primary">
+                                Add another Address?
+                            </a>
+                        </div>
+                        <!-- Address Modal -->
+                        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="checkout-form" class="check-form">
+                                            <div class="form-group in">
+                                                <label>Name <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="name">
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Contact No <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="contact_no">
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Address 1 <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="address_line1" placeholder="House number and street name">
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Address 2 (optional)</label>
+                                                <input type="text" class="form-control" id="address_line2">
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Town / City <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="city">
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>State <abbr class="required" title="required">*</abbr></label>
+                                                <select class="form-control" id="state">
+                                                    <option value="Mumbai" selected>Mumbai</option>
+                                                    <option value="Delhi">Delhi</option>
+                                                    <option value="West Bengal">West Bengal</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Country <span class="required">*</span></label>
+                                                <select class="form-control" id="country">
+                                                    <option value="India" selected>India</option>
+                                                    <option value="Australia">Australia</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group in">
+                                                <label>Pincode <abbr class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" id="postal_code">
+                                            </div>
+
+                                            <div class="form-group text-end btt">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="addresses">
                             <div class="address">                            
                                 <div class="vvv">
-                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle">SHOW ADDRESS</button>
+                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle"></button>
                                 </div>
                                 <div id="collapseNew" class="collapse">
                                     <!-- Addresses will be dynamically added here -->
                                 </div>
                             </div>
                         </div>
-                       
-                        <form action="#" id="checkout-form">
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox mt-0">
-                                    <input type="checkbox" class="custom-control-input" id="different-shipping">
-                                    <label class="custom-control-label" data-toggle="collapse" data-target="#collapseFour"
-                                        aria-controls="collapseFour" for="different-shipping" aria-expanded="true">
-                                        Ship to an Additional Address?
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div id="collapseFour" class="collapse">
-                                <div class="shipping-info">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Name<abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="name" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label> Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control" id="contact_no" required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Address 1<abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="address_line1" placeholder="House number and street name" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Address 2 (optional)</label>
-                                        <input type="text" class="form-control" id="address_line2">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="city" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>State <abbr class="required" title="required">*</abbr></label>
-                                        <select class="form-control" id="state">
-                                            <option value="Mumbai" selected>Mumbai</option>
-                                            <option value="Delhi">Delhi</option>
-                                            <option value="West Bengal">West Bengal</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Country <span class="required">*</span></label>
-                                        <select class="form-control" id="country">
-                                            <option value="India" selected>India</option>
-                                            <option value="Australia">Australia</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Pincode <abbr class="required" title="required">*</abbr></label>
-                                        <input type="text" class="form-control" id="postal_code" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-primary" id="addAddressBtn">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-
-
                     </li>
                 </ul>
             </div>
             <!-- End .col-lg-8 -->
-<script>
-    $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-        const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+            <script>
+                $(document).ready(function () {
+                    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+                    const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
+                    const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
-        function fetchCartItems() {
-            $.ajax({
-                url: cartUrl,
-                type: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Content-Type": "application/json"
-                },
-                success: function (response) {
-                    if (response.data.length > 0) {
-                        let cartHTML = "";
-                        let subtotal = 0;
-                        let totalTax = 0;
-                        let total = 0;
+                    function fetchCartItems() {
+                        $.ajax({
+                            url: cartUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            success: function (response) {
+                                if (response.data.length > 0) {
+                                    let cartHTML = "";
+                                    let subtotal = 0;
+                                    let totalTax = 0;
+                                    let total = 0;
 
-                        response.data.forEach(item => {
-                            let productName = item.product.name;
-                            let quantity = item.quantity;
-                            let price = parseFloat(item.variant.selling_price);
-                            let tax = parseFloat(item.variant.selling_tax);
-                            let itemTotal = (price + tax) * quantity;
+                                    response.data.forEach(item => {
+                                        let productName = item.product.name;
+                                        let quantity = item.quantity;
+                                        let price = parseFloat(item.variant.selling_price);
+                                        let tax = parseFloat(item.variant.selling_tax);
+                                        let itemTotal = (price + tax) * quantity;
 
-                            subtotal += (price * quantity);
-                            totalTax += (tax * quantity);
-                            total += itemTotal;
+                                        subtotal += (price * quantity);
+                                        totalTax += (tax * quantity);
+                                        total += itemTotal;
 
-                            cartHTML += `
-                                <tr>
-                                    <td class="product-col">
-                                        <h3 class="product-title">
-                                            ${productName} × <span class="product-qty">${quantity}</span>
-                                        </h3>
-                                    </td>
-                                    <td class="price-col">
-                                        <span>₹ ${itemTotal.toFixed(2)}</span>
-                                    </td>
-                                </tr>
-                            `;
+                                        cartHTML += `
+                                            <tr>
+                                                <td class="product-col">
+                                                    <h3 class="product-title">
+                                                        ${productName} × <span class="product-qty">${quantity}</span>
+                                                    </h3>
+                                                </td>
+                                                <td class="price-col">
+                                                    <span>₹ ${itemTotal.toFixed(2)}</span>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    });
+
+                                    $("#cart-items").html(cartHTML);
+                                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                                    $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                                    $("#total").text(`₹ ${total.toFixed(2)}`);
+                                } else {
+                                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                                    $("#subtotal").text("₹ 0.00");
+                                    $("#total-tax").text("₹ 0.00");
+                                    $("#total").text("₹ 0.00");
+                                }
+                            },
+                            error: function () {
+                                console.error("Error fetching cart items.");
+                            }
                         });
-
-                        $("#cart-items").html(cartHTML);
-                        $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                        $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                        $("#total").text(`₹ ${total.toFixed(2)}`);
-                    } else {
-                        $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                        $("#subtotal").text("₹ 0.00");
-                        $("#total-tax").text("₹ 0.00");
-                        $("#total").text("₹ 0.00");
                     }
-                },
-                error: function () {
-                    console.error("Error fetching cart items.");
-                }
-            });
-        }
 
-        fetchCartItems(); // Load cart items on page load
-    });
-</script>
+                    function getSelectedAddress() {
+                        let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
+
+                        if (selectedRadio.length === 0) {
+                            alert("Please select a shipping address.");
+                            return null;
+                        }
+
+                        let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+                        let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+                        let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+                        let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+                        let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+                        let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+                        let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+                        let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+                        let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+
+                        let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+
+                        return shippingAddress;
+                    }
+
+                    $("#placeOrderBtn").click(function (event) {
+                        event.preventDefault(); // Prevent form from submitting normally
+
+                        let shippingAddress = getSelectedAddress();
+                        if (!shippingAddress) return;
+
+                        let orderData = {
+                            status: "pending",
+                            payment_status: "pending",
+                            shipping_address: shippingAddress
+                        };
+
+                        $.ajax({
+                            url: orderUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(orderData),
+                            success: function (response) {
+                                if (response.message.includes("success")) {
+                                    let orderDetails = response.data.data;
+
+                                    let orderId = orderDetails.order_id;
+                                    let razorpayOrderId = orderDetails.razorpay_order_id;
+                                    let totalAmount = orderDetails.total_amount;
+                                    let userName = orderDetails.name;
+                                    let userEmail = orderDetails.email;
+                                    let userPhone = orderDetails.phone;
+
+                                    // Open Razorpay Payment Popup
+                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
+                                } else {
+                                    alert("Failed to place order. Please try again.");
+                                }
+                            },
+                            error: function () {
+                                alert("Failed to place order. Please try again.");
+                            }
+                        });
+                    });
+
+                    function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
+                        var options = {
+                            "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
+                            "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
+                            "currency": "INR",
+                            "name": "Haneri",
+                            "description": `Order ID: ${orderId}`,
+                            "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
+                            "order_id": order_id, // Razorpay Order ID
+                            "handler": function(response) {
+                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+
+                                // Redirect to order complete page with payment ID and order details
+                                window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
+                            },
+                            "prefill": {
+                                "name": name,
+                                "email": email,
+                                "contact": phone
+                            },
+                            "theme": {
+                                "color": "#f0f8fe"
+                            }
+                        };
+
+                        var rzp = new Razorpay(options);
+                        rzp.open();
+                    }
+
+                    fetchCartItems(); // Load cart items on page load
+                });
+            </script>
+
+            <!-- Order Summary Section -->
             <div class="col-lg-5">
                 <div class="order-summary">
                     <h3>YOUR ORDER</h3>
@@ -320,13 +564,13 @@ $(document).ready(function () {
                                 <td><h4>Subtotal</h4></td>
                                 <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
                             </tr>
-                            
+
                             <tr class="cart-tax">
                                 <td><h4>Tax</h4></td>
                                 <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
                             </tr>
 
-                            <tr class="order-total" style="width: 50%;">
+                            <tr class="order-total">
                                 <td><h4>Total</h4></td>
                                 <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
                             </tr>
@@ -342,7 +586,6 @@ $(document).ready(function () {
                                     </div>
                                 </td>
                             </tr>
-
                         </tfoot>
                     </table>
 
@@ -356,12 +599,11 @@ $(document).ready(function () {
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-dark btn-place-order" form="checkout-form">
+                    <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
                         Place order
                     </button>
                 </div>
             </div>
-
             <!-- End .col-lg-4 -->
         </div>
         <!-- End .row -->
@@ -369,7 +611,6 @@ $(document).ready(function () {
     <!-- End .container -->
 </main>
 <!-- End .main -->
-
 
 <link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
