@@ -113,7 +113,7 @@
         </section>
 
         <div class="bespoke-content">
-            <div class="bespoke-image">
+            <div class="bespoke-text">
                 <img src="images/Haneri_Bespoke.jpg" alt="Haneri_Bespoke.jpg">
             </div>
             <div class="bespoke-image">
