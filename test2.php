@@ -269,6 +269,7 @@
   .btn-danger{
     color: #ff0e00;
     background-color: transparent;
+    border-color: transparent;
   }
 </style>
 
@@ -570,28 +571,56 @@
                         });
                     }
 
+                    // function getSelectedAddress() {
+                    //     let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
+
+                    //     if (selectedRadio.length === 0) {
+                    //         alert("Please select a shipping address.");
+                    //         return null;
+                    //     }
+
+                    //     let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+                    //     let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+                    //     let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+                    //     let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+                    //     let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+                    //     let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+                    //     let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+                    //     let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+                    //     let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+
+                    //     let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+
+                    //     return shippingAddress;
+                    // }
                     function getSelectedAddress() {
-                        let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
+                        let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");
 
                         if (selectedRadio.length === 0) {
                             alert("Please select a shipping address.");
                             return null;
                         }
 
-                        let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-                        let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-                        let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-                        let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-                        let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-                        let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-                        let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-                        let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-                        let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+                        let name = selectedRadio.find(".card-header h3").text().trim();
+                        let contactNo = selectedRadio.find(".card-header .card-phone").text().trim();
+                        let address1 = selectedRadio.find(".card-body p:contains('Address 1')").text().replace("Address 1:", "").trim();
+                        let address2 = selectedRadio.find(".card-body p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+                        
+                        // Extract Location (Country, State, City)
+                        let locationText = selectedRadio.find(".card-body p:contains('Location')").text().replace("Location:", "").trim();
+                        let locationParts = locationText.split(",").map(item => item.trim());
+                        
+                        let country = locationParts[0] || "";
+                        let state = locationParts[1] || "";
+                        let city = locationParts[2] || "";
+                        
+                        let postalCode = selectedRadio.find(".card-body p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
 
-                        let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+                        let shippingAddress = `${name}, ${contactNo}, ${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
 
                         return shippingAddress;
                     }
+
 
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault(); // Prevent form from submitting normally
