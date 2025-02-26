@@ -280,6 +280,66 @@
         const authToken = localStorage.getItem('auth_token'); // Replace with actual token
         const baseUrl = "<?php echo BASE_URL; ?>/address";
 
+        // function fetchAddresses() {
+        //     $.ajax({
+        //         url: baseUrl,
+        //         type: "GET",
+        //         headers: { "Authorization": `Bearer ${authToken}` },
+        //         success: function (response) {
+        //             if (response.data.length > 0) {
+        //                 let addressHTML = "";
+        //                 response.data.forEach((address, index) => {
+        //                     let isChecked = address.is_default ? "checked" : "";
+        //                     addressHTML += `
+        //                         <label class="address-card" for="addressRadio${index}">
+        //                             <div class="card-header">
+        //                                 <h3 class="card-title">${address.name}</h3>
+        //                                 <p class="card-phone">${address.contact_no}</p>
+        //                             </div>
+        //                             <div class="card-body">
+        //                                 <p><strong>Address 1:</strong> ${address.address_line1}</p>
+        //                                 <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+        //                                 <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+        //                                 <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+        //                                 <input type="hidden" name="is_default" value="${address.is_default}">
+        //                             </div>
+        //                             <div class="card-footer cardf">
+        //                                 <div class="red">
+        //                                     <input
+        //                                     type="radio"
+        //                                     id="addressRadio${index}"
+        //                                     name="address_select"
+        //                                     class="select-radio"
+        //                                     ${isChecked}
+        //                                     >
+        //                                     <span class="footer-label">Select Address</span>
+        //                                 </div>
+        //                                 <div class="btbt">
+        //                                     <!-- Update Button -->
+        //                                     <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+        //                                         <i class="fas fa-edit"></i> Edit
+        //                                     </button>
+        //                                     <!-- Delete Button -->
+        //                                     <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+        //                                         <i class="fas fa-trash"></i>
+        //                                     </button>
+        //                                 </div>
+        //                             </div>
+        //                         </label>
+        //                     `;
+        //                 });
+        //                 $("#collapseNew").html(addressHTML).addClass("show");
+        //             } else {
+        //                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+        //             }
+        //         },
+        //         error: function () {
+        //             console.error("Error fetching addresses.");
+        //         }
+        //     });
+        // }
+        let addressList = []; // Store addresses in memory
+
         function fetchAddresses() {
             $.ajax({
                 url: baseUrl,
@@ -287,6 +347,7 @@
                 headers: { "Authorization": `Bearer ${authToken}` },
                 success: function (response) {
                     if (response.data.length > 0) {
+                        addressList = response.data; // Store in memory
                         let addressHTML = "";
                         response.data.forEach((address, index) => {
                             let isChecked = address.is_default ? "checked" : "";
@@ -301,29 +362,26 @@
                                         <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
                                         <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
                                         <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                        <input type="hidden" name="is_default" value="${address.is_default}">
                                     </div>
                                     <div class="card-footer cardf">
                                         <div class="red">
                                             <input
-                                            type="radio"
-                                            id="addressRadio${index}"
-                                            name="address_select"
-                                            class="select-radio"
-                                            ${isChecked}
+                                                type="radio"
+                                                id="addressRadio${index}"
+                                                name="address_select"
+                                                class="select-radio"
+                                                ${isChecked}
                                             >
                                             <span class="footer-label">Select Address</span>
                                         </div>
-                                        <div class="btbt">
-                                            <!-- Update Button -->
-                                            <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <!-- Delete Button -->
-                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </div>
+                                        <!-- Delete Button -->
+                                        <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <!-- Update Button -->
+                                        <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
                                     </div>
                                 </label>
                             `;
@@ -338,6 +396,7 @@
                 }
             });
         }
+
 
         window.deleteAddress = function (id) { 
             if (!confirm("Are you sure you want to delete this address?")) {
@@ -365,30 +424,26 @@
         fetchAddresses();
 
         window.openUpdateModal = function (id) {
-            $.ajax({
-                url: `${baseUrl}/${id}`,
-                type: "DELETE",
-                headers: { "Authorization": `Bearer ${authToken}` },
-                success: function (response) {
-                    let address = response.data;
+            let address = addressList.find(addr => addr.id === id); // Get data from memory
 
-                    $("#update_address_id").val(address.id);
-                    $("#update_name").val(address.name);
-                    $("#update_contact_no").val(address.contact_no);
-                    $("#update_address_line1").val(address.address_line1);
-                    $("#update_address_line2").val(address.address_line2);
-                    $("#update_city").val(address.city);
-                    $("#update_state").val(address.state);
-                    $("#update_postal_code").val(address.postal_code);
-                    $("#update_country").val(address.country);
+            if (!address) {
+                alert("Address not found.");
+                return;
+            }
 
-                    $("#updateAddressModal").modal("show");
-                },
-                error: function () {
-                    alert("Failed to fetch address details.");
-                }
-            });
+            $("#update_address_id").val(address.id);
+            $("#update_name").val(address.name);
+            $("#update_contact_no").val(address.contact_no);
+            $("#update_address_line1").val(address.address_line1);
+            $("#update_address_line2").val(address.address_line2);
+            $("#update_city").val(address.city);
+            $("#update_state").val(address.state);
+            $("#update_postal_code").val(address.postal_code);
+            $("#update_country").val(address.country);
+
+            $("#updateAddressModal").modal("show");
         };
+
 
         window.updateAddress = function () {
             let id = $("#update_address_id").val();
@@ -439,6 +494,7 @@
                 }
             });
         };
+
 
 
         // Open modal when link is clicked
