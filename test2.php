@@ -268,8 +268,14 @@
     align-items: center;
     justify-content: space-between;
   }
-  .btn-danger{
+  .del-add{
     color: #ff0e00;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .edit-add{
+    color: blue;
     background-color: transparent;
     border-color: transparent;
   }
@@ -378,11 +384,11 @@
                                         </div>
                                         <div class="btbt">
                                             <!-- Update Button -->
-                                            <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+                                            <button class="btn btn-primary btn-sm edit-add" onclick="openUpdateModal(${address.id})">
                                                 <i class="fas fa-edit"></i>
                                             </button>
                                             <!-- Delete Button -->
-                                            <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                            <button class="btn btn-danger btn-sm del-add" onclick="deleteAddress(${address.id})">
                                                 <i class="fas fa-trash"></i>
                                             </button>                                            
                                         </div>
