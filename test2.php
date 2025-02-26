@@ -367,7 +367,7 @@
         window.openUpdateModal = function (id) {
             $.ajax({
                 url: `${baseUrl}/${id}`,
-                type: "GET",
+                type: "DELETE",
                 headers: { "Authorization": `Bearer ${authToken}` },
                 success: function (response) {
                     let address = response.data;
