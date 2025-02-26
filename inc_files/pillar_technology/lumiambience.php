@@ -24,22 +24,30 @@
             <div class="points">
             <ul class="ulclass">
                 <ul>
-                <li><span class="highlight_p">Three-in-One Color Options</li>
+                <li>
+                    <span class="highlight_p">Three-in-One Color Options</span>
                     <li><span class="highlight_p">Warm White</span> Perfect for relaxed evenings or cosy settings, offering a soft, inviting glow.</li>
                     <li><span class="highlight_p">Cool White</span> Ideal for productivity-focused environments, providing bright and energizing illumination.</li>
                     <li><span class="highlight_p">Natural White</span> Mimics natural daylight, creating a balanced, comfortable ambience for versatile use.</li>
+                </li>
                 </ul>
-                <li><span class="highlight_p">Eye-Comforting Lens Diffuser</li>
+                <li>
+                    <span class="highlight_p">Eye-Comforting Lens Diffuser</span>
                     LumiAmbience’s proprietary diffuser eliminates visible LED spots, ensuring a smooth, uniform light spread that reduces eye strain and enhances visual comfort.
                     The diffuser technology creates a soft glow that transforms harsh lighting into a calming experience.
-                <li><span class="highlight_p">Optimized Light Spread</li>
+                </li>
+                    <li>
+                        <span class="highlight_p">Optimized Light Spread</span>
                     Engineered to illuminate spaces evenly, LumiAmbience ensures every corner is lit with consistent brightness, avoiding dark patches or harsh shadows.
-                <li><span class="highlight_p">Integrated Control</li>
+                    </li>
+                    <li>
+                        <span class="highlight_p">Integrated Control</span>
                     Seamlessly manage lighting modes, brightness levels, and fan settings with Haneri’s advanced remote systems, including S.C.A.N Technology.</li>
-
-                <li><span class="highlight_p">Energy-Efficient LED System</li>
+                    </li>
+                <li>
+                    <span class="highlight_p">Energy-Efficient LED System</span>
                     LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.</li>
-
+                    </li>
                 </ul>
             </div>
         </div>
@@ -55,16 +63,15 @@
         <div class="brand-content">
             <h2 class="heading2 primary">The Science Behind LumiAmbience Technology</h2>
             <div class="points">
-                <h4 class="heading4 primary">Advanced LED Engineering:</h4>
-                <ul class="ulclass">
-                    <li>LumiAmbience LEDs are crafted to produce precise colour temperatures, ensuring true-to-life illumination for each mode.</li>
-                    <li>High-quality diodes enhance durability and reduce power consumption, aligning with energy-saving standards.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Proprietary Lens Diffuser Technology:</h4>
-                <ul class="ulclass">
-                    <li>The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.</li>
-                    <li>Optical-grade materials ensure consistent performance and long-term clarity.</li>
+            <ul class="ulclass">
+            <li>
+                <span class="highlight_p">Advanced LED Engineering
+                    LumiAmbience LEDs are crafted to produce precise colour temperatures, ensuring true-to-life illumination for each mode.
+                    High-quality diodes enhance durability and reduce power consumption, aligning with energy-saving standards.
+                    </li>
+                    <li><span class="highlight_p">Proprietary Lens Diffuser Technology:</li>
+                    The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.</li>
+                    Optical-grade materials ensure consistent performance and long-term clarity.</li>
                 </ul>
 
                 <h4 class="heading4 primary">Precision Circuitry:</h4>
