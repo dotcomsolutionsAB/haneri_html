@@ -62,6 +62,7 @@
   .address-card {
     /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
+    width: 420px;
     max-width: 420px;
     margin: 1rem auto;               /* Center the card with a bit of spacing */
     display: block;                  /* Ensures the label can wrap block elements */
