@@ -41,7 +41,7 @@
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6">
                 <h2 class="heading2 primary">Vision</h2>
-                <p class="mb-2 paragraph1">
+                <p class="mb-2 vision">
                     To redefine aspirational product experiences by creating beautifully crafted, technologically advanced, and accessible luxury solutions blending exceptional quality with an inclusive design that elevates everyday experiences for everyone.
                 </p>                
             </div><!-- End .col-lg-7 -->
