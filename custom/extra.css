@@ -1903,3 +1903,11 @@ footer .social-icon {
     font-size: 1.2rem;
     line-height: 1.5;
 }
+.vision{
+    font-family: 'Open Sans';
+    font-size: 20px !important;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: left;
+}
