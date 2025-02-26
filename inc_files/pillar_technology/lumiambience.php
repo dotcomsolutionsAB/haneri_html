@@ -24,7 +24,7 @@
             <div class="points">
             <ul class="ulclass">
                 <ul>
-                <h4 class="heading4 primary">Three-in-One Color Options</h4>
+                <li><span class="highlight_p">Three-in-One Color Options</li>
                     <li><span class="highlight_p">Warm White</span> Perfect for relaxed evenings or cosy settings, offering a soft, inviting glow.</li>
                     <li><span class="highlight_p">Cool White</span> Ideal for productivity-focused environments, providing bright and energizing illumination.</li>
                     <li><span class="highlight_p">Natural White</span> Mimics natural daylight, creating a balanced, comfortable ambience for versatile use.</li>
