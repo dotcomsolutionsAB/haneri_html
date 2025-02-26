@@ -13,6 +13,7 @@
     }
     .check-form .in{
         width:300px !important;
+        margin-bottom: 0.7rem !important;
     }
     .btt{
         width: 615px;
@@ -469,8 +470,8 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
