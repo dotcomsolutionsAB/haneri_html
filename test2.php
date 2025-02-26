@@ -233,7 +233,7 @@
     justify-content: space-between;
     flex-direction: column;
     border-radius: 50px;
-    background:rgb(0 0 0 / 15%);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 16%); 
  } 
  .read-more-button{
     border-radius: 10px;
