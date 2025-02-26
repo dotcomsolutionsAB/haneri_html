@@ -46,122 +46,138 @@
 </style>
 <style>
     /* Import a Google Font for a modern look (optional) */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
-/* Wrapper to manage multiple address cards */
-.address-wrapper {
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 1rem;
-}
+    /* Wrapper to manage multiple address cards */
+    .address-wrapper {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1rem;
+    }
 
-/* The card container for each address */
-.address-card {
-  max-width: 450px;          /* Adjust as needed or remove for fluid width */
-  margin: 0 auto;            /* Center card if a fixed width is set */
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* The card container for each address */
+    .address-card {
+    /* max-width: 450px;          Adjust as needed or remove for fluid width */
+    margin: 0 auto;            /* Center card if a fixed width is set */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Hover effect to lift the card a bit */
-.address-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
+    /* Hover effect to lift the card a bit */
+    .address-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
 
-/* Gradient header section */
-.card-header {
-  background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
-  color: #fff;
-  padding: 16px;
-}
+    /* Gradient header section */
+    .card-header {
+    background: linear-gradient(135deg, #00473e 0%,rgb(25, 141, 137) 100%);
+    color: #fff;
+    padding: 16px;
+    }
 
-.card-title {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
+    .card-title {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color:#fff;
+    }
 
-.card-phone {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-}
+    .card-phone {
+        margin: 4px 0 0;
+        font-size: 1.9rem;
+        color:#fff;
+    }
 
-/* Body section for address details */
-.card-body {
-  padding: 16px;
-  line-height: 1.5;
-}
+    /* Body section for address details */
+    .card-body {
+    padding: 16px;
+    line-height: 1.5;
+    }
 
-.card-body p {
-  margin: 0.5rem 0;
-}
+    .card-body p {
+    margin: 0.5rem 0;
+    }
 
-/* Footer section for selection or additional actions */
-.card-footer {
-  background-color: #f9f9f9;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Adjust if more elements are added */
-}
+    /* Footer section for selection or additional actions */
+    .card-footer {
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust if more elements are added */
+    }
 
-/* RADIO INPUT STYLING */
-/* A container for the radio & custom circle */
-.radio-container {
-  display: inline-block;
-  position: relative;
-  padding-left: 32px;  /* Space for the custom radio */
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.95rem;
-}
+    /* RADIO INPUT STYLING */
+    /* A container for the radio & custom circle */
+    .radio-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 32px;  /* Space for the custom radio */
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.95rem;
+    }
 
-/* Hide the default radio visually */
-.select-radio {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
+    /* Hide the default radio visually */
+    .select-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    }
 
-/* The “fake” radio circle */
-.custom-radio {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 18px;
-  width: 18px;
-  background-color: #ccc;
-  border-radius: 50%;
-  transition: background 0.2s ease;
-}
+    /* The “fake” radio circle */
+    .custom-radio {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    }
 
-/* When the radio is checked, change color of the custom circle */
-.radio-container input:checked ~ .custom-radio {
-  background-color: #478ed1;
-}
+    /* When the radio is checked, change color of the custom circle */
+    .radio-container input:checked ~ .custom-radio {
+    background-color: #478ed1;
+    }
 
-/* Show an inner dot when checked */
-.radio-container input:checked ~ .custom-radio::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-}
+    /* Show an inner dot when checked */
+    .radio-container input:checked ~ .custom-radio::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    }
 
-/* Optional hover effect on the radio circle */
-.radio-container:hover .custom-radio {
-  background-color: #b3b3b3;
-}
+    /* Optional hover effect on the radio circle */
+    .radio-container:hover .custom-radio {
+    background-color: #b3b3b3;
+    }
 
 </style>
+<script>
+    // This script will enable "clicking anywhere on the card" to check the radio button.
+    document.querySelectorAll('.address-card').forEach(card => {
+    card.addEventListener('click', event => {
+        // Find the radio inside this card
+        const radio = card.querySelector('.select-radio');
+        if (radio) {
+        // Check the radio button
+        radio.checked = true;
+        }
+    });
+    });
+
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <main class="main main-test checkout_page">
@@ -199,38 +215,29 @@
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
                                 <div class="address-wrapper">
-  <div class="address-card">
-    <!-- Card Header with gradient background -->
-    <div class="card-header">
-      <h3 class="card-title">${address.name}</h3>
-      <p class="card-phone">${address.contact_no}</p>
-    </div>
+                                    <div class="address-card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">${address.name}</h3>
+                                            <p class="card-phone">${address.contact_no}</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                            <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                            <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+                                            <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                            <input type="hidden" name="is_default" value="${address.is_default}">
+                                        </div>
 
-    <!-- Card Body for address lines -->
-    <div class="card-body">
-      <p><strong>Address 1:</strong> ${address.address_line1}</p>
-      <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-      <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-      <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-      <!-- Hidden field for 'is_default' -->
-      <input type="hidden" name="is_default" value="${address.is_default}">
-    </div>
-
-    <!-- Card Footer with a radio button -->
-    <div class="card-footer">
-      <label class="radio-container">
-        <input 
-          type="radio" 
-          name="address_select" 
-          class="select-radio"
-          ${isChecked} 
-        />
-        <span class="custom-radio"></span>
-        Select Address
-      </label>
-    </div>
-  </div>
-</div>
+                                        <!-- Card Footer with a radio button -->
+                                        <div class="card-footer">
+                                            <label class="radio-container">
+                                                <input type="radio" name="address_select" class="select-radio" ${isChecked} />
+                                                <span class="custom-radio"></span>
+                                                Select Address
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
                             `;
                         });
