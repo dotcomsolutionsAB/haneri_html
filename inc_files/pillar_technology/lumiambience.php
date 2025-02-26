@@ -42,11 +42,11 @@
                     </li>
                     <li>
                         <span class="highlight_p">Integrated Control</span>
-                    Seamlessly manage lighting modes, brightness levels, and fan settings with Haneri’s advanced remote systems, including S.C.A.N Technology.</li>
+                    Seamlessly manage lighting modes, brightness levels, and fan settings with Haneri’s advanced remote systems, including S.C.A.N Technology.
                     </li>
                 <li>
                     <span class="highlight_p">Energy-Efficient LED System</span>
-                    LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.</li>
+                    LumiAmbience LED lights are designed for maximum efficiency, consuming significantly less power while delivering superior brightness and longevity.
                     </li>
                 </ul>
             </div>
@@ -65,25 +65,24 @@
             <div class="points">
             <ul class="ulclass">
             <li>
-                <span class="highlight_p">Advanced LED Engineering
+                <span class="highlight_p">Advanced LED Engineering</span>
                     LumiAmbience LEDs are crafted to produce precise colour temperatures, ensuring true-to-life illumination for each mode.
                     High-quality diodes enhance durability and reduce power consumption, aligning with energy-saving standards.
+                </li>
+                    <li>
+                        <span class="highlight_p">Proprietary Lens Diffuser Technology</span>
+                    The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.
+                    Optical-grade materials ensure consistent performance and long-term clarity.
                     </li>
-                    <li><span class="highlight_p">Proprietary Lens Diffuser Technology:</li>
-                    The lens diffuser evenly distributes light, eliminating glare and harsh points of illumination.</li>
-                    Optical-grade materials ensure consistent performance and long-term clarity.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Precision Circuitry:</h4>
-                <ul class="ulclass">
-                    <li>Intelligent LED drivers enable smooth transitions between colour modes and brightness levels, offering users unparalleled control and customization.</li>
-                </ul>
-
-                <h4 class="heading4 primary">Energy Optimization:</h4>
-                <ul class="ulclass">
-                    <li>Advanced power management minimizes energy wastage, ensuring high brightness with low power consumption.</li>
-                </ul>
-            </div>            
+                    <li>
+                    <span class="highlight_p">Precision Circuitry</span>
+                    Intelligent LED drivers enable smooth transitions between colour modes and brightness levels, offering users unparalleled control and customization.
+                    </li>
+                    <li>
+                    <span class="highlight_p">Energy Optimization</span>
+                    Advanced power management minimizes energy wastage, ensuring high brightness with low power consumption.
+                    </li>
+                </div>            
         </div>
         <div class="brand-image">
             <img src="images/f6.png" alt="Haneri Professional - Industrial Solutions">
