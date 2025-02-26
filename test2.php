@@ -43,147 +43,9 @@
         align-items: center;        
     }
 </style>
-<!-- <style>
-    /* Import a Google Font for a modern look (optional) */
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-
-    /* Wrapper to manage multiple address cards */
-    .address-wrapper {
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 1rem;
-    }
-
-    /* The card container for each address */
-    .address-card {
-    /* max-width: 450px;          Adjust as needed or remove for fluid width */
-    margin: 0 auto;            /* Center card if a fixed width is set */
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Hover effect to lift the card a bit */
-    .address-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-
-    /* Gradient header section */
-    .card-header {
-    background: linear-gradient(135deg, #00473e 0%,rgb(25, 141, 137) 100%);
-    color: #fff;
-    padding: 16px;
-    }
-
-    .card-title {
-        margin: 0;
-        font-size: 1.2rem;
-        font-weight: 500;
-        color:#fff;
-    }
-
-    .card-phone {
-        margin: 4px 0 0;
-        font-size: 1.9rem;
-        color:#fff;
-    }
-
-    /* Body section for address details */
-    .card-body {
-    padding: 16px;
-    line-height: 1.5;
-    }
-
-    .card-body p {
-    margin: 0.5rem 0;
-    }
-
-    /* Footer section for selection or additional actions */
-    .card-footer {
-    background-color: #f9f9f9;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Adjust if more elements are added */
-    }
-
-    /* RADIO INPUT STYLING */
-    /* A container for the radio & custom circle */
-    .radio-container {
-    display: inline-block;
-    position: relative;
-    padding-left: 32px;  /* Space for the custom radio */
-    cursor: pointer;
-    user-select: none;
-    font-size: 0.95rem;
-    }
-
-    /* Hide the default radio visually */
-    .select-radio {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    }
-
-    /* The “fake” radio circle */
-    .custom-radio {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    height: 18px;
-    width: 18px;
-    background-color: #ccc;
-    border-radius: 50%;
-    transition: background 0.2s ease;
-    }
-
-    /* When the radio is checked, change color of the custom circle */
-    .radio-container input:checked ~ .custom-radio {
-    background-color: #478ed1;
-    }
-
-    /* Show an inner dot when checked */
-    .radio-container input:checked ~ .custom-radio::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #fff;
-    }
-
-    /* Optional hover effect on the radio circle */
-    .radio-container:hover .custom-radio {
-    background-color: #b3b3b3;
-    }
-
-</style> -->
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<main class="main main-test checkout_page">
-    <div class="container checkout-container padding_top_100">
-        <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
-            <li>
-                <a href="cart.php">Shopping Cart</a>
-            </li>
-            <li class="active">
-                <a href="checkout.php">Checkout</a>
-            </li>
-            <!-- <li class="disabled"> -->
-            <li class="disabled">
-                <a href="order-complete.php">Order Complete</a>
-            </li>
-        </ul>
-
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <!-- Place this stylesheet in your <head> or a linked CSS file -->
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
@@ -279,357 +141,368 @@
     border-color: transparent !important;
   }
 </style>
+<main class="main main-test checkout_page">
+    <div class="container checkout-container padding_top_100">
+        <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
+            <li>
+                <a href="cart.php">Shopping Cart</a>
+            </li>
+            <li class="active">
+                <a href="checkout.php">Checkout</a>
+            </li>
+            <!-- <li class="disabled"> -->
+            <li class="disabled">
+                <a href="order-complete.php">Order Complete</a>
+            </li>
+        </ul>
+
+        <!-- Your existing jQuery script with minimal changes -->
+        <script>
+            $(document).ready(function () {
+                const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+                const baseUrl = "<?php echo BASE_URL; ?>/address";
+
+                // function fetchAddresses() {
+                //     $.ajax({
+                //         url: baseUrl,
+                //         type: "GET",
+                //         headers: { "Authorization": `Bearer ${authToken}` },
+                //         success: function (response) {
+                //             if (response.data.length > 0) {
+                //                 let addressHTML = "";
+                //                 response.data.forEach((address, index) => {
+                //                     let isChecked = address.is_default ? "checked" : "";
+                //                     addressHTML += `
+                //                         <label class="address-card" for="addressRadio${index}">
+                //                             <div class="card-header">
+                //                                 <h3 class="card-title">${address.name}</h3>
+                //                                 <p class="card-phone">${address.contact_no}</p>
+                //                             </div>
+                //                             <div class="card-body">
+                //                                 <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                //                                 <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                //                                 <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+                //                                 <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                //                                 <input type="hidden" name="is_default" value="${address.is_default}">
+                //                             </div>
+                //                             <div class="card-footer cardf">
+                //                                 <div class="red">
+                //                                     <input
+                //                                     type="radio"
+                //                                     id="addressRadio${index}"
+                //                                     name="address_select"
+                //                                     class="select-radio"
+                //                                     ${isChecked}
+                //                                     >
+                //                                     <span class="footer-label">Select Address</span>
+                //                                 </div>
+                //                                 <div class="btbt">
+                //                                     <!-- Update Button -->
+                //                                     <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
+                //                                         <i class="fas fa-edit"></i> Edit
+                //                                     </button>
+                //                                     <!-- Delete Button -->
+                //                                     <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
+                //                                         <i class="fas fa-trash"></i>
+                //                                     </button>
+                //                                 </div>
+                //                             </div>
+                //                         </label>
+                //                     `;
+                //                 });
+                //                 $("#collapseNew").html(addressHTML).addClass("show");
+                //             } else {
+                //                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                //             }
+                //         },
+                //         error: function () {
+                //             console.error("Error fetching addresses.");
+                //         }
+                //     });
+                // }
+                let addressList = []; // Store addresses in memory
+
+                function fetchAddresses() {
+                    $.ajax({
+                        url: baseUrl,
+                        type: "GET",
+                        headers: { "Authorization": `Bearer ${authToken}` },
+                        success: function (response) {
+                            if (response.data.length > 0) {
+                                addressList = response.data; // Store in memory
+                                let addressHTML = "";
+                                response.data.forEach((address, index) => {
+                                    let isChecked = address.is_default ? "checked" : "";
+                                    addressHTML += `
+                                        <label class="address-card" for="addressRadio${index}">
+                                            <div class="card-header">
+                                                <h3 class="card-title">${address.name}</h3>
+                                                <p class="card-phone">${address.contact_no}</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                                <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+                                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                            </div>
+                                            <div class="card-footer cardf">
+                                                <div class="red">
+                                                    <input
+                                                        type="radio"
+                                                        id="addressRadio${index}"
+                                                        name="address_select"
+                                                        class="select-radio"
+                                                        ${isChecked}
+                                                    >
+                                                    <span class="footer-label">Select Address</span>
+                                                </div>
+                                                <div class="btbt">
+                                                    <!-- Update Button -->
+                                                    <button class="btn btn-primary btn-sm edit-add" onclick="openUpdateModal(${address.id})">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <!-- Delete Button -->
+                                                    <button class="btn btn-danger btn-sm del-add" onclick="deleteAddress(${address.id})">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>                                            
+                                                </div>
+                                            </div>
+                                        </label>
+                                    `;
+                                });
+                                $("#collapseNew").html(addressHTML).addClass("show");
+                            } else {
+                                $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                            }
+                        },
+                        error: function () {
+                            console.error("Error fetching addresses.");
+                        }
+                    });
+                }
 
 
-<!-- Your existing jQuery script with minimal changes -->
-<script>
-    $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-        const baseUrl = "<?php echo BASE_URL; ?>/address";
-
-        // function fetchAddresses() {
-        //     $.ajax({
-        //         url: baseUrl,
-        //         type: "GET",
-        //         headers: { "Authorization": `Bearer ${authToken}` },
-        //         success: function (response) {
-        //             if (response.data.length > 0) {
-        //                 let addressHTML = "";
-        //                 response.data.forEach((address, index) => {
-        //                     let isChecked = address.is_default ? "checked" : "";
-        //                     addressHTML += `
-        //                         <label class="address-card" for="addressRadio${index}">
-        //                             <div class="card-header">
-        //                                 <h3 class="card-title">${address.name}</h3>
-        //                                 <p class="card-phone">${address.contact_no}</p>
-        //                             </div>
-        //                             <div class="card-body">
-        //                                 <p><strong>Address 1:</strong> ${address.address_line1}</p>
-        //                                 <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-        //                                 <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-        //                                 <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-        //                                 <input type="hidden" name="is_default" value="${address.is_default}">
-        //                             </div>
-        //                             <div class="card-footer cardf">
-        //                                 <div class="red">
-        //                                     <input
-        //                                     type="radio"
-        //                                     id="addressRadio${index}"
-        //                                     name="address_select"
-        //                                     class="select-radio"
-        //                                     ${isChecked}
-        //                                     >
-        //                                     <span class="footer-label">Select Address</span>
-        //                                 </div>
-        //                                 <div class="btbt">
-        //                                     <!-- Update Button -->
-        //                                     <button class="btn btn-primary btn-sm" onclick="openUpdateModal(${address.id})">
-        //                                         <i class="fas fa-edit"></i> Edit
-        //                                     </button>
-        //                                     <!-- Delete Button -->
-        //                                     <button class="btn btn-danger btn-sm" onclick="deleteAddress(${address.id})">
-        //                                         <i class="fas fa-trash"></i>
-        //                                     </button>
-        //                                 </div>
-        //                             </div>
-        //                         </label>
-        //                     `;
-        //                 });
-        //                 $("#collapseNew").html(addressHTML).addClass("show");
-        //             } else {
-        //                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
-        //             }
-        //         },
-        //         error: function () {
-        //             console.error("Error fetching addresses.");
-        //         }
-        //     });
-        // }
-        let addressList = []; // Store addresses in memory
-
-        function fetchAddresses() {
-            $.ajax({
-                url: baseUrl,
-                type: "GET",
-                headers: { "Authorization": `Bearer ${authToken}` },
-                success: function (response) {
-                    if (response.data.length > 0) {
-                        addressList = response.data; // Store in memory
-                        let addressHTML = "";
-                        response.data.forEach((address, index) => {
-                            let isChecked = address.is_default ? "checked" : "";
-                            addressHTML += `
-                                <label class="address-card" for="addressRadio${index}">
-                                    <div class="card-header">
-                                        <h3 class="card-title">${address.name}</h3>
-                                        <p class="card-phone">${address.contact_no}</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                        <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                    </div>
-                                    <div class="card-footer cardf">
-                                        <div class="red">
-                                            <input
-                                                type="radio"
-                                                id="addressRadio${index}"
-                                                name="address_select"
-                                                class="select-radio"
-                                                ${isChecked}
-                                            >
-                                            <span class="footer-label">Select Address</span>
-                                        </div>
-                                        <div class="btbt">
-                                            <!-- Update Button -->
-                                            <button class="btn btn-primary btn-sm edit-add" onclick="openUpdateModal(${address.id})">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <!-- Delete Button -->
-                                            <button class="btn btn-danger btn-sm del-add" onclick="deleteAddress(${address.id})">
-                                                <i class="fas fa-trash"></i>
-                                            </button>                                            
-                                        </div>
-                                    </div>
-                                </label>
-                            `;
-                        });
-                        $("#collapseNew").html(addressHTML).addClass("show");
-                    } else {
-                        $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                window.deleteAddress = function (id) { 
+                    if (!confirm("Are you sure you want to delete this address?")) {
+                        return;
                     }
-                },
-                error: function () {
-                    console.error("Error fetching addresses.");
-                }
-            });
-        }
 
+                    $.ajax({
+                        url: `${baseUrl}/${id}`,
+                        type: "DELETE",
+                        headers: { "Authorization": `Bearer ${authToken}` },
+                        success: function (response) {
+                            if (response.message.includes("success")) {
+                                alert("Address deleted successfully.");
+                                fetchAddresses(); // Refresh address list
+                            } else {
+                                alert("Failed to delete address. Please try again.");
+                            }
+                        },
+                        error: function () {
+                            alert("Failed to delete address. Please try again.");
+                        }
+                    });
+                };
 
-        window.deleteAddress = function (id) { 
-            if (!confirm("Are you sure you want to delete this address?")) {
-                return;
-            }
+                fetchAddresses();
 
-            $.ajax({
-                url: `${baseUrl}/${id}`,
-                type: "DELETE",
-                headers: { "Authorization": `Bearer ${authToken}` },
-                success: function (response) {
-                    if (response.message.includes("success")) {
-                        alert("Address deleted successfully.");
-                        fetchAddresses(); // Refresh address list
-                    } else {
-                        alert("Failed to delete address. Please try again.");
+                window.openUpdateModal = function (id) {
+                    let address = addressList.find(addr => addr.id === id); // Get data from memory
+
+                    if (!address) {
+                        alert("Address not found.");
+                        return;
                     }
-                },
-                error: function () {
-                    alert("Failed to delete address. Please try again.");
-                }
-            });
-        };
 
-        fetchAddresses();
+                    $("#update_address_id").val(address.id);
+                    $("#update_name").val(address.name);
+                    $("#update_contact_no").val(address.contact_no);
+                    $("#update_address_line1").val(address.address_line1);
+                    $("#update_address_line2").val(address.address_line2);
+                    $("#update_city").val(address.city);
+                    $("#update_state").val(address.state);
+                    $("#update_postal_code").val(address.postal_code);
+                    $("#update_country").val(address.country);
 
-        window.openUpdateModal = function (id) {
-            let address = addressList.find(addr => addr.id === id); // Get data from memory
-
-            if (!address) {
-                alert("Address not found.");
-                return;
-            }
-
-            $("#update_address_id").val(address.id);
-            $("#update_name").val(address.name);
-            $("#update_contact_no").val(address.contact_no);
-            $("#update_address_line1").val(address.address_line1);
-            $("#update_address_line2").val(address.address_line2);
-            $("#update_city").val(address.city);
-            $("#update_state").val(address.state);
-            $("#update_postal_code").val(address.postal_code);
-            $("#update_country").val(address.country);
-
-            $("#updateAddressModal").modal("show");
-        };
-        $(document).ready(function () {
-            // Close modal when clicking the 'X' button
-            $(".close").click(function () {
-                $("#updateAddressModal").modal("hide");
-            });
-
-            // Close modal when clicking outside the modal (on the backdrop)
-            $(document).on("click", function (event) {
-                if ($(event.target).hasClass("modal")) {
-                    $("#updateAddressModal").modal("hide");
-                }
-            });
-        });
-
-
-        window.updateAddress = function () {
-            let id = $("#update_address_id").val();
-            let updatedData = {
-                name: $("#update_name").val(),
-                contact_no: $("#update_contact_no").val(),
-                address_line1: $("#update_address_line1").val(),
-                address_line2: $("#update_address_line2").val(),
-                city: $("#update_city").val(),
-                state: $("#update_state").val(),
-                postal_code: $("#update_postal_code").val(),
-                country: $("#update_country").val(),
-                is_default: true // Hidden field, always true
-            };
-
-            if (
-                !updatedData.name ||
-                !updatedData.contact_no ||
-                !updatedData.address_line1 ||
-                !updatedData.city ||
-                !updatedData.state ||
-                !updatedData.country ||
-                !updatedData.postal_code
-            ) {
-                alert("Please fill all required fields.");
-                return;
-            }
-
-            $.ajax({
-                url: `${baseUrl}/update/${id}`,
-                type: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Content-Type": "application/json"
-                },
-                data: JSON.stringify(updatedData),
-                success: function (response) {
-                    if (response.message.includes("success")) {
-                        alert("Address updated successfully.");
+                    $("#updateAddressModal").modal("show");
+                };
+                $(document).ready(function () {
+                    // Close modal when clicking the 'X' button
+                    $(".close").click(function () {
                         $("#updateAddressModal").modal("hide");
-                        fetchAddresses(); // Refresh address list
-                    } else {
-                        alert("Failed to update address. Please try again.");
+                    });
+
+                    // Close modal when clicking outside the modal (on the backdrop)
+                    $(document).on("click", function (event) {
+                        if ($(event.target).hasClass("modal")) {
+                            $("#updateAddressModal").modal("hide");
+                        }
+                    });
+                });
+
+
+                window.updateAddress = function () {
+                    let id = $("#update_address_id").val();
+                    let updatedData = {
+                        name: $("#update_name").val(),
+                        contact_no: $("#update_contact_no").val(),
+                        address_line1: $("#update_address_line1").val(),
+                        address_line2: $("#update_address_line2").val(),
+                        city: $("#update_city").val(),
+                        state: $("#update_state").val(),
+                        postal_code: $("#update_postal_code").val(),
+                        country: $("#update_country").val(),
+                        is_default: true // Hidden field, always true
+                    };
+
+                    if (
+                        !updatedData.name ||
+                        !updatedData.contact_no ||
+                        !updatedData.address_line1 ||
+                        !updatedData.city ||
+                        !updatedData.state ||
+                        !updatedData.country ||
+                        !updatedData.postal_code
+                    ) {
+                        alert("Please fill all required fields.");
+                        return;
                     }
-                },
-                error: function () {
-                    alert("Failed to update address. Please try again.");
-                }
-            });
-        };
 
-        // Open modal when link is clicked
-        $("#openAddressModal").click(function (e) {
-            e.preventDefault();
-            $("#addressModal").modal("show");
-        });
+                    $.ajax({
+                        url: `${baseUrl}/update/${id}`,
+                        type: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${authToken}`,
+                            "Content-Type": "application/json"
+                        },
+                        data: JSON.stringify(updatedData),
+                        success: function (response) {
+                            if (response.message.includes("success")) {
+                                alert("Address updated successfully.");
+                                $("#updateAddressModal").modal("hide");
+                                fetchAddresses(); // Refresh address list
+                            } else {
+                                alert("Failed to update address. Please try again.");
+                            }
+                        },
+                        error: function () {
+                            alert("Failed to update address. Please try again.");
+                        }
+                    });
+                };
 
-        $("#addAddressBtn").click(function () {
-            let addressData = {
-                name: $("#name").val(),
-                contact_no: $("#contact_no").val(),
-                address_line1: $("#address_line1").val(),
-                address_line2: $("#address_line2").val(),
-                city: $("#city").val(),
-                state: $("#state").val(),
-                country: $("#country").val(),
-                postal_code: $("#postal_code").val(),
-                is_default: true
-            };
+                // Open modal when link is clicked
+                $("#openAddressModal").click(function (e) {
+                    e.preventDefault();
+                    $("#addressModal").modal("show");
+                });
 
-            if (
-              !addressData.name || 
-              !addressData.contact_no || 
-              !addressData.address_line1 || 
-              !addressData.city || 
-              !addressData.state || 
-              !addressData.country || 
-              !addressData.postal_code
-            ) {
-                alert("Please fill all required fields.");
-                return;
-            }
+                $("#addAddressBtn").click(function () {
+                    let addressData = {
+                        name: $("#name").val(),
+                        contact_no: $("#contact_no").val(),
+                        address_line1: $("#address_line1").val(),
+                        address_line2: $("#address_line2").val(),
+                        city: $("#city").val(),
+                        state: $("#state").val(),
+                        country: $("#country").val(),
+                        postal_code: $("#postal_code").val(),
+                        is_default: true
+                    };
 
-            $.ajax({
-                url: `${baseUrl}/register`,
-                type: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Content-Type": "application/json"
-                },
-                data: JSON.stringify(addressData),
-                success: function (response) {
-                    if (response.message.includes("success")) {
-                        $("#checkout-form")[0].reset(); // Reset form fields
-                        $("#addressModal").modal("hide"); // Close modal
-                        fetchAddresses(); // Refresh address list
-                    } else {
-                        alert("Failed to add address. Please try again.");
+                    if (
+                    !addressData.name || 
+                    !addressData.contact_no || 
+                    !addressData.address_line1 || 
+                    !addressData.city || 
+                    !addressData.state || 
+                    !addressData.country || 
+                    !addressData.postal_code
+                    ) {
+                        alert("Please fill all required fields.");
+                        return;
                     }
-                },
-                error: function () {
-                    alert("Failed to add address. Please try again.");
-                }
-            });
-        });
 
-        // Load addresses on page load
-        fetchAddresses();
-    });
-</script>
-<!-- Update Address Modal -->
-<div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Update Address</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="update_address_id">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" id="update_name">
+                    $.ajax({
+                        url: `${baseUrl}/register`,
+                        type: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${authToken}`,
+                            "Content-Type": "application/json"
+                        },
+                        data: JSON.stringify(addressData),
+                        success: function (response) {
+                            if (response.message.includes("success")) {
+                                $("#checkout-form")[0].reset(); // Reset form fields
+                                $("#addressModal").modal("hide"); // Close modal
+                                fetchAddresses(); // Refresh address list
+                            } else {
+                                alert("Failed to add address. Please try again.");
+                            }
+                        },
+                        error: function () {
+                            alert("Failed to add address. Please try again.");
+                        }
+                    });
+                });
+
+                // Load addresses on page load
+                fetchAddresses();
+            });
+        </script>
+        <!-- Update Address Modal -->
+        <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Update Address</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="update_address_id">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="update_name">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact No</label>
+                            <input type="text" class="form-control" id="update_contact_no">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 1</label>
+                            <input type="text" class="form-control" id="update_address_line1">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 2</label>
+                            <input type="text" class="form-control" id="update_address_line2">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" id="update_city">
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" class="form-control" id="update_state">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" id="update_postal_code">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" id="update_country">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" onclick="updateAddress()">Save Changes</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Contact No</label>
-                    <input type="text" class="form-control" id="update_contact_no">
-                </div>
-                <div class="form-group">
-                    <label>Address Line 1</label>
-                    <input type="text" class="form-control" id="update_address_line1">
-                </div>
-                <div class="form-group">
-                    <label>Address Line 2</label>
-                    <input type="text" class="form-control" id="update_address_line2">
-                </div>
-                <div class="form-group">
-                    <label>City</label>
-                    <input type="text" class="form-control" id="update_city">
-                </div>
-                <div class="form-group">
-                    <label>State</label>
-                    <input type="text" class="form-control" id="update_state">
-                </div>
-                <div class="form-group">
-                    <label>Postal Code</label>
-                    <input type="text" class="form-control" id="update_postal_code">
-                </div>
-                <div class="form-group">
-                    <label>Country</label>
-                    <input type="text" class="form-control" id="update_country">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" onclick="updateAddress()">Save Changes</button>
             </div>
         </div>
-    </div>
-</div>
-
-
 
         <div class="row">
             <div class="col-lg-7">
@@ -647,7 +520,9 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
                                     <div class="modal-body">
                                         <form id="checkout-form" class="check-form">
@@ -699,7 +574,7 @@
                                             </div>
 
                                             <div class="form-group text-end btt">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> -->
                                                 <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
                                             </div>
                                         </form>
