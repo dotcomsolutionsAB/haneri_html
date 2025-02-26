@@ -447,6 +447,19 @@
 
             $("#updateAddressModal").modal("show");
         };
+        $(document).ready(function () {
+            // Close modal when clicking the 'X' button
+            $(".close").click(function () {
+                $("#updateAddressModal").modal("hide");
+            });
+
+            // Close modal when clicking outside the modal (on the backdrop)
+            $(document).on("click", function (event) {
+                if ($(event.target).hasClass("modal")) {
+                    $("#updateAddressModal").modal("hide");
+                }
+            });
+        });
 
 
         window.updateAddress = function () {
@@ -498,8 +511,6 @@
                 }
             });
         };
-
-
 
         // Open modal when link is clicked
         $("#openAddressModal").click(function (e) {
@@ -606,7 +617,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-success" onclick="updateAddress()">Save Changes</button>
             </div>
         </div>
