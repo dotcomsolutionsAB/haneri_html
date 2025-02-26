@@ -165,23 +165,23 @@
 
 </style> -->
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+    /* A clean, modern font (optional) */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
-.address-wrapper {
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 1rem;
-}
-
-/* The card container for each address */
+/* The outer “card” is actually a label */
 .address-card {
-  max-width: 450px;
-  margin: 0 auto; /* Center the card if a fixed width is set */
+  font-family: 'Roboto', sans-serif;
+  max-width: 450px;                /* Adjust or remove for fluid width */
+  margin: 1rem auto;               /* Center it with a little vertical space */
+  display: block;                  /* Label can wrap block elements in HTML5 */
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;                 /* Show pointer to indicate it's clickable */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Show pointer to indicate clickability */
+  text-decoration: none;           /* Remove any default label underlines */
+  color: inherit;                  /* Ensure text inherits normal color */
 }
 
 .address-card:hover {
@@ -217,66 +217,27 @@
   margin: 0.5rem 0;
 }
 
-/* Footer section for the radio button or any extra controls */
+/* Footer section for radio input or extra controls */
 .card-footer {
   background-color: #f9f9f9;
   padding: 12px 16px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  gap: 8px;   /* Space between radio and text */
 }
 
-/* RADIO INPUT STYLING */
-.radio-container {
-  display: inline-block;
-  position: relative;
-  padding-left: 32px;  /* Space for the custom radio */
+/* Hide the default radio visually (optional) or style differently */
+.select-radio {
+  width: 18px;
+  height: 18px;
+  accent-color: #478ed1;   /* Modern browsers can style the radio color */
   cursor: pointer;
-  user-select: none;
+}
+
+.footer-label {
   font-size: 0.95rem;
 }
 
-/* Hide the default radio visually */
-.select-radio {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* The “fake” radio circle */
-.custom-radio {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 18px;
-  width: 18px;
-  background-color: #ccc;
-  border-radius: 50%;
-  transition: background 0.2s ease;
-}
-
-/* When the radio is checked, change color of the custom circle */
-.radio-container input:checked ~ .custom-radio {
-  background-color: #478ed1;
-}
-
-/* Show an inner dot when checked */
-.radio-container input:checked ~ .custom-radio::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-}
-
-/* Optional hover effect on the radio circle */
-.radio-container:hover .custom-radio {
-  background-color: #b3b3b3;
-}
 
 </style>
 <script>
@@ -329,27 +290,35 @@
                         response.data.forEach(address => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <div class="address-wrapper">
-                                    <div class="address-card">
-                                        <label class="address-card" for="addressRadio${address.id}">
-                                            <div class="card-header">
-                                                <h3 class="card-title">${address.name}</h3>
-                                                <p class="card-phone">${address.contact_no}</p>
-                                            </div>
-                                            <div class="card-body">
-                                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                                <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-                                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                                <input type="hidden" name="is_default" value="${address.is_default}">
-                                            </div>
-                                            <div class="card-footer">
-                                                <input type="radio" name="address_select" class="select-radio" ${isChecked} />
-                                                <span class="custom-radio"></span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
+                                <label class="address-card" for="addressRadio${address.id}">
+  <!-- Card Header with gradient background -->
+  <div class="card-header">
+    <h3 class="card-title">${address.name}</h3>
+    <p class="card-phone">${address.contact_no}</p>
+  </div>
+
+  <!-- Card Body for address lines -->
+  <div class="card-body">
+    <p><strong>Address 1:</strong> ${address.address_line1}</p>
+    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+    <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+    <input type="hidden" name="is_default" value="${address.is_default}">
+  </div>
+
+  <!-- Card Footer: includes the radio input -->
+  <div class="card-footer">
+    <input 
+      type="radio" 
+      id="addressRadio${address.id}" 
+      name="address_select"
+      class="select-radio"
+      ${isChecked}
+    >
+    <span class="footer-label">Select Address</span>
+  </div>
+</label>
+
                             `;
                         });
                         $("#collapseNew").html(addressHTML).addClass("show");
