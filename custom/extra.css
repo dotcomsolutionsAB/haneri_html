@@ -680,6 +680,7 @@ footer a {
     min-height: 370px;         /* to ensure a bit of uniform height */
     background-color: #f6f6f6;
     border: 1px solid #74787c30;
+    padding: 10px;
 }
 .custom-box:hover {
     border: 1px solid rgb(45, 142, 142);
