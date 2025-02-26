@@ -255,13 +255,24 @@
   .footer-label {
     font-size: 0.95rem;
   }
+    /* Remove icon styling */
+    .remove-address-icon {
+        margin-left: auto; /* push trash icon to the far right */
+        color: #c00;
+        cursor: pointer;
+    }
+    
+    /* Optional hover color for the trash icon */
+    .remove-address-icon:hover {
+        color: #a00;
+    }
 </style>
 
 
 <!-- Your existing jQuery script with minimal changes -->
 <script>
     $(document).ready(function () {
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+        const authToken = localStorage.getItem('auth_token'); // Replace with your actual token
         const baseUrl = "<?php echo BASE_URL; ?>/address";
 
         function fetchAddresses() {
@@ -270,17 +281,13 @@
                 type: "GET",
                 headers: { "Authorization": `Bearer ${authToken}` },
                 success: function (response) {
-                    if (response.data.length > 0) {
+                    if (response.data && response.data.length > 0) {
                         let addressHTML = "";
-                        // Use .forEach((address, index) => ...)
                         response.data.forEach((address, index) => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <!-- 
-                                  Replace the outer <div> with <label> 
-                                  for="addressRadio${index}" to tie the label to the radio
-                                -->
-                                <label class="address-card" for="addressRadio${index}">
+                                <!-- Wrap entire card in a label for click-to-select -->
+                                <label class="address-card" for="addressRadio${address.id}">
                                     <div class="card-header">
                                         <h3 class="card-title">${address.name}</h3>
                                         <p class="card-phone">${address.contact_no}</p>
@@ -293,15 +300,20 @@
                                         <input type="hidden" name="is_default" value="${address.is_default}">
                                     </div>
                                     <div class="card-footer">
-                                        <!-- Attach a unique ID to the radio -->
+                                        <!-- Radio to select this address -->
                                         <input
                                             type="radio"
-                                            id="addressRadio${index}"
+                                            id="addressRadio${address.id}"
                                             name="address_select"
                                             class="select-radio"
                                             ${isChecked}
-                                        >
+                                        />
                                         <span class="footer-label">Select Address</span>
+                                        
+                                        <!-- Trash icon for removing the address -->
+                                        <i class="fa fa-trash remove-address-icon"
+                                           data-id="${address.id}"
+                                           title="Remove Address"></i>
                                     </div>
                                 </label>
                             `;
@@ -317,12 +329,31 @@
             });
         }
 
-        // Open modal when link is clicked
-        $("#openAddressModal").click(function (e) {
-            e.preventDefault();
-            $("#addressModal").modal("show");
+        // =========== Handle Remove Address ===========
+        // We attach event to the document so new icons are also bound
+        $(document).on('click', '.remove-address-icon', function(event) {
+            event.stopPropagation(); // Prevent radio button from being selected
+
+            let addressId = $(this).data('id');
+            if(!confirm("Are you sure you want to delete this address?")) {
+                return;
+            }
+            // Send DELETE request
+            $.ajax({
+                url: baseUrl + "/" + addressId,
+                type: "DELETE",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    // Refresh address list on success or show a message
+                    fetchAddresses();
+                },
+                error: function () {
+                    alert("Failed to delete address. Please try again.");
+                }
+            });
         });
 
+        // =========== Add Address ===========
         $("#addAddressBtn").click(function () {
             let addressData = {
                 name: $("#name").val(),
@@ -336,6 +367,7 @@
                 is_default: true
             };
 
+            // Simple validation
             if (
               !addressData.name || 
               !addressData.contact_no || 
@@ -358,10 +390,10 @@
                 },
                 data: JSON.stringify(addressData),
                 success: function (response) {
-                    if (response.message.includes("success")) {
-                        $("#checkout-form")[0].reset(); // Reset form fields
-                        $("#addressModal").modal("hide"); // Close modal
-                        fetchAddresses(); // Refresh address list
+                    if (response.message && response.message.includes("success")) {
+                        $("#checkout-form")[0].reset();
+                        $("#addressModal").modal("hide");
+                        fetchAddresses(); // Refresh addresses
                     } else {
                         alert("Failed to add address. Please try again.");
                     }
@@ -372,7 +404,13 @@
             });
         });
 
-        // Load addresses on page load
+        // =========== Modal Trigger ===========
+        $("#openAddressModal").click(function (e) {
+            e.preventDefault();
+            $("#addressModal").modal("show");
+        });
+
+        // =========== Fetch on Page Load ===========
         fetchAddresses();
     });
 </script>
