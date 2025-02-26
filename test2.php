@@ -226,7 +226,7 @@
     </main><!-- End .main -->
 <?php include("footer.php"); ?>
 
-<style>
+<!-- <style>
  .blog-item{
     min-height: 580px;
     display: flex;
@@ -283,4 +283,4 @@
     align-items: center;
     padding: 10px;
  }
-</style>
+</style> -->
