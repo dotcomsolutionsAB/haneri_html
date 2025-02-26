@@ -275,9 +275,9 @@
   }
 
   .edit-add{
-    color: blue;
-    background-color: transparent;
-    border-color: transparent;
+    color: blue !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
   }
 </style>
 
