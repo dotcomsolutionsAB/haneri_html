@@ -164,96 +164,6 @@
     }
 
 </style> -->
-<style>
-    /* A clean, modern font (optional) */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-
-/* The outer “card” is actually a label */
-.address-card {
-  font-family: 'Roboto', sans-serif;
-  max-width: 450px;                /* Adjust or remove for fluid width */
-  margin: 1rem auto;               /* Center it with a little vertical space */
-  display: block;                  /* Label can wrap block elements in HTML5 */
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  cursor: pointer;                 /* Show pointer to indicate it's clickable */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;           /* Remove any default label underlines */
-  color: inherit;                  /* Ensure text inherits normal color */
-}
-
-.address-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-/* Gradient header section */
-.card-header {
-  background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
-  color: #fff;
-  padding: 16px;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.card-phone {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-}
-
-/* Body section for address details */
-.card-body {
-  padding: 16px;
-  line-height: 1.5;
-}
-
-.card-body p {
-  margin: 0.5rem 0;
-}
-
-/* Footer section for radio input or extra controls */
-.card-footer {
-  background-color: #f9f9f9;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;   /* Space between radio and text */
-}
-
-/* Hide the default radio visually (optional) or style differently */
-.select-radio {
-  width: 18px;
-  height: 18px;
-  accent-color: #478ed1;   /* Modern browsers can style the radio color */
-  cursor: pointer;
-}
-
-.footer-label {
-  font-size: 0.95rem;
-}
-
-
-</style>
-<script>
-    // This script will enable "clicking anywhere on the card" to check the radio button.
-    document.querySelectorAll('.address-card').forEach(card => {
-    card.addEventListener('click', event => {
-        // Find the radio inside this card
-        const radio = card.querySelector('.select-radio');
-        if (radio) {
-        // Check the radio button
-        radio.checked = true;
-        }
-    });
-    });
-
-</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <main class="main main-test checkout_page">
@@ -274,6 +184,81 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Place this stylesheet in your <head> or a linked CSS file -->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+  .address-card {
+    /* Now it's a label, so display block and make it look like a card */
+    font-family: 'Roboto', sans-serif;
+    max-width: 450px;
+    margin: 1rem auto;               /* Center the card with a bit of spacing */
+    display: block;                  /* Ensures the label can wrap block elements */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;                 /* Pointer to show it's clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;           /* Remove any text decoration from label */
+    color: inherit;                  /* Inherit normal text color */
+  }
+
+  .address-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+
+  /* Gradient header section */
+  .card-header {
+    background: linear-gradient(135deg, #42a5f5 0%, #478ed1 100%);
+    color: #fff;
+    padding: 16px;
+  }
+
+  .card-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .card-phone {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+  }
+
+  /* Body section for address details */
+  .card-body {
+    padding: 16px;
+    line-height: 1.5;
+  }
+  .card-body p {
+    margin: 0.5rem 0;
+  }
+
+  /* Footer section for the radio input or extra controls */
+  .card-footer {
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;   /* Space between radio and text */
+  }
+
+  /* Radio styling (optional enhancements) */
+  .select-radio {
+    width: 18px;
+    height: 18px;
+    accent-color: #478ed1; /* Modern browsers color the radio */
+    cursor: pointer;       
+  }
+  .footer-label {
+    font-size: 0.95rem;
+  }
+</style>
+
+
+<!-- Your existing jQuery script with minimal changes -->
 <script>
     $(document).ready(function () {
         const authToken = localStorage.getItem('auth_token'); // Replace with actual token
@@ -287,38 +272,38 @@
                 success: function (response) {
                     if (response.data.length > 0) {
                         let addressHTML = "";
-                        response.data.forEach(address => {
+                        // Use .forEach((address, index) => ...)
+                        response.data.forEach((address, index) => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <label class="address-card" for="addressRadio${address.id}">
-  <!-- Card Header with gradient background -->
-  <div class="card-header">
-    <h3 class="card-title">${address.name}</h3>
-    <p class="card-phone">${address.contact_no}</p>
-  </div>
-
-  <!-- Card Body for address lines -->
-  <div class="card-body">
-    <p><strong>Address 1:</strong> ${address.address_line1}</p>
-    <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-    <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-    <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-    <input type="hidden" name="is_default" value="${address.is_default}">
-  </div>
-
-  <!-- Card Footer: includes the radio input -->
-  <div class="card-footer">
-    <input 
-      type="radio" 
-      id="addressRadio${address.id}" 
-      name="address_select"
-      class="select-radio"
-      ${isChecked}
-    >
-    <span class="footer-label">Select Address</span>
-  </div>
-</label>
-
+                                <!-- 
+                                  Replace the outer <div> with <label> 
+                                  for="addressRadio${index}" to tie the label to the radio
+                                -->
+                                <label class="address-card" for="addressRadio${index}">
+                                    <div class="card-header">
+                                        <h3 class="card-title">${address.name}</h3>
+                                        <p class="card-phone">${address.contact_no}</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Address 1:</strong> ${address.address_line1}</p>
+                                        <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
+                                        <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
+                                        <p><strong>Postal Code:</strong> ${address.postal_code}</p>
+                                        <input type="hidden" name="is_default" value="${address.is_default}">
+                                    </div>
+                                    <div class="card-footer">
+                                        <!-- Attach a unique ID to the radio -->
+                                        <input
+                                            type="radio"
+                                            id="addressRadio${index}"
+                                            name="address_select"
+                                            class="select-radio"
+                                            ${isChecked}
+                                        >
+                                        <span class="footer-label">Select Address</span>
+                                    </div>
+                                </label>
                             `;
                         });
                         $("#collapseNew").html(addressHTML).addClass("show");
@@ -351,7 +336,15 @@
                 is_default: true
             };
 
-            if (!addressData.name || !addressData.contact_no || !addressData.address_line1 || !addressData.city || !addressData.state || !addressData.country || !addressData.postal_code) {
+            if (
+              !addressData.name || 
+              !addressData.contact_no || 
+              !addressData.address_line1 || 
+              !addressData.city || 
+              !addressData.state || 
+              !addressData.country || 
+              !addressData.postal_code
+            ) {
                 alert("Please fill all required fields.");
                 return;
             }
@@ -359,7 +352,10 @@
             $.ajax({
                 url: "<?php echo BASE_URL; ?>/address/register",
                 type: "POST",
-                headers: { "Authorization": `Bearer ${authToken}`, "Content-Type": "application/json" },
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Content-Type": "application/json"
+                },
                 data: JSON.stringify(addressData),
                 success: function (response) {
                     if (response.message.includes("success")) {
@@ -376,9 +372,11 @@
             });
         });
 
-        fetchAddresses(); // Load addresses on page load
+        // Load addresses on page load
+        fetchAddresses();
     });
 </script>
+
 
         <div class="row">
             <div class="col-lg-7">
