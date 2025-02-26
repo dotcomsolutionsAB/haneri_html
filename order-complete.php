@@ -1,21 +1,13 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<style>
-    .left-head{
-        width:200px;
-    }
-    .j-center{
-        justify-content:center;
-    }
-</style>
+
 <?php
-    $order_id = $_GET['order_id'] ?? 'N/A';
-    $total_amount = $_GET['total_amount'] ?? 'N/A';
-    $shipping_address = $_GET['shipping_address'] ?? 'N/A';
-    $payment_id = $_GET['payment_id'] ?? 'N/A';
-    $name = $_GET['name'] ?? 'N/A';
-    $email = $_GET['email'] ?? 'N/A';
-    $phone = $_GET['phone'] ?? 'N/A';
+$order_id = $_GET['order_id'] ?? 'N/A';
+$total_amount = $_GET['total_amount'] ?? 'N/A';
+$shipping_address = $_GET['shipping_address'] ?? 'N/A';
+$payment_id = $_GET['payment_id'] ?? 'N/A';
+$user_id = $_GET['user_id'] ?? 'N/A';
+$product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['product_stats']), true) : [];
 ?>
 
 <main class="main main-test checkout_page">
@@ -32,42 +24,52 @@
             <p class="lead animate__animated animate__fadeInUp"><strong>Payment ID:</strong> <?= $payment_id ?></p>
         </div>
 
-        <div class="row mt-5 d-flex align-items-stretch j-center">
-            <div class="col-lg-8">
+        <div class="row mt-5 d-flex align-items-stretch">
+            <div class="col-lg-6">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
                     <h3 class="border-bottom pb-2 mb-3">Order Details</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th class="text-left">#<?= $order_id ?></th>
+                                <th class="text-right">#<?= $order_id ?></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="left-head"><strong>Total Amount</strong></td>
-                                <td class="text-left">₹<?= $total_amount ?></td>
+                                <td><strong>Total Amount</strong></td>
+                                <td class="text-right">₹<?= $total_amount ?></td>
                             </tr>
                             <tr>
-                                <td class="left-head"><strong>Shipping Address</strong></td>
-                                <td class="text-left"><?= urldecode($shipping_address) ?></td>
+                                <td><strong>Shipping Address</strong></td>
+                                <td class="text-right"><?= urldecode($shipping_address) ?></td>
                             </tr>
                             <tr>
-                                <td class="left-head"><strong>Payment ID</strong></td>
-                                <td class="text-left"><?= $payment_id ?></td>
+                                <td><strong>Payment ID</strong></td>
+                                <td class="text-right"><?= $payment_id ?></td>
                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
+                    <h3 class="border-bottom pb-2 mb-3">Product Stats</h3>
+                    <table class="table table-striped">
+                        <thead>
                             <tr>
-                                <td class="left-head"><strong>Customer Name</strong></td>
-                                <td class="text-left"><?= urldecode($name) ?></td>
+                                <th>Product Name</th>
+                                <th>Total Quantity</th>
                             </tr>
-                            <tr>
-                                <td class="left-head"><strong>Email</strong></td>
-                                <td class="text-left"><?= urldecode($email) ?></td>
-                            </tr>
-                            <tr>
-                                <td class="left-head"><strong>Phone</strong></td>
-                                <td class="text-left"><?= $phone ?></td>
-                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($product_stats as $product) { ?>
+                                <tr>
+                                    <td><?= $product['product_name'] ?></td>
+                                    <td class="text-right"><?= $product['total_quantity'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

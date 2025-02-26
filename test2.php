@@ -690,9 +690,10 @@
                                     let userName = orderDetails.name;
                                     let userEmail = orderDetails.email;
                                     let userPhone = orderDetails.phone;
+                                    let userId = orderDetails.user_id;
 
                                     // Open Razorpay Payment Popup
-                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
+                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
                                 } else {
                                     alert("Failed to place order. Please try again.");
                                 }
@@ -703,7 +704,7 @@
                         });
                     });
 
-                    function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
+                    function openRazorpayPopup(order_id, amount, orderId, userId, name, email, phone, shippingAddress) {
                         var options = {
                             "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
                             "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
@@ -715,8 +716,8 @@
                             "handler": function(response) {
                                 alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
 
-                                // Redirect to order complete page with payment ID and order details
-                                window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
+                                // Send payment details to backend API
+                                processPayment(response.razorpay_payment_id, orderId, order_id, amount, userId, shippingAddress);
                             },
                             "prefill": {
                                 "name": name,
@@ -730,6 +731,42 @@
 
                         var rzp = new Razorpay(options);
                         rzp.open();
+                    }
+
+                    function processPayment(paymentId, orderId, razorpayOrderId, amount, userId, shippingAddress) {
+                        let paymentData = {
+                            "method": "upi",
+                            "razorpay_payment_id": paymentId,
+                            "amount": amount,
+                            "status": "pending",
+                            "order_id": orderId,
+                            "razorpay_order_id": razorpayOrderId,
+                            "user_id": userId
+                        };
+
+                        $.ajax({
+                            url: `{{base_url}}/payments`,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(paymentData),
+                            success: function (response) {
+                                if (response.message.includes("success")) {
+                                    let paymentDetails = response.data;
+                                    let productStats = JSON.stringify(response.product_stats);
+
+                                    // Redirect to order complete page with payment details
+                                    window.location.href = `order-complete.php?order_id=${paymentDetails.order_id}&total_amount=${paymentDetails.amount}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&payment_id=${paymentDetails.razorpay_payment_id}&user_id=${paymentDetails.user}&product_stats=${encodeURIComponent(productStats)}`;
+                                } else {
+                                    alert("Payment processing failed. Please contact support.");
+                                }
+                            },
+                            error: function () {
+                                alert("Payment processing failed. Please contact support.");
+                            }
+                        });
                     }
 
                     fetchCartItems(); // Load cart items on page load
