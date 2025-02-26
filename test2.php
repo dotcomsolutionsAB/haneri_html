@@ -31,24 +31,24 @@
         gap: 10px;
     }
     .inp{
-        height: 40px;
-        border-radius: 10px;
+        height: 40px !important;
+        border-radius: 10px !important;
     }
     .labl{
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
     .modal-content{
         border-radius: 15px !important;
-        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35);
-        margin-top: 90px;
+        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35) !important;
+        margin-top: 90px !important;
     }
     .form-group{
         margin-bottom: 0.7rem;
     }
     .dft{
-        padding: 0.5em 1em;
-        border-radius: 10px;
-        background: #0b4c44e6;
+        padding: 0.5em 1em !important;
+        border-radius: 10px !important;
+        background: #0b4c44e6 !important;
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -447,7 +447,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" onclick="updateAddress()">Save Changes</button>
+                        <button type="button" class="btn btn-success dft" onclick="updateAddress()">Save Changes</button>
                     </div>
                 </div>
             </div>
