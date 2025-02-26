@@ -273,14 +273,9 @@
                 success: function (response) {
                     if (response.data.length > 0) {
                         let addressHTML = "";
-                        // Use .forEach((address, index) => ...)
                         response.data.forEach((address, index) => {
                             let isChecked = address.is_default ? "checked" : "";
                             addressHTML += `
-                                <!-- 
-                                  Replace the outer <div> with <label> 
-                                  for="addressRadio${index}" to tie the label to the radio
-                                -->
                                 <label class="address-card" for="addressRadio${index}">
                                     <div class="card-header">
                                         <h3 class="card-title">${address.name}</h3>
@@ -294,7 +289,6 @@
                                         <input type="hidden" name="is_default" value="${address.is_default}">
                                     </div>
                                     <div class="card-footer">
-                                        <!-- Attach a unique ID to the radio -->
                                         <input
                                             type="radio"
                                             id="addressRadio${index}"
@@ -303,6 +297,10 @@
                                             ${isChecked}
                                         >
                                         <span class="footer-label">Select Address</span>
+                                        <!-- Delete Button -->
+                                        <button type="button" class="delete-btn" onclick="deleteAddress(${address.id})">
+                                            Delete
+                                        </button>
                                     </div>
                                 </label>
                             `;
@@ -314,6 +312,29 @@
                 },
                 error: function () {
                     console.error("Error fetching addresses.");
+                }
+            });
+        }
+
+        function deleteAddress(id) {
+            if (!confirm("Are you sure you want to delete this address?")) {
+                return;
+            }
+            
+            $.ajax({
+                url: `${baseUrl}/${id}`,
+                type: "DELETE",
+                headers: { "Authorization": `Bearer ${authToken}` },
+                success: function (response) {
+                    if (response.message.includes("success")) {
+                        alert("Address deleted successfully.");
+                        fetchAddresses(); // Refresh address list
+                    } else {
+                        alert("Failed to delete address. Please try again.");
+                    }
+                },
+                error: function () {
+                    alert("Failed to delete address. Please try again.");
                 }
             });
         }
@@ -351,7 +372,7 @@
             }
 
             $.ajax({
-                url: "<?php echo BASE_URL; ?>/address/register",
+                url: `${baseUrl}/register`,
                 type: "POST",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
@@ -377,6 +398,7 @@
         fetchAddresses();
     });
 </script>
+
 
 
         <div class="row">
