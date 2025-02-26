@@ -232,6 +232,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    background:rgb(0 0 0 / 15%);
  } 
  .read-more-button{
     border-radius: 10px;
