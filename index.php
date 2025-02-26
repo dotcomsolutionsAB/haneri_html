@@ -172,8 +172,9 @@
             </div>
         </div>
 
-        <?php include("inc_files/index_blogs.php"); ?>
-            </section>
+        <!-- Blogs Section -->
+        <div class="container">
+            <?php include("inc_files/index_blogs.php"); ?>
         </div>
     </main><!-- End .main -->
 <?php include("footer.php"); ?>
