@@ -1,844 +1,297 @@
 <?php include("header.php"); ?>
-<?php include("configs/config.php"); ?> 
-<style>
-    .vvv{
-        display:flex;
-        justify-content:end;
-    }
-    .check-form{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-    }
-    .check-form .in{
-        width:300px !important;
-        margin-bottom: 0.7rem !important;
-    }
-    .btt{
-        width: 615px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;        
-    }
-    .show{
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
-        gap:10px;
-    }
-    .custom-modal{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .inp{
-        height: 40px !important;
-        border-radius: 10px !important;
-    }
-    .labl{
-        font-size: 1.2rem !important;
-    }
-    .modal-content{
-        border-radius: 15px !important;
-        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35) !important;
-        margin-top: 90px !important;
-    }
-    .form-group{
-        margin-bottom: 0.7rem;
-    }
-    .dft{
-        padding: 0.5em 1em !important;
-        border-radius: 10px !important;
-        background: #0b4c44e6 !important;
-    }
-</style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Place this stylesheet in your <head> or a linked CSS file -->
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+    <!-- Category section  -->
+    <main class="main">
+        <!-- Slider section -->
+        <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+            <div class="home-slide home-slide1 banner d-flex align-items-center">
+                <img class="slide-bg" src="images/Slider1.jpg"
+                    style="background-color: #ecc;" alt="home banner">
+                <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
+                    <h1><strong>A true</strong><br><span> revolution</span></h1>
+                    <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Shop Now</a>
+                </div><!-- End .banner-layer -->
+            </div><!-- End .home-slide -->
+        </div><!-- End .home-slider -->
+        
+        <div class="container">
+            <!-- Featured Products section -->
+            <section class="heading_1">
+                <h2 class="heading_1">Featured Products</h2>
+                <div class="product-grid">
+                    <?php 
+                    $products = [
+                        ["src" => "images/f1.png", "alt" => "Black Fan"],
+                        ["src" => "images/f2.png", "alt" => "Wooden Fan"],
+                        ["src" => "images/f3.png", "alt" => "White Fan"],
+                        ["src" => "images/f4.png", "alt" => "Black Fan 2"]
+                    ];
+                    foreach ($products as $product) {
+                        echo "<div class='product'>
+                                <a href='#'><img src='{$product['src']}' alt='{$product['alt']}'></a>
+                              </div>";
+                    }
+                    ?>
+                </div>
+            </section>
 
-  .address-card {
-    /* Now it's a label, so display block and make it look like a card */
-    font-family: 'Roboto', sans-serif;
-    min-width: 400px;
-    margin: 1rem auto;               /* Center the card with a bit of spacing */
-    display: block;                  /* Ensures the label can wrap block elements */
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;                 /* Pointer to show it's clickable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;           /* Remove any text decoration from label */
-    color: inherit;                  /* Inherit normal text color */
-  }
+            <!-- About Haneri section -->
+            <section class="about-haneri">
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Replace this placeholder with the actual image -->
+                        <img src="images/about13.jpg" alt="Haneri Image">
+                    </div>
+                    <div class="about-text">
+                        <div class="q_head">
+                            <h3>What is</h3>
+                            <p><span>HANERI?</span></p>
+                        </div>                    
+                        <div class="q_answer">
+                            <p>
+                                Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry.
+                                With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand
+                                that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire
+                                everyday life by offering thoughtfully designed, functional, and future-ready solutions.
+                            </p>
+                            <p>
+                                Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations
+                                of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with
+                                evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your
+                                needs, including home, office, and commercial spaces.
+                            </p>
+                            <button class="btn-know-more">KNOW MORE</button>
+                        </div>                    
+                    </div>
+                </div>
+            </section>
 
-  .address-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  }
+            <!-- Why Choose Us section -->
+            <section class="why-choose-us">
+                <div class="icons-container">
+                    <div class="icon-item">
+                        <img src="images/Logo1.png" alt="Quality">
+                    </div>
+                    <div class="icon-item">
+                        <img src="images/Logo2.png" alt="Innovation">
+                    </div>
+                    <div class="icon-item">
+                        <img src="images/Logo3.png" alt="Customer Focus">
+                    </div>
+                </div>
+            </section>
+        </div>
 
-  /* Gradient header section */
-  .card-header {
-    background:#315858 !important;
-    color: #fff;
-    padding: 16px;
-  }
-
-  .card-title {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color:#fff;
-  }
-
-  .card-phone {
-    margin: 4px 0 0;
-    font-size: 1.9rem;
-    color:#fff;
-  }
-
-  /* Body section for address details */
-  .card-body {
-    padding: 16px;
-    line-height: 1.5;
-  }
-  .card-body p {
-    margin: 0.5rem 0;
-  }
-
-  /* Footer section for the radio input or extra controls */
-  .card-footer {
-    background-color: #f9f9f9;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;   /* Space between radio and text */
-  }
-
-  /* Radio styling (optional enhancements) */
-  .select-radio {
-    width: 18px;
-    height: 18px;
-    accent-color: #478ed1; /* Modern browsers color the radio */
-    cursor: pointer;       
-  }
-  .footer-label {
-    font-size: 0.95rem;
-  }
-  .red{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .cardf{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .del-add{
-    color: #ff0e00;
-    background-color: transparent;
-    border-color: transparent;
-  }
-
-  .edit-add{
-    color: blue !important;
-    background-color: transparent !important;
-    border-color: transparent !important;
-  }
-</style>
-<main class="main main-test checkout_page">
-    <div class="container checkout-container padding_top_100">
-        <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
-            <li>
-                <a href="cart.php">Shopping Cart</a>
-            </li>
-            <li class="active">
-                <a href="checkout.php">Checkout</a>
-            </li>
-            <!-- <li class="disabled"> -->
-            <li class="disabled">
-                <a href="order-complete.php">Order Complete</a>
-            </li>
-        </ul>
-
-        <!-- Your existing jQuery script with minimal changes -->
-        <script>
-            $(document).ready(function () {
-                const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-                const baseUrl = "<?php echo BASE_URL; ?>/address";
-                let addressList = []; // Store addresses in memory
-
-                function fetchAddresses() {
-                    $.ajax({
-                        url: baseUrl,
-                        type: "GET",
-                        headers: { "Authorization": `Bearer ${authToken}` },
-                        success: function (response) {
-                            if (response.data.length > 0) {
-                                addressList = response.data; // Store in memory
-                                let addressHTML = "";
-                                response.data.forEach((address, index) => {
-                                    let isChecked = address.is_default ? "checked" : "";
-                                    addressHTML += `
-                                        <label class="address-card" for="addressRadio${index}">
-                                            <div class="card-header">
-                                                <h3 class="card-title">${address.name}</h3>
-                                                <p class="card-phone">${address.contact_no}</p>
-                                            </div>
-                                            <div class="card-body">
-                                                <p><strong>Address 1:</strong> ${address.address_line1}</p>
-                                                <p><strong>Address 2:</strong> ${address.address_line2 || "N/A"}</p>
-                                                <p><strong>Location:</strong> ${address.country}, ${address.state}, ${address.city}</p>
-                                                <p><strong>Postal Code:</strong> ${address.postal_code}</p>
-                                            </div>
-                                            <div class="card-footer cardf">
-                                                <div class="red">
-                                                    <input
-                                                        type="radio"
-                                                        id="addressRadio${index}"
-                                                        name="address_select"
-                                                        class="select-radio"
-                                                        ${isChecked}
-                                                    >
-                                                    <span class="footer-label">Select Address</span>
-                                                </div>
-                                                <div class="btbt">
-                                                    <!-- Update Button -->
-                                                    <button class="btn btn-primary btn-sm edit-add" onclick="openUpdateModal(${address.id})">
-                                                        <i class="fas fa-edit"></i>
-                                                    </button>
-                                                    <!-- Delete Button -->
-                                                    <button class="btn btn-danger btn-sm del-add" onclick="deleteAddress(${address.id})">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>                                            
-                                                </div>
-                                            </div>
-                                        </label>
-                                    `;
-                                });
-                                $("#collapseNew").html(addressHTML).addClass("show");
-                            } else {
-                                $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
-                            }
-                        },
-                        error: function () {
-                            console.error("Error fetching addresses.");
-                        }
-                    });
+        <section class="container pb-3 mb-1">
+            <h2 class="heading_1">Best Sellers</h2>
+            <div class="row py-4">
+                <?php 
+                $best_sellers = [
+                    ["src" => "images/f5.png", "alt" => "Product 1"],
+                    ["src" => "images/f6.png", "alt" => "Product 2"],
+                    ["src" => "images/f13.png", "alt" => "Product 3"],
+                    ["src" => "images/f8.png", "alt" => "Product 4"],
+                    ["src" => "images/f9.png", "alt" => "Product 5"],
+                    ["src" => "images/f10.png", "alt" => "Product 6"]
+                ];
+                foreach ($best_sellers as $product) {
+                    echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
+                            <div class='product-default inner-quickview inner-icon'>
+                                <figure>
+                                    <a href='#'>
+                                        <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
+                                    </a>
+                                    <div class='btn-icon-group'>
+                                        <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
+                                    </div>
+                                    <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
+                                </figure>
+                            </div>
+                        </div>";
                 }
+                ?>
+            </div>
+        </section>
 
+        <div class="bespoke-content">
+            <div class="bespoke-text">
+                <img src="images/Haneri_Bespoke.jpg" alt="Haneri_Bespoke.jpg">
+            </div>
+            <div class="bespoke-image">
+                <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
+            </div>
+        </div>
 
-                window.deleteAddress = function (id) { 
-                    if (!confirm("Are you sure you want to delete this address?")) {
-                        return;
-                    }
-
-                    $.ajax({
-                        url: `${baseUrl}/${id}`,
-                        type: "DELETE",
-                        headers: { "Authorization": `Bearer ${authToken}` },
-                        success: function (response) {
-                            if (response.message.includes("success")) {
-                                alert("Address deleted successfully.");
-                                fetchAddresses(); // Refresh address list
-                            } else {
-                                alert("Failed to delete address. Please try again.");
-                            }
-                        },
-                        error: function () {
-                            alert("Failed to delete address. Please try again.");
+        <!-- FAQ Section -->
+        <div class="container">
+            <div class="row faq">
+                <div class="col-lg-6">
+                    <h2 class="heading_1">Frequently Asked Questions</h2>
+                    <div id="accordion">
+                        <?php 
+                        $faqs = [
+                            ["id" => "collapseOne", "question" => "What makes Haneri’s design approach different from other brands?", "answer" => "At Haneri, our design philosophy integrates advanced engineering with aesthetics to create solutions that are visually striking and functionally superior..."],
+                            ["id" => "collapse2", "question" => "How does Haneri ensure the quality and durability of its products?", "answer" => "Each Haneri product undergoes extensive testing, uses high-quality materials, and meets global industry standards..."],
+                            ["id" => "collapse3", "question" => "Are Haneri products designed with sustainability in mind?", "answer" => "Sustainability is at the heart of our production process. We prioritize eco-friendly materials and energy-efficient manufacturing..."],
+                            ["id" => "collapse4", "question" => "What kind of technology is used in Haneri products?", "answer" => "Haneri leverages IoT integration, automation, and precision engineering to offer seamless, intuitive solutions..."],
+                            ["id" => "collapse5", "question" => "Are your products compatible with other smart home devices?", "answer" => "Many Haneri products integrate with smart home ecosystems like Alexa, Google Home, and IoT devices..."],
+                            ["id" => "collapse6", "question" => "Can I customize a Haneri product to suit my needs?", "answer" => "We offer customization options for select products. Contact our support team to discuss your requirements..."]
+                        ];
+                        foreach ($faqs as $faq) {
+                            echo "<div class='card card-accordion'>
+                                    <a class='card-header collapsed' href='#' data-toggle='collapse' data-target='#{$faq['id']}' aria-expanded='true' aria-controls='{$faq['id']}'>
+                                        {$faq['question']}
+                                    </a>
+                                    <div id='{$faq['id']}' class='collapse' data-parent='#accordion'>
+                                        <p>{$faq['answer']}</p>
+                                    </div>
+                                </div>";
                         }
-                    });
-                };
-
-                fetchAddresses();
-
-                window.openUpdateModal = function (id) {
-                    let address = addressList.find(addr => addr.id === id); // Get data from memory
-
-                    if (!address) {
-                        alert("Address not found.");
-                        return;
-                    }
-
-                    $("#update_address_id").val(address.id);
-                    $("#update_name").val(address.name);
-                    $("#update_contact_no").val(address.contact_no);
-                    $("#update_address_line1").val(address.address_line1);
-                    $("#update_address_line2").val(address.address_line2);
-                    $("#update_city").val(address.city);
-                    $("#update_state").val(address.state);
-                    $("#update_postal_code").val(address.postal_code);
-                    $("#update_country").val(address.country);
-
-                    $("#updateAddressModal").modal("show");
-                };
-                $(document).ready(function () {
-                    // Close modal when clicking the 'X' button
-                    $(".close").click(function () {
-                        $("#updateAddressModal").modal("hide");
-                    });
-
-                    // Close modal when clicking outside the modal (on the backdrop)
-                    $(document).on("click", function (event) {
-                        if ($(event.target).hasClass("modal")) {
-                            $("#updateAddressModal").modal("hide");
-                        }
-                    });
-                });
-
-
-                window.updateAddress = function () {
-                    let id = $("#update_address_id").val();
-                    let updatedData = {
-                        name: $("#update_name").val(),
-                        contact_no: $("#update_contact_no").val(),
-                        address_line1: $("#update_address_line1").val(),
-                        address_line2: $("#update_address_line2").val(),
-                        city: $("#update_city").val(),
-                        state: $("#update_state").val(),
-                        postal_code: $("#update_postal_code").val(),
-                        country: $("#update_country").val(),
-                        is_default: true // Hidden field, always true
-                    };
-
-                    if (
-                        !updatedData.name ||
-                        !updatedData.contact_no ||
-                        !updatedData.address_line1 ||
-                        !updatedData.city ||
-                        !updatedData.state ||
-                        !updatedData.country ||
-                        !updatedData.postal_code
-                    ) {
-                        alert("Please fill all required fields.");
-                        return;
-                    }
-
-                    $.ajax({
-                        url: `${baseUrl}/update/${id}`,
-                        type: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${authToken}`,
-                            "Content-Type": "application/json"
-                        },
-                        data: JSON.stringify(updatedData),
-                        success: function (response) {
-                            if (response.message.includes("success")) {
-                                alert("Address updated successfully.");
-                                $("#updateAddressModal").modal("hide");
-                                fetchAddresses(); // Refresh address list
-                            } else {
-                                alert("Failed to update address. Please try again.");
-                            }
-                        },
-                        error: function () {
-                            alert("Failed to update address. Please try again.");
-                        }
-                    });
-                };
-
-                // Open modal when link is clicked
-                $("#openAddressModal").click(function (e) {
-                    e.preventDefault();
-                    $("#addressModal").modal("show");
-                });
-
-                $("#addAddressBtn").click(function () {
-                    let addressData = {
-                        name: $("#name").val(),
-                        contact_no: $("#contact_no").val(),
-                        address_line1: $("#address_line1").val(),
-                        address_line2: $("#address_line2").val(),
-                        city: $("#city").val(),
-                        state: $("#state").val(),
-                        country: $("#country").val(),
-                        postal_code: $("#postal_code").val(),
-                        is_default: true
-                    };
-
-                    if (
-                    !addressData.name || 
-                    !addressData.contact_no || 
-                    !addressData.address_line1 || 
-                    !addressData.city || 
-                    !addressData.state || 
-                    !addressData.country || 
-                    !addressData.postal_code
-                    ) {
-                        alert("Please fill all required fields.");
-                        return;
-                    }
-
-                    $.ajax({
-                        url: `${baseUrl}/register`,
-                        type: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${authToken}`,
-                            "Content-Type": "application/json"
-                        },
-                        data: JSON.stringify(addressData),
-                        success: function (response) {
-                            if (response.message.includes("success")) {
-                                $("#checkout-form")[0].reset(); // Reset form fields
-                                $("#addressModal").modal("hide"); // Close modal
-                                fetchAddresses(); // Refresh address list
-                            } else {
-                                alert("Failed to add address. Please try again.");
-                            }
-                        },
-                        error: function () {
-                            alert("Failed to add address. Please try again.");
-                        }
-                    });
-                });
-
-                // Load addresses on page load
-                fetchAddresses();
-            });
-        </script>
-        <!-- Update Address Modal -->
-        <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="updateModalLabel">Update Address</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        ?>
                     </div>
-                    <div class="modal-body custom-modal">
-                        <input type="hidden" id="update_address_id">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="heading_1">Send Us a Message</h2>
+                    <form class="mb-0" action="#">
                         <div class="form-group">
-                            <label class="labl">Name</label>
-                            <input type="text" class="form-control inp" id="update_name">
+                            <label class="mb-1" for="contact-name">Your Name <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="contact-name" name="contact-name" required />
                         </div>
                         <div class="form-group">
-                            <label class="labl">Contact No</label>
-                            <input type="text" class="form-control inp" id="update_contact_no">
+                            <label class="mb-1" for="contact-email">Your E-mail <span class="required">*</span></label>
+                            <input type="email" class="form-control" id="contact-email" name="contact-email" required />
                         </div>
                         <div class="form-group">
-                            <label class="labl">Address Line 1</label>
-                            <input type="text" class="form-control inp" id="update_address_line1">
+                            <label class="mb-1" for="contact-message">Your Message <span class="required">*</span></label>
+                            <textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label class="labl">Address Line 2</label>
-                            <input type="text" class="form-control inp" id="update_address_line2">
+                        <div class="form-footer mb-0">
+                            <button type="submit" class="btn btn-dark font-weight-normal">Send Message</button>
                         </div>
-                        <div class="form-group">
-                            <label class="labl">City</label>
-                            <input type="text" class="form-control inp" id="update_city">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">State</label>
-                            <input type="text" class="form-control inp" id="update_state">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Postal Code</label>
-                            <input type="text" class="form-control inp" id="update_postal_code">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Country</label>
-                            <input type="text" class="form-control inp" id="update_country">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success dft" onclick="updateAddress()">Save Changes</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-8">
-                <ul class="checkout-steps">
-                    <li>
-                        <h2 class="step-title">Billing details</h2>
-                        <div class="form-group">
-                            <a href="#" id="openAddressModal" class="text-primary">
-                                Add another Address?
-                            </a>
-                        </div>
-                        <!-- Address Modal -->
-                        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="checkout-form" class="check-form">
-                                            <div class="form-group in">
-                                                <label class="labl">Name <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="name">
-                                            </div>
+        <!-- Blogs Section -->
+        <div class="container">
+        <section class="blogs_section">
+            <h2 class="heading_1">BLOGS</h2>
+            <div class="blogs-container">
+                <?php 
+                    // Sample data for blogs
+                    $blogs = [
+                        [
+                            'image'   => 'images/f14.png',
+                            'title'   => 'Blog Title 1',
+                            'content' => 'This is a short snippet or summary of the blog content for Blog Title 1...',
+                            'link'    => '#'
+                        ],
+                        [
+                            'image'   => 'images/f15.png',
+                            'title'   => 'Blog Title 2',
+                            'content' => 'A short snippet or summary for Blog Title 2. This could be a couple of lines...',
+                            'link'    => '#'
+                        ],
+                        [
+                            'image'   => 'images/f16.png',
+                            'title'   => 'Blog Title 3',
+                            'content' => 'A short snippet or summary for Blog Title 3. Add a teaser or interesting excerpt...',
+                            'link'    => '#'
+                        ]
+                    ];
 
-                                            <div class="form-group in">
-                                                <label class="labl">Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="contact_no">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 1 <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="address_line1" placeholder="House number and street name">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 2 (optional)</label>
-                                                <input type="text" class="form-control inp" id="address_line2">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Town / City <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="city">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">State <abbr class="required" title="required">*</abbr></label>
-                                                <select class="form-control inp" id="state">
-                                                    <option value="Mumbai" selected>Mumbai</option>
-                                                    <option value="Delhi">Delhi</option>
-                                                    <option value="West Bengal">West Bengal</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Country <span class="required">*</span></label>
-                                                <select class="form-control inp" id="country">
-                                                    <option value="India" selected>India</option>
-                                                    <option value="Australia">Australia</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Pincode <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="postal_code">
-                                            </div>
-
-                                            <div class="form-group text-end btt">
-                                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> -->
-                                                <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                    // Loop through each blog item
+                    foreach ($blogs as $blog) {
+                        echo "
+                            <div class='blog-item'>
+                                <div class='blog-image'>
+                                    <img src='{$blog['image']}' alt='Blog Image'>
+                                </div>
+                                <div class='blog-content'>
+                                    <h3 class='blog-title'>{$blog['title']}</h3>
+                                    <p class='blog-snippet'>{$blog['content']}</p>
+                                    <a href='{$blog['link']}' class='read-more-button'>Read More</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="addresses">
-                            <div class="address">                            
-                                <div class="vvv">
-                                    <button data-toggle="collapse" data-target="#collapseNew" aria-expanded="true" aria-controls="collapseNew" class="btn btn-link btn-toggle"></button>
-                                </div>
-                                <div id="collapseNew" class="collapse">
-                                    <!-- Addresses will be dynamically added here -->
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                        ";
+                    }
+                ?>
             </div>
-            <!-- End .col-lg-8 -->
-            <script>
-                $(document).ready(function () {
-                    const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-                    const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
-                    const orderUrl = "<?php echo BASE_URL; ?>/orders";
+        </section>
 
-                    function fetchCartItems() {
-                        $.ajax({
-                            url: cartUrl,
-                            type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
-                            success: function (response) {
-                                if (response.data.length > 0) {
-                                    let cartHTML = "";
-                                    let subtotal = 0;
-                                    let totalTax = 0;
-                                    let total = 0;
-
-                                    response.data.forEach(item => {
-                                        let productName = item.product.name;
-                                        let quantity = item.quantity;
-                                        let price = parseFloat(item.variant.selling_price);
-                                        let tax = parseFloat(item.variant.selling_tax);
-                                        let itemTotal = (price + tax) * quantity;
-
-                                        subtotal += (price * quantity);
-                                        totalTax += (tax * quantity);
-                                        total += itemTotal;
-
-                                        cartHTML += `
-                                            <tr>
-                                                <td class="product-col">
-                                                    <h3 class="product-title">
-                                                        ${productName} × <span class="product-qty">${quantity}</span>
-                                                    </h3>
-                                                </td>
-                                                <td class="price-col">
-                                                    <span>₹ ${itemTotal.toFixed(2)}</span>
-                                                </td>
-                                            </tr>
-                                        `;
-                                    });
-
-                                    $("#cart-items").html(cartHTML);
-                                    $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                                    $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                                    $("#total").text(`₹ ${total.toFixed(2)}`);
-                                } else {
-                                    $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                                    $("#subtotal").text("₹ 0.00");
-                                    $("#total-tax").text("₹ 0.00");
-                                    $("#total").text("₹ 0.00");
-                                }
-                            },
-                            error: function () {
-                                console.error("Error fetching cart items.");
-                            }
-                        });
-                    }
-
-                    // function getSelectedAddress() {
-                    //     let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
-
-                    //     if (selectedRadio.length === 0) {
-                    //         alert("Please select a shipping address.");
-                    //         return null;
-                    //     }
-
-                    //     let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-                    //     let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-                    //     let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-                    //     let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-                    //     let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-                    //     let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-                    //     let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-                    //     let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-                    //     let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
-
-                    //     let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
-
-                    //     return shippingAddress;
-                    // }
-                    function getSelectedAddress() {
-                        let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");
-
-                        if (selectedRadio.length === 0) {
-                            alert("Please select a shipping address.");
-                            return null;
-                        }
-
-                        let name = selectedRadio.find(".card-header h3").text().trim();
-                        let contactNo = selectedRadio.find(".card-header .card-phone").text().trim();
-                        let address1 = selectedRadio.find(".card-body p:contains('Address 1')").text().replace("Address 1:", "").trim();
-                        let address2 = selectedRadio.find(".card-body p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-                        
-                        // Extract Location (Country, State, City)
-                        let locationText = selectedRadio.find(".card-body p:contains('Location')").text().replace("Location:", "").trim();
-                        let locationParts = locationText.split(",").map(item => item.trim());
-                        
-                        let country = locationParts[0] || "";
-                        let state = locationParts[1] || "";
-                        let city = locationParts[2] || "";
-                        
-                        let postalCode = selectedRadio.find(".card-body p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
-
-                        let shippingAddress = `${name}, ${contactNo}, ${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
-
-                        return shippingAddress;
-                    }
-
-
-                    $("#placeOrderBtn").click(function (event) {
-                        event.preventDefault(); // Prevent form from submitting normally
-
-                        let shippingAddress = getSelectedAddress();
-                        if (!shippingAddress) return;
-
-                        let orderData = {
-                            status: "pending",
-                            payment_status: "pending",
-                            shipping_address: shippingAddress
-                        };
-
-                        $.ajax({
-                            url: orderUrl,
-                            type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
-                            data: JSON.stringify(orderData),
-                            success: function (response) {
-                                if (response.message.includes("success")) {
-                                    let orderDetails = response.data.data;
-
-                                    let orderId = orderDetails.order_id;
-                                    let razorpayOrderId = orderDetails.razorpay_order_id;
-                                    let totalAmount = orderDetails.total_amount;
-                                    let userName = orderDetails.name;
-                                    let userEmail = orderDetails.email;
-                                    let userPhone = orderDetails.phone;
-                                    let userId = orderDetails.user_id;
-
-                                    // Open Razorpay Payment Popup
-                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
-                                } else {
-                                    alert("Failed to place order. Please try again.");
-                                }
-                            },
-                            error: function () {
-                                alert("Failed to place order. Please try again.");
-                            }
-                        });
-                    });
-
-                    function openRazorpayPopup(order_id, amount, orderId, userId, name, email, phone, shippingAddress) {
-                        var options = {
-                            "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
-                            "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
-                            "currency": "INR",
-                            "name": "Haneri",
-                            "description": `Order ID: ${orderId}`,
-                            "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
-                            "order_id": order_id, // Razorpay Order ID
-                            "handler": function(response) {
-                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
-
-                                // Send payment details to backend API
-                                processPayment(response.razorpay_payment_id, orderId, order_id, amount, userId, shippingAddress);
-                            },
-                            "prefill": {
-                                "name": name,
-                                "email": email,
-                                "contact": phone
-                            },
-                            "theme": {
-                                "color": "#f0f8fe"
-                            }
-                        };
-
-                        var rzp = new Razorpay(options);
-                        rzp.open();
-                    }
-
-                    function processPayment(paymentId, orderId, razorpayOrderId, amount, userId, shippingAddress) {
-                        let paymentData = {
-                            "method": "upi",
-                            "razorpay_payment_id": paymentId,
-                            "amount": amount,
-                            "status": "pending",
-                            "order_id": orderId,
-                            "razorpay_order_id": razorpayOrderId,
-                            "user_id": userId
-                        };
-
-                        $.ajax({
-                            url: `{{base_url}}/payments`,
-                            type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
-                            data: JSON.stringify(paymentData),
-                            success: function (response) {
-                                if (response.message.includes("success")) {
-                                    let paymentDetails = response.data;
-                                    let productStats = JSON.stringify(response.product_stats);
-
-                                    // Redirect to order complete page with payment details
-                                    window.location.href = `order-complete.php?order_id=${paymentDetails.order_id}&total_amount=${paymentDetails.amount}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&payment_id=${paymentDetails.razorpay_payment_id}&user_id=${paymentDetails.user}&product_stats=${encodeURIComponent(productStats)}`;
-                                } else {
-                                    alert("Payment processing failed. Please contact support.");
-                                }
-                            },
-                            error: function () {
-                                alert("Payment processing failed. Please contact support.");
-                            }
-                        });
-                    }
-
-                    fetchCartItems(); // Load cart items on page load
-                });
-            </script>
-
-            <!-- Order Summary Section -->
-            <div class="col-lg-4">
-                <div class="order-summary">
-                    <h3>YOUR ORDER</h3>
-
-                    <table class="table table-mini-cart">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Product</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cart-items">
-                            <!-- Cart items will be inserted here dynamically -->
-                        </tbody>
-                        <tfoot>
-                            <tr class="cart-subtotal">
-                                <td><h4>Subtotal</h4></td>
-                                <td class="price-col"><span id="subtotal">₹ 0.00</span></td>
-                            </tr>
-
-                            <tr class="cart-tax">
-                                <td><h4>Tax</h4></td>
-                                <td class="price-col"><span id="total-tax">₹ 0.00</span></td>
-                            </tr>
-
-                            <tr class="order-total">
-                                <td><h4>Total</h4></td>
-                                <td><b class="total-price"><span id="total">₹ 0.00</span></b></td>
-                            </tr>
-
-                            <tr class="order-shipping">
-                                <td class="text-left" colspan="2">
-                                    <h4 class="m-b-sm">Shipping</h4>
-                                    <div class="form-group form-group-custom-control">
-                                        <div class="custom-control custom-radio d-flex">
-                                            <input type="radio" class="custom-control-input" name="radio" checked />
-                                            <label class="custom-control-label">Free Shipping</label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-
-                    <div class="payment-methods">
-                        <h4 class="mb-3">Payment Methods</h4>
-                        <div class="payment-option border rounded p-3 d-flex align-items-center justify-content-between">
-                            <span class="fw-bold fs-6">Razorpay</span>
-                            <span class="rounded-circle d-inline-block ms-3 overflow-hidden" style="width: 80px; height: 40px;">
-                                <img src="assets/images/payments/razorpay.png" class="w-100 h-100 object-fit-cover" alt="Razorpay" />
-                            </span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
-                        Place order
-                    </button>
-                </div>
-            </div>
-            <!-- End .col-lg-4 -->
         </div>
-        <!-- End .row -->
-    </div>
-    <!-- End .container -->
-</main>
-<!-- End .main -->
-
-<link rel="stylesheet" href="assets/css/style.min.css">
+    </main><!-- End .main -->
 <?php include("footer.php"); ?>
+
+<style>
+    .blogs_section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.heading_1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Container that holds all blogs */
+.blogs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual blog item */
+.blog-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden; /* helps keep image within border radius if needed */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* stack image and content vertically */
+}
+
+/* Image area */
+.blog-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Content area */
+.blog-content {
+    padding: 15px;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.blog-snippet {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Read more button */
+.read-more-button {
+    padding: 10px 20px;
+    background-color: #007ACC;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.read-more-button:hover {
+    background-color: #005999;
+}
+
+</style>
