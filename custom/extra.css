@@ -2123,4 +2123,12 @@ footer .social-icon {
     padding: 5px;
     border-radius: 5px;
  }
+ 
+ .wid{
+    background: #e0ecee;
+    border: 1px solid #f5f1f1;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+ }
  /* end Shop page style */
