@@ -96,158 +96,195 @@
 
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
-                        <div class="toolbox toolbox-pagination">
-                            <div class="toolbox-item toolbox-show">
-                                <label>Category:</label>
-                                <select id="categoryFilter" class="form-control"></select>
-                            </div>
-                            
-                            <div class="toolbox-item toolbox-show">
-                                <label>Brand:</label>
-                                <select id="brandFilter" class="form-control"></select>
-                            </div>
+                        <div class="sidebar-wrapper">
 
-                            <div class="toolbox-item toolbox-show">
-                                <label>Price Range:</label>
-                                <select id="priceFilter" class="form-control">
-                                    <option value="">All Prices</option>
-                                    <option value="0_5000">Under 5000</option>
-                                    <option value="5000_10000">5000 - 10000</option>
-                                    <option value="10000_25000">10k - 25k</option>
-                                    <option value="25000_50000">25k - 50k</option>
-                                    <option value="50000_100000">50k - 1 Lakh</option>
-                                </select>
-                            </div>
+                            <div class="widget">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-2">Categories</a>
+                                </h3>
 
-                            <div class="toolbox-item toolbox-show">
-                                <label>Size:</label>
-                                <select id="sizeFilter" class="form-control"></select>
-                            </div>
+                                <div class="collapse show" id="widget-body-2">
+                                    <div class="widget-body">
+                                        <ul class="cat-list">
+                                            <li>
+                                                <a href="#widget-category-1" class="collapsed" data-toggle="collapse"
+                                                    role="button" aria-expanded="false"
+                                                    aria-controls="widget-category-1">
+                                                    Accessories<span class="products-count">(3)</span>
+                                                    <span class="toggle"></span>
+                                                </a>
+                                                <div class="collapse" id="widget-category-1">
+                                                    <ul class="cat-sublist">
+                                                        <li>Caps<span class="products-count">(1)</span></li>
+                                                        <li>Watches<span class="products-count">(2)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#widget-category-2" class="collapsed" data-toggle="collapse"
+                                                    role="button" aria-expanded="false"
+                                                    aria-controls="widget-category-2">
+                                                    Electronics<span class="products-count">(4)</span>
+                                                    <span class="toggle"></span>
+                                                </a>
+                                                <div class="collapse" id="widget-category-2">
+                                                    <ul class="cat-sublist">
+                                                        <li>Shoes<span class="products-count">(4)</span></li>
+                                                        <li>Bag<span class="products-count">(2)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
 
-                            <div class="toolbox-item toolbox-show">
-                                <label>Color:</label>
-                                <select id="colorFilter" class="form-control"></select>
-                            </div>
+                            <div class="widget widget-price">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-3">Price</a>
+                                </h3>
 
-                            <div class="toolbox-item">
-                                <button class="btn btn-primary" onclick="fetchProducts()">Apply Filters</button>
-                            </div>
-                        </div>
-                    </aside>
+                                <div class="collapse show" id="widget-body-3">
+                                    <div class="widget-body">
+                                        <form action="#">
+                                            <div class="price-slider-wrapper">
+                                                <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="90.0" aria-valuenow="0.0" aria-valuetext="0.00"></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="10.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="1000.00"></div></div></div></div><!-- End #price-slider -->
+                                            </div><!-- End .price-slider-wrapper -->
+
+                                            <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
+                                                <div class="filter-price-text">
+                                                    Price:
+                                                    <span id="filter-price-range">$0 - $1000</span>
+                                                </div><!-- End .filter-price-text -->
+
+                                                <button type="submit" class="btn btn-primary">Filter</button>
+                                            </div><!-- End .filter-price-action -->
+                                        </form>
+                                    </div>
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+                            <div class="widget widget-color">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-6">Color</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-6">
+                                    <div class="widget-body">
+                                        <ul class="config-swatch-list flex-column">
+                                            <li class="active">
+                                                <a href="#" style="background-color: #dda756;"></a>
+                                                <span>Brown</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #7bbad1;"></a>
+                                                <span>Light-Blue</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #81d742;"></a>
+                                                <span>Green</span>
+                                            </li>                                            
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+                            <div class="widget widget-size">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-5">Size</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-5">
+                                    <div class="widget-body">
+                                        <ul class="config-size-list">
+                                            <li class="active"><a href="#">XL</a></li>
+                                            <li><a href="#">L</a></li>
+                                            <li><a href="#">M</a></li>
+                                            <li><a href="#">S</a></li>
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+                            <div class="widget widget-brand">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-7">Brand</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-7">
+                                    <div class="widget-body pb-0">
+                                        <ul class="cat-list">
+                                            <li><a href="#">Haneri</a></li>
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+                        </div><!-- End .sidebar-wrapper -->
+                    </aside><!-- End .col-lg-3 -->
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </main>
         <script>
             $(document).ready(function () {
-                const token = localStorage.getItem('auth_token');
+                // const token = localStorage.getItem('auth_token');
 
                 let itemsPerPage = 10; // Default items per page
                 let currentPage = 1; // Current page number
                 let totalItems = 0; // Total items from API response
-
-                $(document).ready(() => {
-                    loadFilters(); // Load categories, brands, and variants
-                    fetchProducts(); // Fetch initial product list
-
-                    // Apply filter on change
-                    $("#categoryFilter, #brandFilter, #priceFilter, #sizeFilter, #colorFilter").change(fetchProducts);
-                });
-
-                const loadFilters = () => {
-                    // Fetch Categories
-                    $.get("<?php echo BASE_URL; ?>/categories", (response) => {
-                        if (response.data) {
-                            let categoryOptions = `<option value="">All Categories</option>`;
-                            response.data.forEach(category => {
-                                categoryOptions += `<option value="${category.name}">${category.name}</option>`;
-                            });
-                            $("#categoryFilter").html(categoryOptions);
-                        }
-                    });
-
-                    // Fetch Brands
-                    $.get("<?php echo BASE_URL; ?>/brands", (response) => {
-                        if (response.data) {
-                            let brandOptions = `<option value="">All Brands</option>`;
-                            response.data.forEach(brand => {
-                                brandOptions += `<option value="${brand.name}">${brand.name}</option>`;
-                            });
-                            $("#brandFilter").html(brandOptions);
-                        }
-                    });
-
-                    // Fetch Variant Types (Size & Color)
-                    $.get("<?php echo BASE_URL; ?>/variants", (response) => {
-                        if (response.data) {
-                            let sizeOptions = `<option value="">All Sizes</option>`;
-                            let colorOptions = `<option value="">All Colors</option>`;
-
-                            response.data.forEach(variant => {
-                                if (variant.type === "size") {
-                                    variant.value.split(", ").forEach(size => {
-                                        sizeOptions += `<option value="${size}">${size}</option>`;
-                                    });
-                                } else if (variant.type === "color") {
-                                    variant.value.split(", ").forEach(color => {
-                                        colorOptions += `<option value="${color}">${color}</option>`;
-                                    });
-                                }
-                            });
-
-                            $("#sizeFilter").html(sizeOptions);
-                            $("#colorFilter").html(colorOptions);
-                        }
-                    });
-                };
-
                 const fetchProducts = () => {
                     const offset = (currentPage - 1) * itemsPerPage;
-
-                    let filters = {
-                        search: $("#searchInput").val() || "",
-                        limit: itemsPerPage,
-                        offset: offset,
-                        price_range: $("#priceFilter").val(),
-                        category: $("#categoryFilter").val(),
-                        brand: $("#brandFilter").val(),
-                        variant_type: $("#sizeFilter").val() || $("#colorFilter").val()
-                    };
 
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
-                        data: filters,
+                        // headers: { Authorization: `Bearer ${token}` },
+                        data: { search: '', limit: itemsPerPage, offset: offset},
                         success: (response) => {
-                            if (response && response.data) {
-                                totalItems = response.total_records;
-                                populateTable(response.data);
-                                updatePagination();
-                            } else {
-                                console.error("Unexpected response format:", response);
-                            }
+                                if (response && response.data) {
+                                    totalItems = response.total_records; // Assuming total items is part of the API response
+                                    populateTable(response.data);
+                                    updatePagination();
+                                } else {
+                                    console.error("Unexpected response format:", response);
+                                }
                         },
                         error: (error) => {
-                            console.error("Error fetching data:", error);
+                                console.error("Error fetching data:", error);
                         }
                     });
                 };
-
                 const populateTable = (data) => {
                     const tbody = $("#products-table");
                     tbody.empty();
 
                     data.forEach((product) => {
-                        let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
-                        let regularPrice = product.variants?.[0]?.regular_price || "00";
-                        let sellingPrice = product.variants?.[0]?.selling_price || "00";
+                        // Check if the product has an image, otherwise use a placeholder
+                            let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
 
+                            // Ensure variants exist before accessing them
+                            let regularPrice = product.variants?.[0]?.regular_price || "00";
+                            let sellingPrice = product.variants?.[0]?.selling_price || "00";
+
+                        // Append a single row for each product
                         tbody.append(`
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="product-default inner-quickview inner-icon">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
+                                <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            <img src="${productImage}" width="500" height="500" alt="product" />
+                                            <img src="${
+                                                product.category?.id == 1 ? 'images/f1.png' :
+                                                product.category?.id == 2 ? 'images/f2.png' :
+                                                product.category?.id == 3 ? 'images/f3.png' :
+                                                'assets/images/products/product-1.jpg' // Default image
+                                            }" width="500" height="500" alt="product" />
                                         </a>
+                                      
                                     </figure>
                                     <div class="product-details">
                                         <div class="category-wrap">
@@ -260,9 +297,9 @@
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
                                                 <span class="tooltiptext tooltip-top"></span>
-                                            </div>
+                                            </div><!-- End .product-ratings -->
                                         </div>
                                         <div class="price-box">
                                             <span class="old-price">${regularPrice}</span>
