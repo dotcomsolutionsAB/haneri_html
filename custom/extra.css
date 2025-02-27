@@ -2109,3 +2109,9 @@ footer .social-icon {
         border-color: transparent !important;
     }
  /* checkout page css end */
+
+ /* Shop page style */
+ .shop_page{
+    padding-top: 160px;
+ }
+ /* end Shop page style */

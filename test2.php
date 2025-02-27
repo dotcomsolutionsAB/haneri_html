@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<main class="main about">
+<main class="main about shop_page">
     <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
