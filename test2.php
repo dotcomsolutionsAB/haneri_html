@@ -731,8 +731,11 @@
                             data: JSON.stringify(paymentData),
                             success: function (response) {
                                 if (response.message.includes("success")) {
-                                    // Redirect to order complete page WITHOUT passing data via URL
-                                    window.location.href = `order-complete.php`;
+                                    let paymentDetails = response.data;
+                                    let productStats = JSON.stringify(response.product_stats);
+
+                                    // Redirect to order complete page with payment details
+                                    window.location.href = `order-complete.php?method=${paymentDetails.method}&payment_id=${paymentDetails.razorpay_payment_id}&amount=${paymentDetails.amount}&order_id=${paymentDetails.order_id}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&product_stats=${encodeURIComponent(productStats)}`;
                                 } else {
                                     alert("Payment processing failed. Please contact support.");
                                 }
