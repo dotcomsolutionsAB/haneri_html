@@ -15,7 +15,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
         display: flex;
         justify-content: flex-start;
         /* width: 80%; */
-        background: aqua;
+        /* background: aqua; */
     }
     .c{
         display: flex;
@@ -67,7 +67,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
                 </div>
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
                     <h3 class="border-bottom pb-2 mb-3">Product Stats</h3>
                     <table class="table table-striped">
