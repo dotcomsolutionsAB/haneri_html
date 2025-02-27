@@ -6,7 +6,7 @@
         <main class="main">
 
             <div class="container mb-3">
-                <div class="row">
+                <div class="row products_area">
                     <div class="col-lg-9 main-content">
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
@@ -135,57 +135,50 @@
                                     $('#categories-list').html(htmlStr);
                                 }
                             </script>
-<script>
-    $(document).ready(function() {
-    // If you already have `fetchCategories()` somewhere
-    fetchCategories();
+                            <script>
+                                $(document).ready(function() {
+                                    // If you already have `fetchCategories()` somewhere
+                                    fetchCategories();
+                                    // 1. Fetch and display brands
+                                    fetchBrands();
 
-    // 1. Fetch and display brands
-    fetchBrands();
+                                });
 
-    // 2. On Apply Filters button click, fetch products
-    // $('#apply-filters').on('click', function() {
-    //     currentPage = 1;
-    //     fetchProducts();
-    // });
-});
-
-// -------------------------------------------
-// 1. Fetch Brands from your API
-function fetchBrands() {
-    $.ajax({
-        url: '<?php echo BASE_URL; ?>/brands', // Your API endpoint
-        type: 'GET',
-        success: function(response) {
-            if (response && response.data) {
-                populateBrands(response.data);
-            } else {
-                console.error("Unexpected brands response format:", response);
-            }
-        },
-        error: function(err) {
-            console.error("Error fetching brands:", err);
-        }
-    });
-}
-
-// 2. Render the Brands in the Brand widget
-function populateBrands(brands) {
-    let htmlStr = '';
-    brands.forEach(brand => {
-        htmlStr += `
-            <li>
-                <label>
-                    <input type="checkbox" name="brand" value="${brand.name}">
-                    <span>${brand.name}</span>
-                </label>
-            </li>
-        `;
-    });
-    // Make sure you have something like <ul id="brands-list"> in the Brand widget
-    $('#brands-list').html(htmlStr);
-}
-</script>
+                                // -------------------------------------------
+                                // 1. Fetch Brands from your API
+                                function fetchBrands() {
+                                    $.ajax({
+                                        url: '<?php echo BASE_URL; ?>/brands', // Your API endpoint
+                                        type: 'GET',
+                                        success: function(response) {
+                                            if (response && response.data) {
+                                                populateBrands(response.data);
+                                            } else {
+                                                console.error("Unexpected brands response format:", response);
+                                            }
+                                        },
+                                        error: function(err) {
+                                            console.error("Error fetching brands:", err);
+                                        }
+                                    });
+                                }
+                                // 2. Render the Brands in the Brand widget
+                                function populateBrands(brands) {
+                                    let htmlStr = '';
+                                    brands.forEach(brand => {
+                                        htmlStr += `
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="brand" value="${brand.name}">
+                                                    <span>${brand.name}</span>
+                                                </label>
+                                            </li>
+                                        `;
+                                    });
+                                    // Make sure you have something like <ul id="brands-list"> in the Brand widget
+                                    $('#brands-list').html(htmlStr);
+                                }
+                            </script>
                             <!-- Categories Widget -->
                             <div class="widget">
                                 <h3 class="widget-title">
@@ -203,6 +196,7 @@ function populateBrands(brands) {
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
+
                             <div class="widget widget-brand">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
@@ -216,6 +210,29 @@ function populateBrands(brands) {
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
+
+                            <div class="widget widget-price">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
+                                    aria-controls="widget-body-price">
+                                    Price
+                                    </a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-price">
+                                    <div class="widget-body">
+                                        <label for="price-range-select">Select Price Range:</label>
+                                        <select id="price-range-select" class="form-control">
+                                            <option value="">-- Select Price --</option>
+                                            <option value="0k_10k">0K - 10K</option>
+                                            <option value="10k_20k">10K - 20K</option>
+                                            <option value="20k_30k">20K - 30K</option>
+                                            <option value="30k_40k">30K - 40K</option>
+                                            <option value="40k_50k">40K - 50K</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Filter Button - triggers product fetching -->
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
@@ -272,10 +289,10 @@ function populateBrands(brands) {
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
-                            <div class="widget widget-size">
+                            <div class="widget widget-variant">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-5">Size</a>
+                                        aria-controls="widget-body-5">Variant</a>
                                 </h3>
 
                                 <div class="collapse show" id="widget-body-5">
@@ -286,9 +303,9 @@ function populateBrands(brands) {
                                             <li><a href="#">M</a></li>
                                             <li><a href="#">S</a></li>
                                         </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
+                                    </div>
+                                </div>
+                            </div>
 
                             
 
@@ -321,18 +338,15 @@ function populateBrands(brands) {
                     $('input[name="brand"]:checked').each(function() {
                         selectedBrands.push($(this).val());
                     });
-
-                    // Example: If your API expects a single search string that might include brand/category/product name
-                    // you could concatenate them. Or if it expects an array/JSON, adjust accordingly.
-                    // const searchQuery = selectedCategories.join(',');
+                    // 3. Get the price range from the select box
+                    const priceRange = $('#price-range-select').val(); 
+                    // e.g. "0k_10k", "10k_20k", etc. 
 
                     // If your API needs a single combined search string for categories/brands:
                     const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
 
                     // If you also have price range filtering, you might collect that here (replace with your logic)
-                    let priceRange = $('#filter-price-range').text(); 
-                    // e.g. "0 - 1000", convert to the format your API expects (like "1k_2k").
-                    // You’d parse or map that to whatever the backend is expecting.
+                    // let priceRange = $('#filter-price-range').text(); 
                     
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
@@ -340,7 +354,7 @@ function populateBrands(brands) {
                         data: {
                             // Adjust these fields to match your backend’s required parameters
                             search: combinedSearch,
-                            price_range: "1k_2k",  // If you want to pass a price_range (replace with dynamic)
+                            price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
                             limit: itemsPerPage,
                             offset: offset,
                             // If needed:

@@ -2114,4 +2114,7 @@ footer .social-icon {
  .shop_page{
     padding-top: 160px;
  }
+ .products_area{
+    min-height: 695px;
+ }
  /* end Shop page style */
