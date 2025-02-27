@@ -1,18 +1,9 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
 <main class="main about shop_page">
-    <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://haneri.ongoingsites.xyz/domex">Pillar Technology</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Domex</li>
-            </ol>
-        </div>
-    </nav> -->
     <div class="page-wrapper">
 
-    <main class="main">
+        <main class="main">
 
             <div class="container mb-3">
                 <div class="row">
@@ -240,134 +231,281 @@
             </div><!-- End .container -->
         </main>
         <script>
-            $(document).ready(function () {
-                // const token = localStorage.getItem('auth_token');
+    // Global variables
+    let itemsPerPage = 10;
+    let currentPage  = 1;
+    let totalItems   = 0;
 
-                let itemsPerPage = 10; // Default items per page
-                let currentPage = 1; // Current page number
-                let totalItems = 0; // Total items from API response
+    // Filter state object
+    const filters = {
+        search       : "",           // If your API merges brand/category/product name into 'search'
+        price_range  : "",           // We'll store "500k_10000k" (for example) or another format
+        variant_type : "",           // We'll store whichever variant type is selected
+        limit        : itemsPerPage,
+        offset       : 0
+    };
 
-                const fetchProducts = () => {
-                    const offset = (currentPage - 1) * itemsPerPage;
+    $(document).ready(function() {
+        // Populate the items per page dropdown
+        populateItemsPerPageSelect([5, 10, 20, 30]);
 
-                    $.ajax({
-                        url: '<?php echo BASE_URL; ?>/products/get_products',
-                        type: 'POST',
-                        // headers: { Authorization: `Bearer ${token}` },
-                        data: { search: '', limit: itemsPerPage, offset: offset},
-                        success: (response) => {
-                                if (response && response.data) {
-                                    totalItems = response.total_records; // Assuming total items is part of the API response
-                                    populateTable(response.data);
-                                    updatePagination();
-                                } else {
-                                    console.error("Unexpected response format:", response);
-                                }
-                        },
-                        error: (error) => {
-                                console.error("Error fetching data:", error);
-                        }
-                    });
-                };
+        // Fetch the distinct variant types
+        fetchVariantTypes();
 
-                
-                const populateTable = (data) => {
-                    const tbody = $("#products-table");
-                    tbody.empty();
+        // Initial fetch of products (unfiltered except default pagination)
+        fetchProducts();
 
-                    data.forEach((product) => {
-                        // Check if the product has an image, otherwise use a placeholder
-                            let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
+        // Handle changing items per page (top & bottom selects)
+        $("#itemsPerPageSelect, #itemsPerPageSelectBottom").on("change", function() {
+            itemsPerPage = parseInt($(this).val());
+            currentPage  = 1;
+            fetchProducts();
+        });
 
-                            // Ensure variants exist before accessing them
-                            let regularPrice = product.variants?.[0]?.regular_price || "00";
-                            let sellingPrice = product.variants?.[0]?.selling_price || "00";
+        // Handle the Price Filter button
+        $("#priceFilterBtn").on("click", function() {
+            const min = parseInt($("#minPrice").val()) || 0;
+            const max = parseInt($("#maxPrice").val()) || 0;
+            // If your backend expects "500k_10000k" format, do this:
+            filters.price_range = `${min}k_${max}k`;
+            // If your backend wants numeric or different format, adapt accordingly.
 
-                        // Append a single row for each product
-                        tbody.append(`
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
-                                <div class="product-default inner-quickview inner-icon" id="pro-table">
-                                    <figure>
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            <img src="${
-                                                product.category?.id == 1 ? 'images/f1.png' :
-                                                product.category?.id == 2 ? 'images/f2.png' :
-                                                product.category?.id == 3 ? 'images/f3.png' :
-                                                'assets/images/products/product-1.jpg' // Default image
-                                            }" width="500" height="500" alt="product" />
-                                        </a>
-                                      
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="category-wrap">
-                                            <div class="category-list">
-                                                <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
-                                            </div>
-                                        </div>
-                                        <h3 class="product-title">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">${product.name}</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="old-price">${regularPrice}</span>
-                                            <span class="product-price">${sellingPrice}</span>
-                                        </div>
-                                    </div>
+            currentPage = 1;
+            fetchProducts();
+        });
+    });
+
+    /**
+     * Fetch all products based on the filters object and current pagination.
+     */
+    function fetchProducts() {
+        // Update limit & offset in filters
+        filters.limit  = itemsPerPage;
+        filters.offset = (currentPage - 1) * itemsPerPage;
+
+        $.ajax({
+            url: '<?php echo BASE_URL; ?>/products/get_products',
+            type: 'POST',
+            data: filters,
+            success: function(response) {
+                if (response && response.data) {
+                    totalItems = response.total_records || 0;
+                    populateProductGrid(response.data);
+                    updatePagination();
+                } else {
+                    console.error("Unexpected response format:", response);
+                }
+            },
+            error: function(error) {
+                console.error("Error fetching products:", error);
+            }
+        });
+    }
+
+    /**
+     * Populate the products table (grid) with the returned product data.
+     */
+    function populateProductGrid(data) {
+        const $grid = $("#products-table");
+        $grid.empty();
+
+        data.forEach(product => {
+            let productImage = (product.image && product.image.length > 0)
+                ? product.image[0]
+                : "assets/images/placeholder.jpg";
+
+            let regularPrice = product.variants?.[0]?.regular_price || "00";
+            let sellingPrice = product.variants?.[0]?.selling_price || "00";
+            let productId    = product.variants?.[0]?.product_id || "NA";
+
+            // Example fallback or logic for category-based images
+            // (adjust as needed, or remove if not needed)
+            let categoryImage = 'assets/images/products/product-1.jpg';
+
+            if (product.category?.id == 1) categoryImage = 'images/f1.png';
+            else if (product.category?.id == 2) categoryImage = 'images/f2.png';
+            else if (product.category?.id == 3) categoryImage = 'images/f3.png';
+
+            $grid.append(`
+                <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
+                    <div class="product-default inner-quickview inner-icon" id="pro-table">
+                        <figure>
+                            <a href="javascript:void(0)" onclick="openProductDetail('${productId}')">
+                                <img src="${categoryImage}" width="500" height="500" alt="product" />
+                            </a>
+                        </figure>
+                        <div class="product-details">
+                            <div class="category-wrap">
+                                <div class="category-list">
+                                    <a href="#" class="product-category">
+                                        ${product.category?.name || "Uncategorized"}
+                                    </a>
                                 </div>
                             </div>
-                        `);
-                    });
-                };
+                            <h3 class="product-title">
+                                <a href="javascript:void(0)" onclick="openProductDetail('${productId}')">
+                                    ${product.name}
+                                </a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="product-ratings">
+                                    <span class="ratings" style="width:100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                            </div>
+                            <div class="price-box">
+                                <span class="old-price">${regularPrice}</span>
+                                <span class="product-price">${sellingPrice}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `);
+        });
+    }
 
-                // function openProductDetail(productId) {
-                //     window.location.href = 'product_detail.php?id=' + productId;
-                // }
+    /**
+     * Update pagination links at the bottom of the page.
+     */
+    function updatePagination() {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const $pagination = $("#paginationUl");
+        $pagination.empty();
 
-                const updatePagination = () => {
-                    const totalPages = Math.ceil(totalItems / itemsPerPage);
-                    const pagination = $(".pagination");
-                    pagination.empty();
+        if (totalPages <= 1) return;
 
-                    if (currentPage > 1) {
-                        pagination.append(`<button class="page-link pagi" data-page="${currentPage - 1}">Previous</button>`);
-                    }
+        // Previous button
+        const prevDisabled = (currentPage === 1) ? 'disabled' : '';
+        $pagination.append(`
+            <li class="page-item ${prevDisabled}">
+                <a class="page-link" href="javascript:void(0)" data-page="${currentPage - 1}">
+                    Prev
+                </a>
+            </li>
+        `);
 
-                    for (let page = 1; page <= totalPages; page++) {
-                        const isActive = page === currentPage ? "active" : "";
-                        pagination.append(`<button class="page-link pagi ${isActive}" data-page="${page}">${page}</button>`);
-                    }
+        // Page number buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const activeClass = (i === currentPage) ? 'active' : '';
+            $pagination.append(`
+                <li class="page-item ${activeClass}">
+                    <a class="page-link" href="javascript:void(0)" data-page="${i}">${i}</a>
+                </li>
+            `);
+        }
 
-                    if (currentPage < totalPages) {
-                        pagination.append(`<button class="page-link pagi" data-page="${currentPage + 1}">Next</button>`);
-                    }
-                };
+        // Next button
+        const nextDisabled = (currentPage === totalPages) ? 'disabled' : '';
+        $pagination.append(`
+            <li class="page-item ${nextDisabled}">
+                <a class="page-link" href="javascript:void(0)" data-page="${currentPage + 1}">
+                    Next
+                </a>
+            </li>
+        `);
 
-                $(".pagination").on("click", "button", function () {
-                    currentPage = parseInt($(this).data("page"));
-                    fetchProducts();
-                });
-
-                $("[data-datatable-size]").on("change", function () {
-                    itemsPerPage = parseInt($(this).val());
-                    currentPage = 1;
-                    fetchProducts();
-                });
-
-                // Initialize dropdown for items per page
-                const perPageSelect = $("[data-datatable-size]");
-                [10, 20, 40, 60, 100].forEach((size) => {
-                    perPageSelect.append(`<option value="${size}">${size}</option>`);
-                });
-                perPageSelect.val(itemsPerPage);
-
+        // Handle page click
+        $("#paginationUl .page-link").on("click", function() {
+            const page = parseInt($(this).data("page"));
+            if (!isNaN(page) && page >= 1 && page <= totalPages && page !== currentPage) {
+                currentPage = page;
                 fetchProducts();
-            });
-        </script>
+            }
+        });
+    }
+
+    /**
+     * Populate the 'items per page' selects (top and bottom).
+     */
+    function populateItemsPerPageSelect(options) {
+        const $selectTop    = $("#itemsPerPageSelect");
+        const $selectBottom = $("#itemsPerPageSelectBottom");
+
+        $selectTop.empty();
+        $selectBottom.empty();
+
+        options.forEach(opt => {
+            $selectTop.append(`<option value="${opt}">${opt}</option>`);
+            $selectBottom.append(`<option value="${opt}">${opt}</option>`);
+        });
+
+        // Set default selection
+        $selectTop.val(itemsPerPage);
+        $selectBottom.val(itemsPerPage);
+    }
+
+    /**
+     * Fetch the variant types from your API.
+     * If your endpoint returns something like:
+     * {
+     *   "data": [
+     *     { "type": "size", "value": "XXL, XL, ..."},
+     *     { "type": "color", "value": "red, blue,..."},
+     *     ...
+     *   ]
+     * }
+     */
+    function fetchVariantTypes() {
+        $.ajax({
+            url: '<?php echo BASE_URL; ?>/variants',
+            type: 'GET',
+            success: function(response) {
+                if (response && response.data) {
+                    // Build a unique list of variant types
+                    let variantTypes = [];
+                    response.data.forEach(item => {
+                        let t = item.type;
+                        if (t && !variantTypes.includes(t)) {
+                            variantTypes.push(t);
+                        }
+                    });
+                    populateVariantTypeFilter(variantTypes);
+                }
+            },
+            error: function(err) {
+                console.error("Error fetching variant types:", err);
+            }
+        });
+    }
+
+    /**
+     * Dynamically create the list of variant types for filtering.
+     */
+    function populateVariantTypeFilter(variantTypes) {
+        const $list = $("#variantTypeFilterList");
+        $list.empty();
+
+        variantTypes.forEach(type => {
+            // Example: just list each variant type as a clickable link
+            $list.append(`
+                <li>
+                    <a href="javascript:void(0)" class="variant-type-link" data-type="${type}">
+                        ${type}
+                    </a>
+                </li>
+            `);
+        });
+
+        // Handle clicks on any variant type link
+        $(".variant-type-link").on("click", function() {
+            const selectedType = $(this).data("type");
+            filters.variant_type = selectedType; // set the filter
+            currentPage = 1;
+            fetchProducts();
+        });
+    }
+
+    /**
+     * Example function for opening product detail (stub).
+     * Adjust to your actual detail page logic.
+     */
+    function openProductDetail(productId) {
+        alert("Open product detail for Product ID: " + productId);
+        // Possibly redirect or open a modal, e.g.:
+        // window.location.href = `product-detail.php?id=${productId}`;
+    }
+</script>
+
         <script>
             function openProductDetail(productId) {
                 window.location.href = 'product_detail.php?id=' + productId;
