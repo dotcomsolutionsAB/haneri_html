@@ -64,7 +64,7 @@
                         <nav class="main-nav font2">
                             <ul class="menu">
                                 <li class="active">
-                                    <a href="ceiling_fans.php">Categories</a>
+                                    <a href="shop.php">Categories</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                                         <div class="row">
                                             <section class="categories hover">
