@@ -1985,7 +1985,7 @@ footer .social-icon {
         justify-content: flex-end;
         align-items: center;        
     }
-    .show{
+    .checkout_page .show{
         display: grid;
         grid-template-columns: repeat(2, 2fr);
         gap:10px;
