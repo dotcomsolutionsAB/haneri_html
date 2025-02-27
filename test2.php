@@ -96,137 +96,44 @@
 
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
-                        <div class="sidebar-wrapper">
+                        <div class="toolbox toolbox-pagination">
+                            <div class="toolbox-item toolbox-show">
+                                <label>Category:</label>
+                                <select id="categoryFilter" class="form-control"></select>
+                            </div>
+                            
+                            <div class="toolbox-item toolbox-show">
+                                <label>Brand:</label>
+                                <select id="brandFilter" class="form-control"></select>
+                            </div>
 
-                            <div class="widget">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-2">Categories</a>
-                                </h3>
+                            <div class="toolbox-item toolbox-show">
+                                <label>Price Range:</label>
+                                <select id="priceFilter" class="form-control">
+                                    <option value="">All Prices</option>
+                                    <option value="0_5000">Under 5000</option>
+                                    <option value="5000_10000">5000 - 10000</option>
+                                    <option value="10000_25000">10k - 25k</option>
+                                    <option value="25000_50000">25k - 50k</option>
+                                    <option value="50000_100000">50k - 1 Lakh</option>
+                                </select>
+                            </div>
 
-                                <div class="collapse show" id="widget-body-2">
-                                    <div class="widget-body">
-                                        <ul class="cat-list">
-                                            <li>
-                                                <a href="#widget-category-1" class="collapsed" data-toggle="collapse"
-                                                    role="button" aria-expanded="false"
-                                                    aria-controls="widget-category-1">
-                                                    Accessories<span class="products-count">(3)</span>
-                                                    <span class="toggle"></span>
-                                                </a>
-                                                <div class="collapse" id="widget-category-1">
-                                                    <ul class="cat-sublist">
-                                                        <li>Caps<span class="products-count">(1)</span></li>
-                                                        <li>Watches<span class="products-count">(2)</span></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="#widget-category-2" class="collapsed" data-toggle="collapse"
-                                                    role="button" aria-expanded="false"
-                                                    aria-controls="widget-category-2">
-                                                    Electronics<span class="products-count">(4)</span>
-                                                    <span class="toggle"></span>
-                                                </a>
-                                                <div class="collapse" id="widget-category-2">
-                                                    <ul class="cat-sublist">
-                                                        <li>Shoes<span class="products-count">(4)</span></li>
-                                                        <li>Bag<span class="products-count">(2)</span></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
+                            <div class="toolbox-item toolbox-show">
+                                <label>Size:</label>
+                                <select id="sizeFilter" class="form-control"></select>
+                            </div>
 
-                            <div class="widget widget-price">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-3">Price</a>
-                                </h3>
+                            <div class="toolbox-item toolbox-show">
+                                <label>Color:</label>
+                                <select id="colorFilter" class="form-control"></select>
+                            </div>
 
-                                <div class="collapse show" id="widget-body-3">
-                                    <div class="widget-body">
-                                        <form action="#">
-                                            <div class="price-slider-wrapper">
-                                                <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="90.0" aria-valuenow="0.0" aria-valuetext="0.00"></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="10.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="1000.00"></div></div></div></div><!-- End #price-slider -->
-                                            </div><!-- End .price-slider-wrapper -->
-
-                                            <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
-                                                <div class="filter-price-text">
-                                                    Price:
-                                                    <span id="filter-price-range">$0 - $1000</span>
-                                                </div><!-- End .filter-price-text -->
-
-                                                <button type="submit" class="btn btn-primary">Filter</button>
-                                            </div><!-- End .filter-price-action -->
-                                        </form>
-                                    </div>
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <div class="widget widget-color">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-6">Color</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-6">
-                                    <div class="widget-body">
-                                        <ul class="config-swatch-list flex-column">
-                                            <li class="active">
-                                                <a href="#" style="background-color: #dda756;"></a>
-                                                <span>Brown</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #7bbad1;"></a>
-                                                <span>Light-Blue</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #81d742;"></a>
-                                                <span>Green</span>
-                                            </li>                                            
-                                        </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <div class="widget widget-size">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-5">Size</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-5">
-                                    <div class="widget-body">
-                                        <ul class="config-size-list">
-                                            <li class="active"><a href="#">XL</a></li>
-                                            <li><a href="#">L</a></li>
-                                            <li><a href="#">M</a></li>
-                                            <li><a href="#">S</a></li>
-                                        </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <div class="widget widget-brand">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-7">Brand</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-7">
-                                    <div class="widget-body pb-0">
-                                        <ul class="cat-list">
-                                            <li><a href="#">Haneri</a></li>
-                                        </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                        </div><!-- End .sidebar-wrapper -->
-                    </aside><!-- End .col-lg-3 -->
+                            <div class="toolbox-item">
+                                <button class="btn btn-primary" onclick="fetchProducts()">Apply Filters</button>
+                            </div>
+                        </div>
+                    </aside>
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </main>
@@ -367,7 +274,7 @@
                         `);
                     });
                 };
-                
+
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
                     const pagination = $(".pagination");
