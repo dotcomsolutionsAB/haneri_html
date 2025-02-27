@@ -154,7 +154,7 @@
 // 1. Fetch Brands from your API
 function fetchBrands() {
     $.ajax({
-        url: '{{base_url}}/brands', // Your API endpoint
+        url: '<?php echo BASE_URL; ?>/brands', // Your API endpoint
         type: 'GET',
         success: function(response) {
             if (response && response.data) {
