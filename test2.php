@@ -331,6 +331,13 @@ function fetchProducts() {
     });
 }
 
+// When the user clicks "Apply Filters", fetch products again using selected filters
+$('#apply-filters').on('click', function() {
+    currentPage = 1; // reset to first page if needed
+    fetchProducts();
+});
+
+
                 const populateTable = (data) => {
                     const tbody = $("#products-table");
                     tbody.empty();
