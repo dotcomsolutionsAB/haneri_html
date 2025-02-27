@@ -165,6 +165,63 @@
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
+<style>
+    /* Price Filter Styling */
+    .price-slider-wrapper {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Price Range Display */
+    .price-values {
+        font-size: 14px;
+        font-weight: bold;
+        background: #f6931f;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    /* Slider Wrapper */
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 5px;
+        margin: 10px 0;
+    }
+
+    /* Range Inputs */
+    .slider input[type="range"] {
+        position: absolute;
+        width: 100%;
+        -webkit-appearance: none;
+        background: transparent;
+        pointer-events: none;
+    }
+
+    /* Custom Track */
+    .slider input[type="range"]::-webkit-slider-runnable-track {
+        background: #ddd;
+        height: 5px;
+        border-radius: 5px;
+    }
+
+    /* Custom Thumb */
+    .slider input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 15px;
+        width: 15px;
+        background: #f6931f;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        pointer-events: all;
+    }
+
+</style>
                             <div class="widget widget-price">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
@@ -175,22 +232,49 @@
                                     <div class="widget-body">
                                         <form action="#">
                                             <div class="price-slider-wrapper">
-                                                <div id="price-slider"></div><!-- End https://haneri.ongoingsites.xyz/domexprice-slider -->
+                                                <div class="price-values">
+                                                    Price: <span id="filter-price-range">₹0 - ₹50,000</span>
+                                                </div>
+
+                                                <!-- Price Slider -->
+                                                <div class="slider">
+                                                    <input type="range" min="0" max="50000" value="0" id="minRange">
+                                                    <input type="range" min="0" max="50000" value="50000" id="maxRange">
+                                                </div>
                                             </div><!-- End .price-slider-wrapper -->
 
-                                            <div
-                                                class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
-                                                <div class="filter-price-text">
-                                                    Price:
-                                                    <span id="filter-price-range"></span>
-                                                </div><!-- End .filter-price-text -->
-
+                                            <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
                                                 <button type="submit" class="btn btn-primary">Filter</button>
                                             </div><!-- End .filter-price-action -->
                                         </form>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let minRange = document.getElementById("minRange");
+        let maxRange = document.getElementById("maxRange");
+        let priceDisplay = document.getElementById("filter-price-range");
+
+        function updatePrice() {
+            let minValue = parseInt(minRange.value);
+            let maxValue = parseInt(maxRange.value);
+
+            // Ensure min is not greater than max
+            if (minValue > maxValue) {
+                let temp = minValue;
+                minValue = maxValue;
+                maxValue = temp;
+            }
+
+            priceDisplay.textContent = `₹${minValue} - ₹${maxValue}`;
+        }
+
+        // Update price when sliders change
+        minRange.addEventListener("input", updatePrice);
+        maxRange.addEventListener("input", updatePrice);
+    });
+</script>
 
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
@@ -212,23 +296,7 @@
                                             <li>
                                                 <a href="#" style="background-color: #81d742;"></a>
                                                 <span>Green</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #6085a5;"></a>
-                                                <span>Indego</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #333;"></a>
-                                                <span>Black</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #0188cc;"></a>
-                                                <span>Blue</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #ab6e6e;"></a>
-                                                <span>Red</span>
-                                            </li>
+                                            </li>                                            
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
