@@ -609,28 +609,6 @@
                         });
                     }
 
-                    // function getSelectedAddress() {
-                    //     let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
-
-                    //     if (selectedRadio.length === 0) {
-                    //         alert("Please select a shipping address.");
-                    //         return null;
-                    //     }
-
-                    //     let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
-                    //     let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
-                    //     let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
-                    //     let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
-                    //     let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
-                    //     let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
-                    //     let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
-                    //     let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
-                    //     let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
-
-                    //     let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
-
-                    //     return shippingAddress;
-                    // }
                     function getSelectedAddress() {
                         let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");
 
@@ -658,7 +636,6 @@
 
                         return shippingAddress;
                     }
-
 
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault(); // Prevent form from submitting normally
@@ -745,7 +722,7 @@
                         };
 
                         $.ajax({
-                            url: `{{base_url}}/payments`,
+                            url: `<?php echo BASE_URL; ?>/payments`,
                             type: "POST",
                             headers: {
                                 "Authorization": `Bearer ${authToken}`,
@@ -754,11 +731,8 @@
                             data: JSON.stringify(paymentData),
                             success: function (response) {
                                 if (response.message.includes("success")) {
-                                    let paymentDetails = response.data;
-                                    let productStats = JSON.stringify(response.product_stats);
-
-                                    // Redirect to order complete page with payment details
-                                    window.location.href = `order-complete.php?order_id=${paymentDetails.order_id}&total_amount=${paymentDetails.amount}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&payment_id=${paymentDetails.razorpay_payment_id}&user_id=${paymentDetails.user}&product_stats=${encodeURIComponent(productStats)}`;
+                                    // Redirect to order complete page WITHOUT passing data via URL
+                                    window.location.href = `order-complete.php`;
                                 } else {
                                     alert("Payment processing failed. Please contact support.");
                                 }
