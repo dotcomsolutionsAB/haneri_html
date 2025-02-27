@@ -1,15 +1,15 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
 <main class="main about">
-    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="https://haneri.ongoingsites.xyz/domex">Pillar Technology</a></li> -->
+                <li class="breadcrumb-item"><a href="https://haneri.ongoingsites.xyz/domex">Pillar Technology</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Domex</li>
             </ol>
-        </div><!-- End .container -->
-    </nav>
+        </div>
+    </nav> -->
     <div class="page-wrapper">
 
     <main class="main">
@@ -65,10 +65,7 @@
 
                                     <div class="select-custom">
                                         <select name="perpage" class="form-control" data-datatable-size="true">
-                                            <!-- <option value="20">20</option>
-                                            <option value="30">30</option>
-                                            <option value="40">40</option>
-                                            <option value="50">50</option> -->
+
                                         </select>
                                     </div><!-- End .select-custom -->
                                 </div><!-- End .toolbox-item -->
@@ -109,6 +106,7 @@
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
                         <div class="sidebar-wrapper">
+
                             <div class="widget">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
@@ -146,20 +144,6 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <a href="#widget-category-3" class="collapsed" data-toggle="collapse"
-                                                    role="button" aria-expanded="false"
-                                                    aria-controls="widget-category-3">
-                                                    Fashion<span class="products-count">(2)</span>
-                                                    <span class="toggle"></span>
-                                                </a>
-                                                <div class="collapse" id="widget-category-3">
-                                                    <ul class="cat-sublist">
-                                                        <li>Shoes<span class="products-count">(4)</span></li>
-                                                        <li>Bag<span class="products-count">(2)</span></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
@@ -190,7 +174,6 @@
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-
 
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
@@ -250,6 +233,7 @@
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
+
                         </div><!-- End .sidebar-wrapper -->
                     </aside><!-- End .col-lg-3 -->
                 </div><!-- End .row -->
