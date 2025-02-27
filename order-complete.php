@@ -20,6 +20,8 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
     .c{
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 </style>
 <main class="main main-test checkout_page">
@@ -69,7 +71,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
 
             <div class="col-lg-4">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
-                    <h3 class="border-bottom pb-2 mb-3">Product Stats</h3>
+                    <h3 class="border-bottom pb-2 mb-3">Product Details</h3>
                     <table class="table table-striped">
                         <thead>
                             <tr>

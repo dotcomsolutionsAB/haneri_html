@@ -637,7 +637,6 @@
                         return shippingAddress;
                     }
 
-
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault(); // Prevent form from submitting normally
 
@@ -692,7 +691,7 @@
                             "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
                             "order_id": order_id, // Razorpay Order ID
                             "handler": function(response) {
-                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                                // alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
 
                                 // Send payment details to backend API
                                 processPayment(response.razorpay_payment_id, orderId, order_id, amount, userId, shippingAddress);
@@ -736,7 +735,7 @@
                                     let productStats = JSON.stringify(response.product_stats);
 
                                     // Redirect to order complete page with payment details
-                                    window.location.href = `order-complete.php?order_id=${paymentDetails.order_id}&total_amount=${paymentDetails.amount}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&payment_id=${paymentDetails.razorpay_payment_id}&user_id=${paymentDetails.user}&product_stats=${encodeURIComponent(productStats)}`;
+                                    window.location.href = `order-complete.php?method=${paymentDetails.method}&payment_id=${paymentDetails.razorpay_payment_id}&amount=${paymentDetails.amount}&order_id=${paymentDetails.order_id}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&product_stats=${encodeURIComponent(productStats)}`;
                                 } else {
                                     alert("Payment processing failed. Please contact support.");
                                 }

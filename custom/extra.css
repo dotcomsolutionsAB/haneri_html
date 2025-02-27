@@ -1960,3 +1960,6 @@ footer .social-icon {
     align-items: center;
     padding: 10px;
  }
+ .minipopup-area{
+    display:none;
+ }
