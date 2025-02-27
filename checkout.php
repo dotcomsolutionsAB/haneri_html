@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<style>
+<!-- <style>
     .vvv{
         display:flex;
         justify-content:end;
@@ -51,12 +51,12 @@
         border-radius: 10px !important;
         background: #0b4c44e6 !important;
     }
-</style>
+</style> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Place this stylesheet in your <head> or a linked CSS file -->
-<style>
+<!-- <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
   .address-card {
@@ -149,7 +149,7 @@
     background-color: transparent !important;
     border-color: transparent !important;
   }
-</style>
+</style> -->
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">

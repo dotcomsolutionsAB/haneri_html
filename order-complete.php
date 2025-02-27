@@ -2,13 +2,13 @@
 <?php include("configs/config.php"); ?> 
 
 <?php
-// Fetch data from URL parameters
-$method = $_GET['method'] ?? 'N/A';
-$payment_id = $_GET['payment_id'] ?? 'N/A';
-$amount = $_GET['amount'] ?? 'N/A';
-$order_id = $_GET['order_id'] ?? 'N/A';
-$shipping_address = $_GET['shipping_address'] ?? 'N/A';
-$product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['product_stats']), true) : [];
+    // Fetch data from URL parameters
+    $method = $_GET['method'] ?? 'N/A';
+    $payment_id = $_GET['payment_id'] ?? 'N/A';
+    $amount = $_GET['amount'] ?? 'N/A';
+    $order_id = $_GET['order_id'] ?? 'N/A';
+    $shipping_address = $_GET['shipping_address'] ?? 'N/A';
+    $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['product_stats']), true) : [];
 ?>
 <style>
     .text-right{
