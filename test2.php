@@ -5,148 +5,161 @@
 
         <main class="main">
 
-            <!-- ============================= -->
-<!-- Your Modified HTML Structure -->
-<!-- ============================= -->
-<div class="container mb-3">
-    <div class="row">
-        <div class="col-lg-9 main-content">
-            <!-- Toolbox (top filter + sorting) -->
-            <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
-                <div class="toolbox-left">
-                    <!-- (Optional) Sorting or any other controls can go here -->
-                </div>
-                
-                <div class="toolbox-right">
-                    <!-- Items per page -->
-                    <div class="toolbox-item toolbox-show">
-                        <label>Show:</label>
-                        <div class="select-custom">
-                            <select name="perpage" class="form-control" id="itemsPerPageSelect">
-                                <!-- Will be populated by JS -->
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Product Listing -->
-            <div class="row" id="products-table">
-                <!-- Products will be appended here -->
-            </div>
-
-            <!-- Pagination -->
-            <nav class="toolbox toolbox-pagination">
-                <div class="toolbox-item toolbox-show">
-                    <label>Show:</label>
-                    <div class="select-custom">
-                        <select name="perpage" class="form-control" id="itemsPerPageSelectBottom">
-                            <!-- Will be populated by JS -->
-                        </select>
-                    </div>
-                </div>
-                <ul class="pagination toolbox-item" id="paginationUl">
-                    <!-- Pagination links will be appended here -->
-                </ul>
-            </nav>
-        </div><!-- End .main-content -->
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
-            <div class="sidebar-wrapper">
-                <!-- ========== VARIANT TYPE FILTER ========== -->
-                <div class="widget widget-variant">
-                    <h3 class="widget-title">
-                        <a data-toggle="collapse" href="#widget-body-variant" role="button" aria-expanded="true"
-                           aria-controls="widget-body-variant">Variant Types</a>
-                    </h3>
-                    <div class="collapse show" id="widget-body-variant">
-                        <div class="widget-body">
-                            <ul id="variantTypeFilterList">
-                                <!-- Populated by JS with variant types only -->
-                            </ul>
-                        </div>
-                    </div>
-                </div><!-- End .widget -->
-
-                <!-- ========== PRICE FILTER ========== -->
-                <div class="widget widget-price">
-                    <h3 class="widget-title">
-                        <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
-                           aria-controls="widget-body-price">Price</a>
-                    </h3>
-                    <div class="collapse show" id="widget-body-price">
-                        <div class="widget-body">
-                            <div class="form-group">
-                                <label for="minPrice">Min Price</label>
-                                <!-- Default value: 500 -->
-                                <input type="number" id="minPrice" class="form-control" value="500" />
+        <!-- ============================= -->
+        <!-- Page Container -->
+        <!-- ============================= -->
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-lg-12 main-content">
+                    
+                    <!-- ========== FILTER TOOLBOX AT TOP ========== -->
+                    <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
+                        <div class="toolbox-left d-flex flex-wrap align-items-center">
+                            
+                            <!-- Category Filter (Dropdown) -->
+                            <div class="toolbox-item mr-2">
+                                <label for="categorySelect">Category:</label>
+                                <select id="categorySelect" class="form-control">
+                                    <option value="">All Categories</option>
+                                    <!-- Populated by JS -->
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="maxPrice">Max Price</label>
-                                <!-- Default value: 10000 -->
-                                <input type="number" id="maxPrice" class="form-control" value="10000" />
+
+                            <!-- Brand Filter (Dropdown) -->
+                            <div class="toolbox-item mr-2">
+                                <label for="brandSelect">Brand:</label>
+                                <select id="brandSelect" class="form-control">
+                                    <option value="">All Brands</option>
+                                    <!-- Populated by JS -->
+                                </select>
                             </div>
-                            <button type="button" class="btn btn-primary" id="priceFilterBtn">Filter</button>
+
+                            <!-- Variant Type Filter (Dropdown) -->
+                            <div class="toolbox-item mr-2">
+                                <label for="variantSelect">Variant:</label>
+                                <select id="variantSelect" class="form-control">
+                                    <option value="">All Variants</option>
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+
+                            <!-- Price Range -->
+                            <div class="toolbox-item mr-2">
+                                <label for="minPrice">Min Price:</label>
+                                <input type="number" id="minPrice" class="form-control" value="500" style="width:100px"/>
+                            </div>
+                            <div class="toolbox-item mr-2">
+                                <label for="maxPrice">Max Price:</label>
+                                <input type="number" id="maxPrice" class="form-control" value="10000" style="width:100px"/>
+                            </div>
+
+                            <!-- Filter Button -->
+                            <div class="toolbox-item">
+                                <button type="button" id="applyFilterBtn" class="btn btn-primary">
+                                    Filter
+                                </button>
+                            </div>
                         </div>
+                        
+                        <!-- Items per page (on the right) -->
+                        <div class="toolbox-right d-flex align-items-center">
+                            <div class="toolbox-item toolbox-show">
+                                <label>Show:</label>
+                                <div class="select-custom">
+                                    <select name="perpage" class="form-control" id="itemsPerPageSelect">
+                                        <!-- Populated by JS -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- Product Listing -->
+                    <div class="row mt-3" id="products-table">
+                        <!-- Products appended here -->
                     </div>
-                </div><!-- End .widget -->
-            </div>
-        </aside><!-- End .sidebar-shop -->
-    </div><!-- End .row -->
-</div><!-- End .container -->
+
+                    <!-- Pagination -->
+                    <nav class="toolbox toolbox-pagination">
+                        <div class="toolbox-item toolbox-show">
+                            <label>Show:</label>
+                            <div class="select-custom">
+                                <select name="perpage" class="form-control" id="itemsPerPageSelectBottom">
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+                        </div>
+                        <ul class="pagination toolbox-item" id="paginationUl">
+                            <!-- Pagination links appended here -->
+                        </ul>
+                    </nav>
+                </div><!-- End .main-content -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+
 
         </main>
-        <script>
-    // Global variables
+<script>
+    // Global variables for pagination
     let itemsPerPage = 10;
     let currentPage  = 1;
     let totalItems   = 0;
 
-    // Filter state object
+    // We'll store the filters in this object:
     const filters = {
-        search       : "",           // If your API merges brand/category/product name into 'search'
-        price_range  : "",           // We'll store "500k_10000k" (for example) or another format
-        variant_type : "",           // We'll store whichever variant type is selected
-        limit        : itemsPerPage,
-        offset       : 0
+        // "search": "",            // If needed, but not using a text search here
+        "category": "",             // Will store selected category name or ID
+        "brand": "",                // Will store selected brand name or ID
+        "variant_type": "",         // Will store selected variant type
+        "price_range": "",          // e.g., "500k_10000k"
+        "limit": itemsPerPage,
+        "offset": 0
     };
 
     $(document).ready(function() {
-        // Populate the items per page dropdown
+        // 1. Populate Items-Per-Page select
         populateItemsPerPageSelect([5, 10, 20, 30]);
 
-        // Fetch the distinct variant types
+        // 2. Fetch categories, brands, and variant types to populate the dropdowns
+        fetchCategories();
+        fetchBrands();
         fetchVariantTypes();
 
-        // Initial fetch of products (unfiltered except default pagination)
+        // 3. Initial product load (with default filters)
         fetchProducts();
 
-        // Handle changing items per page (top & bottom selects)
+        // 4. When user changes items-per-page, update and re-fetch
         $("#itemsPerPageSelect, #itemsPerPageSelectBottom").on("change", function() {
             itemsPerPage = parseInt($(this).val());
-            currentPage  = 1;
+            currentPage = 1;
             fetchProducts();
         });
 
-        // Handle the Price Filter button
-        $("#priceFilterBtn").on("click", function() {
+        // 5. When user clicks the "Filter" button, gather selections & re-fetch
+        $("#applyFilterBtn").on("click", function() {
+            // Build the price_range string (if your API expects "500k_10000k")
             const min = parseInt($("#minPrice").val()) || 0;
             const max = parseInt($("#maxPrice").val()) || 0;
-            // If your backend expects "500k_10000k" format, do this:
             filters.price_range = `${min}k_${max}k`;
-            // If your backend wants numeric or different format, adapt accordingly.
 
+            // Category & Brand: might be ID or name, depending on your API
+            filters.category = $("#categorySelect").val() || "";
+            filters.brand    = $("#brandSelect").val() || "";
+
+            // Variant Type
+            filters.variant_type = $("#variantSelect").val() || "";
+
+            // Reset to page 1
             currentPage = 1;
             fetchProducts();
         });
     });
 
     /**
-     * Fetch all products based on the filters object and current pagination.
+     * MAIN FUNCTION: fetchProducts
+     * Sends a POST request to your backend with the filters.
      */
     function fetchProducts() {
-        // Update limit & offset in filters
         filters.limit  = itemsPerPage;
         filters.offset = (currentPage - 1) * itemsPerPage;
 
@@ -170,13 +183,14 @@
     }
 
     /**
-     * Populate the products table (grid) with the returned product data.
+     * Populate the product grid area (#products-table).
      */
     function populateProductGrid(data) {
         const $grid = $("#products-table");
         $grid.empty();
 
         data.forEach(product => {
+            // Fallback image
             let productImage = (product.image && product.image.length > 0)
                 ? product.image[0]
                 : "assets/images/placeholder.jpg";
@@ -185,20 +199,18 @@
             let sellingPrice = product.variants?.[0]?.selling_price || "00";
             let productId    = product.variants?.[0]?.product_id || "NA";
 
-            // Example fallback or logic for category-based images
-            // (adjust as needed, or remove if not needed)
+            // Example for category-based images (adjust or remove if not needed)
             let categoryImage = 'assets/images/products/product-1.jpg';
-
             if (product.category?.id == 1) categoryImage = 'images/f1.png';
             else if (product.category?.id == 2) categoryImage = 'images/f2.png';
             else if (product.category?.id == 3) categoryImage = 'images/f3.png';
 
             $grid.append(`
-                <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                    <div class="product-default inner-quickview inner-icon" id="pro-table">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-3">
+                    <div class="product-default inner-quickview inner-icon">
                         <figure>
                             <a href="javascript:void(0)" onclick="openProductDetail('${productId}')">
-                                <img src="${categoryImage}" width="500" height="500" alt="product" />
+                                <img src="${categoryImage}" alt="product" />
                             </a>
                         </figure>
                         <div class="product-details">
@@ -214,12 +226,6 @@
                                     ${product.name}
                                 </a>
                             </h3>
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                            </div>
                             <div class="price-box">
                                 <span class="old-price">${regularPrice}</span>
                                 <span class="product-price">${sellingPrice}</span>
@@ -232,7 +238,7 @@
     }
 
     /**
-     * Update pagination links at the bottom of the page.
+     * Update pagination based on totalItems and currentPage.
      */
     function updatePagination() {
         const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -241,22 +247,21 @@
 
         if (totalPages <= 1) return;
 
-        // Previous button
+        // Prev button
         const prevDisabled = (currentPage === 1) ? 'disabled' : '';
         $pagination.append(`
             <li class="page-item ${prevDisabled}">
-                <a class="page-link" href="javascript:void(0)" data-page="${currentPage - 1}">
-                    Prev
-                </a>
+                <a class="page-link" href="javascript:void(0)" data-page="${currentPage - 1}">Prev</a>
             </li>
         `);
 
-        // Page number buttons
         for (let i = 1; i <= totalPages; i++) {
-            const activeClass = (i === currentPage) ? 'active' : '';
+            const active = (i === currentPage) ? 'active' : '';
             $pagination.append(`
-                <li class="page-item ${activeClass}">
-                    <a class="page-link" href="javascript:void(0)" data-page="${i}">${i}</a>
+                <li class="page-item ${active}">
+                    <a class="page-link" href="javascript:void(0)" data-page="${i}">
+                        ${i}
+                    </a>
                 </li>
             `);
         }
@@ -265,13 +270,11 @@
         const nextDisabled = (currentPage === totalPages) ? 'disabled' : '';
         $pagination.append(`
             <li class="page-item ${nextDisabled}">
-                <a class="page-link" href="javascript:void(0)" data-page="${currentPage + 1}">
-                    Next
-                </a>
+                <a class="page-link" href="javascript:void(0)" data-page="${currentPage + 1}">Next</a>
             </li>
         `);
 
-        // Handle page click
+        // Handle clicks
         $("#paginationUl .page-link").on("click", function() {
             const page = parseInt($(this).data("page"));
             if (!isNaN(page) && page >= 1 && page <= totalPages && page !== currentPage) {
@@ -282,32 +285,105 @@
     }
 
     /**
-     * Populate the 'items per page' selects (top and bottom).
+     * Populate the items-per-page selects (top & bottom).
      */
     function populateItemsPerPageSelect(options) {
-        const $selectTop    = $("#itemsPerPageSelect");
-        const $selectBottom = $("#itemsPerPageSelectBottom");
+        const $top    = $("#itemsPerPageSelect");
+        const $bottom = $("#itemsPerPageSelectBottom");
 
-        $selectTop.empty();
-        $selectBottom.empty();
+        $top.empty();
+        $bottom.empty();
 
         options.forEach(opt => {
-            $selectTop.append(`<option value="${opt}">${opt}</option>`);
-            $selectBottom.append(`<option value="${opt}">${opt}</option>`);
+            $top.append(`<option value="${opt}">${opt}</option>`);
+            $bottom.append(`<option value="${opt}">${opt}</option>`);
         });
 
-        // Set default selection
-        $selectTop.val(itemsPerPage);
-        $selectBottom.val(itemsPerPage);
+        // Set default
+        $top.val(itemsPerPage);
+        $bottom.val(itemsPerPage);
     }
 
     /**
-     * Fetch the variant types from your API.
-     * If your endpoint returns something like:
+     * FETCH CATEGORIES
+     * Adjust if your API returns different fields, e.g.:
      * {
      *   "data": [
-     *     { "type": "size", "value": "XXL, XL, ..."},
-     *     { "type": "color", "value": "red, blue,..."},
+     *     {
+     *       "id": 1,
+     *       "name": "Ceiling Fans",
+     *       ...
+     *     }, ...
+     *   ]
+     * }
+     */
+    function fetchCategories() {
+        $.ajax({
+            url: '<?php echo BASE_URL; ?>/categories',
+            type: 'GET',
+            success: function(response) {
+                if (response && response.data) {
+                    populateCategorySelect(response.data);
+                }
+            },
+            error: function(err) {
+                console.error("Error fetching categories:", err);
+            }
+        });
+    }
+
+    function populateCategorySelect(categories) {
+        const $select = $("#categorySelect");
+        // Start by preserving the first <option value="">All Categories</option>
+        // Then append each category.
+        categories.forEach(cat => {
+            // If your API provides an `id`, consider using `value="${cat.id}"`
+            // or if it expects category name in "search", use `cat.name`.
+            $select.append(`
+                <option value="${cat.name}">${cat.name}</option>
+            `);
+        });
+    }
+
+    /**
+     * FETCH BRANDS
+     * Example response:
+     * {
+     *   "data": [
+     *     { "id": 1, "name": "Haneri", ... },
+     *     ...
+     *   ]
+     * }
+     */
+    function fetchBrands() {
+        $.ajax({
+            url: '<?php echo BASE_URL; ?>/brands',
+            type: 'GET',
+            success: function(response) {
+                if (response && response.data) {
+                    populateBrandSelect(response.data);
+                }
+            },
+            error: function(err) {
+                console.error("Error fetching brands:", err);
+            }
+        });
+    }
+
+    function populateBrandSelect(brands) {
+        const $select = $("#brandSelect");
+        brands.forEach(b => {
+            $select.append(`<option value="${b.name}">${b.name}</option>`);
+        });
+    }
+
+    /**
+     * FETCH VARIANT TYPES
+     * Example response:
+     * {
+     *   "data": [
+     *     { "type": "size",  "value": "XXL,XL,L,M,S" },
+     *     { "type": "color", "value": "red,blue,..." },
      *     ...
      *   ]
      * }
@@ -318,15 +394,14 @@
             type: 'GET',
             success: function(response) {
                 if (response && response.data) {
-                    // Build a unique list of variant types
-                    let variantTypes = [];
+                    const variantTypes = [];
                     response.data.forEach(item => {
-                        let t = item.type;
-                        if (t && !variantTypes.includes(t)) {
-                            variantTypes.push(t);
+                        // Add only the unique "type"
+                        if (item.type && !variantTypes.includes(item.type)) {
+                            variantTypes.push(item.type);
                         }
                     });
-                    populateVariantTypeFilter(variantTypes);
+                    populateVariantSelect(variantTypes);
                 }
             },
             error: function(err) {
@@ -335,43 +410,22 @@
         });
     }
 
-    /**
-     * Dynamically create the list of variant types for filtering.
-     */
-    function populateVariantTypeFilter(variantTypes) {
-        const $list = $("#variantTypeFilterList");
-        $list.empty();
-
-        variantTypes.forEach(type => {
-            // Example: just list each variant type as a clickable link
-            $list.append(`
-                <li>
-                    <a href="javascript:void(0)" class="variant-type-link" data-type="${type}">
-                        ${type}
-                    </a>
-                </li>
-            `);
-        });
-
-        // Handle clicks on any variant type link
-        $(".variant-type-link").on("click", function() {
-            const selectedType = $(this).data("type");
-            filters.variant_type = selectedType; // set the filter
-            currentPage = 1;
-            fetchProducts();
+    function populateVariantSelect(types) {
+        const $select = $("#variantSelect");
+        types.forEach(t => {
+            $select.append(`<option value="${t}">${t}</option>`);
         });
     }
 
     /**
-     * Example function for opening product detail (stub).
-     * Adjust to your actual detail page logic.
+     * Example function to open product detail or do something else.
      */
     function openProductDetail(productId) {
-        alert("Open product detail for Product ID: " + productId);
-        // Possibly redirect or open a modal, e.g.:
-        // window.location.href = `product-detail.php?id=${productId}`;
+        alert("Open product detail for product ID: " + productId);
+        // e.g., window.location.href = "product_detail.php?id=" + productId;
     }
 </script>
+
 
         <script>
             function openProductDetail(productId) {
