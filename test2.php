@@ -165,63 +165,6 @@
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
-<style>
-    /* Price Filter Styling */
-    .price-slider-wrapper {
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    /* Price Range Display */
-    .price-values {
-        font-size: 14px;
-        font-weight: bold;
-        background: #f6931f;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 15px;
-        display: inline-block;
-        margin-bottom: 10px;
-    }
-
-    /* Slider Wrapper */
-    .slider {
-        position: relative;
-        width: 100%;
-        height: 5px;
-        margin: 10px 0;
-    }
-
-    /* Range Inputs */
-    .slider input[type="range"] {
-        position: absolute;
-        width: 100%;
-        -webkit-appearance: none;
-        background: transparent;
-        pointer-events: none;
-    }
-
-    /* Custom Track */
-    .slider input[type="range"]::-webkit-slider-runnable-track {
-        background: #ddd;
-        height: 5px;
-        border-radius: 5px;
-    }
-
-    /* Custom Thumb */
-    .slider input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        height: 15px;
-        width: 15px;
-        background: #f6931f;
-        border-radius: 50%;
-        cursor: pointer;
-        position: relative;
-        pointer-events: all;
-    }
-
-</style>
                             <div class="widget widget-price">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
@@ -232,49 +175,22 @@
                                     <div class="widget-body">
                                         <form action="#">
                                             <div class="price-slider-wrapper">
-                                                <div class="price-values">
-                                                    Price: <span id="filter-price-range">₹0 - ₹50,000</span>
-                                                </div>
-
-                                                <!-- Price Slider -->
-                                                <div class="slider">
-                                                    <input type="range" min="0" max="50000" value="0" id="minRange">
-                                                    <input type="range" min="0" max="50000" value="50000" id="maxRange">
-                                                </div>
+                                                <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="90.0" aria-valuenow="0.0" aria-valuetext="0.00"></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="10.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="1000.00"></div></div></div></div><!-- End #price-slider -->
                                             </div><!-- End .price-slider-wrapper -->
 
                                             <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
+                                                <div class="filter-price-text">
+                                                    Price:
+                                                    <span id="filter-price-range">$0 - $1000</span>
+                                                </div><!-- End .filter-price-text -->
+
                                                 <button type="submit" class="btn btn-primary">Filter</button>
                                             </div><!-- End .filter-price-action -->
                                         </form>
-                                    </div><!-- End .widget-body -->
+                                    </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let minRange = document.getElementById("minRange");
-        let maxRange = document.getElementById("maxRange");
-        let priceDisplay = document.getElementById("filter-price-range");
 
-        function updatePrice() {
-            let minValue = parseInt(minRange.value);
-            let maxValue = parseInt(maxRange.value);
-
-            // Ensure min is not greater than max
-            if (minValue > maxValue) {
-                let temp = minValue;
-                minValue = maxValue;
-                maxValue = temp;
-            }
-
-            priceDisplay.textContent = `₹${minValue} - ₹${maxValue}`;
-        }
-
-        // Update price when sliders change
-        minRange.addEventListener("input", updatePrice);
-        maxRange.addEventListener("input", updatePrice);
-    });
-</script>
 
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
