@@ -10,7 +10,18 @@ $order_id = $_GET['order_id'] ?? 'N/A';
 $shipping_address = $_GET['shipping_address'] ?? 'N/A';
 $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['product_stats']), true) : [];
 ?>
-
+<style>
+    .text-right{
+        display: flex;
+        justify-content: flex-start;
+        /* width: 80%; */
+        background: aqua;
+    }
+    .c{
+        display: flex;
+        justify-content: center;
+    }
+</style>
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <div class="order-success-message text-center animate__animated animate__fadeIn">            
@@ -26,7 +37,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
         </div>
 
         <div class="row mt-5 d-flex align-items-stretch">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
                     <h3 class="border-bottom pb-2 mb-3">Payment Details</h3>
                     <table class="table table-striped">
@@ -56,7 +67,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="order-details-box p-4 shadow rounded bg-white h-100 animate__animated animate__fadeInLeft">
                     <h3 class="border-bottom pb-2 mb-3">Product Stats</h3>
                     <table class="table table-striped">
@@ -70,7 +81,7 @@ $product_stats = isset($_GET['product_stats']) ? json_decode(urldecode($_GET['pr
                             <?php foreach ($product_stats as $product) { ?>
                                 <tr>
                                     <td><?= $product['product_name'] ?></td>
-                                    <td class="text-right"><?= $product['total_quantity'] ?></td>
+                                    <td class="text-right c"><?= $product['total_quantity'] ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
