@@ -97,45 +97,94 @@
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
                         <div class="sidebar-wrapper">
+                            <script>
+                                $(document).ready(function() {
+                                    fetchCategories();
+                                });
+                                // 1. Fetch Categories
+                                function fetchCategories() {
+                                    $.ajax({
+                                        url: '<?php echo BASE_URL; ?>/categories',
+                                        type: 'GET',
+                                        success: function(response) {
+                                            if (response && response.data) {
+                                                populateCategories(response.data);
+                                            } else {
+                                                console.error("Unexpected categories response format:", response);
+                                            }
+                                        },
+                                        error: function(err) {
+                                            console.error("Error fetching categories:", err);
+                                        }
+                                    });
+                                }
+                                // 2. Render Categories (with checkboxes) into the sidebar
+                                function populateCategories(categories) {
+                                    let htmlStr = '';
+                                    categories.forEach(category => {
+                                        // Example: each category gets a checkbox and a label
+                                        htmlStr += `
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" name="category" value="${category.name}">
+                                                    <span>${category.name}</span>
+                                                </label>
+                                            </li>
+                                        `;
+                                    });
+                                    $('#categories-list').html(htmlStr);
+                                }
+                            </script>
 <script>
     $(document).ready(function() {
-        fetchCategories();
-    });
+    // If you already have `fetchCategories()` somewhere
+    fetchCategories();
 
-    // 1. Fetch Categories
-    function fetchCategories() {
-        $.ajax({
-            url: '<?php echo BASE_URL; ?>/categories',
-            type: 'GET',
-            success: function(response) {
-                if (response && response.data) {
-                    populateCategories(response.data);
-                } else {
-                    console.error("Unexpected categories response format:", response);
-                }
-            },
-            error: function(err) {
-                console.error("Error fetching categories:", err);
+    // 1. Fetch and display brands
+    fetchBrands();
+
+    // 2. On Apply Filters button click, fetch products
+    // $('#apply-filters').on('click', function() {
+    //     currentPage = 1;
+    //     fetchProducts();
+    // });
+});
+
+// -------------------------------------------
+// 1. Fetch Brands from your API
+function fetchBrands() {
+    $.ajax({
+        url: '{{base_url}}/brands', // Your API endpoint
+        type: 'GET',
+        success: function(response) {
+            if (response && response.data) {
+                populateBrands(response.data);
+            } else {
+                console.error("Unexpected brands response format:", response);
             }
-        });
-    }
+        },
+        error: function(err) {
+            console.error("Error fetching brands:", err);
+        }
+    });
+}
 
-    // 2. Render Categories (with checkboxes) into the sidebar
-    function populateCategories(categories) {
-        let htmlStr = '';
-        categories.forEach(category => {
-            // Example: each category gets a checkbox and a label
-            htmlStr += `
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="${category.name}">
-                        <span>${category.name}</span>
-                    </label>
-                </li>
-            `;
-        });
-        $('#categories-list').html(htmlStr);
-    }
+// 2. Render the Brands in the Brand widget
+function populateBrands(brands) {
+    let htmlStr = '';
+    brands.forEach(brand => {
+        htmlStr += `
+            <li>
+                <label>
+                    <input type="checkbox" name="brand" value="${brand.name}">
+                    <span>${brand.name}</span>
+                </label>
+            </li>
+        `;
+    });
+    // Make sure you have something like <ul id="brands-list"> in the Brand widget
+    $('#brands-list').html(htmlStr);
+}
 </script>
                             <!-- Categories Widget -->
                             <div class="widget">
@@ -152,6 +201,19 @@
                                             <!-- Dynamically populated via JS -->
                                         </ul>
                                     </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+                            <div class="widget widget-brand">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
+                                    aria-controls="widget-body-7">Brand</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-7">
+                                    <div class="widget-body pb-0">
+                                        <!-- Add an empty <ul> with an ID for the brand checkboxes -->
+                                        <ul class="cat-list" id="brands-list"></ul>
+                                    </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
@@ -228,20 +290,7 @@
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
-                            <div class="widget widget-brand">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-7">Brand</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-7">
-                                    <div class="widget-body pb-0">
-                                        <ul class="cat-list">
-                                            <li><a href="#">Haneri</a></li>
-                                        </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
+                            
 
                         </div><!-- End .sidebar-wrapper -->
                     </aside><!-- End .col-lg-3 -->
@@ -250,92 +299,75 @@
         </main>
         <script>
             $(document).ready(function () {
-                // const token = localStorage.getItem('auth_token');
 
-                // let itemsPerPage = 10; // Default items per page
-                // let currentPage = 1; // Current page number
-                // let totalItems = 0; // Total items from API response
-                // const fetchProducts = () => {
-                //     const offset = (currentPage - 1) * itemsPerPage;
+                // Global or higher scope variables
+                let currentPage = 1;
+                let itemsPerPage = 10;
+                // If you need them for pagination
+                let totalItems = 0;
 
-                //     $.ajax({
-                //         url: '<?php echo BASE_URL; ?>/products/get_products',
-                //         type: 'POST',
-                //         // headers: { Authorization: `Bearer ${token}` },
-                //         data: { search: '', limit: itemsPerPage, offset: offset},
-                //         success: (response) => {
-                //                 if (response && response.data) {
-                //                     totalItems = response.total_records; // Assuming total items is part of the API response
-                //                     populateTable(response.data);
-                //                     updatePagination();
-                //                 } else {
-                //                     console.error("Unexpected response format:", response);
-                //                 }
-                //         },
-                //         error: (error) => {
-                //                 console.error("Error fetching data:", error);
-                //         }
-                //     });
-                // };
-// Global or higher scope variables
-let currentPage = 1;
-let itemsPerPage = 10;
-// If you need them for pagination
-let totalItems = 0;
+                // Modify your existing function to include category filters
+                function fetchProducts() {
+                    const offset = (currentPage - 1) * itemsPerPage;
+                    
+                    // Gather selected categories (checkboxes)
+                    const selectedCategories = [];
+                    $('input[name="category"]:checked').each(function() {
+                        selectedCategories.push($(this).val());
+                    });
 
-// Modify your existing function to include category filters
-function fetchProducts() {
-    const offset = (currentPage - 1) * itemsPerPage;
-    
-    // Gather selected categories (checkboxes)
-    const selectedCategories = [];
-    $('input[name="category"]:checked').each(function() {
-        selectedCategories.push($(this).val());
-    });
+                    // 2. Gather selected brands
+                    const selectedBrands = [];
+                    $('input[name="brand"]:checked').each(function() {
+                        selectedBrands.push($(this).val());
+                    });
 
-    // Example: If your API expects a single search string that might include brand/category/product name
-    // you could concatenate them. Or if it expects an array/JSON, adjust accordingly.
-    const searchQuery = selectedCategories.join(',');
+                    // Example: If your API expects a single search string that might include brand/category/product name
+                    // you could concatenate them. Or if it expects an array/JSON, adjust accordingly.
+                    // const searchQuery = selectedCategories.join(',');
 
-    // If you also have price range filtering, you might collect that here (replace with your logic)
-    let priceRange = $('#filter-price-range').text(); 
-    // e.g. "0 - 1000", convert to the format your API expects (like "1k_2k").
-    // You’d parse or map that to whatever the backend is expecting.
-    
-    $.ajax({
-        url: '<?php echo BASE_URL; ?>/products/get_products',
-        type: 'POST',
-        data: {
-            // Adjust these fields to match your backend’s required parameters
-            search: searchQuery,
-            price_range: "1k_2k",  // If you want to pass a price_range (replace with dynamic)
-            limit: itemsPerPage,
-            offset: offset,
-            // If needed:
-            // is_active: 1,
-            // variant_type: "Speed",
-            // ...
-        },
-        success: (response) => {
-            if (response && response.data) {
-                totalItems = response.total_records || 0; 
-                populateTable(response.data);  // wherever you display products
-                updatePagination();           // your existing pagination logic
-            } else {
-                console.error("Unexpected products response format:", response);
-            }
-        },
-        error: (error) => {
-            console.error("Error fetching products:", error);
-        }
-    });
-}
+                    // If your API needs a single combined search string for categories/brands:
+                    const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
 
-// When the user clicks "Apply Filters", fetch products again using selected filters
-$('#apply-filters').on('click', function() {
-    currentPage = 1; // reset to first page if needed
-    fetchProducts();
-});
+                    // If you also have price range filtering, you might collect that here (replace with your logic)
+                    let priceRange = $('#filter-price-range').text(); 
+                    // e.g. "0 - 1000", convert to the format your API expects (like "1k_2k").
+                    // You’d parse or map that to whatever the backend is expecting.
+                    
+                    $.ajax({
+                        url: '<?php echo BASE_URL; ?>/products/get_products',
+                        type: 'POST',
+                        data: {
+                            // Adjust these fields to match your backend’s required parameters
+                            search: combinedSearch,
+                            price_range: "1k_2k",  // If you want to pass a price_range (replace with dynamic)
+                            limit: itemsPerPage,
+                            offset: offset,
+                            // If needed:
+                            // is_active: 1,
+                            // variant_type: "Speed",
+                            // ...
+                        },
+                        success: (response) => {
+                            if (response && response.data) {
+                                totalItems = response.total_records || 0; 
+                                populateTable(response.data);  // wherever you display products
+                                updatePagination();           // your existing pagination logic
+                            } else {
+                                console.error("Unexpected products response format:", response);
+                            }
+                        },
+                        error: (error) => {
+                            console.error("Error fetching products:", error);
+                        }
+                    });
+                }
+
+                // When the user clicks "Apply Filters", fetch products again using selected filters
+                $('#apply-filters').on('click', function() {
+                    currentPage = 1; // reset to first page if needed
+                    fetchProducts();
+                });
 
 
                 const populateTable = (data) => {
