@@ -62,8 +62,7 @@
   .address-card {
     /* Now it's a label, so display block and make it look like a card */
     font-family: 'Roboto', sans-serif;
-    width: 420px;
-    max-width: 420px;
+    min-width: 400px;
     margin: 1rem auto;               /* Center the card with a bit of spacing */
     display: block;                  /* Ensures the label can wrap block elements */
     background-color: #fff;
@@ -232,6 +231,7 @@
                     });
                 }
 
+
                 window.deleteAddress = function (id) { 
                     if (!confirm("Are you sure you want to delete this address?")) {
                         return;
@@ -277,7 +277,6 @@
 
                     $("#updateAddressModal").modal("show");
                 };
-
                 $(document).ready(function () {
                     // Close modal when clicking the 'X' button
                     $(".close").click(function () {
@@ -291,6 +290,7 @@
                         }
                     });
                 });
+
 
                 window.updateAddress = function () {
                     let id = $("#update_address_id").val();
@@ -609,6 +609,28 @@
                         });
                     }
 
+                    // function getSelectedAddress() {
+                    //     let selectedRadio = $("input[name='address_select']:checked").closest(".address_box");
+
+                    //     if (selectedRadio.length === 0) {
+                    //         alert("Please select a shipping address.");
+                    //         return null;
+                    //     }
+
+                    //     let name = selectedRadio.find(".col-lg-5 p:contains('Name')").text().replace("Name:", "").trim();
+                    //     let contactNo = selectedRadio.find(".col-lg-5 p:contains('Contact No')").text().replace("Contact No:", "").trim();
+                    //     let email = selectedRadio.find(".col-lg-5 p:contains('Email')").text().replace("Email:", "").trim();
+                    //     let address1 = selectedRadio.find(".col-lg-5 p:contains('Address 1')").text().replace("Address 1:", "").trim();
+                    //     let address2 = selectedRadio.find(".col-lg-5 p:contains('Address 2')").text().replace("Address 2:", "").trim() || "";
+                    //     let city = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(3)").text().trim();
+                    //     let state = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(2)").text().trim();
+                    //     let country = selectedRadio.find(".col-lg-5 p:contains('Location') span:nth-child(1)").text().trim();
+                    //     let postalCode = selectedRadio.find(".col-lg-5 p:contains('Postal Code')").text().replace("Postal Code:", "").trim();
+
+                    //     let shippingAddress = `${name}, ${contactNo}, ${email ? email + ", " : ""}${address1}, ${address2 ? address2 + ", " : ""}${city}, ${state}, ${postalCode}, ${country}`;
+
+                    //     return shippingAddress;
+                    // }
                     function getSelectedAddress() {
                         let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");
 
@@ -636,6 +658,7 @@
 
                         return shippingAddress;
                     }
+
 
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault(); // Prevent form from submitting normally
@@ -667,9 +690,10 @@
                                     let userName = orderDetails.name;
                                     let userEmail = orderDetails.email;
                                     let userPhone = orderDetails.phone;
+                                    let userId = orderDetails.user_id;
 
                                     // Open Razorpay Payment Popup
-                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userName, userEmail, userPhone, shippingAddress);
+                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
                                 } else {
                                     alert("Failed to place order. Please try again.");
                                 }
@@ -680,7 +704,7 @@
                         });
                     });
 
-                    function openRazorpayPopup(order_id, amount, orderId, name, email, phone, shippingAddress) {
+                    function openRazorpayPopup(order_id, amount, orderId, userId, name, email, phone, shippingAddress) {
                         var options = {
                             "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
                             "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
@@ -690,10 +714,10 @@
                             "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
                             "order_id": order_id, // Razorpay Order ID
                             "handler": function(response) {
-                                // alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
 
-                                // Redirect to order complete page with payment ID and order details
-                                window.location.href = `order-complete.php?order_id=${orderId}&total_amount=${amount}&shipping_address=${encodeURIComponent(shippingAddress)}&payment_id=${response.razorpay_payment_id}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${phone}`;
+                                // Send payment details to backend API
+                                processPayment(response.razorpay_payment_id, orderId, order_id, amount, userId, shippingAddress);
                             },
                             "prefill": {
                                 "name": name,
@@ -707,6 +731,42 @@
 
                         var rzp = new Razorpay(options);
                         rzp.open();
+                    }
+
+                    function processPayment(paymentId, orderId, razorpayOrderId, amount, userId, shippingAddress) {
+                        let paymentData = {
+                            "method": "upi",
+                            "razorpay_payment_id": paymentId,
+                            "amount": amount,
+                            "status": "pending",
+                            "order_id": orderId,
+                            "razorpay_order_id": razorpayOrderId,
+                            "user_id": userId
+                        };
+
+                        $.ajax({
+                            url: `{{base_url}}/payments`,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(paymentData),
+                            success: function (response) {
+                                if (response.message.includes("success")) {
+                                    let paymentDetails = response.data;
+                                    let productStats = JSON.stringify(response.product_stats);
+
+                                    // Redirect to order complete page with payment details
+                                    window.location.href = `order-complete.php?order_id=${paymentDetails.order_id}&total_amount=${paymentDetails.amount}&shipping_address=${encodeURIComponent(paymentDetails.shipping_address)}&payment_id=${paymentDetails.razorpay_payment_id}&user_id=${paymentDetails.user}&product_stats=${encodeURIComponent(productStats)}`;
+                                } else {
+                                    alert("Payment processing failed. Please contact support.");
+                                }
+                            },
+                            error: function () {
+                                alert("Payment processing failed. Please contact support.");
+                            }
+                        });
                     }
 
                     fetchCartItems(); // Load cart items on page load
