@@ -6,7 +6,7 @@
         <main class="main">
 
             <div class="container mb-3">
-                <div class="row products_area">
+                <div class="row">
                     <div class="col-lg-9 main-content">
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
@@ -73,7 +73,7 @@
                         </nav>
                         <!-- End Mobile view -->
 
-                        <div class="row" id="products-table">
+                        <div class="row products_area" id="products-table">
                             <!-- products showing here  -->
                         </div>
 
@@ -225,7 +225,7 @@
                                         <select id="price-range-select" class="form-control">
                                             <option value="">-- Select Price --</option>
                                             <option value="0k_10k">0K - 10K</option>
-                                            <option value="10k_20k">10K - 20K</option>
+                                            <option value="10k_25k">10K - 25K</option>
                                             <option value="20k_30k">20K - 30K</option>
                                             <option value="30k_40k">30K - 40K</option>
                                             <option value="40k_50k">40K - 50K</option>
