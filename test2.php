@@ -180,8 +180,8 @@
                                 }
                             </script>
                             <!-- Categories Widget -->
-                            <div class="widget">
-                                <h3 class="widget-title">
+                            <div class="widget widget-category">
+                                <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-categories" role="button" aria-expanded="true"
                                     aria-controls="widget-body-categories">
                                         Categories
@@ -198,7 +198,7 @@
                             </div><!-- End .widget -->
 
                             <div class="widget widget-brand">
-                                <h3 class="widget-title">
+                                <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
                                     aria-controls="widget-body-7">Brand</a>
                                 </h3>
@@ -212,7 +212,7 @@
                             </div><!-- End .widget -->
 
                             <div class="widget widget-price">
-                                <h3 class="widget-title">
+                                <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
                                     aria-controls="widget-body-price">
                                     Price
