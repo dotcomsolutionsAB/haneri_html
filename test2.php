@@ -207,7 +207,7 @@
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-                            <div class="widget widget-price wid">
+                            <!-- <div class="widget widget-price wid">
                                 <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
                                     aria-controls="widget-body-price">
@@ -228,7 +228,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <script>
                                 $(document).ready(function() {
@@ -283,7 +283,6 @@
                                 $(document).ready(function() {
                                     fetchVariants()
                                 });
-
                                 function fetchVariants() {
                                     $.ajax({
                                         url: '<?php echo BASE_URL; ?>/products/unique_variant', // GET
@@ -329,7 +328,11 @@
                             </div>
 
                             <!-- Filter Button - triggers product fetching -->
-                            <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+                             <div class="fil">
+                                <button id="apply-filters" class="apply_filter">
+                                    Apply Filters
+                                </button>
+                             </div>
 
                             <!-- <div class="widget widget-color">
                                 <h3 class="widget-title">
@@ -362,6 +365,7 @@
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </main>
+
         <script>
             $(document).ready(function () {
 
@@ -559,7 +563,8 @@
                 window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
-            <!-- End .main -->
+
+        <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
     </div><!-- End .page-wrapper -->

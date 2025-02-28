@@ -2158,9 +2158,32 @@ footer .social-icon {
     
     .config-size-list li label{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        width: 50%;
+        width: 85px;
+        height: 30px;
+        padding: 5px;
+        background: #6c757d2b;
+        border-radius: 10px;
+    }
+    .apply_filter{
+        background: #00473ec2;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 0px;
+        color: #f3f6f6;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .apply_filter:hover {
+        background: #315858;
+    }
+    .fil{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
     }
  /* end Shop page style */
 
