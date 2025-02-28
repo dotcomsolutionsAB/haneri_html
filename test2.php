@@ -236,10 +236,10 @@
                                     const priceSlider = document.getElementById('price-slider');
 
                                     noUiSlider.create(priceSlider, {
-                                        start: [0, 20000],  // Initial slider handles: [min, max]
+                                        start: [100, 20000],  // Initial slider handles: [min, max]
                                         connect: true,     // Fill the bar between handles
                                         range: {
-                                            min: 0,
+                                            min: 100,
                                             max: 50000      // Adjust as per your upper price limit
                                         },
                                         step: 100          // Adjust step if you like
