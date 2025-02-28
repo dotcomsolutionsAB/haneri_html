@@ -287,7 +287,7 @@
                                     const priceSlider = document.getElementById('price-slider');
 
                                     noUiSlider.create(priceSlider, {
-                                        // start: [0, 5000],  // Initial slider handles: [min, max]
+                                        start: [0, 5000],  // Initial slider handles: [min, max]
                                         connect: true,     // Fill the bar between handles
                                         range: {
                                             min: 0,
@@ -420,7 +420,7 @@
                             price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
                             limit: itemsPerPage,
                             offset: offset,
-                            order_price: orderPrice // sort price asc or desc
+                            order_price: orderPrice, // sort price asc or desc
                             min_priceFilter: minPrice, // newly added min & max
                             max_priceFilter: maxPrice,
 
