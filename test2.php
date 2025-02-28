@@ -287,7 +287,7 @@
                                     const priceSlider = document.getElementById('price-slider');
 
                                     noUiSlider.create(priceSlider, {
-                                        start: [0, 5000],  // Initial slider handles: [min, max]
+                                        // start: [0, 5000],  // Initial slider handles: [min, max]
                                         connect: true,     // Fill the bar between handles
                                         range: {
                                             min: 0,
