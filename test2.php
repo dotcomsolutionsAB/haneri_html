@@ -193,7 +193,6 @@
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-
                             <div class="widget widget-brand wid">
                                 <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
@@ -207,7 +206,6 @@
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-
                             <div class="widget widget-price wid">
                                 <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
@@ -230,7 +228,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="widget widget-price">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
@@ -256,6 +253,12 @@
                             </div>
 
                             <script>
+                                $(document).ready(function() {
+                                    // If you already have `fetchCategories()` somewhere
+                                    fetchVariants()
+
+                                });
+
                                 function fetchVariants() {
                                     $.ajax({
                                         url: '<?php echo BASE_URL; ?>/products/unique_variant', // GET
