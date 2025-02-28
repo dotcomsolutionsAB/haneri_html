@@ -36,8 +36,9 @@
                                     <label>Sort By:</label>
                                     <div class="select-custom">
                                         <select name="orderby" id="orderby-select" class="form-control">
-                                            <option value="ascending">Sort by price: low to high</option> 
-                                            <option value="descending">Sort by price: high to low</option> 
+                                            <option value="">-Select-</option> 
+                                            <option value="ascending">low to high</option> 
+                                            <option value="descending">high to low</option> 
                                         </select>
                                     </div>
                                 </div>
@@ -320,21 +321,30 @@
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
                     
-                    // Gather selected categories (checkboxes)
-                    const selectedCategories = [];
-                    $('input[name="category"]:checked').each(function() {
-                        selectedCategories.push($(this).val());
-                    });
+                    // 1. Collect search for Products (e.g., from a text input)
+                    //    e.g. "Haneri AirElite AEW1" if user typed that
+                    const searchProduct = $('#search-product-input').val() || '';
 
-                    // 2. Gather selected brands
+                    // 2. Collect selected Brands (checkboxes), comma-separated
+                    //    e.g. "Stanley 600W Small 100mm Angle Grinder" if user selected it
                     const selectedBrands = [];
                     $('input[name="brand"]:checked').each(function() {
                         selectedBrands.push($(this).val());
                     });
-                    // 3. Get the price range from the select box
+                    const searchBrand = selectedBrands.join(',');
+
+                    // 3. Collect selected Categories (checkboxes), comma-separated
+                    //    e.g. "Table Wall Pedestals, Domestic Exhaust" if user selected them
+                    const selectedCategories = [];
+                    $('input[name="category"]:checked').each(function() {
+                        selectedCategories.push($(this).val());
+                    });
+                    const searchCategory = selectedCategories.join(',');
+
+                    // 4. Get the price range from the select box
                     const priceRange = $('#price-range-select').val(); 
 
-                    // 4. Sorting select box
+                    // 5. Sorting select box
                     const orderValue = $('#orderby-select').val(); 
                     let orderPrice;
                     if (orderValue === 'ascending') {
@@ -346,7 +356,7 @@
                     }
 
                     // If your API needs a single combined search string for categories/brands:
-                    const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
+                    // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
 
                     // If you also have price range filtering, you might collect that here (replace with your logic)
                     // let priceRange = $('#filter-price-range').text(); 
@@ -355,8 +365,10 @@
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
                         data: {
-                            // Adjust these fields to match your backend’s required parameters
-                            search: combinedSearch,
+                            // Three separate search fields
+                            search_product: searchProduct,   // e.g. "Haneri AirElite AEW1"
+                            search_brand: searchBrand,     // e.g. "Stanley 600W Small 100mm Angle Grinder"
+                            search_category: searchCategory,  // e.g. "Table Wall Pedestals, Domestic Exhaust"
                             price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
                             limit: itemsPerPage,
                             offset: offset,
