@@ -235,28 +235,28 @@
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
                             <div class="widget widget-price">
-        <h3 class="widget-title">
-            <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                aria-controls="widget-body-3">Price</a>
-        </h3>
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-3">Price</a>
+                                </h3>
 
-        <div class="collapse show" id="widget-body-3">
-            <div class="widget-body">
-                <form action="#">
-                    <div class="price-slider-wrapper">
-                        <div id="price-slider"></div>
-                    </div>
+                                <div class="collapse show" id="widget-body-3">
+                                    <div class="widget-body">
+                                        <form action="#">
+                                            <div class="price-slider-wrapper">
+                                                <div id="price-slider"></div>
+                                            </div>
 
-                    <div class="filter-price-action">
-                        <div class="filter-price-text">
-                            Price: <span id="filter-price-range">$0 - $1000</span>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Filter</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+                                            <div class="filter-price-action">
+                                                <div class="filter-price-text">
+                                                    Price: <span id="filter-price-range">Rs.0 - Rs.1000</span>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Filter</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             <script>
                                 document.addEventListener("DOMContentLoaded", function () {
                                     var priceSlider = document.getElementById("price-slider");

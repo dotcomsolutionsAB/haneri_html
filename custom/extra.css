@@ -2132,3 +2132,24 @@ footer .social-icon {
     margin-bottom: 10px;
  }
  /* end Shop page style */
+
+ .noUi-horizontal {
+    height: 5px;
+ }
+ .noUi-horizontal .noUi-handle {
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    top: -12px;
+    border-radius: 50%;
+}
+.noUi-handle:after, .noUi-handle:before {
+    content: ".";
+    display: none;
+    position: absolute;
+    height: 14px;
+    width: 1px;
+    background: #E8E7E6;
+    left: 14px;
+    top: 6px;
+}
