@@ -1,5 +1,8 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"></script>
+
 <main class="main about shop_page">
     <div class="page-wrapper">
 
@@ -256,7 +259,34 @@
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
+                            <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var priceSlider = document.getElementById("price-slider");
 
+            noUiSlider.create(priceSlider, {
+                start: [0, 1000],  // Initial min and max values
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 1000
+                },
+                step: 10,
+                format: {
+                    to: function (value) {
+                        return "$" + value.toFixed(0);
+                    },
+                    from: function (value) {
+                        return Number(value.replace("$", ""));
+                    }
+                }
+            });
+
+            var priceRange = document.getElementById("filter-price-range");
+            priceSlider.noUiSlider.on("update", function (values) {
+                priceRange.innerHTML = values.join(" - ");
+            });
+        });
+    </script>
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
