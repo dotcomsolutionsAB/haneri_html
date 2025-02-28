@@ -94,6 +94,7 @@
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
                         <div class="sidebar-wrapper">
+
                             <script>
                                 $(document).ready(function() {
                                     fetchCategories();
@@ -228,6 +229,32 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <script>
+                                $(document).ready(function() {
+                                    // 1. Initialize noUiSlider
+                                    const priceSlider = document.getElementById('price-slider');
+
+                                    noUiSlider.create(priceSlider, {
+                                        start: [0, 20000],  // Initial slider handles: [min, max]
+                                        connect: true,     // Fill the bar between handles
+                                        range: {
+                                            min: 0,
+                                            max: 50000      // Adjust as per your upper price limit
+                                        },
+                                        step: 100          // Adjust step if you like
+                                    });
+
+                                    // 2. Update the text display whenever slider changes
+                                    priceSlider.noUiSlider.on('update', function(values) {
+                                        // values = [minValue, maxValue]
+                                        const min = parseFloat(values[0]).toFixed(2);
+                                        const max = parseFloat(values[1]).toFixed(2);
+
+                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
+                                    });
+                                });
+                            </script>
                             <div class="widget widget-price wid">
                                 <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
@@ -304,32 +331,6 @@
                             <!-- Filter Button - triggers product fetching -->
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
-                            <script>
-                                $(document).ready(function() {
-                                    // 1. Initialize noUiSlider
-                                    const priceSlider = document.getElementById('price-slider');
-
-                                    noUiSlider.create(priceSlider, {
-                                        start: [0, 5000],  // Initial slider handles: [min, max]
-                                        connect: true,     // Fill the bar between handles
-                                        range: {
-                                            min: 0,
-                                            max: 50000      // Adjust as per your upper price limit
-                                        },
-                                        step: 100          // Adjust step if you like
-                                    });
-
-                                    // 2. Update the text display whenever slider changes
-                                    priceSlider.noUiSlider.on('update', function(values) {
-                                        // values = [minValue, maxValue]
-                                        const min = parseFloat(values[0]).toFixed(2);
-                                        const max = parseFloat(values[1]).toFixed(2);
-
-                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-                                    });
-                                });
-
-                            </script>
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
@@ -354,25 +355,7 @@
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <!-- <div class="widget widget-variant">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-5">Variant</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-5">
-                                    <div class="widget-body">
-                                        <ul class="config-size-list">
-                                            <li><a href="#">Size</a></li>
-                                            <li><a href="#">Color</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                            
+                            </div><!-- End .widget -->                          
 
                         </div><!-- End .sidebar-wrapper -->
                     </aside><!-- End .col-lg-3 -->
