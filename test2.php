@@ -235,58 +235,56 @@
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
                             <div class="widget widget-price">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-3">Price</a>
-                                </h3>
+        <h3 class="widget-title">
+            <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                aria-controls="widget-body-3">Price</a>
+        </h3>
 
-                                <div class="collapse show" id="widget-body-3">
-                                    <div class="widget-body">
-                                        <form action="#">
-                                            <div class="price-slider-wrapper">
-                                                <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="90.0" aria-valuenow="0.0" aria-valuetext="0.00"></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="10.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="1000.00"></div></div></div></div><!-- End #price-slider -->
-                                            </div><!-- End .price-slider-wrapper -->
+        <div class="collapse show" id="widget-body-3">
+            <div class="widget-body">
+                <form action="#">
+                    <div class="price-slider-wrapper">
+                        <div id="price-slider"></div>
+                    </div>
 
-                                            <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
-                                                <div class="filter-price-text">
-                                                    Price:
-                                                    <span id="filter-price-range">$0 - $1000</span>
-                                                </div><!-- End .filter-price-text -->
-
-                                                <button type="submit" class="btn btn-primary">Filter</button>
-                                            </div><!-- End .filter-price-action -->
-                                        </form>
-                                    </div>
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
+                    <div class="filter-price-action">
+                        <div class="filter-price-text">
+                            Price: <span id="filter-price-range">$0 - $1000</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
                             <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var priceSlider = document.getElementById("price-slider");
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    var priceSlider = document.getElementById("price-slider");
 
-            noUiSlider.create(priceSlider, {
-                start: [0, 1000],  // Initial min and max values
-                connect: true,
-                range: {
-                    'min': 0,
-                    'max': 1000
-                },
-                step: 10,
-                format: {
-                    to: function (value) {
-                        return "$" + value.toFixed(0);
-                    },
-                    from: function (value) {
-                        return Number(value.replace("$", ""));
-                    }
-                }
-            });
+                                    noUiSlider.create(priceSlider, {
+                                        start: [0, 1000],  // Initial min and max values
+                                        connect: true,
+                                        range: {
+                                            'min': 0,
+                                            'max': 1000
+                                        },
+                                        step: 10,
+                                        format: {
+                                            to: function (value) {
+                                                return "$" + value.toFixed(0);
+                                            },
+                                            from: function (value) {
+                                                return Number(value.replace("$", ""));
+                                            }
+                                        }
+                                    });
 
-            var priceRange = document.getElementById("filter-price-range");
-            priceSlider.noUiSlider.on("update", function (values) {
-                priceRange.innerHTML = values.join(" - ");
-            });
-        });
-    </script>
+                                    var priceRange = document.getElementById("filter-price-range");
+                                    priceSlider.noUiSlider.on("update", function (values) {
+                                        priceRange.innerHTML = values.join(" - ");
+                                    });
+                                });
+                            </script>
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
