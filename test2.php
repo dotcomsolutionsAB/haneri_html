@@ -231,10 +231,34 @@
                                 </div>
                             </div>
 
+                            <div class="widget widget-price">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                                    aria-controls="widget-body-3">Price</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-3">
+                                    <div class="widget-body">
+                                        <form action="#">
+                                            <div class="price-slider-wrapper">
+                                                <!-- This is where we'll create the slider -->
+                                                <div id="price-slider"></div>
+                                            </div>
+
+                                            <div class="filter-price-action">
+                                                <div class="filter-price-text">
+                                                    Price: <span id="filter-price-range">Rs.0 - Rs.1000</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Filter Button - triggers product fetching -->
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
-                            <div class="widget widget-price">
+                            <!-- <div class="widget widget-price">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
                                         aria-controls="widget-body-3">Price</a>
@@ -256,34 +280,32 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <script>
-                                document.addEventListener("DOMContentLoaded", function () {
-                                    var priceSlider = document.getElementById("price-slider");
+                                $(document).ready(function() {
+                                    // 1. Initialize noUiSlider
+                                    const priceSlider = document.getElementById('price-slider');
 
                                     noUiSlider.create(priceSlider, {
-                                        start: [0, 1000],  // Initial min and max values
-                                        connect: true,
+                                        start: [0, 5000],  // Initial slider handles: [min, max]
+                                        connect: true,     // Fill the bar between handles
                                         range: {
-                                            'min': 0,
-                                            'max': 1000
+                                            min: 0,
+                                            max: 50000      // Adjust as per your upper price limit
                                         },
-                                        step: 10,
-                                        format: {
-                                            to: function (value) {
-                                                return "$" + value.toFixed(0);
-                                            },
-                                            from: function (value) {
-                                                return Number(value.replace("$", ""));
-                                            }
-                                        }
+                                        step: 100          // Adjust step if you like
                                     });
 
-                                    var priceRange = document.getElementById("filter-price-range");
-                                    priceSlider.noUiSlider.on("update", function (values) {
-                                        priceRange.innerHTML = values.join(" - ");
+                                    // 2. Update the text display whenever slider changes
+                                    priceSlider.noUiSlider.on('update', function(values) {
+                                        // values = [minValue, maxValue]
+                                        const min = parseFloat(values[0]).toFixed(2);
+                                        const max = parseFloat(values[1]).toFixed(2);
+
+                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
                                     });
                                 });
+
                             </script>
                             <div class="widget widget-color">
                                 <h3 class="widget-title">
@@ -348,29 +370,30 @@
                 // Modify your existing function to include category filters
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
-                    
-                    // 1. Collect search for Products (e.g., from a text input)
-                    //    e.g. "Haneri AirElite AEW1" if user typed that
-                    const searchProduct = $('#search-product-input').val() || '';
+                    // For Product
+                        const searchProduct = $('#search-product-input').val() || '';
+                    // For Brand
+                        const selectedBrands = [];
+                        $('input[name="brand"]:checked').each(function() {
+                            selectedBrands.push($(this).val());
+                        });
+                        const searchBrand = selectedBrands.join(',');
+                    // For Category
+                        const selectedCategories = [];
+                        $('input[name="category"]:checked').each(function() {
+                            selectedCategories.push($(this).val());
+                        });
+                        const searchCategory = selectedCategories.join(',');
 
-                    // 2. Collect selected Brands (checkboxes), comma-separated
-                    //    e.g. "Stanley 600W Small 100mm Angle Grinder" if user selected it
-                    const selectedBrands = [];
-                    $('input[name="brand"]:checked').each(function() {
-                        selectedBrands.push($(this).val());
-                    });
-                    const searchBrand = selectedBrands.join(',');
-
-                    // 3. Collect selected Categories (checkboxes), comma-separated
-                    //    e.g. "Table Wall Pedestals, Domestic Exhaust" if user selected them
-                    const selectedCategories = [];
-                    $('input[name="category"]:checked').each(function() {
-                        selectedCategories.push($(this).val());
-                    });
-                    const searchCategory = selectedCategories.join(',');
+                    // 2. Get the current min & max from noUiSlider
+                    // Use the same slider element ID from earlier
+                        const priceSlider = document.getElementById('price-slider');
+                        const sliderValues = priceSlider.noUiSlider.get(); // This returns an array [min, max]
+                        const minPrice = parseFloat(sliderValues[0]); 
+                        const maxPrice = parseFloat(sliderValues[1]);
 
                     // 4. Get the price range from the select box
-                    const priceRange = $('#price-range-select').val(); 
+                        const priceRange = $('#price-range-select').val(); 
 
                     // 5. Sorting select box
                     const orderValue = $('#orderby-select').val(); 
@@ -385,9 +408,6 @@
 
                     // If your API needs a single combined search string for categories/brands:
                     // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
-
-                    // If you also have price range filtering, you might collect that here (replace with your logic)
-                    // let priceRange = $('#filter-price-range').text(); 
                     
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
@@ -401,6 +421,9 @@
                             limit: itemsPerPage,
                             offset: offset,
                             order_price: orderPrice // sort price asc or desc
+                            min_priceFilter: minPrice, // newly added min & max
+                            max_priceFilter: maxPrice,
+
                             // If needed: 
                             // is_active: 1,
                             // variant_type: "Speed",
