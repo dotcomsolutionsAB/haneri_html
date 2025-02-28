@@ -228,8 +228,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="widget widget-price">
-                                <h3 class="widget-title">
+                            <div class="widget widget-price wid">
+                                <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
                                     aria-controls="widget-body-3">Price</a>
                                 </h3>
@@ -254,9 +254,7 @@
 
                             <script>
                                 $(document).ready(function() {
-                                    // If you already have `fetchCategories()` somewhere
                                     fetchVariants()
-
                                 });
 
                                 function fetchVariants() {
@@ -289,8 +287,8 @@
                                     });
                                 }
                             </script>
-                            <div class="widget widget-variant">
-                                <h3 class="widget-title">
+                            <div class="widget widget-variant wid">
+                                <h3 class="widget-title wid_title">
                                     <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
                                     aria-controls="widget-body-5">Variant</a>
                                 </h3>

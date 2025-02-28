@@ -2124,6 +2124,26 @@ footer .social-icon {
     border-radius: 5px;
  }
 
+    .noUi-horizontal {
+        height: 5px !important;
+    }
+    .noUi-horizontal .noUi-handle {
+        width: 25px !important;
+        height: 25px !important;
+        right: -17px;
+        top: -12px !important;
+        border-radius: 50%;
+    }
+    .noUi-handle:after, .noUi-handle:before {
+        content: ".";
+        display: none !important;
+        position: absolute;
+        height: 14px;
+        width: 1px;
+        background: #E8E7E6;
+        left: 14px;
+        top: 6px;
+    }
  .wid{
     background: #e0ecee;
     border: 1px solid #f5f1f1;
@@ -2133,23 +2153,3 @@ footer .social-icon {
  }
  /* end Shop page style */
 
- .noUi-horizontal {
-    height: 5px !important;
- }
- .noUi-horizontal .noUi-handle {
-    width: 25px !important;
-    height: 25px !important;
-    right: -17px;
-    top: -12px !important;
-    border-radius: 50%;
-}
-.noUi-handle:after, .noUi-handle:before {
-    content: ".";
-    display: none !important;
-    position: absolute;
-    height: 14px;
-    width: 1px;
-    background: #E8E7E6;
-    left: 14px;
-    top: 6px;
-}
