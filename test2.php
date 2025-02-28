@@ -550,7 +550,7 @@
 
                 // Initialize dropdown for items per page
                 const perPageSelect = $("[data-datatable-size]");
-                [10, 20, 40, 60, 100].forEach((size) => {
+                [5, 10, 20, 40, 60, 100].forEach((size) => {
                     perPageSelect.append(`<option value="${size}">${size}</option>`);
                 });
                 perPageSelect.val(itemsPerPage);
