@@ -297,8 +297,8 @@
                                                     htmlStr += `
                                                         <li>
                                                             <label>
-                                                                <input type="checkbox" name="variant" value="${variant}">
                                                                 <span>${variant}</span>
+                                                                <input type="checkbox" name="variant" value="${variant}">                                                                
                                                             </label>
                                                         </li>
                                                     `;
@@ -331,7 +331,7 @@
                             <!-- Filter Button - triggers product fetching -->
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
-                            <div class="widget widget-color">
+                            <!-- <div class="widget widget-color">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
                                         aria-controls="widget-body-6">Color</a>
@@ -353,9 +353,9 @@
                                                 <span>Green</span>
                                             </li>                                            
                                         </ul>
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->                          
+                                    </div>
+                                </div>
+                            </div>                     -->
 
                         </div><!-- End .sidebar-wrapper -->
                     </aside><!-- End .col-lg-3 -->

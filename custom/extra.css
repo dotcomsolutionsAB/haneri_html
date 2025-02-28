@@ -2111,19 +2111,17 @@ footer .social-icon {
  /* checkout page css end */
 
  /* Shop page style */
- .shop_page{
-    padding-top: 160px;
- }
- .products_area{
-    min-height: 695px;
- }
-
- .wid_title{
-    background: #3b838347;
-    padding: 5px;
-    border-radius: 5px;
- }
-
+    .shop_page{
+        padding-top: 160px;
+    }
+    .products_area{
+        min-height: 695px;
+    }
+    .wid_title{
+        background: #3b838347;
+        padding: 5px;
+        border-radius: 5px;
+    }
     .noUi-horizontal {
         height: 5px !important;
     }
@@ -2144,12 +2142,15 @@ footer .social-icon {
         left: 14px;
         top: 6px;
     }
- .wid{
-    background: #e0ecee;
-    border: 1px solid #f5f1f1;
-    border-radius: 10px;
-    padding: 5px !important;
-    margin-bottom: 10px;
- }
+    .wid{
+        background: #e0ecee;
+        border: 1px solid #f5f1f1;
+        border-radius: 10px;
+        padding: 5px !important;
+        margin-bottom: 10px;
+    }
+    .config-size-list {
+        grid-template-columns: 50% 2fr;
+    }
  /* end Shop page style */
 
