@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"></script>
 
 <main class="main about shop_page">
@@ -255,32 +255,54 @@
                                 </div>
                             </div>
 
+                            <script>
+                                function fetchVariants() {
+                                    $.ajax({
+                                        url: '<?php echo BASE_URL; ?>/products/unique_variant', // GET
+                                        type: 'GET',
+                                        success: function(response) {
+                                            if (response && response.data) {
+                                                let htmlStr = '';
+                                                // response.data might be ["color", "size", ...]
+                                                response.data.forEach(variant => {
+                                                    // Create a checkbox for each variant
+                                                    htmlStr += `
+                                                        <li>
+                                                            <label>
+                                                                <input type="checkbox" name="variant" value="${variant}">
+                                                                <span>${variant}</span>
+                                                            </label>
+                                                        </li>
+                                                    `;
+                                                });
+                                                $('#variant-list').html(htmlStr);
+                                            } else {
+                                                console.error("Unexpected response format for variants:", response);
+                                            }
+                                        },
+                                        error: function(err) {
+                                            console.error("Error fetching variants:", err);
+                                        }
+                                    });
+                                }
+                            </script>
+                            <div class="widget widget-variant">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
+                                    aria-controls="widget-body-5">Variant</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-5">
+                                    <div class="widget-body">
+                                        <!-- We'll populate this UL with variant checkboxes dynamically -->
+                                        <ul class="config-size-list" id="variant-list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Filter Button - triggers product fetching -->
                             <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
 
-                            <!-- <div class="widget widget-price">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-3">Price</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-3">
-                                    <div class="widget-body">
-                                        <form action="#">
-                                            <div class="price-slider-wrapper">
-                                                <div id="price-slider"></div>
-                                            </div>
-
-                                            <div class="filter-price-action">
-                                                <div class="filter-price-text">
-                                                    Price: <span id="filter-price-range">Rs.0 - Rs.1000</span>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Filter</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> -->
                             <script>
                                 $(document).ready(function() {
                                     // 1. Initialize noUiSlider
@@ -333,7 +355,7 @@
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
 
-                            <div class="widget widget-variant">
+                            <!-- <div class="widget widget-variant">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
                                         aria-controls="widget-body-5">Variant</a>
@@ -342,14 +364,12 @@
                                 <div class="collapse show" id="widget-body-5">
                                     <div class="widget-body">
                                         <ul class="config-size-list">
-                                            <li class="active"><a href="#">XL</a></li>
-                                            <li><a href="#">L</a></li>
-                                            <li><a href="#">M</a></li>
-                                            <li><a href="#">S</a></li>
+                                            <li><a href="#">Size</a></li>
+                                            <li><a href="#">Color</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             
 
@@ -370,42 +390,48 @@
                 // Modify your existing function to include category filters
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
-                    // For Product
+                    // 1. For Product
                         const searchProduct = $('#search-product-input').val() || '';
-                    // For Brand
+                    // 2. For Brand
                         const selectedBrands = [];
                         $('input[name="brand"]:checked').each(function() {
                             selectedBrands.push($(this).val());
                         });
                         const searchBrand = selectedBrands.join(',');
-                    // For Category
+                    // 3. For Category
                         const selectedCategories = [];
                         $('input[name="category"]:checked').each(function() {
                             selectedCategories.push($(this).val());
                         });
                         const searchCategory = selectedCategories.join(',');
 
-                    // 2. Get the current min & max from noUiSlider
+                    // 4. Get the current min & max from noUiSlider
                     // Use the same slider element ID from earlier
                         const priceSlider = document.getElementById('price-slider');
                         const sliderValues = priceSlider.noUiSlider.get(); // This returns an array [min, max]
                         const minPrice = parseFloat(sliderValues[0]); 
                         const maxPrice = parseFloat(sliderValues[1]);
 
-                    // 4. Get the price range from the select box
+                    // 5. Get the price range from the select box
                         const priceRange = $('#price-range-select').val(); 
 
-                    // 5. Sorting select box
-                    const orderValue = $('#orderby-select').val(); 
-                    let orderPrice;
-                    if (orderValue === 'ascending') {
-                        orderPrice = 'Ascending';
-                    } else if (orderValue === 'descending') {
-                        orderPrice = 'Descending';
-                    } else {
-                        orderPrice = ''; // or null, if no sort is selected
-                    }
-
+                    // 6. Sorting select box
+                        const orderValue = $('#orderby-select').val(); 
+                        let orderPrice;
+                        if (orderValue === 'ascending') {
+                            orderPrice = 'Ascending';
+                        } else if (orderValue === 'descending') {
+                            orderPrice = 'Descending';
+                        } else {
+                            orderPrice = ''; // or null, if no sort is selected
+                        }
+                    // 7. Gather selected variants
+                        const selectedVariants = [];
+                        $('input[name="variant"]:checked').each(function() {
+                            selectedVariants.push($(this).val());
+                        });
+                        // If multiple can be selected, we can do something like a comma-separated string:
+                        const variantType = selectedVariants.join(',');
                     // If your API needs a single combined search string for categories/brands:
                     // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
                     
@@ -423,7 +449,7 @@
                             order_price: orderPrice, // sort price asc or desc
                             min_priceFilter: minPrice, // newly added min & max
                             max_priceFilter: maxPrice,
-
+                            variant_type: variantType, // Variant type(s)
                             // If needed: 
                             // is_active: 1,
                             // variant_type: "Speed",
