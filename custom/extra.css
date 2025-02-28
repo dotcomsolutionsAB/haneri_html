@@ -2134,7 +2134,7 @@ footer .social-icon {
  /* end Shop page style */
 
  .noUi-horizontal {
-    height: 5px;
+    height: 5px !important;
  }
  .noUi-horizontal .noUi-handle {
     width: 25px;
