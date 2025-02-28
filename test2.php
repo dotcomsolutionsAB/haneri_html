@@ -34,21 +34,14 @@
 
                                 <div class="toolbox-item toolbox-sort">
                                     <label>Sort By:</label>
-
                                     <div class="select-custom">
-                                        <select name="orderby" class="form-control">
-                                            <option value="menu_order" selected="selected">Default sorting</option>
-                                            <option value="popularity">Sort by popularity</option>
-                                            <option value="rating">Sort by average rating</option>
-                                            <option value="date">Sort by newness</option>
-                                            <option value="price">Sort by price: low to high</option>
-                                            <option value="price-desc">Sort by price: high to low</option>
+                                        <select name="orderby" id="orderby-select" class="form-control">
+                                            <option value="ascending">Sort by price: low to high</option> 
+                                            <option value="descending">Sort by price: high to low</option> 
                                         </select>
-                                    </div><!-- End .select-custom -->
-
-
-                                </div><!-- End .toolbox-item -->
-                            </div><!-- End .toolbox-left -->
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="toolbox-right">
                                 <div class="toolbox-item toolbox-show">
@@ -340,7 +333,17 @@
                     });
                     // 3. Get the price range from the select box
                     const priceRange = $('#price-range-select').val(); 
-                    // e.g. "0k_10k", "10k_20k", etc. 
+
+                    // 4. Sorting select box
+                    const orderValue = $('#orderby-select').val(); 
+                    let orderPrice;
+                    if (orderValue === 'ascending') {
+                        orderPrice = 'Ascending';
+                    } else if (orderValue === 'descending') {
+                        orderPrice = 'Descending';
+                    } else {
+                        orderPrice = ''; // or null, if no sort is selected
+                    }
 
                     // If your API needs a single combined search string for categories/brands:
                     const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
@@ -357,7 +360,8 @@
                             price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
                             limit: itemsPerPage,
                             offset: offset,
-                            // If needed:
+                            order_price: orderPrice // sort price asc or desc
+                            // If needed: 
                             // is_active: 1,
                             // variant_type: "Speed",
                             // ...
