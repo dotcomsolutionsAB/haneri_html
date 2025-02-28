@@ -2150,7 +2150,17 @@ footer .social-icon {
         margin-bottom: 10px;
     }
     .config-size-list {
+        display: grid;
         grid-template-columns: 50% 2fr;
+        padding: 0px 15px;
+        gap:20px;
+    }
+    
+    .config-size-list li label{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
     }
  /* end Shop page style */
 
