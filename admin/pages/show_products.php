@@ -193,7 +193,12 @@
                             </td>
                             <td>
                                 <div class="flex items-center gap-2.5">
-                                    <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png">
+                                    <img class="h-9 rounded-full" src="${
+                                        product.category?.id == 1 ? '../../images/f1.png' :
+                                        product.category?.id == 2 ? '../../images/f2.png' :
+                                        product.category?.id == 3 ? '../../images/f3.png' :
+                                        'assets/images/products/product-1.jpg' // Default image
+                                    }">
                                     <div class="flex flex-col gap-0.5">
                                         <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
                                             ${product.name}
@@ -221,8 +226,6 @@
                     `);
                 });
             };
-
-
 
             const updatePagination = () => {
                 const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -287,23 +290,11 @@
                                     <span class="menu-title">View</span>
                                 </a>
                             </div>
-                            <div class="menu-item">
-                                <a class="menu-link export-product" data-product-id="${productId || "invalid"}" href="export_product.php?${productId || "#"}">
-                                    <span class="menu-icon"><i class="ki-filled ki-file-up"></i></span>
-                                    <span class="menu-title">Export</span>
-                                </a>
-                            </div>
                             <div class="menu-separator"></div>
                             <div class="menu-item">
                                 <a class="menu-link" href="edit_product.php?slug=${product.slug}">
                                     <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                     <span class="menu-title">Edit</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link copy-product" data-product-id="${productId || "invalid"}" href="copy_product.php?${productId || "#"}">
-                                    <span class="menu-icon"><i class="ki-filled ki-copy"></i></span>
-                                    <span class="menu-title">Make a copy</span>
                                 </a>
                             </div>
                             <div class="menu-separator"></div>
