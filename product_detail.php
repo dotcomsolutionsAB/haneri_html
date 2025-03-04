@@ -340,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                             <span class="new-price" id="product-price">₹11000.00</span>
                                     </div>
                                     <div class="s_price">
+                                        Special Price: 
                                         <span class="special-price">₹11000.00</span>
                                     </div>
                                 </div>
@@ -480,6 +481,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     margin-left: 3px;
                     /* font-family: 'Barlow Condensed'; */
                     /* text-decoration: line-through; */
+                }
+                .s_price{
+                    
                 }
             </style>
             <div class="container-fluid">
