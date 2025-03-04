@@ -333,10 +333,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
                                 
                                 <div class="price-box">
-                                    <del class="old-price">
-                                        <span id="regular-price">₹0.00</span>
-                                    </del>
-                                    <span class="new-price" id="product-price">₹0.00</span>
+                                    <div class="_price">
+                                            <del class="old-price">
+                                                <span id="regular-price">₹1000.00</span>
+                                            </del>
+                                            <span class="new-price" id="product-price">₹11000.00</span>
+                                    </div>
+                                    <div class="s_price">
+                                        <span class="special-price">₹11000.00</span>
+                                    </div>
                                 </div>
                                 <div class="product-desc">
                                     <p id="product-description">Loading...</p>
@@ -454,7 +459,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     letter-spacing: 0;
                     text-align: justify;
                 }
-                
+                .product-single-details .new-price {
+                    color: #585f66;
+                    font-size: 1.9rem;
+                    letter-spacing: -0.02em;
+                    vertical-align: middle;
+                    line-height: 0.8;
+                    margin-left: 3px;
+                    text-decoration: line-through;
+                }
+                .special-price{
+                    
+                }
             </style>
             <div class="container-fluid">
                 <div class="products-section pt-0">
