@@ -508,8 +508,13 @@
                                             </div><!-- End .product-ratings -->
                                         </div>
                                         <div class="price-box">
-                                            <span class="old-price">${regularPrice}</span>
-                                            <span class="product-price">${sellingPrice}</span>
+                                            <div class="c_price">
+                                                <span class="old-price">${regularPrice}</span>
+                                                <span class="product-price">${sellingPrice}</span>
+                                            </div>
+                                            <div class="sp_price">
+                                                Special Price : <span class="special-price">${sellingPrice}</span>
+                                            <div>
                                         </div>
                                     </div>
                                 </div>
