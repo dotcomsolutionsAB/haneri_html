@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     vertical-align: middle;
                     line-height: 0.8;
                     margin-left: 3px;
-                    font-family: 'Barlow Condensed';
+                    /* font-family: 'Barlow Condensed'; */
                     /* text-decoration: line-through; */
                 }
             </style>
