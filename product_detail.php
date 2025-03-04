@@ -459,9 +459,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     letter-spacing: 0;
                     text-align: justify;
                 }
+                .product-single-details .old-price {
+                    font-size: 2.9rem !important;
+                }
                 .product-single-details .new-price {
                     color: #585f66;
-                    font-size: 1.9rem;
+                    font-size: 2.9rem !important;
                     letter-spacing: -0.02em;
                     vertical-align: middle;
                     line-height: 0.8;
@@ -470,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 .special-price{
                     color:#f0340efa;
-                    font-size: 2.3rem;
+                    font-size: 3.3rem;
                     letter-spacing: -0.02em;
                     vertical-align: middle;
                     line-height: 0.8;
