@@ -347,6 +347,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div class="product-desc">
                                     <p id="product-description">Loading...</p>
                                 </div>
+                                <style>
+                                    .product-action .product-price{
+                                        color: #f0340efa;
+                                    }
+                                </style>
                                 <div class="product-action">
                                     <div class="price-box">
                                         <span class="product-price" id="selling-price" data-price="0">₹0.00</span>
@@ -483,7 +488,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     /* text-decoration: line-through; */
                 }
                 .s_price{
-                    
+                    font-style: italic;
+                    font-weight: 800;
+                    font-size: 24px;
                 }
             </style>
             <div class="container-fluid">
