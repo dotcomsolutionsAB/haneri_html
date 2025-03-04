@@ -469,7 +469,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     text-decoration: line-through;
                 }
                 .special-price{
-                    
+                    color:#f0340efa;
+                    font-size: 2.3rem;
+                    letter-spacing: -0.02em;
+                    vertical-align: middle;
+                    line-height: 0.8;
+                    margin-left: 3px;
+                    font-family: 'Barlow Condensed';
+                    /* text-decoration: line-through; */
                 }
             </style>
             <div class="container-fluid">
