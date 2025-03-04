@@ -360,10 +360,10 @@
                                 </div>
                             </div>                     -->
 
-                        </div><!-- End .sidebar-wrapper -->
-                    </aside><!-- End .col-lg-3 -->
-                </div><!-- End .row -->
-            </div><!-- End .container -->
+                        </div>
+                    </aside>
+                </div>
+            </div>
         </main>
 
         <script>
@@ -577,7 +577,7 @@
     }
     .special_price{
         color: #f0340efa;
-        font-size: 1.8rem;
+        font-size: 2.3rem;
         line-height: 1;
         /* text-decoration: line-through; */
         font-family: 'Barlow Condensed';
