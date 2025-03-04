@@ -513,7 +513,7 @@
                                                 <span class="product-price">${sellingPrice}</span>
                                             </div>
                                             <div class="sp_price">
-                                                Special Price : <span class="special-price">${sellingPrice}</span>
+                                                Special Price : <span class="special-price">${sellingPrice-50}</span>
                                             <div>
                                         </div>
                                     </div>
