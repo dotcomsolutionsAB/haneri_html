@@ -509,11 +509,11 @@
                                         </div>
                                         <div class="price-box">
                                             <div class="c_price">
-                                                <span class="old-price">${regularPrice}</span>
-                                                <span class="product-price">${sellingPrice}</span>
+                                                <span class="old-price">₹${regularPrice}</span>
+                                                <span class="product-price">₹${sellingPrice}</span>
                                             </div>
                                             <div class="sp_price">
-                                                Special Price : <span class="special-price">${sellingPrice-50}</span>
+                                                Special Price : <span class="special_price">₹${sellingPrice-50}</span>
                                             <div>
                                         </div>
                                     </div>
@@ -568,7 +568,26 @@
                 window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
-
+<style>
+    .product-price {
+        color: #495057;
+        font-size: 1.5rem;
+        line-height: 1;
+        text-decoration: line-through;
+    }
+    .special_price{
+        color: #f0340efa;
+        font-size: 1.8rem;
+        line-height: 1;
+        /* text-decoration: line-through; */
+        font-family: 'Barlow Condensed';
+    }
+    .sp_price{
+        font-size: 18px;
+        font-family: 'Barlow Condensed';
+        font-style: italic;
+    }
+</style>
         <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
