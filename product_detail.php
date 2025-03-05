@@ -52,18 +52,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-    const token = localStorage.getItem('auth_token');
+    const token = localStorage.getItem('auth_token'); // token if logged in
     const addCartBtn = $('#add-to-cart-btn');
     const viewCartBtn = $('#view-cart-btn');
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
     const cartItemIds = $('#cartId');
-    let cartItemId = null; // Store the cart item ID
+    let cartItemId = null; // To be set if needed
 
+    // Fetch product details
     if (productId) {
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
+            url: `${BASE_URL}/products/get_products/${productId}`,
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ product_id: productId }),
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                     $('.about_section, .breadcrumb-title').text(data.data.name);
 
-                    // Load Variants
+                    // Load variants
                     const variantsContainer = $('.variants');
                     variantsContainer.html(data.data.variants.map((variant, index) => 
                         `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
@@ -100,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Variant update function
     function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
         priceElem.text(`₹${sellingPrice}`);
         priceElem.attr("data-price", sellingPrice);
@@ -110,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $(element).addClass('selected');
     }
 
+    // Price update function based on quantity change
     function updatePrice() {
         const quantity = parseFloat(quantityElem.val()) || 1;
         const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
@@ -120,12 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Check the current state of the cart
     function checkCart() {
+        const uniqueId = localStorage.getItem("unique_id"); // if available
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/fetch`,
+            url: `${BASE_URL}/cart/fetch`,
             type: "POST",
-            headers: { "Authorization": `Bearer ${token}` },
+            headers: token ? { "Authorization": `Bearer ${token}` } : {},
             contentType: "application/json",
+            data: JSON.stringify({ unique_id: uniqueId }), // include if needed
             success: function (data) {
                 if (data.data && data.data.length > 0) {
                     const cartItem = data.data.find(item => item.product_id == productId);
@@ -133,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         addCartBtn.hide();
                         viewCartBtn.show();
                         quantityElem.val(cartItem.quantity);
-                        // cartItemId = cartItem.id;
                         cartItemIds.hide();
                         updatePrice();
                     } else {
@@ -150,51 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    checkCart(); // Check cart on page load
-
-    // function addToCart() {
-    //     console.log("addToCart() function invoked.");
-
-    //     const variantId = $('#selected-variant').val();
-    //     const quantity = quantityElem.val() || 1;
-
-    //     $.ajax({
-    //         url: `<?php echo BASE_URL; ?>/cart/add`,
-    //         type: "POST",
-    //         // headers: { "Authorization": `Bearer ${token}` },
-    //         contentType: "application/json",
-    //         data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
-    //         success: function (data) {
-    //             console.log("API response received:", data);
-    //             location.reload();
-    //             if (data.success) {
-    //                 // Reload the page after successful cart addition
-    //                 cartItemIds.hide();
-    //                 addCartBtn.hide();
-    //                 viewCartBtn.show();
-    //                 checkCart();
-    //             } else {
-    //                 console.error("API response unsuccessful:", data);
-    //             }
-    //         },
-    //         error: function (error) {
-    //             console.error('Error adding product to cart:', error);
-    //         }
-    //     });
-    // }
-
+    // Add to Cart function
     function addToCart() {
         console.log("addToCart() function invoked.");
-
-        // Check for token in local storage
-        const token = localStorage.getItem("token");
-
         const variantId = $('#selected-variant').val();
         const quantity = quantityElem.val() || 1;
+        const token = localStorage.getItem("auth_token");
 
-        // Prepare AJAX options
         const ajaxOptions = {
-            url: `<?php echo BASE_URL; ?>/cart/add`,
+            url: `${BASE_URL}/cart/add`,
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({
@@ -204,16 +173,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }),
             success: function (data) {
                 console.log("API response received:", data);
-                
-                // If token is not present, store the user_id from the response as unique_id in local storage.
+                // Store the unique cart ID if the user is not logged in
                 if (!token && data.data && data.data.user_id) {
                     localStorage.setItem("unique_id", data.data.user_id);
                     console.log("Unique user ID stored:", data.data.user_id);
                 }
-                
-                // Display the message from the response in an alert
                 alert(data.message);
-
                 if (data.success) {
                     cartItemIds.hide();
                     addCartBtn.hide();
@@ -229,17 +194,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
 
-        // If a token exists, add the Authorization header
         if (token) {
-            ajaxOptions.headers = {
-                "Authorization": `Bearer ${token}`
-            };
+            ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
         }
 
         $.ajax(ajaxOptions);
     }
 
-
+    // Update cart quantity function
     function updateCartQuantity() {
         const newQuantity = quantityElem.val() || 1;
 
@@ -249,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+            url: `${BASE_URL}/cart/update/${cartItemId}`,
             type: "POST",
             headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
@@ -264,16 +226,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    addCartBtn.click(function (e) {
-        e.preventDefault();
-        addToCart();
-    });
-
-    quantityElem.change(function () {
-        updateCartQuantity();
+    // Event Listeners
+    $(document).ready(function() {
+        checkCart();
+        addCartBtn.click(function (e) {
+            e.preventDefault();
+            addToCart();
+        });
+        quantityElem.change(function () {
+            updateCartQuantity();
+        });
     });
 });
 </script>
+
 
 
 
