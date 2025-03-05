@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check the current state of the cart
     function checkCart() {
         const uniqueId = localStorage.getItem("unique_id"); // if available
+        const BASE_URL = <?php echo BASE_URL; ?>
         $.ajax({
             url: `${BASE_URL}/cart/fetch`,
             type: "POST",
