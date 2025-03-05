@@ -469,59 +469,91 @@
                     const tbody = $("#products-table");
                     tbody.empty();
 
+                    // Grab role from localStorage
+                    const userRole = localStorage.getItem("user_role");
+
                     data.forEach((product) => {
-                        // Check if the product has an image, otherwise use a placeholder
-                            let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
+                        // Check if the product has an image; otherwise, use a placeholder
+                        let productImage = product.image?.length > 0 
+                            ? product.image[0] 
+                            : "assets/images/placeholder.jpg";
 
-                            // Ensure variants exist before accessing them
-                            let regularPrice = product.variants?.[0]?.regular_price || "00";
-                            let sellingPrice = product.variants?.[0]?.selling_price || "00";
+                        // Safely extract prices (default to "00" if unavailable)
+                        let regularPrice = product.variants?.[0]?.regular_price || "00";
+                        let sellingPrice = product.variants?.[0]?.selling_price || "00";
 
-                        // Append a single row for each product
+                        // Determine which price HTML snippet to use
+                        let priceSnippet = "";
+                        if (userRole === "vendor") {
+                            priceSnippet = `
+                                <div class="price-box">
+                                    <div class="c_price">
+                                        <span class="old-price">₹${regularPrice}</span>
+                                        <span class="product-price cross">₹${sellingPrice}</span>
+                                    </div>
+                                    <div class="sp_price">
+                                        Special Price : <span class="special_price">₹${sellingPrice}</span>
+                                    </div>
+                                </div>
+                            `;
+                        } else {
+                            priceSnippet = `
+                                <div class="price-box">
+                                    <div class="c_price">
+                                        <span class="old-price">₹${regularPrice}</span>
+                                        <span class="product-price">₹${sellingPrice}</span>
+                                    </div>
+                                    <div class="sp_price none">
+                                        Special Price : <span class="special_price">₹${sellingPrice}</span>
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        // Append the row for each product
                         tbody.append(`
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            <img src="${
-                                                product.category?.id == 1 ? 'images/f1.png' :
-                                                product.category?.id == 2 ? 'images/f2.png' :
-                                                product.category?.id == 3 ? 'images/f3.png' :
-                                                'assets/images/products/product-1.jpg' // Default image
-                                            }" width="500" height="500" alt="product" />
+                                            <img 
+                                                src="${
+                                                    product.category?.id === 1 ? 'images/f1.png' :
+                                                    product.category?.id === 2 ? 'images/f2.png' :
+                                                    product.category?.id === 3 ? 'images/f3.png' :
+                                                    'assets/images/products/product-1.jpg'
+                                                }" 
+                                                width="500" height="500" alt="product" 
+                                            />
                                         </a>
-                                      
                                     </figure>
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
+                                                <a href="#" class="product-category">
+                                                    ${product.category?.name || "Uncategorized"}
+                                                </a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">${product.name}</a>
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
+                                                ${product.name}
+                                            </a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                <span class="ratings" style="width:100%"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
-                                        </div>
-                                        <div class="price-box">
-                                            <div class="c_price">
-                                                <span class="old-price">₹${regularPrice}</span>
-                                                <span class="product-price">₹${sellingPrice}</span>
                                             </div>
-                                            <div class="sp_price">
-                                                Special Price : <span class="special_price">₹${sellingPrice}</span>
-                                            <div>
                                         </div>
+                                        ${priceSnippet}
                                     </div>
                                 </div>
                             </div>
                         `);
                     });
                 };
+
 
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -568,26 +600,30 @@
                 window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
-<style>
-    .product-price {
-        color: #495057;
-        font-size: 1.5rem;
-        line-height: 1;
-        text-decoration: line-through;
-    }
-    .special_price{
-        color: #f0340efa;
-        font-size: 2.3rem;
-        line-height: 1;
-        /* text-decoration: line-through; */
-        font-family: 'Barlow Condensed';
-    }
-    .sp_price{
-        font-size: 18px;
-        font-family: 'Barlow Condensed';
-        font-style: italic;
-    }
-</style>
+        <style>
+            .none{
+                display:none;
+            }
+            .product-price {
+                color: #495057;
+                font-size: 1.5rem;
+                line-height: 1;                
+            }
+            .cross{
+                text-decoration: line-through;
+            }
+            .special_price{
+                color: #f0340efa;
+                font-size: 2.3rem;
+                line-height: 1;
+                font-family: 'Barlow Condensed';
+            }
+            .sp_price{
+                font-size: 18px;
+                font-family: 'Barlow Condensed';
+                font-style: italic;
+            }
+        </style>
         <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
