@@ -481,6 +481,7 @@
                         // Safely extract prices (default to "00" if unavailable)
                         let regularPrice = product.variants?.[0]?.regular_price || "00";
                         let sellingPrice = product.variants?.[0]?.selling_price || "00";
+                        let vendor_price = product.variants?.[0]?.sales_price_vendor || "00";
 
                         // Determine which price HTML snippet to use
                         let priceSnippet = "";
@@ -492,7 +493,7 @@
                                         <span class="product-price cross">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price">
-                                        Special Price : <span class="special_price">₹${sellingPrice}</span>
+                                        Special Price : <span class="special_price">₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -504,7 +505,7 @@
                                         <span class="product-price">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price none">
-                                        Special Price : <span class="special_price">₹${sellingPrice}</span>
+                                        Special Price : <span class="special_price">₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
