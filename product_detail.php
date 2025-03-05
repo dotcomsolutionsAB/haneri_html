@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Fetch product details
     if (productId) {
         $.ajax({
-            url: `${BASE_URL}/products/get_products/${productId}`,
+            url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ product_id: productId }),
@@ -125,10 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check the current state of the cart
     function checkCart() {
-        const uniqueId = localStorage.getItem("unique_id"); // if available
-        const BASE_URL = <?php echo BASE_URL; ?>
+        const uniqueId = localStorage.getItem("unique_id"); // if available 
         $.ajax({
-            url: `${BASE_URL}/cart/fetch`,
+            url: `<?php echo BASE_URL; ?>/cart/fetch`,
             type: "POST",
             headers: token ? { "Authorization": `Bearer ${token}` } : {},
             contentType: "application/json",
@@ -164,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
 
         const ajaxOptions = {
-            url: `${BASE_URL}/cart/add`,
+            url: `<?php echo BASE_URL; ?>/cart/add`,
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({
@@ -212,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         $.ajax({
-            url: `${BASE_URL}/cart/update/${cartItemId}`,
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
             type: "POST",
             headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
