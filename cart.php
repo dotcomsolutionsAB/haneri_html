@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
         $.ajax({
             url: apiUrl,
             type: "POST",
+            crossDomain: true, // if your request is cross-domain
+            xhrFields: {
+                withCredentials: true // ensures cookies are sent
+            },
             // Include the Authorization header only if a token exists
             headers: { "Authorization": token ? `Bearer ${token}` : "" },
             contentType: "application/json",
