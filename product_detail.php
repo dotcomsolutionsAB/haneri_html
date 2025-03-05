@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $.ajax({
             url: `<?php echo BASE_URL; ?>/cart/add`,
             type: "POST",
-            headers: { "Authorization": `Bearer ${token}` },
+            // headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
             data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
             success: function (data) {
