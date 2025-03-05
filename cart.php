@@ -2,7 +2,7 @@
 <?php include("configs/config.php"); ?> 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const guestId = localStorage.getItem('guest_id');
+            const guestId = localStorage.getItem('unique_id');
             const userId = localStorage.getItem('user_id');
             const idToDisplay = guestId || userId;
             console.log("Retrieved ID:", idToDisplay);
