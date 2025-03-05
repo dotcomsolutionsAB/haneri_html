@@ -152,23 +152,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     checkCart(); // Check cart on page load
 
+    // function addToCart() {
+    //     console.log("addToCart() function invoked.");
+
+    //     const variantId = $('#selected-variant').val();
+    //     const quantity = quantityElem.val() || 1;
+
+    //     $.ajax({
+    //         url: `<?php echo BASE_URL; ?>/cart/add`,
+    //         type: "POST",
+    //         // headers: { "Authorization": `Bearer ${token}` },
+    //         contentType: "application/json",
+    //         data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
+    //         success: function (data) {
+    //             console.log("API response received:", data);
+    //             location.reload();
+    //             if (data.success) {
+    //                 // Reload the page after successful cart addition
+    //                 cartItemIds.hide();
+    //                 addCartBtn.hide();
+    //                 viewCartBtn.show();
+    //                 checkCart();
+    //             } else {
+    //                 console.error("API response unsuccessful:", data);
+    //             }
+    //         },
+    //         error: function (error) {
+    //             console.error('Error adding product to cart:', error);
+    //         }
+    //     });
+    // }
+
     function addToCart() {
         console.log("addToCart() function invoked.");
+
+        // Check for token in local storage
+        const token = localStorage.getItem("token");
 
         const variantId = $('#selected-variant').val();
         const quantity = quantityElem.val() || 1;
 
-        $.ajax({
+        // Prepare AJAX options
+        const ajaxOptions = {
             url: `<?php echo BASE_URL; ?>/cart/add`,
             type: "POST",
-            // headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
-            data: JSON.stringify({ product_id: productId, variant_id: variantId || null, quantity: quantity }),
+            data: JSON.stringify({
+                product_id: productId,
+                variant_id: variantId || null,
+                quantity: quantity
+            }),
             success: function (data) {
                 console.log("API response received:", data);
-                location.reload();
+                // Display the message from the response in an alert
+                alert(data.message);
+
+                // Optionally, if the API provides a "success" flag, you can use it to determine further UI actions.
                 if (data.success) {
-                    // Reload the page after successful cart addition
+                    // For logged in users, the user_id is a number;
+                    // for non-logged in users, it might be a string (UUID).
+                    // You can also inspect data.data if needed.
                     cartItemIds.hide();
                     addCartBtn.hide();
                     viewCartBtn.show();
@@ -179,8 +222,18 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             error: function (error) {
                 console.error('Error adding product to cart:', error);
+                alert("There was an error adding the product to your cart.");
             }
-        });
+        };
+
+        // If a token exists, add the Authorization header
+        if (token) {
+            ajaxOptions.headers = {
+                "Authorization": `Bearer ${token}`
+            };
+        }
+
+        $.ajax(ajaxOptions);
     }
 
     function updateCartQuantity() {
