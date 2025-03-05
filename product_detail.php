@@ -204,14 +204,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }),
             success: function (data) {
                 console.log("API response received:", data);
+                
+                // If token is not present, store the user_id from the response as unique_id in local storage.
+                if (!token && data.data && data.data.user_id) {
+                    localStorage.setItem("unique_id", data.data.user_id);
+                    console.log("Unique user ID stored:", data.data.user_id);
+                }
+                
                 // Display the message from the response in an alert
                 alert(data.message);
 
-                // Optionally, if the API provides a "success" flag, you can use it to determine further UI actions.
                 if (data.success) {
-                    // For logged in users, the user_id is a number;
-                    // for non-logged in users, it might be a string (UUID).
-                    // You can also inspect data.data if needed.
                     cartItemIds.hide();
                     addCartBtn.hide();
                     viewCartBtn.show();
@@ -235,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         $.ajax(ajaxOptions);
     }
+
 
     function updateCartQuantity() {
         const newQuantity = quantityElem.val() || 1;
