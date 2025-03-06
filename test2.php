@@ -378,32 +378,32 @@
                 // Modify your existing function to include category filters
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
-                    // 1. For Product
+                        // 1. For Product
                         const searchProduct = $('#search-product-input').val() || '';
-                    // 2. For Brand
+                        // 2. For Brand
                         const selectedBrands = [];
                         $('input[name="brand"]:checked').each(function() {
                             selectedBrands.push($(this).val());
                         });
                         const searchBrand = selectedBrands.join(',');
-                    // 3. For Category
+                        // 3. For Category
                         const selectedCategories = [];
                         $('input[name="category"]:checked').each(function() {
                             selectedCategories.push($(this).val());
                         });
                         const searchCategory = selectedCategories.join(',');
 
-                    // 4. Get the current min & max from noUiSlider
-                    // Use the same slider element ID from earlier
+                        // 4. Get the current min & max from noUiSlider
+                        // Use the same slider element ID from earlier
                         const priceSlider = document.getElementById('price-slider');
                         const sliderValues = priceSlider.noUiSlider.get(); // This returns an array [min, max]
                         const minPrice = parseFloat(sliderValues[0]); 
                         const maxPrice = parseFloat(sliderValues[1]);
 
-                    // 5. Get the price range from the select box
+                        // 5. Get the price range from the select box
                         const priceRange = $('#price-range-select').val(); 
 
-                    // 6. Sorting select box
+                        // 6. Sorting select box
                         const orderValue = $('#orderby-select').val(); 
                         let orderPrice;
                         if (orderValue === 'ascending') {
@@ -413,15 +413,15 @@
                         } else {
                             orderPrice = ''; // or null, if no sort is selected
                         }
-                    // 7. Gather selected variants
+                        // 7. Gather selected variants
                         const selectedVariants = [];
                         $('input[name="variant"]:checked').each(function() {
                             selectedVariants.push($(this).val());
                         });
                         // If multiple can be selected, we can do something like a comma-separated string:
                         const variantType = selectedVariants.join(',');
-                    // If your API needs a single combined search string for categories/brands:
-                    // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
+                        // If your API needs a single combined search string for categories/brands:
+                        // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
                     
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
