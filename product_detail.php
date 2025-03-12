@@ -195,7 +195,7 @@ function setGuestCartCookie(cartId) {
     }
 
     // If NOT localhost, set the domain dynamically
-    if (!location.hostname.includes("localhost")) {
+    if (!location.hostname.includes("https://haneri.dotcombusiness.in")) {
         cookieString += ` Domain=${location.hostname};`;
     }
 
