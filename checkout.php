@@ -1,155 +1,11 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
-<!-- <style>
-    .vvv{
-        display:flex;
-        justify-content:end;
-    }
-    .check-form{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-    }
-    .check-form .in{
-        width:300px !important;
-        margin-bottom: 0.7rem !important;
-    }
-    .btt{
-        width: 615px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;        
-    }
-    .show{
-        display: grid;
-        grid-template-columns: repeat(2, 2fr);
-        gap:10px;
-    }
-    .custom-modal{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .inp{
-        height: 40px !important;
-        border-radius: 10px !important;
-    }
-    .labl{
-        font-size: 1.2rem !important;
-    }
-    .modal-content{
-        border-radius: 15px !important;
-        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.35) !important;
-        margin-top: 90px !important;
-    }
-    .form-group{
-        margin-bottom: 0.7rem;
-    }
-    .dft{
-        padding: 0.5em 1em !important;
-        border-radius: 10px !important;
-        background: #0b4c44e6 !important;
-    }
-</style> -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Place this stylesheet in your <head> or a linked CSS file -->
-<!-- <style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
-  .address-card {
-    /* Now it's a label, so display block and make it look like a card */
-    font-family: 'Roboto', sans-serif;
-    width: 420px;
-    margin: 1rem auto;               /* Center the card with a bit of spacing */
-    display: block;                  /* Ensures the label can wrap block elements */
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;                 /* Pointer to show it's clickable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;           /* Remove any text decoration from label */
-    color: inherit;                  /* Inherit normal text color */
-  }
-
-  .address-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  }
-
-  /* Gradient header section */
-  .card-header {
-    background:#315858 !important;
-    color: #fff;
-    padding: 16px;
-  }
-
-  .card-title {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color:#fff;
-  }
-
-  .card-phone {
-    margin: 4px 0 0;
-    font-size: 1.9rem;
-    color:#fff;
-  }
-
-  /* Body section for address details */
-  .card-body {
-    padding: 16px;
-    line-height: 1.5;
-  }
-  .card-body p {
-    margin: 0.5rem 0;
-  }
-
-  /* Footer section for the radio input or extra controls */
-  .card-footer {
-    background-color: #f9f9f9;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;   /* Space between radio and text */
-  }
-
-  /* Radio styling (optional enhancements) */
-  .select-radio {
-    width: 18px;
-    height: 18px;
-    accent-color: #478ed1; /* Modern browsers color the radio */
-    cursor: pointer;       
-  }
-  .footer-label {
-    font-size: 0.95rem;
-  }
-  .red{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .cardf{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .del-add{
-    color: #ff0e00;
-    background-color: transparent;
-    border-color: transparent;
-  }
-
-  .edit-add{
-    color: blue !important;
-    background-color: transparent !important;
-    border-color: transparent !important;
-  }
-</style> -->
 <main class="main main-test checkout_page">
     <div class="container checkout-container padding_top_100">
         <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
@@ -230,8 +86,6 @@
                         }
                     });
                 }
-
-
                 window.deleteAddress = function (id) { 
                     if (!confirm("Are you sure you want to delete this address?")) {
                         return;
@@ -254,7 +108,6 @@
                         }
                     });
                 };
-
                 fetchAddresses();
 
                 window.openUpdateModal = function (id) {
@@ -290,7 +143,6 @@
                         }
                     });
                 });
-
 
                 window.updateAddress = function () {
                     let id = $("#update_address_id").val();
@@ -680,6 +532,56 @@
                             }
                         });
                     });
+                    // Check if user_role in localStorage is 'vendor'
+                    if (localStorage.getItem("user_role") === "vendor") {
+                        $("#get_quotation").show();
+                    } else {
+                        $("#get_quotation").hide();
+                    }
+
+                    // Quotation button click event
+                    $("#get_quotation").click(function(event) {
+                        event.preventDefault();
+
+                        let shippingAddress = getSelectedAddress();
+                        if (!shippingAddress) return;
+
+                        let quoteData = {
+                            status: "pending",
+                            payment_status: "pending",
+                            shipping_address: shippingAddress
+                        };
+                        $.ajax({
+                            url: "<?php echo BASE_URL; ?>/quotation",
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(quoteData),
+                            success: function(response) {
+                                if (response.message && response.message.includes("success")) {
+                                    // Extract the nested quotation data
+                                    let quotationData = response.data.data;
+                                    
+                                    // Build query parameters from the returned data
+                                    let params = new URLSearchParams();
+                                    for (let key in quotationData) {
+                                        if (quotationData.hasOwnProperty(key)) {
+                                            params.append(key, quotationData[key]);
+                                        }
+                                    }
+                                    // Redirect to the quotation page with all data passed as query parameters
+                                    window.location.href = "quotation.php?" + params.toString();
+                                } else {
+                                    alert("Failed to get quotation. Please try again.");
+                                }
+                            },
+                            error: function() {
+                                alert("Failed to get quotation. Please try again.");
+                            }
+                        });
+                    });
 
                     function openRazorpayPopup(order_id, amount, orderId, userId, name, email, phone, shippingAddress) {
                         var options = {
@@ -750,6 +652,7 @@
                 });
             </script>
 
+
             <!-- Order Summary Section -->
             <div class="col-lg-4">
                 <div class="order-summary">
@@ -806,6 +709,9 @@
 
                     <button type="submit" class="btn btn-dark btn-place-order" id="placeOrderBtn">
                         Place order
+                    </button>
+                    <button type="submit" class="btn btn-dark btn-get-quotation" id="get_quotation">
+                        Get Quotation
                     </button>
                 </div>
             </div>

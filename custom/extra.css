@@ -1990,6 +1990,11 @@ footer .social-icon {
         grid-template-columns: repeat(2, 2fr);
         gap:10px;
     }
+    .add-List{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap:10px;
+    }
     .custom-modal{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

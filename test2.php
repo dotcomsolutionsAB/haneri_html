@@ -207,34 +207,11 @@
                                     </div>
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-                            <!-- <div class="widget widget-price wid">
-                                <h3 class="widget-title wid_title">
-                                    <a data-toggle="collapse" href="#widget-body-price" role="button" aria-expanded="true"
-                                    aria-controls="widget-body-price">
-                                    Price
-                                    </a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-price">
-                                    <div class="widget-body">
-                                        <label for="price-range-select">Select Price Range:</label>
-                                        <select id="price-range-select" class="form-control">
-                                            <option value="">-- Select Price --</option>
-                                            <option value="0k_10k">0K - 10K</option>
-                                            <option value="10k_25k">10K - 25K</option>
-                                            <option value="20k_30k">20K - 30K</option>
-                                            <option value="30k_40k">30K - 40K</option>
-                                            <option value="40k_50k">40K - 50K</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> -->
 
                             <script>
                                 $(document).ready(function() {
                                     // 1. Initialize noUiSlider
                                     const priceSlider = document.getElementById('price-slider');
-
                                     noUiSlider.create(priceSlider, {
                                         start: [100, 20000],  // Initial slider handles: [min, max]
                                         connect: true,     // Fill the bar between handles
@@ -244,7 +221,7 @@
                                         },
                                         step: 100          // Adjust step if you like
                                     });
-
+                                    
                                     // 2. Update the text display whenever slider changes
                                     priceSlider.noUiSlider.on('update', function(values) {
                                         // values = [minValue, maxValue]

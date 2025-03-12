@@ -46,6 +46,7 @@
         line-height: 1.5;
     }
 </style> -->
+
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
+    const specialPrice = $('#special_price');
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
 
@@ -77,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     priceElem.attr("data-price", data.data.variants[0].selling_price);
                     $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
                     $('#product-price').text(`₹${data.data.variants[0].selling_price}`);
+                    $('#special_price').text(`₹${data.data.variants[0].sales_price_vendor}`);
                     $('#product-description').html(data.data.description || 'No description available');
                     $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                     $('.about_section, .breadcrumb-title').text(data.data.name);
@@ -123,9 +126,108 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Add to Cart function
+    function addToCart() {
+    console.log("addToCart() function invoked.");
+    const variantId = $('#selected-variant').val();
+    const quantity = quantityElem.val() || 1;
+    const token = localStorage.getItem("auth_token");
+
+    const ajaxOptions = {
+        url: `<?php echo BASE_URL; ?>/cart/add`,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({
+            product_id: productId,
+            variant_id: variantId || null,
+            quantity: quantity
+        }),
+        success: function (data) {
+            console.log("API response received:", data);
+            
+            // Check for success correctly
+            if (data.success === true || data.message.includes("successfully")) {
+                alert(data.message);
+                cartItemIds.hide();
+                addCartBtn.hide();
+                viewCartBtn.show();
+                checkCart();
+
+                // Set guest cart cookie if user is not authenticated
+                if (!token) {
+                    setGuestCartCookie(data.data.user_id);
+                }
+            } else {
+                console.error("API response unsuccessful:", data);
+                alert("Error: " + data.message);
+            }
+        },
+        error: function (error) {
+            console.error('Error adding product to cart:', error);
+            alert("There was an error adding the product to your cart.");
+        }
+    };
+
+    // If authenticated, send Authorization header
+    if (token) {
+        ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+    }
+
+    $.ajax(ajaxOptions);
+}
+
+
+/**
+ * Sets the guest cart ID in a cookie with proper domain, path, and expiration.
+ * @param {string} cartId - The guest user ID received from API.
+ */
+function setGuestCartCookie(cartId) {
+    if (!cartId) return;
+
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (365 * 24 * 60 * 60 * 1000)); // 1 year expiration
+
+    let cookieString = `cart_id=${cartId}; Path=/; Expires=${expires.toUTCString()}; SameSite=Lax;`;
+
+    // If the site is running on HTTPS, add Secure flag
+    if (location.protocol === "https:") {
+        cookieString += " Secure;";
+    }
+
+    // If NOT localhost, set the domain dynamically
+    if (!location.hostname.includes("localhost")) {
+        cookieString += ` Domain=${location.hostname};`;
+    }
+
+    document.cookie = cookieString;
+    console.log(`Guest cart cookie set: cart_id=${cartId}`);
+}
+
+
+
+/**
+ * Fetches the value of a cookie by name.
+ * @param {string} name - The name of the cookie to retrieve.
+ * @returns {string|null} - The cookie value or null if not found.
+ */
+function getCookie(name) {
+    let cookies = document.cookie.split('; ');
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split('=');
+        if (key === name) return value;
+    }
+    return null;
+}
+
+
     // Check the current state of the cart
     function checkCart() {
         const uniqueId = localStorage.getItem("unique_id"); // if available 
+        // Execute the function only if unique_id exists
+        if (!uniqueId) {
+            console.warn("Unique ID not found in localStorage. Skipping cart check.");
+            return;
+        }
         $.ajax({
             url: `<?php echo BASE_URL; ?>/cart/fetch`,
             type: "POST",
@@ -153,52 +255,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Error checking cart:", error);
             }
         });
-    }
-
-    // Add to Cart function
-    function addToCart() {
-        console.log("addToCart() function invoked.");
-        const variantId = $('#selected-variant').val();
-        const quantity = quantityElem.val() || 1;
-        const token = localStorage.getItem("auth_token");
-
-        const ajaxOptions = {
-            url: `<?php echo BASE_URL; ?>/cart/add`,
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                product_id: productId,
-                variant_id: variantId || null,
-                quantity: quantity
-            }),
-            success: function (data) {
-                console.log("API response received:", data);
-                // Store the unique cart ID if the user is not logged in
-                if (!token && data.data && data.data.user_id) {
-                    localStorage.setItem("unique_id", data.data.user_id);
-                    console.log("Unique user ID stored:", data.data.user_id);
-                }
-                alert(data.message);
-                if (data.success) {
-                    cartItemIds.hide();
-                    addCartBtn.hide();
-                    viewCartBtn.show();
-                    checkCart();
-                } else {
-                    console.error("API response unsuccessful:", data);
-                }
-            },
-            error: function (error) {
-                console.error('Error adding product to cart:', error);
-                alert("There was an error adding the product to your cart.");
-            }
-        };
-
-        if (token) {
-            ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
-        }
-
-        $.ajax(ajaxOptions);
     }
 
     // Update cart quantity function
@@ -358,13 +414,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div class="price-box">
                                     <div class="_price">
                                             <del class="old-price">
-                                                <span id="regular-price">₹1000.00</span>
+                                                <span id="regular-price">₹0.00</span>
                                             </del>
-                                            <span class="new-price" id="product-price">₹11000.00</span>
+                                            <span class="new-price" id="product-price">₹0.00</span>
                                     </div>
                                     <div class="s_price">
                                         Special Price: 
-                                        <span class="special-price">₹11000.00</span>
+                                        <span class="special_price" id="special_price">₹0.00</span>
                                     </div>
                                 </div>
                                 <div class="product-desc">
