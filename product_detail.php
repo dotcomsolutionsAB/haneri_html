@@ -128,80 +128,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add to Cart function
     function addToCart() {
-    console.log("addToCart() function invoked.");
-    const variantId = $('#selected-variant').val();
-    const quantity = quantityElem.val() || 1;
-    const token = localStorage.getItem("auth_token");
+        console.log("addToCart() function invoked.");
+        const variantId = $('#selected-variant').val();
+        const quantity = quantityElem.val() || 1;
+        const token = localStorage.getItem("auth_token");
 
-    const ajaxOptions = {
-        url: `<?php echo BASE_URL; ?>/cart/add`,
-        type: "POST",
-        contentType: "application/json",
-        data: JSON.stringify({
-            product_id: productId,
-            variant_id: variantId || null,
-            quantity: quantity
-        }),
-        success: function (data) {
-            console.log("API response received:", data);
-            
-            // Check for success correctly
-            if (data.success === true || data.message.includes("successfully")) {
-                alert(data.message);
-                cartItemIds.hide();
-                addCartBtn.hide();
-                viewCartBtn.show();
-                checkCart();
+        const ajaxOptions = {
+            url: `<?php echo BASE_URL; ?>/cart/add`,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+                product_id: productId,
+                variant_id: variantId || null,
+                quantity: quantity
+            }),
+            success: function (data) {
+                console.log("API response received:", data);
+                
+                // Check for success correctly
+                if (data.success === true || data.message.includes("successfully")) {
+                    alert(data.message);
+                    cartItemIds.hide();
+                    addCartBtn.hide();
+                    viewCartBtn.show();
+                    checkCart();
 
-                // Set guest cart cookie if user is not authenticated
-                if (!token) {
-                    setGuestCartCookie(data.data.user_id);
+                    // Set guest cart cookie if user is not authenticated
+                    if (!token) {
+                        setGuestCartCookie(data.data.user_id);
+                    }
+                } else {
+                    console.error("API response unsuccessful:", data);
+                    alert("Error: " + data.message);
                 }
-            } else {
-                console.error("API response unsuccessful:", data);
-                alert("Error: " + data.message);
+            },
+            error: function (error) {
+                console.error('Error adding product to cart:', error);
+                alert("There was an error adding the product to your cart.");
             }
-        },
-        error: function (error) {
-            console.error('Error adding product to cart:', error);
-            alert("There was an error adding the product to your cart.");
-        }
-    };
+        };
 
-    // If authenticated, send Authorization header
-    if (token) {
-        ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+        // If authenticated, send Authorization header
+        if (token) {
+            ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+        }
+
+        $.ajax(ajaxOptions);
     }
 
-    $.ajax(ajaxOptions);
-}
-
-
 /**
- * Sets the guest cart ID in a cookie with proper domain, path, and expiration.
- * @param {string} cartId - The guest user ID received from API.
+ * Sends request to the backend to set the guest cart cookie.
+ * @param {string} cartId - The guest cart ID received from the API.
  */
 function setGuestCartCookie(cartId) {
     if (!cartId) return;
 
-    const expires = new Date();
-    expires.setTime(expires.getTime() + (365 * 24 * 60 * 60 * 1000)); // 1 year expiration
-
-    let cookieString = `cart_id=${cartId}; Path=/; Expires=${expires.toUTCString()}; SameSite=Lax;`;
-
-    // If the site is running on HTTPS, add Secure flag
-    if (location.protocol === "https:") {
-        cookieString += " Secure;";
-    }
-
-    // If NOT localhost, set the domain dynamically
-    if (!location.hostname.includes("https://haneri.dotcombusiness.in")) {
-        cookieString += ` Domain=${location.hostname};`;
-    }
-
-    document.cookie = cookieString;
-    console.log(`Guest cart cookie set: cart_id=${cartId}`);
+    fetch('https://haneri.dotcombusiness.in/api/cart/set-cookie', {
+        method: 'POST',
+        credentials: 'include', // Ensures cookies are sent
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ cart_id: cartId })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Cookie set response:", data))
+    .catch(error => console.error('Error setting cookie:', error));
 }
+
+
+
 
 
 
