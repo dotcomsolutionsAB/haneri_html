@@ -59,8 +59,7 @@
                             <div class="card-body">
                                 <div data-datatable="true" data-datatable-page-size="10">
                                     <div class="scrollable-x-auto">
-                                        <table class="table table-border" id="orders-table" data-datatable-table="true"
-                                            id="members_table">
+                                        <table class="table table-border" id="orders-table" data-datatable-table="true">
                                             <thead>
                                                 <tr>
                                                     <th class="w-[60px] text-center">
@@ -281,7 +280,7 @@
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/fetch_all`,
-                type: 'GET',
+                type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 data: { limit: itemsPerPage, offset: offset },
                 success: (response) => {
