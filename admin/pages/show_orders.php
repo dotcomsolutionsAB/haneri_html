@@ -349,10 +349,10 @@ $(document).ready(function () {
         fetchOrders();
     });
 
-    $("[data-datatable-size]").on("click", "button", function () {
-        itemsPerPage = parseInt($(this).data("page"));
-        // currentPage = 1;
-        fetchOrders();
+    $("[data-datatable-size]").on("change", function () {
+        itemsPerPage = parseInt($(this).val());
+        currentPage = 1;
+        fetchProducts();
     });
 
     const perPageSelect = $("[data-datatable-size]");
@@ -371,10 +371,10 @@ const generateActionButtons = (order) => {
                 <i class="ki-filled ki-dots-vertical"></i>
             </button>
             <div class="menu-dropdown w-full max-w-[175px]">
-                <a class="menu-link" href="product_details.php?slug=${order.slug}">
+                <a class="menu-link" href="product_details.php?slug=${order.id}">
                     <i class="ki-filled ki-search-list"></i> View
                 </a>
-                <a class="menu-link" href="edit_product.php?slug=${order.slug}">
+                <a class="menu-link" href="edit_product.php?slug=${order.id}">
                     <i class="ki-filled ki-pencil"></i> Edit
                 </a>
                 <a class="menu-link remove-product" data-product-id="${order.id}" href="#">
