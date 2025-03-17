@@ -422,6 +422,7 @@ $(document).ready(function () {
             success: (response) => {
                 if (response?.success && response.data) {
                     totalItems = response.total ?? response.data.length;
+                    console.error("Count:", response.data.length);
                     populateTable(response.data);
                     updatePagination();
                 } else {
