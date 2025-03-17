@@ -397,74 +397,52 @@ $(document).ready(function () {
 const generateActionButtons = (order) => {
     return `
         <div class="menu" data-menu="true">
-                                                            <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                                                                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                                    <i class="ki-filled ki-dots-vertical">
-                                                                    </i>
-                                                                </button>
-                                                                <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
-                                                                    <div class="menu-item">
-                                                                        <a class="menu-link" href="#">
-                                                                            <span class="menu-icon">
-                                                                                <i class="ki-filled ki-search-list">
-                                                                                </i>
-                                                                            </span>
-                                                                            <span class="menu-title">
-                                                                                View
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="menu-item">
-                                                                        <a class="menu-link" href="#">
-                                                                            <span class="menu-icon">
-                                                                                <i class="ki-filled ki-file-up">
-                                                                                </i>
-                                                                            </span>
-                                                                            <span class="menu-title">
-                                                                                Export
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="menu-separator">
-                                                                    </div>
-                                                                    <div class="menu-item">
-                                                                        <a class="menu-link" href="#">
-                                                                            <span class="menu-icon">
-                                                                                <i class="ki-filled ki-pencil">
-                                                                                </i>
-                                                                            </span>
-                                                                            <span class="menu-title">
-                                                                                Edit
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="menu-item">
-                                                                        <a class="menu-link" href="#">
-                                                                            <span class="menu-icon">
-                                                                                <i class="ki-filled ki-copy">
-                                                                                </i>
-                                                                            </span>
-                                                                            <span class="menu-title">
-                                                                                Make a copy
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="menu-separator">
-                                                                    </div>
-                                                                    <div class="menu-item">
-                                                                        <a class="menu-link" href="#">
-                                                                            <span class="menu-icon">
-                                                                                <i class="ki-filled ki-trash">
-                                                                                </i>
-                                                                            </span>
-                                                                            <span class="menu-title">
-                                                                                Remove
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+            <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                    <i class="ki-filled ki-dots-vertical">
+                    </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
+                    <div class="menu-item">
+                        <a class="menu-link" href="orders.php?slug=${order.id}">
+                            <span class="menu-icon">
+                                <i class="ki-filled ki-search-list">
+                                </i>
+                            </span>
+                            <span class="menu-title">
+                                View
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-separator">
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link" href="orders.php?slug=${order.id}">
+                            <span class="menu-icon">
+                                <i class="ki-filled ki-pencil">
+                                </i>
+                            </span>
+                            <span class="menu-title">
+                                Edit
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-separator">
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link" href="orders.php?slug=${order.id}">
+                            <span class="menu-icon">
+                                <i class="ki-filled ki-trash">
+                                </i>
+                            </span>
+                            <span class="menu-title">
+                                Remove
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 };
     </script>
