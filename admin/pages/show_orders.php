@@ -280,8 +280,8 @@
             const offset = (currentPage - 1) * itemsPerPage;
 
             $.ajax({
-                url: `{{base_url}}/fetch_all`,
-                type: 'POST',
+                url: `<?php echo BASE_URL; ?>/fetch_all`,
+                type: 'GET',
                 headers: { Authorization: `Bearer ${token}` },
                 data: { limit: itemsPerPage, offset: offset },
                 success: (response) => {
