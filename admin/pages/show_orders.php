@@ -15,7 +15,7 @@
                 <div class="container-fixed">
                     <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                         <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900">
+                            <h1 class="text-xl font-medium leading-none text-gray-900" id="count-orders">
                                 Orders (14)
                             </h1>
                             <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
@@ -287,6 +287,7 @@
                 success: (response) => {
                     if (response && response.success && response.data) {
                         totalItems = response.data.length;
+                        console.error("count", totalItems);
                         populateTable(response.data);
                         updatePagination();
                     } else {
@@ -307,22 +308,57 @@
                 tbody.append(`
                     <tr>
                         <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${order.id}" />
+                            <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${order.id}">
                         </td>
-                        <td>${new Date(order.created_at).toLocaleDateString()}</td>
-                        <td>${order.id}</td>
-                        <td>${order.razorpay_order_id || "N/A"}</td>
-                        <td>${order.user?.name || "N/A"}</td>
-                        <td>${order.user?.role || "N/A"}</td>
-                        <td>₹${order.total_amount}.00</td>
                         <td>
-                            <span class="badge badge-sm badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">
+                            <div class="flex items-center gap-2.5">
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="text-xs text-gray-700 font-normal">${order.created_at}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex flex-wrap gap-2.5 mb-2">
+                                <span class="badge badge-sm badge-light badge-outline">${order.id}</span>   
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">${order.user?.role || "N/A"}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-2.5">
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>                                                                
+                                    <span class="badge text-danger">
+                                        Uppaid
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-primary badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">
                                 ${order.status}
                             </span>
                         </td>
-                        <td>${order.payment_status}</td>
+                        <td class="text-gray-800 font-normal">
+                            <div class="flex items-center gap-1.5 pb-2">
+                                <span class="text-xs text-gray-700 font-normal">${order.payment_status}</span>
+                            </div>                                                        
+                        </td>
                         <td class="w-[60px]">
-                            <button class="btn btn-sm btn-primary">View</button>
+                            ${generateActionButtons(product)}
                         </td>
                     </tr>
                 `);
@@ -362,7 +398,7 @@
         });
 
         const perPageSelect = $("[data-datatable-size]");
-        [10, 25, 50, 100].forEach((size) => {
+        [5, 10, 25, 50, 100].forEach((size) => {
             perPageSelect.append(`<option value="${size}">${size}</option>`);
         });
         perPageSelect.val(itemsPerPage);
@@ -371,8 +407,8 @@
     });
     </script>
     <script>
-        const generateActionButtons = (product) => {
-            const productId = product.variants?.[0]?.product_id || "invalid";
+        const generateActionButtons = (order) => {
+            const orderId = id || "invalid";
             return `
                 <div class="menu" data-menu="true">
                     <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
@@ -384,21 +420,21 @@
 
                         <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
                             <div class="menu-item">
-                                <a class="menu-link" href="product_details.php?slug=${product.slug}">
+                                <a class="menu-link" href="product_details.php?slug=${order.slug}">
                                     <span class="menu-icon"><i class="ki-filled ki-search-list"></i></span>
                                     <span class="menu-title">View</span>
                                 </a>
                             </div>
                             <div class="menu-separator"></div>
                             <div class="menu-item">
-                                <a class="menu-link" href="edit_product.php?slug=${product.slug}">
+                                <a class="menu-link" href="edit_product.php?slug=${order.slug}">
                                     <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                     <span class="menu-title">Edit</span>
                                 </a>
                             </div>
                             <div class="menu-separator"></div>
                             <div class="menu-item">
-                                <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="remove_product.php?${productId || "#"}">
+                                <a class="menu-link remove-product" data-product-id="${orderId || "invalid"}" href="remove_product.php?${productId || "#"}">
                                     <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
                                     <span class="menu-title">Remove</span>
                                 </a>

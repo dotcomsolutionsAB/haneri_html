@@ -159,7 +159,7 @@
 
             
             const populateTable = (data) => {
-                const tbody = $("#products-table tbody");
+                const tbody = $("#orders-table tbody");
                 tbody.empty();
 
                 data.forEach((product) => {
