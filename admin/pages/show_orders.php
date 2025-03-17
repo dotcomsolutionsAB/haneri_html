@@ -358,7 +358,7 @@
                             </div>                                                        
                         </td>
                         <td class="w-[60px]">
-                            ${generateActionButtons(product)}
+                            ${generateActionButtons(order)}
                         </td>
                     </tr>
                 `);
