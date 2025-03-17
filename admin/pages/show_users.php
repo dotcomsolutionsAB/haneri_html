@@ -17,7 +17,7 @@
                 <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                     <div class="flex flex-col justify-center gap-2">
                         <h1 class="text-xl font-medium leading-none text-gray-900" id="count-users">
-                            00
+                            00 User
                         </h1>
                         <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
                             Overview of all users and brands.
@@ -83,7 +83,7 @@
                                                 <th class="min-w-[165px]">
                                                     <span class="sort">
                                                         <span class="sort-label text-gray-700 font-normal">
-                                                            Location
+                                                            Mobile
                                                         </span>
                                                         <span class="sort-icon">
                                                         </span>
@@ -93,15 +93,6 @@
                                                     <span class="sort">
                                                         <span class="sort-label text-gray-700 font-normal">
                                                             Status
-                                                        </span>
-                                                        <span class="sort-icon">
-                                                        </span>
-                                                    </span>
-                                                </th>
-                                                <th class="min-w-[165px]">
-                                                    <span class="sort">
-                                                        <span class="sort-label text-gray-700 font-normal">
-                                                            Recent activity
                                                         </span>
                                                         <span class="sort-icon">
                                                         </span>
@@ -336,8 +327,8 @@
                         <span class="text-xs text-gray-700 font-normal">${user.mobile}</span>
                     </td>
                     <td>
-                        <span class="badge badge-sm badge-outline ${user.is_present ? 'badge-success' : 'badge-danger'}">
-                            ${user.is_present ? 'Present' : 'Absent'}
+                        <span class="badge badge-sm badge-outline ${user.is_present == 1 ? 'badge-success' : 'badge-danger'}">
+                            ${user.is_present == 1 ? 'Present' : 'Absent'}
                         </span>
                     </td>
                     <td class="w-[60px]">${generateActionButtons(user)}</td>
