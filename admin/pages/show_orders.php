@@ -318,7 +318,16 @@ $(document).ready(function () {
                             </div>
                         </div>
                     </td>
-                    <td>${order.razorpay_order_id || "N/A"}</td>
+                    <td>
+                        <div class="flex flex-wrap gap-2.5 mb-2">
+                            <span class="badge badge-sm badge-light badge-outline">${order.id}</span>   
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-1.5 pb-2">
+                            <span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span>
+                        </div>
+                    </td>
                     <td>${order.user?.name || "N/A"}</td>
                     <td>${order.user?.role || "N/A"}</td>
                     <td>₹${order.total_amount} <span class="badge text-danger">Unpaid</span></td>
