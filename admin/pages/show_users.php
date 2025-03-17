@@ -1,5 +1,7 @@
 <base href="../">
 <?php include("../../configs/auth_check.php"); ?>
+<?php include("../../configs/config.php"); ?>
+
 <?php 
     $current_page = "Show Users"; // Dynamically set this based on the page
 ?>

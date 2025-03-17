@@ -126,191 +126,191 @@
             <!-- End of Content -->
             <!-- Footer -->
 
-    <script>
-        $(document).ready(function () {
-            const token = localStorage.getItem('auth_token');
+<script>
+    $(document).ready(function () {
+        const token = localStorage.getItem('auth_token');
 
-            let itemsPerPage = 10; // Default items per page
-            let currentPage = 1; // Current page number
-            let totalItems = 0; // Total items from API response
+        let itemsPerPage = 10; // Default items per page
+        let currentPage = 1; // Current page number
+        let totalItems = 0; // Total items from API response
 
-            const fetchProducts = () => {
-                const offset = (currentPage - 1) * itemsPerPage;
+        const fetchProducts = () => {
+            const offset = (currentPage - 1) * itemsPerPage;
 
-                $.ajax({
-                    url: '<?php echo BASE_URL; ?>/products/get_products',
-                    type: 'POST',
-                    headers: { Authorization: `Bearer ${token}` },
-                    data: { search: '', limit: itemsPerPage, offset: offset},
-                    success: (response) => {
-                            if (response && response.data) {
-                                totalItems = response.total_records; // Assuming total items is part of the API response
-                                populateTable(response.data);
-                                updatePagination();
-                            } else {
-                                console.error("Unexpected response format:", response);
-                            }
-                    },
-                    error: (error) => {
-                            console.error("Error fetching data:", error);
-                    }
-                });
-            };
+            $.ajax({
+                url: '<?php echo BASE_URL; ?>/products/get_products',
+                type: 'POST',
+                headers: { Authorization: `Bearer ${token}` },
+                data: { search: '', limit: itemsPerPage, offset: offset},
+                success: (response) => {
+                        if (response && response.data) {
+                            totalItems = response.total_records; // Assuming total items is part of the API response
+                            populateTable(response.data);
+                            updatePagination();
+                        } else {
+                            console.error("Unexpected response format:", response);
+                        }
+                },
+                error: (error) => {
+                        console.error("Error fetching data:", error);
+                }
+            });
+        };
 
-            
-            const populateTable = (data) => {
-                const tbody = $("#products-table tbody");
-                tbody.empty();
+        
+        const populateTable = (data) => {
+            const tbody = $("#products-table tbody");
+            tbody.empty();
 
-                data.forEach((product) => {
-                    // Get variant details
-                    let variantDetails = "";
-                    let highestPrice = 0;
-                    let lowestPrice = Infinity;
+            data.forEach((product) => {
+                // Get variant details
+                let variantDetails = "";
+                let highestPrice = 0;
+                let lowestPrice = Infinity;
 
-                    if (product.variants && product.variants.length > 0) {
-                        // Extract variant types and values
-                        variantDetails = product.variants
-                            .map(v => `${v.variant_type}: ${v.variant_value}`)
-                            .join(",<br> ");
+                if (product.variants && product.variants.length > 0) {
+                    // Extract variant types and values
+                    variantDetails = product.variants
+                        .map(v => `${v.variant_type}: ${v.variant_value}`)
+                        .join(",<br> ");
 
-                        // Find highest and lowest selling prices
-                        product.variants.forEach(variant => {
-                            let sellingPrice = parseFloat(variant.selling_price) || 0;
-                            if (sellingPrice > highestPrice) highestPrice = sellingPrice;
-                            if (sellingPrice < lowestPrice) lowestPrice = sellingPrice;
-                        });
-                    } else {
-                        variantDetails = "No Variants Available";
-                        lowestPrice = highestPrice = "N/A"; // If no variants exist
-                    }
+                    // Find highest and lowest selling prices
+                    product.variants.forEach(variant => {
+                        let sellingPrice = parseFloat(variant.selling_price) || 0;
+                        if (sellingPrice > highestPrice) highestPrice = sellingPrice;
+                        if (sellingPrice < lowestPrice) lowestPrice = sellingPrice;
+                    });
+                } else {
+                    variantDetails = "No Variants Available";
+                    lowestPrice = highestPrice = "N/A"; // If no variants exist
+                }
 
-                    // Append a single row for each product
-                    tbody.append(`
-                        <tr>
-                            <td class="text-center">
-                                <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-2.5">
-                                    <img class="h-9 rounded-full" src="${
-                                        product.category?.id == 1 ? '../../images/f1.png' :
-                                        product.category?.id == 2 ? '../../images/f2.png' :
-                                        product.category?.id == 3 ? '../../images/f3.png' :
-                                        'assets/images/products/product-1.jpg' // Default image
-                                    }">
-                                    <div class="flex flex-col gap-0.5">
-                                        <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
-                                            ${product.name}
-                                        </a>
-                                        <span class="text-gray-700 text-xs pt-3">HSN : ${product.variants[0]?.hsn || "N/A"}</span>
-                                    </div>
+                // Append a single row for each product
+                tbody.append(`
+                    <tr>
+                        <td class="text-center">
+                            <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${product.slug}" />
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-2.5">
+                                <img class="h-9 rounded-full" src="${
+                                    product.category?.id == 1 ? '../../images/f1.png' :
+                                    product.category?.id == 2 ? '../../images/f2.png' :
+                                    product.category?.id == 3 ? '../../images/f3.png' :
+                                    'assets/images/products/product-1.jpg' // Default image
+                                }">
+                                <div class="flex flex-col gap-0.5">
+                                    <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
+                                        ${product.name}
+                                    </a>
+                                    <span class="text-gray-700 text-xs pt-3">HSN : ${product.variants[0]?.hsn || "N/A"}</span>
                                 </div>
-                            </td>
-                            <td><span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span></td>
-                            <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
-                            <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
-                            <td>
-                                <div class="text-gray-700 text-xs">${variantDetails}</div>
-                                <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
-                            </td>
-                            <td>
-                                <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
-                                    ${product.is_active ? "Active" : "Inactive"}
-                                </span>
-                            </td>
-                            <td class="w-[60px]">
-                                ${generateActionButtons(product)}
-                            </td>
-                        </tr>
-                    `);
-                });
-            };
-
-            const updatePagination = () => {
-                const totalPages = Math.ceil(totalItems / itemsPerPage);
-                const pagination = $(".pagination");
-                pagination.empty();
-
-                if (currentPage > 1) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
-                }
-
-                for (let page = 1; page <= totalPages; page++) {
-                    const isActive = page === currentPage ? "active" : "";
-                    pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
-                }
-
-                if (currentPage < totalPages) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
-                }
-
-                $("#count-products").text(
-                    `COUNT : ${totalItems} Products`
-                );
-            };
-
-            $(".pagination").on("click", "button", function () {
-                currentPage = parseInt($(this).data("page"));
-                fetchProducts();
+                            </div>
+                        </td>
+                        <td><span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span></td>
+                        <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
+                        <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                        <td>
+                            <div class="text-gray-700 text-xs">${variantDetails}</div>
+                            <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
+                        </td>
+                        <td>
+                            <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
+                                ${product.is_active ? "Active" : "Inactive"}
+                            </span>
+                        </td>
+                        <td class="w-[60px]">
+                            ${generateActionButtons(product)}
+                        </td>
+                    </tr>
+                `);
             });
+        };
 
-            $("[data-datatable-size]").on("change", function () {
-                itemsPerPage = parseInt($(this).val());
-                currentPage = 1;
-                fetchProducts();
-            });
+        const updatePagination = () => {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const pagination = $(".pagination");
+            pagination.empty();
 
-            // Initialize dropdown for items per page
-            const perPageSelect = $("[data-datatable-size]");
-            [10, 25, 50, 100].forEach((size) => {
-                perPageSelect.append(`<option value="${size}">${size}</option>`);
-            });
-            perPageSelect.val(itemsPerPage);
+            if (currentPage > 1) {
+                pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+            }
 
+            for (let page = 1; page <= totalPages; page++) {
+                const isActive = page === currentPage ? "active" : "";
+                pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
+            }
+
+            if (currentPage < totalPages) {
+                pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+            }
+
+            $("#count-products").text(
+                `COUNT : ${totalItems} Products`
+            );
+        };
+
+        $(".pagination").on("click", "button", function () {
+            currentPage = parseInt($(this).data("page"));
             fetchProducts();
         });
-    </script>
-    <script>
-        const generateActionButtons = (product) => {
-            const productId = product.variants?.[0]?.product_id || "invalid";
-            return `
-                <div class="menu" data-menu="true">
-                    <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
-                        data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                        
-                        <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                            <i class="ki-filled ki-dots-vertical"></i>
-                        </button>
 
-                        <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
-                            <div class="menu-item">
-                                <a class="menu-link" href="product_details.php?slug=${product.slug}">
-                                    <span class="menu-icon"><i class="ki-filled ki-search-list"></i></span>
-                                    <span class="menu-title">View</span>
-                                </a>
-                            </div>
-                            <div class="menu-separator"></div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="edit_product.php?slug=${product.slug}">
-                                    <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
-                                    <span class="menu-title">Edit</span>
-                                </a>
-                            </div>
-                            <div class="menu-separator"></div>
-                            <div class="menu-item">
-                                <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="remove_product.php?${productId || "#"}">
-                                    <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
-                                    <span class="menu-title">Remove</span>
-                                </a>
-                            </div>
+        $("[data-datatable-size]").on("change", function () {
+            itemsPerPage = parseInt($(this).val());
+            currentPage = 1;
+            fetchProducts();
+        });
+
+        // Initialize dropdown for items per page
+        const perPageSelect = $("[data-datatable-size]");
+        [10, 25, 50, 100].forEach((size) => {
+            perPageSelect.append(`<option value="${size}">${size}</option>`);
+        });
+        perPageSelect.val(itemsPerPage);
+
+        fetchProducts();
+    });
+</script>
+<script>
+    const generateActionButtons = (product) => {
+        const productId = product.variants?.[0]?.product_id || "invalid";
+        return `
+            <div class="menu" data-menu="true">
+                <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
+                    data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                    
+                    <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                        <i class="ki-filled ki-dots-vertical"></i>
+                    </button>
+
+                    <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
+                        <div class="menu-item">
+                            <a class="menu-link" href="product_details.php?slug=${product.slug}">
+                                <span class="menu-icon"><i class="ki-filled ki-search-list"></i></span>
+                                <span class="menu-title">View</span>
+                            </a>
+                        </div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="edit_product.php?slug=${product.slug}">
+                                <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
+                                <span class="menu-title">Edit</span>
+                            </a>
+                        </div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-item">
+                            <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="remove_product.php?${productId || "#"}">
+                                <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
+                                <span class="menu-title">Remove</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            `;
-        };
+            </div>
+        `;
+    };
 
-    </script>
+</script>
     <!-- Sync Products api -->
     <!-- <script>     
         const syncProducts = () => {
