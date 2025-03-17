@@ -311,7 +311,13 @@ $(document).ready(function () {
                     <td class="text-center">
                         <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${order.id}">
                     </td>
-                    <td><span class="badge badge-sm badge-light">${order.created_at}</span></td>
+                    <td>
+                        <div class="flex items-center gap-2.5">
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-xs text-gray-700 font-normal">${order.created_at}</span>
+                            </div>
+                        </div>
+                    </td>
                     <td>${order.razorpay_order_id || "N/A"}</td>
                     <td>${order.user?.name || "N/A"}</td>
                     <td>${order.user?.role || "N/A"}</td>
