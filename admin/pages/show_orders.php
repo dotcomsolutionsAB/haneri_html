@@ -269,179 +269,118 @@
                 <!-- End of Container -->
             </main>
             <!-- End of Content -->
-    <script>
-    $(document).ready(function () {
-        const token = localStorage.getItem('auth_token');
-        let itemsPerPage = 10;
-        let currentPage = 1;
-        let totalItems = 0;
 
-        const fetchOrders = () => {
-            const offset = (currentPage - 1) * itemsPerPage;
+<script>
+$(document).ready(function () {
+    const token = localStorage.getItem('auth_token');
+    let itemsPerPage = 10;
+    let currentPage = 1;
+    let totalItems = 0;
 
-            $.ajax({
-                url: `<?php echo BASE_URL; ?>/fetch_all`,
-                type: 'POST',
-                headers: { Authorization: `Bearer ${token}` },
-                data: { limit: itemsPerPage, offset: offset },
-                success: (response) => {
-                    if (response && response.success && response.data) {
-                        totalItems = response.data.length;
-                        console.error("count", totalItems);
-                        populateTable(response.data);
-                        updatePagination();
-                    } else {
-                        console.error("Unexpected response format:", response);
-                    }
-                },
-                error: (error) => {
-                    console.error("Error fetching data:", error);
+    const fetchOrders = () => {
+        const offset = (currentPage - 1) * itemsPerPage;
+
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/fetch_all`,
+            type: 'POST',
+            headers: { Authorization: `Bearer ${token}` },
+            data: { limit: itemsPerPage, offset: offset },
+            success: (response) => {
+                if (response?.success && response.data) {
+                    totalItems = response.total ?? response.data.length;
+                    populateTable(response.data);
+                    updatePagination();
+                } else {
+                    console.error("Unexpected response format:", response);
                 }
-            });
-        };
-
-        const populateTable = (data) => {
-            const tbody = $("#orders-table tbody");
-            tbody.empty();
-
-            data.forEach((order) => {
-                tbody.append(`
-                    <tr>
-                        <td class="text-center">
-                            <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${order.id}">
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-2.5">
-                                
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex flex-wrap gap-2.5 mb-2">
-                                <span class="badge badge-sm badge-light badge-outline">${order.id}</span>   
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">${order.user?.role || "N/A"}</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-2.5">
-                                <div class="flex flex-col gap-0.5">
-                                    <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>                                                                
-                                    <span class="badge text-danger">
-                                        Uppaid
-                                    </span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge badge-primary badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">
-                                ${order.status}
-                            </span>
-                        </td>
-                        <td class="text-gray-800 font-normal">
-                            <div class="flex items-center gap-1.5 pb-2">
-                                <span class="text-xs text-gray-700 font-normal">${order.payment_status}</span>
-                            </div>                                                        
-                        </td>
-                        <td class="w-[60px]">
-                            ${generateActionButtons(order)}
-                        </td>
-                    </tr>
-                `);
-            });
-        };
-
-        const updatePagination = () => {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const pagination = $(".pagination");
-            pagination.empty();
-
-            if (currentPage > 1) {
-                pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+            },
+            error: (error) => {
+                console.error("Error fetching data:", error);
             }
-
-            for (let page = 1; page <= totalPages; page++) {
-                const isActive = page === currentPage ? "active" : "";
-                pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
-            }
-
-            if (currentPage < totalPages) {
-                pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
-            }
-
-            $("#count-orders").text(`COUNT : ${totalItems} Orders`);
-        };
-
-        $(".pagination").on("click", "button", function () {
-            currentPage = parseInt($(this).data("page"));
-            fetchOrders();
         });
+    };
 
-        $("[data-datatable-size]").on("change", function () {
-            itemsPerPage = parseInt($(this).val());
-            currentPage = 1;
-            fetchOrders();
+    const populateTable = (data) => {
+        const tbody = $("#orders-table tbody");
+        tbody.empty();
+
+        data.forEach((order) => {
+            tbody.append(`
+                <tr>
+                    <td class="text-center">
+                        <input class="checkbox checkbox-sm" type="checkbox" value="${order.id}">
+                    </td>
+                    <td><span class="badge badge-sm badge-light">${order.id}</span></td>
+                    <td>${order.razorpay_order_id || "N/A"}</td>
+                    <td>${order.user?.name || "N/A"}</td>
+                    <td>${order.user?.role || "N/A"}</td>
+                    <td>₹${order.total_amount} <span class="badge text-danger">Unpaid</span></td>
+                    <td><span class="badge badge-primary badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">${order.status}</span></td>
+                    <td>${order.payment_status}</td>
+                    <td class="w-[60px]">${generateActionButtons(order)}</td>
+                </tr>
+            `);
         });
+    };
 
-        const perPageSelect = $("[data-datatable-size]");
-        [5, 10, 25, 50, 100].forEach((size) => {
-            perPageSelect.append(`<option value="${size}">${size}</option>`);
-        });
-        perPageSelect.val(itemsPerPage);
+    const updatePagination = () => {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const pagination = $(".pagination");
+        pagination.empty();
 
+        if (currentPage > 1) {
+            pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
+        }
+        for (let page = 1; page <= totalPages; page++) {
+            pagination.append(`<button class="btn btn-sm ${page === currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`);
+        }
+        if (currentPage < totalPages) {
+            pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
+        }
+        $("#count-orders").text(`COUNT : ${totalItems} Orders`);
+    };
+
+    $(".pagination").on("click", "button", function () {
+        currentPage = parseInt($(this).data("page"));
         fetchOrders();
     });
-    </script>
-    <script>
-        const generateActionButtons = (order) => {
-            const orderId = id || "invalid";
-            return `
-                <div class="menu" data-menu="true">
-                    <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
-                        data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                        
-                        <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                            <i class="ki-filled ki-dots-vertical"></i>
-                        </button>
 
-                        <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
-                            <div class="menu-item">
-                                <a class="menu-link" href="product_details.php?slug=${order.slug}">
-                                    <span class="menu-icon"><i class="ki-filled ki-search-list"></i></span>
-                                    <span class="menu-title">View</span>
-                                </a>
-                            </div>
-                            <div class="menu-separator"></div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="edit_product.php?slug=${order.slug}">
-                                    <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
-                                    <span class="menu-title">Edit</span>
-                                </a>
-                            </div>
-                            <div class="menu-separator"></div>
-                            <div class="menu-item">
-                                <a class="menu-link remove-product" data-product-id="${orderId || "invalid"}" href="remove_product.php?${productId || "#"}">
-                                    <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
-                                    <span class="menu-title">Remove</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        };
+    $("[data-datatable-size]").on("change", function () {
+        itemsPerPage = parseInt($(this).val());
+        currentPage = 1;
+        fetchOrders();
+    });
+
+    const perPageSelect = $("[data-datatable-size]");
+    [5, 10, 25, 50, 100].forEach((size) => {
+        perPageSelect.append(`<option value="${size}">${size}</option>`);
+    });
+    perPageSelect.val(itemsPerPage);
+
+    fetchOrders();
+});
+
+const generateActionButtons = (order) => {
+    return `
+        <div class="menu" data-menu="true">
+            <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                <i class="ki-filled ki-dots-vertical"></i>
+            </button>
+            <div class="menu-dropdown w-full max-w-[175px]">
+                <a class="menu-link" href="product_details.php?slug=${order.slug}">
+                    <i class="ki-filled ki-search-list"></i> View
+                </a>
+                <a class="menu-link" href="edit_product.php?slug=${order.slug}">
+                    <i class="ki-filled ki-pencil"></i> Edit
+                </a>
+                <a class="menu-link remove-product" data-product-id="${order.id}" href="#">
+                    <i class="ki-filled ki-trash"></i> Remove
+                </a>
+            </div>
+        </div>
+    `;
+};
+
 
     </script>
     
