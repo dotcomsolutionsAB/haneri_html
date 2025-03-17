@@ -309,9 +309,9 @@ $(document).ready(function () {
             tbody.append(`
                 <tr>
                     <td class="text-center">
-                        <input class="checkbox checkbox-sm" type="checkbox" value="${order.id}">
+                        <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${order.id}">
                     </td>
-                    <td><span class="badge badge-sm badge-light">${order.id}</span></td>
+                    <td><span class="badge badge-sm badge-light">${order.created_at}</span></td>
                     <td>${order.razorpay_order_id || "N/A"}</td>
                     <td>${order.user?.name || "N/A"}</td>
                     <td>${order.user?.role || "N/A"}</td>
