@@ -59,7 +59,7 @@
                             <div class="card-body">
                                 <div data-datatable="true" data-datatable-page-size="10">
                                     <div class="scrollable-x-auto">
-                                        <table class="table table-border" data-datatable-table="true"
+                                        <table class="table table-border" id="orders-table" data-datatable-table="true"
                                             id="members_table">
                                             <thead>
                                                 <tr>
