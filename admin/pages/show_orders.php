@@ -194,7 +194,7 @@
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <div class="flex flex-col gap-0.5">
-                                    <span class="text-xs text-gray-700 font-normal">${order.created_at}</span>
+                                    <span class="text-xs text-gray-700 font-normal">${new Date(order.created_at).toLocaleString()}</span>
                                 </div>
                             </div>
                         </td>
