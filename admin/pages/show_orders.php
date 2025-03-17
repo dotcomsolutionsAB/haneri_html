@@ -328,11 +328,26 @@ $(document).ready(function () {
                             <span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span>
                         </div>
                     </td>
-                    <td>${order.user?.name || "N/A"}</td>
-                    <td>${order.user?.role || "N/A"}</td>
-                    <td>₹${order.total_amount} <span class="badge text-danger">Unpaid</span></td>
+                    <td>
+                        <div class="flex items-center gap-1.5 pb-2">
+                            <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-1.5 pb-2">
+                            <span class="text-xs text-gray-700 font-normal">${order.user?.role || "N/A"}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
+                        <span class="badge text-danger">Unpaid</span>
+                    </td>
                     <td><span class="badge badge-primary badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">${order.status}</span></td>
-                    <td>${order.payment_status}</td>
+                    <td class="text-gray-800 font-normal">
+                        <div class="flex items-center gap-1.5 pb-2">
+                            <span class="text-xs text-gray-700 font-normal">${order.payment_status}</span>
+                        </div>                                                        
+                    </td>
                     <td class="w-[60px]">${generateActionButtons(order)}</td>
                 </tr>
             `);
@@ -382,21 +397,74 @@ $(document).ready(function () {
 const generateActionButtons = (order) => {
     return `
         <div class="menu" data-menu="true">
-            <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                <i class="ki-filled ki-dots-vertical"></i>
-            </button>
-            <div class="menu-dropdown w-full max-w-[175px]">
-                <a class="menu-link" href="product_details.php?slug=${order.id}">
-                    <i class="ki-filled ki-search-list"></i> View
-                </a>
-                <a class="menu-link" href="edit_product.php?slug=${order.id}">
-                    <i class="ki-filled ki-pencil"></i> Edit
-                </a>
-                <a class="menu-link remove-product" data-product-id="${order.id}" href="#">
-                    <i class="ki-filled ki-trash"></i> Remove
-                </a>
-            </div>
-        </div>
+                                                            <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                                                                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                                                                    <i class="ki-filled ki-dots-vertical">
+                                                                    </i>
+                                                                </button>
+                                                                <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
+                                                                    <div class="menu-item">
+                                                                        <a class="menu-link" href="#">
+                                                                            <span class="menu-icon">
+                                                                                <i class="ki-filled ki-search-list">
+                                                                                </i>
+                                                                            </span>
+                                                                            <span class="menu-title">
+                                                                                View
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="menu-item">
+                                                                        <a class="menu-link" href="#">
+                                                                            <span class="menu-icon">
+                                                                                <i class="ki-filled ki-file-up">
+                                                                                </i>
+                                                                            </span>
+                                                                            <span class="menu-title">
+                                                                                Export
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="menu-separator">
+                                                                    </div>
+                                                                    <div class="menu-item">
+                                                                        <a class="menu-link" href="#">
+                                                                            <span class="menu-icon">
+                                                                                <i class="ki-filled ki-pencil">
+                                                                                </i>
+                                                                            </span>
+                                                                            <span class="menu-title">
+                                                                                Edit
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="menu-item">
+                                                                        <a class="menu-link" href="#">
+                                                                            <span class="menu-icon">
+                                                                                <i class="ki-filled ki-copy">
+                                                                                </i>
+                                                                            </span>
+                                                                            <span class="menu-title">
+                                                                                Make a copy
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="menu-separator">
+                                                                    </div>
+                                                                    <div class="menu-item">
+                                                                        <a class="menu-link" href="#">
+                                                                            <span class="menu-icon">
+                                                                                <i class="ki-filled ki-trash">
+                                                                                </i>
+                                                                            </span>
+                                                                            <span class="menu-title">
+                                                                                Remove
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
     `;
 };
     </script>
