@@ -43,6 +43,16 @@
                                 Users
                             </h3>
                             <div class="flex gap-6">
+
+                                <!-- Role Selection Filter -->
+                                <div>
+                                    <select class="select select-sm" data-datatable-role>
+                                        <option value="">All Roles</option>
+                                        <option value="customer">Customer</option>
+                                        <option value="vendor">Vendor</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </div>
                                 <div class="relative">
                                     <i
                                         class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
@@ -139,6 +149,7 @@
         let currentPage = 1;
         let totalItems = 0;
         let searchQuery = ""; // Store the search query
+        let selectedRole = ""; // Store selected role
 
         const fetchUsers = () => {
             const offset = (currentPage - 1) * itemsPerPage;
@@ -147,7 +158,7 @@
                 url: `<?php echo BASE_URL; ?>/all_users`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
-                data: { limit: itemsPerPage, offset: offset, user_name: searchQuery},
+                data: { limit: itemsPerPage, offset: offset, user_name: searchQuery, role: selectedRole},
                 success: (response) => {
                     if (response?.success && response.data) {
                         totalItems = response.total_users;
@@ -172,7 +183,7 @@
             };
         };
 
-        // Handle search input (Triggers API call after 3 letters)
+        // Search filter (triggers API call after 3 letters)
         $("[data-datatable-search]").on("input", debounce(function () {
             let query = $(this).val().trim();
             if (query.length >= 3) {
@@ -185,9 +196,16 @@
             }
         }, 300)); // 300ms delay
 
-        // Call fetchUsers initially
+        // Role filter (triggers API call when role is selected)
+        $("[data-datatable-role]").on("change", function () {
+            selectedRole = $(this).val(); // Get selected role
+            currentPage = 1; // Reset to first page
+            fetchUsers();
+        });
+
+        // Initial fetch
         fetchUsers();
-        
+
         const populateTable = (data) => {
             const tbody = $("#users-table tbody");
             tbody.empty();
