@@ -148,7 +148,7 @@
                 data: { limit: itemsPerPage, offset: offset },
                 success: (response) => {
                     if (response?.success && response.data) {
-                        totalItems = response.total ?? response.data.length;
+                        totalItems = response.total_users ?? response.data.length;
                         populateTable(response.data);
                         updatePagination();
                     } else {

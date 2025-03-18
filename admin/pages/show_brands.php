@@ -138,17 +138,16 @@
         let currentPage = 1;
         let totalItems = 0;
 
-        const fetchUsers = () => {
+        const fetchBrands = () => {
             const offset = (currentPage - 1) * itemsPerPage;
 
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/all_users`,
-                type: 'POST',
+                url: `<?php echo BASE_URL; ?>/brands`,
+                type: 'GET',
                 headers: { Authorization: `Bearer ${token}` },
-                data: { limit: itemsPerPage, offset: offset },
                 success: (response) => {
-                    if (response?.success && response.data) {
-                        totalItems = response.total ?? response.data.length;
+                    if (response?.data) {
+                        totalItems = response.count ?? response.data.length;
                         populateTable(response.data);
                         updatePagination();
                     } else {
@@ -162,46 +161,36 @@
         };
 
         const populateTable = (data) => {
-            const tbody = $("#users-table tbody");
+            const tbody = $("#brands-table tbody");
             tbody.empty();
 
-            data.forEach((user) => {
+            data.forEach((brand) => {
                 tbody.append(`
                     <tr>
                         <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${user.id}">
+                            <input class="checkbox checkbox-sm" type="checkbox" value="${brand.name}">
                         </td>
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <div class="">
-                                    <img class="h-9 rounded-full" src="assets/media/avatars/300-3.png" />
+                                    <img class="h-9 rounded-full" src="${brand.logo ? brand.logo : 'assets/media/default-brand.png'}" />
                                 </div>
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
-                                        ${user.name}
+                                        ${brand.name}
                                     </a>
                                     <span class="text-xs text-gray-700 font-normal">
-                                        ${user.email}
+                                        ${brand.description ? brand.description : 'No description available'}
                                     </span>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <div class="flex flex-wrap gap-2.5 mb-2">
-                                <span class="badge badge-sm badge-light badge-outline">
-                                    ${user.role}
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="text-xs text-gray-700 font-normal">${user.mobile}</span>
-                        </td>
-                        <td>
-                            <span class="badge badge-sm badge-outline ${user.is_present == 1 ? 'badge-success' : 'badge-danger'}">
-                                ${user.is_present == 1 ? 'Present' : 'Absent'}
+                            <span class="badge badge-sm badge-light badge-outline">
+                                ${brand.custom_sort}
                             </span>
                         </td>
-                        <td class="w-[60px]">${generateActionButtons(user)}</td>
+                        <td class="w-[60px]">${generateActionButtons(brand)}</td>
                     </tr>
                 `);
             });
@@ -221,18 +210,18 @@
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
             }
-            $("#count-users").text(`COUNT : ${totalItems} Users`);
+            $("#count-brands").text(`COUNT : ${totalItems} Brands`);
         };
 
         $(".pagination").on("click", "button", function () {
             currentPage = parseInt($(this).data("page"));
-            fetchUsers();
+            fetchBrands();
         });
 
         $("[data-datatable-size]").on("change", function () {
             itemsPerPage = parseInt($(this).val());
             currentPage = 1;
-            fetchUsers();
+            fetchBrands();
         });
 
         const perPageSelect = $("[data-datatable-size]");
@@ -241,62 +230,26 @@
         });
         perPageSelect.val(itemsPerPage);
 
-        fetchUsers();
+        fetchBrands();
     });
 
-    const generateActionButtons = (user) => {
+    const generateActionButtons = (brand) => {
         return `
             <div class="menu" data-menu="true">
-                <div class="menu-item" data-menu-item-offset="0, 10px"
-                    data-menu-item-placement="bottom-end"
-                    data-menu-item-placement-rtl="bottom-start"
-                    data-menu-item-toggle="dropdown"
-                    data-menu-item-trigger="click|lg:click">
-                    <button
-                        class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                        <i class="ki-filled ki-dots-vertical">
-                        </i>
-                    </button>
-                    <div class="menu-dropdown menu-default w-full max-w-[175px]"
-                        data-menu-dismiss="true">
-                        <div class="menu-item">
-                            <a class="menu-link" href="users.php?id=${user.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-search-list">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                        <div class="menu-separator">
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="users.php?id=${user.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-pencil">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    Edit
-                                </span>
-                            </a>
-                        </div>
-                        <div class="menu-separator">
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="users.php?id=${user.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-trash">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    Remove
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                    <i class="ki-filled ki-dots-vertical"></i>
+                </button>
+                <div class="menu-dropdown w-full max-w-[175px]">
+                    <a class="menu-link" href="#">
+                        <i class="ki-filled ki-search-list"></i> View
+                    </a>
+                    <a class="menu-link" href="#">
+                        <i class="ki-filled ki-pencil"></i> Edit
+                    </a>
+                    <div class="menu-separator"></div>
+                    <a class="menu-link" href="#">
+                        <i class="ki-filled ki-trash"></i> Remove
+                    </a>
                 </div>
             </div>
         `;
