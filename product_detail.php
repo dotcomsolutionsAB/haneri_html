@@ -176,44 +176,44 @@ document.addEventListener("DOMContentLoaded", function () {
         $.ajax(ajaxOptions);
     }
 
-/**
- * Sends request to the backend to set the guest cart cookie.
- * @param {string} cartId - The guest cart ID received from the API.
- */
-function setGuestCartCookie(cartId) {
-    if (!cartId) return;
+    /**
+     * Sends request to the backend to set the guest cart cookie.
+     * @param {string} cartId - The guest cart ID received from the API.
+     */
+    function setGuestCartCookie(cartId) {
+        if (!cartId) return;
 
-    fetch('https://haneri.dotcombusiness.in/api/cart/set-cookie', {
-        method: 'POST',
-        credentials: 'include', // Ensures cookies are sent
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ cart_id: cartId })
-    })
-    .then(response => response.json())
-    .then(data => console.log("Cookie set response:", data))
-    .catch(error => console.error('Error setting cookie:', error));
-}
-
-
-
-
-
-
-/**
- * Fetches the value of a cookie by name.
- * @param {string} name - The name of the cookie to retrieve.
- * @returns {string|null} - The cookie value or null if not found.
- */
-function getCookie(name) {
-    let cookies = document.cookie.split('; ');
-    for (let cookie of cookies) {
-        let [key, value] = cookie.split('=');
-        if (key === name) return value;
+        fetch('https://haneri.dotcombusiness.in/api/cart/set-cookie', {
+            method: 'POST',
+            credentials: 'include', // Ensures cookies are sent
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ cart_id: cartId })
+        })
+        .then(response => response.json())
+        .then(data => console.log("Cookie set response:", data))
+        .catch(error => console.error('Error setting cookie:', error));
     }
-    return null;
-}
+
+
+
+
+
+
+    /**
+     * Fetches the value of a cookie by name.
+     * @param {string} name - The name of the cookie to retrieve.
+     * @returns {string|null} - The cookie value or null if not found.
+     */
+    function getCookie(name) {
+        let cookies = document.cookie.split('; ');
+        for (let cookie of cookies) {
+            let [key, value] = cookie.split('=');
+            if (key === name) return value;
+        }
+        return null;
+    }
 
 
     // Check the current state of the cart
