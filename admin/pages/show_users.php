@@ -46,9 +46,8 @@
 
                                 <!-- Role Selection Filter -->
                                 <div>
-                                    <select class="select select-sm" data-datatable-role>
-                                        <option value="">All Roles</option>
-                                        <option value="customer">Customer</option>
+                                    <select class="select select-sm w-[180px]" data-datatable-role>
+                                        <option value="customer" selected>Customer</option>
                                         <option value="vendor">Vendor</option>
                                         <option value="admin">Admin</option>
                                     </select>
@@ -203,7 +202,10 @@
             fetchUsers();
         });
 
-        // Initial fetch
+        // Set default role in the select dropdown
+        $("[data-datatable-role]").val(selectedRole);
+
+        // Initial fetch with "Customer" pre-selected
         fetchUsers();
 
         const populateTable = (data) => {
