@@ -103,136 +103,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <input class="checkbox checkbox-sm"
-                                                        data-datatable-row-check="true" type="checkbox" value="1" />
-                                                </td>
-                                                <td>
-                                                    <div class="flex items-center gap-2.5">
-                                                        <div class="">
-                                                            <img class="h-9 rounded-full"
-                                                                src="assets/media/avatars/300-3.png" />
-                                                        </div>
-                                                        <div class="flex flex-col gap-0.5">
-                                                            <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary"
-                                                                href="#">
-                                                                Tyler Hero
-                                                            </a>
-                                                            <span class="text-xs text-gray-700 font-normal">
-                                                                26 tasks
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="flex flex-wrap gap-2.5 mb-2">
-                                                        <span class="badge badge-sm badge-light badge-outline">
-                                                            Admin
-                                                        </span>
-                                                        <span class="badge badge-sm badge-light badge-outline">
-                                                            Support
-                                                        </span>
-                                                        <span class="badge badge-sm badge-light badge-outline">
-                                                            Editor
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="flex items-center gap-1.5">
-                                                        <img alt="flag" class="h-4 rounded-full"
-                                                            src="assets/media/flags/estonia.svg" />
-                                                        <span class="leading-none text-gray-800 font-normal">
-                                                            Estonia
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-sm badge-outline badge-success">
-                                                        Active
-                                                    </span>
-                                                </td>
-                                                <td class="text-gray-800 font-normal">
-                                                    Current session
-                                                </td>
-                                                <td class="w-[60px]">
-                                                    <div class="menu" data-menu="true">
-                                                        <div class="menu-item" data-menu-item-offset="0, 10px"
-                                                            data-menu-item-placement="bottom-end"
-                                                            data-menu-item-placement-rtl="bottom-start"
-                                                            data-menu-item-toggle="dropdown"
-                                                            data-menu-item-trigger="click|lg:click">
-                                                            <button
-                                                                class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                                <i class="ki-filled ki-dots-vertical">
-                                                                </i>
-                                                            </button>
-                                                            <div class="menu-dropdown menu-default w-full max-w-[175px]"
-                                                                data-menu-dismiss="true">
-                                                                <div class="menu-item">
-                                                                    <a class="menu-link" href="#">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-filled ki-search-list">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            View
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="menu-item">
-                                                                    <a class="menu-link" href="#">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-filled ki-file-up">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            Export
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="menu-separator">
-                                                                </div>
-                                                                <div class="menu-item">
-                                                                    <a class="menu-link" href="#">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-filled ki-pencil">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            Edit
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="menu-item">
-                                                                    <a class="menu-link" href="#">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-filled ki-copy">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            Make a copy
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="menu-separator">
-                                                                </div>
-                                                                <div class="menu-item">
-                                                                    <a class="menu-link" href="#">
-                                                                        <span class="menu-icon">
-                                                                            <i class="ki-filled ki-trash">
-                                                                            </i>
-                                                                        </span>
-                                                                        <span class="menu-title">
-                                                                            Remove
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <!--  -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -430,7 +301,6 @@
             </div>
         `;
     };
-
 </script>
     <!-- Footer -->
 <?php include("footer1.php"); ?>

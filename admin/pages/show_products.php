@@ -308,7 +308,6 @@
             </div>
         `;
     };
-
 </script>
     <!-- Sync Products api -->
     <!-- <script>     
