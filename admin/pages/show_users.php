@@ -149,7 +149,7 @@
         let currentPage = 1;
         let totalItems = 0;
         let searchQuery = ""; // Store the search query
-        let selectedRole = ""; // Store selected role
+        let selectedRole = "customer"; // Store selected role
 
         const fetchUsers = () => {
             const offset = (currentPage - 1) * itemsPerPage;
