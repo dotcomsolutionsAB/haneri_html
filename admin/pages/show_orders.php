@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php include("../admin_inc/faq.php"); ?>
+                        <!-- Faq Section code  -->
                     </div>
                 </div>
                 <!-- End of Container -->

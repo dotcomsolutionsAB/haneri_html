@@ -255,7 +255,6 @@
                             </div>
                         </div>
                     </div>
-                    <?php include("../admin_inc/faq.php"); ?>
                 </div>
             </div>
             <!-- End of Container -->
