@@ -83,15 +83,6 @@
                                                 <th class="min-w-[165px]">
                                                     <span class="sort">
                                                         <span class="sort-label text-gray-700 font-normal">
-                                                            Photo
-                                                        </span>
-                                                        <span class="sort-icon">
-                                                        </span>
-                                                    </span>
-                                                </th>
-                                                <th class="min-w-[165px]">
-                                                    <span class="sort">
-                                                        <span class="sort-label text-gray-700 font-normal">
                                                             Custom Sort
                                                         </span>
                                                         <span class="sort-icon">
@@ -196,6 +187,11 @@
                                 ${category.custom_sort}
                             </span>
                         </td>
+                        <td>
+                            <span class="badge badge-sm badge-light badge-outline">
+                                ${category.custom_sort ? category.custom_sort : 'NA'}
+                            </span>
+                        </td>
                         <td class="w-[60px]">${generateActionButtons(category)}</td>
                     </tr>
                 `);
@@ -242,21 +238,50 @@
     const generateActionButtons = (category) => {
         return `
             <div class="menu" data-menu="true">
-                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                    <i class="ki-filled ki-dots-vertical"></i>
-                </button>
-                <div class="menu-dropdown w-full max-w-[175px]">
-                    <a class="menu-link" href="#">
-                        <i class="ki-filled ki-search-list"></i> View
-                    </a>
-                    <div class="menu-separator"></div>
-                    <a class="menu-link" href="#">
-                        <i class="ki-filled ki-pencil"></i> Edit
-                    </a>
-                    <div class="menu-separator"></div>
-                    <a class="menu-link" href="#">
-                        <i class="ki-filled ki-trash"></i> Remove
-                    </a>
+                <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                    <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                        <i class="ki-filled ki-dots-vertical">
+                        </i>
+                    </button>
+                    <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
+                        <div class="menu-item">
+                            <a class="menu-link" href="categories.php?id=${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-search-list">
+                                    </i>
+                                </span>
+                                <span class="menu-title">
+                                    View
+                                </span>
+                            </a>
+                        </div>
+                        <div class="menu-separator">
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="categories.php?id=${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-pencil">
+                                    </i>
+                                </span>
+                                <span class="menu-title">
+                                    Edit
+                                </span>
+                            </a>
+                        </div>
+                        <div class="menu-separator">
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="categories.php?id=${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-trash">
+                                    </i>
+                                </span>
+                                <span class="menu-title">
+                                    Remove
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;

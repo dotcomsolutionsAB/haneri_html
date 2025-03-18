@@ -47,8 +47,8 @@
                                     <i
                                         class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
-                                    <input class="input input-sm pl-8" data-datatable-search="#members_table"
-                                        placeholder="Search Members" type="text" />
+                                    <input class="input input-sm pl-8" data-datatable-search="#users_table"
+                                        placeholder="Search Users" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
@@ -138,6 +138,7 @@
         let itemsPerPage = 10;
         let currentPage = 1;
         let totalItems = 0;
+        let searchQuery = ""; // Store the search query
 
         const fetchUsers = () => {
             const offset = (currentPage - 1) * itemsPerPage;
@@ -146,7 +147,7 @@
                 url: `<?php echo BASE_URL; ?>/all_users`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
-                data: { limit: itemsPerPage, offset: offset },
+                data: { limit: itemsPerPage, offset: offset, user_name: searchQuery},
                 success: (response) => {
                     if (response?.success && response.data) {
                         totalItems = response.total_users;
@@ -162,6 +163,31 @@
             });
         };
 
+        // Debounce function to limit API calls while typing
+        const debounce = (func, delay) => {
+            let timer;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => func.apply(this, args), delay);
+            };
+        };
+
+        // Handle search input (Triggers API call after 3 letters)
+        $("[data-datatable-search]").on("input", debounce(function () {
+            let query = $(this).val().trim();
+            if (query.length >= 3) {
+                searchQuery = query;
+                currentPage = 1; // Reset to first page
+                fetchUsers();
+            } else if (query.length === 0) {
+                searchQuery = ""; // Clear search
+                fetchUsers();
+            }
+        }, 300)); // 300ms delay
+
+        // Call fetchUsers initially
+        fetchUsers();
+        
         const populateTable = (data) => {
             const tbody = $("#users-table tbody");
             tbody.empty();
