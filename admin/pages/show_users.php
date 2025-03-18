@@ -216,7 +216,8 @@
                 pagination.append(`<button class="btn btn-sm prev-page" data-page="${currentPage - 1}">Previous</button>`);
             }
             for (let page = 1; page <= totalPages; page++) {
-                pagination.append(`<button class="btn btn-sm page-number ${page === currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`);
+                const isActive = page === currentPage ? "active" : "";
+                pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
             }
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
