@@ -3,7 +3,7 @@
 <?php include("../../configs/config.php"); ?>
 
 <?php 
-    $current_page = "Show Users"; // Dynamically set this based on the page
+    $current_page = "Show Brands"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
     <!-- End of Header -->
