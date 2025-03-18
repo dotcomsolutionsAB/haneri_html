@@ -16,7 +16,7 @@
             <div class="container-fixed">
                 <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                     <div class="flex flex-col justify-center gap-2">
-                        <h1 class="text-xl font-medium leading-none text-gray-900" id="count-users">
+                        <h1 class="text-xl font-medium leading-none text-gray-900" id="count-brands">
                             00 User
                         </h1>
                         <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
@@ -61,7 +61,7 @@
                         <div class="card-body">
                             <div data-datatable="true" data-datatable-page-size="10">
                                 <div class="scrollable-x-auto">
-                                    <table class="table table-border" data-datatable-table="true" id="users-table">
+                                    <table class="table table-border" data-datatable-table="true" id="brands-table">
                                         <thead>
                                             <tr>
                                                 <th class="w-[60px] text-center">
