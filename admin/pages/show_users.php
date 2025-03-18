@@ -46,7 +46,7 @@
 
                                 <!-- Role Selection Filter -->
                                 <div>
-                                    <select class="select select-sm w-[180px]" data-datatable-role>
+                                    <select class="select select-sm w-24" data-datatable-role>
                                         <option value="customer" selected>Customer</option>
                                         <option value="vendor">Vendor</option>
                                         <option value="admin">Admin</option>
