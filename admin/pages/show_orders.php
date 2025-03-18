@@ -174,19 +174,20 @@
             const fetchOrders = () => {
                 const offset = (currentPage - 1) * itemsPerPage;
 
+                let requestData = { limit: itemsPerPage, offset: offset };
+                // Only include filters if they have values
+                if (orderIdQuery) requestData.order_id = orderIdQuery;
+                if (dateQuery) requestData.date = dateQuery;
+                if (userNameQuery) requestData.user_name = userNameQuery;
+
                 $.ajax({
                     url: `<?php echo BASE_URL; ?>/fetch_all`,
                     type: 'POST',
                     headers: { Authorization: `Bearer ${token}` },
-                    data: { limit: itemsPerPage, 
-                            offset: offset,
-                            order_id: orderIdQuery, 
-                            date: dateQuery, 
-                            user_name: userNameQuery 
-                            },
+                    data: { requestData },
                     success: (response) => {
                         if (response?.success && response.data) {
-                            totalItems = response.total ?? response.data.length;
+                            totalItems = response.total_orders ?? response.data.length;
                             console.log("Count:", response.data.length);
                             populateTable(response.data);
                             updatePagination();
@@ -201,45 +202,41 @@
             };
 
             // Debounce function to limit API calls while typing
-            const debounce = (func, delay) => {
-                let timer;
-                return function (...args) {
-                    clearTimeout(timer);
-                    timer = setTimeout(() => func.apply(this, args), delay);
-                };
-            };
-            // Search by Order ID (Triggers API call after 3 letters)
-            $("[data-datatable-search-order]").on("input", debounce(function () {
-                let query = $(this).val().trim();
-                if (query.length >= 3) {
-                    orderIdQuery = query;
-                    currentPage = 1;
-                    fetchOrders();
-                } else if (query.length === 0) {
-                    orderIdQuery = "";
-                    fetchOrders();
-                }
-            }, 300));
-            // Search by User Name (Triggers API call after 3 letters)
-            $("[data-datatable-search-user]").on("input", debounce(function () {
-                let query = $(this).val().trim();
-                if (query.length >= 3) {
-                    userNameQuery = query;
-                    currentPage = 1;
-                    fetchOrders();
-                } else if (query.length === 0) {
-                    userNameQuery = "";
-                    fetchOrders();
-                }
-            }, 300));
-            // Filter by Date
-            $("[data-datatable-date]").on("change", function () {
-                dateQuery = $(this).val();
-                currentPage = 1;
-                fetchOrders();
-            });
-            // Initial Fetch
+    const debounce = (func, delay) => {
+        let timer;
+        return function (...args) {
+            clearTimeout(timer);
+            timer = setTimeout(() => func.apply(this, args), delay);
+        };
+    };
+
+    // Search by Order ID (Triggers API call after entering a value)
+    $("[data-datatable-search-order]").on("input", debounce(function () {
+        let query = $(this).val().trim();
+        orderIdQuery = query.length ? query : ""; // Set filter only if value is present
+        fetchOrders();
+    }, 300));
+
+    // Search by User Name (Triggers API call after 3 letters)
+    $("[data-datatable-search-user]").on("input", debounce(function () {
+        let query = $(this).val().trim();
+        if (query.length >= 3) {
+            userNameQuery = query;
             fetchOrders();
+        } else if (query.length === 0) {
+            userNameQuery = "";
+            fetchOrders();
+        }
+    }, 300));
+
+    // Filter by Date (Triggers API call when date is selected)
+    $("[data-datatable-date]").on("change", function () {
+        dateQuery = $(this).val();
+        fetchOrders();
+    });
+
+    // Initial Fetch (No Filters Applied)
+    fetchOrders();
 
             const populateTable = (data) => {
                 const tbody = $("#orders-table tbody");
