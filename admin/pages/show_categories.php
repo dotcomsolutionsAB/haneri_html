@@ -16,12 +16,12 @@
             <div class="container-fixed">
                 <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                     <div class="flex flex-col justify-center gap-2">
-                        <h1 class="text-xl font-medium leading-none text-gray-900" id="count-categories">
-                            00 Categories
+                        <h1 class="text-xl font-medium leading-none text-gray-900" id="">
+                            Categories
                         </h1>
-                        <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                        <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
                             Overview of all users and Categories.
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex items-center gap-2.5">
                         <a class="btn btn-sm btn-light" href="#">
@@ -39,8 +39,8 @@
                 <div class="grid gap-5 lg:gap-7.5">
                     <div class="card card-grid min-w-full">
                         <div class="card-header py-5 flex-wrap gap-2">
-                            <h3 class="card-title">
-                            Categories
+                            <h3 class="card-title">                                
+                                Overview of <span id="count-categories"> 00 </span>
                             </h3>
                             <div class="flex gap-6">
                                 <div class="relative">
@@ -170,7 +170,7 @@
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <div class="">
-                                    <img class="h-9 rounded-full" src="${category.photo ? category.photo : 'assets/media/default-category.png'}" />
+                                    <img class="h-9 rounded-full" src="${category.photo ? category.photo : '../../images/default/df001.png'}" />
                                 </div>
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
@@ -212,7 +212,7 @@
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
             }
-            $("#count-categories").text(`COUNT : ${totalItems} Categories`);
+            $("#count-categories").text(`${totalItems} Categories`);
         };
 
         $(".pagination").on("click", "button", function () {
