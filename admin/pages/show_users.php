@@ -147,12 +147,21 @@
         let itemsPerPage = 10;
         let currentPage = 1;
         let totalItems = 0;
-        
+
         let searchQuery = ""; // Store the search query
-        let selectedRole = "customer"; // Store selected role
+        let selectedRole = ""; // Store selected role
 
         const fetchUsers = () => {
             const offset = (currentPage - 1) * itemsPerPage;
+
+            let requestData = { 
+                limit: itemsPerPage, 
+                offset: offset 
+            };
+
+            // Include filters only if they have values
+            if (searchQuery) requestData.user_name = searchQuery;
+            if (selectedRole) requestData.searchQuery = selectedRole;
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/all_users`,
