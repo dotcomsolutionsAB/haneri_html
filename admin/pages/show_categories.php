@@ -40,12 +40,11 @@
                     <div class="card card-grid min-w-full">
                         <div class="card-header py-5 flex-wrap gap-2">
                             <h3 class="card-title">                                
-                                Overview of <span id="count-categories"> 00 </span>
+                                Overview of <span id="count-categories">0</span>
                             </h3>
                             <div class="flex gap-6">
                                 <div class="relative">
-                                    <i
-                                        class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
+                                    <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
                                     <input class="input input-sm pl-8" data-datatable-search="#members_table"
                                         placeholder="Search Members" type="text" />
@@ -184,7 +183,7 @@
                         </td>
                         <td>
                             <span class="badge badge-sm badge-light badge-outline">
-                                ${category.custom_sort}
+                                ${category.parent_id}
                             </span>
                         </td>
                         <td>
@@ -234,7 +233,6 @@
 
         fetchCategories();
     });
-
     const generateActionButtons = (category) => {
         return `
             <div class="menu" data-menu="true">
@@ -287,5 +285,6 @@
         `;
     };
 </script>
-    <!-- Footer -->
+
+<!-- Footer -->
 <?php include("footer1.php"); ?>
