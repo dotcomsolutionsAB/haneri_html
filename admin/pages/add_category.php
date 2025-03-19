@@ -50,13 +50,6 @@
                                     </div>
                                     
                                     <!-- Discount Type -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount Type</label>
-                                        <select class="select">
-                                            <option>Flat</option>
-                                            <option>Percent</option>
-                                        </select>
-                                    </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
                                         <label class="form-label max-w-56">
                                             Photo
