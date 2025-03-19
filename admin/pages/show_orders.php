@@ -18,9 +18,9 @@
                             <h1 class="text-xl font-medium leading-none text-gray-900" id="">
                                 Orders
                             </h1>
-                            <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                            <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
                                 Overview of <span id="count-orders"> 00 </span>.
-                            </div>
+                            </div> -->
                         </div>
                         <div class="flex items-center gap-2.5">
                             <a class="btn btn-sm btn-light" href="#">
@@ -39,7 +39,7 @@
                         <div class="card card-grid min-w-full">
                             <div class="card-header py-5 flex-wrap gap-2">
                                 <h3 class="card-title">
-                                    Orders
+                                    Overview of <span id="count-orders"> 00 </span>.
                                 </h3>
                                 <div class="flex gap-6">
                                     <!-- Order ID Search -->
