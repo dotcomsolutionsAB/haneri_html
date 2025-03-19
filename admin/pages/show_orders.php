@@ -319,7 +319,7 @@
             $("[data-datatable-size]").on("change", function () {
                 itemsPerPage = parseInt($(this).val());
                 currentPage = 1;
-                fetchProducts();
+                fetchOrders();
             });
 
             const perPageSelect = $("[data-datatable-size]");
