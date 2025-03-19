@@ -120,7 +120,7 @@
                                     class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
                                     <div class="flex items-center gap-2 order-2 md:order-1">
                                         Show
-                                        <select class="select select-sm w-16" data-datatable-size="true"
+                                        <select class="select select-sm w-16" data-datatable-size=""
                                             name="perpage">
                                         </select>
                                         per page
@@ -147,6 +147,7 @@
         let itemsPerPage = 10;
         let currentPage = 1;
         let totalItems = 0;
+        
         let searchQuery = ""; // Store the search query
         let selectedRole = "customer"; // Store selected role
 
@@ -269,7 +270,7 @@
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
             }
-            $("#count-users").text(`COUNT : ${totalItems} Users`);
+            $("#count-users").text(`${totalItems} Users`);
         };
 
         $(".pagination").on("click", "button", function () {
