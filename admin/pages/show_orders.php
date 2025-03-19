@@ -138,7 +138,7 @@
                                         class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
                                         <div class="flex items-center gap-2 order-2 md:order-1">
                                             Show
-                                            <select class="select select-sm w-16" data-datatable-size="true"
+                                            <select class="select select-sm w-16" data-datatable-size
                                                 name="perpage">
                                             </select>
                                             per page
