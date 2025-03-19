@@ -39,7 +39,7 @@
                         <div class="card card-grid min-w-full">
                             <div class="card-header py-5 flex-wrap gap-2">
                                 <h3 class="card-title">
-                                    Overview of <span id="count-orders"> 00 </span>.
+                                    Overview of <span id="count-orders"> 00 </span>
                                 </h3>
                                 <div class="flex gap-6">
                                     <!-- Order ID Search -->

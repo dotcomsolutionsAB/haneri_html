@@ -16,12 +16,12 @@
             <div class="container-fixed">
                 <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                     <div class="flex flex-col justify-center gap-2">
-                        <h1 class="text-xl font-medium leading-none text-gray-900" id="count-users">
-                            00 User
+                        <h1 class="text-xl font-medium leading-none text-gray-900" id="">
+                            Users
                         </h1>
-                        <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                        <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
                             Overview of all users and brands.
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex items-center gap-2.5">
                         <a class="btn btn-sm btn-light" href="#">
@@ -40,7 +40,7 @@
                     <div class="card card-grid min-w-full">
                         <div class="card-header py-5 flex-wrap gap-2">
                             <h3 class="card-title">
-                                Users
+                                Overview of <span id="count-users"> 00 </span>
                             </h3>
                             <div class="flex gap-6">
 
@@ -284,7 +284,7 @@
         });
 
         const perPageSelect = $("[data-datatable-size]");
-        [5, 10, 25, 50, 100].forEach((size) => {
+        [3, 10, 25, 50, 100].forEach((size) => {
             perPageSelect.append(`<option value="${size}">${size}</option>`);
         });
         perPageSelect.val(itemsPerPage);
