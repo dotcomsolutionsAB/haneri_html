@@ -167,7 +167,7 @@
                 url: `<?php echo BASE_URL; ?>/all_users`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
-                data: { limit: itemsPerPage, offset: offset, user_name: searchQuery, role: selectedRole},
+                data: requestData,
                 success: (response) => {
                     if (response?.success && response.data) {
                         totalItems = response.total_users;
