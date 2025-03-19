@@ -19,7 +19,7 @@
                                 Orders (00)
                             </h1>
                             <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
-                                Overview of all orders and brands.
+                                Overview of <span id="count-orders"> 00 </span> orders and brands.
                             </div>
                         </div>
                         <div class="flex items-center gap-2.5">
@@ -330,7 +330,6 @@
 
             fetchOrders();
         });
-
         const generateActionButtons = (order) => {
             return `
                 <div class="menu" data-menu="true">
@@ -565,7 +564,7 @@
                         </button>
                         <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
                             <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
+                                <a class="menu-link" href="orders.php?o_id=${order.id}">
                                     <span class="menu-icon">
                                         <i class="ki-filled ki-search-list">
                                         </i>
@@ -578,7 +577,7 @@
                             <div class="menu-separator">
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
+                                <a class="menu-link" href="orders.php?o_id=${order.id}">
                                     <span class="menu-icon">
                                         <i class="ki-filled ki-pencil">
                                         </i>
@@ -591,7 +590,7 @@
                             <div class="menu-separator">
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
+                                <a class="menu-link" href="orders.php?o_id=${order.id}">
                                     <span class="menu-icon">
                                         <i class="ki-filled ki-trash">
                                         </i>
