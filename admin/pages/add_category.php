@@ -15,35 +15,37 @@
                 
                 <!-- Container -->
                 <div class="container-fixed">
-                    <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
+                    <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
                         <div class="card pb-2.5">
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                     <!-- Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Category Name</label>
-                                        <input class="input" type="text" value="Haneri AirElite AEW1">
+                                        <input class="input" type="text" placeholder="Category_Name">
                                     </div>
                                     
                                     <!-- Parent Id -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Parent Id</label>
-                                        <input class="input" placeholder="99999" type="text" value="">
+                                        <label class="form-label max-w-56">Sort Number</label>
+                                        <input class="input" placeholder="3" type="text" value="">
                                     </div>
                                     
                                     <!-- Description -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Description</label>
-                                        <input class="input" type="text">
+                                        <div class="card pb-2.5">
+                                            <!-- Description -->
+                                            <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
+                                        </div>
                                     </div>
-                                    
                                     <!-- Discount Title -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount Title</label>
+                                        <label class="form-label max-w-56">Parent Id</label>
                                         <select class="select">
-                                            <option>Title 1</option>
-                                            <option>Title 2</option>
-                                            <option>Title 3</option>
+                                            <option value="1">Parent 1</option>
+                                            <option value="2">Parent 2</option>
+                                            <option value="3">Parent 3</option>
                                         </select>
                                     </div>
                                     
@@ -61,20 +63,10 @@
                                         <label class="form-label max-w-56">Discount (₹/%)</label>
                                         <input class="input" type="text" value="1199.00 /-">
                                     </div>
-                                    
-                                    <!-- Discount Active Toggle -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount Active</label>
-                                        <label class="switch switch-sm">
-                                            <span class="switch-label">Active</span>
-                                            <input checked name="check" type="checkbox" value="1">
-                                        </label>
-                                    </div>
                                 </div>
                                 
                                 <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary">Save Changes</button>
-                                    <button class="btn btn-primary">Save Discount</button>
+                                    <button class="btn btn-primary">Save Category</button>
                                 </div>
                             </div>
                         </div>
