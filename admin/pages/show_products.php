@@ -234,16 +234,13 @@
             if (currentPage > 1) {
                 pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
             }
-
             for (let page = 1; page <= totalPages; page++) {
                 const isActive = page === currentPage ? "active" : "";
                 pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
             }
-
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
             }
-
             $("#count-products").text(
                 `COUNT : ${totalItems} Products`
             );
@@ -262,7 +259,7 @@
 
         // Initialize dropdown for items per page
         const perPageSelect = $("[data-datatable-size]");
-        [10, 25, 50, 100].forEach((size) => {
+        [5, 10, 25, 50, 100].forEach((size) => {
             perPageSelect.append(`<option value="${size}">${size}</option>`);
         });
         perPageSelect.val(itemsPerPage);
