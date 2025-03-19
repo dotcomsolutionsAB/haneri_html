@@ -15,11 +15,11 @@
                 <div class="container-fixed">
                     <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                         <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900" id="">
+                            <!-- <h1 class="text-xl font-medium leading-none text-gray-900" id="">
                                 Orders (00)
-                            </h1>
+                            </h1> -->
                             <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
-                                Overview of <span id="count-orders"> 00 </span> orders and brands.
+                                Overview of <span id="count-orders"> 00 </span> in Tableview.
                             </div>
                         </div>
                         <div class="flex items-center gap-2.5">
@@ -526,7 +526,7 @@
                 if (currentPage < totalPages) {
                     pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
                 }
-                $("#count-orders").text(`COUNT : ${totalItems} Orders`);
+                $("#count-orders").text(`${totalItems} Orders`);
             };
 
             // Pagination Button Click Event
