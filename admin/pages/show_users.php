@@ -161,7 +161,7 @@
 
             // Include filters only if they have values
             if (searchQuery) requestData.user_name = searchQuery;
-            if (selectedRole) requestData.searchQuery = selectedRole;
+            if (selectedRole) requestData.role = selectedRole;
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/all_users`,
