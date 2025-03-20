@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const singlePriceElem = $('#product-price');
     const specialPriceElem = $('#special_price');
     const regularPriceElem = $('#regular-price');
-    const productPriceElem = $('#product-price');
+    const productPriceElem = $('.new-price');
     const sPriceContainer = $('.s_price'); // Special price container
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Set prices
                     productPriceElem.text(`₹${variant.selling_price}`);
                     regularPriceElem.text(`₹${variant.regular_price}`);
+
                     // Apply styles and visibility based on user role
                     if (userRole === "vendor") {
                         // Show Special Price with Line-through styles
