@@ -161,7 +161,7 @@
             fetch(apiUrl, {
                 method: "GET",
                 headers: {
-                    "Authorization": `Bearer ${token}`,
+                    "Authorization": `Bearer ${authToken}`,
                     "Content-Type": "application/json"
                 }
             })
@@ -205,7 +205,7 @@
             fetch(apiUrl, {
                 method: "POST",
                 headers: {
-                    "Authorization": authToken,
+                    "Authorization": `Bearer ${authToken}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
