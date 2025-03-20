@@ -186,7 +186,7 @@
                     "Content-Type": "application/json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                credentials: "include",
+                // credentials: "include",
                 body: JSON.stringify(requestData)
             })
             .then(response => response.json())
