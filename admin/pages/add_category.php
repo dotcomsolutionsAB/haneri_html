@@ -75,7 +75,7 @@
             <!-- End of Content -->
             <!-- Footer -->
 <?php include("footer1.php"); ?>
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const parentCategorySelect = document.querySelector("#parentCategory");
         const saveButton = document.querySelector("#saveCategory");
@@ -94,8 +94,8 @@
                 headers: {
                     Authorization: `Bearer ${token}` 
                     // "Authorization": authToken,
-                    // "Accept": "application/json",
-                    // "Content-Type": "application/json"
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
                 }
             })
             .then(response => response.json())
@@ -141,8 +141,8 @@
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}` 
-                    // "Accept": "application/json",
-                    // "Content-Type": "application/json"
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
             })
@@ -178,9 +178,9 @@
         // Load categories on page load
         fetchCategories();
     });
-</script>
+</script> -->
 
-<!-- <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const parentCategorySelect = document.querySelector("#parentCategory");
         const saveButton = document.querySelector("#saveCategory");
@@ -189,15 +189,16 @@
         const descriptionInput = document.querySelector("#description");
         const photoInput = document.querySelector("#photo");
 
-        const apiUrl = "<?php echo BASE_URL; ?>/categories";
+        const apiUrl = "https://haneri.dotcombusiness.in/api/categories";
         const authToken = localStorage.getItem('auth_token'); // Replace with actual token
 
-        // Fetch categories for parent dropdown
+        /** FETCH CATEGORIES **/
         function fetchCategories() {
             fetch(apiUrl, {
                 method: "GET",
                 headers: {
-                    "Authorization": `Bearer ${authToken}`,
+                    "Authorization": authToken,
+                    "Accept": "application/json",
                     "Content-Type": "application/json"
                 }
             })
@@ -216,7 +217,7 @@
                     data.data.forEach(category => {
                         if (category.parent_id === null) {
                             const option = document.createElement("option");
-                            option.value = category.name; // Use name as value
+                            option.value = category.name; // Use category name as value
                             option.textContent = category.name;
                             parentCategorySelect.appendChild(option);
                         }
@@ -228,48 +229,52 @@
             });
         }
 
-        // Function to submit form data
+        /** SUBMIT CATEGORY **/
         function submitCategory() {
             const formData = {
                 name: categoryNameInput.value.trim(),
-                parent_id: parentCategorySelect.value || null, // Set null if not selected
+                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
                 photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
                 custom_sort: sortNumberInput.value.trim() || 0,
                 description: descriptionInput.value.trim() || null
             };
 
+            console.log("Submitting Data:", formData); // Debugging
+
             fetch(apiUrl, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${authToken}`,
+                    "Authorization": authToken,
+                    "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
-                    alert("Category added successfully!");
+                console.log("Success Response:", data);
+                if (data.message) {
+                    alert(data.message); // Show success message
                     fetchCategories(); // Refresh dropdown
-                } else {
-                    alert("Error adding category: " + data.message);
                 }
             })
             .catch(error => {
                 console.error("Error submitting category:", error);
+                alert("Error submitting category: " + error.message);
             });
         }
 
         // Event listener for save button
         saveButton.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); // Prevent default behavior
             submitCategory();
         });
 
         // Load categories on page load
         fetchCategories();
     });
-</script> -->
+</script>
+
 
 <style>
     .text-edit{
