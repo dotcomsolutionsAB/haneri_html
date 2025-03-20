@@ -197,7 +197,7 @@
             fetch(apiUrl, {
                 method: "GET",
                 headers: {
-                    "Authorization": authToken,
+                    "Authorization": `Bearer ${authToken}`,
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 }
@@ -244,7 +244,7 @@
             fetch(apiUrl, {
                 method: "POST",
                 headers: {
-                    "Authorization": authToken,
+                    "Authorization": `Bearer ${authToken}`,
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
