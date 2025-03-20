@@ -306,40 +306,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="cart-table-container">
-                    <!-- <table class="table table-cart">
-                        <thead>
-                            <tr>
-                                <th class="thumbnail-col"></th>
-                                <th class="product-col">Product</th>
-                                <th class="price-col">Price</th>
-                                <th class="qty-col">Quantity</th>
-                                <th class="text-right">Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="5" class="clearfix">
-                                    <div class="float-right">
-                                        <div class="cart-discount">
-                                            <form action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control form-control-sm"
-                                                        placeholder="Coupon Code" required>
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-sm" type="submit">Apply
-                                                            Coupon</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table> -->
+                    
                     <!-- Cart Table -->
                     <table class="table table-cart">
     <thead>
