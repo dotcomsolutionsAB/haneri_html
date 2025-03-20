@@ -23,22 +23,27 @@
          */
         function fetchCart() {
             console.log("Fetching cart...");
-            
-            // Prevent fetching if no token or temp_id is found
+
+            let token = localStorage.getItem("auth_token");
+            let tempId = localStorage.getItem("temp_id");
+
+            // Redirect to login if no token or guest cart_id is found
             if (!token && !tempId) {
-                console.warn("No authentication token or guest ID found. Skipping cart fetch.");
+                console.warn("No authentication token or guest cart ID found. Redirecting to login page...");
+                window.location.href = "login.php"; // Change this to your actual login page URL
                 return;
             }
 
+            // Construct request data
             let requestData = token ? {} : { cart_id: tempId };
 
-            fetch(apiUrl, {
+            fetch(`<?php echo BASE_URL; ?>/cart/fetch`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                credentials: "include", // ✅ Ensures session consistency
+                // credentials: "include", // ✅ Ensures session consistency
                 body: JSON.stringify(requestData)
             })
             .then(response => response.json())
@@ -52,8 +57,11 @@
                     document.getElementById("cart-container").innerHTML = "<p>Your cart is empty.</p>";
                 }
             })
-            .catch(error => console.error("Error fetching cart:", error));
+            .catch(error => {
+                console.error("Error fetching cart:", error);
+            });
         }
+
 
         /**
          * Displays cart items dynamically
