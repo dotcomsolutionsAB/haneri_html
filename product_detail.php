@@ -5,89 +5,103 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    const token = localStorage.getItem('auth_token'); // Token if logged in
-    const userRole = localStorage.getItem("user_role"); // Get user role
-    const addCartBtn = $('#add-to-cart-btn');
-    const viewCartBtn = $('#view-cart-btn');
-    const quantityElem = $('#quantity');
-    const priceElem = $('#selling-price');
-    const singlePriceElem = $('#product-price');
-    const specialPriceElem = $('#special_price');
-    const regularPriceElem = $('#regular-price');
-    const productPriceElem = $('.new-price');
-    const sPriceContainer = $('.s_price'); // Special price container
-    const cartItemIds = $('#cartId');
-    let cartItemId = null; // To be set if needed
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const token = localStorage.getItem('auth_token'); // token if logged in
+        const userRole = localStorage.getItem("user_role"); // Get user role
+        const addCartBtn = $('#add-to-cart-btn');
+        const viewCartBtn = $('#view-cart-btn');
+        const quantityElem = $('#quantity');
+        const priceElem = $('#selling-price');
+        const singlePriceElem = $('#product-price');
+        const specialPriceElem = $('#special_price');
+        const regularPriceElem = $('#regular-price');
+        const productPriceElem = $('#product-price');
+        const sPriceContainer = $('.s_price'); // Special price container
+        const cartItemIds = $('#cartId');
+        let cartItemId = null; // To be set if needed
 
-    // Hide special price by default if user is not a vendor
-    if (userRole !== "vendor") {
-        sPriceContainer.hide();
-    }
-
-    // Fetch product details
-    if (productId) {
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ product_id: productId }),
-            success: function (data) {
-                if (data.success) {
-                    const product = data.data;
-                    const variants = product.variants;
-
-                    $('#product-title').text(product.name);
-                    $('#product-category').text(product.category);
-                    $('#product-brand').text(product.brand);
-                    $('#product-description').html(product.description || 'No description available');
-                    $('#features-list').html(product.features.map(f => `<li>${f.feature_value}</li>`).join(''));
-                    $('.about_section, .breadcrumb-title').text(product.name);
-
-                    // Set default price
-                    if (variants.length > 0) {
-                        const defaultVariant = variants[0];
-                        updateVariant(defaultVariant.id, defaultVariant.variant_type, defaultVariant.selling_price, defaultVariant.regular_price, defaultVariant.sales_price_vendor, $('.variant').first()[0]);
-                    }
-
-                    // Load variants
-                    const variantsContainer = $('.variants');
-                    variantsContainer.html(variants.map((variant, index) => 
-                        `<div class="variant ${index === 0 ? 'selected' : ''}" 
-                            onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, ${variant.sales_price_vendor}, this)">
-                            <p>${variant.variant_type}</p>
-                        </div>`
-                    ).join(''));
-                }
-            },
-            error: function (error) {
-                console.error('Error fetching product details:', error);
-            }
-        });
-    }
-
-    // Variant update function
-    window.updateVariant = function(variantId, variantType, sellingPrice, regularPrice, salesPriceVendor, element) {
-        priceElem.text(`₹${sellingPrice}`);
-        priceElem.attr("data-price", sellingPrice);
-        $('#regular-price').text(`₹${regularPrice}`);
-        $('#selected-variant').val(variantId);
-
-        $('.variant').removeClass('selected');
-        $(element).addClass('selected');
-
-        // Show or hide special price based on user role
-        if (userRole === "vendor" && salesPriceVendor) {
-            specialPriceElem.text(`₹${salesPriceVendor}`).show();
-            sPriceContainer.show();
-            regularPriceElem.css("text-decoration", "line-through");
-        } else {
-            specialPriceElem.hide();
+        // Hide special price by default
+        if (userRole !== "vendor") {
             sPriceContainer.hide();
-            regularPriceElem.css("text-decoration", "line-through");
         }
-    }
+
+        // Fetch product details
+        if (productId) {
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ product_id: productId }),
+                success: function (data) {
+                    if (data.success) {
+                        $('#product-title').text(data.data.name);
+                        $('#product-category').text(data.data.category);
+                        $('#product-brand').text(data.data.brand);
+                        priceElem.text(`₹${data.data.variants[0].selling_price}`);
+                        priceElem.attr("data-price", data.data.variants[0].selling_price);
+                        $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
+                        $('#product-price').text(`₹${data.data.variants[0].selling_price}`);
+                        $('#special_price').text(`₹${data.data.variants[0].sales_price_vendor}`);
+                        $('#product-description').html(data.data.description || 'No description available');
+                        $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
+                        $('.about_section, .breadcrumb-title').text(data.data.name);
+
+                        // Set prices
+                        productPriceElem.text(`₹${variant.selling_price}`);
+                        regularPriceElem.text(`₹${variant.regular_price}`);
+
+                        // Apply styles and visibility based on user role
+                        if (userRole === "vendor") {
+                            // Show Special Price with Line-through styles
+                            regularPriceElem.css("text-decoration", "line-through");
+                            productPriceElem.css("text-decoration", "line-through");
+                            specialPriceElem.text(`₹${variant.sales_price_vendor}`).show();
+                            sPriceContainer.show();
+                        } else {
+                            // Hide Special Price and only show regular price with Line-through
+                            regularPriceElem.css("text-decoration", "line-through");
+                            productPriceElem.css("text-decoration", "none");
+                            sPriceContainer.hide();
+                        }
+
+                        // Load variants
+                        const variantsContainer = $('.variants');
+                        variantsContainer.html(data.data.variants.map((variant, index) => 
+                            `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
+                                <p>${variant.variant_type}</p>
+                            </div>`
+                        ).join(''));
+
+                        // Select first variant by default
+                        if (data.data.variants.length > 0) {
+                            updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, $('.variant').first()[0]);
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.error('Error fetching product details:', error);
+                }
+            });
+        }
+
+        // Variant update function
+        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
+            priceElem.text(`₹${sellingPrice}`);
+            priceElem.attr("data-price", sellingPrice);
+            $('#regular-price').text(`₹${regularPrice}`);
+            $('#selected-variant').val(variantId);
+
+            $('.variant').removeClass('selected');
+            $(element).addClass('selected');
+
+            // Show or hide special price based on user role
+            if (localStorage.getItem("user_role") === "vendor" && salesPriceVendor) {
+                $('#special_price').text(`₹${salesPriceVendor}`).show();
+            } else {
+                $('#special_price').hide();
+            }
+        }
 
         // Price update function based on quantity change
         function updatePrice() {
