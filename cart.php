@@ -4,11 +4,12 @@
 <!-- Main cart page script -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        let token = localStorage.getItem('auth_token');
-        
-        let apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
+        let token = localStorage.getItem("auth_token");
+        let tempId = localStorage.getItem("temp_id");
 
-        // Example product images array (order should match your cart items)
+        const apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
+
+        // Example product images array (Ensure these match cart items)
         let pro_img = [
             "f1.png", "f2.png", "f3.png", "f4.png", "f5.png",
             "f6.png", "f7.png", "f8.png", "f9.png", "f10.png"
@@ -18,35 +19,69 @@
         fetchCart();
 
         /**
-         * Fetches the cart details, automatically including user token or guest cart_id.
+         * Fetches the cart details, automatically including auth_token or temp_id.
          */
         function fetchCart() {
             console.log("Fetching cart...");
-            const token = localStorage.getItem("auth_token");
+            
+            // Prevent fetching if no token or temp_id is found
+            if (!token && !tempId) {
+                console.warn("No authentication token or guest ID found. Skipping cart fetch.");
+                return;
+            }
 
-            fetch(`<?php echo BASE_URL; ?>/cart/fetch`, {
+            let requestData = token ? {} : { cart_id: tempId };
+
+            fetch(apiUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Only add token if exists
+                    ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                credentials: "include", // ✅ Ensures cookies are sent
-                body: JSON.stringify({}) // ✅ Do not send cart_id manually, it comes from the cookie
+                credentials: "include", // ✅ Ensures session consistency
+                body: JSON.stringify(requestData)
             })
             .then(response => response.json())
             .then(data => {
                 console.log("Cart data received:", data);
-                if (data.success) {
-                    // Handle cart display
+
+                if (data.success && data.data.length > 0) {
+                    displayCart(data.data);
                 } else {
-                    console.error("API response unsuccessful:", data);
+                    console.warn("Cart is empty or failed to fetch.");
+                    document.getElementById("cart-container").innerHTML = "<p>Your cart is empty.</p>";
                 }
             })
             .catch(error => console.error("Error fetching cart:", error));
         }
 
+        /**
+         * Displays cart items dynamically
+         */
+        function displayCart(cartItems) {
+            let cartContainer = document.getElementById("cart-container");
+            cartContainer.innerHTML = ""; // Clear existing cart items
 
-        // Update cart quantity function (accessible globally)
+            cartItems.forEach((item, index) => {
+                cartContainer.innerHTML += `
+                    <tr data-cart-id="${item.cart_id}">
+                        <td><img src="${pro_img[index % pro_img.length]}" alt="${item.product_name}" width="50"></td>
+                        <td>${item.product_name}</td>
+                        <td>₹${item.price}</td>
+                        <td>
+                            <button onclick="updateCartQuantity('${item.cart_id}', 'decrease')">-</button>
+                            <input type="text" class="horizontal-quantity" value="${item.quantity}" onchange="updateCartQuantity('${item.cart_id}', 'input', this.value)">
+                            <button onclick="updateCartQuantity('${item.cart_id}', 'increase')">+</button>
+                        </td>
+                        <td><button onclick="removeCartItem('${item.cart_id}')">Remove</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        /**
+         * Updates cart quantity for a given item
+         */
         window.updateCartQuantity = function(cartId, action, value = null) {
             let row = document.querySelector(`tr[data-cart-id="${cartId}"]`);
             let quantityInput = row.querySelector(".horizontal-quantity");
@@ -63,38 +98,44 @@
 
             quantityInput.value = currentQuantity;
 
-            $.ajax({
-                url: `${BASE_URL}/cart/update/${cartId}`,
-                type: "POST",
-                headers: { "Authorization": token ? `Bearer ${token}` : "" },
-                contentType: "application/json",
-                data: JSON.stringify({ quantity: currentQuantity }),
-                success: function (data) {
-                    // console.log("Cart quantity updated:", data);
-                    fetchCart();
+            let updateUrl = `<?php echo BASE_URL; ?>/cart/update/${cartId}`;
+
+            fetch(updateUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    ...(token ? { "Authorization": `Bearer ${token}` } : {})
                 },
-                error: function (error) {
-                    console.error("Error updating cart quantity:", error);
-                }
-            });
+                body: JSON.stringify({ quantity: currentQuantity })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Cart quantity updated:", data);
+                fetchCart(); // Refresh cart after update
+            })
+            .catch(error => console.error("Error updating cart quantity:", error));
         };
 
-        // Remove cart item function (accessible globally)
+        /**
+         * Removes an item from the cart
+         */
         window.removeCartItem = function(cartId) {
             if (confirm("Are you sure you want to remove this item from your cart?")) {
-                $.ajax({
-                    url: `<?php echo BASE_URL; ?>/cart/remove/${cartId}`,
-                    type: "DELETE",
-                    headers: { "Authorization": token ? `Bearer ${token}` : "" },
-                    contentType: "application/json",
-                    success: function (data) {
-                        console.log("Item removed from cart:", data);
-                        fetchCart();
-                    },
-                    error: function (error) {
-                        console.error("Error removing cart item:", error);
+                let removeUrl = `<?php echo BASE_URL; ?>/cart/remove/${cartId}`;
+
+                fetch(removeUrl, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        ...(token ? { "Authorization": `Bearer ${token}` } : {})
                     }
-                });
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Item removed from cart:", data);
+                    fetchCart(); // Refresh cart after removal
+                })
+                .catch(error => console.error("Error removing cart item:", error));
             }
         };
     });
@@ -289,7 +330,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="cart-table-container">
-                    <table class="table table-cart">
+                    <!-- <table class="table table-cart">
                         <thead>
                             <tr>
                                 <th class="thumbnail-col"></th>
@@ -315,17 +356,31 @@
                                                         <button class="btn btn-sm" type="submit">Apply
                                                             Coupon</button>
                                                     </div>
-                                                </div><!-- End .input-group -->
+                                                </div>
                                             </form>
                                         </div>
-                                    </div><!-- End .float-left -->
+                                    </div>
                                 </td>
                             </tr>
                         </tfoot>
-                    </table>
-                </div><!-- End .cart-table-container -->
-            </div><!-- End .col-lg-8 -->
-
+                    </table> -->
+                </div>
+            </div>
+            <!--  -->
+                <!-- Cart Table -->
+<table id="cart-container">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+            <!--  -->
             <div class="col-lg-4">
                 <div class="cart-summary">
                     <h3>CART TOTALS</h3>
