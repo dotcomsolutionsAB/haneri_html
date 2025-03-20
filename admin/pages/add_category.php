@@ -28,30 +28,28 @@
                                     <!-- Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Category Name</label>
-                                        <input class="input" type="text" placeholder="Category_Name">
+                                        <input class="input" type="text" placeholder="Category_Name" id="categoryName">
                                     </div>
                                     
                                     <!-- Sort Number -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Sort Number</label>
-                                        <input class="input" placeholder="3" type="text" value="">
+                                        <input class="input" placeholder="3" type="text" value="" id="sortNumber">
                                     </div>
                                     
                                     <!-- Description -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Description</label>
                                         <div class="card pb-2.5">
-                                            <!-- Description -->
-                                            <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
+                                            <textarea class="note-codable text-edit" aria-multiline="true" id="description">
+                                            </textarea>
                                         </div>
                                     </div>
                                     <!-- Parent Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Parent Id</label>
-                                        <select class="select">
-                                            <option value="1">Parent name</option>
-                                            <option value="2">Parent name</option>
-                                            <option value="3">Parent name</option>
+                                        <select class="select" id="parentCategory">
+                                            <option value="">Loading categories...</option>
                                         </select>
                                     </div>
                                     
@@ -65,7 +63,7 @@
                                                 150x150px JPEG, PNG Image
                                             </span>
                                             <div class="image-input size-16" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file">
+                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file" id="photo">
                                                 <input name="avatar_remove" type="hidden">
                                                 <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -end-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
                                                     <i class="ki-filled ki-cross">
@@ -92,7 +90,7 @@
                                 </div>
                                 
                                 <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary">Save Category</button>
+                                    <button class="btn btn-primary" id="saveCategory">Save Category</button>
                                 </div>
                             </div>
                         </div>
