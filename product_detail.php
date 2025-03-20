@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const token = localStorage.getItem('auth_token'); // token if logged in
+    const userRole = localStorage.getItem("user_role"); // Get user role
     const addCartBtn = $('#add-to-cart-btn');
     const viewCartBtn = $('#view-cart-btn');
     const quantityElem = $('#quantity');
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         specialPriceElem.hide();
                     }
-                    
+
                     // Load variants
                     const variantsContainer = $('.variants');
                     variantsContainer.html(data.data.variants.map((variant, index) => 
@@ -79,6 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         $('.variant').removeClass('selected');
         $(element).addClass('selected');
+
+        // Show or hide special price based on user role
+        if (localStorage.getItem("user_role") === "vendor" && salesPriceVendor) {
+            $('#special_price').text(`₹${salesPriceVendor}`).show();
+        } else {
+            $('#special_price').hide();
+        }
     }
 
     // Price update function based on quantity change
@@ -331,23 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                             <p>variant ..</p>                                        
                                         </div>
                                     </div>
-                                </div>
-
-                                <!-- No vendor -->                                
-                                <div class="price-box ">
-                                    <div class="_price">
-                                            <del class="old-price">
-                                                <span id="regular-price">₹0.00</span>
-                                            </del>
-                                            <span class="new-price" id="product-price">₹0.00</span>
-                                    </div>
-                                    <div class="s_price none">
-                                        Special Price: 
-                                        <span class="special_price" id="special_price">₹0.00</span>
-                                    </div>
-                                </div>
-
-                                <!-- if have vendor then add-->
+                                </div>                              
                                 <div class="price-box ">
                                     <div class="_price">
                                             <del class="old-price">
