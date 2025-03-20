@@ -302,7 +302,8 @@
                         </tfoot>
                     </table> -->
                     <!-- Cart Table -->
-                    <table class="table table-cart" id="cartTable ">
+                    <!-- Cart Table -->
+<table id="cartTable" class="table table-cart">
     <thead>
         <tr>
             <th class="thumbnail-col"></th>
