@@ -103,7 +103,7 @@
             <!-- End of Content -->
             <!-- Footer -->
 <?php include("footer1.php"); ?>
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
         const parentCategorySelect = document.querySelector(".select");
@@ -145,8 +145,97 @@
             console.error("Error fetching categories:", error);
         });
     });
-</script>
+</script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const parentCategorySelect = document.querySelector("#parentCategory");
+        const saveButton = document.querySelector("#saveCategory");
+        const categoryNameInput = document.querySelector("#categoryName");
+        const sortNumberInput = document.querySelector("#sortNumber");
+        const descriptionInput = document.querySelector("#description");
+        const photoInput = document.querySelector("#photo");
 
+        const apiUrl = "<?php echo BASE_URL; ?>/categories";
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+
+        // Fetch categories for parent dropdown
+        function fetchCategories() {
+            fetch(apiUrl, {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.data) {
+                    parentCategorySelect.innerHTML = ""; // Clear existing options
+
+                    // Default option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select Parent Category";
+                    parentCategorySelect.appendChild(defaultOption);
+
+                    // Populate dropdown with only parent categories
+                    data.data.forEach(category => {
+                        if (category.parent_id === null) {
+                            const option = document.createElement("option");
+                            option.value = category.name; // Use name as value
+                            option.textContent = category.name;
+                            parentCategorySelect.appendChild(option);
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching categories:", error);
+            });
+        }
+
+        // Function to submit form data
+        function submitCategory() {
+            const formData = {
+                name: categoryNameInput.value.trim(),
+                parent_id: parentCategorySelect.value || null, // Set null if not selected
+                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
+                custom_sort: sortNumberInput.value.trim() || 0,
+                description: descriptionInput.value.trim() || null
+            };
+
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Authorization": authToken,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Category added successfully!");
+                    fetchCategories(); // Refresh dropdown
+                } else {
+                    alert("Error adding category: " + data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error submitting category:", error);
+            });
+        }
+
+        // Event listener for save button
+        saveButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default form submission
+            submitCategory();
+        });
+
+        // Load categories on page load
+        fetchCategories();
+    });
+</script>
 
 <style>
     .text-edit{
