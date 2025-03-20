@@ -9,10 +9,19 @@
     // List of pages that only admins can access
     const adminPages = [
         "../admin/index.php",
+        
         "../admin/pages/add_user.php",
         "../admin/pages/show_users.php",
+
         "../admin/pages/add_product.php",
         "../admin/pages/show_products.php",
+
+        "../admin/pages/add_category.php",
+        "../admin/pages/show_categories.php",
+
+        "../admin/pages/add_brand.php",
+        "../admin/pages/show_brands.php",
+
         "../admin/pages/add_order.php",
         "../admin/pages/show_orders.php",
     ];
