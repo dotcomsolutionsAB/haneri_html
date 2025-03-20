@@ -6,14 +6,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         let token = localStorage.getItem("auth_token");
         let tempId = localStorage.getItem("temp_id");
-
         const apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
-
-        // Example product images array (Ensure these match cart items)
-        let pro_img = [
-            "f1.png", "f2.png", "f3.png", "f4.png", "f5.png",
-            "f6.png", "f7.png", "f8.png", "f9.png", "f10.png"
-        ];
+        const cartTableBody = document.querySelector(".table-cart tbody");
 
         // Fetch the cart data on page load
         fetchCart();
@@ -24,9 +18,6 @@
         function fetchCart() {
             console.log("Fetching cart...");
 
-            let token = localStorage.getItem("auth_token");
-            let tempId = localStorage.getItem("temp_id");
-
             // Redirect to login if no token or guest cart_id is found
             if (!token && !tempId) {
                 console.warn("No authentication token or guest cart ID found. Redirecting to login page...");
@@ -34,54 +25,60 @@
                 return;
             }
 
-            // Construct request data
+            // Show loading state
+            cartTableBody.innerHTML = "<tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>";
+
             let requestData = token ? {} : { cart_id: tempId };
 
-            fetch(`<?php echo BASE_URL; ?>/cart/fetch`, {
+            fetch(apiUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                // credentials: "include", // ✅ Ensures session consistency
+                credentials: "include",
                 body: JSON.stringify(requestData)
             })
             .then(response => response.json())
             .then(data => {
                 console.log("Cart data received:", data);
 
-                if (data.success && data.data.length > 0) {
+                if (data.success && data.count > 0) {
                     displayCart(data.data);
                 } else {
-                    console.warn("Cart is empty or failed to fetch.");
-                    document.getElementById("cart-container").innerHTML = "<p>Your cart is empty.</p>";
+                    cartTableBody.innerHTML = "<tr><td colspan='5' class='text-center'>Your cart is empty.</td></tr>";
                 }
             })
             .catch(error => {
                 console.error("Error fetching cart:", error);
+                cartTableBody.innerHTML = "<tr><td colspan='5' class='text-center text-danger'>Error loading cart.</td></tr>";
             });
         }
 
-
         /**
-         * Displays cart items dynamically
+         * Displays cart items dynamically in the table
          */
         function displayCart(cartItems) {
-            let cartContainer = document.getElementById("cart-container");
-            cartContainer.innerHTML = ""; // Clear existing cart items
+            cartTableBody.innerHTML = ""; // Clear existing rows
 
             cartItems.forEach((item, index) => {
-                cartContainer.innerHTML += `
-                    <tr data-cart-id="${item.cart_id}">
-                        <td><img src="${pro_img[index % pro_img.length]}" alt="${item.product_name}" width="50"></td>
-                        <td>${item.product_name}</td>
-                        <td>₹${item.price}</td>
+                let productName = item.product.name;
+                let variantName = item.variant ? `(${item.variant.variant_value})` : "";
+                let sellingPrice = parseFloat(item.variant.selling_price);
+                let quantity = item.quantity;
+                let subtotal = sellingPrice * quantity;
+
+                cartTableBody.innerHTML += `
+                    <tr data-cart-id="${item.id}">
+                        <td><img src="images/f${index + 1}.png" alt="${productName}" width="50"></td>
+                        <td>${productName} ${variantName}</td>
+                        <td>₹${sellingPrice.toFixed(2)}</td>
                         <td>
-                            <button onclick="updateCartQuantity('${item.cart_id}', 'decrease')">-</button>
-                            <input type="text" class="horizontal-quantity" value="${item.quantity}" onchange="updateCartQuantity('${item.cart_id}', 'input', this.value)">
-                            <button onclick="updateCartQuantity('${item.cart_id}', 'increase')">+</button>
+                            <button onclick="updateCartQuantity('${item.id}', 'decrease')">-</button>
+                            <input type="text" class="horizontal-quantity" value="${quantity}" onchange="updateCartQuantity('${item.id}', 'input', this.value)">
+                            <button onclick="updateCartQuantity('${item.id}', 'increase')">+</button>
                         </td>
-                        <td><button onclick="removeCartItem('${item.cart_id}')">Remove</button></td>
+                        <td class="text-right">₹${subtotal.toFixed(2)}</td>
                     </tr>
                 `;
             });
