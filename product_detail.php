@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityElem = $('#quantity');
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
-    const specialPrice = $('#special_price');
+    const specialPriceElem = $('#special_price');
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
 
