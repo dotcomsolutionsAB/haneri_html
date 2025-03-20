@@ -8,7 +8,7 @@
         let tempId = localStorage.getItem("temp_id");
         const apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
         const cartTableBody = document.querySelector(".table-cart tbody");
-
+        console.log(tempId);
         // Fetch the cart data on page load
         fetchCart();
 
