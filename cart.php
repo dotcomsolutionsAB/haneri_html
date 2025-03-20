@@ -186,14 +186,14 @@
                     "Content-Type": "application/json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                // credentials: "include",
+                credentials: "include",
                 body: JSON.stringify(requestData)
             })
             .then(response => response.json())
             .then(data => {
                 console.log("Cart data received:", data);
 
-                if (data.success && data.count > 0) {
+                if (data.success && data.data.length > 0) {
                     displayCart(data.data);
                 } else {
                     cartTableBody.innerHTML = "<tr><td colspan='5' class='text-center'>Your cart is empty.</td></tr>";
@@ -210,13 +210,21 @@
          */
         function displayCart(cartItems) {
             cartTableBody.innerHTML = ""; // Clear existing rows
+            console.log("Displaying cart items:", cartItems);
 
             cartItems.forEach((item, index) => {
+                if (!item.product) {
+                    console.warn("Cart item missing product details:", item);
+                    return;
+                }
+
                 let productName = item.product.name;
                 let variantName = item.variant ? `(${item.variant.variant_value})` : "";
-                let sellingPrice = parseFloat(item.variant.selling_price);
+                let sellingPrice = item.variant ? parseFloat(item.variant.selling_price) : parseFloat(item.product.selling_price || 0);
                 let quantity = item.quantity;
                 let subtotal = sellingPrice * quantity;
+
+                console.log(`Adding item: ${productName}, Price: ${sellingPrice}, Quantity: ${quantity}`);
 
                 cartTableBody.innerHTML += `
                     <tr data-cart-id="${item.id}">
@@ -334,39 +342,39 @@
                     </table> -->
                     <!-- Cart Table -->
                     <table class="table table-cart">
-                        <thead>
-                            <tr>
-                                <th class="thumbnail-col"></th>
-                                <th class="product-col">Product</th>
-                                <th class="price-col">Price</th>
-                                <th class="qty-col">Quantity</th>
-                                <th class="text-right">Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="5" class="clearfix">
-                                    <div class="float-right">
-                                        <div class="cart-discount">
-                                            <form action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control form-control-sm"
-                                                        placeholder="Coupon Code" required>
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-sm" type="submit">Apply
-                                                            Coupon</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+    <thead>
+        <tr>
+            <th class="thumbnail-col"></th>
+            <th class="product-col">Product</th>
+            <th class="price-col">Price</th>
+            <th class="qty-col">Quantity</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="clearfix">
+                <div class="float-right">
+                    <div class="cart-discount">
+                        <form action="#">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm"
+                                    placeholder="Coupon Code" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-sm" type="submit">Apply
+                                        Coupon</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
                 </div>
             </div>
             <!--  -->
