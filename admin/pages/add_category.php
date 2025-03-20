@@ -109,14 +109,12 @@
                     defaultOption.textContent = "Select Parent Category";
                     parentCategorySelect.appendChild(defaultOption);
 
-                    // Populate dropdown with only parent categories
-                    data.data.forEach(category => {
-                        if (category.parent_id === null) {
-                            const option = document.createElement("option");
-                            option.value = category.parent_id; // Use category name as value
-                            option.textContent = category.name;
-                            parentCategorySelect.appendChild(option);
-                        }
+                     // Populate dropdown with ALL categories (parent & child)
+                     data.data.forEach(category => {
+                        const option = document.createElement("option");
+                        option.value = category.id; // Use category ID as value
+                        option.textContent = category.name;
+                        parentCategorySelect.appendChild(option);
                     });
                 }
             })
@@ -160,7 +158,7 @@
                 alert("Error submitting category: " + error.message);
             });
         }
-        
+
         function clearFields() {
             categoryNameInput.value = "";
             sortNumberInput.value = "";
