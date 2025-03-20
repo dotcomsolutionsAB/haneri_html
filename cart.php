@@ -151,11 +151,11 @@
         let token = localStorage.getItem("auth_token");
         let tempId = localStorage.getItem("temp_id");
         const apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
-        const cartTableBody = document.querySelector(".table-cart tbody");
+        const cartTableBody = document.querySelector("#cartTable tbody");
 
         // Ensure cartTableBody exists before proceeding
         if (!cartTableBody) {
-            console.error("Cart table body not found. Make sure the table structure exists.");
+            console.error("Cart table body not found. Ensure the table structure exists with ID 'cartTable'.");
             return;
         }
 
@@ -186,7 +186,7 @@
                     "Content-Type": "application/json",
                     ...(token ? { "Authorization": `Bearer ${token}` } : {}) // ✅ Adds token only if available
                 },
-                // credentials: "include",
+                credentials: "include",
                 body: JSON.stringify(requestData)
             })
             .then(response => response.json())
@@ -241,45 +241,6 @@
                 `;
             });
         }
-
-        /**
-         * Updates cart quantity for a given item
-         */
-        window.updateCartQuantity = function(cartId, action, value = null) {
-            let row = document.querySelector(`tr[data-cart-id="${cartId}"]`);
-            let quantityInput = row ? row.querySelector(".horizontal-quantity") : null;
-            if (!quantityInput) return;
-
-            let currentQuantity = parseInt(quantityInput.value);
-
-            if (action === "increase") {
-                currentQuantity += 1;
-            } else if (action === "decrease" && currentQuantity > 1) {
-                currentQuantity -= 1;
-            } else if (action === "input") {
-                currentQuantity = parseInt(value);
-                if (isNaN(currentQuantity) || currentQuantity < 1) currentQuantity = 1;
-            }
-
-            quantityInput.value = currentQuantity;
-
-            let updateUrl = `<?php echo BASE_URL; ?>/cart/update/${cartId}`;
-
-            fetch(updateUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    ...(token ? { "Authorization": `Bearer ${token}` } : {})
-                },
-                body: JSON.stringify({ quantity: currentQuantity })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Cart quantity updated:", data);
-                fetchCart(); // Refresh cart after update
-            })
-            .catch(error => console.error("Error updating cart quantity:", error));
-        };
     };
 </script>
 <style>
@@ -306,9 +267,42 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="cart-table-container">
-                    
+                    <!-- <table class="table table-cart">
+                        <thead>
+                            <tr>
+                                <th class="thumbnail-col"></th>
+                                <th class="product-col">Product</th>
+                                <th class="price-col">Price</th>
+                                <th class="qty-col">Quantity</th>
+                                <th class="text-right">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan='5' class='text-center'>Loading cart items...</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="clearfix">
+                                    <div class="float-right">
+                                        <div class="cart-discount">
+                                            <form action="#">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        placeholder="Coupon Code" required>
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-sm" type="submit">Apply
+                                                            Coupon</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table> -->
                     <!-- Cart Table -->
-                    <table class="table table-cart">
+                    <table class="table table-cart" id="cartTable ">
     <thead>
         <tr>
             <th class="thumbnail-col"></th>
