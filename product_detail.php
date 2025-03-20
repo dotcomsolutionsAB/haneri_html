@@ -5,10 +5,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         const token = localStorage.getItem('auth_token'); // token if logged in
         const userRole = localStorage.getItem("user_role"); // Get user role
+
+        // UI Elements
         const addCartBtn = $('#add-to-cart-btn');
         const viewCartBtn = $('#view-cart-btn');
         const quantityElem = $('#quantity');
@@ -19,9 +22,8 @@
         const productPriceElem = $('#product-price');
         const sPriceContainer = $('.s_price'); // Special price container
         const cartItemIds = $('#cartId');
-        let cartItemId = null; // To be set if needed
 
-        // Hide special price by default
+        // Hide special price by default if the user is not a vendor
         if (userRole !== "vendor") {
             sPriceContainer.hide();
         }
@@ -35,47 +37,34 @@
                 data: JSON.stringify({ product_id: productId }),
                 success: function (data) {
                     if (data.success) {
+                        console.log("Product details fetched:", data);
+
+                        // Populate product details
                         $('#product-title').text(data.data.name);
                         $('#product-category').text(data.data.category);
                         $('#product-brand').text(data.data.brand);
-                        priceElem.text(`₹${data.data.variants[0].selling_price}`);
-                        priceElem.attr("data-price", data.data.variants[0].selling_price);
-                        $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
-                        $('#product-price').text(`₹${data.data.variants[0].selling_price}`);
-                        $('#special_price').text(`₹${data.data.variants[0].sales_price_vendor}`);
                         $('#product-description').html(data.data.description || 'No description available');
                         $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                         $('.about_section, .breadcrumb-title').text(data.data.name);
 
-                        // Set prices
-                        productPriceElem.text(`₹${variant.selling_price}`);
-                        regularPriceElem.text(`₹${variant.regular_price}`);
-
-                        // Apply styles and visibility based on user role
-                        if (userRole === "vendor") {
-                            // Show Special Price with Line-through styles
-                            regularPriceElem.css("text-decoration", "line-through");
-                            productPriceElem.css("text-decoration", "line-through");
-                            specialPriceElem.text(`₹${variant.sales_price_vendor}`).show();
-                            sPriceContainer.show();
-                        } else {
-                            // Hide Special Price and only show regular price with Line-through
-                            regularPriceElem.css("text-decoration", "line-through");
-                            productPriceElem.css("text-decoration", "none");
-                            sPriceContainer.hide();
-                        }
-
-                        // Load variants
-                        const variantsContainer = $('.variants');
-                        variantsContainer.html(data.data.variants.map((variant, index) => 
-                            `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
-                                <p>${variant.variant_type}</p>
-                            </div>`
-                        ).join(''));
-
-                        // Select first variant by default
+                        // Handle variants
                         if (data.data.variants.length > 0) {
-                            updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, $('.variant').first()[0]);
+                            const variants = data.data.variants;
+                            const variantsContainer = $('.variants');
+
+                            // Generate variant options dynamically
+                            variantsContainer.html(variants.map((variant, index) =>
+                                `<div class="variant ${index === 0 ? 'selected' : ''}" 
+                                    data-variant-id="${variant.id}" 
+                                    data-selling-price="${variant.selling_price}" 
+                                    data-regular-price="${variant.regular_price}" 
+                                    onclick="updateVariant(this)">
+                                    <p>${variant.variant_value}</p>
+                                </div>`
+                            ).join(''));
+
+                            // Select the first variant by default
+                            updateVariant($('.variant').first()[0]);
                         }
                     }
                 },
@@ -86,31 +75,28 @@
         }
 
         // Variant update function
-        function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
-            priceElem.text(`₹${sellingPrice}`);
-            priceElem.attr("data-price", sellingPrice);
-            $('#regular-price').text(`₹${regularPrice}`);
-            $('#selected-variant').val(variantId);
+        function updateVariant(element) {
+            const variantId = $(element).data("variant-id");
+            const sellingPrice = $(element).data("selling-price");
+            const regularPrice = $(element).data("regular-price");
 
+            // Update UI
             $('.variant').removeClass('selected');
             $(element).addClass('selected');
 
-            // Show or hide special price based on user role
-            if (localStorage.getItem("user_role") === "vendor" && salesPriceVendor) {
-                $('#special_price').text(`₹${salesPriceVendor}`).show();
+            // Update price display
+            priceElem.text(`₹${sellingPrice}`);
+            priceElem.attr("data-price", sellingPrice);
+            $('#regular-price').text(`₹${regularPrice}`);
+            $('#selected-variant').val(variantId); // Ensure correct variant_id is set
+
+            // Show/hide special price based on user role
+            if (userRole === "vendor") {
+                specialPriceElem.text(`₹${sellingPrice}`).show();
+                sPriceContainer.show();
             } else {
-                $('#special_price').hide();
-            }
-        }
-
-        // Price update function based on quantity change
-        function updatePrice() {
-            const quantity = parseFloat(quantityElem.val()) || 1;
-            const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
-
-            if (!isNaN(sellingPrice)) {
-                const updatedPrice = (quantity * sellingPrice).toFixed(2);
-                priceElem.text(`₹${updatedPrice}`);
+                specialPriceElem.hide();
+                sPriceContainer.hide();
             }
         }
 
@@ -123,14 +109,18 @@
             const token = localStorage.getItem("auth_token");
             let tempId = localStorage.getItem("temp_id");
 
-            // Construct request payload
+            // Ensure variantId is set correctly
+            if (!variantId) {
+                alert("Please select a variant before adding to cart.");
+                return;
+            }
+
             let requestData = {
                 product_id: productId,
-                variant_id: variantId || null,
+                variant_id: variantId,
                 quantity: quantity
             };
 
-            // If temp_id exists and no auth_token, include it in the request
             if (!token && tempId) {
                 requestData.cart_id = tempId;
             }
@@ -150,7 +140,7 @@
                         viewCartBtn.show();
                         checkCart();
 
-                        // Store temp_id only if user is not authenticated and temp_id is not already set
+                        // Store temp_id if user is not authenticated
                         if (!token && !tempId && data.data.user_id) {
                             localStorage.setItem("temp_id", data.data.user_id);
                         }
@@ -165,7 +155,6 @@
                 }
             };
 
-            // If authenticated, send Authorization header
             if (token) {
                 ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
             }
@@ -178,19 +167,16 @@
             const token = localStorage.getItem("auth_token");
             const tempId = localStorage.getItem("temp_id");
 
-            // Execute only if either token or tempId exists
             if (!token && !tempId) {
                 console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
                 return;
             }
 
             let requestData = {};
-            
-            // Use token authentication or temp_id if available
             if (token) {
-                requestData = {}; // No need to send anything, user is authenticated
+                requestData = {};
             } else if (tempId) {
-                requestData = { cart_id: tempId }; // Use temporary cart ID for guest users
+                requestData = { cart_id: tempId };
             }
 
             $.ajax({
@@ -198,7 +184,7 @@
                 type: "POST",
                 headers: token ? { "Authorization": `Bearer ${token}` } : {},
                 contentType: "application/json",
-                data: JSON.stringify(requestData), // Only send data if needed
+                data: JSON.stringify(requestData),
                 success: function (data) {
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
@@ -220,6 +206,18 @@
                     console.error("Error checking cart:", error);
                 }
             });
+        }
+
+
+        // Price update function based on quantity change
+        function updatePrice() {
+            const quantity = parseFloat(quantityElem.val()) || 1;
+            const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
+
+            if (!isNaN(sellingPrice)) {
+                const updatedPrice = (quantity * sellingPrice).toFixed(2);
+                priceElem.text(`₹${updatedPrice}`);
+            }
         }
 
         // Check the current state of the cart
