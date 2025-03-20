@@ -341,9 +341,9 @@
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                <span class="ratings" style="width:100%"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
-                                            </div><!-- End .product-ratings -->
+                                            </div>
                                         </div>
                                         <div class="price-box">
                                             <span class="old-price">${regularPrice}</span>

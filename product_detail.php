@@ -1,51 +1,5 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<!-- <style>
-    .variants{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .variant{
-        background: #222529;
-        width: fit-content;
-        padding: 0px 10px;
-        height: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-    .variant p{
-        padding: 5px;
-        margin: 0px;
-        font-size: 18px;
-        color: #fff;
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        line-height: 1.5;
-    }
-    .variant.selected {
-        background-color: #0c9a9a !important;
-    }
-    .select_variant{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 10px;
-        margin-bottom: 20px;
-        /* justify-content: center; */
-        align-items: center;
-        flex-direction: row;
-    }
-    .select_variant p{
-        margin: 0px;
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        line-height: 1.5;
-    }
-</style> -->
 
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -62,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const specialPrice = $('#special_price');
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
+
+     // Hide special price by default
+     if (userRole !== "vendor") {
+        specialPriceElem.hide();
+    }
 
     // Fetch product details
     if (productId) {
@@ -84,6 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                     $('.about_section, .breadcrumb-title').text(data.data.name);
 
+                    // Show special price only if the user is a vendor
+                    if (userRole === "vendor" && data.data.variants[0].sales_price_vendor) {
+                        specialPriceElem.text(`₹${data.data.variants[0].sales_price_vendor}`).show();
+                    } else {
+                        specialPriceElem.hide();
+                    }
+                    
                     // Load variants
                     const variantsContainer = $('.variants');
                     variantsContainer.html(data.data.variants.map((variant, index) => 
@@ -175,46 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         $.ajax(ajaxOptions);
     }
-
-    /**
-     * Sends request to the backend to set the guest cart cookie.
-     * @param {string} cartId - The guest cart ID received from the API.
-     */
-    function setGuestCartCookie(cartId) {
-        if (!cartId) return;
-
-        fetch('https://haneri.dotcombusiness.in/api/cart/set-cookie', {
-            method: 'POST',
-            credentials: 'include', // Ensures cookies are sent
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ cart_id: cartId })
-        })
-        .then(response => response.json())
-        .then(data => console.log("Cookie set response:", data))
-        .catch(error => console.error('Error setting cookie:', error));
-    }
-
-
-
-
-
-
-    /**
-     * Fetches the value of a cookie by name.
-     * @param {string} name - The name of the cookie to retrieve.
-     * @returns {string|null} - The cookie value or null if not found.
-     */
-    function getCookie(name) {
-        let cookies = document.cookie.split('; ');
-        for (let cookie of cookies) {
-            let [key, value] = cookie.split('=');
-            if (key === name) return value;
-        }
-        return null;
-    }
-
 
     // Check the current state of the cart
     function checkCart() {
@@ -406,8 +332,23 @@ document.addEventListener("DOMContentLoaded", function () {
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="price-box">
+
+                                <!-- No vendor -->                                
+                                <div class="price-box ">
+                                    <div class="_price">
+                                            <del class="old-price">
+                                                <span id="regular-price">₹0.00</span>
+                                            </del>
+                                            <span class="new-price" id="product-price">₹0.00</span>
+                                    </div>
+                                    <div class="s_price none">
+                                        Special Price: 
+                                        <span class="special_price" id="special_price">₹0.00</span>
+                                    </div>
+                                </div>
+
+                                <!-- if have vendor then add-->
+                                <div class="price-box ">
                                     <div class="_price">
                                             <del class="old-price">
                                                 <span id="regular-price">₹0.00</span>
@@ -419,6 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <span class="special_price" id="special_price">₹0.00</span>
                                     </div>
                                 </div>
+
                                 <div class="product-desc">
                                     <p id="product-description">Loading...</p>
                                 </div>
@@ -588,10 +530,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
-                                    <a href="category.html" class="product-category">Category</a>
+                                    <a href="#" class="product-category">Category</a>
                                 </div>
                                 <h3 class="product-title">
-                                    <a href="product.html">Haneri AirElite AEW2</a>
+                                    <a href="#">Haneri AirElite AEW2</a>
                                 </h3>
                                 <div class="ratings-container">
                                     <div class="product-ratings">
@@ -604,12 +546,12 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <span class="product-price">₹49.00</span>
                                 </div>
                                 <div class="product-action">
-                                    <a href="wishlist.html" title="Wishlist" class="btn-icon-wish"><i
+                                    <a href="#" title="Wishlist" class="btn-icon-wish"><i
                                             class="icon-heart"></i></a>
-                                    <a href="product.html" class="btn-icon btn-add-cart"><i
+                                    <a href="#" class="btn-icon btn-add-cart"><i
                                             class="fa fa-arrow-right"></i><span>SELECT
                                             OPTIONS</span></a>
-                                    <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View"><i
+                                    <a href="#" class="btn-quickview" title="Quick View"><i
                                             class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
