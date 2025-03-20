@@ -24,49 +24,49 @@
                                 </h3>
                             </div>
                             <div class="card-body grid gap-5">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <!-- Category Name -->
-        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="form-label max-w-56">Category Name</label>
-            <input class="input" type="text" id="categoryName" placeholder="Category Name">
-        </div>
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                                    <!-- Category Name -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Category Name</label>
+                                        <input class="input" type="text" id="categoryName" placeholder="Category Name">
+                                    </div>
 
-        <!-- Sort Number -->
-        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="form-label max-w-56">Sort Number</label>
-            <input class="input" type="text" id="sortNumber" placeholder="Sort Number">
-        </div>
+                                    <!-- Sort Number -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Sort Number</label>
+                                        <input class="input" type="text" id="sortNumber" placeholder="Sort Number">
+                                    </div>
 
-        <!-- Description -->
-        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="form-label max-w-56">Description</label>
-            <div class="card pb-2.5">
-                <textarea class="note-codable text-edit" id="description" aria-multiline="true"></textarea>
-            </div>
-        </div>
+                                    <!-- Description -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Description</label>
+                                        <div class="card pb-2.5">
+                                            <textarea class="note-codable text-edit" id="description" aria-multiline="true"></textarea>
+                                        </div>
+                                    </div>
 
-        <!-- Parent Category Name -->
-        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="form-label max-w-56">Parent Category</label>
-            <select class="select" id="parentCategory">
-                <option value="">Loading categories...</option>
-            </select>
-        </div>
+                                    <!-- Parent Category Name -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Parent Category</label>
+                                        <select class="select" id="parentCategory">
+                                            <option value="">Loading categories...</option>
+                                        </select>
+                                    </div>
 
-        <!-- Category Logo -->
-        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
-            <label class="form-label max-w-56">Photo</label>
-            <div class="flex items-center justify-between flex-wrap grow gap-2.5">
-                <span class="text-2sm">150x150px JPEG, PNG Image</span>
-                <input type="file" id="photo" accept=".png, .jpg, .jpeg">
-            </div>
-        </div>
-    </div>
+                                    <!-- Category Logo -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
+                                        <label class="form-label max-w-56">Photo</label>
+                                        <div class="flex items-center justify-between flex-wrap grow gap-2.5">
+                                            <span class="text-2sm">150x150px JPEG, PNG Image</span>
+                                            <input type="file" id="photo" accept=".png, .jpg, .jpeg">
+                                        </div>
+                                    </div>
+                                </div>
 
-    <div class="flex justify-end gap-5">
-        <button class="btn btn-primary" id="saveCategory">Save Category</button>
-    </div>
-</div>
+                                <div class="flex justify-end gap-5">
+                                    <button class="btn btn-primary" id="saveCategory">Save Category</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                      // Populate dropdown with ALL categories (parent & child)
                      data.data.forEach(category => {
                         const option = document.createElement("option");
-                        option.value = category.id; // Use category ID as value
+                        option.value = category.parent_id; // Use category ID as value
                         option.textContent = category.name;
                         parentCategorySelect.appendChild(option);
                     });
