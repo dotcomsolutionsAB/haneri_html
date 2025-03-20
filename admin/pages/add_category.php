@@ -75,50 +75,112 @@
             <!-- End of Content -->
             <!-- Footer -->
 <?php include("footer1.php"); ?>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("auth_token");
-        const parentCategorySelect = document.querySelector(".select");
-
-        // Your API URL
-        const apiUrl = "<?php echo BASE_URL; ?>/categories";
-
-        // Fetch categories
-        fetch(apiUrl, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data && data.data) { // Ensure response has data
-                parentCategorySelect.innerHTML = ""; // Clear existing options
-
-                // Add default option
-                const defaultOption = document.createElement("option");
-                defaultOption.value = "";
-                defaultOption.textContent = "Select Parent Category";
-                parentCategorySelect.appendChild(defaultOption);
-
-                // Filter and loop through categories that can act as a parent
-                data.data.forEach(category => {
-                    if (category.parent_id === null) { // Only consider top-level categories
-                        const option = document.createElement("option");
-                        option.value = category.name; // Use category name as value
-                        option.textContent = category.name; // Display category name
-                        parentCategorySelect.appendChild(option);
-                    }
-                });
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching categories:", error);
-        });
-    });
-</script> -->
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const parentCategorySelect = document.querySelector("#parentCategory");
+        const saveButton = document.querySelector("#saveCategory");
+        const categoryNameInput = document.querySelector("#categoryName");
+        const sortNumberInput = document.querySelector("#sortNumber");
+        const descriptionInput = document.querySelector("#description");
+        const photoInput = document.querySelector("#photo");
+
+        const apiUrl = "https://haneri.dotcombusiness.in/api/categories";
+        const token = localStorage.getItem('auth_token'); // Replace with actual token
+
+        // Fetch categories for parent dropdown
+        function fetchCategories() {
+            fetch(apiUrl, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}` 
+                    // "Authorization": authToken,
+                    // "Accept": "application/json",
+                    // "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.data) {
+                    parentCategorySelect.innerHTML = ""; // Clear existing options
+
+                    // Default option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select Parent Category";
+                    parentCategorySelect.appendChild(defaultOption);
+
+                    // Populate dropdown with only parent categories
+                    data.data.forEach(category => {
+                        if (category.parent_id === null) {
+                            const option = document.createElement("option");
+                            option.value = category.parent_id || "0"; // Use parent_id or 0 if null
+                            option.textContent = category.name;
+                            parentCategorySelect.appendChild(option);
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching categories:", error);
+            });
+        }
+
+        // Function to submit form data
+        function submitCategory() {
+            const formData = {
+                name: categoryNameInput.value.trim(),
+                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
+                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
+                custom_sort: sortNumberInput.value.trim() || 0,
+                description: descriptionInput.value.trim() || null
+            };
+
+            console.log("Submitting Data:", formData); // Debugging
+
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}` 
+                    // "Accept": "application/json",
+                    // "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(async response => {
+                const text = await response.text(); // Read raw response
+                console.log("Raw Response:", text); // Debugging
+
+                try {
+                    return JSON.parse(text); // Try parsing JSON
+                } catch (error) {
+                    throw new Error("Invalid JSON response: " + text);
+                }
+            })
+            .then(data => {
+                console.log("Success Response:", data);
+                if (data.message) {
+                    alert(data.message); // Show success message
+                    fetchCategories(); // Refresh dropdown
+                }
+            })
+            .catch(error => {
+                console.error("Error submitting category:", error);
+                alert("Error submitting category: " + error.message);
+            });
+        }
+
+        // Event listener for save button
+        saveButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default form submission
+            submitCategory();
+        });
+
+        // Load categories on page load
+        fetchCategories();
+    });
+</script>
+
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const parentCategorySelect = document.querySelector("#parentCategory");
         const saveButton = document.querySelector("#saveCategory");
@@ -207,7 +269,7 @@
         // Load categories on page load
         fetchCategories();
     });
-</script>
+</script> -->
 
 <style>
     .text-edit{
