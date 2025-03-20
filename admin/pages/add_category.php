@@ -17,6 +17,11 @@
                 <div class="container-fixed">
                     <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
                         <div class="card pb-2.5">
+                            <div class="card-header" id="basic_settings">
+                                <h3 class="card-title">
+                                    General Settings
+                                </h3>
+                            </div>
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                     <!-- Category Name -->
@@ -25,7 +30,7 @@
                                         <input class="input" type="text" placeholder="Category_Name">
                                     </div>
                                     
-                                    <!-- Parent Id -->
+                                    <!-- Sort Number -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Sort Number</label>
                                         <input class="input" placeholder="3" type="text" value="">
@@ -39,17 +44,17 @@
                                             <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
                                         </div>
                                     </div>
-                                    <!-- Discount Title -->
+                                    <!-- Parent Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Parent Id</label>
                                         <select class="select">
-                                            <option value="1">Parent 1</option>
-                                            <option value="2">Parent 2</option>
-                                            <option value="3">Parent 3</option>
+                                            <option value="1">Parent name</option>
+                                            <option value="2">Parent name</option>
+                                            <option value="3">Parent name</option>
                                         </select>
                                     </div>
                                     
-                                    <!-- Discount Type -->
+                                    <!-- Category Logo -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
                                         <label class="form-label max-w-56">
                                             Photo
@@ -97,6 +102,50 @@
             <!-- End of Content -->
             <!-- Footer -->
 <?php include("footer1.php"); ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("auth_token");
+        const parentCategorySelect = document.querySelector(".select");
+
+        // Your API URL
+        const apiUrl = "<?php echo BASE_URL; ?>/categories";
+
+        // Fetch categories
+        fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.data) { // Ensure response has data
+                parentCategorySelect.innerHTML = ""; // Clear existing options
+
+                // Add default option
+                const defaultOption = document.createElement("option");
+                defaultOption.value = "";
+                defaultOption.textContent = "Select Parent Category";
+                parentCategorySelect.appendChild(defaultOption);
+
+                // Filter and loop through categories that can act as a parent
+                data.data.forEach(category => {
+                    if (category.parent_id === null) { // Only consider top-level categories
+                        const option = document.createElement("option");
+                        option.value = category.name; // Use category name as value
+                        option.textContent = category.name; // Display category name
+                        parentCategorySelect.appendChild(option);
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching categories:", error);
+        });
+    });
+</script>
+
 
 <style>
     .text-edit{
