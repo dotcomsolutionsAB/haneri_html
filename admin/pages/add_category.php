@@ -134,14 +134,12 @@
                     defaultOption.textContent = "Select Parent Category";
                     parentCategorySelect.appendChild(defaultOption);
 
-                    // Populate dropdown with only parent categories
+                    // Populate dropdown with ALL categories (parent & child)
                     data.data.forEach(category => {
-                        if (category.parent_id === null) {
-                            const option = document.createElement("option");
-                            option.value = category.parent_id; // Use category name as value
-                            option.textContent = category.name;
-                            parentCategorySelect.appendChild(option);
-                        }
+                        const option = document.createElement("option");
+                        option.value = category.parent_id; // Use category ID as value
+                        option.textContent = category.name;
+                        parentCategorySelect.appendChild(option);
                     });
                 }
             })
@@ -151,14 +149,53 @@
         }
 
         /** SUBMIT CATEGORY **/
+        // function submitCategory() {
+        //     const formData = {
+        //         name: categoryNameInput.value.trim(),
+        //         parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
+        //         photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
+        //         custom_sort: sortNumberInput.value.trim() || 0,
+        //         description: descriptionInput.value.trim() || null
+        //     };
+
+        //     console.log("Submitting Data:", formData); // Debugging
+
+        //     fetch(apiUrl, {
+        //         method: "POST",
+        //         headers: {
+        //             "Authorization": `Bearer ${authToken}`,
+        //             "Accept": "application/json",
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify(formData)
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log("Success Response:", data);
+        //         if (data.message) {
+        //             // alert(data.message); // Show success message
+        //             clearFields(); // Clear input fields after submission
+        //             fetchCategories(); // Refresh dropdown
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error("Error submitting category:", error);
+        //         alert("Error submitting category: " + error.message);
+        //     });
+        // }
+        /** SUBMIT CATEGORY **/
         function submitCategory() {
-            const formData = {
-                name: categoryNameInput.value.trim(),
-                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
-                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
-                custom_sort: sortNumberInput.value.trim() || 0,
-                description: descriptionInput.value.trim() || null
-            };
+            const formData = new FormData();
+
+            formData.append("name", categoryNameInput.value.trim());
+            formData.append("parent_id", parentCategorySelect.value !== "" ? parentCategorySelect.value : null);
+            formData.append("custom_sort", sortNumberInput.value.trim() || 0);
+            formData.append("description", descriptionInput.value.trim() || null);
+
+            // Append file if selected
+            if (photoInput.files.length > 0) {
+                formData.append("photo", photoInput.files[0]); // Append file correctly
+            }
 
             console.log("Submitting Data:", formData); // Debugging
 
@@ -166,10 +203,9 @@
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
+                    // "Content-Type": "application/json" -> REMOVED (fetch sets it automatically for FormData)
                 },
-                body: JSON.stringify(formData)
+                body: formData
             })
             .then(response => response.json())
             .then(data => {
