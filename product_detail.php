@@ -15,12 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const priceElem = $('#selling-price');
     const singlePriceElem = $('#product-price');
     const specialPriceElem = $('#special_price');
+    const regularPriceElem = $('#regular-price');
+    const productPriceElem = $('#product-price');
+    const sPriceContainer = $('.s_price'); // Special price container
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
 
      // Hide special price by default
      if (userRole !== "vendor") {
-        specialPriceElem.hide();
+        sPriceContainer.hide();
     }
 
     // Fetch product details
@@ -44,11 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                     $('.about_section, .breadcrumb-title').text(data.data.name);
 
-                    // Show special price only if the user is a vendor
-                    if (userRole === "vendor" && data.data.variants[0].sales_price_vendor) {
-                        specialPriceElem.text(`₹${data.data.variants[0].sales_price_vendor}`).show();
+                    // Set prices
+                    productPriceElem.text(`₹${variant.selling_price}`);
+                    regularPriceElem.text(`₹${variant.regular_price}`);
+                    // Apply styles and visibility based on user role
+                    if (userRole === "vendor") {
+                        // Show Special Price with Line-through styles
+                        regularPriceElem.css("text-decoration", "line-through");
+                        productPriceElem.css("text-decoration", "line-through");
+                        specialPriceElem.text(`₹${variant.sales_price_vendor}`).show();
+                        sPriceContainer.show();
                     } else {
-                        specialPriceElem.hide();
+                        // Hide Special Price and only show regular price with Line-through
+                        regularPriceElem.css("text-decoration", "line-through");
+                        productPriceElem.css("text-decoration", "none");
+                        sPriceContainer.hide();
                     }
 
                     // Load variants
@@ -484,7 +497,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     vertical-align: middle;
                     line-height: 0.8;
                     margin-left: 3px;
-                    text-decoration: line-through;
+                    /* text-decoration: line-through; */
                 }
                 .special-price{
                     color:#f0340efa;
