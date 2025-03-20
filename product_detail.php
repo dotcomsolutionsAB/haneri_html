@@ -4,10 +4,10 @@
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-    const token = localStorage.getItem('auth_token'); // token if logged in
+    const token = localStorage.getItem('auth_token'); // Token if logged in
     const userRole = localStorage.getItem("user_role"); // Get user role
     const addCartBtn = $('#add-to-cart-btn');
     const viewCartBtn = $('#view-cart-btn');
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartItemIds = $('#cartId');
     let cartItemId = null; // To be set if needed
 
-     // Hide special price by default
-     if (userRole !== "vendor") {
+    // Hide special price by default if user is not a vendor
+    if (userRole !== "vendor") {
         sPriceContainer.hide();
     }
 
@@ -35,48 +35,30 @@ document.addEventListener("DOMContentLoaded", function () {
             data: JSON.stringify({ product_id: productId }),
             success: function (data) {
                 if (data.success) {
-                    $('#product-title').text(data.data.name);
-                    $('#product-category').text(data.data.category);
-                    $('#product-brand').text(data.data.brand);
-                    priceElem.text(`₹${data.data.variants[0].selling_price}`);
-                    priceElem.attr("data-price", data.data.variants[0].selling_price);
-                    $('#regular-price').text(`₹${data.data.variants[0].regular_price}`);
-                    $('#product-price').text(`₹${data.data.variants[0].selling_price}`);
-                    $('#special_price').text(`₹${data.data.variants[0].sales_price_vendor}`);
-                    $('#product-description').html(data.data.description || 'No description available');
-                    $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
-                    $('.about_section, .breadcrumb-title').text(data.data.name);
+                    const product = data.data;
+                    const variants = product.variants;
 
-                    // Set prices
-                    productPriceElem.text(`₹${variant.selling_price}`);
-                    regularPriceElem.text(`₹${variant.regular_price}`);
+                    $('#product-title').text(product.name);
+                    $('#product-category').text(product.category);
+                    $('#product-brand').text(product.brand);
+                    $('#product-description').html(product.description || 'No description available');
+                    $('#features-list').html(product.features.map(f => `<li>${f.feature_value}</li>`).join(''));
+                    $('.about_section, .breadcrumb-title').text(product.name);
 
-                    // Apply styles and visibility based on user role
-                    if (userRole === "vendor") {
-                        // Show Special Price with Line-through styles
-                        regularPriceElem.css("text-decoration", "line-through");
-                        productPriceElem.css("text-decoration", "line-through");
-                        specialPriceElem.text(`₹${variant.sales_price_vendor}`).show();
-                        sPriceContainer.show();
-                    } else {
-                        // Hide Special Price and only show regular price with Line-through
-                        regularPriceElem.css("text-decoration", "line-through");
-                        productPriceElem.css("text-decoration", "none");
-                        sPriceContainer.hide();
+                    // Set default price
+                    if (variants.length > 0) {
+                        const defaultVariant = variants[0];
+                        updateVariant(defaultVariant.id, defaultVariant.variant_type, defaultVariant.selling_price, defaultVariant.regular_price, defaultVariant.sales_price_vendor, $('.variant').first()[0]);
                     }
 
                     // Load variants
                     const variantsContainer = $('.variants');
-                    variantsContainer.html(data.data.variants.map((variant, index) => 
-                        `<div class="variant ${index === 0 ? 'selected' : ''}" onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, this)">
+                    variantsContainer.html(variants.map((variant, index) => 
+                        `<div class="variant ${index === 0 ? 'selected' : ''}" 
+                            onclick="updateVariant(${variant.id}, '${variant.variant_type}', ${variant.selling_price}, ${variant.regular_price}, ${variant.sales_price_vendor}, this)">
                             <p>${variant.variant_type}</p>
                         </div>`
                     ).join(''));
-
-                    // Select first variant by default
-                    if (data.data.variants.length > 0) {
-                        updateVariant(data.data.variants[0].id, data.data.variants[0].variant_type, data.data.variants[0].selling_price, data.data.variants[0].regular_price, $('.variant').first()[0]);
-                    }
                 }
             },
             error: function (error) {
@@ -86,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Variant update function
-    function updateVariant(variantId, variantType, sellingPrice, regularPrice, element) {
+    window.updateVariant = function(variantId, variantType, sellingPrice, regularPrice, salesPriceVendor, element) {
         priceElem.text(`₹${sellingPrice}`);
         priceElem.attr("data-price", sellingPrice);
         $('#regular-price').text(`₹${regularPrice}`);
@@ -96,148 +78,152 @@ document.addEventListener("DOMContentLoaded", function () {
         $(element).addClass('selected');
 
         // Show or hide special price based on user role
-        if (localStorage.getItem("user_role") === "vendor" && salesPriceVendor) {
-            $('#special_price').text(`₹${salesPriceVendor}`).show();
+        if (userRole === "vendor" && salesPriceVendor) {
+            specialPriceElem.text(`₹${salesPriceVendor}`).show();
+            sPriceContainer.show();
+            regularPriceElem.css("text-decoration", "line-through");
         } else {
-            $('#special_price').hide();
+            specialPriceElem.hide();
+            sPriceContainer.hide();
+            regularPriceElem.css("text-decoration", "line-through");
         }
     }
 
-    // Price update function based on quantity change
-    function updatePrice() {
-        const quantity = parseFloat(quantityElem.val()) || 1;
-        const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
+        // Price update function based on quantity change
+        function updatePrice() {
+            const quantity = parseFloat(quantityElem.val()) || 1;
+            const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
 
-        if (!isNaN(sellingPrice)) {
-            const updatedPrice = (quantity * sellingPrice).toFixed(2);
-            priceElem.text(`₹${updatedPrice}`);
-        }
-    }
-
-    // Add to Cart function
-    function addToCart() {
-        console.log("addToCart() function invoked.");
-        const variantId = $('#selected-variant').val();
-        const quantity = quantityElem.val() || 1;
-        const token = localStorage.getItem("auth_token");
-
-        const ajaxOptions = {
-            url: `<?php echo BASE_URL; ?>/cart/add`,
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                product_id: productId,
-                variant_id: variantId || null,
-                quantity: quantity
-            }),
-            success: function (data) {
-                console.log("API response received:", data);
-                
-                // Check for success correctly
-                if (data.success === true || data.message.includes("successfully")) {
-                    alert(data.message);
-                    cartItemIds.hide();
-                    addCartBtn.hide();
-                    viewCartBtn.show();
-                    checkCart();
-
-                    // Set guest cart cookie if user is not authenticated
-                    if (!token) {
-                        setGuestCartCookie(data.data.user_id);
-                    }
-                } else {
-                    console.error("API response unsuccessful:", data);
-                    alert("Error: " + data.message);
-                }
-            },
-            error: function (error) {
-                console.error('Error adding product to cart:', error);
-                alert("There was an error adding the product to your cart.");
+            if (!isNaN(sellingPrice)) {
+                const updatedPrice = (quantity * sellingPrice).toFixed(2);
+                priceElem.text(`₹${updatedPrice}`);
             }
-        };
-
-        // If authenticated, send Authorization header
-        if (token) {
-            ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
         }
 
-        $.ajax(ajaxOptions);
-    }
+        // Add to Cart function
+        function addToCart() {
+            console.log("addToCart() function invoked.");
+            const variantId = $('#selected-variant').val();
+            const quantity = quantityElem.val() || 1;
+            const token = localStorage.getItem("auth_token");
 
-    // Check the current state of the cart
-    function checkCart() {
-        const uniqueId = localStorage.getItem("unique_id"); // if available 
-        // Execute the function only if unique_id exists
-        if (!uniqueId) {
-            console.warn("Unique ID not found in localStorage. Skipping cart check.");
-            return;
-        }
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/fetch`,
-            type: "POST",
-            headers: token ? { "Authorization": `Bearer ${token}` } : {},
-            contentType: "application/json",
-            data: JSON.stringify({ unique_id: uniqueId }), // include if needed
-            success: function (data) {
-                if (data.data && data.data.length > 0) {
-                    const cartItem = data.data.find(item => item.product_id == productId);
-                    if (cartItem) {
+            const ajaxOptions = {
+                url: `<?php echo BASE_URL; ?>/cart/add`,
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    product_id: productId,
+                    variant_id: variantId || null,
+                    quantity: quantity
+                }),
+                success: function (data) {
+                    console.log("API response received:", data);
+                    
+                    // Check for success correctly
+                    if (data.success === true || data.message.includes("successfully")) {
+                        alert(data.message);
+                        cartItemIds.hide();
                         addCartBtn.hide();
                         viewCartBtn.show();
-                        quantityElem.val(cartItem.quantity);
-                        cartItemIds.hide();
-                        updatePrice();
+                        checkCart();
+
+                        // Set guest cart cookie if user is not authenticated
+                        if (!token) {
+                            setGuestCartCookie(data.data.user_id);
+                        }
                     } else {
-                        addCartBtn.show();
-                        viewCartBtn.hide();
-                        quantityElem.val(1);
-                        updatePrice();
+                        console.error("API response unsuccessful:", data);
+                        alert("Error: " + data.message);
                     }
+                },
+                error: function (error) {
+                    console.error('Error adding product to cart:', error);
+                    alert("There was an error adding the product to your cart.");
                 }
-            },
-            error: function (error) {
-                console.error("Error checking cart:", error);
+            };
+
+            // If authenticated, send Authorization header
+            if (token) {
+                ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
             }
-        });
-    }
 
-    // Update cart quantity function
-    function updateCartQuantity() {
-        const newQuantity = quantityElem.val() || 1;
-
-        if (!cartItemId) {
-            console.error("Cart item ID is missing.");
-            return;
+            $.ajax(ajaxOptions);
         }
 
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-            type: "POST",
-            headers: { "Authorization": `Bearer ${token}` },
-            contentType: "application/json",
-            data: JSON.stringify({ quantity: newQuantity }),
-            success: function (data) {
-                console.log("Cart quantity updated:", data);
-                updatePrice();
-            },
-            error: function (error) {
-                console.error("Error updating cart quantity:", error);
+        // Check the current state of the cart
+        function checkCart() {
+            const uniqueId = localStorage.getItem("unique_id"); // if available 
+            // Execute the function only if unique_id exists
+            if (!uniqueId) {
+                console.warn("Unique ID not found in localStorage. Skipping cart check.");
+                return;
             }
-        });
-    }
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/cart/fetch`,
+                type: "POST",
+                headers: token ? { "Authorization": `Bearer ${token}` } : {},
+                contentType: "application/json",
+                data: JSON.stringify({ unique_id: uniqueId }), // include if needed
+                success: function (data) {
+                    if (data.data && data.data.length > 0) {
+                        const cartItem = data.data.find(item => item.product_id == productId);
+                        if (cartItem) {
+                            addCartBtn.hide();
+                            viewCartBtn.show();
+                            quantityElem.val(cartItem.quantity);
+                            cartItemIds.hide();
+                            updatePrice();
+                        } else {
+                            addCartBtn.show();
+                            viewCartBtn.hide();
+                            quantityElem.val(1);
+                            updatePrice();
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.error("Error checking cart:", error);
+                }
+            });
+        }
 
-    // Event Listeners
-    $(document).ready(function() {
-        checkCart();
-        addCartBtn.click(function (e) {
-            e.preventDefault();
-            addToCart();
-        });
-        quantityElem.change(function () {
-            updateCartQuantity();
+        // Update cart quantity function
+        function updateCartQuantity() {
+            const newQuantity = quantityElem.val() || 1;
+
+            if (!cartItemId) {
+                console.error("Cart item ID is missing.");
+                return;
+            }
+
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+                type: "POST",
+                headers: { "Authorization": `Bearer ${token}` },
+                contentType: "application/json",
+                data: JSON.stringify({ quantity: newQuantity }),
+                success: function (data) {
+                    console.log("Cart quantity updated:", data);
+                    updatePrice();
+                },
+                error: function (error) {
+                    console.error("Error updating cart quantity:", error);
+                }
+            });
+        }
+
+        // Event Listeners
+        $(document).ready(function() {
+            checkCart();
+            addCartBtn.click(function (e) {
+                e.preventDefault();
+                addToCart();
+            });
+            quantityElem.change(function () {
+                updateCartQuantity();
+            });
         });
     });
-});
 </script>
 
 
@@ -382,9 +368,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
-
-                                    <!-- <a href="javascript:void(0);" class="btn btn-dark add-cart icon-shopping-cart mr-2"
-                                        title="Add to Cart" onclick="addToCart()">Add to Cart</a> -->
                                     <a href="#" id="add-to-cart-btn" class="btn btn-dark add-cart icon-shopping-cart mr-2" title="Add to Cart">
                                         Add to Cart
                                     </a>
@@ -411,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     </div><!-- End .social-icons -->
                                 </div><!-- End .product single-share -->
 
-                                <a href="wishlist.html" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
+                                <a href="#" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
                                     title="Add to Wishlist">
                                     <i class="icon-wishlist-2"></i>
                                     <span>Add to Wishlist</span>
@@ -480,42 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-            <style>
-                .product-desc-content .feature-box p {
-                    font-size: 14px;
-                    line-height: 27px;
-                    color: #4a505e;
-                    letter-spacing: 0;
-                    text-align: justify;
-                }
-                .product-single-details .old-price {
-                    font-size: 2.9rem !important;
-                }
-                .product-single-details .new-price {
-                    color: #585f66;
-                    font-size: 2.9rem !important;
-                    letter-spacing: -0.02em;
-                    vertical-align: middle;
-                    line-height: 0.8;
-                    margin-left: 3px;
-                    /* text-decoration: line-through; */
-                }
-                .special-price{
-                    color:#f0340efa;
-                    font-size: 3.3rem;
-                    letter-spacing: -0.02em;
-                    vertical-align: middle;
-                    line-height: 0.8;
-                    margin-left: 3px;
-                    /* font-family: 'Barlow Condensed'; */
-                    /* text-decoration: line-through; */
-                }
-                .s_price{
-                    font-style: italic;
-                    font-weight: 800;
-                    font-size: 24px;
-                }
-            </style>
+
             <div class="container-fluid">
                 <div class="products-section pt-0">
                     <h2 class="section-title">Related Products</h2>
@@ -1072,4 +1020,39 @@ document.addEventListener("DOMContentLoaded", function () {
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
 
-
+<style>
+    .product-desc-content .feature-box p {
+        font-size: 14px;
+        line-height: 27px;
+        color: #4a505e;
+        letter-spacing: 0;
+        text-align: justify;
+    }
+    .product-single-details .old-price {
+        font-size: 2.9rem !important;
+    }
+    .product-single-details .new-price {
+        color: #585f66;
+        font-size: 2.9rem !important;
+        letter-spacing: -0.02em;
+        vertical-align: middle;
+        line-height: 0.8;
+        margin-left: 3px;
+        /* text-decoration: line-through; */
+    }
+    .special-price{
+        color:#f0340efa;
+        font-size: 3.3rem;
+        letter-spacing: -0.02em;
+        vertical-align: middle;
+        line-height: 0.8;
+        margin-left: 3px;
+        /* font-family: 'Barlow Condensed'; */
+        /* text-decoration: line-through; */
+    }
+    .s_price{
+        font-style: italic;
+        font-weight: 800;
+        font-size: 24px;
+    }
+</style>
