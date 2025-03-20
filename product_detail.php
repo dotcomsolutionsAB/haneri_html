@@ -117,23 +117,32 @@
         // Add to Cart function
         function addToCart() {
             console.log("addToCart() function invoked.");
+
             const variantId = $('#selected-variant').val();
             const quantity = quantityElem.val() || 1;
             const token = localStorage.getItem("auth_token");
+            let tempId = localStorage.getItem("temp_id");
+
+            // Construct request payload
+            let requestData = {
+                product_id: productId,
+                variant_id: variantId || null,
+                quantity: quantity
+            };
+
+            // If temp_id exists and no auth_token, include it in the request
+            if (!token && tempId) {
+                requestData.cart_id = tempId;
+            }
 
             const ajaxOptions = {
                 url: `<?php echo BASE_URL; ?>/cart/add`,
                 type: "POST",
                 contentType: "application/json",
-                data: JSON.stringify({
-                    product_id: productId,
-                    variant_id: variantId || null,
-                    quantity: quantity
-                }),
+                data: JSON.stringify(requestData),
                 success: function (data) {
                     console.log("API response received:", data);
-                    
-                    // Check for success correctly
+
                     if (data.success === true || data.message.includes("successfully")) {
                         alert(data.message);
                         cartItemIds.hide();
@@ -141,9 +150,9 @@
                         viewCartBtn.show();
                         checkCart();
 
-                        // Set guest cart cookie if user is not authenticated
-                        if (!token) {
-                            setGuestCartCookie(data.data.user_id);
+                        // Store temp_id only if user is not authenticated and temp_id is not already set
+                        if (!token && !tempId && data.data.user_id) {
+                            localStorage.setItem("temp_id", data.data.user_id);
                         }
                     } else {
                         console.error("API response unsuccessful:", data);
@@ -166,18 +175,30 @@
 
         // Check the current state of the cart
         function checkCart() {
-            const uniqueId = localStorage.getItem("unique_id"); // if available 
-            // Execute the function only if unique_id exists
-            if (!uniqueId) {
-                console.warn("Unique ID not found in localStorage. Skipping cart check.");
+            const token = localStorage.getItem("auth_token");
+            const tempId = localStorage.getItem("temp_id");
+
+            // Execute only if either token or tempId exists
+            if (!token && !tempId) {
+                console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
                 return;
             }
+
+            let requestData = {};
+            
+            // Use token authentication or temp_id if available
+            if (token) {
+                requestData = {}; // No need to send anything, user is authenticated
+            } else if (tempId) {
+                requestData = { cart_id: tempId }; // Use temporary cart ID for guest users
+            }
+
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/cart/fetch`,
                 type: "POST",
                 headers: token ? { "Authorization": `Bearer ${token}` } : {},
                 contentType: "application/json",
-                data: JSON.stringify({ unique_id: uniqueId }), // include if needed
+                data: JSON.stringify(requestData), // Only send data if needed
                 success: function (data) {
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
@@ -200,6 +221,43 @@
                 }
             });
         }
+
+        // Check the current state of the cart
+        // function checkCart() {
+        //     const uniqueId = localStorage.getItem("unique_id"); // if available 
+        //     // Execute the function only if unique_id exists
+        //     if (!uniqueId) {
+        //         console.warn("Unique ID not found in localStorage. Skipping cart check.");
+        //         return;
+        //     }
+        //     $.ajax({
+        //         url: `<?php echo BASE_URL; ?>/cart/fetch`,
+        //         type: "POST",
+        //         headers: token ? { "Authorization": `Bearer ${token}` } : {},
+        //         contentType: "application/json",
+        //         data: JSON.stringify({ unique_id: uniqueId }), // include if needed
+        //         success: function (data) {
+        //             if (data.data && data.data.length > 0) {
+        //                 const cartItem = data.data.find(item => item.product_id == productId);
+        //                 if (cartItem) {
+        //                     addCartBtn.hide();
+        //                     viewCartBtn.show();
+        //                     quantityElem.val(cartItem.quantity);
+        //                     cartItemIds.hide();
+        //                     updatePrice();
+        //                 } else {
+        //                     addCartBtn.show();
+        //                     viewCartBtn.hide();
+        //                     quantityElem.val(1);
+        //                     updatePrice();
+        //                 }
+        //             }
+        //         },
+        //         error: function (error) {
+        //             console.error("Error checking cart:", error);
+        //         }
+        //     });
+        // }
 
         // Update cart quantity function
         function updateCartQuantity() {
