@@ -30,6 +30,7 @@
         const viewCartBtn = $('#view-cart-btn');
         const quantityElem = $('#quantity');
         const priceElem = $('#selling-price');
+        const tPriceElem = $('#selling-tprice');
         const specialPriceElem = $('#special_price');
         const regularPriceElem = $('#regular-price');
         const productPriceElem = $('#product-price');
@@ -449,7 +450,7 @@
                                 </style>
                                 <div class="product-action">
                                     <div class="price-box">
-                                        <span class="product-price" id="selling-price" data-price="0">₹0.00</span>
+                                        <span class="product-price" id="selling-tprice" data-price="0">₹0.00</span>
                                     </div>
                                     <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
