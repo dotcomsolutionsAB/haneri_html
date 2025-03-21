@@ -26,16 +26,15 @@
         const userRole = localStorage.getItem("user_role"); // Get user role
 
         // UI Elements
-        const addCartBtn = $('#add-to-cart-btn');
-        const viewCartBtn = $('#view-cart-btn');
-        const quantityElem = $('#quantity');
-        const priceElem = $('#selling-price');
-        const tPriceElem = $('#selling-tprice');
-        const specialPriceElem = $('#special_price');
-        const regularPriceElem = $('#regular-price');
-        const productPriceElem = $('#product-price');
+        const addCartBtn      = $('#add-to-cart-btn');
+        const viewCartBtn     = $('#view-cart-btn');
+        const quantityElem    = $('#quantity');
+        const tPriceElem      = $('#selling-tprice');   // The final displayed price
+        const specialPriceElem= $('#special_price');
+        const regularPriceElem= $('#regular-price');
+        const productPriceElem= $('#product-price');
         const sPriceContainer = $('.s_price'); // Special price container
-        const cartItemIds = $('#cartId');
+        const cartItemIds     = $('#cartId');
 
         // Hide special price by default if the user is not a vendor
         if (userRole !== "vendor") {
@@ -69,13 +68,13 @@
                             // Generate variant options dynamically
                             variantsContainer.html(variants.map((variant, index) =>
                                 `<div class="variant ${index === 0 ? 'selected' : ''}" 
-                                    data-variant-id="${variant.id}" 
-                                    data-selling-price="${variant.selling_price}" 
-                                    data-regular-price="${variant.regular_price}" 
-                                    data-vendor-price="${variant.sales_price_vendor}" 
-                                    onclick="updateVariant(this)">
-                                    <p>${variant.variant_value}</p>
-                                </div>`
+                                     data-variant-id="${variant.id}" 
+                                     data-selling-price="${variant.selling_price}" 
+                                     data-regular-price="${variant.regular_price}" 
+                                     data-vendor-price="${variant.sales_price_vendor}" 
+                                     onclick="updateVariant(this)">
+                                     <p>${variant.variant_value}</p>
+                                 </div>`
                             ).join(''));
 
                             // Select the first variant by default
@@ -90,31 +89,42 @@
         }
 
         // Variant update function
-        function updateVariant(element) {
-            const variantId = $(element).data("variant-id");
+        window.updateVariant = function(element) {
+            const variantId    = $(element).data("variant-id");
             const sellingPrice = $(element).data("selling-price");
             const regularPrice = $(element).data("regular-price");
-            const vendorPrice = $(element).data("vendor-price");
+            const vendorPrice  = $(element).data("vendor-price");
 
             // Update UI
             $('.variant').removeClass('selected');
             $(element).addClass('selected');
 
-            // Update price display
-            $('#selected-variant').val(variantId); // Ensure correct variant_id is set
-            $('#regular-price').text(`₹${regularPrice}`).css("text-decoration", "line-through");
+            // Make sure the hidden variant input is correct
+            $('#selected-variant').val(variantId);
+
+            // Always show the regular price as a strike-through
+            regularPriceElem.text(`₹${regularPrice}`).css("text-decoration", "line-through");
 
             if (userRole === "vendor") {
                 // Vendor pricing
-                $('#product-price').text(`₹${sellingPrice}`).css("text-decoration", "line-through");
+                productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "line-through");
                 specialPriceElem.text(`₹${vendorPrice}`).show();
                 sPriceContainer.show();
+
+                // IMPORTANT: set the tPriceElem's data-price to the vendor price
+                tPriceElem.attr("data-price", vendorPrice).text(`₹${vendorPrice}`);
             } else {
                 // Non-vendor pricing
-                $('#product-price').text(`₹${sellingPrice}`).css("text-decoration", "none");
+                productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "none");
                 specialPriceElem.hide();
                 sPriceContainer.hide();
+
+                // IMPORTANT: set the tPriceElem's data-price to the sellingPrice
+                tPriceElem.attr("data-price", sellingPrice).text(`₹${sellingPrice}`);
             }
+
+            // After setting the new data-price, update the displayed price
+            updatePrice();
         }
 
         // Add to Cart function
@@ -122,9 +132,9 @@
             console.log("addToCart() function invoked.");
 
             const variantId = $('#selected-variant').val();
-            const quantity = quantityElem.val() || 1;
-            const token = localStorage.getItem("auth_token");
-            let tempId = localStorage.getItem("temp_id");
+            const quantity  = quantityElem.val() || 1;
+            const token     = localStorage.getItem("auth_token");
+            let tempId      = localStorage.getItem("temp_id");
 
             // Ensure variantId is set correctly
             if (!variantId) {
@@ -181,7 +191,7 @@
 
         // Check the current state of the cart
         function checkCart() {
-            const token = localStorage.getItem("auth_token");
+            const token  = localStorage.getItem("auth_token");
             const tempId = localStorage.getItem("temp_id");
 
             if (!token && !tempId) {
@@ -225,55 +235,18 @@
             });
         }
 
-
-
         // Price update function based on quantity change
-        function updatePrice() {
+        window.updatePrice = function() {
             const quantity = parseFloat(quantityElem.val()) || 1;
-            const sellingPrice = parseFloat(priceElem.attr("data-price")) || 0;
+            // Pull the base price from #selling-tprice's data-price
+            const basePrice = parseFloat(tPriceElem.attr("data-price")) || 0;
 
-            if (!isNaN(sellingPrice)) {
-                const updatedPrice = (quantity * sellingPrice).toFixed(2);
-                priceElem.text(`₹${updatedPrice}`);
+            if (!isNaN(basePrice)) {
+                const updatedPrice = (quantity * basePrice).toFixed(2);
+                // Update #selling-tprice text to reflect the total
+                tPriceElem.text(`₹${updatedPrice}`);
             }
         }
-
-        // Check the current state of the cart
-        // function checkCart() {
-        //     const uniqueId = localStorage.getItem("unique_id"); // if available 
-        //     // Execute the function only if unique_id exists
-        //     if (!uniqueId) {
-        //         console.warn("Unique ID not found in localStorage. Skipping cart check.");
-        //         return;
-        //     }
-        //     $.ajax({
-        //         url: `<?php echo BASE_URL; ?>/cart/fetch`,
-        //         type: "POST",
-        //         headers: token ? { "Authorization": `Bearer ${token}` } : {},
-        //         contentType: "application/json",
-        //         data: JSON.stringify({ unique_id: uniqueId }), // include if needed
-        //         success: function (data) {
-        //             if (data.data && data.data.length > 0) {
-        //                 const cartItem = data.data.find(item => item.product_id == productId);
-        //                 if (cartItem) {
-        //                     addCartBtn.hide();
-        //                     viewCartBtn.show();
-        //                     quantityElem.val(cartItem.quantity);
-        //                     cartItemIds.hide();
-        //                     updatePrice();
-        //                 } else {
-        //                     addCartBtn.show();
-        //                     viewCartBtn.hide();
-        //                     quantityElem.val(1);
-        //                     updatePrice();
-        //                 }
-        //             }
-        //         },
-        //         error: function (error) {
-        //             console.error("Error checking cart:", error);
-        //         }
-        //     });
-        // }
 
         // Update cart quantity function
         function updateCartQuantity() {
@@ -308,12 +281,14 @@
                 addToCart();
             });
             quantityElem.change(function () {
-                updateCartQuantity();
+                // If you also want to update the cart on quantity change (in case item already in cart):
+                // updateCartQuantity();
+                // But to simply re-calc the price on the page:
+                updatePrice();
             });
         });
     });
 </script>
-
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
