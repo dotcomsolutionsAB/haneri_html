@@ -30,6 +30,7 @@
         color: #d9534f;
         font-size: 1.5rem;
         margin-left: 10px;
+        padding: 10px;
     }
     .btn-remove-item:hover {
         color: #c12e2a;
