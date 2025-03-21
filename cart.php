@@ -4,16 +4,19 @@
 <style>
     /* Quantity Container */
     .quantity-container {
-        display: inline-flex;
+        display: flex;
+        /* background: aqua; */
+        height: 45px;
+        /* justify-content: center; */
         align-items: center;
     }
 
     .btn-quantity {
-        background-color: #eee;
         border: 1px solid #ccc;
-        padding: 5px 10px;
+        padding: 10px 8px;
         margin: 0 2px;
         cursor: pointer;
+        background: #fff;
     }
     .btn-quantity:hover {
         background-color: #ddd;
@@ -25,16 +28,21 @@
         border: none;
         cursor: pointer;
         color: #d9534f;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin-left: 10px;
     }
     .btn-remove-item:hover {
         color: #c12e2a;
+        padding: 10px;
+        background: antiquewhite;
+        border-radius: 50%;
     }
-    .horizontal-quantity{
+    .horizontal-quantity {
         border: 0px;
         font-size: x-large;
-        width: 20px;
+        width: 35px;
+        text-align: center;
+        font-family: 'Open Sans';
     }
 </style>
 
