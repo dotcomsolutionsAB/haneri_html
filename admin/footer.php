@@ -10,25 +10,6 @@
                                 Haneri
                             </a>
                         </div>
-                        <!-- <nav class="flex order-1 md:order-2 gap-4 font-normal text-2sm text-gray-600">
-                            <a class="hover:text-primary" href="https://keenthemes.com/metronic/tailwind/docs">
-                                Docs
-                            </a>
-                            <a class="hover:text-primary" href="https://1.envato.market/Vm7VRE">
-                                Purchase
-                            </a>
-                            <a class="hover:text-primary"
-                                href="https://keenthemes.com/metronic/tailwind/docs/getting-started/license">
-                                FAQ
-                            </a>
-                            <a class="hover:text-primary" href="https://devs.keenthemes.com">
-                                Support
-                            </a>
-                            <a class="hover:text-primary"
-                                href="https://keenthemes.com/metronic/tailwind/docs/getting-started/license">
-                                License
-                            </a>
-                        </nav> -->
                     </div>
                 </div>
                 <!-- End of Container -->
@@ -41,7 +22,7 @@
     <?php include("admin_inc/modals.php"); ?>
     <!-- End of Page -->
     <!-- Scripts -->
-    <script>
+    <!-- <script>
         $(function () {
             const token = localStorage.getItem("auth_token");
             if (!token) {
@@ -70,7 +51,7 @@
                 }
             });
         });
-    </script>
+    </script> -->
     <script src="assets/js/core.bundle.js">
     </script>
     <script src="assets/vendors/apexcharts/apexcharts.min.js">
