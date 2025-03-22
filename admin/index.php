@@ -25,17 +25,118 @@
                 Authorization: "Bearer " + a_token
             },
             success: function (response) {
-                console.log("API Response:", response); // 👀 Debug output
+                console.log("API Response:", response);
 
-                if (response.success && response.data) {
-                    $("#total-products").text(response.data.total_products ?? 0);
-                    $("#total-orders").text(response.data.total_orders ?? 0);
-                    $("#total-brands").text(response.data.total_brands ?? 0);
-                    $("#total-categories").text(response.data.total_categories ?? 0);
+                if (response.success) {
+                    /****************************************
+                     * 1) Display total sales
+                     ****************************************/
+                    // Safely parse the total sales
+                    const totalSales = parseFloat(response.total_sales ?? 0);
+                    // Update the text (₹ + total formatted to 2 decimals)
+                    $("#all-time-sales").text(`₹${totalSales.toFixed(2)}`);
+
+                    // If you have growth % somewhere in API, set that here:
+                    // $("#growth-percentage").text("+2.7%"); // Example static
+
+                    /****************************************
+                     * 2) Display order status bars
+                     ****************************************/
+                    const completed = parseInt(response.order_status_counts?.completed ?? 0);
+                    const pending = parseInt(response.order_status_counts?.pending ?? 0);
+                    const cancelled = parseInt(response.order_status_counts?.cancelled ?? 0);
+
+                    const totalCount = completed + pending + cancelled;
+                    if (totalCount > 0) {
+                        const completedPerc = (completed / totalCount) * 100;
+                        const pendingPerc   = (pending   / totalCount) * 100;
+                        const cancelledPerc = (cancelled / totalCount) * 100;
+
+                        // Dynamically set the width on each bar
+                        $("#completed-bar").css("max-width", `${completedPerc}%`);
+                        $("#pending-bar").css("max-width", `${pendingPerc}%`);
+                        $("#cancelled-bar").css("max-width", `${cancelledPerc}%`);
+                    } else {
+                        // If all are zero, keep them at 0% or hide
+                        $("#completed-bar").css("max-width", "0%");
+                        $("#pending-bar").css("max-width", "0%");
+                        $("#cancelled-bar").css("max-width", "0%");
+                    }
+
+                    /****************************************
+                     * 3) Display recent orders (up to 3)
+                     ****************************************/
+                    const recentOrders = response.recent_orders ?? [];
+                    const lastThree = recentOrders.slice(0, 3);
+
+                    // Clear any existing content
+                    $("#recent-orders").empty();
+
+                    // For each of the 3 recent orders, build the HTML snippet
+                    lastThree.forEach(order => {
+                        // You can decide icons or placeholders based on order.status or user_name
+                        // For example, we do a generic "ki-shop" icon
+                        let iconClass = "ki-shop";
+
+                        // Optionally switch icon based on status or user:
+                        if (order.status === "pending")    iconClass = "ki-facebook";
+                        if (order.status === "completed")  iconClass = "ki-shop";
+                        if (order.status === "cancelled")  iconClass = "ki-instagram";
+
+                        // Determine color arrow: complete => up green, pending => down red, etc.
+                        let arrowClass = "ki-arrow-down text-danger";
+                        if (order.status === "completed") arrowClass = "ki-arrow-up text-success";
+                        if (order.status === "cancelled") arrowClass = "ki-arrow-down text-info";
+
+                        // Build a row
+                        const rowHtml = `
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <div class="flex items-center gap-1.5">
+                                    <i class="ki-filled ${iconClass} text-base text-gray-500"></i>
+                                    <span class="text-sm font-normal text-gray-900">
+                                        ${order.user_name}
+                                    </span>
+                                </div>
+                                <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
+                                    <span class="lg:text-right">
+                                        $${parseFloat(order.amount).toLocaleString()}
+                                    </span>
+                                    <span class="lg:text-right">
+                                        <i class="ki-filled ${arrowClass}"></i>
+                                        ${capitalize(order.status)}
+                                    </span>
+                                </div>
+                            </div>
+                        `;
+                        // Append to the container
+                        $("#recent-orders").append(rowHtml);
+                    });
+
+                    // If there's no recent orders, optionally show a "No orders" message
+                    if (lastThree.length === 0) {
+                        $("#recent-orders").html(`
+                            <div class="text-sm text-gray-500">
+                                No recent orders to display.
+                            </div>
+                        `);
+                    }
+
+                    // Helper function to capitalize statuses if needed
+                    function capitalize(str) {
+                        return str.charAt(0).toUpperCase() + str.slice(1);
+                    }
+
+                    // Set your other existing counters:
+                    $("#total-products").text(response.data?.total_products ?? 0);
+                    $("#total-orders").text(response.data?.total_orders ?? 0);
+                    $("#total-brands").text(response.data?.total_brands ?? 0);
+                    $("#total-categories").text(response.data?.total_categories ?? 0);
+
                 } else {
                     console.error("API returned success=false", response);
                 }
             },
+
             error: function (xhr, status, error) {
                 console.error("AJAX error:", error);
                 console.log("XHR Response:", xhr.responseText);
@@ -143,6 +244,7 @@
 
                                 </div>
                             </div>
+
                             <div class="lg:col-span-2">
                                 <style>
                                     .entry-callout-bg {
@@ -212,125 +314,6 @@
                                         <h3 class="card-title">
                                             Last Highlights Of Orders
                                         </h3>
-                                        <div class="menu" data-menu="true">
-                                            <div class="menu-item" data-menu-item-offset="0, 10px"
-                                                data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown"
-                                                data-menu-item-trigger="click|lg:click">
-                                                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                                                    <i class="ki-filled ki-dots-vertical">
-                                                    </i>
-                                                </button>
-                                                <div class="menu-dropdown menu-default w-full max-w-[200px]"
-                                                    data-menu-dismiss="true">
-                                                    <div class="menu-item">
-                                                        <a class="menu-link" href="html/demo1/account/activity.html">
-                                                            <span class="menu-icon">
-                                                                <i class="ki-filled ki-cloud-change">
-                                                                </i>
-                                                            </span>
-                                                            <span class="menu-title">
-                                                                Activity
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="menu-item">
-                                                        <a class="menu-link" data-modal-toggle="#share_profile_modal"
-                                                            href="#">
-                                                            <span class="menu-icon">
-                                                                <i class="ki-filled ki-share">
-                                                                </i>
-                                                            </span>
-                                                            <span class="menu-title">
-                                                                Share
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="menu-item" data-menu-item-offset="-15px, 0"
-                                                        data-menu-item-placement="right-start"
-                                                        data-menu-item-toggle="dropdown"
-                                                        data-menu-item-trigger="click|lg:hover">
-                                                        <div class="menu-link">
-                                                            <span class="menu-icon">
-                                                                <i class="ki-filled ki-notification-status">
-                                                                </i>
-                                                            </span>
-                                                            <span class="menu-title">
-                                                                Notifications
-                                                            </span>
-                                                            <span class="menu-arrow">
-                                                                <i
-                                                                    class="ki-filled ki-right text-3xs rtl:transform rtl:rotate-180">
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                        <div class="menu-dropdown menu-default w-full max-w-[175px]">
-                                                            <div class="menu-item">
-                                                                <a class="menu-link"
-                                                                    href="html/demo1/account/home/settings-sidebar.html">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-filled ki-sms">
-                                                                        </i>
-                                                                    </span>
-                                                                    <span class="menu-title">
-                                                                        Email
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link"
-                                                                    href="html/demo1/account/home/settings-sidebar.html">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-filled ki-message-notify">
-                                                                        </i>
-                                                                    </span>
-                                                                    <span class="menu-title">
-                                                                        SMS
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="menu-item">
-                                                                <a class="menu-link"
-                                                                    href="html/demo1/account/home/settings-sidebar.html">
-                                                                    <span class="menu-icon">
-                                                                        <i class="ki-filled ki-notification-status">
-                                                                        </i>
-                                                                    </span>
-                                                                    <span class="menu-title">
-                                                                        Push
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="menu-item">
-                                                        <a class="menu-link" data-modal-toggle="#report_user_modal"
-                                                            href="#">
-                                                            <span class="menu-icon">
-                                                                <i class="ki-filled ki-dislike">
-                                                                </i>
-                                                            </span>
-                                                            <span class="menu-title">
-                                                                Report
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="menu-separator">
-                                                    </div>
-                                                    <div class="menu-item">
-                                                        <a class="menu-link"
-                                                            href="html/demo1/account/home/settings-enterprise.html">
-                                                            <span class="menu-icon">
-                                                                <i class="ki-filled ki-setting-3">
-                                                                </i>
-                                                            </span>
-                                                            <span class="menu-title">
-                                                                Settings
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="card-body flex flex-col gap-4 p-5 lg:p-7.5 lg:pt-4">
                                         <!-- Total Sales Amount -->
@@ -339,44 +322,39 @@
                                                 All time sales
                                             </span>
                                             <div class="flex items-center gap-2.5">
-                                                <span class="text-3xl font-semibold text-gray-900">
-                                                    ₹255250.00
+                                                <span class="text-3xl font-semibold text-gray-900" id="all-time-sales">
+                                                    ₹00.00
                                                 </span>
-                                                <span class="badge badge-outline badge-success badge-sm">
-                                                    +2.7%
+                                                <span class="badge badge-outline badge-success badge-sm" id="growth-percentage">
+                                                    +0%
                                                 </span>
                                             </div>
                                         </div>
                                         <!-- Showing the percentage of the sales report -->
                                         <div class="flex items-center gap-1 mb-1.5">
-                                            <div class="bg-success h-2 w-full max-w-[60%] rounded-sm">
-                                            </div>
-                                            <div class="bg-brand h-2 w-full max-w-[25%] rounded-sm">
-                                            </div>
-                                            <div class="bg-info h-2 w-full max-w-[15%] rounded-sm">
-                                            </div>
+                                            <!-- Completed bar -->
+                                            <div class="bg-success h-2 w-full max-w-[0%] rounded-sm" id="completed-bar"></div>
+                                            <!-- Pending bar -->
+                                            <div class="bg-brand h-2 w-full max-w-[0%] rounded-sm" id="pending-bar"></div>
+                                            <!-- Cancelled bar -->
+                                            <div class="bg-info h-2 w-full max-w-[0%] rounded-sm" id="cancelled-bar"></div>
                                         </div>
+
                                         <div class="flex items-center flex-wrap gap-4 mb-1">
+                                            <!-- Completed label -->
                                             <div class="flex items-center gap-1.5">
-                                                <span class="badge badge-dot size-2 badge-success">
-                                                </span>
-                                                <span class="text-sm font-normal text-gray-800">
-                                                    Complete
-                                                </span>
+                                                <span class="badge badge-dot size-2 badge-success"></span>
+                                                <span class="text-sm font-normal text-gray-800">Complete</span>
                                             </div>
+                                            <!-- Pending label -->
                                             <div class="flex items-center gap-1.5">
-                                                <span class="badge badge-dot size-2 badge-danger">
-                                                </span>
-                                                <span class="text-sm font-normal text-gray-800">
-                                                    Pending
-                                                </span>
+                                                <span class="badge badge-dot size-2 badge-danger"></span>
+                                                <span class="text-sm font-normal text-gray-800">Pending</span>
                                             </div>
+                                            <!-- Cancelled label -->
                                             <div class="flex items-center gap-1.5">
-                                                <span class="badge badge-dot size-2 badge-info">
-                                                </span>
-                                                <span class="text-sm font-normal text-gray-800">
-                                                    Cancel
-                                                </span>
+                                                <span class="badge badge-dot size-2 badge-info"></span>
+                                                <span class="text-sm font-normal text-gray-800">Cancel</span>
                                             </div>
                                         </div>
 
@@ -384,7 +362,7 @@
                                         </div>
 
                                         <!-- Last three order showing with there status -->
-                                        <div class="grid gap-3">
+                                        <!-- <div class="grid gap-3">
 
                                             <div class="flex items-center justify-between flex-wrap gap-2">
                                                 <div class="flex items-center gap-1.5">
@@ -446,6 +424,10 @@
                                                 </div>
                                             </div>
 
+                                        </div> -->
+                                        <!-- Last three orders container -->
+                                        <div class="grid gap-3" id="recent-orders">
+                                            <!-- We'll dynamically populate or replace these rows in JS -->
                                         </div>
 
                                     </div>
