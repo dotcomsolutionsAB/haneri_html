@@ -2326,26 +2326,26 @@
                 <!-- End of Container -->
             </header>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    document.getElementById("ad-logout").addEventListener("click", function () {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You will be logged out.",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, Logout"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Remove authentication token
-                localStorage.removeItem("auth_token");
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script>
+                document.getElementById("ad-logout").addEventListener("click", function () {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You will be logged out.",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#d33",
+                        cancelButtonColor: "#3085d6",
+                        confirmButtonText: "Yes, Logout"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Remove authentication token
+                            localStorage.removeItem("auth_token");
 
-                // Redirect to login page (update with correct login URL)
-                // window.location.href = "index.php";
-                location.reload(); // Reload the logout page
-            }
-        });
-    });
-</script>
+                            // Redirect to login page (update with correct login URL)
+                            // window.location.href = "index.php";
+                            location.reload(); // Reload the logout page
+                        }
+                    });
+                });
+            </script>

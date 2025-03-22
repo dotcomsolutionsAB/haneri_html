@@ -1,5 +1,7 @@
 <?php include("header.php");?>
-
+<?php 
+    $current_page = "Dashboard"; // Dynamically set this based on the page
+?>
 
             <!-- End of Header -->
             <!-- Content -->

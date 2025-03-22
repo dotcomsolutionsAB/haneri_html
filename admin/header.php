@@ -69,8 +69,7 @@
         <!-- Wrapper -->
         <div class="wrapper flex grow flex-col">
             <!-- Header -->
-            <header
-                class="header fixed top-0 z-10 start-0 end-0 flex items-stretch shrink-0 bg-[--tw-page-bg] dark:bg-[--tw-page-bg-dark]"
+            <header class="header fixed top-0 z-10 start-0 end-0 flex items-stretch shrink-0 bg-[--tw-page-bg] dark:bg-[--tw-page-bg-dark]"
                 data-sticky="true" data-sticky-class="shadow-sm" data-sticky-name="header" id="header">
                 <!-- Container -->
                 <div class="container-fixed flex justify-between items-stretch lg:gap-4" id="header_container">
@@ -84,15 +83,24 @@
                                 <i class="ki-filled ki-menu">
                                 </i>
                             </button>
-                            <button class="btn btn-icon btn-light btn-clear btn-sm"
-                                data-drawer-toggle="#mega_menu_wrapper">
-                                <i class="ki-filled ki-burger-menu-2">
-                                </i>
-                            </button>
                         </div>
                     </div>
                     <!-- End of Mobile Logo -->
-                    
+                    <!-- Breadcrumbs -->
+                    <nav aria-label="breadcrumb" class="flex items-center">
+                        <ol class="breadcrumb flex items-center gap-2 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0">
+                            <li class="breadcrumb-item text-gray-700">
+                                <a href="index.php" class="text-gray-700 hover:text-primary">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item text-gray-500">
+                                <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
+                            </li>
+                            <li class="breadcrumb-item text-gray-700 active" aria-current="page">
+                                <?php echo $current_page; ?>
+                            </li>
+                        </ol>
+                    </nav>
+                    <!-- End of Breadcrumbs -->
                     <!-- Topbar -->
                     <div class="flex items-center gap-2 lg:gap-3.5">
                         <button
