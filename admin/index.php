@@ -43,60 +43,64 @@
                                             background-image: url('assets/media/images/2600x1600/bg-3-dark.png');
                                         }
                                     </style>
-                                    <div
-                                        class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
+                                    <!-- product count box -->
+                                    <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="w-7 mt-4 ms-5"
                                             src="assets/media/brand-logos/linkedin-2.svg" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
-                                                9.3k
+                                                170
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
-                                                Amazing mates
+                                                Total Products
                                             </span>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
+
+                                    <!-- orders count box -->
+                                    <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="w-7 mt-4 ms-5"
                                             src="assets/media/brand-logos/youtube-2.svg" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
-                                                24k
+                                                24
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
-                                                Lessons Views
+                                                Total Orders
                                             </span>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
+
+                                    <!-- brands count box -->
+                                    <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="w-7 mt-4 ms-5"
                                             src="assets/media/brand-logos/instagram-03.svg" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
-                                                608
+                                                5
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
-                                                New subscribers
+                                                Total Brands
                                             </span>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
+
+                                    <!-- Categories count box -->
+                                    <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="dark:hidden w-7 mt-4 ms-5"
                                             src="assets/media/brand-logos/tiktok.svg" />
                                         <img alt="" class="light:hidden w-7 mt-4 ms-5"
                                             src="assets/media/brand-logos/tiktok-dark.svg" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
-                                                2.5k
+                                                9
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
-                                                Stream audience
+                                                Toatl Categories
                                             </span>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="lg:col-span-2">
