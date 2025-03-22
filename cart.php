@@ -47,152 +47,6 @@
     }
 </style>
 
-<!-- <script>
-    window.onload = function() {
-        let token = localStorage.getItem("auth_token");
-        let tempId = localStorage.getItem("temp_id");
-        const apiUrl = `<?php echo BASE_URL; ?>/cart/fetch`;
-        const cartTableBody = document.querySelector("#cartTable tbody");
-        const subtotalElem = document.getElementById("cart-subtotal");
-        const taxElem = document.getElementById("cart-tax");
-        const totalElem = document.getElementById("cart-total");
-
-        if (!cartTableBody) {
-            console.error("Cart table body not found. Ensure the table has ID 'cartTable'.");
-            return;
-        }
-
-        console.log("Auth Token:", token);
-        console.log("Temp ID:", tempId);
-
-        fetchCart();
-
-        function fetchCart() {
-            console.log("Fetching cart...");
-
-            if (!token && !tempId) {
-                console.warn("No authentication token or guest cart ID found. Redirecting to login page...");
-                window.location.href = "login.php";
-                return;
-            }
-
-            cartTableBody.innerHTML = "<tr><td colspan='6' class='text-center'>Loading cart items...</td></tr>";
-
-            let requestData = token ? {} : { cart_id: tempId };
-
-            console.log("Request Data:", requestData);
-
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    ...(token ? { "Authorization": `Bearer ${token}` } : {})
-                },
-                body: JSON.stringify(requestData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Cart data received:", data);
-
-                // Ensure the data object is structured correctly
-                if (data && Array.isArray(data.data) && data.data.length > 0) {
-                    console.log("Data received, displaying cart...");
-                    displayCart(data.data);
-                } else {
-                    console.warn("Cart is empty or data is missing.");
-                    cartTableBody.innerHTML = "<tr><td colspan='6' class='text-center'>Your cart is empty.</td></tr>";
-                    updateCartTotals(0, 0, 0);
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching cart:", error);
-                cartTableBody.innerHTML = "<tr><td colspan='6' class='text-center text-danger'>Error loading cart.</td></tr>";
-            });
-        }
-
-        // Example remove function
-        window.removeCartItem = function(cartItemId) {
-            // Write your remove item logic here
-            console.log("Removing item with ID:", cartItemId);
-            // Example:
-            // fetch(`<?php echo BASE_URL; ?>/cart/remove`, { 
-            //     method: "POST", 
-            //     ...
-            // }).then(...)
-            // .catch(...);
-        }
-
-        function displayCart(cartItems) {
-            cartTableBody.innerHTML = "";
-            console.log("Displaying cart items:", cartItems);
-
-            let cartSubtotal = 0;
-            let taxRate = 0.18;
-
-            cartItems.forEach((item, index) => {
-                if (!item.product) {
-                    console.warn("Missing product details:", item);
-                    return;
-                }
-
-                let productName = item.product.name;
-                let variantName = item.variant ? `(${item.variant.variant_value})` : "";
-                let sellingPrice = item.variant
-                    ? parseFloat(item.variant.selling_price)
-                    : parseFloat(item.product.selling_price || 0);
-                let quantity = item.quantity;
-                let subtotal = sellingPrice * quantity;
-
-                if (isNaN(subtotal)) subtotal = 0;
-                cartSubtotal += subtotal;
-
-                console.log(`Adding item: ${productName}, Price: ${sellingPrice}, Quantity: ${quantity}`);
-
-                cartTableBody.innerHTML += `
-                    <tr data-cart-id="${item.id}">
-                        <td><img src="images/f${(index % 10) + 1}.png" alt="${productName}" width="50"></td>
-                        <td>${productName} ${variantName}</td>
-                        <td>₹${sellingPrice.toFixed(2)}</td>
-                        <td>
-                            <div class="quantity-container">
-                                <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'decrease')">-</button>
-                                <input type="text" class="horizontal-quantity" value="${quantity}" onchange="updateCartQuantity('${item.id}', 'input', this.value)">
-                                <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'increase')">+</button>
-                            </div>
-                        </td>
-                        <td class="text-right">₹${subtotal.toFixed(2)}</td>
-                        <td>
-                            <button class="btn-remove-item" onclick="removeCartItem('${item.id}')">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `;
-            });
-
-            let taxAmount = cartSubtotal * taxRate;
-            let totalAmount = cartSubtotal + taxAmount;
-
-            if (isNaN(taxAmount)) taxAmount = 0;
-            if (isNaN(totalAmount)) totalAmount = 0;
-
-            updateCartTotals(cartSubtotal, taxAmount, totalAmount);
-        }
-
-        // Example quantity update function
-        window.updateCartQuantity = function(cartItemId, action, value = 1) {
-            // Replace with your logic to adjust quantity 
-            console.log(`updateCartQuantity called for ID: ${cartItemId}, action: ${action}, value: ${value}`);
-        }
-
-        function updateCartTotals(subtotal, tax, total) {
-            console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Total: ₹${total}`);
-            subtotalElem.innerText = `₹${(isNaN(subtotal) ? 0 : subtotal).toFixed(2)}`;
-            taxElem.innerText = `₹${(isNaN(tax) ? 0 : tax).toFixed(2)}`;
-            totalElem.innerText = `₹${(isNaN(total) ? 0 : total).toFixed(2)}`;
-        }
-    };
-</script> -->
 <script>
     window.onload = function() {
         // Retrieve token and tempId from local storage
@@ -438,6 +292,150 @@
             });
         }
     };
+</script>
+
+<!-- for guest checkout -->
+<!-- Include SweetAlert2 (make sure to have sweetalert2 or similar library included in your project) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Grab the checkout button
+    const proceedCheckoutBtn = document.querySelector(".checkout-methods a.btn.btn-block.btn-dark");
+
+    // Attach click event
+    if (proceedCheckoutBtn) {
+      proceedCheckoutBtn.addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent default navigation
+
+        // Retrieve token and tempId from local storage
+        const token = localStorage.getItem("auth_token");
+        const tempId = localStorage.getItem("temp_id");
+
+        // If we have a valid token, just proceed to checkout
+        if (token) {
+          window.location.href = "checkout.php";
+          return;
+        }
+
+        // If we don't have an auth token but do have a temp_id,
+        // we start our multi-step SweetAlert flow:
+        if (!token && tempId) {
+          let userName = "";
+          let userEmail = "";
+          let userMobile = "";
+
+          // Step 1: Get Name
+          Swal.fire({
+            title: "Enter Your Name",
+            input: "text",
+            inputAttributes: {
+              autocapitalize: "off"
+            },
+            showCancelButton: true,
+            confirmButtonText: "Next",
+            preConfirm: (value) => {
+              if (!value.trim()) {
+                Swal.showValidationMessage("Name is required.");
+                return false;
+              }
+              userName = value.trim();
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+          }).then((step1) => {
+            if (!step1.isConfirmed) {
+              return; // user cancelled
+            }
+
+            // Step 2: Get Email
+            Swal.fire({
+              title: "Enter Your Email",
+              input: "email",
+              inputAttributes: {
+                autocapitalize: "off"
+              },
+              showCancelButton: true,
+              confirmButtonText: "Next",
+              preConfirm: (value) => {
+                if (!value.trim()) {
+                  Swal.showValidationMessage("Email is required.");
+                  return false;
+                }
+                userEmail = value.trim();
+              },
+              allowOutsideClick: () => !Swal.isLoading()
+            }).then((step2) => {
+              if (!step2.isConfirmed) {
+                return; // user cancelled
+              }
+
+              // Step 3: Get Mobile & Submit
+              Swal.fire({
+                title: "Enter Your Mobile",
+                input: "text",
+                inputAttributes: {
+                  autocapitalize: "off"
+                },
+                showCancelButton: true,
+                confirmButtonText: "Submit",
+                showLoaderOnConfirm: true,
+                preConfirm: async (value) => {
+                  if (!value.trim()) {
+                    return Swal.showValidationMessage("Mobile is required.");
+                  }
+                  userMobile = value.trim();
+
+                  // Now call the /make_user endpoint
+                  let formData = new FormData();
+                  formData.append("name", userName);
+                  formData.append("email", userEmail);
+                  formData.append("mobile", userMobile);
+                  formData.append("cart_id", tempId);
+
+                  try {
+                    const response = await fetch("<?php echo BASE_URL; ?>/make_user", {
+                      method: "POST",
+                      body: formData
+                    });
+                    if (!response.ok) {
+                      const errData = await response.json();
+                      return Swal.showValidationMessage(
+                        `Error: ${errData.message || "Could not register user"}`
+                      );
+                    }
+
+                    const data = await response.json();
+                    if (!data.token) {
+                      return Swal.showValidationMessage(
+                        data.message || "Registration failed."
+                      );
+                    }
+
+                    // If successful, remove temp_id, store auth_token
+                    localStorage.removeItem("temp_id");
+                    localStorage.setItem("auth_token", data.token);
+
+                    // Return the data so .then() sees success
+                    return data;
+                  } catch (error) {
+                    return Swal.showValidationMessage(`Request failed: ${error}`);
+                  }
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+              }).then((finalStep) => {
+                if (finalStep.isConfirmed) {
+                  // All good, redirect
+                  window.location.href = "checkout.php";
+                }
+              });
+            });
+          });
+        } else {
+          // If we have neither token nor tempId, redirect to login
+          window.location.href = "login.php";
+        }
+      });
+    }
+  });
 </script>
 
 
