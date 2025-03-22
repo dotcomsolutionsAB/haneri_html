@@ -1,36 +1,5 @@
 <?php include("header.php");?>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("auth_token");
-        if (!token) {
-            console.error("No auth_token found in localStorage");
-            return;
-        }
 
-        fetch("<?php echo BASE_URL; ?>/users/dashboard", {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success && result.data) {
-                const data = result.data;
-                document.getElementById("total-products").textContent = data.total_products ?? 0;
-                document.getElementById("total-orders").textContent = data.total_orders ?? 0;
-                document.getElementById("total-brands").textContent = data.total_brands ?? 0;
-                document.getElementById("total-categories").textContent = data.total_categories ?? 0;
-            } else {
-                console.error("Failed to fetch counts:", result.message);
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching dashboard data:", error);
-        });
-    });
-</script> -->
 
 
             <!-- End of Header -->
