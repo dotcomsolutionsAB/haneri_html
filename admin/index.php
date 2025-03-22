@@ -32,36 +32,7 @@
                 <!-- Container -->
                 <div class="container-fixed">
                     <div class="grid gap-5 lg:gap-7.5">
-                    <script>
-                        $(function () {
-                            const token = localStorage.getItem("auth_token");
-                            if (!token) {
-                                console.error("No auth_token found in localStorage");
-                                return;
-                            }
 
-                            $.ajax({
-                                url: '<?php echo BASE_URL; ?>/users/dashboard', // replace with your actual base URL
-                                method: 'GET',
-                                headers: {
-                                    'Authorization': 'Bearer ' + token
-                                },
-                                success: function (response) {
-                                    if (response.success && response.data) {
-                                        $('#total-products').text(response.data.total_products ?? 0);
-                                        $('#total-orders').text(response.data.total_orders ?? 0);
-                                        $('#total-brands').text(response.data.total_brands ?? 0);
-                                        $('#total-categories').text(response.data.total_categories ?? 0);
-                                    } else {
-                                        console.error('API returned success=false');
-                                    }
-                                },
-                                error: function (xhr, status, error) {
-                                    console.error('AJAX error:', error);
-                                }
-                            });
-                        });
-                    </script>
 
                         <!-- begin: grid -->
                         <div class="grid lg:grid-cols-3 gap-y-5 lg:gap-7.5 items-stretch">
