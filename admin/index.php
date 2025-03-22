@@ -6,6 +6,40 @@
 ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+    $(function () {
+        const token = localStorage.getItem("auth_token");
+
+        if (!token) {
+            console.error("No auth_token found in localStorage");
+            return;
+        }
+
+        $.ajax({
+            url: "<?php echo BASE_URL; ?>/users/admin_dashboard", // ✅ PHP BASE_URL used here
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + token
+            },
+            success: function (response) {
+                console.log("API Response:", response); // 👀 Debug output
+
+                if (response.success && response.data) {
+                    $("#total-products").text(response.data.total_products ?? 0);
+                    $("#total-orders").text(response.data.total_orders ?? 0);
+                    $("#total-brands").text(response.data.total_brands ?? 0);
+                    $("#total-categories").text(response.data.total_categories ?? 0);
+                } else {
+                    console.error("API returned success=false", response);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("AJAX error:", error);
+                console.log("XHR Response:", xhr.responseText);
+            }
+        });
+    });
+</script>
 
 
             <!-- End of Header -->
@@ -37,7 +71,7 @@
                 <!-- Container -->
                 <div class="container-fixed">
                     <div class="grid gap-5 lg:gap-7.5">
-                    <script>
+                    <!-- <script>
                         $(function () {
                             const token = localStorage.getItem("auth_token");
                             if (!token) {
@@ -66,7 +100,7 @@
                                 }
                             });
                         });
-                    </script>
+                    </script> -->
 
                         <!-- begin: grid -->
                         <div class="grid lg:grid-cols-3 gap-y-5 lg:gap-7.5 items-stretch">
