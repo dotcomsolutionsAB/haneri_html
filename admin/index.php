@@ -8,9 +8,9 @@
 
 <script>
     $(function () {
-        const token = localStorage.getItem("auth_token");
+        const a_token = localStorage.getItem("auth_token");
 
-        if (!token) {
+        if (!a_token) {
             console.error("No auth_token found in localStorage");
             return;
         }
@@ -19,7 +19,7 @@
             url: "<?php echo BASE_URL; ?>/users/admin_dashboard", // ✅ PHP BASE_URL used here
             method: "GET",
             headers: {
-                Authorization: "Bearer " + token
+                Authorization: "Bearer " + a_token
             },
             success: function (response) {
                 console.log("API Response:", response); // 👀 Debug output
