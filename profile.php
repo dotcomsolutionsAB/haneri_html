@@ -46,9 +46,9 @@
 			<div class="col-lg-9 order-lg-last order-1 tab-content">
 				<div class="tab-pane fade show active" id="dashboard" role="tabpanel">
 					<div class="dashboard-content">
-						<p>
+						<h6>
 							Hello <strong class="text-dark" id="user-name">..</strong>
-						</p>
+						</h6>
 
 						<p>
 							From your account dashboard you can view your
@@ -244,13 +244,13 @@
 				</script>
 
 				<div class="tab-pane fade" id="address" role="tabpanel">
-					<h3 class="account-sub-title d-none d-md-block mb-1"><i
-							class="sicon-location-pin align-middle mr-3"></i>Addresses</h3>
+					<h3 class="account-sub-title d-none d-md-block mb-1">
+						<i class="sicon-location-pin align-middle mr-3"></i>Addresses</h3>
 					<div class="addresses-content">
-						<p class="mb-4">
+						<!-- <p class="mb-4">
 							The following addresses will be used on the checkout page by
 							default.
-						</p>
+						</p> -->
 
 						<div class="row">
 							<div class="address col-md-6">
