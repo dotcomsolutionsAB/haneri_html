@@ -1,5 +1,5 @@
 <?php include("header.php");?>
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
         if (!token) {
@@ -30,7 +30,7 @@
             console.error("Error fetching dashboard data:", error);
         });
     });
-</script>
+</script> -->
 
 
             <!-- End of Header -->
