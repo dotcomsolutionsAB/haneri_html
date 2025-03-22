@@ -1,4 +1,36 @@
 <?php include("header.php");?>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("auth_token");
+        if (!token) {
+            console.error("No auth_token found in localStorage");
+            return;
+        }
+
+        fetch("<?php echo BASE_URL; ?>/users/dashboard", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success && result.data) {
+                const data = result.data;
+                document.getElementById("total-products").textContent = data.total_products ?? 0;
+                document.getElementById("total-orders").textContent = data.total_orders ?? 0;
+                document.getElementById("total-brands").textContent = data.total_brands ?? 0;
+                document.getElementById("total-categories").textContent = data.total_categories ?? 0;
+            } else {
+                console.error("Failed to fetch counts:", result.message);
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching dashboard data:", error);
+        });
+    });
+</script>
 
 
             <!-- End of Header -->
@@ -45,10 +77,9 @@
                                     </style>
                                     <!-- product count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-14 mt-4 ms-5"
-                                            src="../images/default/df001.png" />
+                                        <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
-                                            <span class="text-3xl font-semibold text-gray-900">
+                                            <span class="text-3xl font-semibold text-gray-900" id="total-products">
                                                 170
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
@@ -59,10 +90,9 @@
 
                                     <!-- orders count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-14 mt-4 ms-5"
-                                            src="../images/default/df001.png" />
+                                        <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
-                                            <span class="text-3xl font-semibold text-gray-900">
+                                            <span class="text-3xl font-semibold text-gray-900" id="total-orders">
                                                 24
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
@@ -73,10 +103,9 @@
 
                                     <!-- brands count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-14 mt-4 ms-5"
-                                            src="../images/default/df001.png" />
+                                        <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
-                                            <span class="text-3xl font-semibold text-gray-900">
+                                            <span class="text-3xl font-semibold text-gray-900" id="total-brands">
                                                 5
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
@@ -87,10 +116,9 @@
 
                                     <!-- Categories count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-14 mt-4 ms-5"
-                                            src="../images/default/df001.png" />
+                                        <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
-                                            <span class="text-3xl font-semibold text-gray-900">
+                                            <span class="text-3xl font-semibold text-gray-900" id="total-categories">
                                                 9
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
@@ -291,19 +319,21 @@
                                         </div>
                                     </div>
                                     <div class="card-body flex flex-col gap-4 p-5 lg:p-7.5 lg:pt-4">
+                                        <!-- Total Sales Amount -->
                                         <div class="flex flex-col gap-0.5">
                                             <span class="text-sm font-normal text-gray-700">
                                                 All time sales
                                             </span>
                                             <div class="flex items-center gap-2.5">
                                                 <span class="text-3xl font-semibold text-gray-900">
-                                                    $295.7k
+                                                    ₹255250.00
                                                 </span>
                                                 <span class="badge badge-outline badge-success badge-sm">
                                                     +2.7%
                                                 </span>
                                             </div>
                                         </div>
+                                        <!-- Showing the percentage of the sales report -->
                                         <div class="flex items-center gap-1 mb-1.5">
                                             <div class="bg-success h-2 w-full max-w-[60%] rounded-sm">
                                             </div>
@@ -335,15 +365,19 @@
                                                 </span>
                                             </div>
                                         </div>
+
                                         <div class="border-b border-gray-300">
                                         </div>
+
+                                        <!-- Last three order showing with there status -->
                                         <div class="grid gap-3">
+
                                             <div class="flex items-center justify-between flex-wrap gap-2">
                                                 <div class="flex items-center gap-1.5">
                                                     <i class="ki-filled ki-shop text-base text-gray-500">
                                                     </i>
                                                     <span class="text-sm font-normal text-gray-900">
-                                                        Online Store
+                                                        Ram Chandra
                                                     </span>
                                                 </div>
                                                 <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
@@ -353,16 +387,17 @@
                                                     <span class="lg:text-right">
                                                         <i class="ki-filled ki-arrow-up text-success">
                                                         </i>
-                                                        3.9%
+                                                        Complete
                                                     </span>
                                                 </div>
                                             </div>
+
                                             <div class="flex items-center justify-between flex-wrap gap-2">
                                                 <div class="flex items-center gap-1.5">
                                                     <i class="ki-filled ki-facebook text-base text-gray-500">
                                                     </i>
                                                     <span class="text-sm font-normal text-gray-900">
-                                                        Facebook
+                                                        Tuzi Yadav
                                                     </span>
                                                 </div>
                                                 <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
@@ -372,16 +407,17 @@
                                                     <span class="lg:text-right">
                                                         <i class="ki-filled ki-arrow-down text-danger">
                                                         </i>
-                                                        0.7%
+                                                        Pending
                                                     </span>
                                                 </div>
                                             </div>
+
                                             <div class="flex items-center justify-between flex-wrap gap-2">
                                                 <div class="flex items-center gap-1.5">
                                                     <i class="ki-filled ki-instagram text-base text-gray-500">
                                                     </i>
                                                     <span class="text-sm font-normal text-gray-900">
-                                                        Instagram
+                                                        Faizaal Ahmed
                                                     </span>
                                                 </div>
                                                 <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
@@ -391,11 +427,13 @@
                                                     <span class="lg:text-right">
                                                         <i class="ki-filled ki-arrow-up text-success">
                                                         </i>
-                                                        8.2%
+                                                        Complete
                                                     </span>
                                                 </div>
                                             </div>
+
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
