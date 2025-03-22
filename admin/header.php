@@ -92,15 +92,10 @@
                             <li class="breadcrumb-item text-gray-700">
                                 <a href="index.php" class="text-gray-700 hover:text-primary">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item text-gray-500">
-                                <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
-                            </li>
-                            <li class="breadcrumb-item text-gray-700 active" aria-current="page">
-                                <?php echo $current_page; ?>
-                            </li>
                         </ol>
                     </nav>
                     <!-- End of Breadcrumbs -->
+
                     <!-- Topbar -->
                     <div class="flex items-center gap-2 lg:gap-3.5">
                         <button
