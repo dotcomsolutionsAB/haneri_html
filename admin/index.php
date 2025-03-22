@@ -46,7 +46,7 @@
                                     <!-- product count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="w-7 mt-4 ms-5"
-                                            src="assets/media/brand-logos/linkedin-2.svg" />
+                                            src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
                                                 170
@@ -60,7 +60,7 @@
                                     <!-- orders count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                         <img alt="" class="w-7 mt-4 ms-5"
-                                            src="assets/media/brand-logos/youtube-2.svg" />
+                                            src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
                                                 24
@@ -163,13 +163,14 @@
                             </div>
                         </div>
                         <!-- end: grid -->
-                        <!-- begin: grid -->
+
+                        <!-- begin: grid 2nd grid-->
                         <div class="grid lg:grid-cols-3 gap-5 lg:gap-7.5 items-stretch">
                             <div class="lg:col-span-1">
                                 <div class="card h-full">
                                     <div class="card-header">
                                         <h3 class="card-title">
-                                            Highlights
+                                            Last Highlights Of Orders
                                         </h3>
                                         <div class="menu" data-menu="true">
                                             <div class="menu-item" data-menu-item-offset="0, 10px"
@@ -318,21 +319,21 @@
                                                 <span class="badge badge-dot size-2 badge-success">
                                                 </span>
                                                 <span class="text-sm font-normal text-gray-800">
-                                                    Metronic
+                                                    Complete
                                                 </span>
                                             </div>
                                             <div class="flex items-center gap-1.5">
                                                 <span class="badge badge-dot size-2 badge-danger">
                                                 </span>
                                                 <span class="text-sm font-normal text-gray-800">
-                                                    Bundle
+                                                    Pending
                                                 </span>
                                             </div>
                                             <div class="flex items-center gap-1.5">
                                                 <span class="badge badge-dot size-2 badge-info">
                                                 </span>
                                                 <span class="text-sm font-normal text-gray-800">
-                                                    MetronicNest
+                                                    Cancel
                                                 </span>
                                             </div>
                                         </div>
