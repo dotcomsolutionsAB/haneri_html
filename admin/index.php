@@ -45,7 +45,7 @@
                                     </style>
                                     <!-- product count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-7 mt-4 ms-5"
+                                        <img alt="" class="w-14 mt-4 ms-5"
                                             src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
@@ -59,7 +59,7 @@
 
                                     <!-- orders count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-7 mt-4 ms-5"
+                                        <img alt="" class="w-14 mt-4 ms-5"
                                             src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
@@ -73,8 +73,8 @@
 
                                     <!-- brands count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="w-7 mt-4 ms-5"
-                                            src="assets/media/brand-logos/instagram-03.svg" />
+                                        <img alt="" class="w-14 mt-4 ms-5"
+                                            src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
                                                 5
@@ -87,10 +87,10 @@
 
                                     <!-- Categories count box -->
                                     <div class="card flex-col justify-between gap-6 h-full bg-cover rtl:bg-[left_top_-1.7rem] bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                        <img alt="" class="dark:hidden w-7 mt-4 ms-5"
+                                        <img alt="" class="dark:hidden w-14 mt-4 ms-5"
                                             src="assets/media/brand-logos/tiktok.svg" />
-                                        <img alt="" class="light:hidden w-7 mt-4 ms-5"
-                                            src="assets/media/brand-logos/tiktok-dark.svg" />
+                                        <img alt="" class="w-14 mt-4 ms-5"
+                                            src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900">
                                                 9
