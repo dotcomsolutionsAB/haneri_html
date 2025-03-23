@@ -1,7 +1,7 @@
 <?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    // ini_set('display_errors', 1);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
 ?>
 <?php include("../configs/auth_check.php"); ?>
 <?php include("../configs/config.php"); ?>
@@ -132,6 +132,60 @@
                     $("#total-brands").text(response.data?.total_brands ?? 0);
                     $("#total-categories").text(response.data?.total_categories ?? 0);
 
+
+                    // **) Build the earnings line chart
+                    if (response.success && response.year_records) {
+                        const monthNames = ["January","February","March","April","May","June",
+                                            "July","August","September","October","November","December"];
+                        const shortMonths = ["Jan","Feb","Mar","Apr","May","Jun",
+                                            "Jul","Aug","Sep","Oct","Nov","Dec"];
+
+                        // Convert object to array of numbers
+                        const monthlyData = monthNames.map(m => parseFloat(response.year_records[m] || 0));
+
+                        const options = {
+                            chart: {
+                                type: 'line',
+                                height: 220,
+                                toolbar: { show: false },
+                                zoom: { enabled: false }
+                            },
+                            stroke: { curve: 'smooth', width: 3 },
+                            series: [{ name: 'Sales', data: monthlyData }],
+                            xaxis: {
+                                categories: shortMonths,
+                                labels: { style: { colors: '#6B7280', fontSize: '12px' } }
+                            },
+                            yaxis: {
+                                labels: {
+                                    style: { colors: '#6B7280', fontSize: '12px' },
+                                    formatter: function (val) {
+                                        return `₹${val}`;
+                                    }
+                                }
+                            },
+                            colors: ['#3b82f6'],  // line color
+                            grid: {
+                                borderColor: '#E5E7EB', // light gray grid lines
+                                strokeDashArray: 4
+                            },
+                            tooltip: {
+                                y: {
+                                    formatter: function (val) {
+                                        // e.g. 35000 => "₹35,000"
+                                        return `₹${val.toLocaleString()}`;
+                                    }
+                                }
+                            }
+                        };
+
+                        const chart = new ApexCharts(document.querySelector("#earning_chart"), options);
+                        chart.render();
+                    }
+
+
+
+
                 } else {
                     console.error("API returned success=false", response);
                 }
@@ -195,7 +249,7 @@
                                         <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900" id="total-products">
-                                                170
+                                                00
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
                                                 Total Products
@@ -208,7 +262,7 @@
                                         <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900" id="total-orders">
-                                                24
+                                                00
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
                                                 Total Orders
@@ -221,7 +275,7 @@
                                         <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900" id="total-brands">
-                                                5
+                                                00
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
                                                 Total Brands
@@ -234,10 +288,10 @@
                                         <img alt="" class="w-14 mt-4 ms-5" src="../images/default/df001.png" />
                                         <div class="flex flex-col gap-1 pb-4 px-5">
                                             <span class="text-3xl font-semibold text-gray-900" id="total-categories">
-                                                9
+                                                00
                                             </span>
                                             <span class="text-2sm font-normal text-gray-700">
-                                                Toatl Categories
+                                                Total Categories
                                             </span>
                                         </div>
                                     </div>
@@ -361,70 +415,6 @@
                                         <div class="border-b border-gray-300">
                                         </div>
 
-                                        <!-- Last three order showing with there status -->
-                                        <!-- <div class="grid gap-3">
-
-                                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                                <div class="flex items-center gap-1.5">
-                                                    <i class="ki-filled ki-shop text-base text-gray-500">
-                                                    </i>
-                                                    <span class="text-sm font-normal text-gray-900">
-                                                        Ram Chandra
-                                                    </span>
-                                                </div>
-                                                <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
-                                                    <span class="lg:text-right">
-                                                        $172k
-                                                    </span>
-                                                    <span class="lg:text-right">
-                                                        <i class="ki-filled ki-arrow-up text-success">
-                                                        </i>
-                                                        Complete
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                                <div class="flex items-center gap-1.5">
-                                                    <i class="ki-filled ki-facebook text-base text-gray-500">
-                                                    </i>
-                                                    <span class="text-sm font-normal text-gray-900">
-                                                        Tuzi Yadav
-                                                    </span>
-                                                </div>
-                                                <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
-                                                    <span class="lg:text-right">
-                                                        $85k
-                                                    </span>
-                                                    <span class="lg:text-right">
-                                                        <i class="ki-filled ki-arrow-down text-danger">
-                                                        </i>
-                                                        Pending
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center justify-between flex-wrap gap-2">
-                                                <div class="flex items-center gap-1.5">
-                                                    <i class="ki-filled ki-instagram text-base text-gray-500">
-                                                    </i>
-                                                    <span class="text-sm font-normal text-gray-900">
-                                                        Faizaal Ahmed
-                                                    </span>
-                                                </div>
-                                                <div class="flex items-center text-sm font-medium text-gray-800 gap-6">
-                                                    <span class="lg:text-right">
-                                                        $36k
-                                                    </span>
-                                                    <span class="lg:text-right">
-                                                        <i class="ki-filled ki-arrow-up text-success">
-                                                        </i>
-                                                        Complete
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                        </div> -->
                                         <!-- Last three orders container -->
                                         <div class="grid gap-3" id="recent-orders">
                                             <!-- We'll dynamically populate or replace these rows in JS -->
@@ -463,13 +453,15 @@
                                         </div>
                                     </div>
                                     <div class="card-body flex flex-col justify-end items-stretch grow px-3 py-1">
-                                        <div id="earnings_chart">
+                                        <div id="earning_chart">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- end: grid -->
+
+
                         <!-- begin: grid -->
                         <div class="grid lg:grid-cols-3 gap-5 lg:gap-7.5 items-stretch">
                             <div class="lg:col-span-1">

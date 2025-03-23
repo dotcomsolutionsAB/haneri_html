@@ -284,7 +284,7 @@
                             </i>
                         </span>
                         <span class="menu-title text-sm font-medium text-gray-800 menu-item-active:text-primary menu-link-hover:!text-primary">
-                            Configarations
+                            Configurations
                         </span>
                         <span class="menu-arrow text-gray-400 w-[20px] shrink-0 justify-end ms-1 me-[-10px]">
                             <i class="ki-filled ki-plus text-2xs menu-item-show:hidden">
