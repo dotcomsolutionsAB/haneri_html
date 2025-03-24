@@ -133,7 +133,7 @@
             const offset = (currentPage - 1) * itemsPerPage;
 
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/categories`,
+                url: `<?php echo BASE_URL; ?>/categories/fetch`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 success: (response) => {

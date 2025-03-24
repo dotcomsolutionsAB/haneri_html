@@ -89,7 +89,7 @@
         const descriptionInput = document.querySelector("#description");
         const photoInput = document.querySelector("#photo");
 
-        const apiUrl = `<?php echo BASE_URL; ?>/categories`;
+        const apiUrl = `<?php echo BASE_URL; ?>/categories/fetch`;
         const authToken = localStorage.getItem('auth_token'); // Replace with actual token
 
         /** FETCH CATEGORIES **/
