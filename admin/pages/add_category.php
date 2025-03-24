@@ -5,6 +5,8 @@
     $current_page = "Add Category"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <style>
     .cardx{
         width:100%;
@@ -152,14 +154,26 @@
             .then(data => {
                 console.log("Success Response:", data);
                 if (data.message) {
-                    // alert(data.message); // Show success message
-                    clearFields(); // Clear input fields after submission
-                    fetchCategories(); // Refresh dropdown
+                    // Show success SweetAlert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: data.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        clearFields();      // Clear input fields after submission
+                        fetchCategories();  // Refresh dropdown
+                    });
                 }
             })
             .catch(error => {
                 console.error("Error submitting category:", error);
-                alert("Error submitting category: " + error.message);
+                // Show error SweetAlert
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Error submitting category: ' + error.message
+                });
             });
         }
 
@@ -168,16 +182,15 @@
             sortNumberInput.value = "";
             descriptionInput.value = "";
             parentCategorySelect.value = ""; // Reset dropdown
-            photoInput.value = ""; // Reset file input
+            photoInput.value = "";           // Reset file input
         }
+
         // Event listener for save button
         saveButton.addEventListener("click", function (event) {
             event.preventDefault(); // Prevent default behavior
             submitCategory();
         });
 
-        // Load categories on page load
-        fetchCategories();
     });
 </script>
 
