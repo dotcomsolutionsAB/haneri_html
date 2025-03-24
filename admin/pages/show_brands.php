@@ -17,18 +17,18 @@
                 <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                     <div class="flex flex-col justify-center gap-2">
                         <h1 class="text-xl font-medium leading-none text-gray-900" id="count-brands">
-                            00 User
+                            00 Brands
                         </h1>
                         <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
-                            Overview of all users and brands.
+                            Overview of all Products Brand.
                         </div>
                     </div>
                     <div class="flex items-center gap-2.5">
                         <a class="btn btn-sm btn-light" href="#">
-                            Import Users
+                            Import Brands
                         </a>
                         <a class="btn btn-sm btn-primary" href="#">
-                            Add User
+                            Add Brands
                         </a>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="card card-grid min-w-full">
                         <div class="card-header py-5 flex-wrap gap-2">
                             <h3 class="card-title">
-                                Users
+                                Brands
                             </h3>
                             <div class="flex gap-6">
                                 <div class="relative">
@@ -53,7 +53,7 @@
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
                                     <span class="switch-label order-1">
-                                        Active Users
+                                        Active Brands
                                     </span>
                                 </label>
                             </div>
