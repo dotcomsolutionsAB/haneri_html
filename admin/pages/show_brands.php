@@ -226,7 +226,7 @@
                     </button>
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
                         <div class="menu-item">
-                            <a class="menu-link" href="brands.php?slug=${brand.id}">
+                            <a class="menu-link" href="brands.php?item=${brand.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-search-list">
                                     </i>
@@ -239,7 +239,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="brands.php?slug=${brand.id}">
+                            <a class="menu-link" href="brands.php?item=${brand.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-pencil">
                                     </i>
@@ -252,7 +252,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="brands.php?slug=${brand.id}">
+                            <a class="menu-link" href="brands.php?item=${brand.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash">
                                     </i>
