@@ -297,7 +297,7 @@
                     </button>
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
                         <div class="menu-item">
-                            <a class="menu-link" href="categories.php?id=${category.id}">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-search-list">
                                     </i>
@@ -310,7 +310,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="categories.php?id=${category.id}">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-pencil">
                                     </i>
@@ -323,7 +323,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="categories.php?id=${category.id}">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash">
                                     </i>
@@ -338,6 +338,63 @@
             </div>
         `;
     };
+</script>
+
+<!-- Example snippet inside your HTML -->
+<script>
+    $(document).ready(function () {
+        const token = localStorage.getItem('auth_token');
+
+        // Listen for clicks on the "Remove" link
+        $(document).on('click', '.delete-category-btn', function (e) {
+            e.preventDefault(); // Prevent navigation
+
+            // Get category ID from data attribute
+            const categoryId = $(this).data('category-id');
+
+            // Show SweetAlert2 confirmation
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'This action will permanently delete the category.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, send DELETE request
+                    $.ajax({
+                        url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
+                        type: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
+                        success: function (data) {
+                            // data = { "message": "Category deleted successfully!" }
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Deleted!',
+                                text: data.message || 'Category deleted successfully!'
+                            }).then(() => {
+                                // Optionally refresh/reload categories if needed:
+                                // fetchCategories();
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: xhr.responseJSON?.message || 'Unable to delete category.'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
 </script>
 
 <!-- Footer -->
