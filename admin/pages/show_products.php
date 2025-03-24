@@ -15,12 +15,12 @@
                 <div class="container-fixed">
                     <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                         <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900" id="count-products">
-                                
+                            <h1 class="text-xl font-medium leading-none text-gray-900" id="">
+                                Products
                             </h1>
-                            <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                            <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
                                 Overview of all products and brands.
-                            </div>
+                            </div> -->
                         </div>
                         <div class="flex items-center gap-2.5">
                             <a class="btn btn-sm btn-light" href="#">
@@ -39,7 +39,7 @@
                         <div class="card card-grid min-w-full">
                             <div class="card-header py-5 flex-wrap gap-2">
                                 <h3 class="card-title">
-                                    Products
+                                    Overview of <span id="count-products">00</span>
                                 </h3>
                                 <div class="flex gap-6">
                                     <div class="relative">
@@ -241,9 +241,7 @@
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
             }
-            $("#count-products").text(
-                `COUNT : ${totalItems} Products`
-            );
+            $("#count-products").text(`${totalItems} Products`);
         };
 
         $(".pagination").on("click", "button", function () {
