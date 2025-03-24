@@ -91,7 +91,7 @@
         /** FETCH CATEGORIES **/
         function fetchCategories() {
             fetch(apiUrl, {
-                method: "GET",
+                method: "POST",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
                     "Accept": "application/json",

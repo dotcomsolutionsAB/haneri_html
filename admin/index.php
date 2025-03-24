@@ -183,9 +183,6 @@
                         chart.render();
                     }
 
-
-
-
                 } else {
                     console.error("API returned success=false", response);
                 }

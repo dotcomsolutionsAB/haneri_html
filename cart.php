@@ -413,6 +413,9 @@
                     // If successful, remove temp_id, store auth_token
                     localStorage.removeItem("temp_id");
                     localStorage.setItem("auth_token", data.token);
+                    localStorage.setItem("user_name", data.user.name);
+                    localStorage.setItem("user_role", data.user.role);
+                    localStorage.setItem("user_email", data.user.email);
 
                     // Return the data so .then() sees success
                     return data;
