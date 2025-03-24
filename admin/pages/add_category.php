@@ -254,7 +254,7 @@
 
             console.log("Submitting Data:", formData); // Debugging
 
-            fetch(apiUrl, {
+            fetch(`<?php echo BASE_URL; ?>/categories`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${authToken}`,
