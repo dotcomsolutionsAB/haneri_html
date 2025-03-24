@@ -438,7 +438,7 @@ $(document).ready(function() {
 
         // Fetch the category by name
         $.ajax({
-            url: `{{base_url}}/categories/fetch`,
+            url: `<?php echo BASE_URL; ?>/categories/fetch`,
             type: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -522,7 +522,7 @@ $(document).ready(function() {
     // PUT request to /products/:id (with the new data)
     function updateCategoryViaProductsApi(categoryId, payload) {
         $.ajax({
-            url: `{{base_url}}/products/${categoryId}`,
+            url: `<?php echo BASE_URL; ?>/products/${categoryId}`,
             type: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
