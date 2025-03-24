@@ -190,6 +190,8 @@
             event.preventDefault(); // Prevent default behavior
             submitCategory();
         });
+        // Load categories on page load
+        fetchCategories();
 
     });
 </script>
