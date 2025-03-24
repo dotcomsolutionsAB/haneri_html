@@ -82,7 +82,7 @@
             <!-- Footer -->
 <?php include("footer1.php"); ?>
 
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         const parentCategorySelect = document.querySelector("#parentCategory");
         const saveButton = document.querySelector("#saveCategory");
@@ -193,6 +193,119 @@
         // Load categories on page load
         fetchCategories();
 
+    });
+</script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const parentCategorySelect = document.querySelector("#parentCategory");
+        const saveButton = document.querySelector("#saveCategory");
+        const categoryNameInput = document.querySelector("#categoryName");
+        const sortNumberInput = document.querySelector("#sortNumber");
+        const descriptionInput = document.querySelector("#description");
+        const photoInput = document.querySelector("#photo");
+
+        const apiUrl = `<?php echo BASE_URL; ?>/categories/fetch`;
+        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+
+        /** FETCH CATEGORIES **/
+        function fetchCategories() {
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.data) {
+                    parentCategorySelect.innerHTML = ""; // Clear existing options
+
+                    // Default option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select Parent Category";
+                    parentCategorySelect.appendChild(defaultOption);
+
+                    // Populate dropdown with ALL categories (parent & child)
+                    data.data.forEach(category => {
+                        const option = document.createElement("option");
+                        option.value = category.parent_id; // Use category parent_id as the value
+                        option.textContent = category.name;
+                        parentCategorySelect.appendChild(option);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching categories:", error);
+            });
+        }
+
+        /** SUBMIT CATEGORY **/
+        function submitCategory() {
+            const formData = {
+                name: categoryNameInput.value.trim(),
+                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
+                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
+                custom_sort: sortNumberInput.value.trim() || 0,
+                description: descriptionInput.value.trim() || null
+            };
+
+            console.log("Submitting Data:", formData); // Debugging
+
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${authToken}`,
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Success Response:", data);
+                if (data.message) {
+                    // Show success SweetAlert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: data.message,
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        clearFields();      // Clear input fields after submission
+                        fetchCategories();  // Refresh dropdown
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error submitting category:", error);
+                // Show error SweetAlert
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Error submitting category: ' + error.message
+                });
+            });
+        }
+
+        function clearFields() {
+            categoryNameInput.value = "";
+            sortNumberInput.value = "";
+            descriptionInput.value = "";
+            parentCategorySelect.value = ""; // Reset dropdown
+            photoInput.value = "";           // Reset file input
+        }
+
+        // Event listener for save button
+        saveButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default behavior
+            submitCategory();
+        });
+
+        // Load categories on page load
+        fetchCategories();
     });
 </script>
 
