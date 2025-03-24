@@ -6,6 +6,8 @@
     $current_page = "Show Categories"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- End of Header -->
         <!-- Content -->
         <main class="grow content pt-5" id="content" role="content">
@@ -343,6 +345,7 @@
         });
     });
 </script>
+
 <script>
     const generateActionButtons = (category) => {
         return `
@@ -380,7 +383,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" data-category-id="${category.id}">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash">
                                     </i>
