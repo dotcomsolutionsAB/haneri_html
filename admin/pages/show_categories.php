@@ -426,7 +426,7 @@ $(document).ready(function() {
         // For now, let's do a GET to ensure we have the latest data:
         
         $.ajax({
-            url: `{{base_url}}/categories/${categoryId}`,
+            url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
             type: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
