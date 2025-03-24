@@ -46,8 +46,8 @@
                                 <div class="relative">
                                     <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
-                                    <input class="input input-sm pl-8" data-datatable-search="#members_table"
-                                        placeholder="Search Members" type="text" />
+                                    <input class="input input-sm pl-8" data-datatable-search="#categories_table"
+                                        placeholder="Search categories" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
@@ -121,118 +121,283 @@
             <!-- End of Container -->
         </main>
         <!-- End of Content -->
-<script>
-    $(document).ready(function () {
-        const token = localStorage.getItem('auth_token');
+        <script>
+$(document).ready(function () {
+    const token = localStorage.getItem('auth_token');
+
+    let itemsPerPage = 10;   // Default limit
+    let currentPage = 1;     // Current page index
+    let totalItems = 0;      // Will be set from response "records"
+    let searchTerm = "";     // Will hold the search input text
+
+    const $searchInput = $("input[data-datatable-search=\"#categories_table\"]");
+
+    // Function to fetch categories from the server
+    const fetchCategories = () => {
+        // Calculate offset based on page number and limit
+        const offset = (currentPage - 1) * itemsPerPage;
         
-        let itemsPerPage = 10;
-        let currentPage = 1;
-        let totalItems = 0;
+        // Build request data
+        const requestData = {
+            limit: itemsPerPage,
+            offset: offset
+        };
+        // Include "name" in request if searchTerm >= 3
+        if (searchTerm.length >= 3) {
+            requestData.name = searchTerm;
+        }
 
-        const fetchCategories = () => {
-            const offset = (currentPage - 1) * itemsPerPage;
-
-            $.ajax({
-                url: `<?php echo BASE_URL; ?>/categories/fetch`,
-                type: 'POST',
-                headers: { Authorization: `Bearer ${token}` },
-                success: (response) => {
-                    if (response?.data) {
-                        totalItems = response.records;
-                        populateTable(response.data);
-                        updatePagination();
-                    } else {
-                        console.error("Unexpected response format:", response);
-                    }
-                },
-                error: (error) => {
-                    console.error("Error fetching data:", error);
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/categories/fetch`,
+            type: 'POST',
+            headers: { Authorization: `Bearer ${token}` },
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(requestData), // Send limit, offset, and name (if any)
+            success: (response) => {
+                // Expecting:
+                // {
+                //   "message": "...",
+                //   "data": [...],
+                //   "count_perpage": 10,
+                //   "records": 14
+                // }
+                if (response?.data) {
+                    totalItems = response.records;    // total category count
+                    populateTable(response.data);     // fill table rows
+                    updatePagination();               // rebuild pagination
+                } else {
+                    console.error("Unexpected response format:", response);
                 }
-            });
-        };
-
-        const populateTable = (data) => {
-            const tbody = $("#categories-table tbody");
-            tbody.empty();
-
-            if (!data.length) {
-                tbody.append('<tr><td colspan="6" class="text-center">No categories found</td></tr>');
-                return;
+            },
+            error: (error) => {
+                console.error("Error fetching data:", error);
             }
+        });
+    };
 
-            data.forEach((category) => {
-                tbody.append(`
-                    <tr>
-                        <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${category.name}">
-                        </td>
-                        <td>
-                            <div class="flex items-center gap-2.5">
-                                <div class="">
-                                    <img class="h-9 rounded-full" src="${category.photo ? category.photo : '../../images/default/df001.png'}" />
-                                </div>
-                                <div class="flex flex-col gap-0.5">
-                                    <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
-                                        ${category.name}
-                                    </a>
-                                    <span class="text-xs text-gray-700 font-normal">
-                                        ${category.description ? category.description : 'No description available'}
-                                    </span>
-                                </div>
+    // Render categories into table
+    const populateTable = (data) => {
+        const $tbody = $("#categories-table tbody");
+        $tbody.empty();
+
+        if (!data.length) {
+            $tbody.append('<tr><td colspan="6" class="text-center">No categories found</td></tr>');
+            return;
+        }
+
+        // For each category, build a row
+        data.forEach((category) => {
+            $tbody.append(`
+                <tr>
+                    <td class="text-center">
+                        <input class="checkbox checkbox-sm" type="checkbox" value="${category.name}">
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-2.5">
+                            <div>
+                                <img class="h-9 rounded-full" src="${category.photo ? category.photo : '../../images/default/df001.png'}" />
                             </div>
-                        </td>
-                        <td>
-                            <span class="badge badge-sm badge-light badge-outline">
-                                ${category.parent_id}
-                            </span>
-                        </td>
-                        <td>
-                            <span class="badge badge-sm badge-light badge-outline">
-                                ${category.custom_sort ? category.custom_sort : 'NA'}
-                            </span>
-                        </td>
-                        <td class="w-[60px]">${generateActionButtons(category)}</td>
-                    </tr>
-                `);
-            });
-        };
-
-        const updatePagination = () => {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const pagination = $(".pagination");
-            pagination.empty();
-
-            if (currentPage > 1) {
-                pagination.append(`<button class="btn btn-sm prev-page" data-page="${currentPage - 1}">Previous</button>`);
-            }
-            for (let page = 1; page <= totalPages; page++) {
-                pagination.append(`<button class="btn btn-sm page-number ${page === currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`);
-            }
-            if (currentPage < totalPages) {
-                pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
-            }
-            $("#count-categories").text(`${totalItems} Categories`);
-        };
-
-        $(".pagination").on("click", "button", function () {
-            currentPage = parseInt($(this).data("page"));
-            fetchCategories();
+                            <div class="flex flex-col gap-0.5">
+                                <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
+                                    ${category.name}
+                                </a>
+                                <span class="text-xs text-gray-700 font-normal">
+                                    ${category.description ? category.description : 'No description available'}
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge badge-sm badge-light badge-outline">
+                            ${category.parent_id}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge badge-sm badge-light badge-outline">
+                            ${category.custom_sort ? category.custom_sort : 'NA'}
+                        </span>
+                    </td>
+                    <td class="w-[60px]">${generateActionButtons(category)}</td>
+                </tr>
+            `);
         });
+    };
 
-        $("[data-datatable-size]").on("change", function () {
-            itemsPerPage = parseInt($(this).val());
-            currentPage = 1;
-            fetchCategories();
-        });
+    // Rebuild pagination buttons
+    const updatePagination = () => {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const $pagination = $(".pagination");
+        $pagination.empty();
 
-        const perPageSelect = $("[data-datatable-size]");
-        [5, 10, 25, 50, 100].forEach((size) => {
-            perPageSelect.append(`<option value="${size}">${size}</option>`);
-        });
-        perPageSelect.val(itemsPerPage);
+        // Previous button
+        if (currentPage > 1) {
+            $pagination.append(`<button class="btn btn-sm prev-page" data-page="${currentPage - 1}">Previous</button>`);
+        }
 
+        // Page number buttons
+        for (let page = 1; page <= totalPages; page++) {
+            $pagination.append(`
+                <button 
+                    class="btn btn-sm page-number ${page === currentPage ? 'active' : ''}" 
+                    data-page="${page}">
+                    ${page}
+                </button>
+            `);
+        }
+
+        // Next button
+        if (currentPage < totalPages) {
+            $pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
+        }
+
+        // Show total items
+        $("#count-categories").text(`${totalItems} Categories`);
+    };
+
+    // Handle pagination clicks (previous, next, or direct page)
+    $(".pagination").on("click", "button", function () {
+        currentPage = parseInt($(this).data("page"));
         fetchCategories();
     });
+
+    // Handle page-size changes (itemsPerPage)
+    $("[data-datatable-size]").on("change", function () {
+        itemsPerPage = parseInt($(this).val());
+        currentPage = 1;   // Reset to first page
+        fetchCategories();
+    });
+
+    // Build page-size dropdown
+    const $perPageSelect = $("[data-datatable-size]");
+    [5, 10, 25, 50, 100].forEach((size) => {
+        $perPageSelect.append(`<option value="${size}">${size}</option>`);
+    });
+    $perPageSelect.val(itemsPerPage);
+
+    // Search input: trigger fetch when 3+ chars typed or cleared
+    $searchInput.on("keyup", function () {
+        searchTerm = $(this).val().trim();
+        currentPage = 1;  // Always reset to page 1 on new search
+        fetchCategories();
+    });
+
+    // Initial fetch on page load
+    fetchCategories();
+});
+</script>
+
+<script>
+    // $(document).ready(function () {
+    //     const token = localStorage.getItem('auth_token');
+        
+    //     let itemsPerPage = 10;
+    //     let currentPage = 1;
+    //     let totalItems = 0;
+
+    //     const fetchCategories = () => {
+    //         const offset = (currentPage - 1) * itemsPerPage;
+
+    //         $.ajax({
+    //             url: `<?php echo BASE_URL; ?>/categories/fetch`,
+    //             type: 'POST',
+    //             headers: { Authorization: `Bearer ${token}` },
+    //             success: (response) => {
+    //                 if (response?.data) {
+    //                     totalItems = response.records;
+    //                     populateTable(response.data);
+    //                     updatePagination();
+    //                 } else {
+    //                     console.error("Unexpected response format:", response);
+    //                 }
+    //             },
+    //             error: (error) => {
+    //                 console.error("Error fetching data:", error);
+    //             }
+    //         });
+    //     };
+
+    //     const populateTable = (data) => {
+    //         const tbody = $("#categories-table tbody");
+    //         tbody.empty();
+
+    //         if (!data.length) {
+    //             tbody.append('<tr><td colspan="6" class="text-center">No categories found</td></tr>');
+    //             return;
+    //         }
+
+    //         data.forEach((category) => {
+    //             tbody.append(`
+    //                 <tr>
+    //                     <td class="text-center">
+    //                         <input class="checkbox checkbox-sm" type="checkbox" value="${category.name}">
+    //                     </td>
+    //                     <td>
+    //                         <div class="flex items-center gap-2.5">
+    //                             <div class="">
+    //                                 <img class="h-9 rounded-full" src="${category.photo ? category.photo : '../../images/default/df001.png'}" />
+    //                             </div>
+    //                             <div class="flex flex-col gap-0.5">
+    //                                 <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
+    //                                     ${category.name}
+    //                                 </a>
+    //                                 <span class="text-xs text-gray-700 font-normal">
+    //                                     ${category.description ? category.description : 'No description available'}
+    //                                 </span>
+    //                             </div>
+    //                         </div>
+    //                     </td>
+    //                     <td>
+    //                         <span class="badge badge-sm badge-light badge-outline">
+    //                             ${category.parent_id}
+    //                         </span>
+    //                     </td>
+    //                     <td>
+    //                         <span class="badge badge-sm badge-light badge-outline">
+    //                             ${category.custom_sort ? category.custom_sort : 'NA'}
+    //                         </span>
+    //                     </td>
+    //                     <td class="w-[60px]">${generateActionButtons(category)}</td>
+    //                 </tr>
+    //             `);
+    //         });
+    //     };
+
+    //     const updatePagination = () => {
+    //         const totalPages = Math.ceil(totalItems / itemsPerPage);
+    //         const pagination = $(".pagination");
+    //         pagination.empty();
+
+    //         if (currentPage > 1) {
+    //             pagination.append(`<button class="btn btn-sm prev-page" data-page="${currentPage - 1}">Previous</button>`);
+    //         }
+    //         for (let page = 1; page <= totalPages; page++) {
+    //             pagination.append(`<button class="btn btn-sm page-number ${page === currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`);
+    //         }
+    //         if (currentPage < totalPages) {
+    //             pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
+    //         }
+    //         $("#count-categories").text(`${totalItems} Categories`);
+    //     };
+
+    //     $(".pagination").on("click", "button", function () {
+    //         currentPage = parseInt($(this).data("page"));
+    //         fetchCategories();
+    //     });
+
+    //     $("[data-datatable-size]").on("change", function () {
+    //         itemsPerPage = parseInt($(this).val());
+    //         currentPage = 1;
+    //         fetchCategories();
+    //     });
+
+    //     const perPageSelect = $("[data-datatable-size]");
+    //     [5, 10, 25, 50, 100].forEach((size) => {
+    //         perPageSelect.append(`<option value="${size}">${size}</option>`);
+    //     });
+    //     perPageSelect.val(itemsPerPage);
+
+    //     fetchCategories();
+    // });
     const generateActionButtons = (category) => {
         return `
             <div class="menu" data-menu="true">
