@@ -288,8 +288,6 @@
         fetchCategories();
     });
 </script>
-<!-- Make sure you load SweetAlert2 before using Swal.fire() -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     // This function generates the action buttons in your table
@@ -354,6 +352,7 @@
     };
 </script>
 
+<!-- DELETE Operation -->
 <script>
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
@@ -393,7 +392,7 @@
                                 text: data.message || 'Category deleted successfully!'
                             }).then(() => {
                                 // Optionally refresh/reload categories if needed:
-                                // fetchCategories();
+                                fetchCategories();
                             });
                         },
                         error: function (xhr, status, error) {
@@ -408,6 +407,122 @@
             });
         });
     });
+</script>
+
+<!-- UPDATE Operation -->
+<script>
+$(document).ready(function() {
+    const token = localStorage.getItem('auth_token'); // Your bearer token
+
+    // 1) When user clicks the Edit link
+    $(document).on('click', '.edit-category-btn', function(e) {
+        e.preventDefault();
+        
+        const categoryId = $(this).data('category-id');
+        
+        // (Optional) If you already have the category data in memory,
+        // you can pass it directly to openEditCategoryPopup(...) 
+        // and skip this GET.
+        // For now, let's do a GET to ensure we have the latest data:
+        
+        $.ajax({
+            url: `{{base_url}}/categories/${categoryId}`,
+            type: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            success: function(response) {
+                // Example response: { data: { id: 1, name: "...", ... }, message: "..."}
+                if (response?.data) {
+                    openEditCategoryPopup(categoryId, response.data);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Category data not found.'
+                    });
+                }
+            },
+            error: function(xhr) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: xhr.responseJSON?.message || 'Unable to fetch category.'
+                });
+            }
+        });
+    });
+
+    // 2) Function to open the SweetAlert2 popup with editable fields
+    function openEditCategoryPopup(categoryId, categoryData) {
+        Swal.fire({
+            title: 'Edit Category',
+            html: `
+                <input id="swal-cat-name" class="swal2-input" placeholder="Name" 
+                       value="${categoryData.name || ''}">
+                <input id="swal-cat-parent" class="swal2-input" placeholder="Parent ID" 
+                       value="${categoryData.parent_id || ''}">
+                <input id="swal-cat-photo" class="swal2-input" placeholder="Photo URL" 
+                       value="${categoryData.photo || ''}">
+                <input id="swal-cat-sort" class="swal2-input" placeholder="Custom Sort" 
+                       value="${categoryData.custom_sort || ''}">
+                <textarea id="swal-cat-description" class="swal2-textarea" placeholder="Description"
+                >${categoryData.description || ''}</textarea>
+            `,
+            focusConfirm: false,
+            showCancelButton: true,
+            confirmButtonText: 'Update',
+            // preConfirm collects input values before the user clicks "Update"
+            preConfirm: () => {
+                return {
+                    name: document.getElementById('swal-cat-name').value.trim(),
+                    parent_id: document.getElementById('swal-cat-parent').value.trim() || null,
+                    photo: document.getElementById('swal-cat-photo').value.trim(),
+                    custom_sort: document.getElementById('swal-cat-sort').value.trim() || 0,
+                    description: document.getElementById('swal-cat-description').value.trim() || null
+                };
+            }
+        }).then((result) => {
+            // If user clicked "Update" (confirm button)
+            if (result.isConfirmed) {
+                const payload = result.value; // The object from preConfirm
+                updateCategory(categoryId, payload);
+            }
+        });
+    }
+
+    // 3) Send a PUT request to update category
+    function updateCategory(categoryId, payload) {
+        $.ajax({
+            url: `{{base_url}}/categories/${categoryId}`,
+            type: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(payload),
+            success: function(data) {
+                // Example success: { "message": "Category updated successfully!" }
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Updated',
+                    text: data.message || 'Category updated successfully!'
+                }).then(() => {
+                    // Optionally refresh your categories list:
+                    fetchCategories();
+                });
+            },
+            error: function(xhr) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: xhr.responseJSON?.message || 'Unable to update category.'
+                });
+            }
+        });
+    }
+});
 </script>
 
 <!-- <script>
