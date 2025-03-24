@@ -522,7 +522,7 @@ $(document).ready(function() {
     // PUT request to /products/:id (with the new data)
     function updateCategoryViaProductsApi(categoryId, payload) {
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/products/${categoryId}`,
+            url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
             type: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
