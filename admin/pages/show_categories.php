@@ -380,7 +380,7 @@
                         <div class="menu-separator">
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
+                            <a class="menu-link" data-category-id="${category.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash">
                                     </i>
