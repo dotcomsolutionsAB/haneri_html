@@ -5,7 +5,11 @@
     $current_page = "Add Category"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
-
+<style>
+    .cardx{
+        width:100%;
+    }
+</style>
             <!-- End of Header -->
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">
@@ -40,7 +44,7 @@
                                     <!-- Description -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Description</label>
-                                        <div class="card pb-2.5">
+                                        <div class="card cardx">
                                             <textarea class="note-codable text-edit" id="description" aria-multiline="true"></textarea>
                                         </div>
                                     </div>

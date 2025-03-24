@@ -134,7 +134,7 @@
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/categories`,
-                type: 'GET',
+                type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 success: (response) => {
                     if (response?.data) {
