@@ -288,15 +288,79 @@
         fetchCategories();
     });
 </script>
+<!-- Make sure you load SweetAlert2 before using Swal.fire() -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Example snippet inside your HTML -->
+<script>
+    // This function generates the action buttons in your table
+    const generateActionButtons = (category) => {
+        return `
+            <div class="menu" data-menu="true">
+                <div class="menu-item menu-item-dropdown"
+                     data-menu-item-offset="0, 10px"
+                     data-menu-item-placement="bottom-end"
+                     data-menu-item-placement-rtl="bottom-start"
+                     data-menu-item-toggle="dropdown"
+                     data-menu-item-trigger="click|lg:click">
+                    <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                        <i class="ki-filled ki-dots-vertical"></i>
+                    </button>
+                    <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
+                        
+                        <!-- VIEW -->
+                        <div class="menu-item">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-search-list"></i>
+                                </span>
+                                <span class="menu-title">
+                                    View
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="menu-separator"></div>
+
+                        <!-- EDIT -->
+                        <div class="menu-item">
+                            <a class="menu-link" href="#" data-category-id="${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-pencil"></i>
+                                </span>
+                                <span class="menu-title">
+                                    Edit
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="menu-separator"></div>
+
+                        <!-- REMOVE -->
+                        <!-- Here is where we add the .delete-category-btn class -->
+                        <div class="menu-item">
+                            <a class="menu-link delete-category-btn" href="#" data-category-id="${category.id}">
+                                <span class="menu-icon">
+                                    <i class="ki-filled ki-trash"></i>
+                                </span>
+                                <span class="menu-title">
+                                    Remove
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+</script>
+
 <script>
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
 
-        // Listen for clicks on the "Remove" link
+        // Listen for clicks on elements with .delete-category-btn
         $(document).on('click', '.delete-category-btn', function (e) {
-            e.preventDefault(); // Prevent navigation
+            e.preventDefault(); // Prevent link navigation
 
             // Get category ID from data attribute
             const categoryId = $(this).data('category-id');
@@ -346,7 +410,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     const generateActionButtons = (category) => {
         return `
             <div class="menu" data-menu="true">
@@ -398,10 +462,10 @@
             </div>
         `;
     };
-</script>
+</script> -->
 
 <!-- Example snippet inside your HTML -->
-<script>
+<!-- <script>
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
 
@@ -455,7 +519,7 @@
             });
         });
     });
-</script>
+</script> -->
 
 <!-- Footer -->
 <?php include("footer1.php"); ?>
