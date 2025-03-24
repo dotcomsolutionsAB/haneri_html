@@ -71,32 +71,14 @@
                                                 <th class="min-w-[300px]">
                                                     <span class="sort asc">
                                                         <span class="sort-label text-gray-700 font-normal">
-                                                            Member
+                                                            Brand Name
                                                         </span>
                                                         <span class="sort-icon">
                                                         </span>
                                                     </span>
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
-                                                    Roles
-                                                </th>
-                                                <th class="min-w-[165px]">
-                                                    <span class="sort">
-                                                        <span class="sort-label text-gray-700 font-normal">
-                                                            Mobile
-                                                        </span>
-                                                        <span class="sort-icon">
-                                                        </span>
-                                                    </span>
-                                                </th>
-                                                <th class="min-w-[165px]">
-                                                    <span class="sort">
-                                                        <span class="sort-label text-gray-700 font-normal">
-                                                            Status
-                                                        </span>
-                                                        <span class="sort-icon">
-                                                        </span>
-                                                    </span>
+                                                    Sort Number
                                                 </th>
                                                 <th class="w-[60px]">
                                                 </th>
