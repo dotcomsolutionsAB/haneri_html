@@ -582,7 +582,7 @@ $(document).ready(function() {
                     text: data.message || 'Category updated successfully!'
                 }).then(() => {
                     // Optionally refresh your categories table/list:
-                    // fetchCategories();
+                    fetchCategories();
                 });
             },
             error: function (xhr) {
