@@ -138,7 +138,7 @@
                 headers: { Authorization: `Bearer ${token}` },
                 success: (response) => {
                     if (response?.data) {
-                        totalItems = response.count;
+                        totalItems = response.records;
                         populateTable(response.data);
                         updatePagination();
                     } else {
