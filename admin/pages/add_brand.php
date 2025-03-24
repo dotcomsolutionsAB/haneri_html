@@ -5,11 +5,8 @@
     $current_page = "Add Brands"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
-<style>
-    .cardx{
-        width:100%;
-    }
-</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
             <!-- End of Header -->
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">
@@ -17,7 +14,7 @@
                 <div class="container-fixed" id="content_container">
                 </div>
                 <!-- End of Container -->
-                
+
                 <!-- Container -->
                 <div class="container-fixed">
                     <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
@@ -29,10 +26,10 @@
                             </div>
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                    <!-- Category Name -->
+                                    <!-- Brand Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Brand Name</label>
-                                        <input class="input" type="text" id="categoryName" placeholder="Category Name">
+                                        <input class="input" type="text" id="brandName" placeholder="Brand Name">
                                     </div>
 
                                     <!-- Sort Number -->
@@ -49,18 +46,18 @@
                                         </div>
                                     </div>
 
-                                    <!-- Category Logo -->
+                                    <!-- Brand Logo -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
                                         <label class="form-label max-w-56">Photo</label>
                                         <div class="flex items-center justify-between flex-wrap grow gap-2.5">
                                             <span class="text-2sm">150x150px JPEG, PNG Image</span>
-                                            <input type="file" id="photo" accept=".png, .jpg, .jpeg">
+                                            <input type="file" id="brandLogo" accept=".png, .jpg, .jpeg">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary" id="saveCategory">Save Brand</button>
+                                    <button class="btn btn-primary" id="saveBrand">Save Brand</button>
                                 </div>
                             </div>
                         </div>
@@ -68,113 +65,85 @@
                 </div>
                 <!-- End of Container -->
             </main>
+
             <!-- End of Content -->
             <!-- Footer -->
 <?php include("footer1.php"); ?>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const parentCategorySelect = document.querySelector("#parentCategory");
-        const saveButton = document.querySelector("#saveCategory");
-        const categoryNameInput = document.querySelector("#categoryName");
-        const sortNumberInput = document.querySelector("#sortNumber");
-        const descriptionInput = document.querySelector("#description");
-        const photoInput = document.querySelector("#photo");
+  document.getElementById('saveBrand').addEventListener('click', function() {
+    // 1) Get the token from localStorage
+    const token = localStorage.getItem('auth_token'); // e.g. "abc123"
 
-        const apiUrl = `<?php echo BASE_URL; ?>/categories/fetch`;
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+    // 2) Collect field values
+    const name = document.getElementById('brandName').value.trim();
+    const custom_sort = document.getElementById('sortNumber').value.trim();
+    const description = document.getElementById('description').value.trim();
+    
+    // NOTE: For demonstration, we’ll treat `logo` as an integer ID,
+    // but in practice you may need to handle file uploads differently.
+    const logo = 2;
 
-        /** FETCH CATEGORIES **/
-        function fetchCategories() {
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.data) {
-                    parentCategorySelect.innerHTML = ""; // Clear existing options
+    // 3) Build the request payload
+    const payload = {
+      name,
+      logo,
+      custom_sort,
+      description
+    };
 
-                    // Default option
-                    const defaultOption = document.createElement("option");
-                    defaultOption.value = "";
-                    defaultOption.textContent = "Select Parent Category";
-                    parentCategorySelect.appendChild(defaultOption);
-
-                     // Populate dropdown with ALL categories (parent & child)
-                     data.data.forEach(category => {
-                        const option = document.createElement("option");
-                        option.value = category.parent_id; // Use category ID as value
-                        option.textContent = category.name;
-                        parentCategorySelect.appendChild(option);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching categories:", error);
-            });
+    // 4) Send the POST request
+    fetch('<?php echo BASE_URL; ?>/brands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Check if there's an error (depending on your API's response format)
+        if (data.error) {
+          // Show error alert
+          Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: data.error,
+          });
+        } else {
+          // 5) If success, show success alert
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: data.message || 'Brand created successfully!',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            // Clear the form fields
+            document.getElementById('brandName').value = '';
+            document.getElementById('sortNumber').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('brandLogo').value = '';
+          });
         }
-
-        /** SUBMIT CATEGORY **/
-        function submitCategory() {
-            const formData = {
-                name: categoryNameInput.value.trim(),
-                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
-                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
-                custom_sort: sortNumberInput.value.trim() || 0,
-                description: descriptionInput.value.trim() || null
-            };
-
-            console.log("Submitting Data:", formData); // Debugging
-
-            fetch(apiUrl, {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${authToken}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Success Response:", data);
-                if (data.message) {
-                    // alert(data.message); // Show success message
-                    clearFields(); // Clear input fields after submission
-                    fetchCategories(); // Refresh dropdown
-                }
-            })
-            .catch(error => {
-                console.error("Error submitting category:", error);
-                alert("Error submitting category: " + error.message);
-            });
-        }
-
-        function clearFields() {
-            categoryNameInput.value = "";
-            sortNumberInput.value = "";
-            descriptionInput.value = "";
-            parentCategorySelect.value = ""; // Reset dropdown
-            photoInput.value = ""; // Reset file input
-        }
-        // Event listener for save button
-        saveButton.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default behavior
-            submitCategory();
+      })
+      .catch(error => {
+        // Show error alert if fetch fails
+        console.error('Error:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'Something went wrong while saving brand.'
         });
-
-        // Load categories on page load
-        fetchCategories();
-    });
+      });
+  });
 </script>
 
 
 <style>
+    .cardx{
+        width:100%;
+    }
     .text-edit{
         width: 100%;
         min-height: 120px;
