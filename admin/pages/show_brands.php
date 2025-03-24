@@ -142,8 +142,8 @@
             const offset = (currentPage - 1) * itemsPerPage;
 
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/brands`,
-                type: 'GET',
+                url: `<?php echo BASE_URL; ?>/brands/fetch`,
+                type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 success: (response) => {
                     if (response?.data) {
