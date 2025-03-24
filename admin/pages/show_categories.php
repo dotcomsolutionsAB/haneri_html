@@ -404,17 +404,52 @@
 </script>
 
 <!-- UPDATE Operation -->
-<!-- Make sure you load SweetAlert2: -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-<!-- Make sure you load jQuery: -->
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
+<!-- Custom styling for SweetAlert2 popup -->
 <style>
   .swal2-my-small-popup {
     font-size: 0.85rem;      /* smaller text */
     line-height: 1.2;        /* tighter line spacing */
     /* We do NOT reduce width here, so default or custom width remains. */
     /* If you want to reduce width, set max-width here, e.g.: max-width: 600px; */
+  }
+  /* Forces the popup to be wider and reduces height/spacing */
+  .swal2-wide-and-short {
+    width: 700px !important;       /* Increase overall width */
+    max-width: none !important;    /* Disable default max-width constraints */
+    padding: 20px 30px !important; /* Adjust padding as needed */
+  }
+
+  /* Adjusts spacing between the HTML content and the action buttons */
+  .swal2-wide-and-short .swal2-html-container {
+    margin: 10px 0 !important;
+  }
+  
+  /* Each label + input on one horizontal line */
+  .swal2-field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    justify-content: flex-start;
+  }
+  
+  /* Label styling (fixed width to keep inputs aligned) */
+  .swal2-field-row label {
+    width: 130px;        /* Adjust as needed */
+    margin-right: 10px;  /* Space between label and input */
+    font-size: 0.9rem;   /* Slightly smaller text if desired */
+  }
+
+  /* Inputs occupy remaining space on the same row */
+  .swal2-field-row input,
+  .swal2-field-row textarea {
+    flex: 1;               /* Fill remaining row width */
+    margin: 0 !important;  /* Remove default SweetAlert margins */
+    font-size: 0.9rem;     /* Match label size if you want */
+  }
+
+  /* Optional: reduce spacing on the "Update" and "Cancel" buttons area */
+  .swal2-wide-and-short .swal2-actions {
+    margin-top: 12px !important;
   }
 </style>
 
@@ -478,25 +513,35 @@ $(document).ready(function() {
             },
             // Build the popup HTML with labels
             html: `
-              <label for="swal-cat-name" style="display:block; margin-bottom:4px;">Category Name</label>
-              <input id="swal-cat-name" class="swal2-input" style="margin-bottom:10px;" 
-                     value="${categoryData.name || ''}">
-
-              <label for="swal-cat-parent" style="display:block; margin-bottom:4px;">Parent ID</label>
-              <input id="swal-cat-parent" class="swal2-input" style="margin-bottom:10px;"
-                     value="${categoryData.parent_id || ''}">
-
-              <label for="swal-cat-photo" style="display:block; margin-bottom:4px;">Photo URL</label>
-              <input id="swal-cat-photo" class="swal2-input" style="margin-bottom:10px;"
-                     value="${categoryData.photo || ''}">
-
-              <label for="swal-cat-sort" style="display:block; margin-bottom:4px;">Custom Sort</label>
-              <input id="swal-cat-sort" class="swal2-input" style="margin-bottom:10px;"
-                     value="${categoryData.custom_sort || 0}">
-
-              <label for="swal-cat-description" style="display:block; margin-bottom:4px;">Description</label>
-              <textarea id="swal-cat-description" class="swal2-textarea"
-                        style="margin-bottom:10px;">${categoryData.description || ''}</textarea>
+              <div class="swal2-field-row">
+                  <label for="swal-cat-name">Name</label>
+                  <input id="swal-cat-name" type="text" 
+                         value="${categoryData.name || ''}">
+                </div>
+                
+                <div class="swal2-field-row">
+                  <label for="swal-cat-parent">Parent ID</label>
+                  <input id="swal-cat-parent" type="text" 
+                         value="${categoryData.parent_id || ''}">
+                </div>
+                
+                <div class="swal2-field-row">
+                  <label for="swal-cat-photo">Photo URL</label>
+                  <input id="swal-cat-photo" type="text" 
+                         value="${categoryData.photo || ''}">
+                </div>
+                
+                <div class="swal2-field-row">
+                  <label for="swal-cat-sort">Custom Sort</label>
+                  <input id="swal-cat-sort" type="number" 
+                         value="${categoryData.custom_sort || 0}">
+                </div>
+                
+                <div class="swal2-field-row">
+                  <label for="swal-cat-description">Description</label>
+                  <textarea id="swal-cat-description"
+                  >${categoryData.description || ''}</textarea>
+                </div>
             `,
             focusConfirm: false,
             showCancelButton: true,
