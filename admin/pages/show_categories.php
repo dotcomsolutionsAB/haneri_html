@@ -305,7 +305,6 @@
                     </button>
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
                         
-                        <!-- VIEW -->
                         <div class="menu-item">
                             <a class="menu-link" href="#" data-category-id="${category.id}">
                                 <span class="menu-icon">
@@ -319,15 +318,10 @@
 
                         <div class="menu-separator"></div>
 
-                        <!-- EDIT -->
                         <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-pencil"></i>
-                                </span>
-                                <span class="menu-title">
-                                    Edit
-                                </span>
+                            <a class="menu-link edit-category-btn" href="#" data-category-id="${category.id}">
+                                <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
+                                <span class="menu-title">Edit</span>
                             </a>
                         </div>
 
