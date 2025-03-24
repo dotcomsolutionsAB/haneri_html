@@ -193,7 +193,7 @@
             if (currentPage < totalPages) {
                 pagination.append(`<button class="btn btn-sm next-page" data-page="${currentPage + 1}">Next</button>`);
             }
-            $("#count-brands").text(`COUNT : ${totalItems} Brands`);
+            $("#count-brands").text(`${totalItems} Brands`);
         };
 
         $(".pagination").on("click", "button", function () {
