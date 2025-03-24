@@ -319,7 +319,7 @@
                         <div class="menu-separator"></div>
 
                         <div class="menu-item">
-                            <a class="menu-link edit-category-btn" href="#" data-category-id="${category.id}">
+                            <a class="menu-link edit-category-btn" href="#" data-category-id="${category.name}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                 <span class="menu-title">Edit</span>
                             </a>
@@ -404,40 +404,58 @@
 </script>
 
 <!-- UPDATE Operation -->
-<script>
-$(document).ready(function() {
-    const token = localStorage.getItem('auth_token'); // Your bearer token
+<!-- Make sure you load SweetAlert2: -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<!-- Make sure you load jQuery: -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-    // 1) When user clicks the Edit link
-    $(document).on('click', '.edit-category-btn', function(e) {
+<script>
+$(document).ready(function () {
+    const token = localStorage.getItem('auth_token'); // Or wherever your token is stored
+
+    /**
+     * 1) When user clicks the Edit link
+     * We read the category's NAME from data-category-id,
+     * then fetch the category's data via POST to /categories/fetch.
+     */
+    $(document).on('click', '.edit-category-btn', function (e) {
         e.preventDefault();
         
-        const categoryId = $(this).data('category-id');
-        
-        // (Optional) If you already have the category data in memory,
-        // you can pass it directly to openEditCategoryPopup(...) 
-        // and skip this GET.
-        // For now, let's do a GET to ensure we have the latest data:
-        
+        // 'categoryName' is actually stored as data-category-id here
+        const categoryName = $(this).data('category-id');
+        if (!categoryName) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No category name found in data attribute.'
+            });
+            return;
+        }
+
+        // 2) Fetch category data by name
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
-            type: 'GET',
+            url: `<?php echo BASE_URL; ?>/categories/fetch`,
+            type: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             },
-            success: function(response) {
-                // Example response: { data: { id: 1, name: "...", ... }, message: "..."}
-                if (response?.data) {
-                    openEditCategoryPopup(categoryId, response.data);
+            data: JSON.stringify({ name: categoryName }),
+            success: function (response) {
+                // Expecting: { "message": "...", "data": [...], "count": 1, "records": 1 }
+                // We'll use response.data[0] if it exists
+                if (response?.data && response.data.length > 0) {
+                    const categoryItem = response.data[0];
+                    openEditCategoryPopup(categoryItem);
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Error',
-                        text: 'Category data not found.'
+                        title: 'Not Found',
+                        text: `No categories found with name: ${categoryName}`
                     });
                 }
             },
-            error: function(xhr) {
+            error: function (xhr, status, error) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
@@ -447,8 +465,21 @@ $(document).ready(function() {
         });
     });
 
-    // 2) Function to open the SweetAlert2 popup with editable fields
-    function openEditCategoryPopup(categoryId, categoryData) {
+    /**
+     * 3) Open SweetAlert2 with category data. 
+     *    The user edits fields, then we PUT /products/:id with the updated info.
+     */
+    function openEditCategoryPopup(categoryData) {
+        // categoryData example:
+        // {
+        //   "id": 1,
+        //   "name": "Ceiling Fans",
+        //   "parent_id": null,
+        //   "photo": null,
+        //   "custom_sort": 0,
+        //   "description": null
+        // }
+
         Swal.fire({
             title: 'Edit Category',
             html: `
@@ -459,55 +490,67 @@ $(document).ready(function() {
                 <input id="swal-cat-photo" class="swal2-input" placeholder="Photo URL" 
                        value="${categoryData.photo || ''}">
                 <input id="swal-cat-sort" class="swal2-input" placeholder="Custom Sort" 
-                       value="${categoryData.custom_sort || ''}">
-                <textarea id="swal-cat-description" class="swal2-textarea" placeholder="Description"
-                >${categoryData.description || ''}</textarea>
+                       value="${categoryData.custom_sort || 0}">
+                <textarea id="swal-cat-description" class="swal2-textarea" 
+                          placeholder="Description">${categoryData.description || ''}</textarea>
             `,
             focusConfirm: false,
             showCancelButton: true,
             confirmButtonText: 'Update',
-            // preConfirm collects input values before the user clicks "Update"
             preConfirm: () => {
-                return {
-                    name: document.getElementById('swal-cat-name').value.trim(),
-                    parent_id: document.getElementById('swal-cat-parent').value.trim() || null,
-                    photo: document.getElementById('swal-cat-photo').value.trim(),
-                    custom_sort: document.getElementById('swal-cat-sort').value.trim() || 0,
-                    description: document.getElementById('swal-cat-description').value.trim() || null
-                };
+                // Collect updated values from SweetAlert2 inputs
+                const name = document.getElementById('swal-cat-name').value.trim();
+                const parent_id = document.getElementById('swal-cat-parent').value.trim() || null;
+                const photo = document.getElementById('swal-cat-photo').value.trim() || null;
+                const custom_sort = document.getElementById('swal-cat-sort').value.trim() || 0;
+                const description = document.getElementById('swal-cat-description').value.trim() || null;
+
+                // Return an object to pass along to the .then(...) below
+                return { name, parent_id, photo, custom_sort, description };
             }
         }).then((result) => {
-            // If user clicked "Update" (confirm button)
             if (result.isConfirmed) {
-                const payload = result.value; // The object from preConfirm
-                updateCategory(categoryId, payload);
+                // 4) If user clicked "Update", send a PUT request to /products/:id
+                // categoryData.id is the actual ID from the fetch response
+                const payload = result.value;
+                updateCategoryViaProductsApi(categoryData.id, payload);
             }
         });
     }
 
-    // 3) Send a PUT request to update category
-    function updateCategory(categoryId, payload) {
+    /**
+     * 4) Send updated data to /products/:id (because you said you are hitting the products endpoint).
+     *    We assume the ID from the category will match the product ID.
+     */
+    function updateCategoryViaProductsApi(categoryId, payload) {
+        // Example payload structure (from your question):
+        // {
+        //   "name": "...",
+        //   "parent_id": null,
+        //   "photo": "...",
+        //   "custom_sort": 2,
+        //   "description": "..."
+        // }
         $.ajax({
-            url: `{{base_url}}/categories/${categoryId}`,
+            url: `<?php echo BASE_URL; ?>/products/${categoryId}`,
             type: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify(payload),
-            success: function(data) {
-                // Example success: { "message": "Category updated successfully!" }
+            success: function (data) {
+                // data might be: { "message": "Category updated successfully!" }
                 Swal.fire({
                     icon: 'success',
-                    title: 'Updated',
+                    title: 'Success',
                     text: data.message || 'Category updated successfully!'
                 }).then(() => {
-                    // Optionally refresh your categories list:
-                    fetchCategories();
+                    // Optionally refresh your table:
+                    // fetchCategories();
                 });
             },
-            error: function(xhr) {
+            error: function (xhr) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
@@ -518,6 +561,7 @@ $(document).ready(function() {
     }
 });
 </script>
+
 
 <!-- <script>
     const generateActionButtons = (category) => {
