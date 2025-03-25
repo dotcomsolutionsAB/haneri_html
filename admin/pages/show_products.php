@@ -355,8 +355,6 @@
                     Swal.fire("Error!", "Something went wrong while deleting.", "error");
                 }
             }
-
-
         }
     });
 </script>

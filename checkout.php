@@ -111,143 +111,6 @@
 
                 fetchAddresses();
 
-                window.openUpdateModal = function (id) {
-                    let address = addressList.find(addr => addr.id === id); // Get data from memory
-
-                    if (!address) {
-                        alert("Address not found.");
-                        return;
-                    }
-
-                    $("#update_address_id").val(address.id);
-                    $("#update_name").val(address.name);
-                    $("#update_contact_no").val(address.contact_no);
-                    $("#update_address_line1").val(address.address_line1);
-                    $("#update_address_line2").val(address.address_line2);
-                    $("#update_city").val(address.city);
-                    $("#update_state").val(address.state);
-                    $("#update_postal_code").val(address.postal_code);
-                    $("#update_country").val(address.country);
-
-                    $("#updateAddressModal").modal("show");
-                };
-
-                // Close modal when clicking the 'X' button
-                $(".close").click(function () {
-                    $("#updateAddressModal").modal("hide");
-                });
-
-                // Close modal when clicking outside the modal (on the backdrop)
-                $(document).on("click", function (event) {
-                    if ($(event.target).hasClass("modal")) {
-                        $("#updateAddressModal").modal("hide");
-                    }
-                });
-
-                window.updateAddress = function () {
-                    let id = $("#update_address_id").val();
-                    let updatedData = {
-                        name: $("#update_name").val(),
-                        contact_no: $("#update_contact_no").val(),
-                        address_line1: $("#update_address_line1").val(),
-                        address_line2: $("#update_address_line2").val(),
-                        city: $("#update_city").val(),
-                        state: $("#update_state").val(),
-                        postal_code: $("#update_postal_code").val(),
-                        country: $("#update_country").val(),
-                        is_default: true // Hidden field, always true
-                    };
-
-                    if (
-                        !updatedData.name ||
-                        !updatedData.contact_no ||
-                        !updatedData.address_line1 ||
-                        !updatedData.city ||
-                        !updatedData.state ||
-                        !updatedData.country ||
-                        !updatedData.postal_code
-                    ) {
-                        alert("Please fill all required fields.");
-                        return;
-                    }
-
-                    $.ajax({
-                        url: `${baseUrl}/update/${id}`,
-                        type: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${authToken}`,
-                            "Content-Type": "application/json"
-                        },
-                        data: JSON.stringify(updatedData),
-                        success: function (response) {
-                            if (response.message.includes("success")) {
-                                alert("Address updated successfully.");
-                                $("#updateAddressModal").modal("hide");
-                                fetchAddresses(); // Refresh address list
-                            } else {
-                                alert("Failed to update address. Please try again.");
-                            }
-                        },
-                        error: function () {
-                            alert("Failed to update address. Please try again.");
-                        }
-                    });
-                };
-
-                // Open modal when link is clicked
-                // $("#openAddressModal").click(function (e) {
-                //     e.preventDefault();
-                //     $("#addressModal").modal("show");
-                // });
-
-                // $("#addAddressBtn").click(function () {
-                //     let addressData = {
-                //         name: $("#name").val(),
-                //         contact_no: $("#contact_no").val(),
-                //         address_line1: $("#address_line1").val(),
-                //         address_line2: $("#address_line2").val(),
-                //         city: $("#city").val(),
-                //         state: $("#state").val(),
-                //         country: $("#country").val(),
-                //         postal_code: $("#postal_code").val(),
-                //         is_default: true
-                //     };
-
-                //     if (
-                //         !addressData.name || 
-                //         !addressData.contact_no || 
-                //         !addressData.address_line1 || 
-                //         !addressData.city || 
-                //         !addressData.state || 
-                //         !addressData.country || 
-                //         !addressData.postal_code
-                //     ) {
-                //         alert("Please fill all required fields.");
-                //         return;
-                //     }
-
-                //     $.ajax({
-                //         url: `${baseUrl}/register`,
-                //         type: "POST",
-                //         headers: {
-                //             "Authorization": `Bearer ${authToken}`,
-                //             "Content-Type": "application/json"
-                //         },
-                //         data: JSON.stringify(addressData),
-                //         success: function (response) {
-                //             if (response.message.includes("success")) {
-                //                 $("#checkout-form")[0].reset(); // Reset form fields
-                //                 $("#addressModal").modal("hide"); // Close modal
-                //                 fetchAddresses(); // Refresh address list
-                //             } else {
-                //                 alert("Failed to add address. Please try again.");
-                //             }
-                //         },
-                //         error: function () {
-                //             alert("Failed to add address. Please try again.");
-                //         }
-                //     });
-                // });
                 window.openAddAddressForm = function () {
                     Swal.fire({
                         title: 'Add New Address',
@@ -361,8 +224,153 @@
                 fetchAddresses();
             });
         </script>
+        				<script>
+							function openUpdateModal(addressId) {
+								const address = allAddresses.find(addr => addr.id == addressId);
+								console.log(address);
+								if (!address) {
+									Swal.fire({
+										title: "Error!",
+										text: "Address not found.",
+										icon: "error"
+									});
+									return;
+								}
+
+								Swal.fire({
+									title: 'Update Address',
+									width: '700px',
+									customClass: {
+										confirmButton: 'confirmation-btn'
+									},
+									html: `
+										<style>
+											.swal-form-grid {
+												display: grid;
+												grid-template-columns: 1fr 1fr;
+												gap: 15px;
+											}
+											.swal-form-grid input,
+											.swal-form-grid select {
+												width: 100%;
+												height: 45px;
+												padding: 10px;
+												font-size: 14px;
+												border-radius: 5px;
+												border: 1px solid #ccc;
+											}
+											.swal2-actions {
+												justify-content: flex-end;
+												margin-top: 20px;
+											}
+										</style>
+										<form id="swal-update-form" class="swal-form-grid">
+											<input type="hidden" id="update_address_id" value="${address.id}">
+											<input type="text" id="update_name" value="${address.name || ''}" placeholder="Name">
+											<input type="text" id="update_contact_no" value="${address.contact_no || ''}" placeholder="Contact No">
+											<input type="text" id="update_address_line1" value="${address.address_line1 || ''}" placeholder="Address Line 1">
+											<input type="text" id="update_address_line2" value="${address.address_line2 || ''}" placeholder="Address Line 2 (optional)">
+											<input type="text" id="update_city" value="${address.city || ''}" placeholder="City">
+											
+											<select id="update_state">
+												<option value="">Select State</option>
+												<option value="Mumbai" ${address.state === "Mumbai" ? "selected" : ""}>Mumbai</option>
+												<option value="Delhi" ${address.state === "Delhi" ? "selected" : ""}>Delhi</option>
+												<option value="West Bengal" ${address.state === "West Bengal" ? "selected" : ""}>West Bengal</option>
+											</select>
+
+											<select id="update_country">
+												<option value="India" ${address.country === "India" ? "selected" : ""}>India</option>
+												<option value="Australia" ${address.country === "Australia" ? "selected" : ""}>Australia</option>
+											</select>
+
+											<input type="text" id="update_postal_code" value="${address.postal_code || ''}" placeholder="Pincode">
+										</form>
+									`,
+									showCancelButton: true,
+									confirmButtonText: 'Update Address',
+									cancelButtonText: 'Cancel',
+									focusConfirm: false,
+									preConfirm: () => {
+										return {
+											id: document.getElementById("update_address_id").value,
+											name: document.getElementById("update_name").value,
+											contact_no: document.getElementById("update_contact_no").value,
+											address_line1: document.getElementById("update_address_line1").value,
+											address_line2: document.getElementById("update_address_line2").value || null,
+											city: document.getElementById("update_city").value,
+											state: document.getElementById("update_state").value,
+											country: document.getElementById("update_country").value,
+											postal_code: document.getElementById("update_postal_code").value
+										};
+									}
+								}).then((result) => {
+									if (result.isConfirmed && result.value) {
+										submitUpdatedAddress(result.value);
+									}
+								});
+							}
+
+							function submitUpdatedAddress(data) {
+								const authToken = localStorage.getItem("auth_token");
+								if (!authToken) {
+									Swal.fire("Error", "User not logged in.", "error");
+									return;
+								}
+
+								const updatedData = {
+									name: data.name,
+									contact_no: data.contact_no,
+									address_line1: data.address_line1,
+									address_line2: data.address_line2,
+									city: data.city,
+									state: data.state,
+									country: data.country,
+									postal_code: data.postal_code,
+									is_default: true
+								};
+
+								Swal.fire({
+									title: "Updating...",
+									text: "Please wait",
+									allowOutsideClick: false,
+									didOpen: () => Swal.showLoading()
+								});
+
+								fetch(`<?php echo BASE_URL; ?>/address/update/${data.id}`, {
+									method: "POST",
+									headers: {
+										"Content-Type": "application/json",
+										"Authorization": `Bearer ${authToken}`
+									},
+									body: JSON.stringify(updatedData)
+								})
+								.then(response => response.json())
+								.then(responseData => {
+									Swal.close();
+									if (responseData.message && responseData.message.includes("updated successfully")) {
+										Swal.fire({
+											title: "Updated!",
+											text: "Your address has been updated.",
+											icon: "success",
+											timer: 2000,
+											showConfirmButton: false
+										}).then(() => {
+											location.reload();
+										});
+									} else {
+										Swal.fire("Error!", responseData.message || "Failed to update address.", "error");
+									}
+								})
+								.catch(error => {
+									console.error("Error updating address:", error);
+									Swal.close();
+									Swal.fire("Error", "Something went wrong. Please try again.", "error");
+								});
+							}
+						</script>
         <!-- Update Address Modal -->
-        <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -412,7 +420,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-lg-8">
