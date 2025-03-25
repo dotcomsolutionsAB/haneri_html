@@ -129,7 +129,7 @@
 
         // Add to Cart function
         function addToCart() {
-            console.log("addToCart() function invoked.");
+            // console.log("addToCart() function invoked.");
 
             const variantId = $('#selected-variant').val();
             const quantity  = quantityElem.val() || 1;
@@ -138,7 +138,7 @@
 
             // Ensure variantId is set correctly
             if (!variantId) {
-                alert("Please select a variant before adding to cart.");
+                // alert("Please select a variant before adding to cart.");
                 return;
             }
 

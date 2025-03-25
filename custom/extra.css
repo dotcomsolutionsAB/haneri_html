@@ -2148,8 +2148,8 @@ footer .social-icon {
         top: 6px;
     }
     .wid{
-        background: #e0ecee;
-        border: 1px solid #f5f1f1;
+        /* background: #e0ecee; */
+        border: 2px solid #f5f1f1 !important;
         border-radius: 10px;
         padding: 5px !important;
         margin-bottom: 10px;
