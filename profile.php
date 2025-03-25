@@ -262,7 +262,7 @@
 									You have not set up this type of address yet.
 								</div>
 
-								<a href="#" class="btn btn-default address-action" data-toggle="modal" data-target="#addressModal">
+								<a href="#" class="btn btn-default address-action" onclick="openAddAddressForm()">
 									Add Address
 								</a>
 							</div>
@@ -492,60 +492,84 @@
 								// 		});
 								// 	});
 								// });
-
-								document.getElementById("addAddressBtn").addEventListener("click", function () {
-	const authToken = localStorage.getItem("auth_token");
-	if (!authToken) {
-		console.log("User not logged in.");
-		return;
-	}
-
-	// Show small-sized loading alert
+								
+function openAddAddressForm() {
 	Swal.fire({
-		title: "Adding Address...",
-		text: "Please wait while we save your address.",
-		timerProgressBar: true,
-		allowOutsideClick: false,
-		allowEscapeKey: false,
-		showConfirmButton: false,
-		didOpen: () => {
-			Swal.showLoading();
+		title: 'Add New Address',
+		html: `
+			<form id="swal-address-form">
+				<input type="text" id="swal_name" class="swal2-input" placeholder="Name*" required>
+				<input type="text" id="swal_contact_no" class="swal2-input" placeholder="Contact No*" required>
+				<input type="text" id="swal_address_line1" class="swal2-input" placeholder="Address Line 1*" required>
+				<input type="text" id="swal_address_line2" class="swal2-input" placeholder="Address Line 2 (optional)">
+				<input type="text" id="swal_city" class="swal2-input" placeholder="City*" required>
+				<select id="swal_state" class="swal2-select">
+					<option value="">Select State*</option>
+					<option value="Mumbai">Mumbai</option>
+					<option value="Delhi">Delhi</option>
+					<option value="West Bengal">West Bengal</option>
+				</select>
+				<select id="swal_country" class="swal2-select">
+					<option value="India">India</option>
+					<option value="Australia">Australia</option>
+				</select>
+				<input type="text" id="swal_postal_code" class="swal2-input" placeholder="Pincode*" required>
+			</form>
+		`,
+		showCancelButton: true,
+		confirmButtonText: 'Add Address',
+		focusConfirm: false,
+		preConfirm: () => {
+			const name = document.getElementById('swal_name').value.trim();
+			const contact_no = document.getElementById('swal_contact_no').value.trim();
+			const address_line1 = document.getElementById('swal_address_line1').value.trim();
+			const address_line2 = document.getElementById('swal_address_line2').value.trim();
+			const city = document.getElementById('swal_city').value.trim();
+			const state = document.getElementById('swal_state').value;
+			const country = document.getElementById('swal_country').value;
+			const postal_code = document.getElementById('swal_postal_code').value.trim();
+
+			if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+				Swal.showValidationMessage('Please fill all required fields.');
+				return false;
+			}
+
+			return {
+				name,
+				contact_no,
+				address_line1,
+				address_line2,
+				city,
+				state,
+				country,
+				postal_code
+			};
+		}
+	}).then((result) => {
+		if (result.isConfirmed && result.value) {
+			submitAddress(result.value);
 		}
 	});
+}
 
-	const name = document.getElementById("name").value.trim();
-	const contact_no = document.getElementById("contact_no").value.trim();
-	const address_line1 = document.getElementById("address_line1").value.trim();
-	const address_line2 = document.getElementById("address_line2").value.trim();
-	const city = document.getElementById("city").value.trim();
-	const state = document.getElementById("state").value;
-	const country = document.getElementById("country").value;
-	const postal_code = document.getElementById("postal_code").value.trim();
-	const is_default = true;
-
-	if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
-		Swal.close(); // Close the loading alert
-		Swal.fire({
-			title: "Missing Fields!",
-			text: "Please fill all required fields.",
-			icon: "warning"
-		});
+function submitAddress(data) {
+	const authToken = localStorage.getItem("auth_token");
+	if (!authToken) {
+		Swal.fire("Error", "User not logged in.", "error");
 		return;
 	}
 
 	const addressData = {
-		name,
-		contact_no,
-		address_line1,
-		address_line2: address_line2 || null,
-		city,
-		state,
-		postal_code,
-		country,
-		is_default
+		...data,
+		is_default: true
 	};
 
-	console.log("Sending Address Data:", addressData);
+	Swal.fire({
+		title: "Saving...",
+		text: "Please wait",
+		allowOutsideClick: false,
+		didOpen: () => Swal.showLoading()
+	});
 
 	fetch("<?php echo BASE_URL; ?>/address/register", {
 		method: "POST",
@@ -557,39 +581,22 @@
 	})
 	.then(response => response.json())
 	.then(responseData => {
-		console.log("Address Added Response:", responseData);
-		Swal.close(); // Close the loading alert
-
+		Swal.close();
 		if (responseData.message && responseData.message.includes("success")) {
-			Swal.fire({
-				title: "Success!",
-				text: "Address added successfully.",
-				icon: "success",
-				timer: 2000,
-				showConfirmButton: false
-			}).then(() => {
-				$("#checkout-form")[0].reset();
-				$("#addressModal").modal("hide");
+			Swal.fire("Success", "Address added successfully!", "success").then(() => {
 				location.reload();
 			});
 		} else {
-			Swal.fire({
-				title: "Error!",
-				text: responseData.message || "Failed to add address.",
-				icon: "error"
-			});
+			Swal.fire("Error", responseData.message || "Failed to add address.", "error");
 		}
 	})
 	.catch(error => {
-		console.error("Error adding address:", error);
+		console.error("Error:", error);
 		Swal.close();
-		Swal.fire({
-			title: "Error!",
-			text: "Something went wrong. Please try again.",
-			icon: "error"
-		});
+		Swal.fire("Error", "Something went wrong. Please try again.", "error");
 	});
-});
+}
+
 
 							});
 						</script>
