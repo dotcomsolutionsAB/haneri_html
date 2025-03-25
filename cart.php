@@ -4,6 +4,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
+    div:where(.swal2-container) .swal2-input {
+        width:25rem;
+    }
+    div:where(.swal2-container).swal2-center>.swal2-popup {
+        width:40rem;
+    }
     /* Quantity Container */
     .quantity-container {
         display: flex;
