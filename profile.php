@@ -940,6 +940,7 @@
 									Swal.fire("Error", "Something went wrong. Please try again.", "error");
 								});
 							}
+						</script>
 					</div>
 				</div><!-- End .tab-pane -->
 
