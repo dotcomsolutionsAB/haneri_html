@@ -2242,20 +2242,7 @@ footer .social-icon {
 
 
     /* for front pages */
-    .card-headers .override-color{
-        /* background: transparent !important;
-        color:#000 !important; */
-        cursor: pointer;
-        position: relative;
-        padding-left: 0;
-        padding-right: 25px;
-        background: transparent;
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 600;
-        letter-spacing: -0.025em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-transform: none;
-        white-space: nowrap;
+    .card .override-color{
+        background: transparent !important;
+        color:#000 !important;
     }
