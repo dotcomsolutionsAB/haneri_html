@@ -1,5 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
+<!-- Include SweetAlert2 (make sure to have sweetalert2 or similar library included in your project) -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
     /* Quantity Container */
@@ -295,9 +297,7 @@
 </script>
 
 <!-- for guest checkout -->
-<!-- Include SweetAlert2 (make sure to have sweetalert2 or similar library included in your project) -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Grab the checkout button
     const proceedCheckoutBtn = document.querySelector(".checkout-methods a.btn.btn-block.btn-dark");
@@ -434,6 +434,91 @@
           });
         } else {
           // If we have neither token nor tempId, redirect to login
+          window.location.href = "login.php";
+        }
+      });
+    }
+  });
+</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const proceedCheckoutBtn = document.querySelector(".checkout-methods a.btn.btn-block.btn-dark");
+
+    if (proceedCheckoutBtn) {
+      proceedCheckoutBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const token = localStorage.getItem("auth_token");
+        const tempId = localStorage.getItem("temp_id");
+
+        if (token) {
+          window.location.href = "checkout.php";
+          return;
+        }
+
+        if (!token && tempId) {
+          Swal.fire({
+            title: "Complete Your Details",
+            html:
+              `<input type="text" id="swal-name" class="swal2-input" placeholder="Name">
+               <input type="email" id="swal-email" class="swal2-input" placeholder="Email">
+               <input type="text" id="swal-mobile" class="swal2-input" placeholder="Mobile">`,
+            focusConfirm: false,
+            showCancelButton: true,
+            confirmButtonText: "Submit",
+            showLoaderOnConfirm: true,
+            preConfirm: async () => {
+              const userName = document.getElementById("swal-name").value.trim();
+              const userEmail = document.getElementById("swal-email").value.trim();
+              const userMobile = document.getElementById("swal-mobile").value.trim();
+
+              if (!userName || !userEmail || !userMobile) {
+                Swal.showValidationMessage("All fields are required.");
+                return false;
+              }
+
+              const formData = new FormData();
+              formData.append("name", userName);
+              formData.append("email", userEmail);
+              formData.append("mobile", userMobile);
+              formData.append("cart_id", tempId);
+
+              try {
+                const response = await fetch("<?php echo BASE_URL; ?>/make_user", {
+                  method: "POST",
+                  body: formData,
+                });
+
+                if (!response.ok) {
+                  const errData = await response.json();
+                  return Swal.showValidationMessage(
+                    `Error: ${errData.message || "Could not register user"}`
+                  );
+                }
+
+                const data = await response.json();
+                if (!data.token) {
+                  return Swal.showValidationMessage(data.message || "Registration failed.");
+                }
+
+                localStorage.removeItem("temp_id");
+                localStorage.setItem("auth_token", data.token);
+                localStorage.setItem("user_name", data.user.name);
+                localStorage.setItem("user_role", data.user.role);
+                localStorage.setItem("user_email", data.user.email);
+
+                return data;
+              } catch (error) {
+                return Swal.showValidationMessage(`Request failed: ${error}`);
+              }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "checkout.php";
+            }
+          });
+        } else {
           window.location.href = "login.php";
         }
       });
