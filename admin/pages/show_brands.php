@@ -228,6 +228,13 @@
         });
         perPageSelect.val(itemsPerPage);
 
+        // Search input: trigger fetch when 3+ chars typed or cleared
+        $searchInput.on("keyup", function () {
+            searchTerm = $(this).val().trim();
+            currentPage = 1;  // Always reset to page 1 on new search
+            fetchBrands();
+        });
+
         fetchBrands();
     });
 
