@@ -665,7 +665,7 @@
 
 						<!-- Open Update Modal  -->
 						
-						<script>
+<!-- <script>
 function openUpdateModal(addressId) {
 	const address = allAddresses.find(addr => addr.id == addressId);
 
@@ -810,10 +810,10 @@ function submitUpdatedAddress(data) {
 		Swal.fire("Error", "Something went wrong. Please try again.", "error");
 	});
 }
-</script>
+</script> -->
 
 
-						<!-- <script>
+						<script>
 							function openUpdateModal(addressId) {
 								console.log("Editing Address ID:", addressId);
 
@@ -845,9 +845,9 @@ function submitUpdatedAddress(data) {
 								// Show the modal
 								$("#updateAddressModal").modal("show");
 							}
-						</script> -->
+						</script>
 						<!-- Save update Modal -->
-						<!-- <script>
+						<script>
 							function updateAddress() {
 								const authToken = localStorage.getItem("auth_token");
 								if (!authToken) {
@@ -924,7 +924,7 @@ function submitUpdatedAddress(data) {
 									});
 								});
 							}
-						</script> -->
+						</script>
 
 
 					</div>
