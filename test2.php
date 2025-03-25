@@ -1,12 +1,18 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"></script>
-
-<main class="main about shop_page">
+<main class="main about">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <!-- <li class="breadcrumb-item"><a href="https://haneri.ongoingsites.xyz/domex">Pillar Technology</a></li> -->
+                <li class="breadcrumb-item active" aria-current="page">Domex</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav>
     <div class="page-wrapper">
 
-        <main class="main">
+    <main class="main">
 
             <div class="container mb-3">
                 <div class="row">
@@ -37,15 +43,21 @@
 
                                 <div class="toolbox-item toolbox-sort">
                                     <label>Sort By:</label>
+
                                     <div class="select-custom">
-                                        <select name="orderby" id="orderby-select" class="form-control">
-                                            <option value="">-Select-</option> 
-                                            <option value="ascending">low to high</option> 
-                                            <option value="descending">high to low</option> 
+                                        <select name="orderby" class="form-control">
+                                            <option value="menu_order" selected="selected">Default sorting</option>
+                                            <option value="popularity">Sort by popularity</option>
+                                            <option value="rating">Sort by average rating</option>
+                                            <option value="date">Sort by newness</option>
+                                            <option value="price">Sort by price: low to high</option>
+                                            <option value="price-desc">Sort by price: high to low</option>
                                         </select>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div><!-- End .select-custom -->
+
+
+                                </div><!-- End .toolbox-item -->
+                            </div><!-- End .toolbox-left -->
 
                             <div class="toolbox-right">
                                 <div class="toolbox-item toolbox-show">
@@ -53,7 +65,10 @@
 
                                     <div class="select-custom">
                                         <select name="perpage" class="form-control" data-datatable-size="true">
-
+                                            <!-- <option value="20">20</option>
+                                            <option value="30">30</option>
+                                            <option value="40">40</option>
+                                            <option value="50">50</option> -->
                                         </select>
                                     </div><!-- End .select-custom -->
                                 </div><!-- End .toolbox-item -->
@@ -70,7 +85,7 @@
                         </nav>
                         <!-- End Mobile view -->
 
-                        <div class="row products_area" id="products-table">
+                        <div class="row" id="products-table">
                             <!-- products showing here  -->
                         </div>
 
@@ -94,224 +109,90 @@
                     <div class="sidebar-overlay"></div>
                     <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
                         <div class="sidebar-wrapper">
-
-                            <script>
-                                $(document).ready(function() {
-                                    fetchCategories();
-                                });
-                                // 1. Fetch Categories
-                                function fetchCategories() {
-                                    $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/categories',
-                                        type: 'GET',
-                                        success: function(response) {
-                                            if (response && response.data) {
-                                                populateCategories(response.data);
-                                            } else {
-                                                console.error("Unexpected categories response format:", response);
-                                            }
-                                        },
-                                        error: function(err) {
-                                            console.error("Error fetching categories:", err);
-                                        }
-                                    });
-                                }
-                                // 2. Render Categories (with checkboxes) into the sidebar
-                                function populateCategories(categories) {
-                                    let htmlStr = '';
-                                    categories.forEach(category => {
-                                        // Example: each category gets a checkbox and a label
-                                        htmlStr += `
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" name="category" value="${category.name}">
-                                                    <span>${category.name}</span>
-                                                </label>
-                                            </li>
-                                        `;
-                                    });
-                                    $('#categories-list').html(htmlStr);
-                                }
-                            </script>
-                            <script>
-                                $(document).ready(function() {
-                                    // If you already have `fetchCategories()` somewhere
-                                    fetchCategories();
-                                    // 1. Fetch and display brands
-                                    fetchBrands();
-
-                                });
-
-                                // -------------------------------------------
-                                // 1. Fetch Brands from your API
-                                function fetchBrands() {
-                                    $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/brands', // Your API endpoint
-                                        type: 'GET',
-                                        success: function(response) {
-                                            if (response && response.data) {
-                                                populateBrands(response.data);
-                                            } else {
-                                                console.error("Unexpected brands response format:", response);
-                                            }
-                                        },
-                                        error: function(err) {
-                                            console.error("Error fetching brands:", err);
-                                        }
-                                    });
-                                }
-                                // 2. Render the Brands in the Brand widget
-                                function populateBrands(brands) {
-                                    let htmlStr = '';
-                                    brands.forEach(brand => {
-                                        htmlStr += `
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" name="brand" value="${brand.name}">
-                                                    <span>${brand.name}</span>
-                                                </label>
-                                            </li>
-                                        `;
-                                    });
-                                    // Make sure you have something like <ul id="brands-list"> in the Brand widget
-                                    $('#brands-list').html(htmlStr);
-                                }
-                            </script>
-                            <!-- Categories Widget -->
-                            <div class="widget widget-category wid">
-                                <h3 class="widget-title wid_title">
-                                    <a data-toggle="collapse" href="#widget-body-categories" role="button" aria-expanded="true"
-                                    aria-controls="widget-body-categories">
-                                        Categories
-                                    </a>
+                            <div class="widget">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-2">Categories</a>
                                 </h3>
-                                <div class="collapse show" id="widget-body-categories">
+
+                                <div class="collapse show" id="widget-body-2">
                                     <div class="widget-body">
-                                        <!-- The list where we'll insert category checkboxes -->
-                                        <ul id="categories-list" class="cat-list">
-                                            <!-- Dynamically populated via JS -->
+                                        <ul class="cat-list">
+                                            <li>
+                                                <a href="#widget-category-1" class="collapsed" data-toggle="collapse"
+                                                    role="button" aria-expanded="false"
+                                                    aria-controls="widget-category-1">
+                                                    Accessories<span class="products-count">(3)</span>
+                                                    <span class="toggle"></span>
+                                                </a>
+                                                <div class="collapse" id="widget-category-1">
+                                                    <ul class="cat-sublist">
+                                                        <li>Caps<span class="products-count">(1)</span></li>
+                                                        <li>Watches<span class="products-count">(2)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#widget-category-2" class="collapsed" data-toggle="collapse"
+                                                    role="button" aria-expanded="false"
+                                                    aria-controls="widget-category-2">
+                                                    Electronics<span class="products-count">(4)</span>
+                                                    <span class="toggle"></span>
+                                                </a>
+                                                <div class="collapse" id="widget-category-2">
+                                                    <ul class="cat-sublist">
+                                                        <li>Shoes<span class="products-count">(4)</span></li>
+                                                        <li>Bag<span class="products-count">(2)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#widget-category-3" class="collapsed" data-toggle="collapse"
+                                                    role="button" aria-expanded="false"
+                                                    aria-controls="widget-category-3">
+                                                    Fashion<span class="products-count">(2)</span>
+                                                    <span class="toggle"></span>
+                                                </a>
+                                                <div class="collapse" id="widget-category-3">
+                                                    <ul class="cat-sublist">
+                                                        <li>Shoes<span class="products-count">(4)</span></li>
+                                                        <li>Bag<span class="products-count">(2)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div><!-- End .widget-body -->
                                 </div><!-- End .collapse -->
                             </div><!-- End .widget -->
-                            <div class="widget widget-brand wid">
-                                <h3 class="widget-title wid_title">
-                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
-                                    aria-controls="widget-body-7">Brand</a>
-                                </h3>
 
-                                <div class="collapse show" id="widget-body-7">
-                                    <div class="widget-body pb-0">
-                                        <!-- Add an empty <ul> with an ID for the brand checkboxes -->
-                                        <ul class="cat-list" id="brands-list"></ul>
-                                    </div>
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <script>
-                                $(document).ready(function() {
-                                    // 1. Initialize noUiSlider
-                                    const priceSlider = document.getElementById('price-slider');
-                                    noUiSlider.create(priceSlider, {
-                                        start: [100, 20000],  // Initial slider handles: [min, max]
-                                        connect: true,     // Fill the bar between handles
-                                        range: {
-                                            min: 100,
-                                            max: 50000      // Adjust as per your upper price limit
-                                        },
-                                        step: 100          // Adjust step if you like
-                                    });
-                                    
-                                    // 2. Update the text display whenever slider changes
-                                    priceSlider.noUiSlider.on('update', function(values) {
-                                        // values = [minValue, maxValue]
-                                        const min = parseFloat(values[0]).toFixed(2);
-                                        const max = parseFloat(values[1]).toFixed(2);
-
-                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-                                    });
-                                });
-                            </script>
-                            <div class="widget widget-price wid">
-                                <h3 class="widget-title wid_title">
+                            <div class="widget widget-price">
+                                <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
-                                    aria-controls="widget-body-3">Price</a>
+                                        aria-controls="widget-body-3">Price</a>
                                 </h3>
 
                                 <div class="collapse show" id="widget-body-3">
                                     <div class="widget-body">
                                         <form action="#">
                                             <div class="price-slider-wrapper">
-                                                <!-- This is where we'll create the slider -->
-                                                <div id="price-slider"></div>
-                                            </div>
+                                                <div id="price-slider"></div><!-- End https://haneri.ongoingsites.xyz/domexprice-slider -->
+                                            </div><!-- End .price-slider-wrapper -->
 
-                                            <div class="filter-price-action">
+                                            <div
+                                                class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
                                                 <div class="filter-price-text">
-                                                    Price: <span id="filter-price-range">Rs.0 - Rs.1000</span>
-                                                </div>
-                                            </div>
+                                                    Price:
+                                                    <span id="filter-price-range"></span>
+                                                </div><!-- End .filter-price-text -->
+
+                                                <button type="submit" class="btn btn-primary">Filter</button>
+                                            </div><!-- End .filter-price-action -->
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
 
-                            <script>
-                                $(document).ready(function() {
-                                    fetchVariants()
-                                });
-                                function fetchVariants() {
-                                    $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/products/unique_variant', // GET
-                                        type: 'GET',
-                                        success: function(response) {
-                                            if (response && response.data) {
-                                                let htmlStr = '';
-                                                // response.data might be ["color", "size", ...]
-                                                response.data.forEach(variant => {
-                                                    // Create a checkbox for each variant
-                                                    htmlStr += `
-                                                        <li>
-                                                            <label>
-                                                                <span>${variant}</span>
-                                                                <input type="checkbox" name="variant" value="${variant}">                                                                
-                                                            </label>
-                                                        </li>
-                                                    `;
-                                                });
-                                                $('#variant-list').html(htmlStr);
-                                            } else {
-                                                console.error("Unexpected response format for variants:", response);
-                                            }
-                                        },
-                                        error: function(err) {
-                                            console.error("Error fetching variants:", err);
-                                        }
-                                    });
-                                }
-                            </script>
-                            <div class="widget widget-variant wid">
-                                <h3 class="widget-title wid_title">
-                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
-                                    aria-controls="widget-body-5">Variant</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-5">
-                                    <div class="widget-body">
-                                        <!-- We'll populate this UL with variant checkboxes dynamically -->
-                                        <ul class="config-size-list" id="variant-list"></ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Filter Button - triggers product fetching -->
-                             <div class="fil">
-                                <button id="apply-filters" class="apply_filter">
-                                    Apply Filters
-                                </button>
-                             </div>
-
-                            <!-- <div class="widget widget-color">
+                            <div class="widget widget-color">
                                 <h3 class="widget-title">
                                     <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
                                         aria-controls="widget-body-6">Color</a>
@@ -331,192 +212,132 @@
                                             <li>
                                                 <a href="#" style="background-color: #81d742;"></a>
                                                 <span>Green</span>
-                                            </li>                                            
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #6085a5;"></a>
+                                                <span>Indego</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #333;"></a>
+                                                <span>Black</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #0188cc;"></a>
+                                                <span>Blue</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" style="background-color: #ab6e6e;"></a>
+                                                <span>Red</span>
+                                            </li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>                     -->
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
 
-                        </div>
-                    </aside>
-                </div>
-            </div>
+                            <div class="widget widget-size">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-5">Size</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-5">
+                                    <div class="widget-body">
+                                        <ul class="config-size-list">
+                                            <li class="active"><a href="#">XL</a></li>
+                                            <li><a href="#">L</a></li>
+                                            <li><a href="#">M</a></li>
+                                            <li><a href="#">S</a></li>
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+
+                            <div class="widget widget-brand">
+                                <h3 class="widget-title">
+                                    <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="true"
+                                        aria-controls="widget-body-7">Brand</a>
+                                </h3>
+
+                                <div class="collapse show" id="widget-body-7">
+                                    <div class="widget-body pb-0">
+                                        <ul class="cat-list">
+                                            <li><a href="#">Haneri</a></li>
+                                        </ul>
+                                    </div><!-- End .widget-body -->
+                                </div><!-- End .collapse -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .sidebar-wrapper -->
+                    </aside><!-- End .col-lg-3 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
         </main>
-
         <script>
             $(document).ready(function () {
+                // const token = localStorage.getItem('auth_token');
 
-                // Global or higher scope variables
-                let currentPage = 1;
-                let itemsPerPage = 10;
-                // If you need them for pagination
-                let totalItems = 0;
+                let itemsPerPage = 10; // Default items per page
+                let currentPage = 1; // Current page number
+                let totalItems = 0; // Total items from API response
 
-                // Modify your existing function to include category filters
-                function fetchProducts() {
+                const fetchProducts = () => {
                     const offset = (currentPage - 1) * itemsPerPage;
-                        // 1. For Product
-                        const searchProduct = $('#search-product-input').val() || '';
-                        // 2. For Brand
-                        const selectedBrands = [];
-                        $('input[name="brand"]:checked').each(function() {
-                            selectedBrands.push($(this).val());
-                        });
-                        const searchBrand = selectedBrands.join(',');
-                        // 3. For Category
-                        const selectedCategories = [];
-                        $('input[name="category"]:checked').each(function() {
-                            selectedCategories.push($(this).val());
-                        });
-                        const searchCategory = selectedCategories.join(',');
 
-                        // 4. Get the current min & max from noUiSlider
-                        // Use the same slider element ID from earlier
-                        const priceSlider = document.getElementById('price-slider');
-                        const sliderValues = priceSlider.noUiSlider.get(); // This returns an array [min, max]
-                        const minPrice = parseFloat(sliderValues[0]); 
-                        const maxPrice = parseFloat(sliderValues[1]);
-
-                        // 5. Get the price range from the select box
-                        const priceRange = $('#price-range-select').val(); 
-
-                        // 6. Sorting select box
-                        const orderValue = $('#orderby-select').val(); 
-                        let orderPrice;
-                        if (orderValue === 'ascending') {
-                            orderPrice = 'Ascending';
-                        } else if (orderValue === 'descending') {
-                            orderPrice = 'Descending';
-                        } else {
-                            orderPrice = ''; // or null, if no sort is selected
-                        }
-                        // 7. Gather selected variants
-                        const selectedVariants = [];
-                        $('input[name="variant"]:checked').each(function() {
-                            selectedVariants.push($(this).val());
-                        });
-                        // If multiple can be selected, we can do something like a comma-separated string:
-                        const variantType = selectedVariants.join(',');
-                        // If your API needs a single combined search string for categories/brands:
-                        // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
-                    
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
-                        data: {
-                            // Three separate search fields
-                            search_product: searchProduct,   // e.g. "Haneri AirElite AEW1"
-                            search_brand: searchBrand,     // e.g. "Stanley 600W Small 100mm Angle Grinder"
-                            search_category: searchCategory,  // e.g. "Table Wall Pedestals, Domestic Exhaust"
-                            price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
-                            limit: itemsPerPage,
-                            offset: offset,
-                            order_price: orderPrice, // sort price asc or desc
-                            min_priceFilter: minPrice, // newly added min & max
-                            max_priceFilter: maxPrice,
-                            variant_type: variantType, // Variant type(s)
-                            // If needed: 
-                            // is_active: 1,
-                            // variant_type: "Speed",
-                            // ...
-                        },
+                        // headers: { Authorization: `Bearer ${token}` },
+                        data: { search: '', limit: itemsPerPage, offset: offset},
                         success: (response) => {
-                            if (response && response.data) {
-                                totalItems = response.total_records || 0; 
-                                populateTable(response.data);  // wherever you display products
-                                updatePagination();           // your existing pagination logic
-                            } else {
-                                console.error("Unexpected products response format:", response);
-                            }
+                                if (response && response.data) {
+                                    totalItems = response.total_records; // Assuming total items is part of the API response
+                                    populateTable(response.data);
+                                    updatePagination();
+                                } else {
+                                    console.error("Unexpected response format:", response);
+                                }
                         },
                         error: (error) => {
-                            console.error("Error fetching products:", error);
+                                console.error("Error fetching data:", error);
                         }
                     });
-                }
+                };
 
-                // When the user clicks "Apply Filters", fetch products again using selected filters
-                $('#apply-filters').on('click', function() {
-                    currentPage = 1; // reset to first page if needed
-                    fetchProducts();
-                });
-
-
+                
                 const populateTable = (data) => {
                     const tbody = $("#products-table");
                     tbody.empty();
 
-                    // Grab role from localStorage
-                    const userRole = localStorage.getItem("user_role");
-
                     data.forEach((product) => {
-                        // Check if the product has an image; otherwise, use a placeholder
-                        let productImage = product.image?.length > 0 
-                            ? product.image[0] 
-                            : "assets/images/placeholder.jpg";
+                        // Check if the product has an image, otherwise use a placeholder
+                            let productImage = product.image.length > 0 ? product.image[0] : "assets/images/placeholder.jpg";
 
-                        // Safely extract prices (default to "00" if unavailable)
-                        let regularPrice = product.variants?.[0]?.regular_price || "00";
-                        let sellingPrice = product.variants?.[0]?.selling_price || "00";
-                        let vendor_price = product.variants?.[0]?.sales_price_vendor || "00";
+                            // Ensure variants exist before accessing them
+                            let regularPrice = product.variants?.[0]?.regular_price || "00";
+                            let sellingPrice = product.variants?.[0]?.selling_price || "00";
 
-                        // Determine which price HTML snippet to use
-                        let priceSnippet = "";
-                        if (userRole === "vendor") {
-                            priceSnippet = `
-                                <div class="price-box">
-                                    <div class="c_price">
-                                        <span class="old-price">₹${regularPrice}</span>
-                                        <span class="product-price cross">₹${sellingPrice}</span>
-                                    </div>
-                                    <div class="sp_price">
-                                        Special Price : <span class="special_price">₹${vendor_price}</span>
-                                    </div>
-                                </div>
-                            `;
-                        } else {
-                            priceSnippet = `
-                                <div class="price-box">
-                                    <div class="c_price">
-                                        <span class="old-price">₹${regularPrice}</span>
-                                        <span class="product-price">₹${sellingPrice}</span>
-                                    </div>
-                                    <div class="sp_price none">
-                                        Special Price : <span class="special_price">₹${vendor_price}</span>
-                                    </div>
-                                </div>
-                            `;
-                        }
-
-                        // Append the row for each product
+                        // Append a single row for each product
                         tbody.append(`
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col" >
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            <img 
-                                                src="${
-                                                    product.category?.id === 1 ? 'images/f1.png' :
-                                                    product.category?.id === 2 ? 'images/f2.png' :
-                                                    product.category?.id === 3 ? 'images/f3.png' :
-                                                    'assets/images/products/product-1.jpg'
-                                                }" 
-                                                width="500" height="500" alt="product" 
-                                            />
+                                            <img src="${
+                                                product.category?.id == 1 ? 'images/f1.png' :
+                                                product.category?.id == 2 ? 'images/f2.png' :
+                                                product.category?.id == 3 ? 'images/f3.png' :
+                                                'assets/images/products/product-1.jpg' // Default image
+                                            }" width="500" height="500" alt="product" />
                                         </a>
+                                      
                                     </figure>
                                     <div class="product-details">
                                         <div class="category-wrap">
                                             <div class="category-list">
-                                                <a href="#" class="product-category">
-                                                    ${product.category?.name || "Uncategorized"}
-                                                </a>
+                                                <a href="#" class="product-category">${product.category?.name || "Uncategorized"}</a>
                                             </div>
                                         </div>
                                         <h3 class="product-title">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                                ${product.name}
-                                            </a>
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">${product.name}</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="product-ratings">
@@ -524,7 +345,10 @@
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
                                         </div>
-                                        ${priceSnippet}
+                                        <div class="price-box">
+                                            <span class="old-price">${regularPrice}</span>
+                                            <span class="product-price">${sellingPrice}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -532,6 +356,9 @@
                     });
                 };
 
+                // function openProductDetail(productId) {
+                //     window.location.href = 'product_detail.php?id=' + productId;
+                // }
 
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -565,7 +392,7 @@
 
                 // Initialize dropdown for items per page
                 const perPageSelect = $("[data-datatable-size]");
-                [5, 10, 20, 40, 60, 100].forEach((size) => {
+                [10, 20, 40, 60, 100].forEach((size) => {
                     perPageSelect.append(`<option value="${size}">${size}</option>`);
                 });
                 perPageSelect.val(itemsPerPage);
@@ -578,31 +405,7 @@
                 window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
-        <style>
-            .none{
-                display:none;
-            }
-            .product-price {
-                color: #495057;
-                font-size: 1.5rem;
-                line-height: 1;                
-            }
-            .cross{
-                text-decoration: line-through;
-            }
-            .special_price{
-                color: #f0340efa;
-                font-size: 2.3rem;
-                line-height: 1;
-                font-family: 'Barlow Condensed';
-            }
-            .sp_price{
-                font-size: 18px;
-                font-family: 'Barlow Condensed';
-                font-style: italic;
-            }
-        </style>
-        <!-- End .main -->
+            <!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
     </div><!-- End .page-wrapper -->
