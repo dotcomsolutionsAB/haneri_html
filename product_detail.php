@@ -444,7 +444,7 @@ if ($.fn.owlCarousel) {
                                         <!-- Images will be injected here -->
                                     </div>
                                     <span class="prod-full-screen"><i class="icon-plus"></i></span>
-                                    </div>
+                                </div>
 
                                 <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="product-thumbnails">
                                     <!-- Thumbnails will be injected here -->
