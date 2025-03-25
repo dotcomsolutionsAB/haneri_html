@@ -270,7 +270,7 @@
 						<!-- Add Address Modal-->
 						<!--  -->
 						<!-- Update Address Modal -->
-						<div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+						<!-- <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -320,7 +320,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- Fetch Address Card-->
 						<div id="addressList" class="add-List">
 
@@ -811,7 +811,7 @@ function submitUpdatedAddress(data) {
 
 
 
-						<script>
+						<!-- <script>
 							function openUpdateModal(addressId) {
 								console.log("Editing Address ID:", addressId);
 
@@ -844,7 +844,7 @@ function submitUpdatedAddress(data) {
 								$("#updateAddressModal").modal("show");
 							}
 						</script>
-						<!-- Save update Modal -->
+						
 						<script>
 							function updateAddress() {
 								const authToken = localStorage.getItem("auth_token");
@@ -922,8 +922,8 @@ function submitUpdatedAddress(data) {
 									});
 								});
 							}
-						</script>
-
+						</script> -->
+						<!-- Save update Modal -->
 
 					</div>
 				</div><!-- End .tab-pane -->
