@@ -816,7 +816,7 @@
 	<div class="mb-5"></div><!-- margin -->
 </main><!-- End .main -->
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		const authToken = localStorage.getItem("auth_token");

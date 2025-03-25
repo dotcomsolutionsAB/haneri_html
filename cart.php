@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
 <!-- Include SweetAlert2 (make sure to have sweetalert2 or similar library included in your project) -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <style>
     div:where(.swal2-container) .swal2-input {
@@ -9,49 +9,6 @@
     }
     div:where(.swal2-container).swal2-center>.swal2-popup {
         width:40rem;
-    }
-    /* Quantity Container */
-    .quantity-container {
-        display: flex;
-        /* background: aqua; */
-        height: 45px;
-        /* justify-content: center; */
-        align-items: center;
-    }
-
-    .btn-quantity {
-        border: 1px solid #ccc;
-        padding: 10px 8px;
-        margin: 0 2px;
-        cursor: pointer;
-        background: #fff;
-    }
-    .btn-quantity:hover {
-        background-color: #ddd;
-    }
-
-    /* Remove Button */
-    .btn-remove-item {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #d9534f;
-        font-size: 1.5rem;
-        margin-left: 10px;
-        padding: 10px;
-    }
-    .btn-remove-item:hover {
-        color: #c12e2a;
-        padding: 10px;
-        background: antiquewhite;
-        border-radius: 50%;
-    }
-    .horizontal-quantity {
-        border: 0px;
-        font-size: x-large;
-        width: 35px;
-        text-align: center;
-        font-family: 'Open Sans';
     }
 </style>
 
@@ -464,7 +421,7 @@
 
         if (!token && tempId) {
           Swal.fire({
-            title: "Complete Your Details",
+            title: "Give Your Details",
             html:
               `<input type="text" id="swal-name" class="swal2-input" placeholder="Name">
                <input type="email" id="swal-email" class="swal2-input" placeholder="Email">
