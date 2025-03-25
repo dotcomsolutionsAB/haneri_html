@@ -262,7 +262,7 @@
 									You have not set up this type of address yet.
 								</div>
 
-								<a href="#" class="btn btn-default address-action" onclick="openAddAddressForm()">
+								<a href="javascript:void(0);" class="btn btn-default address-action" onclick="openAddAddressForm()">
 									Add Address
 								</a>
 							</div>
@@ -492,7 +492,7 @@
 								// 		});
 								// 	});
 								// });
-								
+
 function openAddAddressForm() {
 	Swal.fire({
 		title: 'Add New Address',
