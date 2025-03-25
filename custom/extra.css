@@ -2238,3 +2238,11 @@ footer .social-icon {
         text-align: center;
         font-family: 'Open Sans';
     }
+
+
+
+    /* for front pages */
+    .card-headers{
+        background: transparent;
+        color:#000;
+    }

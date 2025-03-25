@@ -138,7 +138,7 @@
                         ];
                         foreach ($faqs as $faq) {
                             echo "<div class='card card-accordion'>
-                                    <a class='card-header collapsed' href='#' data-toggle='collapse' data-target='#{$faq['id']}' aria-expanded='true' aria-controls='{$faq['id']}'>
+                                    <a class='card-headers collapsed' href='#' data-toggle='collapse' data-target='#{$faq['id']}' aria-expanded='true' aria-controls='{$faq['id']}'>
                                         {$faq['question']}
                                     </a>
                                     <div id='{$faq['id']}' class='collapse' data-parent='#accordion'>
