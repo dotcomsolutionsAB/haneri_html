@@ -665,10 +665,10 @@
 
 						<!-- Open Update Modal  -->
 						
-<!-- <script>
+						<script>
 function openUpdateModal(addressId) {
 	const address = allAddresses.find(addr => addr.id == addressId);
-
+	console.log(address);
 	if (!address) {
 		Swal.fire({
 			title: "Error!",
@@ -731,7 +731,6 @@ function openUpdateModal(addressId) {
 		cancelButtonText: 'Cancel',
 		focusConfirm: false,
 		preConfirm: () => {
-			// Collect values from form
 			return {
 				id: document.getElementById("update_address_id").value,
 				name: document.getElementById("update_name").value,
@@ -750,9 +749,7 @@ function openUpdateModal(addressId) {
 		}
 	});
 }
-</script>
 
-<script>
 function submitUpdatedAddress(data) {
 	const authToken = localStorage.getItem("auth_token");
 	if (!authToken) {
@@ -810,7 +807,8 @@ function submitUpdatedAddress(data) {
 		Swal.fire("Error", "Something went wrong. Please try again.", "error");
 	});
 }
-</script> -->
+</script>
+
 
 
 						<script>
