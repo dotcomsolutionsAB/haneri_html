@@ -80,10 +80,6 @@
                             // Select the first variant by default
                             updateVariant($('.variant').first()[0]);
                         }
-// 
-
-
-// 
                     }
                 },
                 error: function (error) {
@@ -369,40 +365,9 @@
                                             alt="product" />
                                     </div>
                                 </div> -->
-                                <div class="product-slider-container">
-                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natura_Pine.png" width="915" height="915" alt="Natura_Pine" />
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso_Walnut.png" width="915" height="915" alt="Espresso_Walnut" />
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit_White.png" width="915" height="915" alt="Moonlit_White" />
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet_Black.png" width="915" height="915" alt="Velvet_Black" />
-                                        </div>
-                                    </div>
-                                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
-                                </div>
-                                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-                                    <div class="owl-dot">
-                                        <img src="images/Natura_Pine.png" width="98" height="98" alt="Natura_Pine" />
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="images/Espresso_Walnut.png" width="98" height="98" alt="Espresso_Walnut" />
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="images/Moonlit_White.png" width="98" height="98" alt="Moonlit_White" />
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="images/Velvet_Black.png" width="98" height="98" alt="Velvet_Black" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
-<!-- <script>
+<script>
     const data = {
         data: {
             id: 14 // Change this value to test
@@ -472,7 +437,7 @@
             </div>
         </div>`;
     }
-</script> -->
+</script>
                         <div class="col-lg-7 pb-1">
                             <div class="single-product-custom-block">
                                 <div class="porto-block">
