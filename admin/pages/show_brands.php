@@ -47,7 +47,7 @@
                                     <i
                                         class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
-                                    <input class="input input-sm pl-8" data-datatable-search="#brands_table"
+                                    <input class="input input-sm pl-8" data-datatable-search="#b_table"
                                         placeholder="Search Brands" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
@@ -121,7 +121,7 @@
         let totalItems = 0;
         let searchTerm = "";     // Will hold the search input text
 
-        const $searchInput = $("input[data-datatable-search=\"#brands_table\"]");
+        const $searchInput = $("input[data-datatable-search=\"#b_table\"]");
 
         const fetchBrands = () => {
             const offset = (currentPage - 1) * itemsPerPage;
