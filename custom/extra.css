@@ -2242,7 +2242,7 @@ footer .social-icon {
 
 
     /* for front pages */
-    .card-headers{
-        background: transparent;
-        color:#000;
+    .card-header .override-color{
+        background: transparent !important;
+        color:#000 !important;
     }
