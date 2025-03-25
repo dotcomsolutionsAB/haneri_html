@@ -398,13 +398,13 @@
         </div>
         <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
             <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-1.jpg" width="98" height="98" alt="product" />
+                <img src="images/f1.png" width="98" height="98" alt="product" />
             </div>
             <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-2.jpg" width="98" height="98" alt="product" />
+                <img src="images/f2.png" width="98" height="98" alt="product" />
             </div>
             <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98" alt="product" />
+                <img src="images/f3.png" width="98" height="98" alt="product" />
             </div>
         </div>`;
     } else {
@@ -412,16 +412,16 @@
         <div class="product-slider-container">
             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                 <div class="product-item">
-                    <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natura_Pine.png" width="915" height="915" alt="Natural Pine" />
+                    <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natura_Pine.png" width="915" height="915" alt="Natura_Pine" />
                 </div>
                 <div class="product-item">
-                    <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso_Walnut.png" width="915" height="915" alt="Espresso Walnut" />
+                    <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso_Walnut.png" width="915" height="915" alt="Espresso_Walnut" />
                 </div>
                 <div class="product-item">
-                    <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit_White.png" width="915" height="915" alt="Moonlit White" />
+                    <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit_White.png" width="915" height="915" alt="Moonlit_White" />
                 </div>
                 <div class="product-item">
-                    <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet_Black.png" width="915" height="915" alt="Velvet Black" />
+                    <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet_Black.png" width="915" height="915" alt="Velvet_Black" />
                 </div>
             </div>
             <span class="prod-full-screen"><i class="icon-plus"></i></span>
