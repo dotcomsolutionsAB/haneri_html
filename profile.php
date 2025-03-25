@@ -497,6 +497,9 @@
 									Swal.fire({
 										title: 'Add New Address',
 										width: '700px', // Wider popup
+										customClass: {
+											confirmButton: 'confirmation-btn'
+										},
 										html: `			
 											<form id="swal-address-form">
 												<input type="text" id="swal_name" placeholder="Name*" required>
@@ -681,9 +684,16 @@
 								Swal.fire({
 									title: 'Update Address',
 									width: '700px',
+									customClass: {
+										confirmButton: 'confirmation-btn'
+									},
 									html: `
 										<style>
-											
+											.swal-form-grid {
+												display: grid;
+												grid-template-columns: 1fr 1fr;
+												gap: 15px;
+											}
 										</style>
 
 										<form id="swal-update-form" class="swal-form-grid">
