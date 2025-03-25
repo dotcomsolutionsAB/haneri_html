@@ -422,6 +422,9 @@
         if (!token && tempId) {
           Swal.fire({
             title: "Give Your Details",
+            customClass: {
+              confirmButton: 'confirmation-btn'
+            },
             html:
               `<input type="text" id="swal-name" class="swal2-input" placeholder="Name">
                <input type="email" id="swal-email" class="swal2-input" placeholder="Email">

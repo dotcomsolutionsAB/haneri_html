@@ -376,10 +376,10 @@
         <main class="main">
 
             <div class="container product-single-container product-single-default product-full-width">
-                <div class="cart-message d-none">
+                <!-- <div class="cart-message d-none">
                     "<strong class="single-cart-notice breadcrumb-title"></strong>" 
                     <span> has been added to your cart.</span>
-                </div>
+                </div> -->
 
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">

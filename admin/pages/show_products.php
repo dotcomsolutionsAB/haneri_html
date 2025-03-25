@@ -193,6 +193,7 @@
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <img class="h-9 rounded-full" src="${
+                                    product.id === 14 ? 'images/Natura_Pine.png' :
                                     product.category?.id == 1 ? '../../images/f1.png' :
                                     product.category?.id == 2 ? '../../images/f2.png' :
                                     product.category?.id == 3 ? '../../images/f3.png' :
@@ -286,7 +287,7 @@
                         </div>
                         <div class="menu-separator"></div>
                         <div class="menu-item">
-                            <a class="menu-link" href="edit_product.php?slug=${product.slug}">
+                            <a class="menu-link" href="edit_product.php?slug=${product.id}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                 <span class="menu-title">Edit</span>
                             </a>

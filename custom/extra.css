@@ -1728,10 +1728,15 @@ Turbosilent
 }
 
 .checkout-progress-bar li.active a {
-    color: #00473e;
+    color: #00473e !important;
 }
-
-
+.checkout-progress-bar li.active+li a:hover {
+    color: #00473e !important;
+}
+.cart-table-container .btn-shop:hover, .cart-table-container .btn-sm:hover {
+    color: #fff;
+    background-color: #00473e !important;
+}
 
 
 .header-middle {
