@@ -195,60 +195,168 @@
                 };
 
                 // Open modal when link is clicked
-                $("#openAddressModal").click(function (e) {
-                    e.preventDefault();
-                    $("#addressModal").modal("show");
-                });
+                // $("#openAddressModal").click(function (e) {
+                //     e.preventDefault();
+                //     $("#addressModal").modal("show");
+                // });
 
-                $("#addAddressBtn").click(function () {
-                    let addressData = {
-                        name: $("#name").val(),
-                        contact_no: $("#contact_no").val(),
-                        address_line1: $("#address_line1").val(),
-                        address_line2: $("#address_line2").val(),
-                        city: $("#city").val(),
-                        state: $("#state").val(),
-                        country: $("#country").val(),
-                        postal_code: $("#postal_code").val(),
-                        is_default: true
-                    };
+                // $("#addAddressBtn").click(function () {
+                //     let addressData = {
+                //         name: $("#name").val(),
+                //         contact_no: $("#contact_no").val(),
+                //         address_line1: $("#address_line1").val(),
+                //         address_line2: $("#address_line2").val(),
+                //         city: $("#city").val(),
+                //         state: $("#state").val(),
+                //         country: $("#country").val(),
+                //         postal_code: $("#postal_code").val(),
+                //         is_default: true
+                //     };
 
-                    if (
-                        !addressData.name || 
-                        !addressData.contact_no || 
-                        !addressData.address_line1 || 
-                        !addressData.city || 
-                        !addressData.state || 
-                        !addressData.country || 
-                        !addressData.postal_code
-                    ) {
-                        alert("Please fill all required fields.");
+                //     if (
+                //         !addressData.name || 
+                //         !addressData.contact_no || 
+                //         !addressData.address_line1 || 
+                //         !addressData.city || 
+                //         !addressData.state || 
+                //         !addressData.country || 
+                //         !addressData.postal_code
+                //     ) {
+                //         alert("Please fill all required fields.");
+                //         return;
+                //     }
+
+                //     $.ajax({
+                //         url: `${baseUrl}/register`,
+                //         type: "POST",
+                //         headers: {
+                //             "Authorization": `Bearer ${authToken}`,
+                //             "Content-Type": "application/json"
+                //         },
+                //         data: JSON.stringify(addressData),
+                //         success: function (response) {
+                //             if (response.message.includes("success")) {
+                //                 $("#checkout-form")[0].reset(); // Reset form fields
+                //                 $("#addressModal").modal("hide"); // Close modal
+                //                 fetchAddresses(); // Refresh address list
+                //             } else {
+                //                 alert("Failed to add address. Please try again.");
+                //             }
+                //         },
+                //         error: function () {
+                //             alert("Failed to add address. Please try again.");
+                //         }
+                //     });
+                // });
+                window.openAddAddressForm = function () {
+                    Swal.fire({
+                        title: 'Add New Address',
+                        width: '700px', // Wider popup
+                        customClass: {
+                            confirmButton: 'confirmation-btn'
+                        },
+                        html: `			
+                            <form id="swal-address-form">
+                                <input type="text" id="swal_name" placeholder="Name*" required>
+                                <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
+                                <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
+                                <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
+                                <input type="text" id="swal_city" placeholder="City*" required>
+                                <select id="swal_state" required>
+                                    <option value="">Select State*</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                                <select id="swal_country" required>
+                                    <option value="India">India</option>
+                                    <option value="Australia">Australia</option>
+                                </select>
+                                <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
+                            </form>
+                        `,
+                        showCancelButton: true,
+                        confirmButtonText: 'Add Address',
+                        cancelButtonText: 'Cancel',
+                        focusConfirm: false,
+                        preConfirm: () => {
+                            const name = document.getElementById('swal_name').value.trim();
+                            const contact_no = document.getElementById('swal_contact_no').value.trim();
+                            const address_line1 = document.getElementById('swal_address_line1').value.trim();
+                            const address_line2 = document.getElementById('swal_address_line2').value.trim();
+                            const city = document.getElementById('swal_city').value.trim();
+                            const state = document.getElementById('swal_state').value;
+                            const country = document.getElementById('swal_country').value;
+                            const postal_code = document.getElementById('swal_postal_code').value.trim();
+
+                            if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+                                Swal.showValidationMessage('Please fill all required fields.');
+                                return false;
+                            }
+
+                            return {
+                                name,
+                                contact_no,
+                                address_line1,
+                                address_line2,
+                                city,
+                                state,
+                                country,
+                                postal_code
+                            };
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed && result.value) {
+                            submitAddress(result.value);
+                        }
+                    });
+                };
+
+
+                function submitAddress(data) {
+                    const authToken = localStorage.getItem("auth_token");
+                    if (!authToken) {
+                        Swal.fire("Error", "User not logged in.", "error");
                         return;
                     }
 
-                    $.ajax({
-                        url: `${baseUrl}/register`,
-                        type: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${authToken}`,
-                            "Content-Type": "application/json"
-                        },
-                        data: JSON.stringify(addressData),
-                        success: function (response) {
-                            if (response.message.includes("success")) {
-                                $("#checkout-form")[0].reset(); // Reset form fields
-                                $("#addressModal").modal("hide"); // Close modal
-                                fetchAddresses(); // Refresh address list
-                            } else {
-                                alert("Failed to add address. Please try again.");
-                            }
-                        },
-                        error: function () {
-                            alert("Failed to add address. Please try again.");
-                        }
-                    });
-                });
+                    const addressData = {
+                        ...data,
+                        is_default: true
+                    };
 
+                    Swal.fire({
+                        title: "Saving...",
+                        text: "Please wait",
+                        allowOutsideClick: false,
+                        didOpen: () => Swal.showLoading()
+                    });
+
+                    fetch("<?php echo BASE_URL; ?>/address/register", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${authToken}`
+                        },
+                        body: JSON.stringify(addressData)
+                    })
+                    .then(response => response.json())
+                    .then(responseData => {
+                        Swal.close();
+                        if (responseData.message && responseData.message.includes("success")) {
+                            Swal.fire("Success", "Address added successfully!", "success").then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire("Error", responseData.message || "Failed to add address.", "error");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        Swal.close();
+                        Swal.fire("Error", "Something went wrong. Please try again.", "error");
+                    });
+                }
                 // Load addresses on page load
                 fetchAddresses();
             });
@@ -312,12 +420,12 @@
                     <li>
                         <h2 class="step-title">Billing details</h2>
                         <div class="form-group">
-                            <a href="#" id="openAddressModal" class="text-primary">
+                            <a href="javascript:void(0);" onclick="openAddAddressForm()" class="text-primary">
                                 Add another Address?
                             </a>
                         </div>
                         <!-- Address Modal -->
-                        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -376,14 +484,13 @@
                                             </div>
 
                                             <div class="form-group text-end btt">
-                                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> -->
                                                 <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="addresses">
                             <div class="address">                            
                                 <div class="vvv">

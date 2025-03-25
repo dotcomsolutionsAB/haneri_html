@@ -262,7 +262,7 @@
 									You have not set up this type of address yet.
 								</div>
 
-								<a href="javascript:void(0);" class="btn btn-default address-action" onclick="openAddAddressForm()">
+								<a class="btn btn-default address-action" href="javascript:void(0);" onclick="openAddAddressForm()">
 									Add Address
 								</a>
 							</div>

@@ -341,17 +341,21 @@
 
                     const result = await response.json();
 
-                    if (response.status === 200) {
+                    console.log("DELETE response status:", response.status);
+                    console.log("DELETE response data:", result);
+
+                    if (response.ok || response.status === 200 || response.status === 204) {
                         Swal.fire("Deleted!", result.message || "Product has been deleted.", "success");
                         fetchProducts();
                     } else {
                         Swal.fire("Failed!", result.message || "Could not delete product.", "error");
                     }
                 } catch (error) {
+                    console.error("DELETE Error:", error);
                     Swal.fire("Error!", "Something went wrong while deleting.", "error");
-                    console.error(error);
                 }
             }
+
 
         }
     });
