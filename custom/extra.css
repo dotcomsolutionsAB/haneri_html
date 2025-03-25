@@ -1737,8 +1737,13 @@ Turbosilent
     color: #fff;
     background-color: #00473e !important;
 }
-
-
+.checkout-progress-bar li a.active, .checkout-progress-bar li a:hover {
+    color: #00473e !important;
+    opacity: 1;
+}
+a.text-primary:focus, a.text-primary:hover {
+    color: #00473e !important;
+}
 .header-middle {
     display: flex;
     padding: 2.5rem 0 !important;

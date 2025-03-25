@@ -339,18 +339,20 @@
                         }
                     });
 
-                    if (response.ok) {
-                        Swal.fire("Deleted!", "Product has been deleted.", "success");
-                        fetchProducts(); // Call your function to refresh product list
+                    const result = await response.json();
+
+                    if (response.status === 200) {
+                        Swal.fire("Deleted!", result.message || "Product has been deleted.", "success");
+                        fetchProducts();
                     } else {
-                        const error = await response.json();
-                        Swal.fire("Failed!", error.message || "Could not delete product.", "error");
+                        Swal.fire("Failed!", result.message || "Could not delete product.", "error");
                     }
                 } catch (error) {
                     Swal.fire("Error!", "Something went wrong while deleting.", "error");
                     console.error(error);
                 }
             }
+
         }
     });
 </script>
