@@ -460,7 +460,7 @@
 
 
                         <!-- begin: grid -->
-                        <div class="grid lg:grid-cols-3 gap-5 lg:gap-7.5 items-stretch">
+                        <!-- <div class="grid lg:grid-cols-3 gap-5 lg:gap-7.5 items-stretch">
                             <div class="lg:col-span-1">
                                 <div class="card h-full">
                                     <div class="card-body lg:p-7.5 lg:pt-6 p-5">
@@ -1843,7 +1843,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- end: grid -->
                     </div>
                 </div>
