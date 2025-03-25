@@ -69,25 +69,25 @@ if (data.data.id == 14) {
     <div class="product-slider-container">
         <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
             <div class="product-item">
-                <img class="product-single-image" src="images/Natural Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
+                <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
             </div>
             <div class="product-item">
-                <img class="product-single-image" src="images/Espresso Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
+                <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
             </div>
             <div class="product-item">
-                <img class="product-single-image" src="images/Moonlit White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
+                <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
             </div>
             <div class="product-item">
-                <img class="product-single-image" src="images/Velvet Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
+                <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
             </div>
         </div>
         <span class="prod-full-screen"><i class="icon-plus"></i></span>
     </div>
     <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-        <div class="owl-dot"><img src="images/Natural Pine.png" width="98" height="98" alt="Natural Pine" /></div>
-        <div class="owl-dot"><img src="images/Espresso Walnut.png" width="98" height="98" alt="Espresso Walnut" /></div>
-        <div class="owl-dot"><img src="images/Moonlit White.png" width="98" height="98" alt="Moonlit White" /></div>
-        <div class="owl-dot"><img src="images/Velvet Black.png" width="98" height="98" alt="Velvet Black" /></div>
+        <div class="owl-dot"><img src="images/Natura_Pine.png" width="98" height="98" alt="Natural Pine" /></div>
+        <div class="owl-dot"><img src="images/Espresso_Walnut.png" width="98" height="98" alt="Espresso Walnut" /></div>
+        <div class="owl-dot"><img src="images/Moonlit_White.png" width="98" height="98" alt="Moonlit White" /></div>
+        <div class="owl-dot"><img src="images/Velvet_Black.png" width="98" height="98" alt="Velvet Black" /></div>
     </div>`;
 } else {
     // Default images for other products (f1.png, f2.png, f3.png)
