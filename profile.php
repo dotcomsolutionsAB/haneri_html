@@ -694,8 +694,20 @@
 												grid-template-columns: 1fr 1fr;
 												gap: 15px;
 											}
+											.swal-form-grid input,
+											.swal-form-grid select {
+												width: 100%;
+												height: 45px;
+												padding: 10px;
+												font-size: 14px;
+												border-radius: 5px;
+												border: 1px solid #ccc;
+											}
+											.swal2-actions {
+												justify-content: flex-end;
+												margin-top: 20px;
+											}
 										</style>
-
 										<form id="swal-update-form" class="swal-form-grid">
 											<input type="hidden" id="update_address_id" value="${address.id}">
 											<input type="text" id="update_name" value="${address.name || ''}" placeholder="Name">
