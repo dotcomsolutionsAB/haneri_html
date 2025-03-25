@@ -476,88 +476,187 @@
 								// Fetch addresses on page load
 								fetchAddresses();
 
+								// document.getElementById("addAddressBtn").addEventListener("click", function () {
+								// 	const authToken = localStorage.getItem("auth_token");
+								// 	if (!authToken) {
+								// 		console.log("User not logged in.");
+								// 		return;
+								// 	}
+
+								// 	const name = document.getElementById("name").value.trim();
+								// 	const contact_no = document.getElementById("contact_no").value.trim();
+								// 	const address_line1 = document.getElementById("address_line1").value.trim();
+								// 	const address_line2 = document.getElementById("address_line2").value.trim();
+								// 	const city = document.getElementById("city").value.trim();
+								// 	const state = document.getElementById("state").value;
+								// 	const country = document.getElementById("country").value;
+								// 	const postal_code = document.getElementById("postal_code").value.trim();
+								// 	const is_default = true; // Keep default as true (you can modify if needed)
+
+								// 	// Validate required fields
+								// 	if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+								// 		Swal.fire({
+								// 			title: "Missing Fields!",
+								// 			text: "Please fill all required fields.",
+								// 			icon: "warning"
+								// 		});
+								// 		return;
+								// 	}
+
+								// 	const addressData = {
+								// 		name,
+								// 		contact_no,
+								// 		address_line1,
+								// 		address_line2: address_line2 || null, 
+								// 		city,
+								// 		state,
+								// 		postal_code,
+								// 		country,
+								// 		is_default
+								// 	};
+
+								// 	console.log("Sending Address Data:", addressData);
+
+								// 	fetch("<?php echo BASE_URL; ?>/address/register", {
+								// 		method: "POST",
+								// 		headers: {
+								// 			"Content-Type": "application/json",
+								// 			"Authorization": `Bearer ${authToken}`
+								// 		},
+								// 		body: JSON.stringify(addressData)
+								// 	})
+								// 	.then(response => response.json())
+								// 	.then(responseData => {
+								// 		console.log("Address Added Response:", responseData);
+
+								// 		if (responseData.message && responseData.message.includes("success")) {
+								// 			Swal.fire({
+								// 				title: "Success!",
+								// 				text: "Address added successfully.",
+								// 				icon: "success",
+								// 				timer: 2000,
+								// 				showConfirmButton: false
+								// 			}).then(() => {
+								// 				$("#checkout-form")[0].reset(); // Reset form fields
+								// 				$("#addressModal").modal("hide"); // Close modal
+								// 				location.reload(); // Reload the page
+								// 			});
+								// 		} else {
+								// 			Swal.fire({
+								// 				title: "Error!",
+								// 				text: responseData.message || "Failed to add address.",
+								// 				icon: "error"
+								// 			});
+								// 		}
+								// 	})
+								// 	.catch(error => {
+								// 		console.error("Error adding address:", error);
+								// 		Swal.fire({
+								// 			title: "Error!",
+								// 			text: "Something went wrong. Please try again.",
+								// 			icon: "error"
+								// 		});
+								// 	});
+								// });
+
 								document.getElementById("addAddressBtn").addEventListener("click", function () {
-									const authToken = localStorage.getItem("auth_token");
-									if (!authToken) {
-										console.log("User not logged in.");
-										return;
-									}
+	const authToken = localStorage.getItem("auth_token");
+	if (!authToken) {
+		console.log("User not logged in.");
+		return;
+	}
 
-									const name = document.getElementById("name").value.trim();
-									const contact_no = document.getElementById("contact_no").value.trim();
-									const address_line1 = document.getElementById("address_line1").value.trim();
-									const address_line2 = document.getElementById("address_line2").value.trim();
-									const city = document.getElementById("city").value.trim();
-									const state = document.getElementById("state").value;
-									const country = document.getElementById("country").value;
-									const postal_code = document.getElementById("postal_code").value.trim();
-									const is_default = true; // Keep default as true (you can modify if needed)
+	// Show small-sized loading alert
+	Swal.fire({
+		title: "Adding Address...",
+		text: "Please wait while we save your address.",
+		timerProgressBar: true,
+		allowOutsideClick: false,
+		allowEscapeKey: false,
+		showConfirmButton: false,
+		didOpen: () => {
+			Swal.showLoading();
+		}
+	});
 
-									// Validate required fields
-									if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
-										Swal.fire({
-											title: "Missing Fields!",
-											text: "Please fill all required fields.",
-											icon: "warning"
-										});
-										return;
-									}
+	const name = document.getElementById("name").value.trim();
+	const contact_no = document.getElementById("contact_no").value.trim();
+	const address_line1 = document.getElementById("address_line1").value.trim();
+	const address_line2 = document.getElementById("address_line2").value.trim();
+	const city = document.getElementById("city").value.trim();
+	const state = document.getElementById("state").value;
+	const country = document.getElementById("country").value;
+	const postal_code = document.getElementById("postal_code").value.trim();
+	const is_default = true;
 
-									const addressData = {
-										name,
-										contact_no,
-										address_line1,
-										address_line2: address_line2 || null, 
-										city,
-										state,
-										postal_code,
-										country,
-										is_default
-									};
+	if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+		Swal.close(); // Close the loading alert
+		Swal.fire({
+			title: "Missing Fields!",
+			text: "Please fill all required fields.",
+			icon: "warning"
+		});
+		return;
+	}
 
-									console.log("Sending Address Data:", addressData);
+	const addressData = {
+		name,
+		contact_no,
+		address_line1,
+		address_line2: address_line2 || null,
+		city,
+		state,
+		postal_code,
+		country,
+		is_default
+	};
 
-									fetch("<?php echo BASE_URL; ?>/address/register", {
-										method: "POST",
-										headers: {
-											"Content-Type": "application/json",
-											"Authorization": `Bearer ${authToken}`
-										},
-										body: JSON.stringify(addressData)
-									})
-									.then(response => response.json())
-									.then(responseData => {
-										console.log("Address Added Response:", responseData);
+	console.log("Sending Address Data:", addressData);
 
-										if (responseData.message && responseData.message.includes("success")) {
-											Swal.fire({
-												title: "Success!",
-												text: "Address added successfully.",
-												icon: "success",
-												timer: 2000,
-												showConfirmButton: false
-											}).then(() => {
-												$("#checkout-form")[0].reset(); // Reset form fields
-												$("#addressModal").modal("hide"); // Close modal
-												location.reload(); // Reload the page
-											});
-										} else {
-											Swal.fire({
-												title: "Error!",
-												text: responseData.message || "Failed to add address.",
-												icon: "error"
-											});
-										}
-									})
-									.catch(error => {
-										console.error("Error adding address:", error);
-										Swal.fire({
-											title: "Error!",
-											text: "Something went wrong. Please try again.",
-											icon: "error"
-										});
-									});
-								});
+	fetch("<?php echo BASE_URL; ?>/address/register", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": `Bearer ${authToken}`
+		},
+		body: JSON.stringify(addressData)
+	})
+	.then(response => response.json())
+	.then(responseData => {
+		console.log("Address Added Response:", responseData);
+		Swal.close(); // Close the loading alert
+
+		if (responseData.message && responseData.message.includes("success")) {
+			Swal.fire({
+				title: "Success!",
+				text: "Address added successfully.",
+				icon: "success",
+				timer: 2000,
+				showConfirmButton: false
+			}).then(() => {
+				$("#checkout-form")[0].reset();
+				$("#addressModal").modal("hide");
+				location.reload();
+			});
+		} else {
+			Swal.fire({
+				title: "Error!",
+				text: responseData.message || "Failed to add address.",
+				icon: "error"
+			});
+		}
+	})
+	.catch(error => {
+		console.error("Error adding address:", error);
+		Swal.close();
+		Swal.fire({
+			title: "Error!",
+			text: "Something went wrong. Please try again.",
+			icon: "error"
+		});
+	});
+});
+
 							});
 						</script>
 						<!-- Delete Address Script -->
