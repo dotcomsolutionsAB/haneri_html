@@ -346,7 +346,7 @@
 
                     if (response.ok || response.status === 200 || response.status === 204) {
                         Swal.fire("Deleted!", result.message || "Product has been deleted.", "success");
-                        // fetchProducts();
+                        location.reload(); // or call fetchProducts() if defined
                     } else {
                         Swal.fire("Failed!", result.message || "Could not delete product.", "error");
                     }
@@ -357,7 +357,6 @@
             }
         }
     });
-    fetchProducts();
 </script>
     <!-- Sync Products api -->
     <!-- <script>     
