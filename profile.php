@@ -493,7 +493,7 @@
 								// 	});
 								// });
 
-function openAddAddressForm() {
+								window.openAddAddressForm = function () {
 	Swal.fire({
 		title: 'Add New Address',
 		html: `
@@ -550,7 +550,8 @@ function openAddAddressForm() {
 			submitAddress(result.value);
 		}
 	});
-}
+};
+
 
 function submitAddress(data) {
 	const authToken = localStorage.getItem("auth_token");
