@@ -93,7 +93,7 @@
                         headers: { "Authorization": `Bearer ${authToken}` },
                         success: function (response) {
                             if (response.message.includes("success")) {
-                                alert("Address deleted successfully.");
+                                // alert("Address deleted successfully.");
                                 fetchAddresses(); // Refresh address list
                             } else {
                                 alert("Failed to delete address. Please try again.");
