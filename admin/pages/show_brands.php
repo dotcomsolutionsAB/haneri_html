@@ -144,7 +144,7 @@
                 data: JSON.stringify(requestData), // Send limit, offset, and name (if any)
                 success: (response) => {
                     if (response?.data) {
-                        totalItems = response.count ?? response.records;
+                        totalItems = response.records ?? response.count;
                         populateTable(response.data);
                         updatePagination();
                     } else {
@@ -223,7 +223,7 @@
         });
 
         const perPageSelect = $("[data-datatable-size]");
-        [5, 10, 25, 50, 100].forEach((size) => {
+        [2, 3, 25, 50, 100].forEach((size) => {
             perPageSelect.append(`<option value="${size}">${size}</option>`);
         });
         perPageSelect.val(itemsPerPage);
