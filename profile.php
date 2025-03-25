@@ -496,28 +496,60 @@
 								window.openAddAddressForm = function () {
 	Swal.fire({
 		title: 'Add New Address',
+		width: '700px', // Wider popup
 		html: `
+			<style>
+				.swal2-container .swal2-popup {
+					padding: 20px;
+				}
+				#swal-address-form {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 15px;
+				}
+				#swal-address-form input,
+				#swal-address-form select {
+					width: 100%;
+					height: 45px;
+					padding: 10px;
+					font-size: 14px;
+					border-radius: 5px;
+					border: 1px solid #ccc;
+				}
+				#swal-address-form input::placeholder {
+					color: #999;
+				}
+				#swal-address-form select:invalid {
+					color: #999;
+				}
+				.swal2-actions {
+					justify-content: flex-end;
+					margin-top: 20px;
+				}
+			</style>
+
 			<form id="swal-address-form">
-				<input type="text" id="swal_name" class="swal2-input" placeholder="Name*" required>
-				<input type="text" id="swal_contact_no" class="swal2-input" placeholder="Contact No*" required>
-				<input type="text" id="swal_address_line1" class="swal2-input" placeholder="Address Line 1*" required>
-				<input type="text" id="swal_address_line2" class="swal2-input" placeholder="Address Line 2 (optional)">
-				<input type="text" id="swal_city" class="swal2-input" placeholder="City*" required>
-				<select id="swal_state" class="swal2-select">
+				<input type="text" id="swal_name" placeholder="Name*" required>
+				<input type="text" id="swal_contact_no" placeholder="Contact No*" required>
+				<input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
+				<input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
+				<input type="text" id="swal_city" placeholder="City*" required>
+				<select id="swal_state" required>
 					<option value="">Select State*</option>
 					<option value="Mumbai">Mumbai</option>
 					<option value="Delhi">Delhi</option>
 					<option value="West Bengal">West Bengal</option>
 				</select>
-				<select id="swal_country" class="swal2-select">
+				<select id="swal_country" required>
 					<option value="India">India</option>
 					<option value="Australia">Australia</option>
 				</select>
-				<input type="text" id="swal_postal_code" class="swal2-input" placeholder="Pincode*" required>
+				<input type="text" id="swal_postal_code" placeholder="Pincode*" required>
 			</form>
 		`,
 		showCancelButton: true,
 		confirmButtonText: 'Add Address',
+		cancelButtonText: 'Cancel',
 		focusConfirm: false,
 		preConfirm: () => {
 			const name = document.getElementById('swal_name').value.trim();
