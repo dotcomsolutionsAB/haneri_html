@@ -268,7 +268,7 @@
 </script>
 <script>
     const generateActionButtons = (product) => {
-        const productId = product.variants?.[0]?.product_id || "invalid";
+        const productId = product.id || "invalid";
         return `
             <div class="menu" data-menu="true">
                 <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" 
@@ -294,7 +294,7 @@
                         </div>
                         <div class="menu-separator"></div>
                         <div class="menu-item">
-                            <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="remove_product.php?${productId || "#"}">
+                            <a class="menu-link remove-product" data-product-id="${productId || "invalid"}" href="">
                                 <span class="menu-icon"><i class="ki-filled ki-trash"></i></span>
                                 <span class="menu-title">Remove</span>
                             </a>
@@ -304,6 +304,55 @@
             </div>
         `;
     };
+
+    // Handle product deletion
+    document.addEventListener("click", async function (e) {
+        const removeBtn = e.target.closest(".remove-product");
+        if (removeBtn) {
+            e.preventDefault();
+            const productId = removeBtn.getAttribute("data-product-id");
+            const baseUrl = "<?php echo BASE_URL; ?>"; // replace this dynamically or set beforehand
+            const authToken = localStorage.getItem("auth_token");
+
+            if (productId === "invalid") {
+                Swal.fire("Invalid product!", "Product ID is not available.", "error");
+                return;
+            }
+
+            const confirm = await Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            });
+
+            if (confirm.isConfirmed) {
+                try {
+                    const response = await fetch(`${baseUrl}/products/${productId}`, {
+                        method: "DELETE",
+                        headers: {
+                            "Authorization": `Bearer ${authToken}`,
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    if (response.ok) {
+                        Swal.fire("Deleted!", "Product has been deleted.", "success");
+                        fetchProducts(); // Call your function to refresh product list
+                    } else {
+                        const error = await response.json();
+                        Swal.fire("Failed!", error.message || "Could not delete product.", "error");
+                    }
+                } catch (error) {
+                    Swal.fire("Error!", "Something went wrong while deleting.", "error");
+                    console.error(error);
+                }
+            }
+        }
+    });
 </script>
     <!-- Sync Products api -->
     <!-- <script>     
