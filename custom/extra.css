@@ -1905,7 +1905,7 @@ footer .social-icon {
 }
 
 .blog-item {
-    min-height: 500px;
+    min-height: 480px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -1936,14 +1936,15 @@ footer .social-icon {
     border-color: #00473eb3;
 }
  .contents{
-    min-height: 530px;
+    min-height: 390px;
     display: flex;
     /* background: antiquewhite; */
     /* justify-content: space-between; */
     flex-direction: column;
  }  
  .blog-content{
-    min-height: 235px;
+    /* min-height: 235px; */
+    min-height: 110px;
  }
  .blog-content p{
     display: flex;
@@ -1952,7 +1953,8 @@ footer .social-icon {
 
  }
  .blog-content h3{
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
  }
  .btns{
     height: 100%;
