@@ -96,7 +96,7 @@ thumbContainer.html('');
 let images = [];
 
 // Logic for image selection
-if (productId == 10) {
+if (productId == 14) {
   images = [
     'Natural_Pine.png',
     'Espresso_Walnut.png',
