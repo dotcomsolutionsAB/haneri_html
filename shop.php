@@ -102,8 +102,8 @@
                                 // 1. Fetch Categories
                                 function fetchCategories() {
                                     $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/categories',
-                                        type: 'GET',
+                                        url: '<?php echo BASE_URL; ?>/categories/fetch',
+                                        type: 'POST',
                                         success: function(response) {
                                             if (response && response.data) {
                                                 populateCategories(response.data);
@@ -146,8 +146,8 @@
                                 // 1. Fetch Brands from your API
                                 function fetchBrands() {
                                     $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/brands', // Your API endpoint
-                                        type: 'GET',
+                                        url: '<?php echo BASE_URL; ?>/brands/fetch', // Your API endpoint
+                                        type: 'POST',
                                         success: function(response) {
                                             if (response && response.data) {
                                                 populateBrands(response.data);
@@ -256,6 +256,7 @@
                                 </div>
                             </div>
 
+                            <!-- Get Variant Name -->
                             <script>
                                 $(document).ready(function() {
                                     fetchVariants()
@@ -310,33 +311,6 @@
                                     Apply Filters
                                 </button>
                              </div>
-
-                            <!-- <div class="widget widget-color">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
-                                        aria-controls="widget-body-6">Color</a>
-                                </h3>
-
-                                <div class="collapse show" id="widget-body-6">
-                                    <div class="widget-body">
-                                        <ul class="config-swatch-list flex-column">
-                                            <li class="active">
-                                                <a href="#" style="background-color: #dda756;"></a>
-                                                <span>Brown</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #7bbad1;"></a>
-                                                <span>Light-Blue</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #81d742;"></a>
-                                                <span>Green</span>
-                                            </li>                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>                     -->
-
                         </div>
                     </aside>
                 </div>
