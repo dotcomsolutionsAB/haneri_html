@@ -295,77 +295,7 @@
 </script>
 <!-- <div id="product-image-section"></div> -->
 
-<script>
-    const data = {
-        data: {
-            id: 14 // Change this value to test
-        }
-    };
 
-    const imageSection = document.getElementById('product-image-section');
-
-    if (data.data.id != 14) {
-        imageSection.innerHTML = `
-        <div class="product-slider-container">
-            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                <div class="product-item">
-                    <img class="product-single-image" src="images/f1.png" data-zoom-image="images/f1.png" width="915" height="915" alt="product" />
-                </div>
-                <div class="product-item">
-                    <img class="product-single-image" src="images/f2.png" data-zoom-image="images/f2.png" width="915" height="915" alt="product" />
-                </div>
-                <div class="product-item">
-                    <img class="product-single-image" src="images/f3.png" data-zoom-image="images/f3.png" width="915" height="915" alt="product" />
-                </div>
-            </div>
-            <span class="prod-full-screen"><i class="icon-plus"></i></span>
-        </div>
-        <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-            <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-1.jpg" width="98" height="98" alt="product" />
-            </div>
-            <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-2.jpg" width="98" height="98" alt="product" />
-            </div>
-            <div class="owl-dot">
-                <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98" alt="product" />
-            </div>
-        </div>`;
-    } else {
-        imageSection.innerHTML = `
-        <div class="product-slider-container">
-            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                <div class="product-item">
-                    <img class="product-single-image" src="images/Natural Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
-                </div>
-                <div class="product-item">
-                    <img class="product-single-image" src="images/Espresso Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
-                </div>
-                <div class="product-item">
-                    <img class="product-single-image" src="images/Moonlit White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
-                </div>
-                <div class="product-item">
-                    <img class="product-single-image" src="images/Velvet Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
-                </div>
-            </div>
-            <span class="prod-full-screen"><i class="icon-plus"></i></span>
-        </div>
-        <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-            <div class="owl-dot">
-                <img src="images/Natural Pine.png" width="98" height="98" alt="Natural Pine" />
-            </div>
-            <div class="owl-dot">
-                <img src="images/Espresso Walnut.png" width="98" height="98" alt="Espresso Walnut" />
-            </div>
-            <div class="owl-dot">
-                <img src="images/Moonlit White.png" width="98" height="98" alt="Moonlit White" />
-            </div>
-            <div class="owl-dot">
-                <img src="images/Velvet Black.png" width="98" height="98" alt="Velvet Black" />
-            </div>
-        </div>`;
-    }
-</script>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -441,6 +371,77 @@
                                 </div> -->
                             </div>
                         </div>
+                        <script>
+    const data = {
+        data: {
+            id: 14 // Change this value to test
+        }
+    };
+
+    const imageSection = document.getElementById('product-image-section');
+
+    if (data.data.id != 14) {
+        imageSection.innerHTML = `
+        <div class="product-slider-container">
+            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                <div class="product-item">
+                    <img class="product-single-image" src="images/f1.png" data-zoom-image="images/f1.png" width="915" height="915" alt="product" />
+                </div>
+                <div class="product-item">
+                    <img class="product-single-image" src="images/f2.png" data-zoom-image="images/f2.png" width="915" height="915" alt="product" />
+                </div>
+                <div class="product-item">
+                    <img class="product-single-image" src="images/f3.png" data-zoom-image="images/f3.png" width="915" height="915" alt="product" />
+                </div>
+            </div>
+            <span class="prod-full-screen"><i class="icon-plus"></i></span>
+        </div>
+        <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+            <div class="owl-dot">
+                <img src="assets/images/products/zoom/product-1.jpg" width="98" height="98" alt="product" />
+            </div>
+            <div class="owl-dot">
+                <img src="assets/images/products/zoom/product-2.jpg" width="98" height="98" alt="product" />
+            </div>
+            <div class="owl-dot">
+                <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98" alt="product" />
+            </div>
+        </div>`;
+    } else {
+        imageSection.innerHTML = `
+        <div class="product-slider-container">
+            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                <div class="product-item">
+                    <img class="product-single-image" src="images/Natural Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
+                </div>
+                <div class="product-item">
+                    <img class="product-single-image" src="images/Espresso Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
+                </div>
+                <div class="product-item">
+                    <img class="product-single-image" src="images/Moonlit White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
+                </div>
+                <div class="product-item">
+                    <img class="product-single-image" src="images/Velvet Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
+                </div>
+            </div>
+            <span class="prod-full-screen"><i class="icon-plus"></i></span>
+        </div>
+        <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+            <div class="owl-dot">
+                <img src="images/Natural Pine.png" width="98" height="98" alt="Natural Pine" />
+            </div>
+            <div class="owl-dot">
+                <img src="images/Espresso Walnut.png" width="98" height="98" alt="Espresso Walnut" />
+            </div>
+            <div class="owl-dot">
+                <img src="images/Moonlit White.png" width="98" height="98" alt="Moonlit White" />
+            </div>
+            <div class="owl-dot">
+                <img src="images/Velvet Black.png" width="98" height="98" alt="Velvet Black" />
+            </div>
+        </div>`;
+    }
+</script>
                         <div class="col-lg-7 pb-1">
                             <div class="single-product-custom-block">
                                 <div class="porto-block">
