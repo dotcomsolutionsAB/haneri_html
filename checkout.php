@@ -87,10 +87,6 @@
                 }
 
                 window.deleteAddress = function (id) { 
-                    if (!confirm("Are you sure you want to delete this address?")) {
-                        return;
-                    }
-
                     $.ajax({
                         url: `${baseUrl}/${id}`,
                         type: "DELETE",
