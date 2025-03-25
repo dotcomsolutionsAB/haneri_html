@@ -89,8 +89,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div
-                                    class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
+                                <div class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
                                     <div class="flex items-center gap-2 order-2 md:order-1">
                                         Show
                                         <select class="select select-sm w-16" data-datatable-size
@@ -223,7 +222,7 @@
         });
 
         const perPageSelect = $("[data-datatable-size]");
-        [2, 3, 25, 50, 100].forEach((size) => {
+        [5, 10, 25, 50, 100].forEach((size) => {
             perPageSelect.append(`<option value="${size}">${size}</option>`);
         });
         perPageSelect.val(itemsPerPage);
