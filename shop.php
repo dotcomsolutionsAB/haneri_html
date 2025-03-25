@@ -470,10 +470,10 @@
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
                                             <img 
                                                 src="${
+                                                    product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
                                                     product.category?.id === 1 ? 'images/f1.png' :
                                                     product.category?.id === 2 ? 'images/f2.png' :
-                                                    product.category?.id === 3 ? 'images/f3.png' :
-                                                    product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
+                                                    product.category?.id === 3 ? 'images/f3.png' :                                                    
                                                     'assets/images/products/product-1.jpg'
                                                 }" 
                                                 width="500" height="500" alt="product" 
