@@ -47,8 +47,8 @@
                                     <i
                                         class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
-                                    <input class="input input-sm pl-8" data-datatable-search="#members_table"
-                                        placeholder="Search Members" type="text" />
+                                    <input class="input input-sm pl-8" data-datatable-search="#brands_table"
+                                        placeholder="Search Brands" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
@@ -119,17 +119,32 @@
         let itemsPerPage = 10;
         let currentPage = 1;
         let totalItems = 0;
+        let searchTerm = "";     // Will hold the search input text
+
+        const $searchInput = $("input[data-datatable-search=\"#brands_table\"]");
 
         const fetchBrands = () => {
             const offset = (currentPage - 1) * itemsPerPage;
+
+            // Build request data
+            const requestData = {
+                limit: itemsPerPage,
+                offset: offset
+            };
+            // Include "name" in request if searchTerm >= 3
+            if (searchTerm.length >= 3) {
+                requestData.name = searchTerm;
+            }
 
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/brands/fetch`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(requestData), // Send limit, offset, and name (if any)
                 success: (response) => {
                     if (response?.data) {
-                        totalItems = response.count ?? response.data.length;
+                        totalItems = response.count ?? response.records;
                         populateTable(response.data);
                         updatePagination();
                     } else {

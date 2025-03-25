@@ -454,260 +454,148 @@
 </style>
 
 <script>
-$(document).ready(function() {
-    const token = localStorage.getItem('auth_token');
-
-    // Listen for "Edit" link clicks (where data-category-id holds the category's NAME)
-    $(document).on('click', '.edit-category-btn', function(e) {
-        e.preventDefault();
-
-        const categoryName = $(this).data('category-id');
-        if (!categoryName) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'No category name found.'
-            });
-            return;
-        }
-
-        // Fetch the category by name
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/categories/fetch`,
-            type: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            data: JSON.stringify({ name: categoryName }),
-            success: function (response) {
-                // Expecting { data: [ ... ], message: "...", records: ... }
-                if (response?.data && response.data.length > 0) {
-                    const categoryItem = response.data[0]; // Use the first match
-                    openEditCategoryPopup(categoryItem);
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Not Found',
-                        text: `No categories found with name: ${categoryName}`
-                    });
-                }
-            },
-            error: function (xhr) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: xhr.responseJSON?.message || 'Unable to fetch category.'
-                });
-            }
-        });
-    });
-
-    // Open SweetAlert2 with smaller font, labels, etc.
-    function openEditCategoryPopup(categoryData) {
-        Swal.fire({
-            title: 'Edit Category',
-            // Use our custom class to reduce font size (except width)
-            customClass: {
-              popup: 'swal2-my-small-popup'
-            },
-            // Build the popup HTML with labels
-            html: `
-              <div class="swal2-field-row">
-                  <label for="swal-cat-name">Name</label>
-                  <input id="swal-cat-name" type="text" 
-                         value="${categoryData.name || ''}">
-                </div>
-                
-                <div class="swal2-field-row">
-                  <label for="swal-cat-parent">Parent ID</label>
-                  <input id="swal-cat-parent" type="text" 
-                         value="${categoryData.parent_id || ''}">
-                </div>
-                
-                <div class="swal2-field-row">
-                  <label for="swal-cat-photo">Photo URL</label>
-                  <input id="swal-cat-photo" type="text" 
-                         value="${categoryData.photo || ''}">
-                </div>
-                
-                <div class="swal2-field-row">
-                  <label for="swal-cat-sort">Custom Sort</label>
-                  <input id="swal-cat-sort" type="number" 
-                         value="${categoryData.custom_sort || 0}">
-                </div>
-                
-                <div class="swal2-field-row">
-                  <label for="swal-cat-description">Description</label>
-                  <textarea id="swal-cat-description"
-                  >${categoryData.description || ''}</textarea>
-                </div>
-            `,
-            focusConfirm: false,
-            showCancelButton: true,
-            confirmButtonText: 'Update',
-            // Collect values before closing
-            preConfirm: () => {
-                const name = document.getElementById('swal-cat-name').value.trim();
-                const parent_id = document.getElementById('swal-cat-parent').value.trim() || null;
-                const photo = document.getElementById('swal-cat-photo').value.trim() || null;
-                const custom_sort = document.getElementById('swal-cat-sort').value.trim() || 0;
-                const description = document.getElementById('swal-cat-description').value.trim() || null;
-                return { name, parent_id, photo, custom_sort, description };
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // You said you are updating via /products/:id
-                // We use categoryData.id from the fetch
-                updateCategoryViaProductsApi(categoryData.id, result.value);
-            }
-        });
-    }
-
-    // PUT request to /products/:id (with the new data)
-    function updateCategoryViaProductsApi(categoryId, payload) {
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
-            type: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            data: JSON.stringify(payload),
-            success: function (data) {
-                // Example: { "message": "Category updated successfully!" }
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: data.message || 'Category updated successfully!'
-                }).then(() => {
-                    // Optionally refresh your categories table/list:
-                    fetchCategories();
-                });
-            },
-            error: function (xhr) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: xhr.responseJSON?.message || 'Unable to update category.'
-                });
-            }
-        });
-    }
-});
-</script>
-
-
-<!-- <script>
-    const generateActionButtons = (category) => {
-        return `
-            <div class="menu" data-menu="true">
-                <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                    <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                        <i class="ki-filled ki-dots-vertical">
-                        </i>
-                    </button>
-                    <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
-                        <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-search-list">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                        <div class="menu-separator">
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-pencil">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    Edit
-                                </span>
-                            </a>
-                        </div>
-                        <div class="menu-separator">
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-trash">
-                                    </i>
-                                </span>
-                                <span class="menu-title">
-                                    Remove
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-    };
-</script> -->
-
-<!-- Example snippet inside your HTML -->
-<!-- <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         const token = localStorage.getItem('auth_token');
 
-        // Listen for clicks on the "Remove" link
-        $(document).on('click', '.delete-category-btn', function (e) {
-            e.preventDefault(); // Prevent navigation
+        // Listen for "Edit" link clicks (where data-category-id holds the category's NAME)
+        $(document).on('click', '.edit-category-btn', function(e) {
+            e.preventDefault();
 
-            // Get category ID from data attribute
-            const categoryId = $(this).data('category-id');
+            const categoryName = $(this).data('category-id');
+            if (!categoryName) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No category name found.'
+                });
+                return;
+            }
 
-            // Show SweetAlert2 confirmation
-            Swal.fire({
-                title: 'Are you sure?',
-                text: 'This action will permanently delete the category.',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel',
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // If confirmed, send DELETE request
-                    $.ajax({
-                        url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
-                        type: 'DELETE',
-                        headers: {
-                            'Authorization': `Bearer ${token}`
-                        },
-                        success: function (data) {
-                            // data = { "message": "Category deleted successfully!" }
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Deleted!',
-                                text: data.message || 'Category deleted successfully!'
-                            }).then(() => {
-                                // Optionally refresh/reload categories if needed:
-                                // fetchCategories();
-                            });
-                        },
-                        error: function (xhr, status, error) {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: xhr.responseJSON?.message || 'Unable to delete category.'
-                            });
-                        }
+            // Fetch the category by name
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/categories/fetch`,
+                type: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify({ name: categoryName }),
+                success: function (response) {
+                    // Expecting { data: [ ... ], message: "...", records: ... }
+                    if (response?.data && response.data.length > 0) {
+                        const categoryItem = response.data[0]; // Use the first match
+                        openEditCategoryPopup(categoryItem);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Not Found',
+                            text: `No categories found with name: ${categoryName}`
+                        });
+                    }
+                },
+                error: function (xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: xhr.responseJSON?.message || 'Unable to fetch category.'
                     });
                 }
             });
         });
+
+        // Open SweetAlert2 with smaller font, labels, etc.
+        function openEditCategoryPopup(categoryData) {
+            Swal.fire({
+                title: 'Edit Category',
+                // Use our custom class to reduce font size (except width)
+                customClass: {
+                popup: 'swal2-my-small-popup'
+                },
+                // Build the popup HTML with labels
+                html: `
+                <div class="swal2-field-row">
+                    <label for="swal-cat-name">Name</label>
+                    <input id="swal-cat-name" type="text" 
+                            value="${categoryData.name || ''}">
+                    </div>
+                    
+                    <div class="swal2-field-row">
+                    <label for="swal-cat-parent">Parent ID</label>
+                    <input id="swal-cat-parent" type="text" 
+                            value="${categoryData.parent_id || ''}">
+                    </div>
+                    
+                    <div class="swal2-field-row">
+                    <label for="swal-cat-photo">Photo URL</label>
+                    <input id="swal-cat-photo" type="text" 
+                            value="${categoryData.photo || ''}">
+                    </div>
+                    
+                    <div class="swal2-field-row">
+                    <label for="swal-cat-sort">Custom Sort</label>
+                    <input id="swal-cat-sort" type="number" 
+                            value="${categoryData.custom_sort || 0}">
+                    </div>
+                    
+                    <div class="swal2-field-row">
+                    <label for="swal-cat-description">Description</label>
+                    <textarea id="swal-cat-description"
+                    >${categoryData.description || ''}</textarea>
+                    </div>
+                `,
+                focusConfirm: false,
+                showCancelButton: true,
+                confirmButtonText: 'Update',
+                // Collect values before closing
+                preConfirm: () => {
+                    const name = document.getElementById('swal-cat-name').value.trim();
+                    const parent_id = document.getElementById('swal-cat-parent').value.trim() || null;
+                    const photo = document.getElementById('swal-cat-photo').value.trim() || null;
+                    const custom_sort = document.getElementById('swal-cat-sort').value.trim() || 0;
+                    const description = document.getElementById('swal-cat-description').value.trim() || null;
+                    return { name, parent_id, photo, custom_sort, description };
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // You said you are updating via /products/:id
+                    // We use categoryData.id from the fetch
+                    updateCategoryViaProductsApi(categoryData.id, result.value);
+                }
+            });
+        }
+
+        // PUT request to /products/:id (with the new data)
+        function updateCategoryViaProductsApi(categoryId, payload) {
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
+                type: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(payload),
+                success: function (data) {
+                    // Example: { "message": "Category updated successfully!" }
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: data.message || 'Category updated successfully!'
+                    }).then(() => {
+                        // Optionally refresh your categories table/list:
+                        fetchCategories();
+                    });
+                },
+                error: function (xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: xhr.responseJSON?.message || 'Unable to update category.'
+                    });
+                }
+            });
+        }
     });
-</script> -->
+</script>
 
 <!-- Footer -->
 <?php include("footer1.php"); ?>
