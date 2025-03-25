@@ -716,6 +716,22 @@
 									title: 'Update Address',
 									width: '700px',
 									html: `
+									<style>
+      .swal-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+      .swal-form-grid input,
+      .swal-form-grid select {
+        height: 45px;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+    </style>
 										<form id="swal-update-form" class="swal-form-grid">
 											<input type="hidden" id="update_address_id" value="${address.id}">
 											<input type="text" id="update_name" placeholder="Name*" value="${address.name || ''}">
