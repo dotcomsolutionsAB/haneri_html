@@ -268,73 +268,7 @@
 							</div>
 						</div>
 						<!-- Add Address Modal-->
-						<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="checkout-form" class="check-form">
-                                            <div class="form-group in">
-                                                <label class="labl">Name <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="name">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="contact_no">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 1 <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="address_line1" placeholder="House number and street name">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 2 (optional)</label>
-                                                <input type="text" class="form-control inp" id="address_line2">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Town / City <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="city">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">State <abbr class="required" title="required">*</abbr></label>
-                                                <select class="form-control inp" id="state">
-                                                    <option value="Mumbai" selected>Mumbai</option>
-                                                    <option value="Delhi">Delhi</option>
-                                                    <option value="West Bengal">West Bengal</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Country <span class="required">*</span></label>
-                                                <select class="form-control inp" id="country">
-                                                    <option value="India" selected>India</option>
-                                                    <option value="Australia">Australia</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Pincode <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="postal_code">
-                                            </div>
-
-                                            <div class="form-group text-end btt">
-                                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> -->
-                                                <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+						<!--  -->
 						<!-- Update Address Modal -->
 						<div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
