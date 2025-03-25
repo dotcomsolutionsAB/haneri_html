@@ -145,14 +145,6 @@
                                     justify-content: flex-end;
                                     margin-top: 20px;
                                 }
-                                .swal-orange-btn {
-                                    background-color: orange !important;
-                                    color: white !important;
-                                    border: none !important;
-                                }
-                                .swal-orange-btn:hover {
-                                    background-color: #e69500 !important;
-                                }
                             </style>
 
                             <form id="swal-update-form" class="swal-form-grid">
