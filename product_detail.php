@@ -80,6 +80,83 @@
                             // Select the first variant by default
                             updateVariant($('.variant').first()[0]);
                         }
+// 
+// --- IMAGE GALLERY LOGIC --- //
+const productId = data.data.id;
+const categoryId = data.data.category.id;
+
+// Containers
+const galleryContainer = $('#product-gallery');
+const thumbContainer = $('#product-thumbnails');
+
+// Clear old images
+galleryContainer.html('');
+thumbContainer.html('');
+
+let images = [];
+
+// Logic for image selection
+if (productId == 10) {
+  images = [
+    'Natural_Pine.png',
+    'Espresso_Walnut.png',
+    'Moonlit_White.png',
+    'Velvet_Black.png'
+  ];
+} else {
+  if (categoryId == 1) {
+    images = ['f1.png'];
+  } else if (categoryId == 2) {
+    images = ['f4.png'];
+  } else if (categoryId == 3) {
+    images = ['f5.png'];
+  } else {
+    images = ['f9.png'];
+  }
+}
+
+// Inject images
+images.forEach((img, index) => {
+  const fullImagePath = `images/${img}`;
+
+  // Main image
+  galleryContainer.append(`
+    <div class="product-item">
+      <img class="product-single-image" 
+           src="${fullImagePath}" 
+           data-zoom-image="${fullImagePath}" 
+           width="915" height="915" alt="product" />
+    </div>
+  `);
+
+  // Thumbnail
+  thumbContainer.append(`
+    <div class="owl-dot">
+      <img src="${fullImagePath}" width="98" height="98" alt="product" />
+    </div>
+  `);
+});
+
+// Reinitialize carousel (if using Owl Carousel)
+if ($.fn.owlCarousel) {
+  galleryContainer.owlCarousel({
+    items: 1,
+    nav: true,
+    dots: false,
+    loop: true,
+    navText: ['<i class="icon-angle-left">', '<i class="icon-angle-right">']
+  });
+
+  thumbContainer.owlCarousel({
+    items: 4,
+    dots: false,
+    margin: 10
+  });
+}
+
+// 
+
+
                     }
                 },
                 error: function (error) {
@@ -321,7 +398,7 @@
                     <div class="row">
                         <div class="col-lg-5 product-single-gallery">
                             <div class="sidebar-wrapper">
-                                <div class="product-slider-container">
+                                <!-- <div class="product-slider-container">
                                     <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                                         <div class="product-item">
                                             <img class="product-single-image"
@@ -342,7 +419,7 @@
                                                 width="915" height="915" alt="product" />
                                         </div>
                                     </div>
-                                    <!-- End .product-single-carousel -->
+
                                     <span class="prod-full-screen">
                                         <i class="icon-plus"></i>
                                     </span>
@@ -361,7 +438,19 @@
                                         <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98"
                                             alt="product" />
                                     </div>
+                                </div> -->
+                                <div class="product-slider-container">
+                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover" id="product-gallery">
+                                        <!-- Images will be injected here -->
+                                    </div>
+                                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
+                                    </div>
+
+                                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="product-thumbnails">
+                                    <!-- Thumbnails will be injected here -->
+
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-lg-7 pb-1">
