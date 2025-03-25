@@ -161,7 +161,7 @@
                     console.log("API response received:", data);
 
                     if (data.success === true || data.message.includes("successfully")) {
-                        alert(data.message);
+                        // alert(data.message);
                         cartItemIds.hide();
                         addCartBtn.hide();
                         viewCartBtn.show();
