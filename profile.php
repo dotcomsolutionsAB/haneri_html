@@ -697,7 +697,7 @@
 							// 	$("#updateAddressModal").modal("show");
 							// }
 						</script>
-						<script>
+<script>
 	window.openUpdateModal = function (addressId) {
 		console.log("Editing Address ID:", addressId);
 
@@ -883,64 +883,63 @@
 							
 						</script>
 						<script>
-	function submitUpdatedAddress(data) {
-		const authToken = localStorage.getItem("auth_token");
-		if (!authToken) {
-			Swal.fire("Error", "User not logged in.", "error");
-			return;
-		}
+							function submitUpdatedAddress(data) {
+								const authToken = localStorage.getItem("auth_token");
+								if (!authToken) {
+									Swal.fire("Error", "User not logged in.", "error");
+									return;
+								}
 
-		const updatedData = {
-			name: data.name,
-			contact_no: data.contact_no,
-			address_line1: data.address_line1,
-			address_line2: data.address_line2 || null,
-			city: data.city,
-			state: data.state,
-			country: data.country,
-			postal_code: data.postal_code,
-			is_default: true
-		};
+								const updatedData = {
+									name: data.name,
+									contact_no: data.contact_no,
+									address_line1: data.address_line1,
+									address_line2: data.address_line2 || null,
+									city: data.city,
+									state: data.state,
+									country: data.country,
+									postal_code: data.postal_code,
+									is_default: true
+								};
 
-		Swal.fire({
-			title: "Updating...",
-			text: "Please wait",
-			allowOutsideClick: false,
-			didOpen: () => Swal.showLoading()
-		});
+								Swal.fire({
+									title: "Updating...",
+									text: "Please wait",
+									allowOutsideClick: false,
+									didOpen: () => Swal.showLoading()
+								});
 
-		fetch(`<?php echo BASE_URL; ?>/address/update/${data.id}`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": `Bearer ${authToken}`
-			},
-			body: JSON.stringify(updatedData)
-		})
-		.then(response => response.json())
-		.then(responseData => {
-			Swal.close();
-			if (responseData.message && responseData.message.includes("updated successfully")) {
-				Swal.fire({
-					title: "Updated!",
-					text: "Your address has been updated.",
-					icon: "success",
-					timer: 2000,
-					showConfirmButton: false
-				}).then(() => {
-					location.reload();
-				});
-			} else {
-				Swal.fire("Error!", responseData.message || "Failed to update address.", "error");
-			}
-		})
-		.catch(error => {
-			console.error("Error updating address:", error);
-			Swal.close();
-
-
-
-
+								fetch(`<?php echo BASE_URL; ?>/address/update/${data.id}`, {
+									method: "POST",
+									headers: {
+										"Content-Type": "application/json",
+										"Authorization": `Bearer ${authToken}`
+									},
+									body: JSON.stringify(updatedData)
+								})
+								.then(response => response.json())
+								.then(responseData => {
+									Swal.close();
+									if (responseData.message && responseData.message.includes("updated successfully")) {
+										Swal.fire({
+											title: "Updated!",
+											text: "Your address has been updated.",
+											icon: "success",
+											timer: 2000,
+											showConfirmButton: false
+										}).then(() => {
+											location.reload();
+										});
+									} else {
+										Swal.fire("Error!", responseData.message || "Failed to update address.", "error");
+									}
+								})
+								.catch(error => {
+									console.error("Error updating address:", error);
+									Swal.close();
+									Swal.fire("Error", "Something went wrong. Please try again.", "error");
+								});
+							}
 					</div>
 				</div><!-- End .tab-pane -->
 
