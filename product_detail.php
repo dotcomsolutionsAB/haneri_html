@@ -63,7 +63,7 @@
                         // IMAGE SECTION LOGIC
         let imageSectionHtml = '';
 
-if (parseInt(data.data.id) === 14) {
+if (parseInt(productId) === 14) {
     // Custom images for ID 14
     imageSectionHtml = `
     <div class="product-slider-container">
