@@ -767,10 +767,10 @@
 				const country = document.getElementById("update_country").value;
 				const postal_code = document.getElementById("update_postal_code").value.trim();
 
-				if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
-					Swal.showValidationMessage('Please fill all required fields.');
-					return false;
-				}
+				// if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+				// 	Swal.showValidationMessage('Please fill all required fields.');
+				// 	return false;
+				// }
 
 				return {
 					id,
