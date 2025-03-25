@@ -412,7 +412,7 @@
         <div class="product-slider-container">
             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                 <div class="product-item">
-                    <img class="product-single-image" src="images/Natural_Pine.png" data-zoom-image="images/Natural_Pine.png" width="915" height="915" alt="Natural Pine" />
+                    <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natura_Pine.png" width="915" height="915" alt="Natural Pine" />
                 </div>
                 <div class="product-item">
                     <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso_Walnut.png" width="915" height="915" alt="Espresso Walnut" />
@@ -428,7 +428,7 @@
         </div>
         <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
             <div class="owl-dot">
-                <img src="images/Natural_Pine.png" width="98" height="98" alt="Natural_Pine" />
+                <img src="images/Natura_Pine.png" width="98" height="98" alt="Natura_Pine" />
             </div>
             <div class="owl-dot">
                 <img src="images/Espresso_Walnut.png" width="98" height="98" alt="Espresso_Walnut" />
