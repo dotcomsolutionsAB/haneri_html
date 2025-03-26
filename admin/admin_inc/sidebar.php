@@ -5,7 +5,7 @@
         id="sidebar_header">
         <a class="dark:hidden" href="index.php">
             <img class="default-logo min-h-[22px] max-w-none" src="uploads/Haneri_Logo.png" />
-            <img class="small-logo min-h-[10px] max-w-none" src="uploads/Haneri_Logo.png" />
+            <img class="small-logo min-h-[10px] max-w-none" src="uploads/H.jpg" />
         </a>
         <!-- <a class="hidden dark:block" href="index.php">
             <img class="default-logo min-h-[22px] max-w-none" src="assets/media/app/default-logo-dark.svg" />

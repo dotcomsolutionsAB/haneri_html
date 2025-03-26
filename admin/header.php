@@ -76,7 +76,7 @@
                     <!-- Mobile Logo -->
                     <div class="flex gap-1 lg:hidden items-center -ms-1">
                         <a class="shrink-0" href="#">
-                            <img class="max-h-[25px] w-full" src="uploads/Haneri_Logo.png" />
+                            <img class="max-h-[25px] w-full" src="uploads/H.jpg" />
                         </a>
                         <div class="flex items-center">
                             <button class="btn btn-icon btn-light btn-clear btn-sm" data-drawer-toggle="#sidebar">
