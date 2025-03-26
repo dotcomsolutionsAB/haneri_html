@@ -10,7 +10,9 @@
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left">
-        <h1 class="text-uppercase page_heading heading1">OUR BRANDS</h1>
+    <a  class="btn button" href="/our_story.php">Our Story</a>
+            <a class="btn button" href="/our_brands.php">Our Brands</a>
+            <a class="btn button" href="/capabilities.php">Capabilities</a>
     </div>
     <div class="container">    
         <section id="our-brands" class="brands-section">

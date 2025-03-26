@@ -11,7 +11,9 @@
     </nav>
 
     <div class="containe text-left">
-        <h1 class="font4 text-uppercase about_section">CAPABILITIES</h1>
+    <a  class="btn button" href="/our_story.php">Our Story</a>
+            <a class="btn button" href="/our_brands.php">Our Brands</a>
+            <a class="btn button" href="/capabilities.php">Capabilities</a>
     </div>
     <div class="container">                
         

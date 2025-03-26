@@ -12,9 +12,9 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-        <a  class="btn button" href="/air_curve_design.php">Our Story</a>
-            <a class="btn button" href="/turbosilent_bldc.php">Our Brands</a>
-            <a class="btn button" href="/mass.php">Capabilities</a>
+        <a  class="btn button" href="/our_story.php">Our Story</a>
+            <a class="btn button" href="/our_brands.php">Our Brands</a>
+            <a class="btn button" href="/capabilities.php">Capabilities</a>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">       
