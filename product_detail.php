@@ -651,28 +651,58 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-            <div class="container">
-                <hr class="mt-0 m-b-5">
-                <div style="background-color:#09594f;border-radius:12px;padding:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:#fff;text-align:center;">
-                    <div style="flex:1 1 200px;min-width:200px;">
-                        <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online" style="width:60px;margin-bottom:10px;">
-                        <div style="font-size:16px;font-weight:500;">Buy in store or online</div>
-                    </div>
-                    <div style="flex:1 1 200px;min-width:200px;">
-                        <img src="//www.crompton.co.in/cdn/shop/files/gear_80x.svg?v=1701772745" alt="Service and Installation" title="Service and Installation" style="width:60px;margin-bottom:10px;">
-                        <div style="font-size:16px;font-weight:500;">Service and Installation</div>
-                    </div>
-                    <div style="flex:1 1 200px;min-width:200px;">
-                        <img src="//www.crompton.co.in/cdn/shop/files/certification_80x.svg?v=1701772745" alt="Product Warranty" title="Product Warranty" style="width:60px;margin-bottom:10px;">
-                        <div style="font-size:16px;font-weight:500;">Product Warranty</div>
-                    </div>
-                    <div style="flex:1 1 200px;min-width:200px;">
-                        <img src="//www.crompton.co.in/cdn/shop/files/Group_53380_80x.svg?v=1701772744" alt="Top Rated Products" title="Top Rated Products" style="width:60px;margin-bottom:10px;">
-                        <div style="font-size:16px;font-weight:500;">Top Rated Products</div>
-                    </div>
-                </div>
+            <style>
+                .secure-section {
+                    background-color: #09594f;
+                    border-radius: 12px;
+                    padding: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    color: #fff;
+                    text-align: center;
+                }
 
+                .secure-item {
+                    min-width: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                .secure-item img {
+                    width: 60px;
+                    margin-bottom: 10px;
+                }
+
+                .secure-text {
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: "Open Sans", sans-serif;
+                }
+
+            </style>
+            <div class="secure-section">
+                <div class="secure-item">
+                    <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online">
+                    <div class="secure-text">Buy in store or online</div>
+                </div>
+                <div class="secure-item">
+                    <img src="//www.crompton.co.in/cdn/shop/files/gear_80x.svg?v=1701772745" alt="Service and Installation" title="Service and Installation">
+                    <div class="secure-text">Service and Installation</div>
+                </div>
+                <div class="secure-item">
+                    <img src="//www.crompton.co.in/cdn/shop/files/certification_80x.svg?v=1701772745" alt="Product Warranty" title="Product Warranty">
+                    <div class="secure-text">Product Warranty</div>
+                </div>
+                <div class="secure-item">
+                    <img src="//www.crompton.co.in/cdn/shop/files/Group_53380_80x.svg?v=1701772744" alt="Top Rated Products" title="Top Rated Products">
+                    <div class="secure-text">Top Rated Products</div>
+                </div>
             </div>
+
             <!-- Related Products -->
             <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
