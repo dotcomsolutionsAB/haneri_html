@@ -260,16 +260,39 @@
                             const variantsContainer = $('.variants');
 
                             // Generate variant options dynamically
-                            variantsContainer.html(variants.map((variant, index) =>
-                                `<div class="variant ${index === 0 ? 'selected' : ''}" 
-                                    data-variant-id="${variant.id}" 
-                                    data-selling-price="${variant.selling_price}" 
-                                    data-regular-price="${variant.regular_price}" 
-                                    data-vendor-price="${variant.sales_price_vendor}" 
-                                    onclick="updateVariant(this)">
-                                    <p>${variant.variant_value}</p>
-                                </div>`
-                            ).join(''));
+                            // variantsContainer.html(variants.map((variant, index) =>
+                            //     `<div class="variant ${index === 0 ? 'selected' : ''}" 
+                            //         data-variant-id="${variant.id}" 
+                            //         data-selling-price="${variant.selling_price}" 
+                            //         data-regular-price="${variant.regular_price}" 
+                            //         data-vendor-price="${variant.sales_price_vendor}" 
+                            //         onclick="updateVariant(this)">
+                            //         <p>${variant.variant_value}</p>
+                            //     </div>`
+                            // ).join(''));
+                            variantsContainer.html(variants.map((variant, index) => {
+                                // Get color-friendly background from name
+                                const colorMap = {
+                                    "Natural Pine": "#d4b483",
+                                    "Espresso Walnut": "#4b3621",
+                                    "Moonlit White": "#f5f5f5",
+                                    "Velvet Black": "#000000"
+                                };
+                                const colorName = variant.variant_value;
+                                const bgColor = colorMap[colorName] || "#ccc"; // fallback to gray
+
+                                return `
+                                    <div class="variant-color-circle ${index === 0 ? 'selected' : ''}" 
+                                        title="${colorName}"
+                                        data-variant-id="${variant.id}" 
+                                        data-selling-price="${variant.selling_price}" 
+                                        data-regular-price="${variant.regular_price}" 
+                                        data-vendor-price="${variant.sales_price_vendor}" 
+                                        onclick="updateVariant(this)"
+                                        style="background-color: ${bgColor};">
+                                    </div>`;
+                            }).join(''));
+
 
                             // Default select first variant and render images
                             const defaultVariant = variants[0];
@@ -486,6 +509,28 @@
         });
     });
 </script>
+<style>
+.variant-color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.variant-color-circle:hover {
+    transform: scale(1.1);
+    border-color: #000;
+}
+
+.variant-color-circle.selected {
+    border: 3px solid #007bff;
+}
+</style>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
