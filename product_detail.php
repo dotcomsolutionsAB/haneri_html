@@ -100,7 +100,7 @@
                         // Populate product details
                         $('#product-title').text(data.data.name);
                         $('#product-category').text(data.data.category);
-                        $('#product-brand').text(data.data.brand);
+                        // $('#product-brand').text(data.data.brand);
                         $('#product-description').html(data.data.description || 'No description available');
                         $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                         $('.about_section, .breadcrumb-title').text(data.data.name);
@@ -450,7 +450,10 @@
                                 </ul>
 
                                 <ul class="single-info-list">
-                                    <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li>
+                                    <!-- <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li> -->
+                                     <div class="brand_image">
+                                        <img src="images/Haneri Logo.png" alt="Haneri">
+                                     </div>
                                 </ul>
                                 <div class="select_variant">
                                     <p>Select The Variant:</p>
