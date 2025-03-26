@@ -451,9 +451,10 @@
 
                                 <ul class="single-info-list">
                                     <!-- <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li> -->
-                                     <div class="brand_image">
+                                    <div class="brand_image">
                                         <img src="images/Haneri Logo.png" alt="Haneri">
-                                     </div>
+                                    </div>
+                                     
                                 </ul>
                                 <div class="select_variant">
                                     <p>Select The Variant:</p>
@@ -486,6 +487,19 @@
                                 <style>
                                     .product-action .product-price{
                                         color: #f0340efa;
+                                    }
+                                    .brand_image{
+                                        width: 140px;
+                                        /* background: antiquewhite; */
+                                        height: 50px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    .brand_image img{
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
                                     }
                                 </style>
                                 <div class="product-action">
