@@ -13,8 +13,8 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <button  class="btn button" href="/air_curve_design.php">Air Curve Design</button>
-            <button class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</button>
+            <a  class="btn button" href="/air_curve_design.php">Air Curve Design</a>
+            <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">                
