@@ -502,7 +502,7 @@
                                 <div class="product-single-share custom-product-single-share">
                                     <label class="sr-only">Share:</label>
 
-                                    <div class="social-icons mt-0">
+                                    <!-- <div class="social-icons mt-0">
                                         <a href="#" class="social-icon social-facebook icon-facebook" target="_blank"
                                             title="Facebook"></a>
                                         <a href="#" class="social-icon social-twitter icon-twitter" target="_blank"
@@ -513,7 +513,7 @@
                                             target="_blank" title="Google +"></a>
                                         <a href="#" class="social-icon social-mail icon-mail-alt" target="_blank"
                                             title="Mail"></a>
-                                    </div><!-- End .social-icons -->
+                                    </div>End .social-icons -->
                                 </div><!-- End .product single-share -->
 
                                 <!-- <a href="#" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
