@@ -525,11 +525,12 @@
                                 </a> -->
                                 
                                 <div class="product-single-tabs">
-                                    <ul class="nav nav-tabs" role="tablist">
+                                    <!-- features -->
+                                    <!-- <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active" id="product-features" data-toggle="tab" href="#product-tabs-features" role="tab">Features</a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="product-tabs-features">
                                             <div class="product-desc-content">
