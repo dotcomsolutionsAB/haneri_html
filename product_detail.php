@@ -195,7 +195,7 @@
             let imageHtml = '', thumbHtml = '';
 
             const imageMap = {
-                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
+                13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
                 14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
                 15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
                 16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
