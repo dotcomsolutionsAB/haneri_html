@@ -13,8 +13,8 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <button class="">Air Curve Design</button>
-            <button class="">TurboSilent BLDC</button>
+            <button class="button">Air Curve Design</button>
+            <button class="button">TurboSilent BLDC</button>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">                
