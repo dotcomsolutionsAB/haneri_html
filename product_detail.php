@@ -698,12 +698,36 @@
                     </li>
                 </ul>
             </div>
-            <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; flex-direction: column; align-items:center;">
             <img src="/assets/images/1.jpg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
             <img src="/assets/images/2.jpg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
             <img src="/assets/images/3.jpg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
             <img src="/assets/images/4.jpg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
         </div>
+
+        <div class="container specification-section">
+                <h2 class="fw-normal head_1 text-center">Why To Choose Haneri Fans</h2>
+                <ul class="specification-list">
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705441032/Sup-Air-Delv@4x-(1)-v1711621950507.png?6312x6312" alt="5 year warranty" title="5 year warranty">
+                    </figure>
+                    <!-- <p>5 year warranty</p> -->
+                    </li>
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705441032/High-Speed@4x-v1711621951279.png?5060x4545" alt="ActivBldc" title="ActivBldc">
+                    </figure>
+                    <!-- <p>ActivBldc</p> -->
+                    </li>
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705441032/long-life--v1711621952090.webp?350x350" alt="Anti dust" title="Anti dust">
+                    </figure>
+                    <!-- <p>Anti dust</p> -->
+                    </li>
+                </ul>
+            </div>
 
             <div class="product-box-spec container">
             <h2 class="spec-title">Technical Specifications</h2>
