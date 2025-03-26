@@ -12,7 +12,9 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <h1 class="text-uppercase text-left page_heading heading1">OUR STORY</h1>
+        <a  class="btn button" href="/air_curve_design.php">Our Story</a>
+            <a class="btn button" href="/turbosilent_bldc.php">Our Brands</a>
+            <a class="btn button" href="/mass.php">Capabilities</a>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">       
