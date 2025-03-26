@@ -774,7 +774,7 @@
 
                 .specs-json-table {
                 width: 100%;
-                border-collapse: collapse;
+                border-collapse: separate;
                 }
 
                 .specs-json-table th,
@@ -793,7 +793,8 @@
                 }
 
                 .specs-json-table td {
-                background-color: #f2f2f2;
+                /* background-color: #f2f2f2; */
+                background-color:#31585824;
                 color: #333;
                 width: 30%;
                 border-radius: 4px;
