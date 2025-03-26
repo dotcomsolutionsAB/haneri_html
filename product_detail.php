@@ -430,13 +430,13 @@
                         </div>
 
                         <div class="col-lg-7 pb-1">
-                            <div class="single-product-custom-block">
+                            <!-- <div class="single-product-custom-block">
                                 <div class="porto-block">
                                     <h5 class="porto-heading d-inline-block">Free Shipping</h5>
                                     <h5 class="porto-heading d-inline-block">100% Money Back Guarantee</h5>
                                     <h5 class="porto-heading d-inline-block">Online Support 24/7</h5>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="product-single-details mb-1">
                                 <h1 class="product-title" id="product-title">Loading...</h1>
@@ -521,11 +521,11 @@
                                     </div><!-- End .social-icons -->
                                 </div><!-- End .product single-share -->
 
-                                <a href="#" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
+                                <!-- <a href="#" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
                                     title="Add to Wishlist">
                                     <i class="icon-wishlist-2"></i>
                                     <span>Add to Wishlist</span>
-                                </a>
+                                </a> -->
                                 
                                 <div class="product-single-tabs">
                                     <ul class="nav nav-tabs" role="tablist">
@@ -539,7 +539,7 @@
                                                 <ul id="features-list"></ul>
                                                 
                                                 <div class="row justify-content-center">
-                                                    <div class="col-sm-6 col-xl-4">
+                                                    <!-- <div class="col-sm-6 col-xl-4">
                                                         <div class="feature-box feature-box-simple text-center">
                                                             <div class="feature-icon">
                                                                 <i class="fa fa-star"></i>
@@ -552,7 +552,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="feature-box feature-box-simple text-center">
                                                             <div class="feature-icon">
@@ -566,7 +565,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="feature-box feature-box-simple text-center">
                                                             <div class="feature-icon">
@@ -579,6 +577,51 @@
                                                                     customization, or design advice</p>
                                                             </div>
                                                         </div>
+                                                    </div> -->
+                                                    <div class="product-box-spec">
+                                                        <div class="title">Technical Specifications</div>
+                                                        <table class="table table-bordered specs-table">
+                                                        <tbody>
+                                                            <tr><th>Model Name</th><td>Fengshui</td></tr>
+                                                            <tr><th>Brand Name</th><td>Haneri</td></tr>
+                                                            <tr><th>Colour</th><td>Espesso Walnut, Natural Pine, Moonlight white and Velvet Black</td></tr>
+                                                            <tr><th>Manufacturer</th><td>Haneri Electricals LLP</td></tr>
+                                                            <tr><th>Material</th><td>ABS plastic</td></tr>
+                                                            <tr><th>BEE Rating</th><td>5</td></tr>
+                                                            <tr><th>Manufacturer Contact Information</th><td>Haneri Electricals LLP</td></tr>
+                                                            <tr><th>Power Source</th><td>Electric</td></tr>
+                                                            <tr><th>Required Assembly</th><td>Yes</td></tr>
+                                                            <tr><th>Wattage</th><td>45</td></tr>
+                                                            <tr><th>Voltage</th><td>230V</td></tr>
+                                                            <tr><th>Mounting type</th><td>Downrod Mount</td></tr>
+                                                            <tr><th>Finish type</th><td>Painted</td></tr>
+                                                            <tr><th>Airflow Capacity</th><td>280</td></tr>
+                                                            <tr><th>Included components</th><td>1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card</td></tr>
+                                                            <tr><th>Unit count</th><td>1 Unit</td></tr>
+                                                            <tr><th>Recommended Uses For Product</th><td>Air Circulation</td></tr>
+                                                            <tr><th>Is Fragile ?</th><td>Yes</td></tr>
+                                                            <tr><th>Blade length</th><td>1320mm</td></tr>
+                                                            <tr><th>Blade Material</th><td>ABS Plastic</td></tr>
+                                                            <tr><th>Suggested Room type</th><td>Living Room, Office, Dining Room, Bedroom, Kids Room</td></tr>
+                                                            <tr><th>Speed</th><td>260</td></tr>
+                                                            <tr><th>Packer Information</th><td>Haneri Electricals LLP</td></tr>
+                                                            <tr><th>Number of Speeds</th><td>5</td></tr>
+                                                            <tr><th>Number of Blades</th><td>3</td></tr>
+                                                            <tr><th>Control Method</th><td>Remote</td></tr>
+                                                            <tr><th>Indoor/Outdoor Usage</th><td>Indoor/Protected Outdoor Environments</td></tr>
+                                                            <tr><th>Electric Fan Design</th><td>Ceiling Fan</td></tr>
+                                                            <tr><th>Country of Origin</th><td>India</td></tr>
+                                                            <tr><th>Warranty Description</th><td>5 years from date of purchase</td></tr>
+                                                            <tr><th>Care Instructions</th><td>For any questions, Please contact us on ____________</td></tr>
+                                                            <tr><th>Are Batteries Required?</th><td>Yes</td></tr>
+                                                            <tr><th>Are Batteries Included ?</th><td>No</td></tr>
+                                                            <tr><th>Contains Liquid Contents?</th><td>No</td></tr>
+                                                            <tr><th>Dimensions</th><td>1320x1320mmx485mm</td></tr>
+                                                            <tr><th>Items Per Inner Pack</th><td>1</td></tr>
+                                                            <tr><th>Number of Boxes</th><td>1</td></tr>
+                                                            <tr><th>Item Weight</th><td>4.9kg</td></tr>
+                                                        </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
@@ -590,7 +633,24 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-
+<style>
+    .product-box-spec {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      background: green;
+    }
+    .specs-table th {
+      width: 40%;
+      background-color: orange;
+    }
+    .title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+</style>
             <div class="container-fluid">
                 <div class="products-section pt-0">
                     <h2 class="section-title">Related Products</h2>
