@@ -1,11 +1,11 @@
 
 /* Finalised CSS Styles  */
 
-.btn button:hover {
+.button:hover {
     background-color: #315859;
     color: white;
 }
-.btn button{
+.button{
     justify-content: center;
     text-align: center;
     padding-top: 5px; 
