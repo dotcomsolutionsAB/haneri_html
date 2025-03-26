@@ -699,10 +699,10 @@
                 </ul>
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-            <img src="/assets/images/1.webp" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/2.webp" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/3.webp" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/4.webp" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
+            <img src="/assets/images/1.jpg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
+            <img src="/assets/images/2.jpg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
+            <img src="/assets/images/3.jpg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
+            <img src="/assets/images/4.jpg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
         </div>
 
             <div class="product-box-spec container">
