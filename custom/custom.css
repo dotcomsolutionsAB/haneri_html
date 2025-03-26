@@ -1,6 +1,18 @@
 
 /* Finalised CSS Styles  */
 
+.btn button:hover {
+    background-color: #315859;
+    color: white;
+}
+.btn button{
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px; 
+    margin-top: 10px; 
+    padding-bottom:5px; 
+    margin-bottom: 10px
+}
 .vision{
     font-family: 'Open Sans';
     font-size: 30px !important;
