@@ -682,71 +682,82 @@
                 </ul>
             </div>
 
-            <div class="product-box-spec">
-            <h2 class="spec-title">Technical Specifications</h2>
-            <table id="spec-table" class="specs-json-table"></table>
-            </div>
+<div class="product-box-spec">
+  <h2 class="spec-title">Technical Specifications</h2>
+  <table id="spec-table" class="specs-json-table"></table>
+</div>
 
-            <script>
-            const specsData = [
-                { label: "Model Name", value: "Fengshui" },
-                { label: "Brand Name", value: "Haneri" },
-                { label: "Colour", value: "Espesso Walnut, Natural Pine, Moonlight white and Velvet Black" },
-                { label: "Manufacturer", value: "Haneri Electricals LLP" },
-                { label: "Material", value: "ABS plastic" },
-                { label: "BEE Rating", value: "5" },
-                { label: "Manufacturer Contact Information", value: "Haneri Electricals LLP" },
-                { label: "Power Source", value: "Electric" },
-                { label: "Required Assembly", value: "Yes" },
-                { label: "Wattage", value: "45" },
-                { label: "Voltage", value: "230V" },
-                { label: "Mounting type", value: "Downrod Mount" },
-                { label: "Finish type", value: "Painted" },
-                { label: "Airflow Capacity", value: "280" },
-                { label: "Included components", value: "1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card" },
-                { label: "Unit count", value: "1 Unit" },
-                { label: "Recommended Uses For Product", value: "Air Circulation" },
-                { label: "Is Fragile ?", value: "Yes" },
-                { label: "Blade length", value: "1320mm" },
-                { label: "Blade Material", value: "ABS Plastic" },
-                { label: "Suggested Room type", value: "Living Room, Office, Dining Room, Bedroom, Kids Room" },
-                { label: "Speed", value: "260" },
-                { label: "Packer Information", value: "Haneri Electricals LLP" },
-                { label: "Number of Speeds", value: "5" },
-                { label: "Number of Blades", value: "3" },
-                { label: "Control Method", value: "Remote" },
-                { label: "Indoor/Outdoor Usage", value: "Indoor/Protected Outdoor Environments" },
-                { label: "Electric Fan Design", value: "Ceiling Fan" },
-                { label: "Country of Origin", value: "India" },
-                { label: "Warranty Description", value: "5 years from date of purchase" },
-                { label: "Care Instructions", value: "For any questions, Please contact us on ____________" },
-                { label: "Are Batteries Required?", value: "Yes" },
-                { label: "Are Batteries Included ?", value: "No" },
-                { label: "Contains Liquid Contents?", value: "No" },
-                { label: "Dimensions", value: "1320x1320mmx485mm" },
-                { label: "Items Per Inner Pack", value: "1" },
-                { label: "Number of Boxes", value: "1" },
-                { label: "Item Weight", value: "4.9kg" }
-            ];
+<script>
+  const specsData = [
+    { label: "Model Name", value: "Fengshui" },
+    { label: "Brand Name", value: "Haneri" },
+    { label: "Colour", value: "Espesso Walnut, Natural Pine, Moonlight white and Velvet Black" },
+    { label: "Manufacturer", value: "Haneri Electricals LLP" },
+    { label: "Material", value: "ABS plastic" },
+    { label: "BEE Rating", value: "5" },
+    { label: "Manufacturer Contact Information", value: "Haneri Electricals LLP" },
+    { label: "Power Source", value: "Electric" },
+    { label: "Required Assembly", value: "Yes" },
+    { label: "Wattage", value: "45" },
+    { label: "Voltage", value: "230V" },
+    { label: "Mounting type", value: "Downrod Mount" },
+    { label: "Finish type", value: "Painted" },
+    { label: "Airflow Capacity", value: "280" },
+    { label: "Included components", value: "1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card" },
+    { label: "Unit count", value: "1 Unit" },
+    { label: "Recommended Uses For Product", value: "Air Circulation" },
+    { label: "Is Fragile ?", value: "Yes" },
+    { label: "Blade length", value: "1320mm" },
+    { label: "Blade Material", value: "ABS Plastic" },
+    { label: "Suggested Room type", value: "Living Room, Office, Dining Room, Bedroom, Kids Room" },
+    { label: "Speed", value: "260" },
+    { label: "Packer Information", value: "Haneri Electricals LLP" },
+    { label: "Number of Speeds", value: "5" },
+    { label: "Number of Blades", value: "3" },
+    { label: "Control Method", value: "Remote" },
+    { label: "Indoor/Outdoor Usage", value: "Indoor/Protected Outdoor Environments" },
+    { label: "Electric Fan Design", value: "Ceiling Fan" },
+    { label: "Country of Origin", value: "India" },
+    { label: "Warranty Description", value: "5 years from date of purchase" },
+    { label: "Care Instructions", value: "For any questions, Please contact us on ____________" },
+    { label: "Are Batteries Required?", value: "Yes" },
+    { label: "Are Batteries Included ?", value: "No" },
+    { label: "Contains Liquid Contents?", value: "No" },
+    { label: "Dimensions", value: "1320x1320mmx485mm" },
+    { label: "Items Per Inner Pack", value: "1" },
+    { label: "Number of Boxes", value: "1" },
+    { label: "Item Weight", value: "4.9kg" }
+  ];
 
-            const specTable = document.getElementById("spec-table");
-            specsData.forEach(item => {
-                const row = document.createElement("tr");
-                
-                const th = document.createElement("th");
-                th.textContent = item.label;
+  const specTable = document.getElementById("spec-table");
 
-                const td = document.createElement("td");
-                td.textContent = item.value;
+  for (let i = 0; i < specsData.length; i += 2) {
+    const row = document.createElement("tr");
 
-                row.appendChild(th);
-                row.appendChild(td);
-                specTable.appendChild(row);
-            });
-            </script>
+    const th1 = document.createElement("th");
+    th1.textContent = specsData[i].label;
+    const td1 = document.createElement("td");
+    td1.textContent = specsData[i].value;
 
-            <style>
-                .product-box-spec {
+    row.appendChild(th1);
+    row.appendChild(td1);
+
+    if (specsData[i + 1]) {
+      const th2 = document.createElement("th");
+      th2.textContent = specsData[i + 1].label;
+      const td2 = document.createElement("td");
+      td2.textContent = specsData[i + 1].value;
+
+      row.appendChild(th2);
+      row.appendChild(td2);
+    }
+
+    specTable.appendChild(row);
+  }
+</script>
+
+<style>
+.product-box-spec {
   background: #fff;
   padding: 40px 20px;
   border-radius: 12px;
@@ -775,15 +786,16 @@
 }
 
 .specs-json-table th {
-  width: 30%;
+  background-color: #fff;
   font-weight: 500;
   color: #000;
-  background-color: #fff;
+  width: 20%;
 }
 
 .specs-json-table td {
   background-color: #f2f2f2;
   color: #333;
+  width: 30%;
   border-radius: 4px;
 }
 
