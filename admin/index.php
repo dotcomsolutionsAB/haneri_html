@@ -297,7 +297,7 @@
                             </div>
 
                             <div class="lg:col-span-2">
-                                <!-- <style>
+                                <style>
                                     .entry-callout-bg {
                                         background-image: url('assets/media/images/2600x1600/2.png');
                                     }
@@ -351,7 +351,7 @@
                                             Get Started
                                         </a>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         <!-- end: grid -->
