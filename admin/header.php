@@ -75,7 +75,7 @@
                 <div class="container-fixed flex justify-between items-stretch lg:gap-4" id="header_container">
                     <!-- Mobile Logo -->
                     <div class="flex gap-1 lg:hidden items-center -ms-1">
-                        <a class="shrink-0" href="#">
+                        <a class="shrink-0" href="index">
                             <img class="max-h-[25px] w-full" src="uploads/H.jpg" />
                         </a>
                         <div class="flex items-center">
