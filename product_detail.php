@@ -261,8 +261,8 @@
 
                             // Variant color name to background mapping
                             const colorMap = {
-                                "Espresso Walnut": "#4b3621",
-                                "Natural Pine": "#d4b483",
+                                "Espresso Walnut": "#d4b483",
+                                "Natural Pine": "#4b3621",
                                 "Moonlit White": "#f5f5f5",
                                 "Velvet Black": "#000000"
                             };
