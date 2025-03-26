@@ -215,11 +215,11 @@
                                 Central Hub for Personal Customization
                             </div>
                         </div>
-                        <div class="flex items-center gap-2.5">
+                        <!-- <div class="flex items-center gap-2.5">
                             <a class="btn btn-sm btn-light" href="html/demo1/public-profile/profiles/default.html">
                                 View Profile
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- End of Container -->
@@ -296,7 +296,7 @@
                                 </div>
                             </div>
 
-                            <div class="lg:col-span-2">
+                            <!-- <div class="lg:col-span-2">
                                 <style>
                                     .entry-callout-bg {
                                         background-image: url('assets/media/images/2600x1600/2.png');
@@ -352,7 +352,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- end: grid -->
 

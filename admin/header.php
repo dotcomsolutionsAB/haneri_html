@@ -98,7 +98,7 @@
 
                     <!-- Topbar -->
                     <div class="flex items-center gap-2 lg:gap-3.5">
-                        <button
+                        <!-- <button
                             class="btn btn-icon btn-icon-lg size-9 rounded-full hover:bg-primary-light hover:text-primary text-gray-500"
                             data-modal-toggle="#search_modal">
                             <i class="ki-filled ki-magnifier">
@@ -2020,7 +2020,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="menu" data-menu="true">
                             <div class="menu-item" data-menu-item-offset="20px, 10px"
                                 data-menu-item-offset-rtl="-20px, 10px" data-menu-item-placement="bottom-end"
@@ -2028,22 +2028,22 @@
                                 data-menu-item-trigger="click|lg:click">
                                 <div class="menu-toggle btn btn-icon rounded-full">
                                     <img alt="" class="size-9 rounded-full border-2 border-success shrink-0"
-                                        src="assets/media/avatars/300-2.png">
+                                        src="../images/default/df001.png">
                                     </img>
                                 </div>
                                 <div class="menu-dropdown menu-default light:border-gray-300 w-screen max-w-[250px]">
                                     <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
                                         <div class="flex items-center gap-2">
                                             <img alt="" class="size-9 rounded-full border-2 border-success"
-                                                src="assets/media/avatars/300-2.png">
+                                                src="../images/default/df001.png">
                                             <div class="flex flex-col gap-1.5">
                                                 <span class="text-sm text-gray-800 font-semibold leading-none">
-                                                    Cody Fisher
+                                                    ADMIN
                                                 </span>
-                                                <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
+                                                <!-- <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
                                                     href="html/demo1/account/home/get-started.html">
                                                     c.fisher@gmail.com
-                                                </a>
+                                                </a> -->
                                             </div>
                                             </img>
                                         </div>
@@ -2053,7 +2053,7 @@
                                     </div>
                                     <div class="menu-separator">
                                     </div>
-                                    <div class="flex flex-col">
+                                    <!-- <div class="flex flex-col">
                                         <div class="menu-item">
                                             <a class="menu-link" href="html/demo1/public-profile/profiles/default.html">
                                                 <span class="menu-icon">
@@ -2284,11 +2284,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="menu-separator">
                                     </div>
                                     <div class="flex flex-col">
-                                        <div class="menu-item mb-0.5">
+                                        <!-- <div class="menu-item mb-0.5">
                                             <div class="menu-link">
                                                 <span class="menu-icon">
                                                     <i class="ki-filled ki-moon">
@@ -2303,7 +2303,7 @@
                                                     </input>
                                                 </label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="menu-item px-4 py-1.5">
                                             <a class="btn btn-sm btn-light justify-center"
                                                 id="ad-logout">
