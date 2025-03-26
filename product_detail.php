@@ -190,6 +190,51 @@
         //     updatePrice();
         // }
 
+        // IMAGE SECTION INITIALIZATION FUNCTION
+        function setImageSection(variantId) {
+            let imageHtml = '', thumbHtml = '';
+
+            const imageMap = {
+                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png"],
+                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png"],
+                15: ["Moonlit_White.png", "Moonlit_White2.png"],
+                16: ["Velvet_Black.png"]
+            };
+
+            const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+
+            images.forEach(img => {
+                imageHtml += `
+                    <div class="product-item">
+                        <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
+                    </div>`;
+                thumbHtml += `
+                    <div class="owl-dot">
+                        <img src="images/${img}" width="98" height="98" alt="product" />
+                    </div>`;
+            });
+
+            const fullImageHtml = `
+                <div class="product-slider-container">
+                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                        ${imageHtml}
+                    </div>
+                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
+                </div>
+                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+                    ${thumbHtml}
+                </div>`;
+
+            $('#product-image-section').html(fullImageHtml);
+
+            $('.product-single-carousel').owlCarousel({
+                items: 1,
+                nav: true,
+                dots: false,
+                loop: true
+            });
+        }
+        
         // Fetch product details
         if (productId) {
             $.ajax({
@@ -208,51 +253,6 @@
                         $('#product-description').html(data.data.description || 'No description available');
                         $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                         $('.about_section, .breadcrumb-title').text(data.data.name);
-
-                        // IMAGE SECTION INITIALIZATION FUNCTION
-                        function setImageSection(variantId) {
-                            let imageHtml = '', thumbHtml = '';
-
-                            const imageMap = {
-                                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png"],
-                                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png"],
-                                15: ["Moonlit_White.png", "Moonlit_White2.png"],
-                                16: ["Velvet_Black.png"]
-                            };
-
-                            const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
-
-                            images.forEach(img => {
-                                imageHtml += `
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
-                                    </div>`;
-                                thumbHtml += `
-                                    <div class="owl-dot">
-                                        <img src="images/${img}" width="98" height="98" alt="product" />
-                                    </div>`;
-                            });
-
-                            const fullImageHtml = `
-                                <div class="product-slider-container">
-                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                                        ${imageHtml}
-                                    </div>
-                                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
-                                </div>
-                                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-                                    ${thumbHtml}
-                                </div>`;
-
-                            $('#product-image-section').html(fullImageHtml);
-
-                            $('.product-single-carousel').owlCarousel({
-                                items: 1,
-                                nav: true,
-                                dots: false,
-                                loop: true
-                            });
-                        }
 
                         // Handle variants
                         if (data.data.variants.length > 0) {
