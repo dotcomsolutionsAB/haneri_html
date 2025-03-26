@@ -728,7 +728,18 @@
                     </li>
                 </ul>
             </div>
-
+            <!-- Specifications Wrapper -->
+            <div class="spec-wrapper">
+                <div class="specs-collapsible" id="spec-content">
+                <div class="product-box-spec container">
+            <h2 class="spec-title">Technical Specifications</h2>
+            <table id="spec-table" class="specs-json-table"></table>
+            </div>
+                </div>
+                <div class="show-more-btn">
+                    <button onclick="toggleSpecs()" id="toggle-btn">Show More</button>
+                </div>
+            </div>
             <div class="product-box-spec container">
             <h2 class="spec-title">Technical Specifications</h2>
             <table id="spec-table" class="specs-json-table"></table>
