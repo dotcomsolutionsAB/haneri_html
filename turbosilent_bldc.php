@@ -12,11 +12,11 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
+        <a  class="btn button" href="/air_curve_design.php">Air Curve Design</a>
             <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
             <a class="btn button" href="/mass.php">M.A.S.S</a>
-            <a class="btn button" href="/mass.php">Lumiambience</a>
-            <a class="btn button" href="/mass.php">S.C.A.N</a>
+            <a class="btn button" href="/lumiambience.php">Lumiambience</a>
+            <a class="btn button" href="/scan.php">S.C.A.N</a>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
 
