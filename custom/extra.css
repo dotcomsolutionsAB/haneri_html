@@ -2276,7 +2276,7 @@ footer .social-icon {
     }
 
     .square_box{
-        height: 155px;
+        height: 155px !important;
         display: flex;
         align-items: center;
         justify-content: center;
