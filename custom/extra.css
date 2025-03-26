@@ -2322,7 +2322,7 @@ footer .social-icon {
     .secure-section {
         background-color: #315858;
         /* border-radius: 12px; */
-        padding: 20px;
+        padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;

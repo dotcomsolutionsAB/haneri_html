@@ -664,8 +664,17 @@
                 }
 
                 .specification-list li {
-                    flex: 1 1 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     max-width: 220px;
+                    width: 220px;
+                    height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     text-align: center;
                     transition: transform 0.3s ease;
                 }
