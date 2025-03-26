@@ -11,7 +11,7 @@
     </nav>
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
-        <div class="containe text-left">
+        <div class="button-group">
         <a  class="btn button" href="/our_story.php">Our Story</a>
             <a class="btn button" href="/our_brands.php">Our Brands</a>
             <a class="btn button" href="/capabilities.php">Capabilities</a>
