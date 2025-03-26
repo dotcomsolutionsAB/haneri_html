@@ -10,7 +10,11 @@
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left">
-        <h1 class="text-uppercase page_heading heading1">LumiAmbience</h1>
+             <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
+            <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
+            <a class="btn button" href="/mass.php">M.A.S.S</a>
+            <a class="btn button" href="/mass.php">Lumiambience</a>
+            <a class="btn button" href="/mass.php">S.C.A.N</a>
     </div>
     <div class="container">              
         <section id="lumiambience" class="lumiambience">
