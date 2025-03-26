@@ -70,7 +70,6 @@
                     <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                         ${imageHtml}
                     </div>
-                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
                 </div>
                 <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
                     ${thumbHtml}
