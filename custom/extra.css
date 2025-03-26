@@ -2318,3 +2318,34 @@ footer .social-icon {
     .variant-color-circle.selected {
         border: 3px solid #a7a7a7;;
     }
+
+    .secure-section {
+        background-color: #315858;
+        /* border-radius: 12px; */
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .secure-item {
+        min-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .secure-item img {
+        width: 60px;
+        margin-bottom: 10px;
+    }
+
+    .secure-text {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+    }

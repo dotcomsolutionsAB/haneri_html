@@ -349,28 +349,6 @@
         });
     });
 </script>
-<style>
-    /* .variant-color-circle {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 5px;
-        border: 2px solid #ccc;
-        cursor: pointer;
-        transition: transform 0.2s ease;
-        position: relative;
-    }
-
-    .variant-color-circle:hover {
-        transform: scale(1.1);
-        border-color: #000;
-    }
-
-    .variant-color-circle.selected {
-        border: 3px solid #a7a7a7;;
-    } */
-</style>
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -651,39 +629,6 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-            <style>
-                .secure-section {
-                    background-color: #09594f;
-                    border-radius: 12px;
-                    padding: 20px;
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                    color: #fff;
-                    text-align: center;
-                }
-
-                .secure-item {
-                    min-width: 200px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                }
-
-                .secure-item img {
-                    width: 60px;
-                    margin-bottom: 10px;
-                }
-
-                .secure-text {
-                    font-size: 16px;
-                    font-weight: 600;
-                    font-family: "Open Sans", sans-serif;
-                }
-
-            </style>
             <div class="secure-section">
                 <div class="secure-item">
                     <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online">
