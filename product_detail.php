@@ -203,8 +203,8 @@
 
                         // Populate product details
                         $('#product-title').text(data.data.name);
-                        $('#product-category').text(data.data.category.name);
-                        $('#product-brand').text(data.data.brand.name);
+                        $('#product-category').text(data.data.category);
+                        $('#product-brand').text(data.data.brand);
                         $('#product-description').html(data.data.description || 'No description available');
                         $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                         $('.about_section, .breadcrumb-title').text(data.data.name);
