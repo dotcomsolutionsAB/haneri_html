@@ -647,6 +647,79 @@
                     <div class="secure-text">Top Rated Products</div>
                 </div>
             </div>
+            
+            <style>
+                .specification-section {
+                    padding: 40px 20px;
+                }
+
+                .specification-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 30px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 30px 0 0 0;
+                }
+
+                .specification-list li {
+                    flex: 1 1 200px;
+                    max-width: 220px;
+                    text-align: center;
+                    transition: transform 0.3s ease;
+                }
+
+                .specification-list li:hover {
+                    transform: translateY(-5px);
+                }
+
+                .specification-list figure {
+                    margin-bottom: 10px;
+                }
+
+                .specification-list img {
+                    width: 100px;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                .specification-list p {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+            </style>
+            <div class="container specification-section">
+                <h2 class="fw-normal head_1 text-center">Specifications</h2>
+                <ul class="specification-list">
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/5-Year-warranty-v1695793624897.png?7019x7017" alt="5 year warranty" title="5 year warranty">
+                    </figure>
+                    <p>5 year warranty</p>
+                    </li>
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Activbldc-v1695793626211-(1)-v1697452065695.png?500x428" alt="ActivBldc" title="ActivBldc">
+                    </figure>
+                    <p>ActivBldc</p>
+                    </li>
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Anti-Dust@4x-(3)-v1695793627523.png?4899x4039" alt="Anti dust" title="Anti dust">
+                    </figure>
+                    <p>Anti dust</p>
+                    </li>
+                    <li>
+                    <figure>
+                        <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Layer-559-v1695793629801.png?4590x4807" alt="50% energy savings" title="50% energy savings">
+                    </figure>
+                    <p>50% energy savings</p>
+                    </li>
+                </ul>
+            </div>
 
             <!-- Related Products -->
             <!-- <div class="container-fluid">
