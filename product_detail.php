@@ -681,13 +681,13 @@
                     </li>
                 </ul>
             </div>
+
             <div class="product-box-spec">
-                <h2 class="spec-title">Technical Specifications</h2>
-                <table id="spec-table" class="specs-json-table"></table>
+            <h2 class="spec-title">Technical Specifications</h2>
+            <table id="spec-table" class="specs-json-table"></table>
             </div>
 
             <script>
-            // JSON data
             const specsData = [
                 { label: "Model Name", value: "Fengshui" },
                 { label: "Brand Name", value: "Haneri" },
@@ -729,46 +729,64 @@
                 { label: "Item Weight", value: "4.9kg" }
             ];
 
-            // Generate HTML rows
             const specTable = document.getElementById("spec-table");
             specsData.forEach(item => {
                 const row = document.createElement("tr");
+                
+                const th = document.createElement("th");
+                th.textContent = item.label;
+
                 const td = document.createElement("td");
-                td.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
+                td.textContent = item.value;
+
+                row.appendChild(th);
                 row.appendChild(td);
                 specTable.appendChild(row);
             });
             </script>
+
             <style>
                 .product-box-spec {
-                background: #fff;
-                padding: 40px 20px;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                }
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
-                .spec-title {
-                text-align: center;
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 30px;
-                color: #222;
-                }
+.spec-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #222;
+}
 
-                .specs-json-table {
-                width: 100%;
-                border-collapse: separate;
-                border-spacing: 0 10px;
-                }
+.specs-json-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-                .specs-json-table td {
-                background-color: #f5f5f5;
-                padding: 14px 20px;
-                border-radius: 8px;
-                font-size: 15px;
-                color: #333;
-                line-height: 1.5;
-                }
+.specs-json-table th,
+.specs-json-table td {
+  padding: 16px;
+  font-size: 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.specs-json-table th {
+  width: 30%;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+}
+
+.specs-json-table td {
+  background-color: #f2f2f2;
+  color: #333;
+  border-radius: 4px;
+}
+
 
             </style>
             <!-- <div class="product-box-spec container">
