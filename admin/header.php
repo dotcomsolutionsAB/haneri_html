@@ -2047,12 +2047,12 @@
                                             </div>
                                             </img>
                                         </div>
-                                        <span class="badge badge-xs badge-primary badge-outline">
+                                        <!-- <span class="badge badge-xs badge-primary badge-outline">
                                             Pro
-                                        </span>
+                                        </span> -->
                                     </div>
-                                    <div class="menu-separator">
-                                    </div>
+                                    <!-- <div class="menu-separator">
+                                    </div> -->
                                     <!-- <div class="flex flex-col">
                                         <div class="menu-item">
                                             <a class="menu-link" href="html/demo1/public-profile/profiles/default.html">
