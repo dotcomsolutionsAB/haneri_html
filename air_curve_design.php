@@ -13,8 +13,8 @@
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
         <div class="containe text-left">
-            <button style="padding-top: 5px;" class="btn button" href="https://haneri.ongoingsites.xyz/air_curve_design.php">Air Curve Design</button>
-            <button style="padding-top: 5px;" class="btn button" href="https://haneri.ongoingsites.xyz/turbosilent_bldc.php">TurboSilent BLDC</button>
+            <button style="padding-top: 5px;" class="btn button" href="/air_curve_design.php">Air Curve Design</button>
+            <button style="padding-top: 5px;" class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</button>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <div class="container">                
