@@ -2371,10 +2371,10 @@ footer .social-icon {
         align-items: center;
         flex-direction: column;
         max-width: 220px;
-        width: 220px;
-        height: 220px;
+        width: 190px;
+        height: 190px;
         border-radius: 50%;
-        background: #00473e12;
+        background: #00473e0a;
         display: flex;
         justify-content: center;
         align-items: center;
