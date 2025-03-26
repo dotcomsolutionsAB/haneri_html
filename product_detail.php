@@ -476,9 +476,10 @@
                                     </div>
                                 </div>
 
-                                <div class="product-desc">
+                                <!-- description -->
+                                <!-- <div class="product-desc">
                                     <p id="product-description">Loading...</p>
-                                </div>
+                                </div> -->
                                 <style>
                                     .product-action .product-price{
                                         color: #f0340efa;
@@ -532,7 +533,8 @@
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="product-tabs-features">
                                             <div class="product-desc-content">
-                                                <ul id="features-list"></ul>
+                                                <!-- features -->
+                                                <!-- <ul id="features-list"></ul> -->
                                                 
                                                 <div class="row justify-content-center">
                                                     <!-- <div class="col-sm-6 col-xl-4">
