@@ -652,7 +652,8 @@
                 </div><!-- End .product-single-container -->
             </div>
 
-            <div class="container-fluid">
+            <!-- Related Products -->
+            <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
                     <h2 class="section-title">Related Products</h2>
 
@@ -834,7 +835,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="container">
                 <hr class="mt-0 m-b-5" />
@@ -1165,7 +1166,7 @@
                             </div>
                         </div>
                     </div>
-                </div>End .row
+                </div>
             </div>
         </main><!-- End .main -->
         <?php include("footer.php"); ?>
