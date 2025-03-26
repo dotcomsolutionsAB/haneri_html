@@ -574,7 +574,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <div class="product-box-spec">
+                                                    <!-- <div class="product-box-spec">
                                                         <div class="title">Technical Specifications</div>
                                                         <table class="table table-bordered specs-table">
                                                         <tbody>
@@ -618,7 +618,7 @@
                                                             <tr><th>Item Weight</th><td>4.9kg</td></tr>
                                                         </tbody>
                                                         </table>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
