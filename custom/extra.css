@@ -2274,3 +2274,10 @@ footer .social-icon {
     .pro_detail{
         margin-bottom: 10px;
     }
+
+    .square_box{
+        height: 155px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }

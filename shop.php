@@ -467,7 +467,7 @@
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                                 <div class="product-default inner-quickview inner-icon" id="pro-table">
                                     <figure>
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
+                                        <a href="javascript:void(0)" class="square_box" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
                                             <img 
                                                 src="${
                                                     product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
