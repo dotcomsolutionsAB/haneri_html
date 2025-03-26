@@ -484,24 +484,6 @@
                                 <!-- <div class="product-desc">
                                     <p id="product-description">Loading...</p>
                                 </div> -->
-                                <style>
-                                    .product-action .product-price{
-                                        color: #f0340efa;
-                                    }
-                                    .brand_image{
-                                        width: 140px;
-                                        /* background: antiquewhite; */
-                                        height: 50px;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                    }
-                                    .brand_image img{
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: contain;
-                                    }
-                                </style>
                                 <div class="product-action">
                                     <div class="price-box">
                                         <span class="product-price" id="selling-tprice" data-price="0">₹0.00</span>
