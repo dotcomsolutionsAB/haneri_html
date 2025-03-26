@@ -679,32 +679,122 @@
                 </ul>
             </div>
             <div class="product-box-spec">
-            <h2 class="spec-title">Technical Specifications</h2>
-            <table class="specs-pair-table">
-                <tbody>
-                <tr><th>Model Name</th><td>Fengshui</td><th>Brand Name</th><td>Haneri</td></tr>
-                <tr><th>Colour</th><td>Espesso Walnut, Natural Pine, Moonlight white and Velvet Black</td><th>Manufacturer</th><td>Haneri Electricals LLP</td></tr>
-                <tr><th>Material</th><td>ABS plastic</td><th>BEE Rating</th><td>5</td></tr>
-                <tr><th>Manufacturer Contact Information</th><td>Haneri Electricals LLP</td><th>Power Source</th><td>Electric</td></tr>
-                <tr><th>Required Assembly</th><td>Yes</td><th>Wattage</th><td>45</td></tr>
-                <tr><th>Voltage</th><td>230V</td><th>Mounting Type</th><td>Downrod Mount</td></tr>
-                <tr><th>Finish Type</th><td>Painted</td><th>Airflow Capacity</th><td>280</td></tr>
-                <tr><th>Included Components</th><td>1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card</td><th>Unit Count</th><td>1 Unit</td></tr>
-                <tr><th>Recommended Uses</th><td>Air Circulation</td><th>Is Fragile?</th><td>Yes</td></tr>
-                <tr><th>Blade Length</th><td>1320mm</td><th>Blade Material</th><td>ABS Plastic</td></tr>
-                <tr><th>Suggested Room Type</th><td>Living Room, Office, Dining Room, Bedroom, Kids Room</td><th>Speed</th><td>260</td></tr>
-                <tr><th>Packer Information</th><td>Haneri Electricals LLP</td><th>Number of Speeds</th><td>5</td></tr>
-                <tr><th>Number of Blades</th><td>3</td><th>Control Method</th><td>Remote</td></tr>
-                <tr><th>Indoor/Outdoor Usage</th><td>Indoor/Protected Outdoor Environments</td><th>Electric Fan Design</th><td>Ceiling Fan</td></tr>
-                <tr><th>Country of Origin</th><td>India</td><th>Warranty Description</th><td>5 years from date of purchase</td></tr>
-                <tr><th>Care Instructions</th><td>For any questions, Please contact us on ____________</td><th>Are Batteries Required?</th><td>Yes</td></tr>
-                <tr><th>Are Batteries Included?</th><td>No</td><th>Contains Liquid Contents?</th><td>No</td></tr>
-                <tr><th>Dimensions</th><td>1320x1320mmx485mm</td><th>Items Per Inner Pack</th><td>1</td></tr>
-                <tr><th>Number of Boxes</th><td>1</td><th>Item Weight</th><td>4.9kg</td></tr>
-                </tbody>
-            </table>
+                <h2 class="spec-title">Technical Specifications</h2>
+                <table id="spec-table" class="specs-json-table"></table>
             </div>
-            <style type="text/css" media="all">
+
+            <script>
+            // JSON data
+            const specsData = [
+                { label: "Model Name", value: "Fengshui" },
+                { label: "Brand Name", value: "Haneri" },
+                { label: "Colour", value: "Espesso Walnut, Natural Pine, Moonlight white and Velvet Black" },
+                { label: "Manufacturer", value: "Haneri Electricals LLP" },
+                { label: "Material", value: "ABS plastic" },
+                { label: "BEE Rating", value: "5" },
+                { label: "Manufacturer Contact Information", value: "Haneri Electricals LLP" },
+                { label: "Power Source", value: "Electric" },
+                { label: "Required Assembly", value: "Yes" },
+                { label: "Wattage", value: "45" },
+                { label: "Voltage", value: "230V" },
+                { label: "Mounting type", value: "Downrod Mount" },
+                { label: "Finish type", value: "Painted" },
+                { label: "Airflow Capacity", value: "280" },
+                { label: "Included components", value: "1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card" },
+                { label: "Unit count", value: "1 Unit" },
+                { label: "Recommended Uses For Product", value: "Air Circulation" },
+                { label: "Is Fragile ?", value: "Yes" },
+                { label: "Blade length", value: "1320mm" },
+                { label: "Blade Material", value: "ABS Plastic" },
+                { label: "Suggested Room type", value: "Living Room, Office, Dining Room, Bedroom, Kids Room" },
+                { label: "Speed", value: "260" },
+                { label: "Packer Information", value: "Haneri Electricals LLP" },
+                { label: "Number of Speeds", value: "5" },
+                { label: "Number of Blades", value: "3" },
+                { label: "Control Method", value: "Remote" },
+                { label: "Indoor/Outdoor Usage", value: "Indoor/Protected Outdoor Environments" },
+                { label: "Electric Fan Design", value: "Ceiling Fan" },
+                { label: "Country of Origin", value: "India" },
+                { label: "Warranty Description", value: "5 years from date of purchase" },
+                { label: "Care Instructions", value: "For any questions, Please contact us on ____________" },
+                { label: "Are Batteries Required?", value: "Yes" },
+                { label: "Are Batteries Included ?", value: "No" },
+                { label: "Contains Liquid Contents?", value: "No" },
+                { label: "Dimensions", value: "1320x1320mmx485mm" },
+                { label: "Items Per Inner Pack", value: "1" },
+                { label: "Number of Boxes", value: "1" },
+                { label: "Item Weight", value: "4.9kg" }
+            ];
+
+            // Generate HTML rows
+            const specTable = document.getElementById("spec-table");
+            specsData.forEach(item => {
+                const row = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
+                row.appendChild(td);
+                specTable.appendChild(row);
+            });
+            </script>
+            <style>
+                .product-box-spec {
+                background: #fff;
+                padding: 40px 20px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                }
+
+                .spec-title {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 30px;
+                color: #222;
+                }
+
+                .specs-json-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+                }
+
+                .specs-json-table td {
+                background-color: #f5f5f5;
+                padding: 14px 20px;
+                border-radius: 8px;
+                font-size: 15px;
+                color: #333;
+                line-height: 1.5;
+                }
+
+            </style>
+            <!-- <div class="product-box-spec container">
+                <h2 class="spec-title">Technical Specifications</h2>
+                <table class="specs-pair-table">
+                    <tbody>
+                    <tr><th>Model Name</th><td>Fengshui</td><th>Brand Name</th><td>Haneri</td></tr>
+                    <tr><th>Colour</th><td>Espesso Walnut, Natural Pine, Moonlight white and Velvet Black</td><th>Manufacturer</th><td>Haneri Electricals LLP</td></tr>
+                    <tr><th>Material</th><td>ABS plastic</td><th>BEE Rating</th><td>5</td></tr>
+                    <tr><th>Manufacturer Contact Information</th><td>Haneri Electricals LLP</td><th>Power Source</th><td>Electric</td></tr>
+                    <tr><th>Required Assembly</th><td>Yes</td><th>Wattage</th><td>45</td></tr>
+                    <tr><th>Voltage</th><td>230V</td><th>Mounting Type</th><td>Downrod Mount</td></tr>
+                    <tr><th>Finish Type</th><td>Painted</td><th>Airflow Capacity</th><td>280</td></tr>
+                    <tr><th>Included Components</th><td>1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card</td><th>Unit Count</th><td>1 Unit</td></tr>
+                    <tr><th>Recommended Uses</th><td>Air Circulation</td><th>Is Fragile?</th><td>Yes</td></tr>
+                    <tr><th>Blade Length</th><td>1320mm</td><th>Blade Material</th><td>ABS Plastic</td></tr>
+                    <tr><th>Suggested Room Type</th><td>Living Room, Office, Dining Room, Bedroom, Kids Room</td><th>Speed</th><td>260</td></tr>
+                    <tr><th>Packer Information</th><td>Haneri Electricals LLP</td><th>Number of Speeds</th><td>5</td></tr>
+                    <tr><th>Number of Blades</th><td>3</td><th>Control Method</th><td>Remote</td></tr>
+                    <tr><th>Indoor/Outdoor Usage</th><td>Indoor/Protected Outdoor Environments</td><th>Electric Fan Design</th><td>Ceiling Fan</td></tr>
+                    <tr><th>Country of Origin</th><td>India</td><th>Warranty Description</th><td>5 years from date of purchase</td></tr>
+                    <tr><th>Care Instructions</th><td>For any questions, Please contact us on ____________</td><th>Are Batteries Required?</th><td>Yes</td></tr>
+                    <tr><th>Are Batteries Included?</th><td>No</td><th>Contains Liquid Contents?</th><td>No</td></tr>
+                    <tr><th>Dimensions</th><td>1320x1320mmx485mm</td><th>Items Per Inner Pack</th><td>1</td></tr>
+                    <tr><th>Number of Boxes</th><td>1</td><th>Item Weight</th><td>4.9kg</td></tr>
+                    </tbody>
+                </table>
+            </div> -->
+            <!-- <style type="text/css" media="all">
                 .product-box-spec {
                 background: #fff;
                 padding: 40px 20px;
@@ -722,7 +812,7 @@
 
                 .specs-pair-table {
                 width: 100%;
-                border-collapse: collapse;
+                border-collapse: separate;
                 }
 
                 .specs-pair-table th,
@@ -759,7 +849,8 @@
                     }
                 }
 
-            </style>
+            </style> -->
+
             <!-- Related Products -->
             <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
