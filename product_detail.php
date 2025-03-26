@@ -688,7 +688,7 @@
                 }
 
                 .specification-list img {
-                    width: 100px;
+                    width: 150px;
                     height: auto;
                     object-fit: contain;
                 }
@@ -707,25 +707,25 @@
                     <figure>
                         <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/5-Year-warranty-v1695793624897.png?7019x7017" alt="5 year warranty" title="5 year warranty">
                     </figure>
-                    <p>5 year warranty</p>
+                    <!-- <p>5 year warranty</p> -->
                     </li>
                     <li>
                     <figure>
                         <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Activbldc-v1695793626211-(1)-v1697452065695.png?500x428" alt="ActivBldc" title="ActivBldc">
                     </figure>
-                    <p>ActivBldc</p>
+                    <!-- <p>ActivBldc</p> -->
                     </li>
                     <li>
                     <figure>
                         <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Anti-Dust@4x-(3)-v1695793627523.png?4899x4039" alt="Anti dust" title="Anti dust">
                     </figure>
-                    <p>Anti dust</p>
+                    <!-- <p>Anti dust</p> -->
                     </li>
                     <li>
                     <figure>
                         <img src="https://cdn.accentuate.io/46567661928752/-1695705434338/Layer-559-v1695793629801.png?4590x4807" alt="50% energy savings" title="50% energy savings">
                     </figure>
-                    <p>50% energy savings</p>
+                    <!-- <p>50% energy savings</p> -->
                     </li>
                 </ul>
             </div>
