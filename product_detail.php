@@ -633,25 +633,26 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-<style>
+<!-- <style>
     .product-box-spec {
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.08);
       padding: 20px;
-      background: green;
+      margin-left: 35px;
     }
     .specs-table th {
       width: 40%;
-      background-color: orange;
+      background-color:#31585814;
     }
     .title {
       font-size: 1.8rem;
       font-weight: 600;
       margin-bottom: 15px;
     }
-</style>
-            <div class="container-fluid">
+</style> -->
+
+            <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
                     <h2 class="section-title">Related Products</h2>
 
@@ -664,10 +665,6 @@
                                     <img src="assets/images/products/product-1-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <!-- <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
@@ -706,10 +703,6 @@
                                     <img src="assets/images/products/product-3-2.jpg" width="451" height="451"
                                         alt="product">
                                 </a>
-                                <!-- <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
@@ -743,15 +736,8 @@
                         <div class="product-default">
                             <figure>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-7.jpg" width="451" height="451"
-                                        alt="product">
-                                    <!-- <img src="assets/images/products/product-7-2.jpg" width="451" height="451"
-                                        alt="product"> -->
+                                    <img src="assets/images/products/product-7.jpg" width="451" height="451" alt="product">
                                 </a>
-                                <!-- <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
@@ -785,15 +771,8 @@
                         <div class="product-default">
                             <figure>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-6.jpg" width="451" height="451"
-                                        alt="product">
-                                    <!-- <img src="assets/images/products/product-6-2.jpg" width="451" height="451"
-                                        alt="product"> -->
+                                    <img src="assets/images/products/product-6.jpg" width="451" height="451" alt="product">
                                 </a>
-                                <!-- <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
@@ -827,15 +806,9 @@
                         <div class="product-default">
                             <figure>
                                 <a href="product.html">
-                                    <img src="assets/images/products/product-4.jpg" width="451" height="451"
-                                        alt="product">
-                                    <img src="assets/images/products/product-4-2.jpg" width="451" height="451"
-                                        alt="product">
+                                    <img src="assets/images/products/product-4.jpg" width="451" height="451" alt="product">
+                                    <img src="assets/images/products/product-4-2.jpg" width="451" height="451" alt="product">
                                 </a>
-                                <!-- <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div> -->
                             </figure>
                             <div class="product-details">
                                 <div class="category-list">
@@ -844,12 +817,6 @@
                                 <h3 class="product-title">
                                     <a href="product.html">Haneri Airlux ALR3</a>
                                 </h3>
-                                <!-- <div class="ratings-container">
-                                    <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span>
-                                        <span class="tooltiptext tooltip-top"></span>
-                                    </div>
-                                </div> -->
                                 <div class="price-box">
                                     <del class="old-price">₹59.00</del>
                                     <span class="product-price">₹49.00</span>
@@ -865,9 +832,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End .products-slider -->
+                    </div>
                 </div>
-            </div><!-- End .products-section -->
+            </div> -->
 
             <!-- <div class="container">
                 <hr class="mt-0 m-b-5" />

@@ -2281,3 +2281,20 @@ footer .social-icon {
         align-items: center;
         justify-content: center;
     }
+
+    .product-box-spec {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        padding: 20px;
+        margin-left: 35px;
+      }
+      .specs-table th {
+        width: 40%;
+        background-color:#31585814;
+      }
+      .title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
