@@ -649,11 +649,6 @@
                     <div class="secure-text">Top Rated Products</div>
                 </div>
             </div>
-            
-            <style>
-                
-
-            </style>
             <div class="container specification-section">
                 <h2 class="fw-normal head_1 text-center">Specifications</h2>
                 <ul class="specification-list">
@@ -683,6 +678,51 @@
                     </li>
                 </ul>
             </div>
+<style type="text/css" media="all">
+    .product-box-spec {
+    background: linear-gradient(to right, #f2fcff, #e4f6f9);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .spec-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #09594f;
+    }
+
+    .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    }
+
+    .spec-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 15px;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .spec-card span {
+    display: block;
+    font-weight: 600;
+    color: #0d544a;
+    margin-bottom: 6px;
+    font-size: 14px;
+    }
+</style>
             <div class="product-box-spec">
                 <h2 class="spec-title">Technical Specifications</h2>
                 <div class="specs-grid">
