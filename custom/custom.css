@@ -14,7 +14,6 @@
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #ccc;
-    min-height: 2vh; /* To show scroll behavior */
   }
 .button{
     justify-content: center !important;
