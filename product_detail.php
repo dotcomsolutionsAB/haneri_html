@@ -42,6 +42,155 @@
         }
 
         // Fetch product details
+        // if (productId) {
+        //     $.ajax({
+        //         url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
+        //         type: "POST",
+        //         contentType: "application/json",
+        //         data: JSON.stringify({ product_id: productId }),
+        //         success: function (data) {
+        //             if (data.success) {
+        //                 console.log("Product details fetched:", data);
+
+        //                 // Populate product details
+        //                 $('#product-title').text(data.data.name);
+        //                 $('#product-category').text(data.data.category);
+        //                 $('#product-brand').text(data.data.brand);
+        //                 $('#product-description').html(data.data.description || 'No description available');
+        //                 $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
+        //                 $('.about_section, .breadcrumb-title').text(data.data.name);
+
+        //                 // IMAGE SECTION LOGIC
+        //                 let imageSectionHtml = '';
+
+        //                 if (parseInt(productId) === 14) {
+        //                     // Custom images for ID 14
+        //                     imageSectionHtml = `
+        //                     <div class="product-slider-container">
+        //                         <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
+        //                             </div>
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
+        //                             </div>
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
+        //                             </div>
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
+        //                             </div>
+        //                         </div>
+        //                         <span class="prod-full-screen"><i class="icon-plus"></i></span>
+        //                     </div>
+        //                     <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+        //                         <div class="owl-dot"><img src="images/Natura_Pine.png" width="98" height="98" alt="Natural Pine" /></div>
+        //                         <div class="owl-dot"><img src="images/Espresso_Walnut.png" width="98" height="98" alt="Espresso Walnut" /></div>
+        //                         <div class="owl-dot"><img src="images/Moonlit_White.png" width="98" height="98" alt="Moonlit White" /></div>
+        //                         <div class="owl-dot"><img src="images/Velvet_Black.png" width="98" height="98" alt="Velvet Black" /></div>
+        //                     </div>`;
+        //                 } else {
+        //                     // Default images for other products (f1.png, f2.png, f3.png)
+        //                     imageSectionHtml = `
+        //                     <div class="product-slider-container">
+        //                         <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/f1.png" data-zoom-image="images/f1.png" width="915" height="915" alt="product" />
+        //                             </div>
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/f2.png" data-zoom-image="images/f2.png" width="915" height="915" alt="product" />
+        //                             </div>
+        //                             <div class="product-item">
+        //                                 <img class="product-single-image" src="images/f3.png" data-zoom-image="images/f3.png" width="915" height="915" alt="product" />
+        //                             </div>
+        //                         </div>
+        //                         <span class="prod-full-screen"><i class="icon-plus"></i></span>
+        //                     </div>
+        //                     <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+        //                         <div class="owl-dot"><img src="assets/images/products/zoom/product-1.jpg" width="98" height="98" alt="product" /></div>
+        //                         <div class="owl-dot"><img src="assets/images/products/zoom/product-2.jpg" width="98" height="98" alt="product" /></div>
+        //                         <div class="owl-dot"><img src="assets/images/products/zoom/product-3.jpg" width="98" height="98" alt="product" /></div>
+        //                     </div>`;
+        //                 }
+
+        //                 // Inject the HTML
+        //                 $('#product-image-section').html(imageSectionHtml);
+
+        //                 // Re-initialize owl carousel if needed
+        //                 $('.product-single-carousel').owlCarousel({
+        //                     items: 1,
+        //                     nav: true,
+        //                     dots: false,
+        //                     loop: true
+        //                 });
+
+        //                 // Handle variants
+        //                 if (data.data.variants.length > 0) {
+        //                     const variants = data.data.variants;
+        //                     const variantsContainer = $('.variants');
+
+        //                     // Generate variant options dynamically
+        //                     variantsContainer.html(variants.map((variant, index) =>
+        //                         `<div class="variant ${index === 0 ? 'selected' : ''}" 
+        //                              data-variant-id="${variant.id}" 
+        //                              data-selling-price="${variant.selling_price}" 
+        //                              data-regular-price="${variant.regular_price}" 
+        //                              data-vendor-price="${variant.sales_price_vendor}" 
+        //                              onclick="updateVariant(this)">
+        //                              <p>${variant.variant_value}</p>
+        //                          </div>`
+        //                     ).join(''));
+
+        //                     // Select the first variant by default
+        //                     updateVariant($('.variant').first()[0]);
+        //                 }
+        //             }
+        //         },
+        //         error: function (error) {
+        //             console.error('Error fetching product details:', error);
+        //         }
+        //     });
+        // }
+        // Variant update function
+        // window.updateVariant = function(element) {
+        //     const variantId    = $(element).data("variant-id");
+        //     const sellingPrice = $(element).data("selling-price");
+        //     const regularPrice = $(element).data("regular-price");
+        //     const vendorPrice  = $(element).data("vendor-price");
+
+        //     // Update UI
+        //     $('.variant').removeClass('selected');
+        //     $(element).addClass('selected');
+
+        //     // Make sure the hidden variant input is correct
+        //     $('#selected-variant').val(variantId);
+
+        //     // Always show the regular price as a strike-through
+        //     regularPriceElem.text(`₹${regularPrice}`).css("text-decoration", "line-through");
+
+        //     if (userRole === "vendor") {
+        //         // Vendor pricing
+        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "line-through");
+        //         specialPriceElem.text(`₹${vendorPrice}`).show();
+        //         sPriceContainer.show();
+
+        //         // IMPORTANT: set the tPriceElem's data-price to the vendor price
+        //         tPriceElem.attr("data-price", vendorPrice).text(`₹${vendorPrice}`);
+        //     } else {
+        //         // Non-vendor pricing
+        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "none");
+        //         specialPriceElem.hide();
+        //         sPriceContainer.hide();
+
+        //         // IMPORTANT: set the tPriceElem's data-price to the sellingPrice
+        //         tPriceElem.attr("data-price", sellingPrice).text(`₹${sellingPrice}`);
+        //     }
+
+        //     // After setting the new data-price, update the displayed price
+        //     updatePrice();
+        // }
+
+        // Fetch product details
         if (productId) {
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
@@ -54,75 +203,56 @@
 
                         // Populate product details
                         $('#product-title').text(data.data.name);
-                        $('#product-category').text(data.data.category);
-                        $('#product-brand').text(data.data.brand);
+                        $('#product-category').text(data.data.category.name);
+                        $('#product-brand').text(data.data.brand.name);
                         $('#product-description').html(data.data.description || 'No description available');
                         $('#features-list').html(data.data.features.map(f => `<li>${f.feature_value}</li>`).join(''));
                         $('.about_section, .breadcrumb-title').text(data.data.name);
 
-                        // IMAGE SECTION LOGIC
-                        let imageSectionHtml = '';
+                        // IMAGE SECTION INITIALIZATION FUNCTION
+                        function setImageSection(variantId) {
+                            let imageHtml = '', thumbHtml = '';
 
-                        if (parseInt(productId) === 14) {
-                            // Custom images for ID 14
-                            imageSectionHtml = `
-                            <div class="product-slider-container">
-                                <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                            const imageMap = {
+                                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png"],
+                                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png"],
+                                15: ["Moonlit_White.png", "Moonlit_White2.png"],
+                                16: ["Velvet_Black.png"]
+                            };
+
+                            const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+
+                            images.forEach(img => {
+                                imageHtml += `
                                     <div class="product-item">
-                                        <img class="product-single-image" src="images/Natura_Pine.png" data-zoom-image="images/Natural Pine.png" width="915" height="915" alt="Natural Pine" />
+                                        <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
+                                    </div>`;
+                                thumbHtml += `
+                                    <div class="owl-dot">
+                                        <img src="images/${img}" width="98" height="98" alt="product" />
+                                    </div>`;
+                            });
+
+                            const fullImageHtml = `
+                                <div class="product-slider-container">
+                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                                        ${imageHtml}
                                     </div>
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/Espresso_Walnut.png" data-zoom-image="images/Espresso Walnut.png" width="915" height="915" alt="Espresso Walnut" />
-                                    </div>
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/Moonlit_White.png" data-zoom-image="images/Moonlit White.png" width="915" height="915" alt="Moonlit White" />
-                                    </div>
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/Velvet_Black.png" data-zoom-image="images/Velvet Black.png" width="915" height="915" alt="Velvet Black" />
-                                    </div>
+                                    <span class="prod-full-screen"><i class="icon-plus"></i></span>
                                 </div>
-                                <span class="prod-full-screen"><i class="icon-plus"></i></span>
-                            </div>
-                            <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-                                <div class="owl-dot"><img src="images/Natura_Pine.png" width="98" height="98" alt="Natural Pine" /></div>
-                                <div class="owl-dot"><img src="images/Espresso_Walnut.png" width="98" height="98" alt="Espresso Walnut" /></div>
-                                <div class="owl-dot"><img src="images/Moonlit_White.png" width="98" height="98" alt="Moonlit White" /></div>
-                                <div class="owl-dot"><img src="images/Velvet_Black.png" width="98" height="98" alt="Velvet Black" /></div>
-                            </div>`;
-                        } else {
-                            // Default images for other products (f1.png, f2.png, f3.png)
-                            imageSectionHtml = `
-                            <div class="product-slider-container">
-                                <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/f1.png" data-zoom-image="images/f1.png" width="915" height="915" alt="product" />
-                                    </div>
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/f2.png" data-zoom-image="images/f2.png" width="915" height="915" alt="product" />
-                                    </div>
-                                    <div class="product-item">
-                                        <img class="product-single-image" src="images/f3.png" data-zoom-image="images/f3.png" width="915" height="915" alt="product" />
-                                    </div>
-                                </div>
-                                <span class="prod-full-screen"><i class="icon-plus"></i></span>
-                            </div>
-                            <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-                                <div class="owl-dot"><img src="assets/images/products/zoom/product-1.jpg" width="98" height="98" alt="product" /></div>
-                                <div class="owl-dot"><img src="assets/images/products/zoom/product-2.jpg" width="98" height="98" alt="product" /></div>
-                                <div class="owl-dot"><img src="assets/images/products/zoom/product-3.jpg" width="98" height="98" alt="product" /></div>
-                            </div>`;
+                                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
+                                    ${thumbHtml}
+                                </div>`;
+
+                            $('#product-image-section').html(fullImageHtml);
+
+                            $('.product-single-carousel').owlCarousel({
+                                items: 1,
+                                nav: true,
+                                dots: false,
+                                loop: true
+                            });
                         }
-
-                        // Inject the HTML
-                        $('#product-image-section').html(imageSectionHtml);
-
-                        // Re-initialize owl carousel if needed
-                        $('.product-single-carousel').owlCarousel({
-                            items: 1,
-                            nav: true,
-                            dots: false,
-                            loop: true
-                        });
 
                         // Handle variants
                         if (data.data.variants.length > 0) {
@@ -132,17 +262,23 @@
                             // Generate variant options dynamically
                             variantsContainer.html(variants.map((variant, index) =>
                                 `<div class="variant ${index === 0 ? 'selected' : ''}" 
-                                     data-variant-id="${variant.id}" 
-                                     data-selling-price="${variant.selling_price}" 
-                                     data-regular-price="${variant.regular_price}" 
-                                     data-vendor-price="${variant.sales_price_vendor}" 
-                                     onclick="updateVariant(this)">
-                                     <p>${variant.variant_value}</p>
-                                 </div>`
+                                    data-variant-id="${variant.id}" 
+                                    data-selling-price="${variant.selling_price}" 
+                                    data-regular-price="${variant.regular_price}" 
+                                    data-vendor-price="${variant.sales_price_vendor}" 
+                                    onclick="updateVariant(this)">
+                                    <p>${variant.variant_value}</p>
+                                </div>`
                             ).join(''));
 
-                            // Select the first variant by default
+                            // Default select first variant and render images
+                            const defaultVariant = variants[0];
+                            $('#selected-variant').val(defaultVariant.id);
+                            setImageSection(defaultVariant.id);
                             updateVariant($('.variant').first()[0]);
+                        } else {
+                            // No variants: just show default images
+                            setImageSection(null);
                         }
                     }
                 },
@@ -162,34 +298,31 @@
             // Update UI
             $('.variant').removeClass('selected');
             $(element).addClass('selected');
-
-            // Make sure the hidden variant input is correct
             $('#selected-variant').val(variantId);
 
-            // Always show the regular price as a strike-through
+            // Show regular price with strike-through
             regularPriceElem.text(`₹${regularPrice}`).css("text-decoration", "line-through");
 
             if (userRole === "vendor") {
-                // Vendor pricing
                 productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "line-through");
                 specialPriceElem.text(`₹${vendorPrice}`).show();
                 sPriceContainer.show();
-
-                // IMPORTANT: set the tPriceElem's data-price to the vendor price
                 tPriceElem.attr("data-price", vendorPrice).text(`₹${vendorPrice}`);
             } else {
-                // Non-vendor pricing
                 productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "none");
                 specialPriceElem.hide();
                 sPriceContainer.hide();
-
-                // IMPORTANT: set the tPriceElem's data-price to the sellingPrice
                 tPriceElem.attr("data-price", sellingPrice).text(`₹${sellingPrice}`);
             }
 
-            // After setting the new data-price, update the displayed price
+            // Update image section based on selected variant
+            if (parseInt(productId) === 14) {
+                setImageSection(variantId);
+            }
+
             updatePrice();
         }
+
 
         // Add to Cart function
         function addToCart() {
@@ -633,24 +766,6 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-<!-- <style>
-    .product-box-spec {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-      padding: 20px;
-      margin-left: 35px;
-    }
-    .specs-table th {
-      width: 40%;
-      background-color:#31585814;
-    }
-    .title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-</style> -->
 
             <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
@@ -838,7 +953,6 @@
 
             <!-- <div class="container">
                 <hr class="mt-0 m-b-5" />
-
                 <div class="product-widgets-container row pb-2">
                     <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
                         <h4 class="section-sub-title">Featured Products</h4>
