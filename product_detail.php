@@ -629,6 +629,8 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
+
+
             <div class="secure-section">
                 <div class="secure-item">
                     <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online">
@@ -649,55 +651,7 @@
             </div>
             
             <style>
-                .specification-section {
-                    padding: 40px 20px;
-                }
-
-                .specification-list {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 30px;
-                    list-style: none;
-                    padding: 0;
-                    margin: 30px 0 0 0;
-                }
-
-                .specification-list li {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    max-width: 220px;
-                    width: 220px;
-                    height: 200px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    text-align: center;
-                    transition: transform 0.3s ease;
-                }
-
-                .specification-list li:hover {
-                    transform: translateY(-5px);
-                }
-
-                .specification-list figure {
-                    margin-bottom: 10px;
-                }
-
-                .specification-list img {
-                    width: 150px;
-                    height: auto;
-                    object-fit: contain;
-                }
-
-                .specification-list p {
-                    font-size: 16px;
-                    font-weight: 500;
-                    margin: 0;
-                }
+                
 
             </style>
             <div class="container specification-section">
@@ -729,7 +683,49 @@
                     </li>
                 </ul>
             </div>
-
+            <div class="product-box-spec">
+                <h2 class="spec-title">Technical Specifications</h2>
+                <div class="specs-grid">
+                    <div class="spec-card"><span>Model Name</span>Fengshui</div>
+                    <div class="spec-card"><span>Brand Name</span>Haneri</div>
+                    <div class="spec-card"><span>Colour</span>Espesso Walnut, Natural Pine, Moonlight White, Velvet Black</div>
+                    <div class="spec-card"><span>Manufacturer</span>Haneri Electricals LLP</div>
+                    <div class="spec-card"><span>Material</span>ABS Plastic</div>
+                    <div class="spec-card"><span>BEE Rating</span>5</div>
+                    <div class="spec-card"><span>Contact</span>Haneri Electricals LLP</div>
+                    <div class="spec-card"><span>Power Source</span>Electric</div>
+                    <div class="spec-card"><span>Required Assembly</span>Yes</div>
+                    <div class="spec-card"><span>Wattage</span>45</div>
+                    <div class="spec-card"><span>Voltage</span>230V</div>
+                    <div class="spec-card"><span>Mounting Type</span>Downrod Mount</div>
+                    <div class="spec-card"><span>Finish Type</span>Painted</div>
+                    <div class="spec-card"><span>Airflow</span>280</div>
+                    <div class="spec-card"><span>Included Components</span>1 BLDC motor, 3 Blades, Remote, Kit, Warranty</div>
+                    <div class="spec-card"><span>Unit Count</span>1 Unit</div>
+                    <div class="spec-card"><span>Use Case</span>Air Circulation</div>
+                    <div class="spec-card"><span>Is Fragile?</span>Yes</div>
+                    <div class="spec-card"><span>Blade Length</span>1320mm</div>
+                    <div class="spec-card"><span>Blade Material</span>ABS Plastic</div>
+                    <div class="spec-card"><span>Room Type</span>Living, Office, Dining, Bedroom</div>
+                    <div class="spec-card"><span>Speed</span>260</div>
+                    <div class="spec-card"><span>Packer</span>Haneri Electricals LLP</div>
+                    <div class="spec-card"><span>Number of Speeds</span>5</div>
+                    <div class="spec-card"><span>Blades</span>3</div>
+                    <div class="spec-card"><span>Control Method</span>Remote</div>
+                    <div class="spec-card"><span>Usage</span>Indoor/Protected Outdoor</div>
+                    <div class="spec-card"><span>Design</span>Ceiling Fan</div>
+                    <div class="spec-card"><span>Country</span>India</div>
+                    <div class="spec-card"><span>Warranty</span>5 years from purchase</div>
+                    <div class="spec-card"><span>Care</span>Contact us for questions</div>
+                    <div class="spec-card"><span>Batteries Required?</span>Yes</div>
+                    <div class="spec-card"><span>Batteries Included?</span>No</div>
+                    <div class="spec-card"><span>Liquid Content?</span>No</div>
+                    <div class="spec-card"><span>Dimensions</span>1320x1320x485mm</div>
+                    <div class="spec-card"><span>Items per Pack</span>1</div>
+                    <div class="spec-card"><span>Boxes</span>1</div>
+                    <div class="spec-card"><span>Weight</span>4.9kg</div>
+                </div>
+            </div>
             <!-- Related Products -->
             <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
