@@ -2297,3 +2297,24 @@ footer .social-icon {
         font-weight: 600;
         margin-bottom: 15px;
       }
+
+      .variant-color-circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 5px;
+        border: 2px solid #ccc;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        position: relative;
+    }
+
+    .variant-color-circle:hover {
+        transform: scale(1.1);
+        border-color: #000;
+    }
+
+    .variant-color-circle.selected {
+        border: 3px solid #a7a7a7;;
+    }
