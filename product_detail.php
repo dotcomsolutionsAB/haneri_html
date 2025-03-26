@@ -651,7 +651,28 @@
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
+            <div class="container">
+                <hr class="mt-0 m-b-5">
+                <div style="background-color:#09594f;border-radius:12px;padding:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:#fff;text-align:center;">
+                    <div style="flex:1 1 200px;min-width:200px;">
+                        <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online" style="width:60px;margin-bottom:10px;">
+                        <div style="font-size:16px;font-weight:500;">Buy in store or online</div>
+                    </div>
+                    <div style="flex:1 1 200px;min-width:200px;">
+                        <img src="//www.crompton.co.in/cdn/shop/files/gear_80x.svg?v=1701772745" alt="Service and Installation" title="Service and Installation" style="width:60px;margin-bottom:10px;">
+                        <div style="font-size:16px;font-weight:500;">Service and Installation</div>
+                    </div>
+                    <div style="flex:1 1 200px;min-width:200px;">
+                        <img src="//www.crompton.co.in/cdn/shop/files/certification_80x.svg?v=1701772745" alt="Product Warranty" title="Product Warranty" style="width:60px;margin-bottom:10px;">
+                        <div style="font-size:16px;font-weight:500;">Product Warranty</div>
+                    </div>
+                    <div style="flex:1 1 200px;min-width:200px;">
+                        <img src="//www.crompton.co.in/cdn/shop/files/Group_53380_80x.svg?v=1701772744" alt="Top Rated Products" title="Top Rated Products" style="width:60px;margin-bottom:10px;">
+                        <div style="font-size:16px;font-weight:500;">Top Rated Products</div>
+                    </div>
+                </div>
 
+            </div>
             <!-- Related Products -->
             <!-- <div class="container-fluid">
                 <div class="products-section pt-0">
@@ -837,7 +858,7 @@
                 </div>
             </div> -->
 
-            <div class="container">
+            <!-- <div class="container">
                 <hr class="mt-0 m-b-5" />
                 <div class="product-widgets-container row pb-2">
                     <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
@@ -1167,7 +1188,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </main><!-- End .main -->
         <?php include("footer.php"); ?>
         <!-- End .footer -->
