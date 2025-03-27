@@ -1,14 +1,14 @@
 <section class="container">
     <h2 class="section-title ls-n-15 text-center pt-2 m-b-4">Featured Products</h2>
 
-    <div class="heading_1">
+    <div class="featured-products-carousel owl-carousel owl-theme">
         <!-- Product 1 -->
         <div class="card">
             <div class="card_image">
                 <img src="images/Moonlit_White.png" alt="Product 1" class="img-fluid">
             </div>
-            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
-            <p class="product-price">MRP ₹16,999.00</p>
+            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
 
@@ -17,8 +17,8 @@
             <div class="card_image">
                 <img src="images/Natura_Pine.png" alt="Product 2" class="img-fluid">
             </div>
-            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
-            <p class="product-price">MRP ₹16,999.00</p>
+            <h6 class="text-truncate px-2">Haneri Fengshui <span>Ceiling Fan</span></h6>
+            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
 
@@ -27,8 +27,8 @@
             <div class="card_image">    
                 <img src="images/Velvet_Black.png" alt="Product 3" class="img-fluid">
             </div>
-            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
-            <p class="product-price">MRP ₹16,999.00</p>
+            <h6 class="text-truncate px-2">Haneri Fengshui <span>Ceiling Fan</span></h6>
+            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
 
@@ -37,8 +37,8 @@
             <div class="card_image">
                 <img src="images/Espresso_Walnut.png" alt="Product 4" class="img-fluid">
             </div>
-            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
-            <p class="product-price">MRP ₹16,999.00</p>
+            <h6 class="text-truncate px-2">Haneri Fengshui <span>Ceiling Fan</span></h6>
+            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
 
@@ -47,8 +47,8 @@
             <div class="card_image">
                 <img src="images/Velvet_Black.png" alt="Product 5" class="img-fluid">
             </div>
-            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
-            <p class="product-price">MRP ₹16,999.00</p>
+            <h6 class="text-truncate px-2">Haneri Fengshui <span>Ceiling Fan</span></h6>
+            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
     </div>
@@ -63,7 +63,7 @@
         justify-content: center;
         align-items: center;
     }
-    .owl-carousel .card:hover {
+    .card:hover{
         box-shadow: 5px 5px 3px 0px darkgreen;
     }
 
@@ -90,8 +90,7 @@
     }
 
     .btn-light:hover {
-        /* background-color: #00473e; */
-        background-color:rgb(8, 98, 86);
+        background-color: #00473e;
     }
     .btn-light:hover {
         color: #f3f6f9 !important;
