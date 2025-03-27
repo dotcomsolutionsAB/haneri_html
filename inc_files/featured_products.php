@@ -63,7 +63,7 @@
         justify-content: center;
         align-items: center;
     }
-    .card:hover{
+    .featured-products-carousel .card:hover {
         box-shadow: 5px 5px 3px 0px darkgreen;
     }
 
