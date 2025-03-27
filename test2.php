@@ -465,7 +465,7 @@
                         // Append the row for each product
                         tbody.append(`
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="card" id="pro-table">
+                                <div class="card featured" id="pro-table">
                                     <div class="card_image">
                                         <img src="${
                                                 product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
