@@ -260,6 +260,12 @@ function setImageSection(variantId) {
         dots: false,
         loop: true
     });
+    
+    // Thumbnail click behavior
+    $('#carousel-custom-dots .thumb-item').on('click', function () {
+        const index = $(this).data('index');
+        $carousel.trigger('to.owl.carousel', [index, 300]);
+    });
 }
 
         // Fetch product details
