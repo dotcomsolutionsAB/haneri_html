@@ -9,7 +9,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+            <a href="#" class="btn rounded-pill px-4">Know More</a>
         </div>
 
         <!-- Product 2 -->
@@ -19,7 +19,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+            <a href="#" class="btn rounded-pill px-4">Know More</a>
         </div>
 
         <!-- Product 3 -->
@@ -29,7 +29,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+            <a href="#" class="btn rounded-pill px-4">Know More</a>
         </div>
 
         <!-- Product 4 -->
@@ -39,7 +39,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+            <a href="#" class="btn rounded-pill px-4">Know More</a>
         </div>
 
         <!-- Product 5 -->
@@ -49,7 +49,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+            <a href="#" class="btn rounded-pill px-4">Know More</a>
         </div>
     </div>
 </section>

@@ -440,8 +440,8 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price">₹${regularPrice}</span>
-                                        <span class="product-price cross">₹${sellingPrice}</span>
+                                        <span class="old-price paragraph1">₹${regularPrice}</span>
+                                        <span class="product-price cross paragraph1">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price">
                                         Special Price : <span class="special_price">₹${vendor_price}</span>
@@ -452,11 +452,11 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price">₹${regularPrice}</span>
-                                        <span class="product-price">₹${sellingPrice}</span>
+                                        <span class="old-price paragraph1">₹${regularPrice}</span>
+                                        <span class="product-price paragraph1">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price none">
-                                        Special Price : <span class="special_price">₹${vendor_price}</span>
+                                        Special Price : <span class="special_price paragraph1">₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -476,7 +476,7 @@
                                             }" alt="Product 1" class="img-fluid"
                                         />
                                     </div>
-                                    <p>${product.category?.name || "Uncategorized"}</p>
+                                    <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
                                     <h4 class="heading2">
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
                                             ${product.name}
