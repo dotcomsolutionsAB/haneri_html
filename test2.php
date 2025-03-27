@@ -10,56 +10,14 @@
             </ol>
         </div><!-- End .container -->
     </nav>
-    <div class="page-wrapper">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 
-        <main class="main">
+    <!-- Bootstrap CSS (optional, for layout consistency) -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-<section class="container py-5">
-    <h2 class="section-title ls-n-15 text-center pt-2 mb-4">Featured Products</h2>
-
-    <div class="featured-products-carousel owl-carousel owl-theme">
-        <!-- Product 1 -->
-        <div class="card">
-            <img src="images/f1.png" alt="Product 1" class="img-fluid">
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
-            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="card">
-            <img src="images/f2.png" alt="Product 2" class="img-fluid">
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
-            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="card">
-            <img src="images/f3.png" alt="Product 3" class="img-fluid">
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
-            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="card">
-            <img src="images/f4.png" alt="Product 4" class="img-fluid">
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
-            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
-        </div>
-
-        <!-- Product 5 -->
-        <div class="card">
-            <img src="images/f5.png" alt="Product 5" class="img-fluid">
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
-            <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
-            <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
-        </div>
-    </div>
-</section>
-<style>
+    <style>
         .section-title {
             font-size: 28px;
             font-weight: bold;
@@ -108,29 +66,82 @@
         .owl-prev-btn:hover, .owl-next-btn:hover {
             background: #ccc;
         }
-</style>
+    </style>
+    <div class="page-wrapper">
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-    $('.featured-products-carousel').owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: true,
-        dots: false,
-        slideBy: 2, // Scroll 2 items per click
-        navText: [
-            '<span class="owl-prev-btn">‹</span>',
-            '<span class="owl-next-btn">›</span>'
-        ],
-        responsive: {
-            0: { items: 1 },
-            576: { items: 2 },
-            768: { items: 3 },
-            992: { items: 4 } // Show 4 products at desktop
-        }
-    });
-</script>
+        <main class="main">
+
+        <section class="container py-5">
+            <h2 class="section-title ls-n-15 text-center pt-2 mb-4">Featured Products</h2>
+
+            <div class="featured-products-carousel owl-carousel owl-theme">
+                <!-- Product 1 -->
+                <div class="card">
+                    <img src="images/f1.png" alt="Product 1" class="img-fluid">
+                    <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+                    <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card">
+                    <img src="images/f2.png" alt="Product 2" class="img-fluid">
+                    <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+                    <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card">
+                    <img src="images/f3.png" alt="Product 3" class="img-fluid">
+                    <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+                    <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card">
+                    <img src="images/f4.png" alt="Product 4" class="img-fluid">
+                    <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+                    <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="card">
+                    <img src="images/f5.png" alt="Product 5" class="img-fluid">
+                    <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+                    <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
+                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <!-- Owl Carousel JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+        <script>
+            $('.featured-products-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                slideBy: 2, // Scroll 2 items per click
+                navText: [
+                    '<span class="owl-prev-btn">‹</span>',
+                    '<span class="owl-next-btn">›</span>'
+                ],
+                responsive: {
+                    0: { items: 1 },
+                    576: { items: 2 },
+                    768: { items: 3 },
+                    992: { items: 4 } // Show 4 products at desktop
+                }
+            });
+        </script>
 
         </main>
 
