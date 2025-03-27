@@ -442,13 +442,13 @@ function setImageSection(variantId) {
                 
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">
-                        <div class="col-lg-7 product-single-gallery">
+                        <div class="col-lg-5 product-single-gallery">
                             <div class="sidebar-wrapper" id="product-image-section">
                                 <!--  -->
                             </div>
                         </div>
 
-                        <div class="col-lg-5 pb-1">
+                        <div class="col-lg-7 pb-1">
                             <!-- <div class="single-product-custom-block">
                                 <div class="porto-block">
                                     <h5 class="porto-heading d-inline-block">Free Shipping</h5>
