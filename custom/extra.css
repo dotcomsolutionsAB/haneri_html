@@ -2439,6 +2439,9 @@ footer .social-icon {
         display: block;
         width: 100%;
     }
+    .product-single-gallery .prod-thumbnail .owl-nav {
+        font-size: 3.6rem;
+    }
     
     .thumbnail-carousel .owl-dot {
         margin: 0 5px;
