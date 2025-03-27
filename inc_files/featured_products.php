@@ -56,6 +56,13 @@
 
 
 <style>
+    .card_image{
+        height: 240px;
+        /* background: antiquewhite; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .featured-products-carousel .card {
         border-radius: 20px;
