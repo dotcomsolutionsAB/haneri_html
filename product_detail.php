@@ -101,14 +101,14 @@
 // new
 // function setImageSection(variantId) {
 //     let imageHtml = '', thumbHtml = '';
-//     let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
+    // let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
 
-//     const imageMap = {
-//         13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
-//         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-//         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-//         16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
-//     };
+    // const imageMap = {
+    //     13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
+    //     14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+    //     15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
+    //     16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
+    // };
 
 //     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
 
@@ -166,117 +166,102 @@
 // }
 
 // test
-    function setImageSection(variantId) {
-        let imageHtml = '', thumbHtml = '';
+function setImageSection(variantId) {
+    let imageHtml = '', thumbHtml = '';
 
-        // Use the EMBED URL for YouTube so it displays properly in an iframe
-        let videoUrl = "https://www.youtube.com/embed/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
+    // Regular YouTube URL (for config)
+    let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
 
-        // Adjust the arrays here as needed
-        const imageMap = {
-            13: [
-                "Natura_Pine.png",
-                "Natura_Pine2.png",
-                "Natura_Pine3.png",
-                "Natura_Pine4.png",
-                "Natura_Pine5.png",
-                videoUrl // Put the video as the last item
-            ],
-            14: [
-                "Espresso_Walnut.png",
-                "Espresso_Walnut2.png",
-                "Espresso_Walnut3.png",
-                "Espresso_Walnut4.png",
-                "Espresso_Walnut5.png"
-            ],
-            15: [
-                "Moonlit_White.png",
-                "Moonlit_White2.png",
-                "Moonlit_White3.png",
-                "Moonlit_White4.png",
-                videoUrl
-            ],
-            16: [
-                "Velvet_Black.png",
-                "Velvet_Black2.png",
-                "Velvet_Black3.png",
-                "Velvet_Black4.png"
-            ]
-        };
+    // Convert to embed URL
+    const getEmbedUrl = (url) => {
+        const videoId = url.includes("youtu.be")
+            ? url.split("youtu.be/")[1].split("?")[0]
+            : url.split("v=")[1].split("&")[0];
+        return `https://www.youtube.com/embed/${videoId}`;
+    };
 
-        // For demonstration, I'm assuming productId is defined somewhere.
-        // If productId == 14 and the variant is in imageMap, use those images
-        // Otherwise use fallback images
-        const images = (productId == 14 && imageMap[variantId])
-            ? imageMap[variantId]
-            : ["f1.png", "f2.png", "f3.png"];
+    // Image & Video Map
+    const imageMap = {
+        13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
+        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+        15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
+        16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
+    };
 
-        images.forEach(img => {
-            // Check if the array item is the YouTube video URL
-            if (img === videoUrl) {
-                // VIDEO SLIDE
-                imageHtml += `
-                    <div class="product-item">
-                        <iframe
-                            width="915"
-                            height="915"
-                            src="${videoUrl}"
-                            frameborder="0"
-                            allowfullscreen
-                            allow="autoplay; encrypted-media">
-                        </iframe>
-                    </div>
-                `;
+    const images = (productId == 14 && imageMap[variantId]) 
+        ? imageMap[variantId] 
+        : ["f1.png", "f2.png", "f3.png"];
 
-                // VIDEO THUMBNAIL (use your own local or YouTube thumbnail as needed)
-                thumbHtml += `
-                    <div class="owl-dot">
-                        <img src="images/video-thumb.png" width="98" height="98" alt="product video" />
-                    </div>
-                `;
-            } else {
-                // IMAGE SLIDE
-                imageHtml += `
-                    <div class="product-item">
-                        <img class="product-single-image"
-                             src="images/${img}"
-                             data-zoom-image="images/${img}"
-                             width="915"
-                             height="915"
-                             alt="product" />
-                    </div>
-                `;
+    images.forEach(item => {
+        const isVideo = item.includes("youtu");
 
-                // IMAGE THUMBNAIL
-                thumbHtml += `
-                    <div class="owl-dot">
-                        <img src="images/${img}" width="98" height="98" alt="product" />
-                    </div>
-                `;
-            }
-        });
+        if (isVideo) {
+            const embedUrl = getEmbedUrl(item);
 
-        const fullImageHtml = `
-            <div class="product-slider-container">
-                <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                    ${imageHtml}
+            // VIDEO SLIDE
+            imageHtml += `
+                <div class="product-item">
+                    <iframe
+                        width="540"
+                        height="300"
+                        src="${embedUrl}"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-            </div>
-            <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
-                ${thumbHtml}
-            </div>
-        `;
+            `;
 
-        $('#product-image-section').html(fullImageHtml);
+            // VIDEO THUMBNAIL
+            thumbHtml += `
+                <div class="owl-dot">
+                    <img src="images/video-thumb.png" width="98" height="98" alt="video" />
+                </div>
+            `;
+        } else {
+            // IMAGE SLIDE
+            imageHtml += `
+                <div class="product-item">
+                    <img class="product-single-image"
+                         src="images/${item}"
+                         data-zoom-image="images/${item}"
+                         width="540"
+                         height="300"
+                         alt="product" />
+                </div>
+            `;
 
-        // Initialize the carousel after inserting slides
-        $('.product-single-carousel').owlCarousel({
-            items: 1,
-            nav: true,
-            dots: false,
-            loop: true
-        });
-    }
+            // IMAGE THUMBNAIL
+            thumbHtml += `
+                <div class="owl-dot">
+                    <img src="images/${item}" width="98" height="98" alt="product" />
+                </div>
+            `;
+        }
+    });
+
+    const fullImageHtml = `
+        <div class="product-slider-container">
+            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                ${imageHtml}
+            </div>
+        </div>
+        <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
+            ${thumbHtml}
+        </div>
+    `;
+
+    $('#product-image-section').html(fullImageHtml);
+
+    // Initialize the carousel
+    $('.product-single-carousel').owlCarousel({
+        items: 1,
+        nav: true,
+        dots: false,
+        loop: true
+    });
+}
+
 
 
 
