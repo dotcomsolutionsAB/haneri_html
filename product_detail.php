@@ -442,13 +442,13 @@ function setImageSection(variantId) {
                 
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">
-                        <div class="col-lg-6 product-single-gallery">
+                        <div class="col-lg-5 product-single-gallery">
                             <div class="sidebar-wrapper" id="product-image-section">
                                 <!--  -->
                             </div>
                         </div>
 
-                        <div class="col-lg-6 pb-1">
+                        <div class="col-lg-7 pb-1">
                             <!-- <div class="single-product-custom-block">
                                 <div class="porto-block">
                                     <h5 class="porto-heading d-inline-block">Free Shipping</h5>
@@ -854,88 +854,6 @@ function setImageSection(variantId) {
 
 
             </style>
-            <!-- <div class="product-box-spec container">
-                <h2 class="spec-title">Technical Specifications</h2>
-                <table class="specs-pair-table">
-                    <tbody>
-                    <tr><th>Model Name</th><td>Fengshui</td><th>Brand Name</th><td>Haneri</td></tr>
-                    <tr><th>Colour</th><td>Espesso Walnut, Natural Pine, Moonlight white and Velvet Black</td><th>Manufacturer</th><td>Haneri Electricals LLP</td></tr>
-                    <tr><th>Material</th><td>ABS plastic</td><th>BEE Rating</th><td>5</td></tr>
-                    <tr><th>Manufacturer Contact Information</th><td>Haneri Electricals LLP</td><th>Power Source</th><td>Electric</td></tr>
-                    <tr><th>Required Assembly</th><td>Yes</td><th>Wattage</th><td>45</td></tr>
-                    <tr><th>Voltage</th><td>230V</td><th>Mounting Type</th><td>Downrod Mount</td></tr>
-                    <tr><th>Finish Type</th><td>Painted</td><th>Airflow Capacity</th><td>280</td></tr>
-                    <tr><th>Included Components</th><td>1 BLDC motor, Set of 3 Blades, 1 Remote, Shackle kit, Warranty Card</td><th>Unit Count</th><td>1 Unit</td></tr>
-                    <tr><th>Recommended Uses</th><td>Air Circulation</td><th>Is Fragile?</th><td>Yes</td></tr>
-                    <tr><th>Blade Length</th><td>1320mm</td><th>Blade Material</th><td>ABS Plastic</td></tr>
-                    <tr><th>Suggested Room Type</th><td>Living Room, Office, Dining Room, Bedroom, Kids Room</td><th>Speed</th><td>260</td></tr>
-                    <tr><th>Packer Information</th><td>Haneri Electricals LLP</td><th>Number of Speeds</th><td>5</td></tr>
-                    <tr><th>Number of Blades</th><td>3</td><th>Control Method</th><td>Remote</td></tr>
-                    <tr><th>Indoor/Outdoor Usage</th><td>Indoor/Protected Outdoor Environments</td><th>Electric Fan Design</th><td>Ceiling Fan</td></tr>
-                    <tr><th>Country of Origin</th><td>India</td><th>Warranty Description</th><td>5 years from date of purchase</td></tr>
-                    <tr><th>Care Instructions</th><td>For any questions, Please contact us on ____________</td><th>Are Batteries Required?</th><td>Yes</td></tr>
-                    <tr><th>Are Batteries Included?</th><td>No</td><th>Contains Liquid Contents?</th><td>No</td></tr>
-                    <tr><th>Dimensions</th><td>1320x1320mmx485mm</td><th>Items Per Inner Pack</th><td>1</td></tr>
-                    <tr><th>Number of Boxes</th><td>1</td><th>Item Weight</th><td>4.9kg</td></tr>
-                    </tbody>
-                </table>
-            </div> -->
-            <!-- <style type="text/css" media="all">
-                .product-box-spec {
-                background: #fff;
-                padding: 40px 20px;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                }
-
-                .spec-title {
-                text-align: center;
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 30px;
-                color: #222;
-                }
-
-                .specs-pair-table {
-                width: 100%;
-                border-collapse: separate;
-                }
-
-                .specs-pair-table th,
-                .specs-pair-table td {
-                padding: 16px;
-                vertical-align: top;
-                text-align: left;
-                font-size: 15px;
-                line-height: 1.5;
-                }
-
-                .specs-pair-table th {
-                background-color: #f2f2f2;
-                font-weight: 500;
-                width: 20%;
-                }
-
-                .specs-pair-table td {
-                background-color: #fff;
-                color: #333;
-                width: 30%;
-                }
-
-                @media (max-width: 768px) {
-                    .specs-pair-table th,
-                    .specs-pair-table td {
-                        display: block;
-                        width: 100%;
-                    }
-
-                    .specs-pair-table tr {
-                        display: block;
-                        margin-bottom: 20px;
-                    }
-                }
-
-            </style> -->
 
             <!-- Related Products -->
             <!-- <div class="container-fluid">
