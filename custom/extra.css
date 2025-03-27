@@ -2479,18 +2479,18 @@ footer .social-icon {
 
     /* Shop page */
 
-    .card_image{
+    .featured .card_image{
         height: 240px;
         /* background: antiquewhite; */
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .featured-products-carousel .card:hover {
+    .featured .featured-products-carousel .card:hover {
         /* box-shadow: 5px 5px 3px 0px darkgreen; */
     }
 
-    .featured-products-carousel .card {
+    .featured .featured-products-carousel .card {
         border-radius: 20px;
         padding: 20px;
         text-align: justify;
@@ -2498,13 +2498,13 @@ footer .social-icon {
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
-    .featured-products-carousel img {
+    .featured .featured-products-carousel img {
         max-height: 180px;
         object-fit: contain;
         margin-bottom: 15px;
     }
 
-    .btn-light {
+    .featured .btn-light {
         background-color: #f1f1f1;
         border: none;
         transition: 0.3s;
@@ -2512,19 +2512,19 @@ footer .social-icon {
         border-radius: 50px;
     }
 
-    .btn-light:hover {
+    .featured .btn-light:hover {
         background: linear-gradient(to left, rgb(49 88 88), rgb(15 164 167) 0%, rgb(4, 189, 193) 50%, rgb(49 88 88));
         transition: 0.25s ease-in !important;
     }
-    .btn-light:hover {
+    .featured .btn-light:hover {
         color: #f3f6f9 !important;
     }
-    .owl-nav {
+    .featured .owl-nav {
         text-align: center;
         margin-top: 10px;
     }
 
-    .owl-prev-btn, .owl-next-btn {
+    .featured .owl-prev-btn, .owl-next-btn {
         font-size: 28px;
         color: #333;
         padding: 10px 18px;
@@ -2535,19 +2535,19 @@ footer .social-icon {
         display: inline-block;
     }
 
-    .owl-prev-btn:hover, .owl-next-btn:hover {
+    .featured .owl-prev-btn:hover, .owl-next-btn:hover {
         background: #ccc;
     }
-    .owl-carousel {
+    .featured .owl-carousel {
         background: #f8f8f800;
     }
 
-    .owl-carousel .card {
+    .featured .owl-carousel .card {
         min-height: 400px;
         background: radial-gradient(#ecf6f6d1, #00473e3d);
         margin-top: 10px;
     }
-    .fetured-next{
+    .featured .fetured-next{
         display:none !important;
     }
     /* .card {
@@ -2555,7 +2555,7 @@ footer .social-icon {
         background: radial-gradient(#ecf6f6d1, #00473e3d);
         margin-top: 10px;
     } */
-    .card {
+    .featured .card {
         margin-bottom: 3rem;
         border: 1px solid #ddd;
         border-radius: 0;

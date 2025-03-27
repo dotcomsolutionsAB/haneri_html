@@ -440,11 +440,11 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price paragraph1">₹${regularPrice}</span>
-                                        <span class="product-price cross paragraph1">₹${sellingPrice}</span>
+                                        <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
+                                        <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price">
-                                        Special Price : <span class="special_price">₹${vendor_price}</span>
+                                        Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -452,11 +452,11 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price paragraph1">₹${regularPrice}</span>
-                                        <span class="product-price paragraph1">₹${sellingPrice}</span>
+                                        <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
+                                        <span class="product-price paragraph1">MRP ₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price none">
-                                        Special Price : <span class="special_price paragraph1">₹${vendor_price}</span>
+                                        Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -490,8 +490,7 @@
                                         </div>
                                     </div>
                                     ${priceSnippet}
-                                    <p class="product-price">MRP ₹16,999.00</p>
-                                    <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
+                                    <a href="#" class="btn btn-light rounded-pill px-4">Add to Cart</a>
                                 </div>
                             </div>
                         `);
