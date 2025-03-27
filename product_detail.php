@@ -42,48 +42,48 @@
         }
 
         // IMAGE SECTION INITIALIZATION FUNCTION
-        // function setImageSection(variantId) {
-        //     let imageHtml = '', thumbHtml = '';
+        function setImageSection(variantId) {
+            let imageHtml = '', thumbHtml = '';
 
-        //     const imageMap = {
-        //         13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
-        //         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-        //         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
-        //         16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
-        //     };
+            const imageMap = {
+                13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
+                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+                15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
+                16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
+            };
 
-        //     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+            const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
 
-        //     images.forEach(img => {
-        //         imageHtml += `
-        //             <div class="product-item">
-        //                 <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
-        //             </div>`;
-        //         thumbHtml += `
-        //             <div class="owl-dot">
-        //                 <img src="images/${img}" width="98" height="98" alt="product" />
-        //             </div>`;
-        //     });
+            images.forEach(img => {
+                imageHtml += `
+                    <div class="product-item">
+                        <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
+                    </div>`;
+                thumbHtml += `
+                    <div class="owl-dot">
+                        <img src="images/${img}" width="98" height="98" alt="product" />
+                    </div>`;
+            });
 
-        //     const fullImageHtml = `
-        //         <div class="product-slider-container">
-        //             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-        //                 ${imageHtml}
-        //             </div>
-        //         </div>
-        //         <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
-        //             ${thumbHtml}
-        //         </div>`;
+            const fullImageHtml = `
+                <div class="product-slider-container">
+                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                        ${imageHtml}
+                    </div>
+                </div>
+                <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
+                    ${thumbHtml}
+                </div>`;
 
-        //     $('#product-image-section').html(fullImageHtml);
+            $('#product-image-section').html(fullImageHtml);
 
-        //     $('.product-single-carousel').owlCarousel({
-        //         items: 1,
-        //         nav: true,
-        //         dots: false,
-        //         loop: true
-        //     });
-        // }
+            $('.product-single-carousel').owlCarousel({
+                items: 1,
+                nav: true,
+                dots: false,
+                loop: true
+            });
+        }
 // new
 // function setImageSection(variantId) {
 //     let imageHtml = '', thumbHtml = '';
@@ -152,83 +152,83 @@
 // }
 
 // test
-function setImageSection(variantId) {
-    let imageHtml = '', thumbHtml = '';
-    let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
+// function setImageSection(variantId) {
+//     let imageHtml = '', thumbHtml = '';
+//     let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
 
-    const imageMap = {
-        13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
-        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-        15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-        16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
-    };
+//     const imageMap = {
+//         13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
+//         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+//         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
+//         16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
+//     };
 
-    const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+//     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
 
-    images.forEach((item, index) => {
-        if (item.includes("youtube.com") || item.includes("youtu.be")) {
-            const videoId = item.split("youtu.be/")[1].split("?")[0];
-            imageHtml += `
-                <div class="product-item video-slide" data-video-id="${videoId}">
-                    <div class="video-wrapper" style="width: 915px; height: 915px; background-color: #000; display: flex; align-items: center; justify-content: center;">
-                        <div class="video-frame-placeholder" data-loaded="false" data-video-id="${videoId}" style="cursor:pointer;">
-                            <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" width="100%" height="100%" style="object-fit: contain;" />
-                            <div style="position:absolute; font-size:60px; color:#fff;">▶</div>
-                        </div>
-                    </div>
-                </div>`;
-            thumbHtml += `
-                <div class="thumb-item" data-index="${index}">
-                    <img src="https://img.youtube.com/vi/${videoId}/default.jpg" width="98" height="98" alt="video" />
-                </div>`;
-        } else {
-            imageHtml += `
-                <div class="product-item">
-                    <img class="product-single-image" src="images/${item}" data-index="${index}" width="915" height="915" alt="product" />
-                </div>`;
-            thumbHtml += `
-                <div class="thumb-item" data-index="${index}">
-                    <img src="images/${item}" width="98" height="98" alt="product-thumb" />
-                </div>`;
-        }
-    });
+//     images.forEach((item, index) => {
+//         if (item.includes("youtube.com") || item.includes("youtu.be")) {
+//             const videoId = item.split("youtu.be/")[1].split("?")[0];
+//             imageHtml += `
+//                 <div class="product-item video-slide" data-video-id="${videoId}">
+//                     <div class="video-wrapper" style="width: 915px; height: 915px; background-color: #000; display: flex; align-items: center; justify-content: center;">
+//                         <div class="video-frame-placeholder" data-loaded="false" data-video-id="${videoId}" style="cursor:pointer;">
+//                             <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" width="100%" height="100%" style="object-fit: contain;" />
+//                             <div style="position:absolute; font-size:60px; color:#fff;">▶</div>
+//                         </div>
+//                     </div>
+//                 </div>`;
+//             thumbHtml += `
+//                 <div class="thumb-item" data-index="${index}">
+//                     <img src="https://img.youtube.com/vi/${videoId}/default.jpg" width="98" height="98" alt="video" />
+//                 </div>`;
+//         } else {
+//             imageHtml += `
+//                 <div class="product-item">
+//                     <img class="product-single-image" src="images/${item}" data-index="${index}" width="915" height="915" alt="product" />
+//                 </div>`;
+//             thumbHtml += `
+//                 <div class="thumb-item" data-index="${index}">
+//                     <img src="images/${item}" width="98" height="98" alt="product-thumb" />
+//                 </div>`;
+//         }
+//     });
 
-    const fullImageHtml = `
-        <div class="product-slider-container">
-            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                ${imageHtml}
-            </div>
-            <div class="prod-thumbnail d-flex justify-content-center flex-wrap mt-3" id="carousel-custom-dots">
-                ${thumbHtml}
-            </div>
-        </div>`;
+//     const fullImageHtml = `
+//         <div class="product-slider-container">
+//             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+//                 ${imageHtml}
+//             </div>
+//             <div class="prod-thumbnail d-flex justify-content-center flex-wrap mt-3" id="carousel-custom-dots">
+//                 ${thumbHtml}
+//             </div>
+//         </div>`;
 
-    $('#product-image-section').html(fullImageHtml);
+//     $('#product-image-section').html(fullImageHtml);
 
-    const $carousel = $('.product-single-carousel');
-    $carousel.owlCarousel({
-        items: 1,
-        nav: true,
-        dots: false,
-        loop: true,
-        onChanged: function(event) {
-            const currentItem = event.item.index;
-            const currentSlide = $('.product-single-carousel .owl-item').eq(currentItem).find('.video-frame-placeholder');
-            if (currentSlide.length && currentSlide.data('loaded') === false) {
-                const videoId = currentSlide.data('video-id');
-                currentSlide.replaceWith(`
-                    <iframe width="915" height="915" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                `);
-            }
-        }
-    });
+//     const $carousel = $('.product-single-carousel');
+//     $carousel.owlCarousel({
+//         items: 1,
+//         nav: true,
+//         dots: false,
+//         loop: true,
+//         onChanged: function(event) {
+//             const currentItem = event.item.index;
+//             const currentSlide = $('.product-single-carousel .owl-item').eq(currentItem).find('.video-frame-placeholder');
+//             if (currentSlide.length && currentSlide.data('loaded') === false) {
+//                 const videoId = currentSlide.data('video-id');
+//                 currentSlide.replaceWith(`
+//                     <iframe width="915" height="915" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
+//                         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+//                 `);
+//             }
+//         }
+//     });
 
-    $('#carousel-custom-dots .thumb-item').on('click', function () {
-        const index = $(this).data('index');
-        $carousel.trigger('to.owl.carousel', [index, 300]);
-    });
-}
+//     $('#carousel-custom-dots .thumb-item').on('click', function () {
+//         const index = $(this).data('index');
+//         $carousel.trigger('to.owl.carousel', [index, 300]);
+//     });
+// }
 
 
         // Fetch product details
