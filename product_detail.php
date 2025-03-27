@@ -169,7 +169,7 @@
 function setImageSection(variantId) {
     let imageHtml = '', thumbHtml = '';
 
-    let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
+    let videoUrl = "https://youtu.be/MaX_zCDMyWc";
 
     const getEmbedUrl = (url) => {
         const videoId = url.includes("youtu.be")
@@ -180,9 +180,9 @@ function setImageSection(variantId) {
 
     const imageMap = {
         13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
-        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-        16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
+        16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
     };
 
     const images = (productId == 14 && imageMap[variantId]) 
