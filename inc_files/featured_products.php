@@ -7,7 +7,7 @@
             <div class="card_image">
                 <img src="images/Moonlit_White.png" alt="Product 1" class="img-fluid">
             </div>
-            <h4 class="heading4">Haneri Fengshui <span>Ceiling Fan</span></h4>
+            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
@@ -17,7 +17,7 @@
             <div class="card_image">
                 <img src="images/Natura_Pine.png" alt="Product 2" class="img-fluid">
             </div>
-            <h4 class="heading4">Haneri Fengshui <span>Ceiling Fan</span></h4>
+            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
@@ -27,7 +27,7 @@
             <div class="card_image">    
                 <img src="images/Velvet_Black.png" alt="Product 3" class="img-fluid">
             </div>
-            <h4 class="heading4">Haneri Fengshui <span>Ceiling Fan</span></h4>
+            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
@@ -37,7 +37,7 @@
             <div class="card_image">
                 <img src="images/Espresso_Walnut.png" alt="Product 4" class="img-fluid">
             </div>
-            <h4 class="heading4">Haneri Fengshui <span>Ceiling Fan</span></h4>
+            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
@@ -47,7 +47,7 @@
             <div class="card_image">
                 <img src="images/Velvet_Black.png" alt="Product 5" class="img-fluid">
             </div>
-            <h4 class="heading4">Haneri Fengshui <span>Ceiling Fan</span></h4>
+            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
