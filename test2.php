@@ -66,6 +66,14 @@
         .owl-prev-btn:hover, .owl-next-btn:hover {
             background: #ccc;
         }
+        .owl-carousel {
+            background: #f8f8f8;
+        }
+
+        .owl-carousel .card {
+            min-height: 350px;
+        }
+
     </style>
     <div class="page-wrapper">
 
@@ -116,32 +124,32 @@
                 </div>
             </div>
         </section>
-
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-        <!-- Owl Carousel JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
         <script>
-            $('.featured-products-carousel').owlCarousel({
-                loop: true,
+            $(document).ready(function () {
+                $('.featured-products-carousel').owlCarousel({
+                loop: false,
                 margin: 20,
                 nav: true,
                 dots: false,
-                slideBy: 2, // Scroll 2 items per click
+                items: 4,
+                slideBy: 2,
                 navText: [
                     '<span class="owl-prev-btn">‹</span>',
                     '<span class="owl-next-btn">›</span>'
                 ],
                 responsive: {
-                    0: { items: 1 },
-                    576: { items: 2 },
-                    768: { items: 3 },
-                    992: { items: 4 } // Show 4 products at desktop
+                    0: { items: 1, slideBy: 1 },
+                    576: { items: 2, slideBy: 2 },
+                    768: { items: 3, slideBy: 2 },
+                    992: { items: 4, slideBy: 2 }
                 }
+                });
             });
         </script>
+
+<!-- Footer (before </body>) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
         </main>
 
