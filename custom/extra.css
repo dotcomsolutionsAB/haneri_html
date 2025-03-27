@@ -640,7 +640,7 @@ footer a {
 
 @media (max-width: 520px) {
     .work-together-section {
-        height: 450px;
+        height: 400px;
         width: 100%;
     }
   
@@ -1105,7 +1105,7 @@ Turbosilent
   /* Container styles */
   .work-together-section {
     position: relative;
-    height: 500px;
+    height: 400px;
     width: 450px;
     display: flex;
     align-items: flex-end; /* Align content at the bottom */
