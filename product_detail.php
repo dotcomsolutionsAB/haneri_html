@@ -235,14 +235,18 @@ function setImageSection(variantId) {
             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                 ${imageHtml}
             </div>
-            <div class="prod-thumbnail horizontal-thumbs" id="carousel-custom-dots">
-                ${thumbHtml}
+            <div class="prod-thumbnail horizontal-thumbs">
+                <div class="thumbnail-carousel owl-carousel owl-theme">
+                    ${thumbHtml}
+                </div>
             </div>
         </div>
     `;
 
+
     $('#product-image-section').html(fullImageHtml);
 
+    // Main image carousel
     $('.product-single-carousel').owlCarousel({
         items: 1,
         nav: true,
@@ -250,12 +254,24 @@ function setImageSection(variantId) {
         loop: true
     });
 
-    // Handle thumbnail click
+    // Thumbnail slider (scrollable)
+    $('.thumbnail-carousel').owlCarousel({
+        items: 5,
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: { items: 3 },
+            600: { items: 4 },
+            1000: { items: 5 }
+        }
+    });
+
+    // Sync thumbnail click with main carousel
     $(document).on('click', '.owl-dot', function () {
         const index = $(this).data('index');
         $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
     });
-
 }
 
 
