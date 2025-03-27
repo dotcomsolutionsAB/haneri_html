@@ -45,3 +45,26 @@
 </section>
 
 
+
+<script>
+    $(document).ready(function () {
+        $('.featured-products-carousel').owlCarousel({
+        loop: false,
+        margin: 20,
+        nav: true,
+        dots: false,
+        items: 4,
+        slideBy: 2,
+        navText: [
+            '<span class="owl-prev-btn">‹</span>',
+            '<span class="owl-next-btn">›</span>'
+        ],
+        responsive: {
+            0: { items: 1, slideBy: 1 },
+            576: { items: 2, slideBy: 2 },
+            768: { items: 3, slideBy: 2 },
+            992: { items: 4, slideBy: 2 }
+        }
+        });
+    });
+</script>
