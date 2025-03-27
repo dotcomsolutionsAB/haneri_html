@@ -197,8 +197,8 @@ function setImageSection(variantId) {
             imageHtml += `
                 <div class="product-item">
                     <iframe
-                        width="540"
-                        height="300"
+                        width="635"
+                        height="355"
                         src="${embedUrl}"
                         frameborder="0"
                         allow="autoplay; encrypted-media"
@@ -217,8 +217,8 @@ function setImageSection(variantId) {
                     <img class="product-single-image"
                         src="images/${item}"
                         data-zoom-image="images/${item}"
-                        width="540"
-                        height="300"
+                        width="635"
+                        height="355"
                         alt="product" />
                 </div>
             `;
