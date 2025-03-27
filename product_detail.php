@@ -169,10 +169,8 @@
 function setImageSection(variantId) {
     let imageHtml = '', thumbHtml = '';
 
-    // Regular YouTube URL (for config)
     let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
 
-    // Convert to embed URL
     const getEmbedUrl = (url) => {
         const videoId = url.includes("youtu.be")
             ? url.split("youtu.be/")[1].split("?")[0]
@@ -180,7 +178,6 @@ function setImageSection(variantId) {
         return `https://www.youtube.com/embed/${videoId}`;
     };
 
-    // Image & Video Map
     const imageMap = {
         13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
@@ -192,13 +189,11 @@ function setImageSection(variantId) {
         ? imageMap[variantId] 
         : ["f1.png", "f2.png", "f3.png"];
 
-    images.forEach(item => {
+    images.forEach((item, index) => {
         const isVideo = item.includes("youtu");
 
         if (isVideo) {
             const embedUrl = getEmbedUrl(item);
-
-            // VIDEO SLIDE
             imageHtml += `
                 <div class="product-item">
                     <iframe
@@ -211,29 +206,24 @@ function setImageSection(variantId) {
                     </iframe>
                 </div>
             `;
-
-            // VIDEO THUMBNAIL
             thumbHtml += `
-                <div class="owl-dot">
+                <div class="owl-dot" data-index="${index}">
                     <img src="images/video-thumb.png" width="98" height="98" alt="video" />
                 </div>
             `;
         } else {
-            // IMAGE SLIDE
             imageHtml += `
                 <div class="product-item">
                     <img class="product-single-image"
-                         src="images/${item}"
-                         data-zoom-image="images/${item}"
-                         width="540"
-                         height="300"
-                         alt="product" />
+                        src="images/${item}"
+                        data-zoom-image="images/${item}"
+                        width="540"
+                        height="300"
+                        alt="product" />
                 </div>
             `;
-
-            // IMAGE THUMBNAIL
             thumbHtml += `
-                <div class="owl-dot">
+                <div class="owl-dot" data-index="${index}">
                     <img src="images/${item}" width="98" height="98" alt="product" />
                 </div>
             `;
@@ -245,28 +235,34 @@ function setImageSection(variantId) {
             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
                 ${imageHtml}
             </div>
-        </div>
-        <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
-            ${thumbHtml}
+            <div class="prod-thumbnail horizontal-thumbs" id="carousel-custom-dots">
+                ${thumbHtml}
+            </div>
         </div>
     `;
 
     $('#product-image-section').html(fullImageHtml);
 
-    // Initialize the carousel
     $('.product-single-carousel').owlCarousel({
         items: 1,
         nav: true,
         dots: false,
         loop: true
     });
-    
-    // Thumbnail click behavior
-    $('#carousel-custom-dots .thumb-item').on('click', function () {
+
+    // Handle thumbnail click
+    $(document).on('click', '.owl-dot', function () {
         const index = $(this).data('index');
-        $carousel.trigger('to.owl.carousel', [index, 300]);
+        $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
     });
+
 }
+
+
+
+
+
+
 
         // Fetch product details
         if (productId) {
