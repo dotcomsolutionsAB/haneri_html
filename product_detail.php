@@ -415,18 +415,7 @@ function setImageSection(variantId) {
     });
 </script>
 <style>
-.prod-thumbnail {
-    gap: 10px;
-}
-.prod-thumbnail .thumb-item {
-    cursor: pointer;
-    margin: 0 5px;
-    border: 2px solid transparent;
-}
-.prod-thumbnail .thumb-item:hover,
-.prod-thumbnail .thumb-item.active {
-    border-color: #000;
-}
+
 </style>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">

@@ -2402,3 +2402,24 @@ footer .social-icon {
         font-weight: 500;
         margin: 0;
     }
+
+    /* product detail page image slider */
+    .prod-thumbnail .owl-dot.active img, .prod-thumbnail img:hover {
+        border: 0px solid #21293c !important;
+    }
+    .prod-thumbnail {
+        gap: 10px;
+    }
+    .prod-thumbnail .thumb-item {
+        cursor: pointer;
+        margin: 0 5px;
+        border: 2px solid transparent;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prod-thumbnail .thumb-item:hover,
+    .prod-thumbnail .thumb-item.active {
+        border-color: #000;
+    }
