@@ -1,64 +1,5 @@
-
-<style>
-        .section-title {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .featured-products-carousel .card {
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .featured-products-carousel img {
-            max-height: 180px;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-
-        .btn-light {
-            background-color: #f1f1f1;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-light:hover {
-            background-color: #ddd;
-        }
-
-        .owl-nav {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .owl-prev-btn, .owl-next-btn {
-            font-size: 28px;
-            color: #333;
-            padding: 10px 18px;
-            border-radius: 50%;
-            background: #eee;
-            margin: 0 10px;
-            transition: 0.3s ease;
-            display: inline-block;
-        }
-
-        .owl-prev-btn:hover, .owl-next-btn:hover {
-            background: #ccc;
-        }
-        .owl-carousel {
-            background: #f8f8f8;
-        }
-
-        .owl-carousel .card {
-            min-height: 350px;
-        }
-
-    </style>
-<section class="container py-5">
-    <h2 class="section-title ls-n-15 text-center pt-2 mb-4">Featured Products</h2>
+<section class="container">
+    <h2 class="section-title ls-n-15 text-center pt-2 m-b-4">Featured Products</h2>
 
     <div class="featured-products-carousel owl-carousel owl-theme">
         <!-- Product 1 -->
@@ -102,6 +43,63 @@
         </div>
     </div>
 </section>
+
+
+<style>
+
+    .featured-products-carousel .card {
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .featured-products-carousel img {
+        max-height: 180px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    .btn-light {
+        background-color: #f1f1f1;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn-light:hover {
+        background-color: #ddd;
+    }
+
+    .owl-nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .owl-prev-btn, .owl-next-btn {
+        font-size: 28px;
+        color: #333;
+        padding: 10px 18px;
+        border-radius: 50%;
+        background: #eee;
+        margin: 0 10px;
+        transition: 0.3s ease;
+        display: inline-block;
+    }
+
+    .owl-prev-btn:hover, .owl-next-btn:hover {
+        background: #ccc;
+    }
+    .owl-carousel {
+        background: #f8f8f8;
+    }
+
+    .owl-carousel .card {
+        min-height: 350px;
+    }
+
+</style>
+
 <script>
     $(document).ready(function () {
         $('.featured-products-carousel').owlCarousel({
