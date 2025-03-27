@@ -4,7 +4,7 @@
     <div class="featured-products-carousel owl-carousel owl-theme">
         <!-- Product 1 -->
         <div class="card">
-            <img src="images/f1.png" alt="Product 1" class="img-fluid">
+            <img src="images/Moonlit_White.png" alt="Product 1" class="img-fluid">
             <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
             <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
@@ -12,7 +12,7 @@
 
         <!-- Product 2 -->
         <div class="card">
-            <img src="images/f2.png" alt="Product 2" class="img-fluid">
+            <img src="images/Natura_pine.png" alt="Product 2" class="img-fluid">
             <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
             <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
@@ -20,7 +20,7 @@
 
         <!-- Product 3 -->
         <div class="card">
-            <img src="images/f3.png" alt="Product 3" class="img-fluid">
+            <img src="images/Velvet_Black.png" alt="Product 3" class="img-fluid">
             <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
             <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
@@ -28,7 +28,7 @@
 
         <!-- Product 4 -->
         <div class="card">
-            <img src="images/f4.png" alt="Product 4" class="img-fluid">
+            <img src="images/Espresso_Walnut.png" alt="Product 4" class="img-fluid">
             <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
             <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
@@ -36,7 +36,7 @@
 
         <!-- Product 5 -->
         <div class="card">
-            <img src="images/f5.png" alt="Product 5" class="img-fluid">
+            <img src="images/Velvet_Black.png" alt="Product 5" class="img-fluid">
             <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
             <p class="text-primary fw-bold mb-3">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
