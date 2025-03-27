@@ -90,7 +90,8 @@
     }
 
     .btn-light:hover {
-        background-color: #00473e;
+        /* background-color: #00473e; */
+        background-color:rgb(8, 98, 86);
     }
     .btn-light:hover {
         color: #f3f6f9 !important;
