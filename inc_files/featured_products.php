@@ -7,7 +7,7 @@
             <div class="card_image">
                 <img src="images/Moonlit_White.png" alt="Product 1" class="img-fluid">
             </div>
-            <h6 class="text-truncate px-2">Crompton Silent Pro Blossom Smart Ceiling Fan</h6>
+            <p>Haneri Fengshui <span>Ceiling Fan</span></p>
             <p class="product-price">MRP ₹16,999.00</p>
             <a href="#" class="btn btn-light rounded-pill px-4">Know More</a>
         </div>
