@@ -55,7 +55,7 @@
 </section>
 
 
-<!-- <style>
+<style>
     .card_image{
         height: 240px;
         /* background: antiquewhite; */
@@ -128,7 +128,7 @@
         display:none !important;
     }
 
-</style> -->
+</style>
 <script>
     $(document).ready(function () {
         $('.featured-products-carousel').owlCarousel({
