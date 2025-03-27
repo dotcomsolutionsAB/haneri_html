@@ -2476,6 +2476,10 @@ footer .social-icon {
         align-items: center;
     }
     
+    .air_curve_design .about-slider-item{
+        background: #e6e7e8 !important;
+        border-radius: 10px !important;
+    }
 
     /* featured page */
 
