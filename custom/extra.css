@@ -679,16 +679,16 @@ footer a {
     padding: 1rem 2.5rem;
     box-sizing: border-box;
     min-height: 370px;         /* to ensure a bit of uniform height */
-    background-color: #f6f6f6;
-    border: 1px solid #74787c30;
+    /* background-color: #f6f6f6;
+    border: 1px solid #74787c30; */
     padding: 10px;
 }
 .custom-box:hover {
-    border: 1px solid rgb(45, 142, 142);
+    /* border: 1px solid rgb(45, 142, 142); */
     
 }
 .custom-box:hover .icon-box {
-    border: 1px solid rgb(45, 142, 142);
+    /* border: 1px solid rgb(45, 142, 142); */
 }
 /* Top-left icon box */
 .icon-box {
@@ -1213,16 +1213,16 @@ Turbosilent
     padding: 1rem 2.5rem;
     box-sizing: border-box;
     min-height: 370px;         /* to ensure a bit of uniform height */
-    background-color: #f6f6f6;
-    border: 1px solid #74787c30;
+    /* background-color: #f6f6f6;
+    border: 1px solid #74787c30; */
     padding: 10px;
   }
   .custom-box:hover {
-    border: 1px solid rgb(45, 142, 142);
+    /* border: 1px solid rgb(45, 142, 142); */
     
   }
   .custom-box:hover .icon-box {
-    border: 1px solid rgb(45, 142, 142);
+    /* border: 1px solid rgb(45, 142, 142); */
   }
   /* Top-left icon box */
   .icon-box {
