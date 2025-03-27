@@ -80,7 +80,7 @@
             $('.product-single-carousel').owlCarousel({
                 items: 1,
                 nav: true,
-                dots: false,
+                dots: true,
                 loop: true
             });
         }
