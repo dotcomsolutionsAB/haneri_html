@@ -42,48 +42,107 @@
         }
 
         // IMAGE SECTION INITIALIZATION FUNCTION
-        function setImageSection(variantId) {
-            let imageHtml = '', thumbHtml = '';
+        // function setImageSection(variantId) {
+        //     let imageHtml = '', thumbHtml = '';
 
-            const imageMap = {
-                13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
-                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-                15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
-                16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
-            };
+        //     const imageMap = {
+        //         13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png" ],
+        //         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+        //         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
+        //         16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
+        //     };
 
-            const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+        //     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
 
-            images.forEach(img => {
-                imageHtml += `
-                    <div class="product-item">
-                        <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
-                    </div>`;
-                thumbHtml += `
-                    <div class="owl-dot">
-                        <img src="images/${img}" width="98" height="98" alt="product" />
-                    </div>`;
-            });
+        //     images.forEach(img => {
+        //         imageHtml += `
+        //             <div class="product-item">
+        //                 <img class="product-single-image" src="images/${img}" data-zoom-image="images/${img}" width="915" height="915" alt="product" />
+        //             </div>`;
+        //         thumbHtml += `
+        //             <div class="owl-dot">
+        //                 <img src="images/${img}" width="98" height="98" alt="product" />
+        //             </div>`;
+        //     });
 
-            const fullImageHtml = `
-                <div class="product-slider-container">
-                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                        ${imageHtml}
-                    </div>
-                </div>
-                <div class="prod-thumbnail owl-dots transparent-dots flex-column" id="carousel-custom-dots">
-                    ${thumbHtml}
-                </div>`;
+        //     const fullImageHtml = `
+        //         <div class="product-slider-container">
+        //             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+        //                 ${imageHtml}
+        //             </div>
+        //         </div>
+        //         <div class="prod-thumbnail transparent-dots flex-column" id="carousel-custom-dots">
+        //             ${thumbHtml}
+        //         </div>`;
 
-            $('#product-image-section').html(fullImageHtml);
+        //     $('#product-image-section').html(fullImageHtml);
 
-            $('.product-single-carousel').owlCarousel({
-                items: 1,
-                nav: true,
-                dots: true,
-                loop: true
-            });
-        }
+        //     $('.product-single-carousel').owlCarousel({
+        //         items: 1,
+        //         nav: true,
+        //         dots: false,
+        //         loop: true
+        //     });
+        // }
+function setImageSection(variantId) {
+    let imageHtml = '', thumbHtml = '';
+
+    const imageMap = {
+        13: ["Natura_Pine.png","Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png"],
+        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
+        15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
+        16: ["Velvet_Black.png", "Velvet_Black2.png","Velvet_Black3.png", "Velvet_Black4.png"]
+    };
+
+    const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+
+    images.forEach((img, index) => {
+        imageHtml += `
+            <div class="product-item">
+                <img class="product-single-image main-product-image" src="images/${img}" data-index="${index}" width="915" height="915" alt="product" />
+            </div>`;
+        thumbHtml += `
+            <div class="thumb-item" data-index="${index}">
+                <img src="images/${img}" width="98" height="98" alt="product" />
+            </div>`;
+    });
+
+    const fullImageHtml = `
+        <div class="product-slider-container">
+            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                ${imageHtml}
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="prod-thumbnail transparent-dots d-flex justify-content-center mt-3 flex-wrap" id="carousel-custom-dots">
+                ${thumbHtml}
+            </div>
+
+            <!-- YouTube Video -->
+            <div class="product-video mt-4 text-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2IV08sP9m3U?autoplay=1&mute=1" 
+                    title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>`;
+
+    $('#product-image-section').html(fullImageHtml);
+
+    // Initialize main carousel
+    const $carousel = $('.product-single-carousel');
+    $carousel.owlCarousel({
+        items: 1,
+        nav: true,
+        dots: false,
+        loop: true
+    });
+
+    // Thumbnail click behavior
+    $('#carousel-custom-dots .thumb-item').on('click', function () {
+        const index = $(this).data('index');
+        $carousel.trigger('to.owl.carousel', [index, 300]);
+    });
+}
+
 
         // Fetch product details
         if (productId) {
@@ -348,7 +407,18 @@
         });
     });
 </script>
+<style>
+    .prod-thumbnail .thumb-item {
+    cursor: pointer;
+    margin: 5px;
+    border: 2px solid transparent;
+}
+.prod-thumbnail .thumb-item:hover,
+.prod-thumbnail .thumb-item.active {
+    border-color: #333;
+}
 
+</style>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
@@ -371,56 +441,12 @@
         <main class="main">
 
             <div class="container product-single-container product-single-default product-full-width">
-                <!-- <div class="cart-message d-none">
-                    "<strong class="single-cart-notice breadcrumb-title"></strong>" 
-                    <span> has been added to your cart.</span>
-                </div> -->
-
+                
                 <div class="container-fluid pl-lg-0 padding-right-lg">
                     <div class="row">
                         <div class="col-lg-5 product-single-gallery">
                             <div class="sidebar-wrapper" id="product-image-section">
-                                <!-- <div class="product-slider-container">
-                                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                                        <div class="product-item">
-                                            <img class="product-single-image"
-                                                src="images/f1.png"
-                                                data-zoom-image="images/f1.png"
-                                                width="915" height="915" alt="product" />
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image"
-                                                src="images/f2.png"
-                                                data-zoom-image="images/f2.png"
-                                                width="915" height="915" alt="product" />
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image"
-                                                src="images/f3.png"
-                                                data-zoom-image="images/f3.png"
-                                                width="915" height="915" alt="product" />
-                                        </div>
-                                    </div>
-
-                                    <span class="prod-full-screen">
-                                        <i class="icon-plus"></i>
-                                    </span>
-                                </div>
-                                <div class="prod-thumbnail owl-dots transparent-dots flex-column"
-                                    id='carousel-custom-dots'>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-1.jpg" width="98" height="98"
-                                            alt="product" />
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-2.jpg" width="98" height="98"
-                                            alt="product" />
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-3.jpg" width="98" height="98"
-                                            alt="product" />
-                                    </div>
-                                </div> -->
+                                <!--  -->
                             </div>
                         </div>
 
@@ -513,8 +539,8 @@
                                             target="_blank" title="Google +"></a>
                                         <a href="#" class="social-icon social-mail icon-mail-alt" target="_blank"
                                             title="Mail"></a>
-                                    </div>End .social-icons -->
-                                </div><!-- End .product single-share -->
+                                    </div> -->
+                                </div>
 
                                 <!-- <a href="#" class="btn-icon-wish add-wishlist justify-content-start mb-lg-0 mb-1"
                                     title="Add to Wishlist">
