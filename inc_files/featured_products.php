@@ -123,6 +123,9 @@
         background: radial-gradient(#ecf6f6d1, #00473e3d);
         margin-top: 10px;
     }
+    .owl-prev-btn, .owl-next-btn{
+        display:none;
+    }
 
 </style>
 <script>
