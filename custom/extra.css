@@ -1966,6 +1966,8 @@ footer .social-icon {
  .blog-content h3{
     margin-top: 5px;
     margin-bottom: 10px;
+    font-family: 'Barlow Condensed';
+    color: #464646;
  }
  .btns{
     height: 100%;
