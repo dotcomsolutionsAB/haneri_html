@@ -10,7 +10,7 @@
 
             <div class="container mb-3">
                 <div class="row">
-                    <div class="col-lg-9 main-content shop">
+                    <div class="col-lg-9 main-content">
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
@@ -440,11 +440,11 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                                        <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
+                                        <span class="old-price">₹${regularPrice}</span>
+                                        <span class="product-price cross">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price">
-                                        Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
+                                        Special Price : <span class="special_price">₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -452,11 +452,11 @@
                             priceSnippet = `
                                 <div class="price-box">
                                     <div class="c_price">
-                                        <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                                        <span class="product-price paragraph1">MRP ₹${sellingPrice}</span>
+                                        <span class="old-price">₹${regularPrice}</span>
+                                        <span class="product-price">₹${sellingPrice}</span>
                                     </div>
                                     <div class="sp_price none">
-                                        Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
+                                        Special Price : <span class="special_price">₹${vendor_price}</span>
                                     </div>
                                 </div>
                             `;
@@ -465,32 +465,42 @@
                         // Append the row for each product
                         tbody.append(`
                             <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
-                                <div class="card featured" id="pro-table">
-                                    <div class="card_image">
-                                        <img src="${
-                                                product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
-                                                product.category?.id === 1 ? 'images/f1.png' :
-                                                product.category?.id === 2 ? 'images/f2.png' :
-                                                product.category?.id === 3 ? 'images/f3.png' :                                                    
-                                                'assets/images/products/product-1.jpg'
-                                            }" alt="Product 1" class="img-fluid"
-                                        />
-                                    </div>
-                                    <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
-                                    <h4 class="heading2">
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                                            ${product.name}
+                                <div class="product-default inner-quickview inner-icon" id="pro-table">
+                                    <figure>
+                                        <a href="javascript:void(0)" class="square_box" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
+                                            <img 
+                                                src="${
+                                                    product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
+                                                    product.category?.id === 1 ? 'images/f1.png' :
+                                                    product.category?.id === 2 ? 'images/f2.png' :
+                                                    product.category?.id === 3 ? 'images/f3.png' :                                                    
+                                                    'assets/images/products/product-1.jpg'
+                                                }" 
+                                                width="500" height="500" alt="product" 
+                                            />
                                         </a>
-                                        <span>Ceiling Fan</span>
-                                    </h4>
-                                    <div class="ratings-container">
-                                        <div class="product-ratings">
-                                            <span class="ratings" style="width:100%"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="#" class="product-category">
+                                                    ${product.category?.name || "Uncategorized"}
+                                                </a>
+                                            </div>
                                         </div>
+                                        <h3 class="product-title">
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
+                                                ${product.name}
+                                            </a>
+                                        </h3>
+                                        <div class="ratings-container">
+                                            <div class="product-ratings">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                        </div>
+                                        ${priceSnippet}
                                     </div>
-                                    ${priceSnippet}
-                                    <a href="#" class="btn btn-light rounded-pill px-4">Add to Cart</a>
                                 </div>
                             </div>
                         `);

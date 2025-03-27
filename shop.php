@@ -490,7 +490,7 @@
                                         </div>
                                     </div>
                                     ${priceSnippet}
-                                    <a href="#" class="btn btn-light rounded-pill px-4">Add to Cart</a>
+                                    <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn btn-light rounded-pill px-4">Add to Cart</a>
                                 </div>
                             </div>
                         `);
