@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container featured">
     <h2 class="heading_1">Featured Products</h2>
 
     <div class="featured-products-carousel owl-carousel owl-theme">
@@ -49,7 +49,7 @@
             </div>
             <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
             <p class="product-price">MRP ₹16,999.00</p>
-            <a href="#" class="btn rounded-pill px-4">Know More</a>
+            <a href="#" class="btn bgremoved rounded-pill px-4">Know More</a>
         </div>
     </div>
 </section>
