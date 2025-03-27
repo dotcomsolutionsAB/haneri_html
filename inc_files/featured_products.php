@@ -91,6 +91,7 @@
 
     .btn-light:hover {
         background-color: #00473e;
+        transition: 0.25s ease-in !important;
     }
     .btn-light:hover {
         color: #f3f6f9 !important;
