@@ -41,244 +41,114 @@
             sPriceContainer.hide();
         }
 
-        // IMAGE SECTION INITIALIZATION FUNCTION
-        // function setImageSection(variantId) {
-        //     let imageHtml = '', thumbHtml = '';
+        // test
+        function setImageSection(variantId) {
+            let imageHtml = '', thumbHtml = '';
 
-        //     // Updated image map without video URLs
-        //     const imageMap = {
-        //         13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png"],
-        //         14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-        //         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png"],
-        //         16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
-        //     };
+            let videoUrl = "https://youtu.be/MaX_zCDMyWc";
 
-        //     // Example: Adjust the condition to match your actual productId usage or logic as needed
-        //     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
+            const getEmbedUrl = (url) => {
+                const videoId = url.includes("youtu.be")
+                    ? url.split("youtu.be/")[1].split("?")[0]
+                    : url.split("v=")[1].split("&")[0];
+                return `https://www.youtube.com/embed/${videoId}`;
+            };
 
-        //     images.forEach((item, index) => {
-        //         // Image Slide
-        //         imageHtml += `
-        //             <div class="product-item">
-        //                 <img class="product-single-image" src="images/${item}" data-index="${index}" width="915" height="915" alt="product" />
-        //             </div>`;
+            const imageMap = {
+                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
+                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
+                15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
+                16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
+            };
 
-        //         thumbHtml += `
-        //             <div class="thumb-item" data-index="${index}">
-        //                 <img src="images/${item}" width="98" height="98" alt="product-thumb" />
-        //             </div>`;
-        //     });
+            const images = (productId == 14 && imageMap[variantId]) 
+                ? imageMap[variantId] 
+                : ["f1.png", "f2.png", "f3.png"];
 
-        //     const fullImageHtml = `
-        //         <div class="product-slider-container">
-        //             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-        //                 ${imageHtml}
-        //             </div>
-        //             <div class="prod-thumbnail d-flex justify-content-center flex-wrap mt-3" id="carousel-custom-dots">
-        //                 ${thumbHtml}
-        //             </div>
-        //         </div>`;
+            images.forEach((item, index) => {
+                const isVideo = item.includes("youtu");
 
-        //     // Render images to the DOM
-        //     $('#product-image-section').html(fullImageHtml);
+                if (isVideo) {
+                    const embedUrl = getEmbedUrl(item);
+                    imageHtml += `
+                        <div class="product-item">
+                            <iframe
+                                width="635"
+                                height="355"
+                                src="${embedUrl}"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    `;
+                    thumbHtml += `
+                        <div class="owl-dot" data-index="${index}">
+                            <img src="images/video-thumb.png" width="98" height="98" alt="video" />
+                        </div>
+                    `;
+                } else {
+                    imageHtml += `
+                        <div class="product-item">
+                            <img class="product-single-image"
+                                src="images/${item}"
+                                data-zoom-image="images/${item}"
+                                width="635"
+                                height="355"
+                                alt="product" />
+                        </div>
+                    `;
+                    thumbHtml += `
+                        <div class="owl-dot" data-index="${index}">
+                            <img src="images/${item}" width="98" height="98" alt="product" />
+                        </div>
+                    `;
+                }
+            });
 
-        //     // Initialize carousel
-        //     const $carousel = $('.product-single-carousel');
-        //     $carousel.owlCarousel({
-        //         items: 1,
-        //         nav: true,
-        //         dots: false,
-        //         loop: true
-        //     });
-
-        //     // Thumbnail click behavior
-        //     $('#carousel-custom-dots .thumb-item').on('click', function () {
-        //         const index = $(this).data('index');
-        //         $carousel.trigger('to.owl.carousel', [index, 300]);
-        //     });
-        // }
-
-// new
-// function setImageSection(variantId) {
-//     let imageHtml = '', thumbHtml = '';
-    // let videoUrl = "https://youtu.be/2IV08sP9m3U?si=SnVe3CetX29JZCAF";
-
-    // const imageMap = {
-    //     13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
-    //     14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png"],
-    //     15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-    //     16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png"]
-    // };
-
-//     const images = (productId == 14 && imageMap[variantId]) ? imageMap[variantId] : ["f1.png", "f2.png", "f3.png"];
-
-//     images.forEach((item, index) => {
-//         if (item.includes("youtube.com") || item.includes("youtu.be")) {
-//             // Video Slide
-//             const videoId = item.split("youtu.be/")[1].split("?")[0];
-//             imageHtml += `
-//                 <div class="product-item video-slide">
-//                     <iframe width="915" height="515" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
-//                         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-//                 </div>`;
-//             thumbHtml += `
-//                 <div class="thumb-item" data-index="${index}">
-//                     <img src="https://img.youtube.com/vi/${videoId}/default.jpg" width="98" height="98" alt="video" />
-//                 </div>`;
-//         } else {
-//             // Image Slide
-//             imageHtml += `
-//                 <div class="product-item">
-//                     <img class="product-single-image" src="images/${item}" data-index="${index}" width="915" height="915" alt="product" />
-//                 </div>`;
-//             thumbHtml += `
-//                 <div class="thumb-item" data-index="${index}">
-//                     <img src="images/${item}" width="98" height="98" alt="product-thumb" />
-//                 </div>`;
-//         }
-//     });
-
-//     const fullImageHtml = `
-//         <div class="product-slider-container">
-//             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-//                 ${imageHtml}
-//             </div>
-//             <div class="prod-thumbnail d-flex justify-content-center flex-wrap mt-3" id="carousel-custom-dots">
-//                 ${thumbHtml}
-//             </div>
-//         </div>`;
-
-//     $('#product-image-section').html(fullImageHtml);
-
-//     const $carousel = $('.product-single-carousel');
-//     $carousel.owlCarousel({
-//         items: 1,
-//         nav: true,
-//         dots: false,
-//         loop: true
-//     });
-
-//     // Thumbnail click behavior
-//     $('#carousel-custom-dots .thumb-item').on('click', function () {
-//         const index = $(this).data('index');
-//         $carousel.trigger('to.owl.carousel', [index, 300]);
-//     });
-// }
-
-// test
-function setImageSection(variantId) {
-    let imageHtml = '', thumbHtml = '';
-
-    let videoUrl = "https://youtu.be/MaX_zCDMyWc";
-
-    const getEmbedUrl = (url) => {
-        const videoId = url.includes("youtu.be")
-            ? url.split("youtu.be/")[1].split("?")[0]
-            : url.split("v=")[1].split("&")[0];
-        return `https://www.youtube.com/embed/${videoId}`;
-    };
-
-    const imageMap = {
-        13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
-        14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
-        15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-        16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
-    };
-
-    const images = (productId == 14 && imageMap[variantId]) 
-        ? imageMap[variantId] 
-        : ["f1.png", "f2.png", "f3.png"];
-
-    images.forEach((item, index) => {
-        const isVideo = item.includes("youtu");
-
-        if (isVideo) {
-            const embedUrl = getEmbedUrl(item);
-            imageHtml += `
-                <div class="product-item">
-                    <iframe
-                        width="635"
-                        height="355"
-                        src="${embedUrl}"
-                        frameborder="0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen>
-                    </iframe>
+            const fullImageHtml = `
+                <div class="product-slider-container">
+                    <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
+                        ${imageHtml}
+                    </div>
+                    <div class="prod-thumbnail horizontal-thumbs">
+                        <div class="thumbnail-carousel owl-carousel owl-theme">
+                            ${thumbHtml}
+                        </div>
+                    </div>
                 </div>
             `;
-            thumbHtml += `
-                <div class="owl-dot" data-index="${index}">
-                    <img src="images/video-thumb.png" width="98" height="98" alt="video" />
-                </div>
-            `;
-        } else {
-            imageHtml += `
-                <div class="product-item">
-                    <img class="product-single-image"
-                        src="images/${item}"
-                        data-zoom-image="images/${item}"
-                        width="635"
-                        height="355"
-                        alt="product" />
-                </div>
-            `;
-            thumbHtml += `
-                <div class="owl-dot" data-index="${index}">
-                    <img src="images/${item}" width="98" height="98" alt="product" />
-                </div>
-            `;
+
+
+            $('#product-image-section').html(fullImageHtml);
+
+            // Main image carousel
+            $('.product-single-carousel').owlCarousel({
+                items: 1,
+                nav: true,
+                dots: false,
+                loop: true
+            });
+
+            // Thumbnail slider (scrollable)
+            $('.thumbnail-carousel').owlCarousel({
+                items: 5,
+                margin: 10,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: { items: 3 },
+                    600: { items: 4 },
+                    1000: { items: 5 }
+                }
+            });
+
+            // Sync thumbnail click with main carousel
+            $(document).on('click', '.owl-dot', function () {
+                const index = $(this).data('index');
+                $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
+            });
         }
-    });
-
-    const fullImageHtml = `
-        <div class="product-slider-container">
-            <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                ${imageHtml}
-            </div>
-            <div class="prod-thumbnail horizontal-thumbs">
-                <div class="thumbnail-carousel owl-carousel owl-theme">
-                    ${thumbHtml}
-                </div>
-            </div>
-        </div>
-    `;
-
-
-    $('#product-image-section').html(fullImageHtml);
-
-    // Main image carousel
-    $('.product-single-carousel').owlCarousel({
-        items: 1,
-        nav: true,
-        dots: false,
-        loop: true
-    });
-
-    // Thumbnail slider (scrollable)
-    $('.thumbnail-carousel').owlCarousel({
-        items: 5,
-        margin: 10,
-        nav: true,
-        dots: false,
-        responsive: {
-            0: { items: 3 },
-            600: { items: 4 },
-            1000: { items: 5 }
-        }
-    });
-
-    // Sync thumbnail click with main carousel
-    $(document).on('click', '.owl-dot', function () {
-        const index = $(this).data('index');
-        $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
-    });
-}
-
-
-
-
-
-
 
         // Fetch product details
         if (productId) {
