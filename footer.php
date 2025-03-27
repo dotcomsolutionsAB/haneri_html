@@ -48,11 +48,11 @@
                             <h4 class="widget-title">Pillar Technology</h4>
                             <div class="links link-parts row">
                                 <ul class="link-part col-xl-12 mb-0">
-                                    <li><a href="#">Air Curve Design</a></li>
-                                    <li><a href="#">Turbosilent BLDC</a></li>
-                                    <li><a href="#">M.A.S.S</a></li>
-                                    <li><a href="#">Lumiambience</a></li>
-                                    <li><a href="#">S.C.A.N</a></li>
+                                    <li><a href="air_curve_design.php">Air Curve Design</a></li>
+                                    <li><a href="turbosilent_bldc.php">Turbosilent BLDC</a></li>
+                                    <li><a href="mass.php">M.A.S.S</a></li>
+                                    <li><a href="lumiambience.php">Lumiambience</a></li>
+                                    <li><a href="scan.php">S.C.A.N</a></li>
                                 </ul>
                                 <!-- <ul class="link-part col-xl-6">
                                     <li class="pl-xl-2 ml-xl-1"><a href="#">Orders History</a></li>
