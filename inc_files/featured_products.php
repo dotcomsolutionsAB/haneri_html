@@ -1,5 +1,5 @@
 <section class="container">
-    <h2 class="section-title ls-n-15 text-center pt-2 m-b-4">Featured Products</h2>
+    <h2 class="heading_1">Featured Products</h2>
 
     <div class="featured-products-carousel owl-carousel owl-theme">
         <!-- Product 1 -->
