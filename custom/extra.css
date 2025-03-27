@@ -925,7 +925,7 @@ Turbosilent
 
   .turbosilent_bldc {
     position: relative;
-    /* background: url('../images/benifits/image_201.jpg') center center/cover no-repeat; */
+    background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
     /* height: 450px; */
     /* display: flex; */
     /* align-items: flex-end; */
@@ -2404,7 +2404,7 @@ footer .social-icon {
     }
 
     /* product detail page image slider */
-    .prod-thumbnail.horizontal-thumbs {
+    /* .prod-thumbnail.horizontal-thumbs {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -2428,40 +2428,37 @@ footer .social-icon {
     
     .prod-thumbnail.horizontal-thumbs .owl-dot:hover img {
         border: 2px solid #333;
-    }
+    } */
 
     .prod-thumbnail.horizontal-thumbs {
-        margin-top: 15px;
-        position: relative;
-    }
-    
-    .thumbnail-carousel {
-        display: block;
-        width: 100%;
-    }
-    .product-single-gallery .prod-thumbnail .owl-nav {
-        font-size: 3.6rem;
-    }
-    
-    .thumbnail-carousel .owl-dot {
-        margin: 0 5px;
-        cursor: pointer;
-        display: inline-block;
-    }
-    
-    .thumbnail-carousel .owl-dot img {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 98px;
-        height: 98px;
-        object-fit: cover;
-        transition: border 0.3s;
-    }
-    
-    .thumbnail-carousel .owl-dot:hover img {
-        border: 2px solid #333;
-    }
-    
+    margin-top: 15px;
+    position: relative;
+}
+
+.thumbnail-carousel {
+    display: block;
+    width: 100%;
+}
+
+.thumbnail-carousel .owl-dot {
+    margin: 0 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.thumbnail-carousel .owl-dot img {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    transition: border 0.3s;
+}
+
+.thumbnail-carousel .owl-dot:hover img {
+    border: 2px solid #333;
+}
+
     .prod-thumbnail>.owl-dot {
         flex: 0 !important;
         max-width: 100% !important;
