@@ -2548,4 +2548,24 @@ footer .social-icon {
     .fetured-next{
         display:none !important;
     }
+    /* .card {
+        min-height: 400px;
+        background: radial-gradient(#ecf6f6d1, #00473e3d);
+        margin-top: 10px;
+    } */
+    .card {
+        margin-bottom: 3rem;
+        border: 1px solid #ddd;
+        border-radius: 0;
+        font-size: 1.4rem;
+        min-height: 400px;
+        background: radial-gradient(#ecf6f6d1, #00473e3d);
+        margin-top: 10px;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: justify;
+        border: none;
+        width: 299.462px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
+    }
