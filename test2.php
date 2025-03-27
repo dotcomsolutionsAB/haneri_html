@@ -10,7 +10,7 @@
 
             <div class="container mb-3">
                 <div class="row">
-                    <div class="col-lg-9 main-content">
+                    <div class="col-lg-9 main-content shop">
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
