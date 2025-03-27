@@ -2474,3 +2474,78 @@ footer .social-icon {
         align-items: center;
     }
     
+
+    /* Shop page */
+
+    .card_image{
+        height: 240px;
+        /* background: antiquewhite; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .featured-products-carousel .card:hover {
+        /* box-shadow: 5px 5px 3px 0px darkgreen; */
+    }
+
+    .featured-products-carousel .card {
+        border-radius: 20px;
+        padding: 20px;
+        text-align: justify;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .featured-products-carousel img {
+        max-height: 180px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    .btn-light {
+        background-color: #f1f1f1;
+        border: none;
+        transition: 0.3s;
+        width: 150px;
+        border-radius: 50px;
+    }
+
+    .btn-light:hover {
+        background: linear-gradient(to left, rgb(49 88 88), rgb(15 164 167) 0%, rgb(4, 189, 193) 50%, rgb(49 88 88));
+        transition: 0.25s ease-in !important;
+    }
+    .btn-light:hover {
+        color: #f3f6f9 !important;
+    }
+    .owl-nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .owl-prev-btn, .owl-next-btn {
+        font-size: 28px;
+        color: #333;
+        padding: 10px 18px;
+        border-radius: 50%;
+        background: #eee;
+        margin: 0 10px;
+        transition: 0.3s ease;
+        display: inline-block;
+    }
+
+    .owl-prev-btn:hover, .owl-next-btn:hover {
+        background: #ccc;
+    }
+    .owl-carousel {
+        background: #f8f8f800;
+    }
+
+    .owl-carousel .card {
+        min-height: 400px;
+        background: radial-gradient(#ecf6f6d1, #00473e3d);
+        margin-top: 10px;
+    }
+    .fetured-next{
+        display:none !important;
+    }
+
