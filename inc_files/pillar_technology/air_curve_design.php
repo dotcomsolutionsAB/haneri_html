@@ -133,20 +133,20 @@
                 </div>
             </div>
         </div>
-        <br><br>
+        <!-- <br><br> -->
 
         <div class="row row-bg">
             <div class="col-xl-4 col-lg-6">
-            <div class="work-together-section">
-                <img src="assets/images/ACD.png" alt="Work Together Image" class="fit-image" />
-                <div class="contentss">
-                    <h2 class="dark heading2">Air Curve Design</h2>
-                    <div class="c">
-                        <a href="#" class="contact-btn">
-                            CONTACT US 
-                        </a>
-                    </div>
-                </div>
+                <div class="work-together-section">
+                    <img src="assets/images/ACD.png" alt="Work Together Image" class="fit-image" />
+                    <!-- <div class="contentss">
+                        <h2 class="dark heading2">Air Curve Design</h2>
+                        <div class="c">
+                            <a href="#" class="contact-btn">
+                                CONTACT US 
+                            </a>
+                        </div>
+                    </div> -->
                 </div>
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-8 col-lg-6 contents">
@@ -179,4 +179,4 @@
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
-<div class="mb-3"></div><!-- margin -->
+<!-- <div class="mb-3"></div>margin -->
