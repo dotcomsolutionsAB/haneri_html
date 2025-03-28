@@ -43,21 +43,21 @@
 
 	<!-- Second Row: Contact Details -->
 	<div class="row text-center">
-		<div class="col-sm-6 col-lg-3 mb-4">
+		<div class="col-sm-6 col-lg-3 mb-4" style="border-right: 1px solid #ccc;">
 			<div class="feature-box">
 				<i class="sicon-location-pin fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Address</h5>
 				<p class="paragraph1 text-center mb-0">Sector 8A, BHEL Township,<br>Haridwar, Uttarakhand 249403</p>
 			</div>
 		</div>
-		<div class="col-sm-6 col-lg-3 mb-4">
+		<div class="col-sm-6 col-lg-3 mb-4" style="border-right: 1px solid #ccc;">
 			<div class="feature-box">
 				<i class="fa fa-mobile-alt fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Phone</h5>
 				<p class="paragraph1 text-center mb-0">(123) 456-7890</p>
 			</div>
 		</div>
-		<div class="col-sm-6 col-lg-3 mb-4">
+		<div class="col-sm-6 col-lg-3 mb-4" style="border-right: 1px solid #ccc;">
 			<div class="feature-box">
 				<i class="far fa-envelope fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Email</h5>
