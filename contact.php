@@ -14,11 +14,12 @@
 		</div>
 	</nav>
 
-<section class="contact_page container">
-	<div class="row align-items-stretch">
+<section class="contact_page container py-5">
+	<!-- First Row: Map + Contact Info -->
+	<div class="row align-items-stretch mb-4">
 		<!-- Map Section -->
-		<div class="col-md-6 fst_section">
-			<div id="map" class="map_div">
+		<div class="col-md-6 position-relative" style="border-right: 1px solid #ccc;">
+			<div id="map" style="height: 100%;">
 				<iframe 
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.4769961623215!2d78.05591217560216!3d29.96571882496337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390949ce6818bc2d%3A0x27f1806b2069b60!2sElza%20International!5e0!3m2!1sen!2sin!4v1742986450671!5m2!1sen!2sin" 
 					width="100%" 
@@ -32,58 +33,47 @@
 		</div>
 
 		<!-- Contact Info Section -->
-		<div class="col-md-6">
-			<div class="contact-info p-4">
-				<h2 class="heading2 primary ls-n-25 mb-4">Contact Info</h2>
-				<p class="paragraph2 mb-4">
-					Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
-				</p>
+		<div class="col-md-6 d-flex flex-column justify-content-center p-4">
+			<h2 class="heading2 primary ls-n-25 mb-3">Contact Info</h2>
+			<p class="paragraph2">
+				Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
+			</p>
+		</div>
+	</div>
 
-				<div class="row text-center">
-					<div class="col-sm-6 col-lg-6 mb-4">
-						<div class="feature-box">
-							<i class="sicon-location-pin"></i>
-							<div class="feature-box-content">
-								<h4 class="heading4 primary">Address</h4>
-								<p class="paragraph1">
-									Elza International, Integrated Industrial Estate,<br>
-									Sector 8A, BHEL Township, Haridwar, Uttarakhand 249403
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-6 mb-4">
-						<div class="feature-box">
-							<i class="fa fa-mobile-alt"></i>
-							<div class="feature-box-content">
-								<h4 class="heading4 primary">Phone Number</h4>
-								<p class="paragraph1">(123) 456-7890</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-6 mb-4">
-						<div class="feature-box">
-							<i class="far fa-envelope"></i>
-							<div class="feature-box-content">
-								<h4 class="heading4 primary">E-mail Address</h4>
-								<p class="paragraph1">info@haneri.in</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-6 mb-4">
-						<div class="feature-box">
-							<i class="far fa-calendar-alt"></i>
-							<div class="feature-box-content">
-								<h4 class="heading4 primary">Working Days/Hours</h4>
-								<p class="paragraph1">Mon - Sun / 9:00AM - 8:00PM</p>
-							</div>
-						</div>
-					</div>
-				</div>
+	<!-- Second Row: Contact Details -->
+	<div class="row text-center">
+		<div class="col-sm-6 col-lg-3 mb-4">
+			<div class="feature-box">
+				<i class="sicon-location-pin fs-3 mb-2"></i>
+				<h5 class="heading4 primary mb-1">Address</h5>
+				<p class="paragraph1 mb-0">Sector 8A, BHEL Township,<br>Haridwar, Uttarakhand 249403</p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3 mb-4">
+			<div class="feature-box">
+				<i class="fa fa-mobile-alt fs-3 mb-2"></i>
+				<h5 class="heading4 primary mb-1">Phone</h5>
+				<p class="paragraph1 mb-0">(123) 456-7890</p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3 mb-4">
+			<div class="feature-box">
+				<i class="far fa-envelope fs-3 mb-2"></i>
+				<h5 class="heading4 primary mb-1">Email</h5>
+				<p class="paragraph1 mb-0">info@haneri.in</p>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3 mb-4">
+			<div class="feature-box">
+				<i class="far fa-calendar-alt fs-3 mb-2"></i>
+				<h5 class="heading4 primary mb-1">Working Hours</h5>
+				<p class="paragraph1 mb-0">Mon - Sun / 9AM - 8PM</p>
 			</div>
 		</div>
 	</div>
 </section>
+
 
 
 
