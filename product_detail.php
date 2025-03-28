@@ -492,10 +492,14 @@
                                      
                                 </ul>
                                 <ul class="single-info-list">
-                                    <li class="primary_light">Category: <strong><span id="product-category">Loading...</span></strong></li>
+                                    <strong>
+                                        <li class="primary_light">Category: <span id="product-category">Loading...</span></li>
+                                    </strong>
                                 </ul>
                                 <div class="select_variant">
-                                    <p class="primary_light">Select The Variant:</p>
+                                    <strong>
+                                        <p class="primary_light">Select The Variant:</p>
+                                    </strong>
                                     <input type="hidden" id="selected-variant" value="">
                                     <div class="variants">                                    
                                         <div class="variant">
@@ -503,9 +507,9 @@
                                         </div>
                                     </div>
                                 </div>                              
-                                <div class="price-box ">
+                                <div class="price-box p_box">
                                     <span class="mrp">MRP</span>
-                                    <div class="_price">MRP 
+                                    <div class="_price"> 
                                         <del class="old-price">
                                             <span id="regular-price">₹0.00</span>
                                         </del>
@@ -529,6 +533,7 @@
                                 <div class="product-action">
                                     <div class="price-box">
                                         <span class="product-price" id="selling-tprice" data-price="0">₹0.00</span>
+                                        <span class="in-ex">Inclusive All Taxes</span>
                                     </div>
                                     <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
