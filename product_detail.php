@@ -498,11 +498,11 @@
                                     </div>
                                 </div>                              
                                 <div class="price-box ">
-                                    <div class="_price">
-                                            <del class="old-price">
-                                                MRP <span id="regular-price">₹0.00</span>
-                                            </del>
-                                            MRP <span class="new-price" id="product-price">₹0.00</span>
+                                    <div class="_price">MRP 
+                                        <del class="old-price">
+                                            <span id="regular-price">₹0.00</span>
+                                        </del>
+                                        <span class="new-price" id="product-price">₹0.00</span>
                                     </div>
                                     <div class="s_price">
                                         <span class="txt">
