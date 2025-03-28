@@ -17,6 +17,13 @@
 <section class="contact_page container py-5">
 	<!-- First Row: Map + Contact Info -->
 	<div class="row align-items-stretch mb-4">
+		<!-- Contact Info Section -->
+		<div class="col-md-6 d-flex flex-column justify-content-center p-4">
+			<h2 class="heading2 primary ls-n-25 mb-3">Contact Info</h2>
+			<p class="paragraph2">
+				Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
+			</p>
+		</div>
 		<!-- Map Section -->
 		<div class="col-md-6 position-relative" style="border-right: 1px solid #ccc;">
 			<div id="map" style="height: 100%;">
@@ -30,14 +37,6 @@
 					referrerpolicy="no-referrer-when-downgrade">
 				</iframe>
 			</div>
-		</div>
-
-		<!-- Contact Info Section -->
-		<div class="col-md-6 d-flex flex-column justify-content-center p-4">
-			<h2 class="heading2 primary ls-n-25 mb-3">Contact Info</h2>
-			<p class="paragraph2">
-				Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
-			</p>
 		</div>
 	</div>
 
