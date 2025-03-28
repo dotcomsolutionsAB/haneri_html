@@ -9,13 +9,17 @@
                     </ol>
                 </div><!-- End .container -->
             </nav>
-            <div class="button-group">
-            <a  class="btn button" href="/air_curve_design.php">Air Curve Design</a>
+            <div class="button-group" style="display: flex; gap: 10px; align-items: center;">
+            <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
+            <span class="divider">|</span>
             <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
+            <span class="divider">|</span>
             <a class="btn button" href="/mass.php">M.A.S.S</a>
+            <span class="divider">|</span>
             <a class="btn button" href="/lumiambience.php">Lumiambience</a>
+            <span class="divider">|</span>
             <a class="btn button" href="/scan.php">S.C.A.N</a>
-            </div>
+        </div>
             <div class="container">   
                 <section id="scan" class="scan">
                     <?php include("inc_files/pillar_technology/S.C.A.N.php"); ?>
