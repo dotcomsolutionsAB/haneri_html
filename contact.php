@@ -14,7 +14,7 @@
 		</div>
 	</nav>
 
-<section class="contact_page container py-5">
+	<section class="contact_page container py-5">
 	<!-- First Row: Map + Contact Info -->
 	<div class="row align-items-stretch mb-4">
 		<!-- Map Section -->
@@ -43,36 +43,37 @@
 
 	<!-- Second Row: Contact Details -->
 	<div class="row text-center">
-		<div class="col-sm-6 col-lg-3" style="border-right: 1px solid #ccc;">
+		<div class="col-sm-6 col-lg-3 mb-4">
 			<div class="feature-box">
 				<i class="sicon-location-pin fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Address</h5>
-				<p class="paragraph1 text-center mb-0">Sector 8A, BHEL Township,<br>Haridwar, Uttarakhand 249403</p>
+				<p class="paragraph1 mb-0">Sector 8A, BHEL Township,<br>Haridwar, Uttarakhand 249403</p>
 			</div>
 		</div>
-		<div class="col-sm-6 col-lg-3" style="border-right: 1px solid #ccc;">
+		<div class="col-sm-6 col-lg-3 mb-4">
 			<div class="feature-box">
 				<i class="fa fa-mobile-alt fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Phone</h5>
-				<p class="paragraph1 text-center mb-0">(123) 456-7890</p>
+				<p class="paragraph1 mb-0">(123) 456-7890</p>
 			</div>
 		</div>
-		<div class="col-sm-6 col-lg-3" style="border-right: 1px solid #ccc;">
+		<div class="col-sm-6 col-lg-3 mb-4">
 			<div class="feature-box">
 				<i class="far fa-envelope fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Email</h5>
-				<p class="paragraph1 text-center mb-0">info@haneri.in</p>
+				<p class="paragraph1 mb-0">info@haneri.in</p>
 			</div>
 		</div>
-		<div class="col-sm-6 col-lg-3">
+		<div class="col-sm-6 col-lg-3 mb-4">
 			<div class="feature-box">
 				<i class="far fa-calendar-alt fs-3 mb-2"></i>
 				<h5 class="heading4 primary mb-1">Working Hours</h5>
-				<p class="paragraph1 text-center mb-0">Mon - Sun / 9AM - 8PM</p>
+				<p class="paragraph1 mb-0">Mon - Sun / 9AM - 8PM</p>
 			</div>
 		</div>
 	</div>
 </section>
+
 
 
 <style>
