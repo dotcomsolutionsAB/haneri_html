@@ -2677,8 +2677,13 @@ footer .social-icon {
         background-color: #709391;
         color: #fff;
     }
-
+    .fst_section{
+        display: flex    ;
+        justify-content: center;
+        align-items: center;
+    }
     .map_div{
         margin-top: 20px;
         height: 80vh;
+        width: 100%;
     }
