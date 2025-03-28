@@ -16,7 +16,7 @@
     }
     .product-item{
         background: radial-gradient(#fff, #cfcdce);
-        height: 400px;
+        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
