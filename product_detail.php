@@ -378,7 +378,7 @@
             if (!isNaN(basePrice)) {
                 const updatedPrice = (quantity * basePrice).toFixed(2);
                 // Update #selling-tprice text to reflect the total
-                tPriceElem.text(`MRP ₹${updatedPrice}`);
+                tPriceElem.text(`₹${updatedPrice}`);
             }
         }
 
@@ -498,6 +498,7 @@
                                     </div>
                                 </div>                              
                                 <div class="price-box ">
+                                    <span class="mrp">MRP</span>
                                     <div class="_price">MRP 
                                         <del class="old-price">
                                             <span id="regular-price">₹0.00</span>

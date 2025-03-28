@@ -1,4 +1,4 @@
-<section class="container featured">
+<section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
     <div class="featured-products-carousel owl-carousel owl-theme">
