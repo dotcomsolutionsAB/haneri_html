@@ -2612,8 +2612,8 @@ footer .social-icon {
         padding-left: 0px !important;
     }
 
-    .shop .sidebar-shop .widget-title {
-        font-family: "Open Sans", sans-serif;
+    .shop .widget-title {
+        font-family: "Open Sans" !important;
     }
 
     .shop label {
