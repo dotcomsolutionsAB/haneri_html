@@ -2483,7 +2483,6 @@ footer .social-icon {
     }
 
     /* featured page */
-
     .featured .card_image{
         height: 240px;
         /* background: antiquewhite; */
@@ -2494,7 +2493,6 @@ footer .social-icon {
     .featured .featured-products-carousel .card:hover {
         /* box-shadow: 5px 5px 3px 0px darkgreen; */
     }
-
     .featured .featured-products-carousel .card {
         border-radius: 20px;
         padding: 20px;
@@ -2502,13 +2500,11 @@ footer .social-icon {
         border: none;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-
     .featured .featured-products-carousel img {
         max-height: 180px;
         object-fit: contain;
         margin-bottom: 15px;
     }
-
     .featured .btn-light:hover {
         background: linear-gradient(to left, rgb(49 88 88), rgb(15 164 167) 0%, rgb(4, 189, 193) 50%, rgb(49 88 88));
         transition: 0.25s ease-in !important;
@@ -2520,7 +2516,6 @@ footer .social-icon {
         text-align: center;
         margin-top: 10px;
     }
-
     .featured .owl-prev-btn, .owl-next-btn {
         font-size: 28px;
         color: #333;
@@ -2531,14 +2526,12 @@ footer .social-icon {
         transition: 0.3s ease;
         display: inline-block;
     }
-
     .featured .owl-prev-btn:hover, .owl-next-btn:hover {
         background: #ccc;
     }
     .featured .owl-carousel {
         background: #f8f8f800;
     }
-
     .featured .owl-carousel .card {
         min-height: 400px;
         background: radial-gradient(#ecf6f6d1, #00473e3d);
@@ -2575,7 +2568,6 @@ footer .social-icon {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
     }
-
     .featured .card .bgremoved{
         border-top: 1px solid #315858;
         text-align: left;
@@ -2583,7 +2575,6 @@ footer .social-icon {
     }
 
     /* shop page */
-
     .shop .card {
         margin-bottom: 3rem;
         border: 1px solid #ddd;
@@ -2598,21 +2589,19 @@ footer .social-icon {
         border: none;
         width: 299.462px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-
     }
-    .shop .card_image{
+    .shop .card_image {
         height: 240px;
         /* background: antiquewhite; */
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .shop .card .bgremoved{
+    .shop .card .bgremoved {
         border-top: 1px solid #315858;
         text-align: left;
         padding-left: 0px !important;
     }
-
     .shop .sidebar-shop .widget-title {
         padding-bottom: 0.7rem;
         margin-bottom: 1rem;
@@ -2620,10 +2609,12 @@ footer .social-icon {
         font-family: 'Open Sans' !important;
         letter-spacing: 0.02em;
     }
-
     .shop label {
         color: #222529;
         font-family: sans-serif !important;
         font-size: 1.2rem;
         font-weight: 700;
     }
+
+
+    
