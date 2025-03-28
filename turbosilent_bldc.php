@@ -11,7 +11,7 @@
     </nav>
     <!-- <div class="page-header pt-3 bg-transparent"> -->
     <div class="heading">
-    <div class="button-group" style="display: flex; gap: 10px; align-items: center;">
+    <div class="button-group container" style="display: flex; gap: 10px; align-items: center;">
     <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
     <span class="divider">|</span>
     <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
