@@ -186,18 +186,18 @@
                                             <div class="col-lg-10">
                                                 <ul class="submenu">
                                                     <li>
-                                                        <a href="support.php">Product Help</a>
+                                                        <a href="#">Product Help</a>
                                                         <div class="submenu-description">
-                                                            <a href="support.php#FAQs" class="description-link">FAQs</a> |
-                                                            <a href="support.php#Videos" class="description-link">Videos</a> |
-                                                            <a href="support.php#Catalogues" class="description-link">Catalogues</a> |
-                                                            <a href="support.php#Manuals" class="description-link">Manuals</a>
+                                                            <a href="#" class="description-link">FAQs</a> |
+                                                            <a href="#" class="description-link">Videos</a> |
+                                                            <a href="#" class="description-link">Catalogues</a> |
+                                                            <a href="#" class="description-link">Manuals</a>
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <a href="support.php#Enquiry">Corporate Enquiry</a>
+                                                        <a href="#">Corporate Enquiry</a>
                                                         <div class="submenu-description">
-                                                            <a href="support.php#FORM" class="description-link">FORM</a> 
+                                                            <a href="#" class="description-link">FORM</a> 
                                                         </div>
                                                     </li>
                                                     <li><a href="contact.php">Contact Us</a></li>
