@@ -467,7 +467,7 @@
                             </div> -->
 
                             <div class="product-single-details mb-1">
-                                <h1 class="product-title" id="product-title">Loading...</h1>
+                                <h1 class="product-title primary_light" id="product-title">Loading...</h1>
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
@@ -477,9 +477,12 @@
                                     <a href="#" class="rating-link">( 6 Reviews )</a>
                                 </div><!-- End .ratings-container -->
 
-                                <ul class="single-info-list">
-                                    <li>Category: <strong><span id="product-category">Loading...</span></strong></li>
-                                </ul>
+                                <!-- Shrt description -->
+                                <div class="product-desc">
+                                    <p id="product-short-description">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quasi repudiandae animi architecto nobis ipsum cum dolore recusandae eaque quia porro minus nam laborum itaque quas, ut cumque ad, expedita amet fuga natus. Modi numquam explicabo cum veritatis sequi quasi reprehenderit a illo, fuga sapiente ut porro perspiciatis deleniti nulla?
+                                    </p>
+                                </div>
 
                                 <ul class="single-info-list">
                                     <!-- <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li> -->
@@ -488,8 +491,11 @@
                                     </div>
                                      
                                 </ul>
+                                <ul class="single-info-list">
+                                    <li class="primary_light">Category: <strong><span id="product-category">Loading...</span></strong></li>
+                                </ul>
                                 <div class="select_variant">
-                                    <p>Select The Variant:</p>
+                                    <p class="primary_light">Select The Variant:</p>
                                     <input type="hidden" id="selected-variant" value="">
                                     <div class="variants">                                    
                                         <div class="variant">
@@ -511,6 +517,9 @@
                                         </span>
                                         <span class="special_price" id="special_price">₹0.00</span>
                                     </div>
+                                    <span class="percentage">
+                                        15% OFF
+                                    </span>
                                 </div>
 
                                 <!-- description -->

@@ -976,8 +976,11 @@ Turbosilent
     }
   /* Body Main heading */
     .primary{
-      color:#00473E;
+      color:#00473E !important;
     }
+    .primary_light{
+        color:#075e5e !important;
+      }
     .dark{
       color: #000;
     }
@@ -2517,7 +2520,7 @@ footer .social-icon {
         margin-top: 10px;
     }
     .featured .owl-item{
-        margin-right: 50px;
+        /* margin-right: 50px; */
     }
     .featured .owl-prev-btn, .owl-next-btn {
         font-size: 28px;
@@ -2627,4 +2630,14 @@ footer .social-icon {
         vertical-align: middle;
         line-height: 0.8;
         margin-left: 3px;
+    }
+    .percentage{
+        font-size: 2.9rem !important;
+        letter-spacing: -0.02em;
+        vertical-align: middle;
+        line-height: 0.8;
+        margin-left: 3px;
+    }
+    .span-txt{
+
     }
