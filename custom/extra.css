@@ -2612,8 +2612,12 @@ footer .social-icon {
         padding-left: 0px !important;
     }
 
-    .shop .widget-title {
-        font-family: "Open Sans" !important;
+    .shop .sidebar-shop .widget-title {
+        padding-bottom: 0.7rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #dfdfdf;
+        font-family: 'Open Sans' !important;
+        letter-spacing: 0.02em;
     }
 
     .shop label {
