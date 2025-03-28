@@ -574,21 +574,20 @@
                                     <span>Add to Wishlist</span>
                                 </a> -->
                                 
-                                <div class="product-single-tabs">
-                                    <!-- features -->
-                                    <!-- <ul class="nav nav-tabs" role="tablist">
+                                <!-- <div class="product-single-tabs">
+                                    <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active" id="product-features" data-toggle="tab" href="#product-tabs-features" role="tab">Features</a>
                                         </li>
-                                    </ul> -->
+                                    </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="product-tabs-features">
                                             <div class="product-desc-content">
-                                                <!-- features -->
-                                                <!-- <ul id="features-list"></ul> -->
+
+                                                <ul id="features-list"></ul>
                                                 
                                                 <div class="row justify-content-center">
-                                                    <!-- <div class="col-sm-6 col-xl-4">
+                                                    <div class="col-sm-6 col-xl-4">
                                                         <div class="feature-box feature-box-simple text-center">
                                                             <div class="feature-icon">
                                                                 <i class="fa fa-star"></i>
@@ -626,8 +625,8 @@
                                                                     customization, or design advice</p>
                                                             </div>
                                                         </div>
-                                                    </div> -->
-                                                    <!-- <div class="product-box-spec">
+                                                    </div>
+                                                    <div class="product-box-spec">
                                                         <div class="title">Technical Specifications</div>
                                                         <table class="table table-bordered specs-table">
                                                         <tbody>
@@ -671,20 +670,22 @@
                                                             <tr><th>Item Weight</th><td>4.9kg</td></tr>
                                                         </tbody>
                                                         </table>
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div><!-- End .product-single-container -->
             </div>
-
-
-            <div class="secure-section">
+            <hr class="divider mb-0 mt-0">
+            <div class="detail-data">
+                
+            </div>
+            <div class="secure-section container">
                 <div class="secure-item">
                     <img src="//www.crompton.co.in/cdn/shop/files/shopping-cart_1_80x.svg?v=1701772745" alt="Buy in store or online" title="Buy in store or online">
                     <div class="secure-text">Buy in store or online</div>
