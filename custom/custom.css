@@ -18,8 +18,8 @@
     object-fit: contain;
 }
 .button:hover {
-    background-color: #315859;
-    color: rgb(255, 255, 255);
+    /* background-color: #315859; */
+    color: #315859;
 }
 .button-group {
     position: sticky;
@@ -39,9 +39,9 @@
     padding-top: 5px; 
     margin-top: 10px;  
     margin-bottom: 10px;
-    background-color: #e5e5e5f4;
     padding-bottom: 5px;
-    background-color: #f4f4f4;
+    background-color: white;
+    border: #000;
 }
 .vision{
     font-family: 'Open Sans';
@@ -62,7 +62,7 @@
 }
 .breadcrumb-nav {
     color: #000;
-    background: #f8f9fa;
+    background: white;
     /* border-bottom: 3px solid #dfdfdf; */
     padding-top: 100px;
     margin-bottom: 0.2rem;
