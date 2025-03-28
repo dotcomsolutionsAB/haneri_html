@@ -2153,6 +2153,7 @@ footer .social-icon {
         background: #3b838347;
         padding: 5px;
         border-radius: 5px;
+        font-family:  'Open Sans' !important;
     }
     .noUi-horizontal {
         height: 5px !important;
