@@ -63,7 +63,7 @@
 .breadcrumb-nav {
     color: #000;
     background: #f8f9fa;
-    border-bottom: 3px solid #dfdfdf;
+    /* border-bottom: 3px solid #dfdfdf; */
     padding-top: 100px;
     margin-bottom: 0.2rem;
 }
