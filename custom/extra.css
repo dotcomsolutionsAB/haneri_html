@@ -2677,3 +2677,8 @@ footer .social-icon {
         background-color: #709391;
         color: #fff;
     }
+
+    .map_div{
+        margin-top: 20px;
+        height: 80vh;
+    }
