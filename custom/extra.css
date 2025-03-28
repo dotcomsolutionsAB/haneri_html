@@ -2637,12 +2637,24 @@ footer .social-icon {
         vertical-align: middle;
         line-height: 0.8;
         margin-left: 3px;
+        color: #a7a7a7;
     }
     .span-txt{
 
     }
     .in-ex{
-        
+
+    }
+    .btn-primary_light {
+        border-color: #315858;
+        background-color: #315858;
+        color: #fff;
+        box-shadow: none;
+    }
+    .btn-primary_light:hover {
+        background-color: #136c61;
+        color: #fff;
+        box-shadow: none;
     }
     .p_box{
         display: flex;

@@ -474,7 +474,9 @@
                                         <span class="ratings" style="width:60%"></span>
                                         <span class="tooltiptext tooltip-top"></span>
                                     </div>
-                                    <a href="#" class="rating-link">( 6 Reviews )</a>
+                                    <strong>
+                                        <a href="#" class="rating-link primary_light">( 6 Reviews )</a>
+                                    </strong>
                                 </div><!-- End .ratings-container -->
 
                                 <!-- Shrt description -->
@@ -508,22 +510,25 @@
                                     </div>
                                 </div>                              
                                 <div class="price-box p_box">
-                                    <span class="mrp">MRP</span>
-                                    <div class="_price"> 
-                                        <del class="old-price">
-                                            <span id="regular-price">₹0.00</span>
-                                        </del>
-                                        <span class="new-price" id="product-price">₹0.00</span>
-                                    </div>
-                                    <div class="s_price">
-                                        <span class="txt">
-                                            Special Price: 
+                                    <div class="prices">
+                                        <span class="mrp">MRP</span>
+                                        <div class="_price"> 
+                                            <del class="old-price">
+                                                <span id="regular-price">₹0.00</span>
+                                            </del>
+                                            <span class="new-price" id="product-price">₹0.00</span>
+                                        </div>
+                                        <div class="s_price">
+                                            <span class="txt">
+                                                Special Price: 
+                                            </span>
+                                            <span class="special_price" id="special_price">₹0.00</span>
+                                        </div>
+                                        <span class="percentage">
+                                            15% OFF
                                         </span>
-                                        <span class="special_price" id="special_price">₹0.00</span>
                                     </div>
-                                    <span class="percentage">
-                                        15% OFF
-                                    </span>
+                                    <span class="in-ex paragraph2">Inclusive All Taxes</span>
                                 </div>
 
                                 <!-- description -->
@@ -533,12 +538,11 @@
                                 <div class="product-action">
                                     <div class="price-box">
                                         <span class="product-price" id="selling-tprice" data-price="0">₹0.00</span>
-                                        <span class="in-ex">Inclusive All Taxes</span>
                                     </div>
                                     <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
                                     </div>
-                                    <a href="#" id="add-to-cart-btn" class="btn btn-dark add-cart icon-shopping-cart mr-2" title="Add to Cart">
+                                    <a href="#" id="add-to-cart-btn" class="btn btn-primary_light add-cart icon-shopping-cart mr-2" title="Add to Cart">
                                         Add to Cart
                                     </a>
 
