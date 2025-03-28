@@ -546,7 +546,7 @@
                                         Add to Cart
                                     </a>
 
-                                    <a href="cart.php" class="btn btn-gray view-cart" id="view-cart-btn">View cart</a>
+                                    <a href="cart.php" class="btn btn-view_light view-cart" id="view-cart-btn">View cart</a>
                                 </div>
 
                                 <hr class="divider mb-0 mt-0">

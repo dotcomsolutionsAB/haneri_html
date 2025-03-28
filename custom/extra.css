@@ -2629,7 +2629,6 @@ footer .social-icon {
         letter-spacing: -0.02em;
         vertical-align: middle;
         line-height: 0.8;
-        margin-left: 3px;
     }
     .percentage{
         font-size: 2.9rem !important;
@@ -2643,7 +2642,7 @@ footer .social-icon {
 
     }
     .in-ex{
-
+        margin-bottom: 0px !important;
     }
     .btn-primary_light {
         border-color: #315858;
@@ -2652,15 +2651,14 @@ footer .social-icon {
         box-shadow: none;
     }
     .btn-primary_light:hover {
-        background-color: #136c61;
+        background-color: #075e5e;
         color: #fff;
         box-shadow: none;
     }
     .p_box{
         display: flex;
-        gap:15px;
+        gap:5px;
         flex-direction: column;
-        align-items: center;
     }
     .prices{
         display: flex        ;
@@ -2668,4 +2666,14 @@ footer .social-icon {
         /* flex-direction: column; */
         align-items: center;
         font-size: 2.5rem !important;
+    }
+    .btn-view_light{
+        border-color: #f4f4f4;
+        background-color: #9db2b1;
+        color: #fff;
+        box-shadow: none;
+    }
+    .btn-view_light:hover {
+        background-color: #709391;
+        color: #fff;
     }
