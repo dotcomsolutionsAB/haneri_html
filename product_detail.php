@@ -14,6 +14,12 @@
         padding: 5px 10PX;
         color: #fff;
     }
+    .product-item{
+        background: radial-gradient(#fff, #cfcdce);
+    }
+    .small_thumb{
+        background: radial-gradient(#fff, #cfcdce);
+    }
 </style>
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -99,7 +105,7 @@
                         </div>
                     `;
                     thumbHtml += `
-                        <div class="owl-dot" data-index="${index}">
+                        <div class="owl-dot small_thumb" data-index="${index}">
                             <img src="images/${item}" width="98" height="98" alt="product" />
                         </div>
                     `;
