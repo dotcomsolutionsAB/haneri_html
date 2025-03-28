@@ -44,22 +44,22 @@
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="sicon-location-pin fs-3 mb-2 d-block"></i>
 					<h5 class="heading4 primary mb-1">Address</h5>
-					<p class="paragraph1 mb-0">Sector 8A, BHEL Township,<br>Haridwar</p>
+					<p class="paragraph1 mb-0 text-center">Sector 8A, BHEL Township,<br>Haridwar</p>
 				</div>
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="fa fa-mobile-alt fs-3 mb-2 d-block"></i>
 					<h5 class="heading4 primary mb-1">Phone</h5>
-					<p class="paragraph1 mb-0">(123) 456-7890</p>
+					<p class="paragraph1 mb-0 text-center">(123) 456-7890</p>
 				</div>
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="far fa-envelope fs-3 mb-2 d-block"></i>
 					<h5 class="heading4 primary mb-1">Email</h5>
-					<p class="paragraph1 mb-0">info@haneri.in</p>
+					<p class="paragraph1 mb-0 text-center">info@haneri.in</p>
 				</div>
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="far fa-calendar-alt fs-3 mb-2 d-block"></i>
 					<h5 class="heading4 primary mb-1">Working Hours</h5>
-					<p class="paragraph1 mb-0">Mon-Sun<br>9AM - 8PM</p>
+					<p class="paragraph1 mb-0 text-center">Mon-Sun<br>9AM - 8PM</p>
 				</div>
 			</div>
 		</div>
