@@ -528,7 +528,7 @@
                                             15% OFF
                                         </span>
                                     </div>
-                                    <span class="in-ex paragraph2">Inclusive All Taxes</span>
+                                    <span class="in-ex paragraph2 primary_light">Inclusive All Taxes</span>
                                 </div>
 
                                 <!-- description -->
