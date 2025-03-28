@@ -480,11 +480,11 @@
                                 </div><!-- End .ratings-container -->
 
                                 <!-- Shrt description -->
-                                <div class="product-desc">
+                                <!-- <div class="product-desc">
                                     <p id="product-short-description">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quasi repudiandae animi architecto nobis ipsum cum dolore recusandae eaque quia porro minus nam laborum itaque quas, ut cumque ad, expedita amet fuga natus. Modi numquam explicabo cum veritatis sequi quasi reprehenderit a illo, fuga sapiente ut porro perspiciatis deleniti nulla?
                                     </p>
-                                </div>
+                                </div> -->
 
                                 <ul class="single-info-list">
                                     <!-- <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li> -->
@@ -683,7 +683,7 @@
             </div>
             <hr class="divider mb-0 mt-0">
             <div class="detail-data">
-                
+
             </div>
             <div class="secure-section container">
                 <div class="secure-item">
