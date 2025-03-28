@@ -2659,5 +2659,13 @@ footer .social-icon {
     .p_box{
         display: flex;
         gap:15px;
+        flex-direction: column;
         align-items: center;
+    }
+    .prices{
+        display: flex        ;
+        gap: 15px;
+        /* flex-direction: column; */
+        align-items: center;
+        font-size: 2.5rem !important;
     }

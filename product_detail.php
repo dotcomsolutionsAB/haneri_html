@@ -537,7 +537,7 @@
                                 </div> -->
                                 <div class="product-action">
                                     <div class="price-box">
-                                        <span class="product-price" id="selling-tprice" data-price="0">₹0.00</span>
+                                        <span class="product-price primary_light" id="selling-tprice" data-price="0">₹0.00</span>
                                     </div>
                                     <div class="product-single-qty" id="cartId">
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
