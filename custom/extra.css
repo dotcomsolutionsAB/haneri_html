@@ -2687,3 +2687,9 @@ footer .social-icon {
         height: 80vh;
         width: 100%;
     }
+
+
+    /* Contact page css */
+    .feature-box {
+        margin-bottom: 0rem !important;
+    }
