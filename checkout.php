@@ -345,7 +345,13 @@
                     .then(responseData => {
                         Swal.close();
                         if (responseData.message && responseData.message.includes("success")) {
-                            Swal.fire("Success", "Address added successfully!", "success").then(() => {
+                            Swal.fire({
+                                title: "Success",
+                                text: "Address added successfully!",
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(() => {
                                 location.reload();
                             });
                         } else {
