@@ -709,7 +709,7 @@ function punchOrderInDeliveryOne(orderDetails) {
     };
 
     $.ajax({
-        url: "punch-deliveryone.php", // ✅ Make sure it ends in .php!
+        url: "punch-deliveryone", // ✅ Make sure it ends in .php!
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(payload),
