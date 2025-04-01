@@ -1,10 +1,12 @@
 <?php
 header("Content-Type: application/json");
 
+// Load config
 $config = include("config.php");
 $token = $config['delhivery_token'];
 $pickupLocation = $config['pickup_location'];
 
+// Read request data
 $input = json_decode(file_get_contents("php://input"), true);
 file_put_contents("deliveryone-request-log.txt", print_r($input, true)); // Debug
 
@@ -14,15 +16,17 @@ if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $in
     exit;
 }
 
+// Extract data
 $orderId = "ORD" . $input['order_id'];
 $user = $input['user'];
 $address = $input['address'];
 $amount = $input['amount'];
 
-// Extract pin from address
+// Extract 6-digit pin
 preg_match('/(\d{6})/', $address, $matches);
-$pin = $matches[1] ?? '000000';
+$pin = $matches[1] ?? '700001'; // fallback to Kolkata pin
 
+// Build shipment payload
 $shipment = [
     "order" => $orderId,
     "products_desc" => "General Product",
@@ -31,7 +35,7 @@ $shipment = [
     "email" => $user['email'],
     "phone" => $user['phone'],
     "address" => $address,
-    "city" => "Burdwan",
+    "city" => "Kolkata",
     "state" => "West Bengal",
     "country" => "India",
     "pin" => $pin,
@@ -41,6 +45,7 @@ $shipment = [
     "fragile_shipment" => false
 ];
 
+// Prepare API data (format=json required)
 $postData = http_build_query([
     "format" => "json",
     "data" => json_encode([
@@ -49,7 +54,7 @@ $postData = http_build_query([
     ])
 ]);
 
-$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // ✅ Use staging first
+$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json";
 $headers = [
     "Content-Type: application/x-www-form-urlencoded",
     "Authorization: Token $token"
@@ -63,9 +68,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-// Save response
-file_put_contents("deliveryone-response-log.txt", $response);
+file_put_contents("deliveryone-response-log.txt", $response); // ✅ View this file to debug result
 
 if (curl_errno($ch)) {
     http_response_code(500);
