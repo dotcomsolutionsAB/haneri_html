@@ -1,23 +1,23 @@
 <?php
 header("Content-Type: application/json");
 
-// Read raw POST body
 $input = json_decode(file_get_contents("php://input"), true);
 
-// Simple validation
+// DEBUG: log what was received (optional)
+// file_put_contents("log.txt", print_r($input, true));
+
 if (!$input || !isset($input['order_id'])) {
     http_response_code(400);
     echo json_encode(["error" => "Invalid input"]);
     exit;
 }
 
-// Your Delhivery credentials
 $username = "Info@haneri.in";
 $password = "Arnav@123";
 $token = "eaf207abjhvbkjskhuskjvlsvb375b45c2a0";
 
-// Delhivery API endpoint — replace with actual endpoint
-$apiUrl = "https://one.delhivery.com/settings/api-setup"; // ⚠️ Use correct API endpoint
+// Replace with actual order creation API from Delhivery
+$apiUrl = "https://one.delhivery.com/settings/api-setup";
 
 $headers = [
     "Authorization: Basic " . base64_encode("$username:$password"),
@@ -25,7 +25,6 @@ $headers = [
     "Content-Type: application/json"
 ];
 
-// Call Delhivery API
 $ch = curl_init($apiUrl);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

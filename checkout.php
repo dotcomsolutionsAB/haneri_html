@@ -696,7 +696,7 @@ $("#placeOrderBtn").click(function (event) {
 
 
 function punchOrderInDeliveryOne(orderDetails) {
-    let deliveryOneUrl = "/punch-deliveryone.php"; // ✅ Backend PHP script
+    let deliveryOneUrl = "/punch-deliveryone.php";
 
     let payload = {
         order_id: orderDetails.order_id,
@@ -712,9 +712,9 @@ function punchOrderInDeliveryOne(orderDetails) {
 
     $.ajax({
         url: deliveryOneUrl,
-        type: "POST", // ✅ Make sure it's POST
+        method: "POST", // ✅ use 'method', not 'type' just in case
         contentType: "application/json",
-        data: JSON.stringify(payload), // ✅ Send JSON data
+        data: JSON.stringify(payload),
         success: function (res) {
             console.log("✅ DeliveryOne punched successfully", res);
         },
@@ -723,8 +723,6 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
-
-
 
                     // Check if user_role in localStorage is 'vendor'
                     if (localStorage.getItem("user_role") === "vendor") {
