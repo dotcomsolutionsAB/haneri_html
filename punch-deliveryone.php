@@ -50,6 +50,7 @@ $postData = http_build_query([
     "format" => "json",
     "data" => json_encode([
         "pickup_location" => $pickupLocation,
+        "pickup_time" => "Mid Day", // 🆕 Add this if needed
         "shipments" => [$shipment]
     ])
 ]);
