@@ -708,40 +708,40 @@ function punchOrderInDeliveryOne(orderDetails) {
         items: orderDetails.items || []
     };
 
-    // $.ajax({
-    //     url: "punch-deliveryone", // ✅ Make sure it ends in .php!
-    //     method: "POST",
-    //     contentType: "application/json",
-    //     data: JSON.stringify(payload),
-    //     success: function (res) {
-    //         console.log("✅ DeliveryOne punched successfully", res);
-    //     },
-    //     error: function (err) {
-    //         console.error("❌ Failed to punch in DeliveryOne", err);
-    //     }
-    // });
     $.ajax({
-    url: "punch-deliveryone.php",
-    method: "POST",
-    contentType: "application/json",
-    data: JSON.stringify({
-        order_id: "123",
-        user: {
-        name: "Test User",
-        email: "test@example.com",
-        phone: "9876543210"
+        url: "punch-deliveryone", // ✅ Make sure it ends in .php!
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(payload),
+        success: function (res) {
+            console.log("✅ DeliveryOne punched successfully", res);
         },
-        address: "123 ABC Street, Kolkata, West Bengal 700001, India",
-        amount: 999,
-        items: []
-    }),
-    success: function (res) {
-        console.log("✅ DeliveryOne Response:", res);
-    },
-    error: function (err) {
-        console.error("❌ DeliveryOne Error:", err);
-    }
+        error: function (err) {
+            console.error("❌ Failed to punch in DeliveryOne", err);
+        }
     });
+    // $.ajax({
+    // url: "punch-deliveryone.php",
+    // method: "POST",
+    // contentType: "application/json",
+    // data: JSON.stringify({
+    //     order_id: "123",
+    //     user: {
+    //     name: "Test User",
+    //     email: "test@example.com",
+    //     phone: "9876543210"
+    //     },
+    //     address: "123 ABC Street, Kolkata, West Bengal 700001, India",
+    //     amount: 999,
+    //     items: []
+    // }),
+    // success: function (res) {
+    //     console.log("✅ DeliveryOne Response:", res);
+    // },
+    // error: function (err) {
+    //     console.error("❌ DeliveryOne Error:", err);
+    // }
+    // });
 
 }
 
