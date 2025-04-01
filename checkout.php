@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
         "weight" => 0.5
     ];
 
-    $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // ✅ REAL endpoint
+    $apiUrl = "https://one.delhivery.com/settings/api-setup"; // ✅ REAL endpoint
 
     $headers = [
         "Authorization: Token " . $token,
