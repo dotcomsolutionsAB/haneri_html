@@ -699,20 +699,20 @@ function punchOrderInDeliveryOne(orderDetails) {
     let deliveryOneUrl = "/punch-deliveryone.php";
 
     let payload = {
-        order_id: orderDetails.order_id,
+        order_id: "123ABC987",
         user: {
-            name: orderDetails.name,
-            email: orderDetails.email,
-            phone: orderDetails.phone
+            name: "Test User",
+            email: "test@example.com",
+            phone: "9999999999"
         },
-        address: orderDetails.shipping_address,
-        amount: orderDetails.total_amount,
-        items: orderDetails.items || []
+        address: "123 Test Street, New Delhi",
+        amount: 599,
+        items: []
     };
 
     $.ajax({
-        url: deliveryOneUrl,
-        method: "POST", // ✅ use 'method', not 'type' just in case
+        url: "https://haneri.ongoingsites.xyz/punch-deliveryone.php", // ✅ with .php
+        method: "POST",
         contentType: "application/json",
         data: JSON.stringify(payload),
         success: function (res) {
