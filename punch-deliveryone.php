@@ -6,9 +6,8 @@ $config = include("config.php");
 $token = $config['delhivery_token'];
 $pickupLocation = $config['pickup_location'];
 
-// Read request data
 $input = json_decode(file_get_contents("php://input"), true);
-file_put_contents("deliveryone-request-log.txt", print_r($input, true)); // Debug
+file_put_contents("deliveryone-request-log.txt", date('Y-m-d H:i:s') . "\n" . print_r($input, true) . "\n\n", FILE_APPEND); // ✅ Log for debugging
 
 if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $input['amount'])) {
     http_response_code(400);
@@ -22,11 +21,10 @@ $user = $input['user'];
 $address = $input['address'];
 $amount = $input['amount'];
 
-// Extract 6-digit pin
+// Extract pin (6-digit)
 preg_match('/(\d{6})/', $address, $matches);
-$pin = $matches[1] ?? '700001'; // fallback to Kolkata pin
+$pin = $matches[1] ?? '700001'; // fallback pin (Kolkata)
 
-// Build shipment payload
 $shipment = [
     "order" => $orderId,
     "products_desc" => "General Product",
@@ -45,22 +43,28 @@ $shipment = [
     "fragile_shipment" => false
 ];
 
-// Prepare API data (format=json required)
+// Add pickup location and pickup time
+$payload = [
+    "pickup_location" => $pickupLocation,
+    "pickup_time" => "Mid Day", // ✅ Matches your slot
+    "shipments" => [$shipment]
+];
+
+// format=json&data= structure as required by Delhivery
 $postData = http_build_query([
     "format" => "json",
-    "data" => json_encode([
-        "pickup_location" => $pickupLocation,
-        "pickup_time" => "Mid Day", // 🆕 Add this if needed
-        "shipments" => [$shipment]
-    ])
+    "data" => json_encode($payload)
 ]);
 
-$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json";
+$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // ✅ Use this for testing
+// $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // ✅ Use this for production
+
 $headers = [
     "Content-Type: application/x-www-form-urlencoded",
     "Authorization: Token $token"
 ];
 
+// Send request
 $ch = curl_init($apiUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -69,7 +73,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-file_put_contents("deliveryone-response-log.txt", $response); // ✅ View this file to debug result
+
+file_put_contents("deliveryone-response-log.txt", date('Y-m-d H:i:s') . "\n" . $response . "\n\n", FILE_APPEND); // ✅ Log Delhivery response
 
 if (curl_errno($ch)) {
     http_response_code(500);
