@@ -695,7 +695,6 @@ $("#placeOrderBtn").click(function (event) {
     });
 });
 
-
 function punchOrderInDeliveryOne(orderDetails) {
     const payload = {
         order_id: orderDetails.order_id,
@@ -710,7 +709,7 @@ function punchOrderInDeliveryOne(orderDetails) {
     };
 
     $.ajax({
-        url: "punch-deliveryone.php",
+        url: "punch-deliveryone.php", // ✅ Make sure it ends in .php!
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(payload),
@@ -722,10 +721,6 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
-
-
-
-
 
                     // Check if user_role in localStorage is 'vendor'
                     if (localStorage.getItem("user_role") === "vendor") {

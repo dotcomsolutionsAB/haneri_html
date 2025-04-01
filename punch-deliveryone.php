@@ -1,72 +1,76 @@
 <?php
 header("Content-Type: application/json");
 
-// Load credentials
-$config = include("config.php"); // create config.php as below
-$token = $config['delhivery_token'] ?? '';
-$pickup_location = $config['pickup_location'] ?? 'Haneri Warehouse';
+// Load config
+$config = include("config.php");
+$token = $config['delhivery_token'];
+$pickupLocation = $config['pickup_location'];
 
-$rawInput = file_get_contents("php://input");
-$input = json_decode($rawInput, true);
+// Get input
+$input = json_decode(file_get_contents("php://input"), true);
+file_put_contents("deliveryone-request-log.txt", print_r($input, true)); // For debug
 
-// Log for debug
-file_put_contents("deliveryone-request-log.txt", $rawInput);
-
-if (!$input || !isset($input['order_id'], $input['address'], $input['user'])) {
+if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $input['amount'])) {
     http_response_code(400);
     echo json_encode(["error" => "Invalid input"]);
     exit;
 }
 
-$orderId = $input['order_id'];
+// Extract details
+$orderId = "ORD" . $input['order_id'];
 $user = $input['user'];
 $address = $input['address'];
 $amount = $input['amount'];
 
-preg_match('/(\d{6})/', $address, $pinMatch);
-$pincode = $pinMatch[1] ?? '000000';
+// Extract pin (6 digit)
+preg_match('/(\d{6})/', $address, $matches);
+$pin = $matches[1] ?? '000000';
 
-$city = "Burdwan"; // Set manually or improve this with smarter parsing
-
-$shipment = [
-    "pickup_location" => $pickup_location,
-    "order" => "ORD" . $orderId,
-    "products_desc" => "General Product",
+$payload = [
+    "pickup_location" => $pickupLocation,
+    "order" => $orderId,
+    "products_desc" => "General Item",
     "amount" => $amount,
     "name" => $user['name'],
     "email" => $user['email'],
     "phone" => $user['phone'],
     "address" => $address,
-    "city" => $city,
+    "city" => "Burdwan", // hardcoded or parse better
     "state" => "West Bengal",
     "country" => "India",
-    "pin" => $pincode,
+    "pin" => $pin,
     "payment_mode" => "Prepaid",
     "cod_amount" => 0,
-    "weight" => 0.5
+    "weight" => 0.5,
+    "fragile_shipment" => false
 ];
 
-$apiUrl = "https://track.delhivery.com/api/cmu/create.json";
-$headers = [
-    "Authorization: Token " . $token,
-    "Content-Type: application/json"
-];
-
-$postData = json_encode([
-    "pickup_location" => $pickup_location,
-    "shipments" => [$shipment]
+// Build post data with format=json
+$postFields = http_build_query([
+    "format" => "json",
+    "data" => json_encode([
+        "pickup_location" => $pickupLocation,
+        "shipments" => [$payload]
+    ])
 ]);
 
+$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // Use staging first
+$headers = [
+    "Content-Type: application/x-www-form-urlencoded"
+];
+
 $ch = curl_init($apiUrl);
-curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: Token $token"]);
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-file_put_contents("deliveryone-response-log.txt", $response); // ✅ Check this file after
+file_put_contents("deliveryone-response-log.txt", $response); // 👈 Check this log
 
 if (curl_errno($ch)) {
     http_response_code(500);
