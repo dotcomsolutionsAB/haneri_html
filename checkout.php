@@ -2,8 +2,13 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     header("Content-Type: application/json");
 
+    $config = include("config.php");
+    $username = $config['delhivery_user'];
+    $password = $config['delhivery_pass'];
+    $token = $config['delhivery_token'];
+
     $rawInput = file_get_contents("php://input");
-    file_put_contents("debug-log.txt", $rawInput); // optional debug log
+    file_put_contents("debug-log.txt", $rawInput); // for debugging
 
     $input = json_decode($rawInput, true);
 
@@ -13,13 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
         exit;
     }
 
-    // Delhivery credentials
-    $username = "Info@haneri.in";
-    $password = "Arnav@123";
-    $token = "eaf207abjhvbkjskhuskjvlsvb375b45c2a0";
-
-    // TODO: Replace with actual Delhivery endpoint for creating orders
-    $apiUrl = "https://one.delhivery.com/settings/api-setup";
+    // ✅ Replace with the actual Delhivery order creation endpoint
+    $apiUrl = "https://one.delhivery.com/settings/api-setup"; // 🔁 change this when you get the correct URL
 
     $headers = [
         "Authorization: Basic " . base64_encode("$username:$password"),
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     curl_close($ch);
     http_response_code($httpCode);
     echo $response;
-    exit;
+    exit; // ✅ Prevent HTML from rendering after this
 }
 ?>
 
@@ -761,7 +761,7 @@ function punchOrderInDeliveryOne(orderDetails) {
     };
 
     $.ajax({
-        url: "checkout.php?punch_delivery=1", // ✅ Same page call
+        url: "checkout.php?punch_delivery=1",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(payload),
@@ -773,6 +773,7 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
+
 
 
 
