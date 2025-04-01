@@ -695,7 +695,7 @@
                     });
 
                     function punchOrderInDeliveryOne(orderDetails) {
-                        let deliveryOneUrl = "https://api.deliveryone.com/punch-order"; // Update this to actual DeliveryOne endpoint
+                        let deliveryOneUrl = "https://one.delhivery.com/settings/api-setup"; // Update this to actual DeliveryOne endpoint
 
                         let payload = {
                             order_id: orderDetails.order_id,
