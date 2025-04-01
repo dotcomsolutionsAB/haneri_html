@@ -3,35 +3,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     header("Content-Type: application/json");
 
     $config = include("config.php");
-    $username = $config['delhivery_user'];
-    $password = $config['delhivery_pass'];
     $token = $config['delhivery_token'];
 
     $rawInput = file_get_contents("php://input");
     $input = json_decode($rawInput, true);
 
-    // Validate basic input
     if (!$input || !isset($input['order_id'], $input['address'], $input['user'])) {
         http_response_code(400);
         echo json_encode(["error" => "Invalid input"]);
         exit;
     }
 
-    // Extract info
+    // Extract data
     $orderId = $input['order_id'];
     $user = $input['user'];
     $fullAddress = $input['address'];
     $amount = $input['amount'];
 
-    // Extract pin and city from the address (rough way, can improve)
-    $pinMatch = [];
+    // Extract pincode from address
     preg_match('/(\d{6})/', $fullAddress, $pinMatch);
     $pincode = $pinMatch[1] ?? '000000';
+    $city = "Burdwan"; // Set manually or parse better
 
-    $city = 'Burdwan'; // Optional: extract this better if needed
-
-    // Prepare payload for Delhivery
-    $delhiveryPayload = [
+    // Prepare payload
+    $payload = [
         "pickup_location" => "Haneri Warehouse",
         "order" => "ORD" . $orderId,
         "products_desc" => "General Product",
@@ -49,21 +44,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
         "weight" => 0.5
     ];
 
-    $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // ✅ Correct Delhivery endpoint
+    $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // ✅ REAL endpoint
 
     $headers = [
-        "Authorization: Token " . $token, // Note: for this endpoint, Delhivery uses Token, not Basic
+        "Authorization: Token " . $token,
         "Content-Type: application/json"
     ];
 
+    $finalData = json_encode([
+        "pickup_location" => $payload['pickup_location'],
+        "shipments" => [$payload]
+    ]);
+
+    // Send to Delhivery
     $ch = curl_init($apiUrl);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["pickup_location" => $delhiveryPayload['pickup_location'], "shipments" => [$delhiveryPayload]]));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $finalData);
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    file_put_contents("deliveryone-response-log.txt", $response); // ✅ See this file after
 
     if (curl_errno($ch)) {
         http_response_code(500);
@@ -75,9 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     curl_close($ch);
     http_response_code($httpCode);
     echo $response;
-    exit;
+    exit; // ✅ CRITICAL to stop HTML!
 }
 ?>
+
 
 
 <?php include("header.php"); ?>
