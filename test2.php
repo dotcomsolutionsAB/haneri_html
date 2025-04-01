@@ -1,45 +1,50 @@
 <?php
 $apiToken = "eaf207ab1f9fcb2fca6876f836b7ab375b45c2a0";
 
-// Build the order data
-$orderData = [
-    "pickup_location" => "Burhanuddin",
+// Build the payload as per Postman
+$data = [
     "shipments" => [
         [
-            "waybill" => "", // Let Delhivery generate
-            "order" => "ORD" . rand(100000, 999999),
-            "products_desc" => "Fan",
-            "quantity" => 1,
-            "total_amount" => 1500,
-            "cod_amount" => 1500,
-            "add" => "123 Customer Street, Park Street",
-            "city" => "Kolkata",
-            "state" => "West Bengal",
-            "country" => "India",
-            "phone" => "9876543210",
-            "name" => "John Doe",
-            "pin" => "700016",
+            "add" => "M25,NelsonMarg",
+            "address_type" => "home",
+            "phone" => "8310418179",
             "payment_mode" => "COD",
-            "weight" => 0.5
+            "name" => "Shruti",
+            "pin" => "411021",
+            "order" => "ORD" . rand(1000, 9999),
+            "country" => "India",
+            "cod_amount" => 1293.89,
+            "waybill" => "",
+            "shipping_mode" => "Surface"
         ]
+    ],
+    "pickup_location" => [
+        "name" => "ESS SURFACE",
+        "city" => "Pune",
+        "pin" => "411021",
+        "country" => "India",
+        "phone" => "8310418179",
+        "add" => "SAMSUKHA COMPLEX H. NO. 204 2ND FLOOR 2ND FLOOR BELAGAVI KHADE BAZAR , Belgaun, Karnataka ,India 590001"
     ]
 ];
 
-// Initialize cURL
+// Encode payload as JSON, then form-encode for POST
+$formData = http_build_query([
+    'format' => 'json',
+    'data' => json_encode($data)
+]);
+
+// Init cURL
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, "https://track.delhivery.com/api/cmu/create.json");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
-
-// Final and correct POST body
-curl_setopt($ch, CURLOPT_POSTFIELDS, [
-    'format' => 'json', // REQUIRED
-    'data' => json_encode($orderData) // Shipments info
-]);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $formData);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Token $apiToken"
+    "Authorization: Token $apiToken",
+    "Content-Type: application/x-www-form-urlencoded"
 ]);
 
 $response = curl_exec($ch);
