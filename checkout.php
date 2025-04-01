@@ -1,88 +1,3 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
-    header("Content-Type: application/json");
-
-    $config = include("config.php");
-    $token = $config['delhivery_token'];
-
-    $rawInput = file_get_contents("php://input");
-    $input = json_decode($rawInput, true);
-
-    if (!$input || !isset($input['order_id'], $input['address'], $input['user'])) {
-        http_response_code(400);
-        echo json_encode(["error" => "Invalid input"]);
-        exit;
-    }
-
-    // Extract data
-    $orderId = $input['order_id'];
-    $user = $input['user'];
-    $fullAddress = $input['address'];
-    $amount = $input['amount'];
-
-    // Extract pincode from address
-    preg_match('/(\d{6})/', $fullAddress, $pinMatch);
-    $pincode = $pinMatch[1] ?? '000000';
-    $city = "Burdwan"; // Set manually or parse better
-
-    // Prepare payload
-    $payload = [
-        "pickup_location" => "Haneri Warehouse",
-        "order" => "ORD" . $orderId,
-        "products_desc" => "General Product",
-        "amount" => $amount,
-        "name" => $user['name'],
-        "email" => $user['email'],
-        "phone" => $user['phone'],
-        "address" => $fullAddress,
-        "city" => $city,
-        "state" => "West Bengal",
-        "country" => "India",
-        "pin" => $pincode,
-        "payment_mode" => "Prepaid",
-        "cod_amount" => 0,
-        "weight" => 0.5
-    ];
-
-    $apiUrl = "https://one.delhivery.com/settings/api-setup"; // ✅ REAL endpoint
-
-    $headers = [
-        "Authorization: Token " . $token,
-        "Content-Type: application/json"
-    ];
-
-    $finalData = json_encode([
-        "pickup_location" => $payload['pickup_location'],
-        "shipments" => [$payload]
-    ]);
-
-    // Send to Delhivery
-    $ch = curl_init($apiUrl);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $finalData);
-
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    file_put_contents("deliveryone-response-log.txt", $response); // ✅ See this file after
-
-    if (curl_errno($ch)) {
-        http_response_code(500);
-        echo json_encode(["error" => curl_error($ch)]);
-        curl_close($ch);
-        exit;
-    }
-
-    curl_close($ch);
-    http_response_code($httpCode);
-    echo $response;
-    exit; // ✅ CRITICAL to stop HTML!
-}
-?>
-
-
 
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
@@ -795,7 +710,7 @@ function punchOrderInDeliveryOne(orderDetails) {
     };
 
     $.ajax({
-        url: "checkout.php?punch_delivery=1",
+        url: "punch-deliveryone.php",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(payload),
@@ -807,6 +722,7 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
+
 
 
 
