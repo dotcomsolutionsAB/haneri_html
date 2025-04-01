@@ -19,12 +19,12 @@ $data = [
         ]
     ],
     "pickup_location" => [
-        "name" => "ESS SURFACE",
-        "city" => "Pune",
-        "pin" => "411021",
-        "country" => "India",
-        "phone" => "8310418179",
-        "add" => "SAMSUKHA COMPLEX H. NO. 204 2ND FLOOR 2ND FLOOR BELAGAVI KHADE BAZAR , Belgaun, Karnataka ,India 590001"
+        "name"=> "Burhanuddin",
+        "city"=> "Kolkata",
+        "pin"=> "700016",
+        "country"=> "India",
+        "phone"=> "9876543210",
+        "add"=> "Your registered address for Burhanuddin"
     ]
 ];
 
