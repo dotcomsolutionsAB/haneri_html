@@ -1,3 +1,55 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
+    header("Content-Type: application/json");
+
+    $rawInput = file_get_contents("php://input");
+    file_put_contents("debug-log.txt", $rawInput); // optional debug log
+
+    $input = json_decode($rawInput, true);
+
+    if (!$input || !isset($input['order_id'])) {
+        http_response_code(400);
+        echo json_encode(["error" => "Invalid input"]);
+        exit;
+    }
+
+    // Delhivery credentials
+    $username = "Info@haneri.in";
+    $password = "Arnav@123";
+    $token = "eaf207abjhvbkjskhuskjvlsvb375b45c2a0";
+
+    // TODO: Replace with actual Delhivery endpoint for creating orders
+    $apiUrl = "https://one.delhivery.com/settings/api-setup";
+
+    $headers = [
+        "Authorization: Basic " . base64_encode("$username:$password"),
+        "x-api-token: $token",
+        "Content-Type: application/json"
+    ];
+
+    $ch = curl_init($apiUrl);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($input));
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if (curl_errno($ch)) {
+        http_response_code(500);
+        echo json_encode(["error" => curl_error($ch)]);
+        curl_close($ch);
+        exit;
+    }
+
+    curl_close($ch);
+    http_response_code($httpCode);
+    echo $response;
+    exit;
+}
+?>
+
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
 
@@ -697,22 +749,22 @@ $("#placeOrderBtn").click(function (event) {
 
 function punchOrderInDeliveryOne(orderDetails) {
     const payload = {
-        order_id: orderDetails.order_id || "TEST_ORDER_ID",
+        order_id: orderDetails.order_id,
         user: {
-            name: orderDetails.name || "Guest",
-            email: orderDetails.email || "guest@example.com",
-            phone: orderDetails.phone || "0000000000"
+            name: orderDetails.name,
+            email: orderDetails.email,
+            phone: orderDetails.phone
         },
-        address: orderDetails.shipping_address || "Not Provided",
-        amount: orderDetails.total_amount || 0,
+        address: orderDetails.shipping_address,
+        amount: orderDetails.total_amount,
         items: orderDetails.items || []
     };
 
     $.ajax({
-        url: "https://haneri.ongoingsites.xyz/punch-deliveryone.php", // ✅ IMPORTANT: INCLUDE .php
-        method: "POST", // ✅ POST request
-        contentType: "application/json", // ✅ Must be JSON
-        data: JSON.stringify(payload), // ✅ Proper JSON payload
+        url: "checkout.php?punch_delivery=1", // ✅ Same page call
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(payload),
         success: function (res) {
             console.log("✅ DeliveryOne punched successfully", res);
         },
@@ -721,6 +773,7 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
+
 
 
                     // Check if user_role in localStorage is 'vendor'
