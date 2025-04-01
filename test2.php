@@ -1,18 +1,17 @@
 <?php
-// Delhivery API Token (You can move this to a config file for security)
 $apiToken = "eaf207ab1f9fcb2fca6876f836b7ab375b45c2a0";
 
-// Sample order payload
+// Build the order data
 $orderData = [
-    "pickup_location" => "Burhanuddin", // your active pickup location
+    "pickup_location" => "Burhanuddin",
     "shipments" => [
         [
-            "waybill" => "", // Leave empty to auto-generate
+            "waybill" => "", // Let Delhivery generate
             "order" => "ORD" . rand(100000, 999999),
             "products_desc" => "Fan",
             "quantity" => 1,
             "total_amount" => 1500,
-            "cod_amount" => 1500, // Change to 0 for Prepaid
+            "cod_amount" => 1500,
             "add" => "123 Customer Street, Park Street",
             "city" => "Kolkata",
             "state" => "West Bengal",
@@ -33,12 +32,11 @@ curl_setopt($ch, CURLOPT_URL, "https://track.delhivery.com/api/cmu/create.json")
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 
-// Build form data (json must be encoded under `json` key)
-$postFields = http_build_query([
-    'json' => json_encode($orderData)
+// Final and correct POST body
+curl_setopt($ch, CURLOPT_POSTFIELDS, [
+    'format' => 'json', // REQUIRED
+    'data' => json_encode($orderData) // Shipments info
 ]);
-
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Authorization: Token $apiToken"
@@ -46,7 +44,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 
 $response = curl_exec($ch);
 
-if(curl_errno($ch)) {
+if (curl_errno($ch)) {
     echo "cURL Error: " . curl_error($ch);
 } else {
     echo "<h3>Delhivery API Response:</h3>";
