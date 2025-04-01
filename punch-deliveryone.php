@@ -1,14 +1,12 @@
 <?php
 header("Content-Type: application/json");
 
-// Load config
 $config = include("config.php");
 $token = $config['delhivery_token'];
 $pickupLocation = $config['pickup_location'];
 
-// Get input
 $input = json_decode(file_get_contents("php://input"), true);
-file_put_contents("deliveryone-request-log.txt", print_r($input, true)); // For debug
+file_put_contents("deliveryone-request-log.txt", print_r($input, true)); // Debug
 
 if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $input['amount'])) {
     http_response_code(400);
@@ -16,26 +14,24 @@ if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $in
     exit;
 }
 
-// Extract details
 $orderId = "ORD" . $input['order_id'];
 $user = $input['user'];
 $address = $input['address'];
 $amount = $input['amount'];
 
-// Extract pin (6 digit)
+// Extract pin from address
 preg_match('/(\d{6})/', $address, $matches);
 $pin = $matches[1] ?? '000000';
 
-$payload = [
-    "pickup_location" => $pickupLocation,
+$shipment = [
     "order" => $orderId,
-    "products_desc" => "General Item",
+    "products_desc" => "General Product",
     "amount" => $amount,
     "name" => $user['name'],
     "email" => $user['email'],
     "phone" => $user['phone'],
     "address" => $address,
-    "city" => "Burdwan", // hardcoded or parse better
+    "city" => "Burdwan",
     "state" => "West Bengal",
     "country" => "India",
     "pin" => $pin,
@@ -45,32 +41,31 @@ $payload = [
     "fragile_shipment" => false
 ];
 
-// Build post data with format=json
-$postFields = http_build_query([
+$postData = http_build_query([
     "format" => "json",
     "data" => json_encode([
         "pickup_location" => $pickupLocation,
-        "shipments" => [$payload]
+        "shipments" => [$shipment]
     ])
 ]);
 
-$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // Use staging first
+$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // ✅ Use staging first
 $headers = [
-    "Content-Type: application/x-www-form-urlencoded"
+    "Content-Type: application/x-www-form-urlencoded",
+    "Authorization: Token $token"
 ];
 
 $ch = curl_init($apiUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: Token $token"]);
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-file_put_contents("deliveryone-response-log.txt", $response); // 👈 Check this log
+// Save response
+file_put_contents("deliveryone-response-log.txt", $response);
 
 if (curl_errno($ch)) {
     http_response_code(500);
