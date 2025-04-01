@@ -8,22 +8,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     $token = $config['delhivery_token'];
 
     $rawInput = file_get_contents("php://input");
-    file_put_contents("debug-log.txt", $rawInput); // for debugging
-
     $input = json_decode($rawInput, true);
 
-    if (!$input || !isset($input['order_id'])) {
+    // Validate basic input
+    if (!$input || !isset($input['order_id'], $input['address'], $input['user'])) {
         http_response_code(400);
         echo json_encode(["error" => "Invalid input"]);
         exit;
     }
 
-    // ✅ Replace with the actual Delhivery order creation endpoint
-    $apiUrl = "https://one.delhivery.com/settings/api-setup"; // 🔁 change this when you get the correct URL
+    // Extract info
+    $orderId = $input['order_id'];
+    $user = $input['user'];
+    $fullAddress = $input['address'];
+    $amount = $input['amount'];
+
+    // Extract pin and city from the address (rough way, can improve)
+    $pinMatch = [];
+    preg_match('/(\d{6})/', $fullAddress, $pinMatch);
+    $pincode = $pinMatch[1] ?? '000000';
+
+    $city = 'Burdwan'; // Optional: extract this better if needed
+
+    // Prepare payload for Delhivery
+    $delhiveryPayload = [
+        "pickup_location" => "Haneri Warehouse",
+        "order" => "ORD" . $orderId,
+        "products_desc" => "General Product",
+        "amount" => $amount,
+        "name" => $user['name'],
+        "email" => $user['email'],
+        "phone" => $user['phone'],
+        "address" => $fullAddress,
+        "city" => $city,
+        "state" => "West Bengal",
+        "country" => "India",
+        "pin" => $pincode,
+        "payment_mode" => "Prepaid",
+        "cod_amount" => 0,
+        "weight" => 0.5
+    ];
+
+    $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // ✅ Correct Delhivery endpoint
 
     $headers = [
-        "Authorization: Basic " . base64_encode("$username:$password"),
-        "x-api-token: $token",
+        "Authorization: Token " . $token, // Note: for this endpoint, Delhivery uses Token, not Basic
         "Content-Type: application/json"
     ];
 
@@ -31,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($input));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["pickup_location" => $delhiveryPayload['pickup_location'], "shipments" => [$delhiveryPayload]]));
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -46,9 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['punch_delivery'])) {
     curl_close($ch);
     http_response_code($httpCode);
     echo $response;
-    exit; // ✅ Prevent HTML from rendering after this
+    exit;
 }
 ?>
+
 
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?> 
