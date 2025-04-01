@@ -646,7 +646,7 @@
                     //         }
                     //     });
                     // });
-                    
+
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault();
 
@@ -709,7 +709,7 @@
                             items: orderDetails.items || []
                         };
 
-                        let authHeader = "Basic " + btoa("Info@abc.in:jusg@123");
+                        let authHeader = "Basic " + btoa("Info@haneri.in:Arnav@123");
 
                         $.ajax({
                             url: deliveryOneUrl,
