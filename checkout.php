@@ -647,87 +647,83 @@
                     //     });
                     // });
 
-                    $("#placeOrderBtn").click(function (event) {
-                        event.preventDefault();
+$("#placeOrderBtn").click(function (event) {
+    event.preventDefault();
 
-                        let shippingAddress = getSelectedAddress();
-                        if (!shippingAddress) return;
+    let shippingAddress = getSelectedAddress();
+    if (!shippingAddress) return;
 
-                        let orderData = {
-                            status: "pending",
-                            payment_status: "pending",
-                            shipping_address: shippingAddress
-                        };
+    let orderData = {
+        status: "pending",
+        payment_status: "pending",
+        shipping_address: shippingAddress
+    };
 
-                        $.ajax({
-                            url: orderUrl,
-                            type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
-                            data: JSON.stringify(orderData),
-                            success: function (response) {
-                                if (response.message.includes("success")) {
-                                    let orderDetails = response.data.data;
+    $.ajax({
+        url: orderUrl,
+        type: "POST",
+        headers: {
+            "Authorization": `Bearer ${authToken}`,
+            "Content-Type": "application/json"
+        },
+        data: JSON.stringify(orderData),
+        success: function (response) {
+            if (response.message.includes("success")) {
+                let orderDetails = response.data.data;
 
-                                    let orderId = orderDetails.order_id;
-                                    let razorpayOrderId = orderDetails.razorpay_order_id;
-                                    let totalAmount = orderDetails.total_amount;
-                                    let userName = orderDetails.name;
-                                    let userEmail = orderDetails.email;
-                                    let userPhone = orderDetails.phone;
-                                    let userId = orderDetails.user_id;
+                let orderId = orderDetails.order_id;
+                let razorpayOrderId = orderDetails.razorpay_order_id;
+                let totalAmount = orderDetails.total_amount;
+                let userName = orderDetails.name;
+                let userEmail = orderDetails.email;
+                let userPhone = orderDetails.phone;
+                let userId = orderDetails.user_id;
 
-                                    // 🔹 Punch DeliveryOne
-                                    punchOrderInDeliveryOne(orderDetails);
+                // ✅ Punch DeliveryOne (via backend PHP)
+                punchOrderInDeliveryOne(orderDetails);
 
-                                    // 🔹 Start Razorpay
-                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
-                                } else {
-                                    alert("Failed to place order. Please try again.");
-                                }
-                            },
-                            error: function () {
-                                alert("Failed to place order. Please try again.");
-                            }
-                        });
-                    });
+                // ✅ Start Razorpay
+                openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
+            } else {
+                alert("Failed to place order. Please try again.");
+            }
+        },
+        error: function () {
+            alert("Failed to place order. Please try again.");
+        }
+    });
+});
 
-                    function punchOrderInDeliveryOne(orderDetails) {
-                        let deliveryOneUrl = "https://one.delhivery.com/settings/api-setup"; // Update this to actual DeliveryOne endpoint
 
-                        let payload = {
-                            order_id: orderDetails.order_id,
-                            user: {
-                                name: orderDetails.name,
-                                email: orderDetails.email,
-                                phone: orderDetails.phone
-                            },
-                            address: orderDetails.shipping_address,
-                            amount: orderDetails.total_amount,
-                            items: orderDetails.items || []
-                        };
+function punchOrderInDeliveryOne(orderDetails) {
+    let deliveryOneUrl = "/punch-deliveryone.php"; // ✅ your backend PHP proxy
 
-                        let authHeader = "Basic " + btoa("Info@haneri.in:Arnav@123");
+    let payload = {
+        order_id: orderDetails.order_id,
+        user: {
+            name: orderDetails.name,
+            email: orderDetails.email,
+            phone: orderDetails.phone
+        },
+        address: orderDetails.shipping_address,
+        amount: orderDetails.total_amount,
+        items: orderDetails.items || [] // Include items if available
+    };
 
-                        $.ajax({
-                            url: deliveryOneUrl,
-                            type: "POST",
-                            headers: {
-                                "Authorization": authHeader,
-                                "x-api-token": "eaf207abjhvbkjskhuskjvlsvb375b45c2a0",
-                                "Content-Type": "application/json"
-                            },
-                            data: JSON.stringify(payload),
-                            success: function (res) {
-                                console.log("✅ DeliveryOne punched successfully", res);
-                            },
-                            error: function (err) {
-                                console.error("❌ Failed to punch in DeliveryOne", err);
-                            }
-                        });
-                    }
+    $.ajax({
+        url: deliveryOneUrl,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(payload),
+        success: function (res) {
+            console.log("✅ DeliveryOne punched successfully", res);
+        },
+        error: function (err) {
+            console.error("❌ Failed to punch in DeliveryOne", err);
+        }
+    });
+}
+
 
                     // Check if user_role in localStorage is 'vendor'
                     if (localStorage.getItem("user_role") === "vendor") {
