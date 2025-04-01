@@ -48,7 +48,7 @@ $shipment = [
 $payload = [
     "pickup_location" => $pickupLocation,
     "pickup_time" => "Mid Day",
-    "client" => "Dot com Solutions", // ✅ Added client name
+    "client" => "Dot Com Solutions", // ✅ Added client name
     "shipments" => [$shipment]
 ];
 
