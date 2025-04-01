@@ -1,102 +1,113 @@
 <?php
-// Enable error reporting for debugging (can be removed later)
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
-// Set JSON response type
 header("Content-Type: application/json");
 
-// Load config file for token and pickup location
+// Config values
 $config = include("config.php");
 $token = $config['delhivery_token'];
-$pickupLocation = $config['pickup_location'];
 
-// Get request input
+// Request input
 $input = json_decode(file_get_contents("php://input"), true);
 
-// Log raw input (with timestamp)
+// Log request
 file_put_contents("deliveryone-request-log.txt", date('Y-m-d H:i:s') . "\n" . print_r($input, true) . "\n\n", FILE_APPEND);
 
-// Validate required fields
-if (
-    !$input ||
-    !isset($input['order_id'], $input['user'], $input['address'], $input['amount'])
-) {
+// Validate
+if (!$input || !isset($input['order_id'], $input['user'], $input['address'], $input['amount'])) {
     http_response_code(400);
     echo json_encode(["error" => "Invalid input"]);
     exit;
 }
 
-// Sample fallback data
-$orderId = "ORD" . $input['order_id'];
-$user = $input['user'];
-$address = $input['address'];
-$amount = $input['amount'];
-
-// Extract 6-digit PIN from address
-preg_match('/(\d{6})/', $address, $matches);
-$pin = $matches[1] ?? '700001'; // fallback pin (Kolkata)
-
-// Build shipment payload
-$shipment = [
-    "order" => $orderId,
-    "products_desc" => "Sample Product",
-    "amount" => $amount,
-    "name" => $user['name'],
-    "email" => $user['email'],
-    "phone" => $user['phone'],
-    "address" => $address,
-    "city" => "Kolkata",
-    "state" => "West Bengal",
+// Sample hardcoded pickup location
+$pickup_location = [
+    "add" => "Unit No 7, Plot No 71E to T, GOVERNMENT INDUSTRIAL ESTATE, Behind Garuda Petrol Pump, Charkop, KANDIVALI WEST, Mumbai, Maharashtra",
     "country" => "India",
-    "pin" => $pin,
-    "payment_mode" => "Prepaid",
-    "cod_amount" => 0,
-    "weight" => 0.5,
-    "fragile_shipment" => false
+    "pin" => "400067",
+    "phone" => "7774855283",
+    "city" => "Mumbai",
+    "name" => "BRILLARE SURFACE",
+    "state" => "Maharastra"
 ];
 
-// Full payload with pickup details
+// Extract dynamic input
+$orderId = $input['order_id'];
+$user = $input['user'];
+$shipping_address = $input['address'];
+$amount = $input['amount'];
+
+// Extract pin
+preg_match('/(\d{6})/', $shipping_address, $matches);
+$pin = $matches[1] ?? '797001';
+
+// Build shipment
+$shipment = [
+    "country" => "India",
+    "city" => "Kohima",
+    "seller_add" => "",
+    "cod_amount" => "0",
+    "return_phone" => "7774855283",
+    "seller_inv_date" => "",
+    "seller_name" => "",
+    "pin" => $pin,
+    "seller_inv" => "",
+    "state" => "Nagaland",
+    "return_name" => "Unit No 7,GOVERNMENT INDUSTRIAL ESTATE",
+    "order" => $orderId,
+    "add" => $shipping_address,
+    "payment_mode" => "Prepaid",
+    "quantity" => "1",
+    "return_add" => $pickup_location['add'],
+    "seller_cst" => "",
+    "seller_tin" => "",
+    "phone" => $user['phone'],
+    "total_amount" => (string)$amount,
+    "name" => $user['name'],
+    "return_country" => "India",
+    "return_city" => $pickup_location['city'],
+    "return_state" => $pickup_location['state'],
+    "return_pin" => $pickup_location['pin']
+];
+
+// Final payload
 $payload = [
-    "pickup_location" => $pickupLocation,
-    "pickup_time" => "Mid Day", // Make sure this matches Delhivery slot
-    "client" => "Dot com Solutions", // Optional, but included per your request
+    "pickup_location" => $pickup_location,
     "shipments" => [$shipment]
 ];
 
-// Required format=json&data=... format
+// Format as required
 $postData = http_build_query([
     "format" => "json",
     "data" => json_encode($payload)
 ]);
 
 // Delhivery API endpoint
-$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // switch to production later
-// $apiUrl = "https://track.delhivery.com/api/cmu/create.json";
+$apiUrl = "https://staging-express.delhivery.com/api/cmu/create.json"; // For testing
+// $apiUrl = "https://track.delhivery.com/api/cmu/create.json"; // For production
 
 $headers = [
     "Content-Type: application/x-www-form-urlencoded",
     "Authorization: Token $token"
 ];
 
-// cURL setup
+// Send request
 $ch = curl_init($apiUrl);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-// Execute
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 // Log response
 file_put_contents("deliveryone-response-log.txt", date('Y-m-d H:i:s') . "\n" . $response . "\n\n", FILE_APPEND);
 
-// Handle curl error
+// Curl error
 if (curl_errno($ch)) {
     $error = curl_error($ch);
-    file_put_contents("deliveryone-response-log.txt", "cURL ERROR: " . $error . "\n", FILE_APPEND);
+    file_put_contents("deliveryone-response-log.txt", "cURL ERROR: $error\n", FILE_APPEND);
     http_response_code(500);
     echo json_encode(["error" => $error]);
     curl_close($ch);
@@ -104,8 +115,6 @@ if (curl_errno($ch)) {
 }
 
 curl_close($ch);
-
-// Return Delhivery API response
 http_response_code($httpCode);
 echo $response;
 exit;
