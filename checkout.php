@@ -696,25 +696,23 @@ $("#placeOrderBtn").click(function (event) {
 
 
 function punchOrderInDeliveryOne(orderDetails) {
-    let deliveryOneUrl = "/punch-deliveryone.php";
-
-    let payload = {
-        order_id: "123ABC987",
+    const payload = {
+        order_id: orderDetails.order_id || "TEST_ORDER_ID",
         user: {
-            name: "Test User",
-            email: "test@example.com",
-            phone: "9999999999"
+            name: orderDetails.name || "Guest",
+            email: orderDetails.email || "guest@example.com",
+            phone: orderDetails.phone || "0000000000"
         },
-        address: "123 Test Street, New Delhi",
-        amount: 599,
-        items: []
+        address: orderDetails.shipping_address || "Not Provided",
+        amount: orderDetails.total_amount || 0,
+        items: orderDetails.items || []
     };
 
     $.ajax({
-        url: "https://haneri.ongoingsites.xyz/punch-deliveryone.php", // ✅ with .php
-        method: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(payload),
+        url: "https://haneri.ongoingsites.xyz/punch-deliveryone.php", // ✅ IMPORTANT: INCLUDE .php
+        method: "POST", // ✅ POST request
+        contentType: "application/json", // ✅ Must be JSON
+        data: JSON.stringify(payload), // ✅ Proper JSON payload
         success: function (res) {
             console.log("✅ DeliveryOne punched successfully", res);
         },
@@ -723,6 +721,7 @@ function punchOrderInDeliveryOne(orderDetails) {
         }
     });
 }
+
 
                     // Check if user_role in localStorage is 'vendor'
                     if (localStorage.getItem("user_role") === "vendor") {
