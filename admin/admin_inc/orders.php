@@ -3,7 +3,7 @@
         <div class="container-fixed" id="content_container">
         </div>
         <!-- Container -->
-        <div class="container-fixed">
+        <div class="">
             <div class="grid gap-5 lg:gap-7.5">
                 <div class="card card-grid min-w-full">
                     <div class="card-header py-5 flex-wrap gap-2">
@@ -48,14 +48,6 @@
                                                     </span>
                                                 </span>
                                             </th>
-                                            <!-- <th class="min-w-[100px]">
-                                                <span class="sort">
-                                                    <span class="sort-label text-gray-700 font-normal">Seller</span>
-                                                    <span class="sort-icon">
-                                                    </span>
-                                                </span>
-                                            </th> -->
-                                            
                                             <th class="min-w-[140px]">
                                                 <span class="sort">
                                                     <span class="sort-label text-gray-700 font-normal">Amount</span>
@@ -63,20 +55,6 @@
                                                     </span>
                                                 </span>
                                             </th>
-                                            <!-- <th class="min-w-[100px]">
-                                                <span class="sort">
-                                                    <span class="sort-label text-gray-700 font-normal">Delivery Status</span>
-                                                    <span class="sort-icon">
-                                                    </span>
-                                                </span>
-                                            </th>
-                                            <th class="min-w-[165px]">
-                                                <span class="sort">
-                                                    <span class="sort-label text-gray-700 font-normal">Payment Method</span>
-                                                    <span class="sort-icon">
-                                                    </span>
-                                                </span>
-                                            </th> -->
                                             <th class="w-[60px]">
                                             </th>
                                         </tr>
@@ -214,7 +192,7 @@
                             </td>
                             <td>
                                 <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
-                                <span class="badge text-danger">${order.payment_status}</span>
+                                <span class="badge text-warning">${order.payment_status}</span>
                             </td>                            
                             <td class="w-[60px]">${generateActionButtons(order)}</td>
                         </tr>
