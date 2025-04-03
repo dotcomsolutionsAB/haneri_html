@@ -39,42 +39,37 @@
 .qty-selector {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px; /* spacing between buttons and input */
 }
 
 .qty-btn {
-    width: 28px;
-    height: 28px;
-    background: #ffffff;
-    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    background: transparent; /* transparent background */
+    border: 1px solid #000;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 1;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
     text-align: center;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .qty-input {
-    width: 40px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
 }
 
-.add-to-cart-btn {
-    background: none;
-    border: none;
-    font-weight: bold;
-    color: #000;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 0 5px;
-    font-size: 14px;
-}
 
 </style>
 <section class="featured">
@@ -119,11 +114,12 @@
                         <div class="card-footer">
                             <div class="qty-selector">
                                 <button class="qty-btn minus">−</button>
-                                <input type="number" class="qty-input" value="1" min="1">
+                                <input type="number" class="qty-input" value="1" min="1" readonly>
                                 <button class="qty-btn plus">+</button>
                             </div>
                             <button class="btn add-to-cart-btn">Add to Cart</button>
                         </div>
+
                     `;
                     container.appendChild(card);
                 });
