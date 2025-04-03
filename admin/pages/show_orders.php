@@ -22,14 +22,14 @@
                                 Overview of <span id="count-orders"> 00 </span>.
                             </div> -->
                         </div>
-                        <div class="flex items-center gap-2.5">
+                        <!-- <div class="flex items-center gap-2.5">
                             <a class="btn btn-sm btn-light" href="#">
                                 Import Orders
                             </a>
                             <a class="btn btn-sm btn-primary" href="#">
                                 Add Order
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- End of Container -->

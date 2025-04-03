@@ -24,10 +24,10 @@
                         </div> -->
                     </div>
                     <div class="flex items-center gap-2.5">
-                        <a class="btn btn-sm btn-light" href="#">
+                        <!-- <a class="btn btn-sm btn-light" href="#">
                             Import Brands
-                        </a>
-                        <a class="btn btn-sm btn-primary" href="#">
+                        </a> -->
+                        <a class="btn btn-sm btn-primary" href="add_brand.php">
                             Add Brands
                         </a>
                     </div>
