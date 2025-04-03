@@ -1,64 +1,34 @@
 <?php include("configs/config.php"); ?>
 <style>
     .featured-products-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-}
-
-.featured-products-grid .card {
-    width: calc(25% - 20px); /* 4 in a row with gap */
-    min-width: 220px;
-    box-sizing: border-box;
-}
-.featured .card {
-    margin-bottom: 3rem;
-    border: 1px solid #ddd;
-    border-radius: 0;
-    font-size: 1.4rem;
-    min-height: 400px;
-    background: radial-gradient(#ecf6f6d1, #00473e3d);
-    margin-top: 10px;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: justify;
-    border: none;
-    width: 299.462px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-
-}
-.featured .featured-products-carousel .card {
-    border-radius: 20px;
-    padding: 20px;
-    text-align: justify;
-    border: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.featured .card .bgremoved{
-    border-top: 1px solid #315858;
-    text-align: left;
-    padding-left: 0px !important;
-}
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .featured-products-grid .card {
-        width: calc(33.33% - 20px);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
     }
-}
 
-@media (max-width: 768px) {
     .featured-products-grid .card {
-        width: calc(50% - 20px);
+        width: calc(25% - 20px); /* 4 in a row with gap */
+        min-width: 220px;
+        box-sizing: border-box;
     }
-}
 
-@media (max-width: 480px) {
-    .featured-products-grid .card {
-        width: 100%;
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .featured-products-grid .card {
+            width: calc(33.33% - 20px);
+        }
     }
-}
-
+    @media (max-width: 768px) {
+        .featured-products-grid .card {
+            width: calc(50% - 20px);
+        }
+    }
+    @media (max-width: 480px) {
+        .featured-products-grid .card {
+            width: 100%;
+        }
+    }
 </style>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
