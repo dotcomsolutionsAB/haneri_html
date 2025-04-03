@@ -423,9 +423,7 @@
         });
     });
 </script>
-<style>
 
-</style>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">

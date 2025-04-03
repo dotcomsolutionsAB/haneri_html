@@ -129,7 +129,7 @@
 </div>
 
 
-    <div class="page-wrapper" id="dc-page-content">
+    <div class="page-wrapper" >
         <header class="header header-transparent">
             <div class="header-middle sticky-header">
                 <div class="container">
