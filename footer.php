@@ -166,17 +166,16 @@
     <script src="assets/js/main.min.js"></script>
 <!-- Loader JS -->
 <script>
-  // This runs after EVERYTHING — images, API data, etc.
-  function hideLoader() {
+  function dcHideLoader() {
     console.log("✅ All content loaded – hiding loader...");
-    document.body.classList.add("loaded");
+    document.body.classList.add("dc-loaded");
   }
 
-  // If you fetch API data manually, call hideLoader() after the last .then()
-  // OR fallback after some seconds (for example: 2 seconds)
+  // Wait for the full page (HTML + Images + any delay)
   window.addEventListener("load", function () {
-    console.log("🕓 Waiting for API or extra content...");
-    setTimeout(hideLoader, 2000); // adjust time based on your API delay
+    console.log("🕓 Waiting for everything to load...");
+    // If you know your API finishes in 2s, delay accordingly
+    setTimeout(dcHideLoader, 2000); // Adjust delay if needed
   });
 </script>
 

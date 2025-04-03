@@ -44,9 +44,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- Loader CSS & HTML -->
+<!-- 🌀 Unique Loader CSS and HTML -->
 <style>
-  #loader-wrapper {
+  #dc-loader-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -54,7 +54,7 @@
     height: 100vh;
     background: #111;
     color: #fff;
-    z-index: 99999;
+    z-index: 999999;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,34 +63,34 @@
     font-family: Arial, sans-serif;
   }
 
-  #loader-text {
+  #dc-loader-text {
     font-size: 24px;
     margin-bottom: 20px;
     letter-spacing: 2px;
   }
 
-  .dots {
+  .dc-dots {
     display: flex;
     gap: 8px;
   }
 
-  .dot {
+  .dc-dot {
     width: 12px;
     height: 12px;
     background: #00d1b2;
     border-radius: 50%;
-    animation: bounceLoader 1.2s infinite ease-in-out;
+    animation: dc-bounce 1.2s infinite ease-in-out;
   }
 
-  .dot:nth-child(2) {
+  .dc-dot:nth-child(2) {
     animation-delay: 0.2s;
   }
 
-  .dot:nth-child(3) {
+  .dc-dot:nth-child(3) {
     animation-delay: 0.4s;
   }
 
-  @keyframes bounceLoader {
+  @keyframes dc-bounce {
     0%, 80%, 100% {
       transform: scale(0);
     }
@@ -99,39 +99,37 @@
     }
   }
 
-  /* Hide loader when page is ready */
-  body.loaded #loader-wrapper {
+  /* Hide loader and show content when ready */
+  body.dc-loaded #dc-loader-wrapper {
     opacity: 0;
     visibility: hidden;
   }
 
-  /* Optional: hide page content until loader is removed */
-  #page-content {
-    opacity: 0;
-    transition: opacity 0.4s ease;
+  body:not(.dc-loaded) #dc-page-content {
+    display: none;
   }
 
-  body.loaded #page-content {
-    opacity: 1;
+  body.dc-loaded #dc-page-content {
+    display: block;
   }
 </style>
+
 </head>
 
 <body class="full-screen-slider">
-<!-- Stylish Loader -->
 <!-- Loader HTML -->
-<script>console.log("🔄 Loader is showing...");</script>
-<div id="loader-wrapper">
-  <div id="loader-text">Loading Magic...</div>
-  <div class="dots">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+<script>console.log("🔄 DC Loader is showing...");</script>
+<div id="dc-loader-wrapper">
+  <div id="dc-loader-text">Loading Magic...</div>
+  <div class="dc-dots">
+    <div class="dc-dot"></div>
+    <div class="dc-dot"></div>
+    <div class="dc-dot"></div>
   </div>
 </div>
 
 
-    <div class="page-wrapper">
+    <div class="page-wrapper" id="dc-page-content">
         <header class="header header-transparent">
             <div class="header-middle sticky-header">
                 <div class="container">
