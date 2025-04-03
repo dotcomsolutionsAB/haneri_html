@@ -1,5 +1,5 @@
 <?php include("configs/config.php"); ?>
-<style>
+<!-- <style>
     .featured-products-grid {
         display: flex;
         flex-wrap: wrap;
@@ -86,7 +86,7 @@
         align-items: center;
         flex-wrap: wrap;
     }
-</style>
+</style> -->
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
