@@ -164,11 +164,12 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
-<script>
-  window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
-  });
-</script>
+  <!-- Loader Script -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 
 </body>
 
