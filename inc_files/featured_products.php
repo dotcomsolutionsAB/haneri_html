@@ -1,85 +1,88 @@
-<?php include("configs/config.php"); ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
-    <div class="featured-products-carousel owl-carousel owl-theme">
-        <!-- Product cards will be injected here -->
+    <div class="featured-products-carousel owl-carousel owl-theme" id="featured-carousel">
+        <!-- Products will be inserted here by JS -->
     </div>
 </section>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("auth_token");
-        const carousel = document.querySelector(".featured-products-carousel");
+    // Featured products array
+    const featuredProducts = [
+        {
+            image: "images/Moonlit_White.png",
+            title: "Haneri Fengshui",
+            subtitle: "Ceiling Fan",
+            price: "₹1049.00",
+            link: "https://haneri.ongoingsites.xyz/shop.php"
+        },
+        {
+            image: "images/Natura_Pine.png",
+            title: "Haneri Fengshui",
+            subtitle: "Ceiling Fan",
+            price: "₹1049.00",
+            link: "https://haneri.ongoingsites.xyz/shop.php"
+        },
+        {
+            image: "images/Velvet_Black.png",
+            title: "Haneri Fengshui",
+            subtitle: "Ceiling Fan",
+            price: "₹1049.00",
+            link: "https://haneri.ongoingsites.xyz/shop.php"
+        },
+        {
+            image: "images/Espresso_Walnut.png",
+            title: "Haneri Fengshui",
+            subtitle: "Ceiling Fan",
+            price: "₹1049.00",
+            link: "https://haneri.ongoingsites.xyz/shop.php"
+        },
+        {
+            image: "images/Velvet_Black.png",
+            title: "Haneri Fengshui",
+            subtitle: "Ceiling Fan",
+            price: "₹16,999.00",
+            link: "#"
+        }
+    ];
 
-        if (!token || !carousel) return;
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("featured-carousel");
 
-        fetch("<?php echo BASE_URL; ?>/products/get_products", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`
-            },
-            body: JSON.stringify({})
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success && Array.isArray(data.data)) {
-                const product = data.data.find(p => p.id === 14);
+        // Populate carousel dynamically
+        featuredProducts.forEach(product => {
+            const productCard = `
+                <div class="card">
+                    <div class="card_image">
+                        <img src="${product.image}" alt="${product.title}" class="img-fluid">
+                    </div>
+                    <h4 class="heading2">${product.title} <span>${product.subtitle}</span></h4>
+                    <p class="product-price">MRP ${product.price}</p>
+                    <a href="${product.link}" class="btn rounded-pill bgremoved px-4">Know More</a>
+                </div>
+            `;
+            container.innerHTML += productCard;
+        });
 
-                if (!product || !product.variants || product.variants.length === 0) return;
-
-                carousel.innerHTML = "";
-
-                product.variants.forEach(variant => {
-                    let imageFileName = variant.variant_value.replace(/\s+/g, "_") + ".png";
-                    let imageUrl = "images/" + imageFileName;
-
-                    const card = document.createElement("div");
-                    card.className = "card"; // 'item' class is important for Owl Carousel
-
-                    card.innerHTML = `
-                        <div class="card_image">
-                            <img src="${imageUrl}" alt="${variant.variant_value}" class="img-fluid">
-                        </div>
-                        <h4 class="heading2">${product.brand.name} ${product.name} <span>${product.category.name}</span></h4>
-                        <p class="product-price">MRP ₹${parseFloat(variant.selling_price).toFixed(2)}</p>
-                        <a href="https://haneri.ongoingsites.xyz/shop.php?product=${product.slug}&variant=${variant.id}" class="btn rounded-pill bgremoved px-4">Know More</a>
-                    `;
-
-                    carousel.appendChild(card);
-                });
-
-                // Initialize Owl Carousel AFTER content is added
-                $('.featured-products-carousel').owlCarousel({
-                    loop: false,
-                    margin: 20,
-                    nav: true,
-                    dots: false,
-                    items: 4,
-                    slideBy: 2,
-                    navText: [
-                        '<span class="owl-prev-btn fetured-next">‹</span>',
-                        '<span class="owl-next-btn fetured-next">›</span>'
-                    ],
-                    responsive: {
-                        0: { items: 1, slideBy: 1 },
-                        576: { items: 2, slideBy: 2 },
-                        768: { items: 3, slideBy: 2 },
-                        992: { items: 4, slideBy: 2 }
-                    }
-                });
+        // Initialize carousel after dynamic content is added
+        $('.featured-products-carousel').owlCarousel({
+            loop: false,
+            margin: 20,
+            nav: true,
+            dots: false,
+            items: 4,
+            slideBy: 2,
+            navText: [
+                '<span class="owl-prev-btn fetured-next">‹</span>',
+                '<span class="owl-next-btn fetured-next">›</span>'
+            ],
+            responsive: {
+                0: { items: 1, slideBy: 1 },
+                576: { items: 2, slideBy: 2 },
+                768: { items: 3, slideBy: 2 },
+                992: { items: 4, slideBy: 2 }
             }
-        })
-        .catch(err => {
-            console.error("Error loading featured products:", err);
         });
     });
 </script>
