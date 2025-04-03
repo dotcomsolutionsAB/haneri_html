@@ -34,6 +34,9 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+    
+    padding: 0px;
+    background-color: transparent;
 }
 
 .featured .qty-selector {
