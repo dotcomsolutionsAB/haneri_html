@@ -1,90 +1,34 @@
 <?php include("configs/config.php"); ?>
 <style>
-.featured-products-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-}
-
-.featured-products-grid .card {
-    width: calc(25% - 20px);
-    min-width: 220px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card_image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-
-.qty-selector {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.qty-input {
-    width: 40px;
-    text-align: center;
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.qty-btn {
-    background: #eee;
-    border: 1px solid #ccc;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    line-height: 1;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.add-to-cart-btn {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-@media (max-width: 992px) {
-    .featured-products-grid .card {
-        width: calc(33.33% - 20px);
+    .featured-products-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
     }
-}
-@media (max-width: 768px) {
-    .featured-products-grid .card {
-        width: calc(50% - 20px);
-    }
-}
-@media (max-width: 480px) {
-    .featured-products-grid .card {
-        width: 100%;
-    }
-}
 
+    .featured-products-grid .card {
+        width: calc(25% - 20px); /* 4 in a row with gap */
+        min-width: 220px;
+        box-sizing: border-box;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .featured-products-grid .card {
+            width: calc(33.33% - 20px);
+        }
+    }
+    @media (max-width: 768px) {
+        .featured-products-grid .card {
+            width: calc(50% - 20px);
+        }
+    }
+    @media (max-width: 480px) {
+        .featured-products-grid .card {
+            width: 100%;
+        }
+    }
 </style>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
