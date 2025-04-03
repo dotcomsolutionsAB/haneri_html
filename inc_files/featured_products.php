@@ -15,8 +15,8 @@
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
             },
-            // body: JSON.stringify({ search_product: "Fengshui" }) // only fetch product with ID = 14
-            body: JSON.stringify({ id: 14 }) // only fetch product with ID = 14
+            body: JSON.stringify({ search_product: "Fengshui" }) // only fetch product with ID = 14
+            // body: JSON.stringify({ id: 14 }) // only fetch product with ID = 14
         })
         .then(response => response.json())
         .then(res => {
