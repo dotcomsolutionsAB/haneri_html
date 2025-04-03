@@ -116,7 +116,10 @@
                                     localStorage.setItem("temp_id", cartRes.data.user_id);
                                 }
 
-                                alert("Product added to cart successfully!");
+                                const cardFoot = e.target.closest(".card-foot");
+                                cardFoot.innerHTML = `
+                                    <a href="cart.php" class="go-to-cart-btn">🛒 Go to Cart</a>
+                                `;
                             } else {
                                 alert("Failed to add product to cart.");
                             }
