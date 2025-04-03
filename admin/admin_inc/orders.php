@@ -4,17 +4,6 @@
         </div>
         <!-- Container -->
         <div class="container-fixed">
-            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                <div class="flex flex-col justify-center gap-2">
-                    <h1 class="text-xl font-medium leading-none text-gray-900" id="">
-                        Orders
-                    </h1>
-                </div>
-            </div>
-        </div>
-        <!-- End of Container -->
-        <!-- Container -->
-        <div class="container-fixed">
             <div class="grid gap-5 lg:gap-7.5">
                 <div class="card card-grid min-w-full">
                     <div class="card-header py-5 flex-wrap gap-2">
@@ -27,24 +16,6 @@
                                 <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
                                 <input class="input input-sm pl-8" data-datatable-search-order placeholder="Search Order ID" type="text" />
                             </div>
-
-                            <!-- Date Filter -->
-                            <div>
-                                <input class="input input-sm w-[180px]" type="date" data-datatable-date />
-                            </div>
-
-                            <!-- User Name Filter -->
-                            <div class="relative">
-                                <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
-                                <input class="input input-sm pl-8" data-datatable-search-user placeholder="Search User Name" type="text" />
-                            </div>
-
-                            <label class="switch switch-sm">
-                                <input class="order-2" name="check" type="checkbox" value="1" />
-                                <span class="switch-label order-1">
-                                    Pending Orders
-                                </span>
-                            </label>
                         </div>
                     </div>
                     <div class="card-body">
@@ -77,13 +48,13 @@
                                                     </span>
                                                 </span>
                                             </th>
-                                            <th class="min-w-[100px]">
+                                            <!-- <th class="min-w-[100px]">
                                                 <span class="sort">
                                                     <span class="sort-label text-gray-700 font-normal">Seller</span>
                                                     <span class="sort-icon">
                                                     </span>
                                                 </span>
-                                            </th>
+                                            </th> -->
                                             
                                             <th class="min-w-[140px]">
                                                 <span class="sort">
@@ -91,7 +62,8 @@
                                                     <span class="sort-icon">
                                                     </span>
                                                 </span>
-                                            </th><th class="min-w-[100px]">
+                                            </th>
+                                            <!-- <th class="min-w-[100px]">
                                                 <span class="sort">
                                                     <span class="sort-label text-gray-700 font-normal">Delivery Status</span>
                                                     <span class="sort-icon">
@@ -104,7 +76,7 @@
                                                     <span class="sort-icon">
                                                     </span>
                                                 </span>
-                                            </th>
+                                            </th> -->
                                             <th class="w-[60px]">
                                             </th>
                                         </tr>
@@ -236,15 +208,14 @@
                             <td><span class="text-xs text-gray-700 font-normal">${new Date(order.created_at).toLocaleString()}</span></td>
                             <td><span class="badge badge-sm badge-light badge-outline">${order.id}</span></td>
                             <td><span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span></td>
-                            <td><span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span></td>
-                            <td><span class="text-xs text-gray-700 font-normal">${order.user?.role || "N/A"}</span></td>
-                            <td><span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
-                                <span class="badge text-danger">Unpaid</span>
+                            <td>
+                                <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
+                                <span class="badge text-danger">${order.user?.role || "N/A"}</span>
                             </td>
                             <td>
-                                <span class="badge badge-primary badge-outline ${getStatusClass(order.status)}">${order.status}</span>
-                            </td>
-                            <td><span class="text-xs text-gray-700 font-normal">${order.payment_status}</span></td>
+                                <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
+                                <span class="badge text-danger">${order.payment_status}</span>
+                            </td>                            
                             <td class="w-[60px]">${generateActionButtons(order)}</td>
                         </tr>
                     `);
