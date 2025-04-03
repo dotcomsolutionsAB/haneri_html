@@ -731,13 +731,13 @@
                 </ul>
             </div>
             <div style="display: flex; flex-direction: column; align-items:center;">
-            <img src="/assets/images/1.jpeg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/2.jpeg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/3.jpeg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
-            <img src="/assets/images/4.jpeg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
-        </div>
+                <img src="/assets/images/1.jpeg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
+                <img src="/assets/images/2.jpeg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
+                <img src="/assets/images/3.jpeg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
+                <img src="/assets/images/4.jpeg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
+            </div>
 
-        <div class="container specification-section">
+            <div class="container specification-section">
                 <h2 class="fw-normal head_1 text-center">Why To Choose Haneri Fans</h2>
                 <ul class="specification-list">
                     <li>
@@ -834,53 +834,6 @@
                     specTable.appendChild(row);
                 }
             </script>
-
-            <!-- <style>
-                .product-box-spec {
-                background: #fff;
-                padding: 40px 20px;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                }
-
-                .spec-title {
-                text-align: center;
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 30px;
-                color: #222;
-                }
-
-                .specs-json-table {
-                width: 100%;
-                border-collapse: separate;
-                }
-
-                .specs-json-table th,
-                .specs-json-table td {
-                padding: 16px;
-                font-size: 15px;
-                text-align: left;
-                vertical-align: top;
-                }
-
-                .specs-json-table th {
-                background-color: #fff;
-                font-weight: 500;
-                color: #000;
-                width: 20%;
-                }
-
-                .specs-json-table td {
-                /* background-color: #f2f2f2; */
-                background-color:#31585824;
-                color: #333;
-                width: 30%;
-                border-radius: 4px;
-                }
-
-
-            </style> -->
 
             <!-- Related Products -->
             <!-- <div class="container-fluid">
