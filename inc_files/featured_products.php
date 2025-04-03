@@ -6,7 +6,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
-        const apiUrl = "{{base_url}}/products/get_products";
+        const apiUrl = "<?php echo BASE_URL; ?>/products/get_products";
 
         fetch(apiUrl, {
             method: "POST",
