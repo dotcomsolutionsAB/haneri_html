@@ -605,7 +605,7 @@
                 </div>
             `;
         };
-</script>
+    </script>
 
     
     <!-- Footer -->

@@ -453,6 +453,9 @@
                                     </div>
                                 </div>
                             </div> -->
+                            <div class="lg:col-span-2">
+                                <?php include("admin_inc/orders.php"); ?>
+                            </div>
                         </div>
                         <!-- end: grid -->
 
