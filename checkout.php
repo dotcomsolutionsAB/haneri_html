@@ -810,7 +810,7 @@
                             "key": "rzp_test_EVVF2DggZF1FTZ", // Replace with your Razorpay Key ID
                             "amount": amount * 100, // Convert to paise (₹1 = 100 paise)
                             "currency": "INR",
-                            "name": "Haneri",
+                            "name": "HANERI ELECTRICALS LLP",
                             "description": `Order ID: ${orderId}`,
                             "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
                             "order_id": order_id, // Razorpay Order ID
