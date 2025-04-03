@@ -44,7 +44,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <style>
+<style>
     /* Loader styles */
     #loader-wrapper {
       position: fixed;
@@ -109,6 +109,9 @@
 <body class="full-screen-slider">
 <!-- Stylish Loader -->
   <!-- Loader HTML -->
+    <script>
+        console.log("🔄 Loader is showing...");
+    </script>
   <div id="loader-wrapper">
     <div id="loader-text">Loading Magic...</div>
     <div class="dots">

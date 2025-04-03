@@ -166,10 +166,11 @@
     <script src="assets/js/main.min.js"></script>
   <!-- Loader Script -->
   <script>
-    window.addEventListener("load", function () {
-      document.body.classList.add("loaded");
-    });
-  </script>
+  window.addEventListener("load", function () {
+    console.log("✅ Page fully loaded – Loader will now hide.");
+    document.body.classList.add("loaded");
+  });
+</script>
 
 </body>
 
