@@ -12,7 +12,27 @@
     min-width: 220px;
     box-sizing: border-box;
 }
+.featured .card {
+    margin-bottom: 3rem;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1.4rem;
+    min-height: 400px;
+    background: radial-gradient(#ecf6f6d1, #00473e3d);
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: justify;
+    border: none;
+    width: 299.462px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
+}
+.featured .card .bgremoved{
+    border-top: 1px solid #315858;
+    text-align: left;
+    padding-left: 0px !important;
+}
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .featured-products-grid .card {
