@@ -1,3 +1,4 @@
+<?php include("configs/config.php"); ?>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
@@ -84,7 +85,7 @@
 
         if (!token || !carousel) return;
 
-        fetch("{{base_url}}/products/get_products", {
+        fetch("<?php echo BASE_URL; ?>/products/get_products", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

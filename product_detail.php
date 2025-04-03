@@ -260,7 +260,6 @@
             updatePrice();
         }
 
-
         // Add to Cart function
         function addToCart() {
             // console.log("addToCart() function invoked.");
