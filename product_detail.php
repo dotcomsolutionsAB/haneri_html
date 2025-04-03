@@ -25,6 +25,78 @@
         background: radial-gradient(#fff, #cfcdce);
     }
 </style>
+
+    <style>
+        /* Loader overlay */
+        #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #111;
+        color: #fff;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        font-family: 'Arial', sans-serif;
+        }
+
+        /* Loader text */
+        #loader-text {
+        font-size: 24px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        }
+
+        /* Bouncing dots */
+        .dots {
+        display: flex;
+        gap: 8px;
+        }
+
+        .dot {
+        width: 12px;
+        height: 12px;
+        background: #00d1b2;
+        border-radius: 50%;
+        animation: bounce 1.2s infinite ease-in-out;
+        }
+
+        .dot:nth-child(2) {
+        animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+        animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+        0%, 80%, 100% {
+            transform: scale(0);
+        }
+        40% {
+            transform: scale(1);
+        }
+        }
+
+        /* Hide loader when page is ready */
+        body.loaded #loader-wrapper {
+        opacity: 0;
+        visibility: hidden;
+        }
+    </style>
+  <!-- Loader HTML -->
+  <div id="loader-wrapper">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -1406,6 +1478,13 @@
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
 
+
+  <!-- JS to remove loader after page load -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 <style>
     .product-desc-content .feature-box p {
         font-size: 14px;

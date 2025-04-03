@@ -648,113 +648,111 @@
                     //     });
                     // });
 
-$("#placeOrderBtn").click(function (event) {
-    event.preventDefault();
+                    $("#placeOrderBtn").click(function (event) {
+                        event.preventDefault();
 
-    let shippingAddress = getSelectedAddress();
-    if (!shippingAddress) return;
+                        let shippingAddress = getSelectedAddress();
+                        if (!shippingAddress) return;
 
-    let orderData = {
-        status: "pending",
-        payment_status: "pending",
-        shipping_address: shippingAddress
-    };
+                        let orderData = {
+                            status: "pending",
+                            payment_status: "pending",
+                            shipping_address: shippingAddress
+                        };
 
-    $.ajax({
-        url: orderUrl,
-        type: "POST",
-        headers: {
-            "Authorization": `Bearer ${authToken}`,
-            "Content-Type": "application/json"
-        },
-        data: JSON.stringify(orderData),
-        success: function (response) {
-            if (response.message.includes("success")) {
-                let orderDetails = response.data.data;
+                        $.ajax({
+                            url: orderUrl,
+                            type: "POST",
+                            headers: {
+                                "Authorization": `Bearer ${authToken}`,
+                                "Content-Type": "application/json"
+                            },
+                            data: JSON.stringify(orderData),
+                            success: function (response) {
+                                if (response.message.includes("success")) {
+                                    let orderDetails = response.data.data;
 
-                let orderId = orderDetails.order_id;
-                let razorpayOrderId = orderDetails.razorpay_order_id;
-                let totalAmount = orderDetails.total_amount;
-                let userName = orderDetails.name;
-                let userEmail = orderDetails.email;
-                let userPhone = orderDetails.phone;
-                let userId = orderDetails.user_id;
+                                    let orderId = orderDetails.order_id;
+                                    let razorpayOrderId = orderDetails.razorpay_order_id;
+                                    let totalAmount = orderDetails.total_amount;
+                                    let userName = orderDetails.name;
+                                    let userEmail = orderDetails.email;
+                                    let userPhone = orderDetails.phone;
+                                    let userId = orderDetails.user_id;
 
-                // ✅ Punch DeliveryOne (via backend PHP)
-                punchOrderInDeliveryOne(orderDetails);
+                                    // ✅ Punch DeliveryOne (via backend PHP)
+                                    punchOrderInDeliveryOne(orderDetails);
 
-                // ✅ Start Razorpay
-                openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
-            } else {
-                alert("Failed to place order. Please try again.");
-            }
-        },
-        error: function () {
-            alert("Failed to place order. Please try again.");
-        }
-    });
-});
+                                    // ✅ Start Razorpay
+                                    openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
+                                } else {
+                                    alert("Failed to place order. Please try again.");
+                                }
+                            },
+                            error: function () {
+                                alert("Failed to place order. Please try again.");
+                            }
+                        });
+                    });
 
-function punchOrderInDeliveryOne(orderDetails) {
-    const payload = {
-        order_id: orderDetails.order_id,
-        user: {
-            name: orderDetails.name,
-            email: orderDetails.email,
-            phone: orderDetails.phone
-        },
-        address: orderDetails.shipping_address,
-        amount: orderDetails.total_amount,
-        items: orderDetails.items || []
-    };
+                    function punchOrderInDeliveryOne(orderDetails) {
+                        const payload = {
+                            order_id: orderDetails.order_id,
+                            user: {
+                                name: orderDetails.name,
+                                email: orderDetails.email,
+                                phone: orderDetails.phone
+                            },
+                            address: orderDetails.shipping_address,
+                            amount: orderDetails.total_amount,
+                            items: orderDetails.items || []
+                        };
 
-    // $.ajax({
-    //     url: "punch-deliveryone",
-    //     method: "POST",
-    //     contentType: "application/json",
-    //     data: JSON.stringify({
-    //         order_id: "123",
-    //         user: {
-    //         name: "Test User",
-    //         email: "test@example.com",
-    //         phone: "9876543210"
-    //         },
-    //         address: "123 ABC Street, Kolkata, West Bengal 700001, India",
-    //         amount: 999,
-    //         items: []
-    //     }),
-    //     success: function (res) {
-    //         console.log("✅ DeliveryOne Response:", res);
-    //     },
-    //     error: function (err) {
-    //         console.error("❌ DeliveryOne Error:", err);
-    //     }
-    // });
+                        // $.ajax({
+                        //     url: "punch-deliveryone",
+                        //     method: "POST",
+                        //     contentType: "application/json",
+                        //     data: JSON.stringify({
+                        //         order_id: "123",
+                        //         user: {
+                        //         name: "Test User",
+                        //         email: "test@example.com",
+                        //         phone: "9876543210"
+                        //         },
+                        //         address: "123 ABC Street, Kolkata, West Bengal 700001, India",
+                        //         amount: 999,
+                        //         items: []
+                        //     }),
+                        //     success: function (res) {
+                        //         console.log("✅ DeliveryOne Response:", res);
+                        //     },
+                        //     error: function (err) {
+                        //         console.error("❌ DeliveryOne Error:", err);
+                        //     }
+                        // });
 
-    $.ajax({
-  url: "punch-deliveryone",
-  method: "POST",
-  contentType: "application/json",
-  data: JSON.stringify({
-    order_id: "528323",
-    user: {
-      name: "Asen Jamir",
-      email: "asen@example.com",
-      phone: "9603304294"
-    },
-    address: "MRH- C 113, Ward no - 18. Below Sumi Church, Merhulietsa School Road",
-    amount: 750
-  }),
-  success: function (res) {
-    console.log("✅ DeliveryOne Response:", res);
-  },
-  error: function (err) {
-    console.error("❌ DeliveryOne Error:", err);
-  }
-});
-
-
-}
+                        $.ajax({
+                            url: "punch-deliveryone",
+                            method: "POST",
+                            contentType: "application/json",
+                            data: JSON.stringify({
+                                order_id: "528323",
+                                user: {
+                                name: "Asen Jamir",
+                                email: "asen@example.com",
+                                phone: "9603304294"
+                                },
+                                address: "MRH- C 113, Ward no - 18. Below Sumi Church, Merhulietsa School Road",
+                                amount: 750
+                            }),
+                            success: function (res) {
+                                console.log("✅ DeliveryOne Response:", res);
+                            },
+                            error: function (err) {
+                                console.error("❌ DeliveryOne Error:", err);
+                            }
+                        });
+                    }
 
                     // Check if user_role in localStorage is 'vendor'
                     if (localStorage.getItem("user_role") === "vendor") {

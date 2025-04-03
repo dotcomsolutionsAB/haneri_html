@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 header("Content-Type: application/json");
 
 // Config values
-$config = include("config.php");
+$config = include("configs/ship_config.php");
 $token = $config['delhivery_token'];
 
 // Request input
