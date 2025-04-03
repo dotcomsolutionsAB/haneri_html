@@ -29,6 +29,53 @@
             width: 100%;
         }
     }
+    .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.qty-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+
+.qty-input {
+    width: 40px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-to-cart-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
 </style>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
