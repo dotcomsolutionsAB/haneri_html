@@ -166,22 +166,7 @@
     <script src="assets/js/main.min.js"></script>
 <!-- Loader JS -->
 <!-- <script>
-  function dcHideLoader() {
-    console.log("✅ All content loaded – hiding loader...");
-    document.body.classList.add("dc-loaded");
-  }
-
-  // Wait for the full page (HTML + Images + any delay)
-  window.addEventListener("load", function () {
-    console.log("🕓 Waiting for everything to load...");
-    // If you know your API finishes in 2s, delay accordingly
-    setTimeout(dcHideLoader, 2000); // Adjust delay if needed
-  });
-</script> -->
-
-<script>
   const letters = document.querySelectorAll('.dc-letter');
-
   function animateLetters() {
     letters.forEach((l) => {
       l.classList.remove('center-style');
@@ -215,20 +200,118 @@
       });
     }, outStart);
   }
-
   function dcHideLoader() {
     console.log("✅ All content loaded – hiding loader...");
     document.body.classList.add("dc-loaded");
   }
-
   window.addEventListener("load", function () {
     console.log("⚡ HANERI glossy loader starts");
     animateLetters(); // still play the animation
     console.log("🕓 Waiting for everything to load...");
     setTimeout(dcHideLoader, 2000); // Loader hides after 2s
   });
-</script>
+</script> -->
 
+<script>
+    const letters = document.querySelectorAll('.dc-letter');
+    let stopAnimation = false;
+
+    function animateLetters() {
+      if (stopAnimation) return;
+
+      letters.forEach((l) => {
+        l.classList.remove('center-style');
+        l.style.opacity = 0;
+        l.style.transform = 'translateX(-120%)';
+        l.style.color = 'black';
+      });
+
+      letters.forEach((letter, index) => {
+        setTimeout(() => {
+          letter.style.opacity = 1;
+          letter.style.transform = 'translateX(0)';
+        }, index * 250);
+      });
+
+      const inTime = letters.length * 250 + 400;
+
+      setTimeout(() => {
+        letters.forEach((l) => l.classList.add('center-style'));
+      }, inTime);
+
+      const outStart = inTime + 800;
+      setTimeout(() => {
+        [...letters].reverse().forEach((letter, i) => {
+          setTimeout(() => {
+            letter.classList.remove('center-style');
+            letter.style.opacity = 0;
+            letter.style.transform = 'translateX(120%)';
+          }, i * 250);
+        });
+      }, outStart);
+
+      const finishTime = outStart + letters.length * 250 + 600;
+      setTimeout(() => {
+        animateLetters();
+      }, finishTime);
+    }
+
+    function dcHideLoader() {
+      stopAnimation = true;
+      document.body.classList.add("dc-loaded");
+      console.log("✅ All content (HTML + API) loaded – hiding loader...");
+    }
+
+    // Global tracking of fetch and XHR requests
+    let pendingFetches = 0;
+
+    // Track fetch()
+    const originalFetch = window.fetch;
+    window.fetch = function (...args) {
+      pendingFetches++;
+      return originalFetch(...args).finally(() => {
+        pendingFetches--;
+        checkIfReadyToHideLoader();
+      });
+    };
+
+    // Track XMLHttpRequest (e.g., jQuery or other libs)
+    (function (open) {
+      XMLHttpRequest.prototype.open = function (...args) {
+        this.addEventListener('loadend', () => {
+          pendingFetches--;
+          checkIfReadyToHideLoader();
+        });
+        pendingFetches++;
+        open.apply(this, args);
+      };
+    })(XMLHttpRequest.prototype.open);
+
+    // Check if all requests have finished
+    function checkIfReadyToHideLoader() {
+      if (pendingFetches === 0) {
+        setTimeout(() => {
+          if (pendingFetches === 0) {
+            dcHideLoader();
+          }
+        }, 500); // slight delay to ensure rendering
+      }
+    }
+
+    // Start animation when HTML & assets are loaded
+    window.addEventListener("load", function () {
+      console.log("⚡ Page loaded – starting HANERI animation...");
+      animateLetters();
+
+      // Optional fallback: hide loader after X sec in worst case
+      setTimeout(() => {
+        if (!document.body.classList.contains('dc-loaded')) {
+          console.warn("⏱️ Force hiding loader after timeout...");
+          dcHideLoader();
+        }
+      }, 15000); // failsafe after 15s
+    });
+</script>
 
 </body>
 
