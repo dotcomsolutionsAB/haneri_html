@@ -2719,6 +2719,7 @@ footer .social-icon {
     }    
     .dc-letter {
         font-size: 64px;
+        line-height: 2;
         font-weight: 600;
         color: black;
         opacity: 0;
