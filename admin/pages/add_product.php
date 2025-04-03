@@ -25,12 +25,12 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-2.5">
-                            <a class="btn btn-sm btn-light" href="#">
-                                Public Profile
+                            <a class="btn btn-sm btn-light" href="pages/show_products.php">
+                                Products
                             </a>
-                            <a class="btn btn-sm btn-primary" href="#">
+                            <!-- <a class="btn btn-sm btn-primary" href="#">
                                 Get Started
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>

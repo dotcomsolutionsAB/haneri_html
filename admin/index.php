@@ -12,7 +12,6 @@
 <script>
     $(function () {
         const a_token = localStorage.getItem("auth_token");
-
         if (!a_token) {
             console.error("No auth_token found in localStorage");
             return;
@@ -296,7 +295,7 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="lg:col-span-2">
+                            <div class="lg:col-span-2">
                                 <style>
                                     .entry-callout-bg {
                                         background-image: url('assets/media/images/2600x1600/2.png');
@@ -352,7 +351,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <!-- end: grid -->
 
