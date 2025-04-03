@@ -1,4 +1,3 @@
-<?php include("configs/config.php"); ?>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
     <div class="featured-products-carousel owl-carousel owl-theme" id="featured-carousel"></div>
@@ -7,7 +6,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
-        const apiUrl = "<?php echo BASE_URL; ?>/products/get_products";
+        const apiUrl = "{{base_url}}/products/get_products";
 
         fetch(apiUrl, {
             method: "POST",
@@ -15,8 +14,7 @@
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
             },
-            body: JSON.stringify({ search_product: "Fengshui" }) // only fetch product with ID = 14
-            // body: JSON.stringify({ id: 14 }) // only fetch product with ID = 14
+            body: JSON.stringify({ search_product: "Fengshui" })
         })
         .then(response => response.json())
         .then(res => {
@@ -25,10 +23,11 @@
                 const carousel = document.getElementById("featured-carousel");
 
                 product.variants.forEach(variant => {
+                    const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png"; // e.g. Espresso_Walnut.png
                     const card = `
                         <div class="card">
                             <div class="card_image">
-                                <img src="images/${variant.variant_value.replace(/\s+/g, '_')}.png" alt="${variant.variant_value}" class="img-fluid">
+                                <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid">
                             </div>
                             <h4 class="heading2">${product.brand.name} ${product.name} <span>${product.category.name}</span></h4>
                             <p class="product-price">MRP ₹${variant.selling_price}</p>
@@ -38,7 +37,7 @@
                     carousel.innerHTML += card;
                 });
 
-                // Init Owl Carousel
+                // Initialize Owl Carousel after adding products
                 $('.featured-products-carousel').owlCarousel({
                     loop: false,
                     margin: 20,
