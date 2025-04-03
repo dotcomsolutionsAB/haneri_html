@@ -8,41 +8,7 @@
     </div>
 </section>
 
-<style>
-    .featured-products-carousel .card {
-        padding: 15px;
-        border: 1px solid #eee;
-        border-radius: 10px;
-        background-color: #fff;
-        text-align: center;
-        margin: 10px;
-    }
 
-    .featured-products-carousel .card img {
-        max-height: 200px;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
-
-    .featured-products-carousel .owl-nav {
-        position: absolute;
-        top: -40px;
-        right: 0;
-    }
-
-    .featured-products-carousel .owl-nav span {
-        font-size: 30px;
-        color: #333;
-        cursor: pointer;
-        margin: 0 5px;
-    }
-
-    @media (max-width: 768px) {
-        .featured-products-carousel .card img {
-            max-height: 150px;
-        }
-    }
-</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -73,7 +39,7 @@
                     let imageUrl = "images/" + imageFileName;
 
                     const card = document.createElement("div");
-                    card.className = "card item"; // 'item' class is important for Owl Carousel
+                    card.className = "card"; // 'item' class is important for Owl Carousel
 
                     card.innerHTML = `
                         <div class="card_image">
