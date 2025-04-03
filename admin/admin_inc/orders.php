@@ -142,7 +142,7 @@
     <script>
         $(document).ready(function () {
             const token = localStorage.getItem('auth_token');
-            let itemsPerPage = 10;
+            let itemsPerPage = 5;
             let currentPage = 1;
             let totalItems = 0;
 
