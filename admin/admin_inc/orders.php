@@ -188,11 +188,11 @@
                             <td><span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span></td>
                             <td>
                                 <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
-                                <span class="badge text-danger">${order.user?.role || "N/A"}</span>
+                                <span class="badge text-warning">${order.user?.role || "N/A"}</span>
                             </td>
                             <td>
                                 <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
-                                <span class="badge text-warning">${order.payment_status}</span>
+                                <span class="badge text-danger">${order.payment_status}</span>
                             </td>                            
                             <td class="w-[60px]">${generateActionButtons(order)}</td>
                         </tr>
