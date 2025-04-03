@@ -164,11 +164,19 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
-  <!-- Loader Script -->
-  <script>
-  window.addEventListener("load", function () {
-    console.log("✅ Page fully loaded – Loader will now hide.");
+<!-- Loader JS -->
+<script>
+  // This runs after EVERYTHING — images, API data, etc.
+  function hideLoader() {
+    console.log("✅ All content loaded – hiding loader...");
     document.body.classList.add("loaded");
+  }
+
+  // If you fetch API data manually, call hideLoader() after the last .then()
+  // OR fallback after some seconds (for example: 2 seconds)
+  window.addEventListener("load", function () {
+    console.log("🕓 Waiting for API or extra content...");
+    setTimeout(hideLoader, 2000); // adjust time based on your API delay
   });
 </script>
 
