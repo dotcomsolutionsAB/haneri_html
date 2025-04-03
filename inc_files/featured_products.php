@@ -1,45 +1,52 @@
 <?php include("configs/config.php"); ?>
+
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
     <div class="featured-products-carousel owl-carousel owl-theme">
-        <!-- Product 1 -->
-        <div class="card">
-            <div class="card_image">
-                <img src="images/Moonlit_White.png" alt="Product 1" class="img-fluid">
-            </div>
-            <h4 class="heading2">Haneri Fengshui <span>Ceiling Fan</span></h4>
-            <p class="product-price">MRP ₹1049.000</p>
-            <a href="https://haneri.ongoingsites.xyz/shop.php" class="btn rounded-pill bgremoved  px-4">Know More</a>
-        </div>
-
-        
+        <!-- Product cards will be injected here -->
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-<!-- <script>
-    $(document).ready(function () {
-        $('.featured-products-carousel').owlCarousel({
-        loop: false,
-        margin: 20,
-        nav: true,
-        dots: false,
-        items: 4,
-        slideBy: 2,
-        navText: [
-            '<span class="owl-prev-btn fetured-next">‹</span>',
-            '<span class="owl-next-btn fetured-next">›</span>'
-        ],
-        responsive: {
-            0: { items: 1, slideBy: 1 },
-            576: { items: 2, slideBy: 2 },
-            768: { items: 3, slideBy: 2 },
-            992: { items: 4, slideBy: 2 }
+<style>
+    .featured-products-carousel .card {
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        background-color: #fff;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .featured-products-carousel .card img {
+        max-height: 200px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .featured-products-carousel .owl-nav {
+        position: absolute;
+        top: -40px;
+        right: 0;
+    }
+
+    .featured-products-carousel .owl-nav span {
+        font-size: 30px;
+        color: #333;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+
+    @media (max-width: 768px) {
+        .featured-products-carousel .card img {
+            max-height: 150px;
         }
-        });
-    });
-</script> -->
+    }
+</style>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
@@ -62,16 +69,14 @@
 
                 if (!product || !product.variants || product.variants.length === 0) return;
 
-                // Clear current carousel content
                 carousel.innerHTML = "";
 
                 product.variants.forEach(variant => {
-                    // Try to match image based on variant_value (e.g., "Moonlit White" => "Moonlit_White.png")
                     let imageFileName = variant.variant_value.replace(/\s+/g, "_") + ".png";
                     let imageUrl = "images/" + imageFileName;
 
                     const card = document.createElement("div");
-                    card.className = "card";
+                    card.className = "card item"; // 'item' class is important for Owl Carousel
 
                     card.innerHTML = `
                         <div class="card_image">
@@ -85,14 +90,12 @@
                     carousel.appendChild(card);
                 });
 
-                // Re-initialize Owl Carousel after content is dynamically loaded
+                // Initialize Owl Carousel AFTER content is added
                 $('.featured-products-carousel').owlCarousel({
                     loop: false,
                     margin: 20,
                     nav: true,
                     dots: false,
-                    items: 4,
-                    slideBy: 2,
                     navText: [
                         '<span class="owl-prev-btn fetured-next">‹</span>',
                         '<span class="owl-next-btn fetured-next">›</span>'
