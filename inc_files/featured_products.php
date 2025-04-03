@@ -1,92 +1,4 @@
 <?php include("configs/config.php"); ?>
-<!-- <style>
-    .featured-products-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: flex-start;
-    }
-    .featured-products-grid .card {
-        width: calc(25% - 20px); /* 4 in a row with gap */
-        min-width: 220px;
-        box-sizing: border-box;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 992px) {
-        .featured-products-grid .card {
-            width: calc(33.33% - 20px);
-        }
-    }
-    @media (max-width: 768px) {
-        .featured-products-grid .card {
-            width: calc(50% - 20px);
-        }
-    }
-    @media (max-width: 480px) {
-        .featured-products-grid .card {
-            width: 100%;
-        }
-    }
-    .featured .card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 12px;
-
-        padding: 0px;
-        background-color: transparent;
-        height: 60px;
-    }
-    .featured .qty-selector {
-        display: flex;
-        align-items: center;
-        gap: 4px; /* spacing between buttons and input */
-        width: 50%;
-        height: 100%;
-        justify-content: center;
-    }
-    .featured .qty-btn {
-        width: 32px;
-        height: 32px;
-        background: transparent; /* transparent background */
-        border: 1px solid #000;
-        font-size: 18px;
-        font-weight: normal;
-        line-height: 1;
-        border-radius: 2px;
-        cursor: pointer;
-        text-align: center;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .featured .qty-input {
-        width: 32px;
-        height: 32px;
-        background: transparent;
-        border: none;
-        text-align: center;
-        font-size: 25px;
-        font-weight: 500;
-        pointer-events: none;
-    }
-    .featured .card-footer .add-to-cart-btn{
-        background-color: transparent;
-        font-size: 1.4rem;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-    .featured .add-to-cart{
-        width: 50%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-</style> -->
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
@@ -99,6 +11,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("auth_token");
+        // const tempId = localStorage.getItem("temp_id");
         const apiUrl = "<?php echo BASE_URL; ?>/products/get_products";
 
         fetch(apiUrl, {
@@ -133,13 +46,15 @@
                                 <button class="qty-btn plus">+</button>
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                                <a href="#" id="addcart" class="add-to-cart-btn" data-product-id="${product.id}" 
+                                   data-variant-id="${variant.id}">Add to Cart</a>
                             </div>
                         </div>
 
                     `;
                     container.appendChild(card);
                 });
+
                 // Quantity control
                 document.addEventListener('click', function (e) {
                     if (e.target.classList.contains('plus')) {
@@ -150,6 +65,56 @@
                         if (parseInt(input.value) > 1) {
                             input.value = parseInt(input.value) - 1;
                         }
+                    }
+
+                    // Add to Cart handler using id="addcart"
+                    if (e.target.id === 'addcart') {
+                        e.preventDefault();
+
+                        const productId = e.target.dataset.productId;
+                        const variantId = e.target.dataset.variantId;
+                        const quantity = e.target.closest(".card-foot").querySelector(".qty-input").value;
+
+                        let cartPayload = {
+                            product_id: parseInt(productId),
+                            quantity: parseInt(quantity)
+                        };
+                        if (variantId) {
+                            cartPayload.variant_id = parseInt(variantId);
+                        }
+
+                        const authToken = localStorage.getItem("auth_token");
+                        const existingTempId = localStorage.getItem("temp_id");
+
+                        const headers = {
+                            "Content-Type": "application/json"
+                        };
+
+                        if (authToken) {
+                            headers["Authorization"] = `Bearer ${authToken}`;
+                        } else if (existingTempId) {
+                            cartPayload.cart_id = existingTempId;
+                        }
+
+                        fetch("<?php echo BASE_URL; ?>/cart/add", {
+                            method: "POST",
+                            headers,
+                            body: JSON.stringify(cartPayload)
+                        })
+                        .then(response => response.json())
+                        .then(cartRes => {
+                            if (cartRes.success) {
+                                if (!authToken && cartRes.cart_id && !existingTempId) {
+                                    localStorage.setItem("temp_id", cartRes.cart_id);
+                                }
+                                alert("Product added to cart successfully!");
+                            } else {
+                                alert("Failed to add product to cart.");
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Cart Add Error:", err);
+                        });
                     }
                 });
             } else {
