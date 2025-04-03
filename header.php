@@ -44,7 +44,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- 🌀 Unique Loader CSS and HTML -->
 <style>
   #dc-loader-wrapper {
     position: fixed;
@@ -52,54 +51,52 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #111;
-    color: #fff;
+    background: #ffffff;
     z-index: 999999;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    font-family: Arial, sans-serif;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    overflow: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
   }
 
-  #dc-loader-text {
-    font-size: 24px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-  }
-
-  .dc-dots {
+  .dc-haneri-container {
     display: flex;
-    gap: 8px;
+    gap: 12px;
   }
 
-  .dc-dot {
-    width: 12px;
-    height: 12px;
-    background: #00d1b2;
-    border-radius: 50%;
-    animation: dc-bounce 1.2s infinite ease-in-out;
+  .dc-letter {
+    font-size: 64px;
+    font-weight: 700;
+    color: black;
+    opacity: 0;
+    transform: translateX(-120%);
+    transition:
+      transform 0.8s ease-in-out,
+      opacity 0.8s ease-in-out,
+      color 0.4s ease-in-out,
+      background 0.4s ease-in-out;
   }
 
-  .dc-dot:nth-child(2) {
-    animation-delay: 0.2s;
+  /* Glossy text effect using gradient */
+  .dc-letter.center-style {
+    background: linear-gradient(135deg, #fff4c2, #f1c40f 40%, #fff4c2 60%, #f1c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: dc-glossy-move 2s infinite ease-in-out;
   }
 
-  .dc-dot:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes dc-bounce {
-    0%, 80%, 100% {
-      transform: scale(0);
+  @keyframes dc-glossy-move {
+    0% {
+      background-position: 0% 50%;
     }
-    40% {
-      transform: scale(1);
+    100% {
+      background-position: 100% 50%;
     }
   }
 
-  /* Hide loader and show content when ready */
   body.dc-loaded #dc-loader-wrapper {
     opacity: 0;
     visibility: hidden;
@@ -120,16 +117,19 @@
 <!-- Loader HTML -->
 <script>console.log("🔄 DC Loader is showing...");</script>
 <div id="dc-loader-wrapper">
-  <div id="dc-loader-text">Loading Magic...</div>
-  <div class="dc-dots">
-    <div class="dc-dot"></div>
-    <div class="dc-dot"></div>
-    <div class="dc-dot"></div>
+  <div class="dc-haneri-container" id="dc-haneri">
+    <div class="dc-letter">H</div>
+    <div class="dc-letter">A</div>
+    <div class="dc-letter">N</div>
+    <div class="dc-letter">E</div>
+    <div class="dc-letter">R</div>
+    <div class="dc-letter">I</div>
   </div>
 </div>
 
 
-    <div class="page-wrapper" >
+    <!-- <div class="page-wrapper" id="dc-page-content"> -->
+    <div class="page-wrapper">
         <header class="header header-transparent">
             <div class="header-middle sticky-header">
                 <div class="container">

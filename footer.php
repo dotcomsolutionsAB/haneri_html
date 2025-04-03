@@ -164,18 +164,64 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
-<!-- Loader JS -->
 <script>
-  function dcHideLoader() {
-    console.log("✅ All content loaded – hiding loader...");
-    document.body.classList.add("dc-loaded");
+  const letters = document.querySelectorAll('.dc-letter');
+  let loopCount = 0;
+  const maxLoops = 2;
+
+  function animateLetters() {
+    // Reset
+    letters.forEach((l) => {
+      l.classList.remove('center-style');
+      l.style.opacity = 0;
+      l.style.transform = 'translateX(-120%)';
+      l.style.color = 'black';
+    });
+
+    // Slide in one by one
+    letters.forEach((letter, index) => {
+      setTimeout(() => {
+        letter.style.opacity = 1;
+        letter.style.transform = 'translateX(0)';
+        letter.style.color = 'black';
+      }, index * 250);
+    });
+
+    // When all letters are in center, apply yellow glossy style
+    const inTime = letters.length * 250 + 400;
+    setTimeout(() => {
+      letters.forEach((l) => l.classList.add('center-style'));
+    }, inTime);
+
+    // Slide out to right in reverse
+    const outStart = inTime + 800;
+    setTimeout(() => {
+      [...letters].reverse().forEach((letter, i) => {
+        setTimeout(() => {
+          letter.classList.remove('center-style');
+          letter.style.opacity = 0;
+          letter.style.transform = 'translateX(120%)';
+          letter.style.color = 'black';
+        }, i * 250);
+      });
+    }, outStart);
+
+    // Repeat or finish
+    const finishTime = outStart + letters.length * 250 + 600;
+    setTimeout(() => {
+      loopCount++;
+      if (loopCount >= maxLoops) {
+        document.body.classList.add("dc-loaded");
+        console.log("✅ Glossy HANERI loader finished");
+      } else {
+        animateLetters(); // repeat loop
+      }
+    }, finishTime);
   }
 
-  // Wait for the full page (HTML + Images + any delay)
   window.addEventListener("load", function () {
-    console.log("🕓 Waiting for everything to load...");
-    // If you know your API finishes in 2s, delay accordingly
-    setTimeout(dcHideLoader, 2000); // Adjust delay if needed
+    console.log("⚡ HANERI glossy loader starts");
+    animateLetters();
   });
 </script>
 
