@@ -45,6 +45,7 @@
         width: 50%;
         background: antiquewhite;
         height: 100%;
+        justify-content: center;
     }
     .featured .qty-btn {
         width: 32px;
