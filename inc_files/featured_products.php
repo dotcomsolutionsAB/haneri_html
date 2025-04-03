@@ -37,12 +37,16 @@
 
     padding: 0px;
     background-color: transparent;
+    height: 60px;
 }
 
 .featured .qty-selector {
     display: flex;
     align-items: center;
-    gap: 8px; /* spacing between buttons and input */
+    gap: 4px; /* spacing between buttons and input */
+    width: 50%;
+    background: antiquewhite;
+    height: 100%;
 }
 
 .featured .qty-btn {
@@ -74,7 +78,20 @@
 }
 .featured .card-footer .add-to-cart-btn{
     background-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
+.featured .add-to-cart{
+    width: 50%;
+    background: aqua;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 
 </style>
 <section class="featured">
@@ -123,7 +140,7 @@
                                 <button class="qty-btn plus">+</button>
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" class="add-to-cart-btn px-4">Add to Cart</a>
+                                <a href="#" class="add-to-cart-btn">Add to Cart</a>
                             </div>
                         </div>
 
