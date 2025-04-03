@@ -29,20 +29,20 @@
             width: 100%;
         }
     }
-    .card-footer {
+    .featured .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
 }
 
-.qty-selector {
+.featured .qty-selector {
     display: flex;
     align-items: center;
     gap: 8px; /* spacing between buttons and input */
 }
 
-.qty-btn {
+.featured .qty-btn {
     width: 32px;
     height: 32px;
     background: transparent; /* transparent background */
@@ -59,7 +59,7 @@
     align-items: center;
 }
 
-.qty-input {
+.featured .qty-input {
     width: 32px;
     height: 32px;
     background: transparent;
