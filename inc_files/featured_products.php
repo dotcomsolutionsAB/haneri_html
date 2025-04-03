@@ -28,6 +28,13 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
 }
+.featured .featured-products-carousel .card {
+    border-radius: 20px;
+    padding: 20px;
+    text-align: justify;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
 .featured .card .bgremoved{
     border-top: 1px solid #315858;
     text-align: left;
