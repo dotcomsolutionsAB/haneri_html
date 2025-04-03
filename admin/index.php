@@ -295,7 +295,7 @@
                                 </div>
                             </div>
 
-                            <div class="lg:col-span-2">
+                            <!-- <div class="lg:col-span-2">
                                 <style>
                                     .entry-callout-bg {
                                         background-image: url('assets/media/images/2600x1600/2.png');
@@ -349,6 +349,41 @@
                                         <a class="btn btn-link" href="html/demo1/account/home/get-started.html">
                                             Get Started
                                         </a>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="lg:col-span-2">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            Earnings
+                                        </h3>
+                                        <div class="flex gap-5">
+                                            <label class="switch switch-sm">
+                                                <input class="order-2" name="check" type="checkbox" value="1" />
+                                                <span class="switch-label order-1">
+                                                    Referrals only
+                                                </span>
+                                            </label>
+                                            <select class="select select-sm w-28" name="select">
+                                                <option value="1">
+                                                    1 month
+                                                </option>
+                                                <option value="2">
+                                                    3 month
+                                                </option>
+                                                <option value="3">
+                                                    6 month
+                                                </option>
+                                                <option selected="" value="4">
+                                                    12 month
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="card-body flex flex-col justify-end items-stretch grow px-3 py-1">
+                                        <div id="earning_chart">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
