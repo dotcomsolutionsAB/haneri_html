@@ -2606,7 +2606,7 @@ footer .social-icon {
                 width: 100%;
             }
         }
-        .featured .card-footer {
+        .featured .card-foot {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -2650,7 +2650,7 @@ footer .social-icon {
             font-weight: 500;
             pointer-events: none;
         }
-        .featured .card-footer .add-to-cart-btn{
+        .featured .card-foot .add-to-cart-btn{
             background-color: transparent;
             font-size: 1.4rem;
             font-weight: 700;
