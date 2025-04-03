@@ -2697,3 +2697,64 @@ footer .social-icon {
         height: 650px;
     }
     
+
+
+    /* Loader CSS */
+    #dc-loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Barlow Condensed', sans-serif !important;
+        overflow: hidden;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+    }    
+    .dc-haneri-container {
+        display: flex;
+        gap: 12px;
+    }    
+    .dc-letter {
+        font-size: 64px;
+        font-weight: 700;
+        color: black;
+        opacity: 0;
+        transform: translateX(-120%);
+        transition:
+        transform 0.8s ease-in-out,
+        opacity 0.8s ease-in-out,
+        color 0.4s ease-in-out,
+        background 0.4s ease-in-out;
+    }   
+    /* Glossy text effect using gradient */
+    .dc-letter.center-style {
+        background: linear-gradient(135deg, #b9b9b6, #085e5f 40%, #393937 60%, #36c3c4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        animation: dc-glossy-move 2s infinite ease-in-out;
+    }    
+    @keyframes dc-glossy-move {
+        0% {
+        background-position: 0% 50%;
+        }
+        100% {
+        background-position: 100% 50%;
+        }
+    }   
+    body.dc-loaded #dc-loader-wrapper {
+        opacity: 0;
+        visibility: hidden;
+    }        
+    body:not(.dc-loaded) #dc-page-content {
+        display: none;
+    }        
+    body.dc-loaded #dc-page-content {
+        display: block;
+    }
+    /* End Loader CSS */
