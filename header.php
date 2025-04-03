@@ -46,6 +46,77 @@
 </head>
 
 <body class="full-screen-slider">
+    <!-- Loader CSS -->
+<style>
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    color: #fff;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    font-family: 'Arial', sans-serif;
+  }
+
+  #loader-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: #00d1b2;
+    border-radius: 50%;
+    animation: bounce 1.2s infinite ease-in-out;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  body.loaded #loader-wrapper {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+
+<!-- Loader HTML -->
+<div id="loader-wrapper">
+  <div id="loader-text">Loading Magic...</div>
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
     <div class="page-wrapper">
         <header class="header header-transparent">
             <div class="header-middle sticky-header">
