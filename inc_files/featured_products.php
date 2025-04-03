@@ -103,10 +103,19 @@
                         })
                         .then(response => response.json())
                         .then(cartRes => {
-                            if (cartRes.success) {
-                                if (!authToken && cartRes.cart_id && !existingTempId) {
-                                    localStorage.setItem("temp_id", cartRes.cart_id);
+                            if (cartRes.data) {
+                                // Save temp_id if first time (you can use user_id or generate cart_id depending on your backend logic)
+                                const existingTempId = localStorage.getItem("temp_id");
+                                const authToken = localStorage.getItem("auth_token");
+                                if(existingTempId){
+                                    console.log("Temp ID is:", existingTempId);
+                                }else{
+                                    console.log("Auth token is:", authToken)
                                 }
+                                if (!authToken && !existingTempId && cartRes.data.user_id) {
+                                    localStorage.setItem("temp_id", cartRes.data.user_id);
+                                }
+
                                 alert("Product added to cart successfully!");
                             } else {
                                 alert("Failed to add product to cart.");
@@ -114,7 +123,9 @@
                         })
                         .catch(err => {
                             console.error("Cart Add Error:", err);
+                            alert("An error occurred while adding to cart.");
                         });
+
                     }
                 });
             } else {
