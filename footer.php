@@ -155,11 +155,6 @@
     </div>
 
     <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
-<script>
-  window.addEventListener("load", function () {
-    document.body.classList.add("loaded");
-  });
-</script>
 
     <!-- Plugins JS File -->
     <script src="assets/js/jquery.min.js"></script>
@@ -169,6 +164,12 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    document.body.classList.add("loaded");
+  });
+</script>
+
 </body>
 
 </html>

@@ -46,7 +46,7 @@
 </head>
 
 <body class="full-screen-slider">
-    <!-- Loader CSS -->
+<!-- Stylish Loader -->
 <style>
   #loader-wrapper {
     position: fixed;
@@ -56,12 +56,12 @@
     height: 100vh;
     background: #111;
     color: #fff;
-    z-index: 9999;
+    z-index: 99999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
     font-family: 'Arial', sans-serif;
   }
 
@@ -116,6 +116,7 @@
     <div class="dot"></div>
   </div>
 </div>
+
 
     <div class="page-wrapper">
         <header class="header header-transparent">
