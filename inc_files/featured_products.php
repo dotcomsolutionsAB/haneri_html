@@ -1,4 +1,38 @@
 <?php include("configs/config.php"); ?>
+<style>
+    .featured-products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.featured-products-grid .card {
+    width: calc(25% - 20px); /* 4 in a row with gap */
+    min-width: 220px;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .featured-products-grid .card {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-products-grid .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-products-grid .card {
+        width: 100%;
+    }
+}
+
+</style>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
 
