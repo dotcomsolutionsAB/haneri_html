@@ -23,14 +23,14 @@
                             Overview of all users and brands.
                         </div> -->
                     </div>
-                    <div class="flex items-center gap-2.5">
+                    <!-- <div class="flex items-center gap-2.5">
                         <a class="btn btn-sm btn-light" href="#">
                             Import Users
                         </a>
-                        <a class="btn btn-sm btn-primary" href="#">
+                        <a class="btn btn-sm btn-primary" href="">
                             Add User
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- End of Container -->

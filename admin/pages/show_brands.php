@@ -27,7 +27,7 @@
                         <!-- <a class="btn btn-sm btn-light" href="#">
                             Import Brands
                         </a> -->
-                        <a class="btn btn-sm btn-primary" href="add_brand.php">
+                        <a class="btn btn-sm btn-primary" href="pages/add_brand.php">
                             Add Brands
                         </a>
                     </div>

@@ -26,7 +26,7 @@
                             <a class="btn btn-sm btn-light" href="#">
                                 Sync Products
                             </a>
-                            <a class="btn btn-sm btn-primary" href="add_product.php">
+                            <a class="btn btn-sm btn-primary" href="pages/add_product.php">
                                 Add Product
                             </a>
                         </div>
