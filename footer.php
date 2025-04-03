@@ -165,7 +165,7 @@
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
 <!-- Loader JS -->
-<script>
+<!-- <script>
   function dcHideLoader() {
     console.log("✅ All content loaded – hiding loader...");
     document.body.classList.add("dc-loaded");
@@ -177,7 +177,7 @@
     // If you know your API finishes in 2s, delay accordingly
     setTimeout(dcHideLoader, 2000); // Adjust delay if needed
   });
-</script>
+</script> -->
 
 </body>
 
