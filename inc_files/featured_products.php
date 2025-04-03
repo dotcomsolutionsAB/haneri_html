@@ -6,7 +6,6 @@
         gap: 20px;
         justify-content: flex-start;
     }
-
     .featured-products-grid .card {
         width: calc(25% - 20px); /* 4 in a row with gap */
         min-width: 220px;
@@ -29,70 +28,65 @@
             width: 100%;
         }
     }
-.featured .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
+    .featured .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
 
-    padding: 0px;
-    background-color: transparent;
-    height: 60px;
-}
-
-.featured .qty-selector {
-    display: flex;
-    align-items: center;
-    gap: 4px; /* spacing between buttons and input */
-    width: 50%;
-    background: antiquewhite;
-    height: 100%;
-}
-
-.featured .qty-btn {
-    width: 32px;
-    height: 32px;
-    background: transparent; /* transparent background */
-    border: 1px solid #000;
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 1;
-    border-radius: 2px;
-    cursor: pointer;
-    text-align: center;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.featured .qty-input {
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: none;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    pointer-events: none;
-}
-.featured .card-footer .add-to-cart-btn{
-    background-color: transparent;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.featured .add-to-cart{
-    width: 50%;
-    background: aqua;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-
+        padding: 0px;
+        background-color: transparent;
+        height: 60px;
+    }
+    .featured .qty-selector {
+        display: flex;
+        align-items: center;
+        gap: 4px; /* spacing between buttons and input */
+        width: 50%;
+        background: antiquewhite;
+        height: 100%;
+    }
+    .featured .qty-btn {
+        width: 32px;
+        height: 32px;
+        background: transparent; /* transparent background */
+        border: 1px solid #000;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1;
+        border-radius: 2px;
+        cursor: pointer;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .featured .qty-input {
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        border: none;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+        pointer-events: none;
+    }
+    .featured .card-footer .add-to-cart-btn{
+        background-color: transparent;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .featured .add-to-cart{
+        width: 50%;
+        background: aqua;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 </style>
 <section class="featured">
     <h2 class="heading_1">Featured Products</h2>
@@ -136,7 +130,7 @@
                         <div class="card-footer">
                             <div class="qty-selector">
                                 <button class="qty-btn minus">−</button>
-                                <input type="number" class="qty-input" value="1" min="1" readonly>
+                                <input type="text" class="qty-input" value="1" min="1" readonly>
                                 <button class="qty-btn plus">+</button>
                             </div>
                             <div class="add-to-cart">
