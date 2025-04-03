@@ -812,7 +812,7 @@
                             "currency": "INR",
                             "name": "HANERI ELECTRICALS LLP",
                             "description": `Order ID: ${orderId}`,
-                            "image": "https://haneri.ongoingsites.xyz/images/Haneri%20Logo.png",
+                            "image": "https://haneri.ongoingsites.xyz/images/Haneri_Favicon.jpg",
                             "order_id": order_id, // Razorpay Order ID
                             "handler": function(response) {
                                 // alert("Payment successful! Payment ID: " + response.razorpay_payment_id);

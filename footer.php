@@ -88,8 +88,14 @@
                                     <div class="contact-widget">
                                         <!-- <h4 class="widget-title">ADDRESS:</h4> -->
                                         <p><i class="fas fa-home"></i></p>
-                                        <p><span>Elza International, Integrated Industrial Estate, 
-                                            <br> Sector 8A, BHEL Township, Haridwar, Uttarakhand 249403</span></p>
+                                        <p>
+                                            <span>
+                                                HANERI ELECTRICALS LLP, A-48 
+                                            <br>
+                                                SECTOR 57 , NOIDA , UTTAR PRADESH
+                                                PINCODE - 201301
+                                            </span>
+                                        </p>
                                     </div>
                                     <div class="contact-widget">
                                         <p><i class="fas fa-phone"></i></p>
