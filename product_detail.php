@@ -835,7 +835,7 @@
                 }
             </script>
 
-            <style>
+            <!-- <style>
                 .product-box-spec {
                 background: #fff;
                 padding: 40px 20px;
@@ -880,7 +880,7 @@
                 }
 
 
-            </style>
+            </style> -->
 
             <!-- Related Products -->
             <!-- <div class="container-fluid">
