@@ -118,7 +118,7 @@
 
                                 const cardFoot = e.target.closest(".card-foot");
                                 cardFoot.innerHTML = `
-                                    <a href="cart.php" class="go-to-cart-btn heading2">Go to Cart</a>
+                                    <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
                                 `;
                             } else {
                                 alert("Failed to add product to cart.");
