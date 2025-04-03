@@ -29,12 +29,12 @@
             width: 100%;
         }
     }
-    .featured .card-footer {
+.featured .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
-    
+
     padding: 0px;
     background-color: transparent;
 }
@@ -72,7 +72,9 @@
     font-weight: 500;
     pointer-events: none;
 }
-
+.featured .card-footer .add-to-cart-btn{
+    background-color: transparent;
+}
 
 </style>
 <section class="featured">
@@ -120,7 +122,9 @@
                                 <input type="number" class="qty-input" value="1" min="1" readonly>
                                 <button class="qty-btn plus">+</button>
                             </div>
-                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                            <div class="add-to-cart">
+                                <a href="#" class="add-to-cart-btn px-4">Add to Cart</a>
+                            </div>
                         </div>
 
                     `;
