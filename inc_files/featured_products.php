@@ -43,7 +43,6 @@
         align-items: center;
         gap: 4px; /* spacing between buttons and input */
         width: 50%;
-        background: antiquewhite;
         height: 100%;
         justify-content: center;
     }
@@ -81,7 +80,6 @@
     }
     .featured .add-to-cart{
         width: 50%;
-        background: aqua;
         height: 100%;
         display: flex;
         justify-content: center;
