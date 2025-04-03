@@ -2697,8 +2697,6 @@ footer .social-icon {
         height: 650px;
     }
     
-
-
     /* Loader CSS */
     #dc-loader-wrapper {
         position: fixed;
@@ -2711,7 +2709,7 @@ footer .social-icon {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Barlow Condensed', sans-serif !important;
+        font-family: 'Barlow Condensed' !important;
         overflow: hidden;
         transition: opacity 0.6s ease, visibility 0.6s ease;
     }    
@@ -2721,7 +2719,7 @@ footer .social-icon {
     }    
     .dc-letter {
         font-size: 64px;
-        font-weight: 700;
+        font-weight: 500;
         color: black;
         opacity: 0;
         transform: translateX(-120%);
