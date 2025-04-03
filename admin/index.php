@@ -295,63 +295,6 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="lg:col-span-2">
-                                <style>
-                                    .entry-callout-bg {
-                                        background-image: url('assets/media/images/2600x1600/2.png');
-                                    }
-
-                                    .dark .entry-callout-bg {
-                                        background-image: url('assets/media/images/2600x1600/2-dark.png');
-                                    }
-                                </style>
-                                <div class="card h-full h-full">
-                                    <div class="card-body p-10 bg-[length:80%] rtl:[background-position:-70%_25%] [background-position:175%_25%] bg-no-repeat entry-callout-bg">
-                                        <div class="flex flex-col justify-center gap-4">
-                                            <div class="flex -space-x-2">
-                                                <div class="flex">
-                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                        src="assets/media/avatars/300-4.png" />
-                                                </div>
-                                                <div class="flex">
-                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                        src="assets/media/avatars/300-1.png" />
-                                                </div>
-                                                <div class="flex">
-                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                        src="assets/media/avatars/300-2.png" />
-                                                </div>
-                                                <div class="flex">
-                                                    <span
-                                                        class="hover:z-5 relative inline-flex items-center justify-center shrink-0 rounded-full ring-1 font-semibold leading-none text-3xs size-10 text-success-inverse text-xs ring-success-light bg-success">
-                                                        S
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h2 class="text-1.5xl font-semibold text-gray-900">
-                                                Connect Today & Join
-                                                <br />
-                                                the
-                                                <a class="link" href="#">
-                                                    KeenThemes Network
-                                                </a>
-                                            </h2>
-                                            <p class="text-sm font-normal text-gray-700 leading-5.5">
-                                                Enhance your projects with premium themes and
-                                                <br />
-                                                templates. Join the KeenThemes community today
-                                                <br />
-                                                for top-quality designs and resources.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer justify-center">
-                                        <a class="btn btn-link" href="html/demo1/account/home/get-started.html">
-                                            Get Started
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="lg:col-span-2">
                                 <div class="card h-full">
                                     <div class="card-header">
@@ -453,41 +396,63 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="lg:col-span-2">
-                                <div class="card h-full">
-                                    <div class="card-header">
-                                        <h3 class="card-title">
-                                            Earnings
-                                        </h3>
-                                        <div class="flex gap-5">
-                                            <label class="switch switch-sm">
-                                                <input class="order-2" name="check" type="checkbox" value="1" />
-                                                <span class="switch-label order-1">
-                                                    Referrals only
-                                                </span>
-                                            </label>
-                                            <select class="select select-sm w-28" name="select">
-                                                <option value="1">
-                                                    1 month
-                                                </option>
-                                                <option value="2">
-                                                    3 month
-                                                </option>
-                                                <option value="3">
-                                                    6 month
-                                                </option>
-                                                <option selected="" value="4">
-                                                    12 month
-                                                </option>
-                                            </select>
+                            <!-- <div class="lg:col-span-2">
+                                <style>
+                                    .entry-callout-bg {
+                                        background-image: url('assets/media/images/2600x1600/2.png');
+                                    }
+
+                                    .dark .entry-callout-bg {
+                                        background-image: url('assets/media/images/2600x1600/2-dark.png');
+                                    }
+                                </style>
+                                <div class="card h-full h-full">
+                                    <div class="card-body p-10 bg-[length:80%] rtl:[background-position:-70%_25%] [background-position:175%_25%] bg-no-repeat entry-callout-bg">
+                                        <div class="flex flex-col justify-center gap-4">
+                                            <div class="flex -space-x-2">
+                                                <div class="flex">
+                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
+                                                        src="assets/media/avatars/300-4.png" />
+                                                </div>
+                                                <div class="flex">
+                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
+                                                        src="assets/media/avatars/300-1.png" />
+                                                </div>
+                                                <div class="flex">
+                                                    <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
+                                                        src="assets/media/avatars/300-2.png" />
+                                                </div>
+                                                <div class="flex">
+                                                    <span
+                                                        class="hover:z-5 relative inline-flex items-center justify-center shrink-0 rounded-full ring-1 font-semibold leading-none text-3xs size-10 text-success-inverse text-xs ring-success-light bg-success">
+                                                        S
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <h2 class="text-1.5xl font-semibold text-gray-900">
+                                                Connect Today & Join
+                                                <br />
+                                                the
+                                                <a class="link" href="#">
+                                                    KeenThemes Network
+                                                </a>
+                                            </h2>
+                                            <p class="text-sm font-normal text-gray-700 leading-5.5">
+                                                Enhance your projects with premium themes and
+                                                <br />
+                                                templates. Join the KeenThemes community today
+                                                <br />
+                                                for top-quality designs and resources.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="card-body flex flex-col justify-end items-stretch grow px-3 py-1">
-                                        <div id="earning_chart">
-                                        </div>
+                                    <div class="card-footer justify-center">
+                                        <a class="btn btn-link" href="html/demo1/account/home/get-started.html">
+                                            Get Started
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- end: grid -->
 
