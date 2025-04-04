@@ -426,7 +426,7 @@ function checkCart() {
 
 // Get references to necessary elements
 // const quantityElem = document.getElementById('quantity');
-const tPriceElem = document.getElementById('selling-tprice'); // Assuming this is where price is displayed
+// const tPriceElem = document.getElementById('selling-tprice'); // Assuming this is where price is displayed
 const cartItemId = 123; // Set this dynamically based on your product/cart item
 const addCartBtn = $('#add-to-cart'); // Assuming this button exists
 const viewCartBtn = $('#view-cart'); // Assuming this button exists
