@@ -5,383 +5,161 @@
     $current_page = "Show Orders"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
-                <!-- Container -->
-                <div class="container-fixed" id="content_container">
+    <!-- End of Header -->
+    <!-- Content -->
+    <main class="grow content pt-5" id="content" role="content">
+        <!-- Container -->
+        <div class="container-fixed" id="content_container">
+        </div>
+        <!-- Container -->
+        <div class="container-fixed">
+            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                <div class="flex flex-col justify-center gap-2">
+                    <h1 class="text-xl font-medium leading-none text-gray-900" id="">
+                        Orders
+                    </h1>
+                    <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                        Overview of <span id="count-orders"> 00 </span>.
+                    </div> -->
                 </div>
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                        <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900" id="">
-                                Orders
-                            </h1>
-                            <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
-                                Overview of <span id="count-orders"> 00 </span>.
-                            </div> -->
-                        </div>
-                        <!-- <div class="flex items-center gap-2.5">
-                            <a class="btn btn-sm btn-light" href="#">
-                                Import Orders
-                            </a>
-                            <a class="btn btn-sm btn-primary" href="#">
-                                Add Order
-                            </a>
-                        </div> -->
-                    </div>
-                </div>
-                <!-- End of Container -->
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="grid gap-5 lg:gap-7.5">
-                        <div class="card card-grid min-w-full">
-                            <div class="card-header py-5 flex-wrap gap-2">
-                                <h3 class="card-title">
-                                    Overview of <span id="count-orders"> 00 </span>
-                                </h3>
-                                <div class="flex gap-6">
-                                    <!-- Order ID Search -->
-                                    <div class="relative">
-                                        <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
-                                        <input class="input input-sm pl-8" data-datatable-search-order placeholder="Search Order ID" type="text" />
-                                    </div>
-
-                                    <!-- Date Filter -->
-                                    <div>
-                                        <input class="input input-sm w-[180px]" type="date" data-datatable-date />
-                                    </div>
-
-                                    <!-- User Name Filter -->
-                                    <div class="relative">
-                                        <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
-                                        <input class="input input-sm pl-8" data-datatable-search-user placeholder="Search User Name" type="text" />
-                                    </div>
-
-                                    <label class="switch switch-sm">
-                                        <input class="order-2" name="check" type="checkbox" value="1" />
-                                        <span class="switch-label order-1">
-                                            Pending Orders
-                                        </span>
-                                    </label>
-                                </div>
+                <!-- <div class="flex items-center gap-2.5">
+                    <a class="btn btn-sm btn-light" href="#">
+                        Import Orders
+                    </a>
+                    <a class="btn btn-sm btn-primary" href="#">
+                        Add Order
+                    </a>
+                </div> -->
+            </div>
+        </div>
+        <!-- End of Container -->
+        <!-- Container -->
+        <div class="container-fixed">
+            <div class="grid gap-5 lg:gap-7.5">
+                <div class="card card-grid min-w-full">
+                    <div class="card-header py-5 flex-wrap gap-2">
+                        <h3 class="card-title">
+                            Overview of <span id="count-orders"> 00 </span>
+                        </h3>
+                        <div class="flex gap-6">
+                            <!-- Order ID Search -->
+                            <div class="relative">
+                                <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
+                                <input class="input input-sm pl-8" data-datatable-search-order placeholder="Search Order ID" type="text" />
                             </div>
-                            <div class="card-body">
-                                <div data-datatable="true" data-datatable-page-size="10">
-                                    <div class="scrollable-x-auto">
-                                        <table class="table table-border" id="orders-table" data-datatable-table="true">
-                                            <thead>
-                                                <tr>
-                                                    <th class="w-[60px] text-center">
-                                                        <input class="checkbox checkbox-sm" data-datatable-check="true" type="checkbox">
-                                                    </th>
-                                                    <th class="min-w-[165px]">
-                                                        <span class="sort asc">
-                                                            <span class="sort-label text-gray-700 font-normal">Order Date</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    <th class="text-gray-700 font-normal min-w-[100px]">Order Code</th>
-                                                    <th class="min-w-[165px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Invoice Number</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th><th class="min-w-[100px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Customer</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    <th class="min-w-[100px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Seller</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    
-                                                    <th class="min-w-[140px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Amount</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th><th class="min-w-[100px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Delivery Status</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    <th class="min-w-[165px]">
-                                                        <span class="sort">
-                                                            <span class="sort-label text-gray-700 font-normal">Payment Method</span>
-                                                            <span class="sort-icon">
-                                                            </span>
-                                                        </span>
-                                                    </th>
-                                                    <th class="w-[60px]">
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!--  -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div
-                                        class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
-                                        <div class="flex items-center gap-2 order-2 md:order-1">
-                                            Show
-                                            <select class="select select-sm w-16" data-datatable-size
-                                                name="perpage">
-                                            </select>
-                                            per page
-                                        </div>
-                                        <div class="flex items-center gap-4 order-1 md:order-2">
-                                            <span data-datatable-info="true">
-                                            </span>
-                                            <div class="pagination" data-datatable-pagination="true">
-                                            </div>
-                                        </div>
+
+                            <!-- Date Filter -->
+                            <div>
+                                <input class="input input-sm w-[180px]" type="date" data-datatable-date />
+                            </div>
+
+                            <!-- User Name Filter -->
+                            <div class="relative">
+                                <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3"></i>
+                                <input class="input input-sm pl-8" data-datatable-search-user placeholder="Search User Name" type="text" />
+                            </div>
+
+                            <label class="switch switch-sm">
+                                <input class="order-2" name="check" type="checkbox" value="1" />
+                                <span class="switch-label order-1">
+                                    Pending Orders
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div data-datatable="true" data-datatable-page-size="10">
+                            <div class="scrollable-x-auto">
+                                <table class="table table-border" id="orders-table" data-datatable-table="true">
+                                    <thead>
+                                        <tr>
+                                            <th class="w-[60px] text-center">
+                                                <input class="checkbox checkbox-sm" data-datatable-check="true" type="checkbox">
+                                            </th>
+                                            <th class="min-w-[165px]">
+                                                <span class="sort asc">
+                                                    <span class="sort-label text-gray-700 font-normal">Order Date</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th>
+                                            <th class="text-gray-700 font-normal min-w-[100px]">Order Code</th>
+                                            <th class="min-w-[165px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Invoice Number</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th><th class="min-w-[100px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Customer</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th>
+                                            <th class="min-w-[100px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Seller</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th>
+                                            
+                                            <th class="min-w-[140px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Amount</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th><th class="min-w-[100px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Delivery Status</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th>
+                                            <th class="min-w-[165px]">
+                                                <span class="sort">
+                                                    <span class="sort-label text-gray-700 font-normal">Payment Method</span>
+                                                    <span class="sort-icon">
+                                                    </span>
+                                                </span>
+                                            </th>
+                                            <th class="w-[60px]">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--  -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
+                                <div class="flex items-center gap-2 order-2 md:order-1">
+                                    Show
+                                    <select class="select select-sm w-16" data-datatable-size
+                                        name="perpage">
+                                    </select>
+                                    per page
+                                </div>
+                                <div class="flex items-center gap-4 order-1 md:order-2">
+                                    <span data-datatable-info="true">
+                                    </span>
+                                    <div class="pagination" data-datatable-pagination="true">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Faq Section code  -->
                     </div>
                 </div>
-                <!-- End of Container -->
-            </main>
-            <!-- End of Content -->
-   
-    <!-- <script>
-        $(document).ready(function () {
-            const token = localStorage.getItem('auth_token');
-            let itemsPerPage = 10;
-            let currentPage = 1;
-            let totalItems = 0;
+                <!-- Faq Section code  -->
+            </div>
+        </div>
+        <!-- End of Container -->
+    </main>
+    <!-- End of Content -->
 
-            let orderIdQuery = ""; // Store Order ID filter
-            let dateQuery = ""; // Store Date filter
-            let userNameQuery = ""; // Store User Name filter
-
-            const fetchOrders = () => {
-                const offset = (currentPage - 1) * itemsPerPage;
-
-                let requestData = { limit: itemsPerPage, offset: offset };
-                // Only include filters if they have values
-                if (orderIdQuery) requestData.order_id = orderIdQuery;
-                if (dateQuery) requestData.date = dateQuery;
-                if (userNameQuery) requestData.user_name = userNameQuery;
-
-                $.ajax({
-                    url: `<?php echo BASE_URL; ?>/fetch_all`,
-                    type: 'POST',
-                    headers: { Authorization: `Bearer ${token}` },
-                    data: { requestData },
-                    success: (response) => {
-                        if (response?.success && response.data) {
-                            totalItems = response.total_orders ?? response.data.length;
-                            console.log("Count:", response.data.length);
-                            populateTable(response.data);
-                            updatePagination();
-                        } else {
-                            console.error("Unexpected response format:", response);
-                        }
-                    },
-                    error: (error) => {
-                        console.error("Error fetching data:", error);
-                    }
-                });
-            };
-
-            // Debounce function to limit API calls while typing
-            const debounce = (func, delay) => {
-                let timer;
-                return function (...args) {
-                    clearTimeout(timer);
-                    timer = setTimeout(() => func.apply(this, args), delay);
-                };
-            };
-
-            // Search by Order ID (Triggers API call after entering a value)
-            $("[data-datatable-search-order]").on("input", debounce(function () {
-                let query = $(this).val().trim();
-                orderIdQuery = query.length ? query : ""; // Set filter only if value is present
-                fetchOrders();
-            }, 300));
-
-            // Search by User Name (Triggers API call after 3 letters)
-            $("[data-datatable-search-user]").on("input", debounce(function () {
-                let query = $(this).val().trim();
-                if (query.length >= 3) {
-                    userNameQuery = query;
-                    fetchOrders();
-                } else if (query.length === 0) {
-                    userNameQuery = "";
-                    fetchOrders();
-                }
-            }, 300));
-
-            // Filter by Date (Triggers API call when date is selected)
-            $("[data-datatable-date]").on("change", function () {
-                dateQuery = $(this).val();
-                fetchOrders();
-            });
-
-            // Initial Fetch (No Filters Applied)
-            // fetchOrders();
-
-            const populateTable = (data) => {
-                const tbody = $("#orders-table tbody");
-                tbody.empty();
-
-                data.forEach((order) => {
-                    tbody.append(`
-                        <tr>
-                            <td class="text-center">
-                                <input class="checkbox checkbox-sm" data-datatable-row-check="true" type="checkbox" value="${order.id}">
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-2.5">
-                                    <div class="flex flex-col gap-0.5">
-                                        <span class="text-xs text-gray-700 font-normal">${new Date(order.created_at).toLocaleString()}</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex flex-wrap gap-2.5 mb-2">
-                                    <span class="badge badge-sm badge-light badge-outline">${order.id}</span>   
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-1.5 pb-2">
-                                    <span class="text-xs text-gray-700 font-normal">${order.razorpay_order_id || "N/A"}</span>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-1.5 pb-2">
-                                    <span class="text-xs text-gray-700 font-normal">${order.user?.name || "N/A"}</span>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex items-center gap-1.5 pb-2">
-                                    <span class="text-xs text-gray-700 font-normal">${order.user?.role || "N/A"}</span>
-                                </div>
-                            </td>
-                            <td>
-                                <span class="text-xs text-gray-700 font-normal">₹${order.total_amount}</span>  
-                                <span class="badge text-danger">Unpaid</span>
-                            </td>
-                            <td><span class="badge badge-primary badge-outline ${order.status === 'pending' ? 'badge-warning' : 'badge-success'}">${order.status}</span></td>
-                            <td class="text-gray-800 font-normal">
-                                <div class="flex items-center gap-1.5 pb-2">
-                                    <span class="text-xs text-gray-700 font-normal">${order.payment_status}</span>
-                                </div>                                                        
-                            </td>
-                            <td class="w-[60px]">${generateActionButtons(order)}</td>
-                        </tr>
-                    `);
-                });
-            };
-
-            const updatePagination = () => {
-                const totalPages = Math.ceil(totalItems / itemsPerPage);
-                const pagination = $(".pagination");
-                pagination.empty();
-
-                if (currentPage > 1) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage - 1}">Previous</button>`);
-                }
-
-                for (let page = 1; page <= totalPages; page++) {
-                    const isActive = page === currentPage ? "active" : "";
-                    pagination.append(`<button class="btn btn-sm ${isActive}" data-page="${page}">${page}</button>`);
-                }
-
-                if (currentPage < totalPages) {
-                    pagination.append(`<button class="btn btn-sm" data-page="${currentPage + 1}">Next</button>`);
-                }
-                $("#count-orders").text(`COUNT : ${totalItems} Orders`);
-            };
-
-            $(".pagination").on("click", "button", function () {
-                currentPage = parseInt($(this).data("page"));
-                fetchOrders();
-            });
-
-            $("[data-datatable-size]").on("change", function () {
-                itemsPerPage = parseInt($(this).val());
-                currentPage = 1;
-                fetchOrders();
-            });
-
-            const perPageSelect = $("[data-datatable-size]");
-            [5, 10, 25, 50, 100].forEach((size) => {
-                perPageSelect.append(`<option value="${size}">${size}</option>`);
-            });
-            perPageSelect.val(itemsPerPage);
-
-            fetchOrders();
-        });
-        const generateActionButtons = (order) => {
-            return `
-                <div class="menu" data-menu="true">
-                    <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
-                        <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
-                            <i class="ki-filled ki-dots-vertical">
-                            </i>
-                        </button>
-                        <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
-                            <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
-                                    <span class="menu-icon">
-                                        <i class="ki-filled ki-search-list">
-                                        </i>
-                                    </span>
-                                    <span class="menu-title">
-                                        View
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="menu-separator">
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
-                                    <span class="menu-icon">
-                                        <i class="ki-filled ki-pencil">
-                                        </i>
-                                    </span>
-                                    <span class="menu-title">
-                                        Edit
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="menu-separator">
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="orders.php?slug=${order.id}">
-                                    <span class="menu-icon">
-                                        <i class="ki-filled ki-trash">
-                                        </i>
-                                    </span>
-                                    <span class="menu-title">
-                                        Remove
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        };
-    </script> -->
     <script>
         $(document).ready(function () {
             const token = localStorage.getItem('auth_token');
@@ -464,7 +242,6 @@
             const populateTable = (data) => {
                 const tbody = $("#orders-table tbody");
                 tbody.empty();
-
                 if (data.length === 0) {
                     tbody.append(`<tr><td colspan="10" class="text-center text-gray-500">No orders found.</td></tr>`);
                     return;
@@ -564,7 +341,7 @@
                         </button>
                         <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
                             <div class="menu-item">
-                                <a class="menu-link" href="orders.php?o_id=${order.id}">
+                                <a class="menu-link" href="view_order.php?o_id=${order.id}">
                                     <span class="menu-icon">
                                         <i class="ki-filled ki-search-list">
                                         </i>
@@ -590,14 +367,11 @@
                             <div class="menu-separator">
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="orders.php?o_id=${order.id}">
+                                <a class="menu-link" href="javascript:void(0);" onclick="removeOrder(${order.id})">
                                     <span class="menu-icon">
-                                        <i class="ki-filled ki-trash">
-                                        </i>
+                                        <i class="ki-filled ki-trash"></i>
                                     </span>
-                                    <span class="menu-title">
-                                        Remove
-                                    </span>
+                                    <span class="menu-title">Remove</span>
                                 </a>
                             </div>
                         </div>
@@ -605,6 +379,56 @@
                 </div>
             `;
         };
+
+        function removeOrder(orderId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Send DELETE request to the API
+                    fetch(`<?php echo BASE_URL; ?>/orders/${orderId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // Add other necessary headers, like authorization tokens if required
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            Swal.fire(
+                                'Deleted!',
+                                'Your order has been deleted.',
+                                'success'
+                            );
+                            // Optionally, remove the order from the UI or reload the page
+                            // document.getElementById(`order-${orderId}`).remove(); // Example to remove from DOM
+                        } else {
+                            // Show error message if API fails
+                            Swal.fire(
+                                'Error!',
+                                'There was a problem deleting the order.',
+                                'error'
+                            );
+                        }
+                    })
+                    .catch(error => {
+                        // Handle network or other errors
+                        Swal.fire(
+                            'Error!',
+                            'There was an error processing your request.',
+                            'error'
+                        );
+                    });
+                }
+            });
+        }
     </script>
 
     
