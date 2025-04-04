@@ -379,7 +379,7 @@
         // }
 
 // Check the current state of the cart
-function checkCart() {
+function checkCart(productId) {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
@@ -403,18 +403,31 @@ function checkCart() {
         data: JSON.stringify(requestData),
         success: function (data) {
             if (data.data && data.data.length > 0) {
+                // Find the cart item for the given productId
                 const cartItem = data.data.find(item => item.product_id == productId);
+                
                 if (cartItem) {
+                    // Product exists in the cart, hide "Add to Cart" and show "View Cart"
                     addCartBtn.hide();
                     viewCartBtn.show();
-                    quantityElem.val(cartItem.quantity);
-                    cartItemIds.show(); // Hide after data is loaded, if desired
+                    quantityElem.val(cartItem.quantity); // Set the quantity in the input field
+                    cartItemIds.show(); // Optionally show the cart item ID field
+                    
+                    // Update the price based on the cart's quantity
                     updatePrice();
+                    
+                    // Save the cart item ID to use for the update API
+                    const cartId = cartItem.id;
+                    console.log("Cart ID found: ", cartId);
+
+                    // Attach the cartId to a global or local variable
+                    window.cartId = cartId; // You can use `window.cartId` to pass the cart ID in the update API
                 } else {
+                    // Product is not in the cart, show "Add to Cart" button
                     addCartBtn.show();
                     viewCartBtn.hide();
-                    quantityElem.val(1);
-                    updatePrice();
+                    quantityElem.val(1); // Reset the quantity to 1
+                    updatePrice(); // Update the price based on the default quantity
                 }
             }
         },
@@ -441,24 +454,24 @@ function updateCartQuantity() {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // Ensure cartItemId is properly assigned
-    const cartItemId = $('#cartId').val(); // Retrieve cartItemId from hidden field or data attribute
-
-    console.log("Cart Item ID:", cartItemId); // Check if cartItemId is available
-    console.log("New Quantity:", newQuantity);
-    console.log("Token:", token);
-    console.log("Temp ID:", tempId);
-
-    // If cartItemId is missing, we should return early to avoid errors
-    if (!cartItemId) {
+    // Check if cartItemId (cartId) is available
+    if (!window.cartId) {
         console.error("Cart item ID is missing.");
         return;
     }
 
-    // Check if cart exists and update the cart if true
+    console.log("Cart ID:", window.cartId);
+    console.log("New Quantity:", newQuantity);
+    console.log("Token:", token);
+    console.log("Temp ID:", tempId);
+
+    // Use the cartId for updating the cart
+    const cartId = window.cartId;
+
+    // Check if the cart exists and update via the API
     if (token || tempId) {
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartId}`,  // Use the cartId here for update
             type: "POST",
             headers: { "Authorization": token ? `Bearer ${token}` : "" },
             contentType: "application/json",
