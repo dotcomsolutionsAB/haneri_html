@@ -249,17 +249,14 @@
                 // alert("Please select a variant before adding to cart.");
                 return;
             }
-
             let requestData = {
                 product_id: productId,
                 variant_id: variantId,
                 quantity: quantity
             };
-
             if (!token && tempId) {
                 requestData.cart_id = tempId;
             }
-
             const ajaxOptions = {
                 url: `<?php echo BASE_URL; ?>/cart/add`,
                 type: "POST",
@@ -270,7 +267,7 @@
 
                     if (data.success === true || data.message.includes("successfully")) {
                         // alert(data.message);
-                        cartItemIds.hide();
+                        cartItemIds.show();
                         addCartBtn.hide();
                         viewCartBtn.show();
                         checkCart();
@@ -1330,8 +1327,8 @@
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
 
-<style>
-    /* .product-desc-content .feature-box p {
+<!-- <style>
+    .product-desc-content .feature-box p {
         font-size: 14px;
         line-height: 27px;
         color: #4a505e;
@@ -1364,5 +1361,5 @@
         font-style: italic;
         font-weight: 800;
         font-size: 24px;
-    } */
-</style>
+    }
+</style> -->
