@@ -2908,4 +2908,38 @@ footer .social-icon {
         .small_thumb{
             background: radial-gradient(#fff, #cfcdce);
         }
+        .product-desc-content .feature-box p {
+            font-size: 14px;
+            line-height: 27px;
+            color: #4a505e;
+            letter-spacing: 0;
+            text-align: justify;
+        }
+        .product-single-details .old-price {
+            font-size: 2.9rem !important;
+        }
+        .product-single-details .new-price {
+            color: #585f66;
+            font-size: 2.9rem !important;
+            letter-spacing: -0.02em;
+            vertical-align: middle;
+            line-height: 0.8;
+            margin-left: 3px;
+            /* text-decoration: line-through; */
+        }
+        .special-price{
+            color:#f0340efa;
+            font-size: 3.3rem;
+            letter-spacing: -0.02em;
+            vertical-align: middle;
+            line-height: 0.8;
+            margin-left: 3px;
+            /* font-family: 'Barlow Condensed'; */
+            /* text-decoration: line-through; */
+        }
+        .s_price{
+            font-style: italic;
+            font-weight: 800;
+            font-size: 24px;
+        }
     /* End product deatail page CSS */

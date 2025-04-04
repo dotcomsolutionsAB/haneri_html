@@ -1,30 +1,5 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
-<style>
-    /* .s_price{
-        margin-top: 20px;
-    }
-    .txt{
-        background: orangered;
-        color: #fff;
-        padding: 5px 15PX;
-    }
-    .special_price{
-        background: #000;
-        padding: 5px 10PX;
-        color: #fff;
-    }
-    .product-item{
-        background: radial-gradient(#fff, #cfcdce);
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .small_thumb{
-        background: radial-gradient(#fff, #cfcdce);
-    } */
-</style>
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -441,7 +416,6 @@
         </h1> -->
     </div>
     <div class="page-wrapper">
-
         <main class="main">
 
             <div class="container product-single-container product-single-default product-full-width fst_product_section">
@@ -1357,7 +1331,7 @@
 </main><!-- End .main -->
 
 <style>
-    .product-desc-content .feature-box p {
+    /* .product-desc-content .feature-box p {
         font-size: 14px;
         line-height: 27px;
         color: #4a505e;
@@ -1390,5 +1364,5 @@
         font-style: italic;
         font-weight: 800;
         font-size: 24px;
-    }
+    } */
 </style>
