@@ -424,30 +424,37 @@ function checkCart() {
     });
 }
 
+// Get references to necessary elements
+const quantityElem = document.getElementById('quantity');
+const tPriceElem = document.getElementById('selling-tprice'); // Assuming this is where price is displayed
+const cartItemId = 123; // Set this dynamically based on your product/cart item
+const addCartBtn = $('#add-to-cart'); // Assuming this button exists
+const viewCartBtn = $('#view-cart'); // Assuming this button exists
+
 // Price update function based on quantity change
 window.updatePrice = function() {
-    const quantity = parseFloat(quantityElem.val()) || 1;
-    const basePrice = parseFloat(tPriceElem.attr("data-price")) || 0;
+    const quantity = parseFloat(quantityElem.value) || 1;  // Ensure this is the correct element
+    const basePrice = parseFloat(tPriceElem.getAttribute("data-price")) || 0; // Make sure this is the correct attribute
 
     if (!isNaN(basePrice)) {
         const updatedPrice = (quantity * basePrice).toFixed(2);
-        tPriceElem.text(`₹${updatedPrice}`);
+        tPriceElem.textContent = `₹${updatedPrice}`; // Assuming the price is updated in a text element
     }
 }
 
 // Update cart quantity function
 function updateCartQuantity() {
-    const newQuantity = quantityElem.val() || 1;
+    const newQuantity = quantityElem.value || 1;
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // Check if cartItemId exists
+    // If there's no cart item ID, stop the function
     if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
     }
 
-    // If cart exists, hit the API to update the cart
+    // Check if cart exists and update the cart if true
     if (token || tempId) {
         $.ajax({
             url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
@@ -458,6 +465,7 @@ function updateCartQuantity() {
             success: function (data) {
                 console.log("Cart quantity updated:", data);
                 updatePrice();  // Update price after API update
+                location.reload();  // Reload the page after quantity update
             },
             error: function (error) {
                 console.error("Error updating cart quantity:", error);
@@ -466,18 +474,19 @@ function updateCartQuantity() {
     } else {
         // If no cart exists, only update the price on the frontend (no API call)
         updatePrice();  // Update the price on the frontend
+        location.reload();  // Reload the page after price update
     }
 }
 
 // Add event listener for quantity input change after DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const quantityInput = document.getElementById('quantity');
-    if (quantityInput) {
-        quantityInput.addEventListener('change', function() {
+    if (quantityElem) {
+        quantityElem.addEventListener('change', function() {
             updateCartQuantity(); // Call the function to update quantity and price
         });
     }
 });
+
 
 
 
