@@ -381,6 +381,8 @@
         };
 
         function removeOrder(orderId) {
+            const token = localStorage.getItem('auth_token');
+
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -396,7 +398,7 @@
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json',
-                            // Add other necessary headers, like authorization tokens if required
+                            'Authorization': `Bearer ${token}` // Pass the token here
                         }
                     })
                     .then(response => {
