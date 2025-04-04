@@ -464,7 +464,7 @@ function updateCartQuantity() {
         });
     } else {
         // If no cart exists, only update the price on the frontend
-        updatePrice();
+        updatePrice();  // Update the price without hitting the API
     }
 }
 
@@ -477,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
         // Event Listeners
