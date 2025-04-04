@@ -424,31 +424,24 @@ function checkCart() {
     });
 }
 
-// Get references to necessary elements
-// const quantityElem = document.getElementById('quantity');
-// const tPriceElem = document.getElementById('selling-tprice'); // Assuming this is where price is displayed
-const cartItemId = 123; // Set this dynamically based on your product/cart item
-// const addCartBtn = $('#add-to-cart'); // Assuming this button exists
-// const viewCartBtn = $('#view-cart'); // Assuming this button exists
-
 // Price update function based on quantity change
 window.updatePrice = function() {
-    const quantity = parseFloat(quantityElem.value) || 1;  // Ensure this is the correct element
-    const basePrice = parseFloat(tPriceElem.getAttribute("data-price")) || 0; // Make sure this is the correct attribute
+    const quantity = parseFloat(quantityElem.val()) || 1;  // Ensure this is the correct element
+    const basePrice = parseFloat(tPriceElem.data("price")) || 0; // Using jQuery's .data() to fetch the data-price attribute
 
     if (!isNaN(basePrice)) {
         const updatedPrice = (quantity * basePrice).toFixed(2);
-        tPriceElem.textContent = `₹${updatedPrice}`; // Assuming the price is updated in a text element
+        tPriceElem.text(`₹${updatedPrice}`); // Assuming the price is updated in a text element
     }
 }
 
 // Update cart quantity function
 function updateCartQuantity() {
-    const newQuantity = quantityElem.value || 1;
+    const newQuantity = quantityElem.val() || 1;
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // If there's no cart item ID, stop the function
+    // Ensure cartItemId is properly assigned
     if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
@@ -480,8 +473,8 @@ function updateCartQuantity() {
 
 // Add event listener for quantity input change after DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    if (quantityElem) {
-        quantityElem.addEventListener('change', function() {
+    if (quantityElem.length) {
+        quantityElem.on('change', function() {
             updateCartQuantity(); // Call the function to update quantity and price
         });
     }
