@@ -40,7 +40,7 @@
         }
 
         function fetchOrderDetails(orderId) {
-            fetch("{{base_url}}/fetch_all", {
+            fetch("<?php echo BASE_URL; ?>/fetch_all", {
                 method: "POST",
                 headers: {
                 "Content-Type": "application/json",
