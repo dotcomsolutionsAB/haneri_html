@@ -378,7 +378,18 @@
         //     });
         // }
 
-// Check the current state of the cart
+// Price update function based on quantity change
+window.updatePrice = function() {
+    const quantity = parseFloat(quantityElem.val()) || 1;  // Get the quantity value
+    const basePrice = parseFloat(tPriceElem.data("price")) || 0; // Get base price from data-price attribute
+
+    if (!isNaN(basePrice)) {
+        const updatedPrice = (quantity * basePrice).toFixed(2);
+        tPriceElem.text(`₹${updatedPrice}`); // Update the price display
+    }
+}
+
+// Function to check if the product exists in the cart
 function checkCart(productId) {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
@@ -411,17 +422,12 @@ function checkCart(productId) {
                     addCartBtn.hide();
                     viewCartBtn.show();
                     quantityElem.val(cartItem.quantity); // Set the quantity in the input field
+                    cartItemIds.data('cart-id', cartItem.id); // Store the cart ID in the data attribute
                     cartItemIds.show(); // Optionally show the cart item ID field
                     
                     // Update the price based on the cart's quantity
                     updatePrice();
                     
-                    // Save the cart item ID to use for the update API
-                    const cartId = cartItem.id;
-                    console.log("Cart ID found: ", cartId);
-
-                    // Attach the cartId to a global or local variable
-                    window.cartId = cartId; // You can use `window.cartId` to pass the cart ID in the update API
                 } else {
                     // Product is not in the cart, show "Add to Cart" button
                     addCartBtn.show();
@@ -437,32 +443,21 @@ function checkCart(productId) {
     });
 }
 
-// Price update function based on quantity change
-window.updatePrice = function() {
-    const quantity = parseFloat(quantityElem.val()) || 1;  // Ensure this is the correct element
-    const basePrice = parseFloat(tPriceElem.data("price")) || 0; // Using jQuery's .data() to fetch the data-price attribute
-
-    if (!isNaN(basePrice)) {
-        const updatedPrice = (quantity * basePrice).toFixed(2);
-        tPriceElem.text(`₹${updatedPrice}`); // Assuming the price is updated in a text element
-    }
-}
-
-// Update cart quantity function
+// Function to update cart quantity using the cart ID
 function updateCartQuantity() {
     const newQuantity = quantityElem.val() || 1;
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // Ensure cartItemId is properly assigned
-    const cartId = cartItemIds.val();  // Make sure the cartId is being retrieved correctly from the correct element
+    // Retrieve cartId from data attribute
+    const cartId = cartItemIds.data('cart-id');  
 
     console.log("Cart ID:", cartId);  // Check if cartId is a proper value
     console.log("New Quantity:", newQuantity);
     console.log("Token:", token);
     console.log("Temp ID:", tempId);
 
-    // If cartId is missing, we should return early to avoid errors
+    // If cartId is missing, return early to avoid errors
     if (!cartId) {
         console.error("Cart item ID is missing.");
         return;
@@ -638,7 +633,8 @@ $(document).ready(function() {
                                     <div class="price-box">
                                         <span class="product-price primary_light" id="selling-tprice" data-price="0">₹0.00</span>
                                     </div>
-                                    <div class="product-single-qty" id="cartId">
+                                    <div class="product-single-qty" id="cartId" data-cart-id="">
+                                    <!-- <div class="product-single-qty" id="cartId"> -->
                                         <!-- <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()"> -->
                                         <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1">
 
