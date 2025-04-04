@@ -454,19 +454,19 @@ function updateCartQuantity() {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // Check if cartItemId (cartId) is available
-    if (!window.cartId) {
-        console.error("Cart item ID is missing.");
-        return;
-    }
+    // Ensure cartItemId is properly assigned
+    const cartId = cartItemIds.val();  // Make sure the cartId is being retrieved correctly from the correct element
 
-    console.log("Cart ID:", window.cartId);
+    console.log("Cart ID:", cartId);  // Check if cartId is a proper value
     console.log("New Quantity:", newQuantity);
     console.log("Token:", token);
     console.log("Temp ID:", tempId);
 
-    // Use the cartId for updating the cart
-    const cartId = window.cartId;
+    // If cartId is missing, we should return early to avoid errors
+    if (!cartId) {
+        console.error("Cart item ID is missing.");
+        return;
+    }
 
     // Check if the cart exists and update via the API
     if (token || tempId) {
