@@ -458,27 +458,23 @@ function updateCartQuantity() {
 
     let requestData = { quantity: newQuantity };
 
-    if (token) {
-        // If user is authenticated, send the update request to the API to update the cart in the database
-        $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-            type: "POST",
-            headers: { "Authorization": `Bearer ${token}` },
-            contentType: "application/json",
-            data: JSON.stringify(requestData),
-            success: function (data) {
-                console.log("Cart quantity updated:", data);
-                updatePrice(); // Update the price based on new quantity
-            },
-            error: function (error) {
-                console.error("Error updating cart quantity:", error);
-            }
-        });
-    } else if (tempId) {
-        // If no user is logged in, just update the price
-        updatePrice();
-    }
+    // Hit the update API to update the cart item quantity in the database
+    $.ajax({
+        url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+        type: "POST",
+        headers: token ? { "Authorization": `Bearer ${token}` } : {},
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
+        success: function (data) {
+            console.log("Cart quantity updated:", data);
+            updatePrice(); // Update the price based on the new quantity
+        },
+        error: function (error) {
+            console.error("Error updating cart quantity:", error);
+        }
+    });
 }
+
 
 
         // Event Listeners
