@@ -2615,6 +2615,7 @@ footer .social-icon {
             padding: 0px;
             background-color: transparent;
             height: 60px;
+            border-top: 1px solid;
         }
         .featured .qty-selector {
             display: flex;
