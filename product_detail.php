@@ -378,20 +378,9 @@
         //     });
         // }
 
-// Price update function based on quantity change
-window.updatePrice = function() {
-    const quantity = parseFloat(quantityElem.val()) || 1;  // Get the quantity value
-    const basePrice = parseFloat(tPriceElem.data("price")) || 0; // Get base price from data-price attribute
-
-    if (!isNaN(basePrice)) {
-        const updatedPrice = (quantity * basePrice).toFixed(2);
-        tPriceElem.text(`₹${updatedPrice}`); // Update the price display
-    }
-}
-
-// Function to check if the product exists in the cart
-function checkCart(productId) {
-    const token = localStorage.getItem("auth_token");
+// Check the current state of the cart
+function checkCart() {
+    const token  = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
     if (!token && !tempId) {
@@ -401,9 +390,9 @@ function checkCart(productId) {
 
     let requestData = {};
     if (token) {
-        requestData = {}; // Token-based request, no cart ID needed
+        requestData = {};
     } else if (tempId) {
-        requestData = { cart_id: tempId }; // Use tempId for guest cart
+        requestData = { cart_id: tempId };
     }
 
     $.ajax({
@@ -414,26 +403,19 @@ function checkCart(productId) {
         data: JSON.stringify(requestData),
         success: function (data) {
             if (data.data && data.data.length > 0) {
-                // Find the cart item for the given productId
                 const cartItem = data.data.find(item => item.product_id == productId);
-                
                 if (cartItem) {
-                    // Product exists in the cart, hide "Add to Cart" and show "View Cart"
+                    cartItemId = cartItem.id; // Get the cart ID
                     addCartBtn.hide();
                     viewCartBtn.show();
-                    quantityElem.val(cartItem.quantity); // Set the quantity in the input field
-                    cartItemIds.data('cart-id', cartItem.id); // Store the cart ID in the data attribute
-                    cartItemIds.show(); // Optionally show the cart item ID field
-                    
-                    // Update the price based on the cart's quantity
+                    quantityElem.val(cartItem.quantity);
+                    cartItemIds.show();
                     updatePrice();
-                    
                 } else {
-                    // Product is not in the cart, show "Add to Cart" button
                     addCartBtn.show();
                     viewCartBtn.hide();
-                    quantityElem.val(1); // Reset the quantity to 1
-                    updatePrice(); // Update the price based on the default quantity
+                    quantityElem.val(1);
+                    updatePrice();
                 }
             }
         },
@@ -443,61 +425,80 @@ function checkCart(productId) {
     });
 }
 
-// Function to update cart quantity using the cart ID
+// Price update function based on quantity change
+window.updatePrice = function() {
+    const quantity = parseFloat(quantityElem.val()) || 1;
+    // Pull the base price from #selling-tprice's data-price
+    const basePrice = parseFloat(tPriceElem.attr("data-price")) || 0;
+
+    if (!isNaN(basePrice)) {
+        const updatedPrice = (quantity * basePrice).toFixed(2);
+        // Update #selling-tprice text to reflect the total
+        tPriceElem.text(`₹${updatedPrice}`);
+    }
+}
+
+// Update cart quantity function
 function updateCartQuantity() {
-    const newQuantity = quantityElem.val() || 1;
-    const token = localStorage.getItem("auth_token");
-    const tempId = localStorage.getItem("temp_id");
+    const newQuantity = parseInt(quantityElem.val()) || 1;
 
-    // Retrieve cartId from data attribute
-    const cartId = cartItemIds.data('cart-id');  
-
-    console.log("Cart ID:", cartId);  // Check if cartId is a proper value
-    console.log("New Quantity:", newQuantity);
-    console.log("Token:", token);
-    console.log("Temp ID:", tempId);
-
-    // If cartId is missing, return early to avoid errors
-    if (!cartId) {
+    if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
     }
 
-    // Check if the cart exists and update via the API
-    if (token || tempId) {
+    const token = localStorage.getItem("auth_token");
+    const tempId = localStorage.getItem("temp_id");
+
+    let requestData = { quantity: newQuantity };
+
+    if (token) {
+        // If the user is authenticated, send the cart ID and new quantity
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/cart/update/${cartId}`,  // Use the cartId here for update
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
             type: "POST",
-            headers: { "Authorization": token ? `Bearer ${token}` : "" },
+            headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
-            data: JSON.stringify({ quantity: newQuantity }),
+            data: JSON.stringify(requestData),
             success: function (data) {
                 console.log("Cart quantity updated:", data);
-                updatePrice();  // Update price after API update
-                location.reload();  // Reload the page after quantity update
+                updatePrice();
+            },
+            error: function (error) {
+                console.error("Error updating cart quantity:", error);
+            }
+        });
+    } else if (tempId) {
+        // If the user is a guest (temp_id), send the temp_id along with the quantity
+        requestData.cart_id = tempId;
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(requestData),
+            success: function (data) {
+                console.log("Cart quantity updated:", data);
+                updatePrice();
             },
             error: function (error) {
                 console.error("Error updating cart quantity:", error);
             }
         });
     } else {
-        // If no cart exists, only update the price on the frontend (no API call)
-        updatePrice();  // Update the price on the frontend
-        location.reload();  // Reload the page after price update
+        // If neither auth_token nor temp_id is found, show a warning
+        console.warn("No auth_token or temp_id found. Cannot update cart.");
     }
 }
 
-// Add event listener for quantity input change after DOM is loaded
-$(document).ready(function() {
-    console.log("Document is ready, setting event listener");
+// Call the checkCart function when the page loads
+checkCart();
 
-    if (quantityElem.length) {
-        quantityElem.on('change', function() {
-            console.log("Quantity changed!");
-            updateCartQuantity(); // Call the function to update quantity and price
-        });
-    }
+// Update the cart quantity whenever the user changes the input
+$('#quantity').on('change', function() {
+    updateCartQuantity();
+    updatePrice();
 });
+
 
 
 
