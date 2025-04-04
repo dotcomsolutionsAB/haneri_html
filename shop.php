@@ -415,7 +415,6 @@
                     fetchProducts();
                 });
 
-
                 const populateTable = (data) => {
                     const tbody = $("#products-table");
                     tbody.empty();
@@ -468,7 +467,7 @@
                                 <div class="card featured" id="pro-table">
                                     <div class="card_image">
                                         <img src="${
-                                                product.variants[0]?.product_id === 14 ? 'images/Natura_Pine.png' :
+                                                product.variants[0]?.product_id === 14 ? 'images/Natural_Pine.png' :
                                                 product.category?.id === 1 ? 'images/f1.png' :
                                                 product.category?.id === 2 ? 'images/f2.png' :
                                                 product.category?.id === 3 ? 'images/f3.png' :                                                    
@@ -497,7 +496,6 @@
                     });
                 };
 
-
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
                     const pagination = $(".pagination");
@@ -521,13 +519,11 @@
                     currentPage = parseInt($(this).data("page"));
                     fetchProducts();
                 });
-
                 $("[data-datatable-size]").on("change", function () {
                     itemsPerPage = parseInt($(this).val());
                     currentPage = 1;
                     fetchProducts();
                 });
-
                 // Initialize dropdown for items per page
                 const perPageSelect = $("[data-datatable-size]");
                 [5, 10, 20, 40, 60, 100].forEach((size) => {

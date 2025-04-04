@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("configs/config.php"); ?>
 <style>
-    .s_price{
+    /* .s_price{
         margin-top: 20px;
     }
     .txt{
@@ -23,7 +23,7 @@
     }
     .small_thumb{
         background: radial-gradient(#fff, #cfcdce);
-    }
+    } */
 </style>
 <!-- Product Detail Page -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -65,7 +65,7 @@
             };
 
             const imageMap = {
-                13: ["Natura_Pine.png", "Natura_Pine2.png", "Natura_Pine3.png", "Natura_Pine4.png", "Natura_Pine5.png", videoUrl],
+                13: ["Natural_Pine.png", "Natural_Pine2.png", "Natural_Pine3.png", "Natural_Pine4.png", "Natural_Pine5.png", videoUrl],
                 14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
                 15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
                 16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
