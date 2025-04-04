@@ -378,7 +378,7 @@
         //     });
         // }
 
-        // Check the current state of the cart
+// Check the current state of the cart
 function checkCart() {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
@@ -468,10 +468,16 @@ function updateCartQuantity() {
     }
 }
 
-// Event listener for the quantity input change
-document.getElementById('quantity').addEventListener('change', function() {
-    updateCartQuantity(); // Call the function to update quantity and price
+// Add event listener for quantity input change after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const quantityInput = document.getElementById('quantity');
+    if (quantityInput) {
+        quantityInput.addEventListener('change', function() {
+            updateCartQuantity(); // Call the function to update quantity and price
+        });
+    }
 });
+
 
         // Event Listeners
         $(document).ready(function() {
@@ -604,7 +610,7 @@ document.getElementById('quantity').addEventListener('change', function() {
                                     </div>
                                     <div class="product-single-qty" id="cartId">
                                         <!-- <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()"> -->
-                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updateCartQuantity()">
+                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1">
 
                                     </div>
                                     <a href="#" id="add-to-cart-btn" class="btn btn-primary_light add-cart icon-shopping-cart mr-2" title="Add to Cart">
