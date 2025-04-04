@@ -441,12 +441,13 @@ function updateCartQuantity() {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
+    // Check if cartItemId exists
     if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
     }
 
-    // Check if the cart exists and update via API if true
+    // If cart exists, hit the API to update the cart
     if (token || tempId) {
         $.ajax({
             url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
@@ -463,8 +464,8 @@ function updateCartQuantity() {
             }
         });
     } else {
-        // If no cart exists, only update the price on the frontend
-        updatePrice();  // Update the price without hitting the API
+        // If no cart exists, only update the price on the frontend (no API call)
+        updatePrice();  // Update the price on the frontend
     }
 }
 
@@ -477,6 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
