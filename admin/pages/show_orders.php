@@ -343,16 +343,14 @@
                             <div class="menu-item">
                                 <a class="menu-link" href="view_order.php?o_id=${order.id}">
                                     <span class="menu-icon">
-                                        <i class="ki-filled ki-search-list">
-                                        </i>
+                                        <i class="ki-filled ki-search-list"></i>
                                     </span>
                                     <span class="menu-title">
                                         View
                                     </span>
                                 </a>
                             </div>
-                            <div class="menu-separator">
-                            </div>
+
                             <div class="menu-item">
                                 <a class="menu-link" href="orders.php?o_id=${order.id}">
                                     <span class="menu-icon">
@@ -364,8 +362,10 @@
                                     </span>
                                 </a>
                             </div>
+
                             <div class="menu-separator">
                             </div>
+
                             <div class="menu-item">
                                 <a class="menu-link" href="javascript:void(0);" onclick="removeOrder(${order.id})">
                                     <span class="menu-icon">
@@ -409,6 +409,10 @@
                                 'Your order has been deleted.',
                                 'success'
                             );
+                            fetchOrders();
+                            // Reload the page after a successful deletion
+                            // window.location.reload(); // This will reload the page
+
                             // Optionally, remove the order from the UI or reload the page
                             // document.getElementById(`order-${orderId}`).remove(); // Example to remove from DOM
                         } else {
