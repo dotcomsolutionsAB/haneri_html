@@ -441,11 +441,18 @@ function updateCartQuantity() {
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
-    // Ensure cartItemId is properly assigned
+    // Ensure cartItemId is properly assigned (Make sure cartItemId is available)
+    const cartItemId = $('#cartId').val(); // Assuming cartId is available as a hidden field
+
     if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
     }
+
+    console.log("Cart Item ID:", cartItemId);
+    console.log("New Quantity:", newQuantity);
+    console.log("Token:", token);
+    console.log("Temp ID:", tempId);
 
     // Check if cart exists and update the cart if true
     if (token || tempId) {
@@ -472,9 +479,13 @@ function updateCartQuantity() {
 }
 
 // Add event listener for quantity input change after DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
+    // Ensure the event is attached correctly
+    console.log("Document is ready, setting event listener");
+
     if (quantityElem.length) {
         quantityElem.on('change', function() {
+            console.log("Quantity changed!");
             updateCartQuantity(); // Call the function to update quantity and price
         });
     }
