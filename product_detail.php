@@ -445,7 +445,7 @@ window.updatePrice = function() {
 }
 
 // Update cart quantity function
-function updateCartQuantity() {
+window.updateCartQuantity = function() {
     const newQuantity = quantityElem.val() || 1;
 
     if (!cartItemId) {
