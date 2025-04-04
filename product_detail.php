@@ -378,7 +378,7 @@
         //     });
         // }
 
-        // Check the current state of the cart
+// Check the current state of the cart
 function checkCart() {
     const token  = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
@@ -405,14 +405,12 @@ function checkCart() {
             if (data.data && data.data.length > 0) {
                 const cartItem = data.data.find(item => item.product_id == productId);
                 if (cartItem) {
-                    // Cart item found, handle updating quantity and price
                     addCartBtn.hide();
                     viewCartBtn.show();
                     quantityElem.val(cartItem.quantity);
                     cartItemIds.show(); 
                     updatePrice(); // Update the price based on the quantity
                 } else {
-                    // No cart item found for this product
                     addCartBtn.show();
                     viewCartBtn.hide();
                     quantityElem.val(1);
@@ -420,7 +418,6 @@ function checkCart() {
                     updatePrice(); // Update the price with default value
                 }
             } else {
-                // No cart data found
                 addCartBtn.show();
                 viewCartBtn.hide();
                 quantityElem.val(1);
@@ -456,19 +453,19 @@ function updateCartQuantity() {
         return;
     }
 
-    // Check if cart data exists, if so, update it via API, else just update price
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
-    let requestData = {};
+
+    let requestData = { quantity: newQuantity };
 
     if (token) {
-        // If user is authenticated, send the update request to the API
+        // If user is authenticated, send the update request to the API to update the cart in the database
         $.ajax({
             url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
             type: "POST",
             headers: { "Authorization": `Bearer ${token}` },
             contentType: "application/json",
-            data: JSON.stringify({ quantity: newQuantity }),
+            data: JSON.stringify(requestData),
             success: function (data) {
                 console.log("Cart quantity updated:", data);
                 updatePrice(); // Update the price based on new quantity
@@ -482,6 +479,7 @@ function updateCartQuantity() {
         updatePrice();
     }
 }
+
 
         // Event Listeners
         $(document).ready(function() {
