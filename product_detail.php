@@ -428,8 +428,8 @@ function checkCart() {
 // const quantityElem = document.getElementById('quantity');
 // const tPriceElem = document.getElementById('selling-tprice'); // Assuming this is where price is displayed
 const cartItemId = 123; // Set this dynamically based on your product/cart item
-const addCartBtn = $('#add-to-cart'); // Assuming this button exists
-const viewCartBtn = $('#view-cart'); // Assuming this button exists
+// const addCartBtn = $('#add-to-cart'); // Assuming this button exists
+// const viewCartBtn = $('#view-cart'); // Assuming this button exists
 
 // Price update function based on quantity change
 window.updatePrice = function() {
