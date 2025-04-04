@@ -82,7 +82,6 @@
                             tax: "₹0.00",
                             total: "₹1,568.00"
                         };
-
                         populateOrderDetails(sampleData);
                     }
                 })
@@ -108,9 +107,9 @@
                     <div class="flex gap-4">
                     <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=Sample-QR" class="w-32 h-32 border rounded" alt="QR" />
                     <div class="text-sm space-y-1">
-                        <p class="text-lg font-semibold">${order.user.name || "N/A"}</p>
-                        <p>${order.user.email || "N/A"}</p>
-                        <p>${order.user.mobile || "N/A"}</p>
+                        <p class="text-lg font-semibold">${order.user ? order.user.name : "N/A"}</p>
+                        <p>${order.user ? order.user.email : "N/A"}</p>
+                        <p>${order.user ? order.user.mobile : "N/A"}</p>
                         <p class="pt-2">${order.shipping_address || "N/A"}</p>
                     </div>
                     </div>
