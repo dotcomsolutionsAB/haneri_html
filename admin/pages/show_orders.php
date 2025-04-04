@@ -341,7 +341,7 @@
                         </button>
                         <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true" style="">
                             <div class="menu-item">
-                                <a class="menu-link" href="view_order.php?o_id=${order.id}">
+                                <a class="menu-link" href="pages/view_order.php?o_id=${order.id}">
                                     <span class="menu-icon">
                                         <i class="ki-filled ki-search-list"></i>
                                     </span>
@@ -409,9 +409,9 @@
                                 'Your order has been deleted.',
                                 'success'
                             );
-                            fetchOrders();
+                            // fetchOrders();
                             // Reload the page after a successful deletion
-                            // window.location.reload(); // This will reload the page
+                            window.location.reload(); // This will reload the page
 
                             // Optionally, remove the order from the UI or reload the page
                             // document.getElementById(`order-${orderId}`).remove(); // Example to remove from DOM
