@@ -378,9 +378,9 @@
         //     });
         // }
 
-// Check the current state of the cart
+        // Check the current state of the cart
 function checkCart() {
-    const token  = localStorage.getItem("auth_token");
+    const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
     if (!token && !tempId) {
@@ -390,9 +390,9 @@ function checkCart() {
 
     let requestData = {};
     if (token) {
-        requestData = {};
+        requestData = {}; // Token-based request, no cart ID needed
     } else if (tempId) {
-        requestData = { cart_id: tempId };
+        requestData = { cart_id: tempId }; // Use tempId for guest cart
     }
 
     $.ajax({
@@ -402,28 +402,20 @@ function checkCart() {
         contentType: "application/json",
         data: JSON.stringify(requestData),
         success: function (data) {
-            console.log("Cart fetched:", data); // Log cart data
             if (data.data && data.data.length > 0) {
                 const cartItem = data.data.find(item => item.product_id == productId);
                 if (cartItem) {
                     addCartBtn.hide();
                     viewCartBtn.show();
                     quantityElem.val(cartItem.quantity);
-                    cartItemIds.show();
-                    updatePrice(); // Update the price based on the quantity
+                    cartItemIds.show(); // Hide after data is loaded, if desired
+                    updatePrice();
                 } else {
                     addCartBtn.show();
                     viewCartBtn.hide();
                     quantityElem.val(1);
-                    cartItemIds.hide();
-                    updatePrice(); // Update the price with default value
+                    updatePrice();
                 }
-            } else {
-                addCartBtn.show();
-                viewCartBtn.hide();
-                quantityElem.val(1);
-                cartItemIds.hide();
-                updatePrice(); // Update the price based on quantity only
             }
         },
         error: function (error) {
@@ -435,12 +427,10 @@ function checkCart() {
 // Price update function based on quantity change
 window.updatePrice = function() {
     const quantity = parseFloat(quantityElem.val()) || 1;
-    // Pull the base price from #selling-tprice's data-price
     const basePrice = parseFloat(tPriceElem.attr("data-price")) || 0;
 
     if (!isNaN(basePrice)) {
         const updatedPrice = (quantity * basePrice).toFixed(2);
-        // Update #selling-tprice text to reflect the total
         tPriceElem.text(`₹${updatedPrice}`);
     }
 }
@@ -448,46 +438,40 @@ window.updatePrice = function() {
 // Update cart quantity function
 function updateCartQuantity() {
     const newQuantity = quantityElem.val() || 1;
+    const token = localStorage.getItem("auth_token");
+    const tempId = localStorage.getItem("temp_id");
 
     if (!cartItemId) {
         console.error("Cart item ID is missing.");
         return;
     }
 
-    console.log("Updating quantity:", newQuantity); // Log the new quantity
-
-    const token = localStorage.getItem("auth_token");
-    const tempId = localStorage.getItem("temp_id");
-
-    let requestData = { quantity: newQuantity };
-
-    // Log the request data before sending the API request
-    console.log("Request data for cart update:", requestData);
-
-    // Hit the update API to update the cart item quantity in the database
-    $.ajax({
-        url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-        type: "POST",
-        headers: token ? { "Authorization": `Bearer ${token}` } : {},
-        contentType: "application/json",
-        data: JSON.stringify(requestData),
-        success: function (data) {
-            console.log("Cart quantity updated:", data);
-            if (data.success) {
-                updatePrice(); // Update the price based on the new quantity
-                console.log("Price updated to reflect the new quantity");
-            } else {
-                console.error("Error in updating quantity in the cart:", data.message);
+    // Check if the cart exists and update via API if true
+    if (token || tempId) {
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
+            type: "POST",
+            headers: { "Authorization": token ? `Bearer ${token}` : "" },
+            contentType: "application/json",
+            data: JSON.stringify({ quantity: newQuantity }),
+            success: function (data) {
+                console.log("Cart quantity updated:", data);
+                updatePrice();  // Update price after API update
+            },
+            error: function (error) {
+                console.error("Error updating cart quantity:", error);
             }
-        },
-        error: function (error) {
-            console.error("Error updating cart quantity:", error);
-        }
-    });
+        });
+    } else {
+        // If no cart exists, only update the price on the frontend
+        updatePrice();
+    }
 }
 
-
-
+// Event listener for the quantity input change
+document.getElementById('quantity').addEventListener('change', function() {
+    updateCartQuantity(); // Call the function to update quantity and price
+});
 
         // Event Listeners
         $(document).ready(function() {
@@ -619,7 +603,9 @@ function updateCartQuantity() {
                                         <span class="product-price primary_light" id="selling-tprice" data-price="0">₹0.00</span>
                                     </div>
                                     <div class="product-single-qty" id="cartId">
-                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
+                                        <!-- <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updatePrice()"> -->
+                                        <input class="horizontal-quantity form-control" type="number" id="quantity" value="1" min="1" onchange="updateCartQuantity()">
+
                                     </div>
                                     <a href="#" id="add-to-cart-btn" class="btn btn-primary_light add-cart icon-shopping-cart mr-2" title="Add to Cart">
                                         Add to Cart
