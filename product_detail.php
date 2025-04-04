@@ -402,13 +402,14 @@ function checkCart() {
         contentType: "application/json",
         data: JSON.stringify(requestData),
         success: function (data) {
+            console.log("Cart fetched:", data); // Log cart data
             if (data.data && data.data.length > 0) {
                 const cartItem = data.data.find(item => item.product_id == productId);
                 if (cartItem) {
                     addCartBtn.hide();
                     viewCartBtn.show();
                     quantityElem.val(cartItem.quantity);
-                    cartItemIds.show(); 
+                    cartItemIds.show();
                     updatePrice(); // Update the price based on the quantity
                 } else {
                     addCartBtn.show();
@@ -445,7 +446,7 @@ window.updatePrice = function() {
 }
 
 // Update cart quantity function
-window.updateCartQuantity = function() {
+function updateCartQuantity() {
     const newQuantity = quantityElem.val() || 1;
 
     if (!cartItemId) {
@@ -453,10 +454,15 @@ window.updateCartQuantity = function() {
         return;
     }
 
+    console.log("Updating quantity:", newQuantity); // Log the new quantity
+
     const token = localStorage.getItem("auth_token");
     const tempId = localStorage.getItem("temp_id");
 
     let requestData = { quantity: newQuantity };
+
+    // Log the request data before sending the API request
+    console.log("Request data for cart update:", requestData);
 
     // Hit the update API to update the cart item quantity in the database
     $.ajax({
@@ -467,13 +473,19 @@ window.updateCartQuantity = function() {
         data: JSON.stringify(requestData),
         success: function (data) {
             console.log("Cart quantity updated:", data);
-            updatePrice(); // Update the price based on the new quantity
+            if (data.success) {
+                updatePrice(); // Update the price based on the new quantity
+                console.log("Price updated to reflect the new quantity");
+            } else {
+                console.error("Error in updating quantity in the cart:", data.message);
+            }
         },
         error: function (error) {
             console.error("Error updating cart quantity:", error);
         }
     });
 }
+
 
 
 
