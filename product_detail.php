@@ -267,7 +267,7 @@
 
                     if (data.success === true || data.message.includes("successfully")) {
                         // alert(data.message);
-                        cartItemIds.show();
+                        cartItemIds.show(); // want to hide after have data in cart use .hide()
                         addCartBtn.hide();
                         viewCartBtn.show();
                         checkCart();
@@ -324,7 +324,7 @@
                             addCartBtn.hide();
                             viewCartBtn.show();
                             quantityElem.val(cartItem.quantity);
-                            cartItemIds.hide();
+                            cartItemIds.show(); // want to hide after have data in cart use .hide()
                             updatePrice();
                         } else {
                             addCartBtn.show();
