@@ -8,10 +8,7 @@
     </title>
     <meta charset="utf-8" />
     <meta content="follow, index" name="robots" />
-    <link href="https://127.0.0.1:8001/metronic-tailwind-html/demo1/index.html" rel="canonical" />
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="https://127.0.0.1:8001/metronic-tailwind-html/demo1/index.html" property="og:url" />
     <meta content="en_US" property="og:locale" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="uploads/H.jpg">
