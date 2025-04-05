@@ -170,30 +170,32 @@
                       </div>
                     </div>
                     <div class="text-sm space-y-2">
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Order #</span>
-                        <span class="text-indigo-600 font-semibold">${order.id}</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Order Status</span>
-                        <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-medium">${order.status}</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Order Date</span>
-                        <span>${new Date(order.created_at).toLocaleString()}</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Total Amount</span>
-                        <span class="font-medium">₹${order.total_amount}</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Payment Method</span>
-                        <span>Cash on delivery</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-gray-600">Additional Info</span>
-                        <span>--</span>
-                      </div>
+                        <div class="right-box">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Order #</span>
+                                <span class="text-indigo-600 font-semibold">${order.id}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Order Status</span>
+                                <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-medium">${order.status}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Order Date</span>
+                                <span>${new Date(order.created_at).toLocaleString()}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Total Amount</span>
+                                <span class="font-medium">₹${order.total_amount}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Payment Method</span>
+                                <span>Cash on delivery</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Additional Info</span>
+                                <span>--</span>
+                            </div>
+                        </div>
                     </div>
                   `;
 
