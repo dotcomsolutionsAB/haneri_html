@@ -349,9 +349,9 @@
                                 <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
 
                                 ${showCreateUserCheckbox ? `
-                                <div style="margin-top: 10px;">
-                                    <input type="checkbox" id="swal_create_user" name="create_user" required>
+                                <div class="create_user_checkbox">
                                     <label for="swal_create_user">Create as User</label>
+                                    <input type="checkbox" id="swal_create_user" name="create_user" required>                                    
                                 </div>
                                 ` : ''}
                             </form>
@@ -457,7 +457,23 @@
                 fetchAddresses();
             });
         </script>
-
+<style>
+    .create_user_checkbox{
+        margin-top: 10px;
+        margin-top: 10px;
+        height: 45px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+    }
+    .create_user_checkbox input{
+        width: 15px !important;
+     }
+    .create_user_checkbox label{
+        margin:0px;
+    }
+</style>
         <div class="row">
             <div class="col-lg-8">
                 <ul class="checkout-steps">
