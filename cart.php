@@ -147,15 +147,6 @@
             updateCartTotals(cartSubtotal, taxAmount, totalAmount);
         }
 
-        // Update the displayed subtotal, tax, and total
-        // function updateCartTotals(subtotal, tax, total) {
-        //     console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Total: ₹${total}`);
-        //     subtotalElem.innerText = `₹${(isNaN(subtotal) ? 0 : subtotal).toFixed(2)}`;
-        //     taxElem.innerText = `₹${(isNaN(tax) ? 0 : tax).toFixed(2)}`;
-        //     totalElem.innerText = `₹${(isNaN(total) ? 0 : total).toFixed(2)}`;
-        // }
-
-
         function updateCartTotals(subtotalWithTax) {
           const taxRate = 0.18;
           const shippingCharge = 80;
@@ -183,9 +174,6 @@
 
           console.log(`Updating totals: Subtotal (excl. tax): ₹${baseSubtotal.toFixed(2)}, Tax: ₹${tax.toFixed(2)}, Shipping: ₹${shipping}, Total: ₹${total.toFixed(2)}`);
         }
-
-
-
 
         // Remove an item from the cart
         window.removeCartItem = function(cartItemId) {
@@ -292,149 +280,6 @@
 </script>
 
 <!-- for guest checkout -->
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Grab the checkout button
-    const proceedCheckoutBtn = document.querySelector(".checkout-methods a.btn.btn-block.btn-dark");
-
-    // Attach click event
-    if (proceedCheckoutBtn) {
-      proceedCheckoutBtn.addEventListener("click", function(e) {
-        e.preventDefault(); // Prevent default navigation
-
-        // Retrieve token and tempId from local storage
-        const token = localStorage.getItem("auth_token");
-        const tempId = localStorage.getItem("temp_id");
-
-        // If we have a valid token, just proceed to checkout
-        if (token) {
-          window.location.href = "checkout.php";
-          return;
-        }
-
-        // If we don't have an auth token but do have a temp_id,
-        // we start our multi-step SweetAlert flow:
-        if (!token && tempId) {
-          let userName = "";
-          let userEmail = "";
-          let userMobile = "";
-
-          // Step 1: Get Name
-          Swal.fire({
-            title: "Enter Your Name",
-            input: "text",
-            inputAttributes: {
-              autocapitalize: "off"
-            },
-            showCancelButton: true,
-            confirmButtonText: "Next",
-            preConfirm: (value) => {
-              if (!value.trim()) {
-                Swal.showValidationMessage("Name is required.");
-                return false;
-              }
-              userName = value.trim();
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-          }).then((step1) => {
-            if (!step1.isConfirmed) {
-              return; // user cancelled
-            }
-
-            // Step 2: Get Email
-            Swal.fire({
-              title: "Enter Your Email",
-              input: "email",
-              inputAttributes: {
-                autocapitalize: "off"
-              },
-              showCancelButton: true,
-              confirmButtonText: "Next",
-              preConfirm: (value) => {
-                if (!value.trim()) {
-                  Swal.showValidationMessage("Email is required.");
-                  return false;
-                }
-                userEmail = value.trim();
-              },
-              allowOutsideClick: () => !Swal.isLoading()
-            }).then((step2) => {
-              if (!step2.isConfirmed) {
-                return; // user cancelled
-              }
-
-              // Step 3: Get Mobile & Submit
-              Swal.fire({
-                title: "Enter Your Mobile",
-                input: "text",
-                inputAttributes: {
-                  autocapitalize: "off"
-                },
-                showCancelButton: true,
-                confirmButtonText: "Submit",
-                showLoaderOnConfirm: true,
-                preConfirm: async (value) => {
-                  if (!value.trim()) {
-                    return Swal.showValidationMessage("Mobile is required.");
-                  }
-                  userMobile = value.trim();
-
-                  // Now call the /make_user endpoint
-                  let formData = new FormData();
-                  formData.append("name", userName);
-                  formData.append("email", userEmail);
-                  formData.append("mobile", userMobile);
-                  formData.append("cart_id", tempId);
-
-                  try {
-                    const response = await fetch("<?php echo BASE_URL; ?>/make_user", {
-                      method: "POST",
-                      body: formData
-                    });
-                    if (!response.ok) {
-                      const errData = await response.json();
-                      return Swal.showValidationMessage(
-                        `Error: ${errData.message || "Could not register user"}`
-                      );
-                    }
-
-                    const data = await response.json();
-                    if (!data.token) {
-                      return Swal.showValidationMessage(
-                        data.message || "Registration failed."
-                      );
-                    }
-
-                    // If successful, remove temp_id, store auth_token
-                    localStorage.removeItem("temp_id");
-                    localStorage.setItem("auth_token", data.token);
-                    localStorage.setItem("user_name", data.user.name);
-                    localStorage.setItem("user_role", data.user.role);
-                    localStorage.setItem("user_email", data.user.email);
-
-                    // Return the data so .then() sees success
-                    return data;
-                  } catch (error) {
-                    return Swal.showValidationMessage(`Request failed: ${error}`);
-                  }
-                },
-                allowOutsideClick: () => !Swal.isLoading()
-              }).then((finalStep) => {
-                if (finalStep.isConfirmed) {
-                  // All good, redirect
-                  window.location.href = "checkout.php";
-                }
-              });
-            });
-          });
-        } else {
-          // If we have neither token nor tempId, redirect to login
-          window.location.href = "login.php";
-        }
-      });
-    }
-  });
-</script> -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const proceedCheckoutBtn = document.querySelector(".checkout-methods a.btn.btn-block.btn-dark");
@@ -447,78 +292,86 @@
         const tempId = localStorage.getItem("temp_id");
 
         if (token) {
-          window.location.href = "checkout.php";
-          return;
+            window.location.href = "checkout.php";
+            return;
         }
 
-        if (!token && tempId) {
-          Swal.fire({
-            title: "Give Your Details",
-            customClass: {
-              confirmButton: 'confirmation-btn'
-            },
-            html:
-              `<input type="text" id="swal-name" class="swal2-input" placeholder="Name">
-               <input type="email" id="swal-email" class="swal2-input" placeholder="Email">
-               <input type="text" id="swal-mobile" class="swal2-input" placeholder="Mobile">`,
-            focusConfirm: false,
-            showCancelButton: true,
-            confirmButtonText: "Submit",
-            showLoaderOnConfirm: true,
-            preConfirm: async () => {
-              const userName = document.getElementById("swal-name").value.trim();
-              const userEmail = document.getElementById("swal-email").value.trim();
-              const userMobile = document.getElementById("swal-mobile").value.trim();
-
-              if (!userName || !userEmail || !userMobile) {
-                Swal.showValidationMessage("All fields are required.");
-                return false;
-              }
-
-              const formData = new FormData();
-              formData.append("name", userName);
-              formData.append("email", userEmail);
-              formData.append("mobile", userMobile);
-              formData.append("cart_id", tempId);
-
-              try {
-                const response = await fetch("<?php echo BASE_URL; ?>/make_user", {
-                  method: "POST",
-                  body: formData,
-                });
-
-                if (!response.ok) {
-                  const errData = await response.json();
-                  return Swal.showValidationMessage(
-                    `Error: ${errData.message || "Could not register user"}`
-                  );
-                }
-
-                const data = await response.json();
-                if (!data.token) {
-                  return Swal.showValidationMessage(data.message || "Registration failed.");
-                }
-
-                localStorage.removeItem("temp_id");
-                localStorage.setItem("auth_token", data.token);
-                localStorage.setItem("user_name", data.user.name);
-                localStorage.setItem("user_role", data.user.role);
-                localStorage.setItem("user_email", data.user.email);
-
-                return data;
-              } catch (error) {
-                return Swal.showValidationMessage(`Request failed: ${error}`);
-              }
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location.href = "checkout.php";
-            }
-          });
-        } else {
-          window.location.href = "login.php";
+        if (tempId) {
+            window.location.href = "checkout.php";
+            return;
         }
+
+        // use for guest checkout 
+        // if (!token && tempId) {
+        //   Swal.fire({
+        //     title: "Give Your Details",
+        //     customClass: {
+        //       confirmButton: 'confirmation-btn'
+        //     },
+        //     html:
+        //       `<input type="text" id="swal-name" class="swal2-input" placeholder="Name">
+        //        <input type="email" id="swal-email" class="swal2-input" placeholder="Email">
+        //        <input type="text" id="swal-mobile" class="swal2-input" placeholder="Mobile">`,
+        //     focusConfirm: false,
+        //     showCancelButton: true,
+        //     confirmButtonText: "Submit",
+        //     showLoaderOnConfirm: true,
+        //     preConfirm: async () => {
+        //       const userName = document.getElementById("swal-name").value.trim();
+        //       const userEmail = document.getElementById("swal-email").value.trim();
+        //       const userMobile = document.getElementById("swal-mobile").value.trim();
+
+        //       if (!userName || !userEmail || !userMobile) {
+        //         Swal.showValidationMessage("All fields are required.");
+        //         return false;
+        //       }
+
+        //       const formData = new FormData();
+        //       formData.append("name", userName);
+        //       formData.append("email", userEmail);
+        //       formData.append("mobile", userMobile);
+        //       formData.append("cart_id", tempId);
+
+        //       try {
+        //         const response = await fetch("<?php echo BASE_URL; ?>/make_user", {
+        //           method: "POST",
+        //           body: formData,
+        //         });
+
+        //         if (!response.ok) {
+        //           const errData = await response.json();
+        //           return Swal.showValidationMessage(
+        //             `Error: ${errData.message || "Could not register user"}`
+        //           );
+        //         }
+
+        //         const data = await response.json();
+        //         if (!data.token) {
+        //           return Swal.showValidationMessage(data.message || "Registration failed.");
+        //         }
+
+        //         localStorage.removeItem("temp_id");
+        //         localStorage.setItem("auth_token", data.token);
+        //         localStorage.setItem("user_name", data.user.name);
+        //         localStorage.setItem("user_role", data.user.role);
+        //         localStorage.setItem("user_email", data.user.email);
+
+        //         return data;
+        //       } catch (error) {
+        //         return Swal.showValidationMessage(`Request failed: ${error}`);
+        //       }
+        //     },
+        //     allowOutsideClick: () => !Swal.isLoading()
+        //   }).then((result) => {
+        //     if (result.isConfirmed) {
+        //       window.location.href = "checkout.php";
+        //     }
+        //   });
+        // } else {
+        //   window.location.href = "login.php";
+        // }
+        // end guest checkout 
+
       });
     }
   });
