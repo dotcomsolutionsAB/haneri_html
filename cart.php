@@ -155,35 +155,36 @@
         //     totalElem.innerText = `₹${(isNaN(total) ? 0 : total).toFixed(2)}`;
         // }
 
-        // Update the displayed subtotal, tax, shipping, and total
-        function updateCartTotals(subtotal) {
-          const taxRate = 0.18;
-          const shippingThreshold = 1000;
-          const shippingCharge = 80;
 
-          // Ensure subtotal is a valid number
-          subtotal = isNaN(subtotal) ? 0 : subtotal;
+// Update the displayed subtotal, tax, shipping, and total
+function updateCartTotals(subtotal) {
+    const taxRate = 0.18;
+    const shippingCharge = 80;
 
-          // Calculate tax (18% of subtotal)
-          const tax = subtotal * taxRate;
+    // Ensure subtotal is a valid number
+    subtotal = isNaN(subtotal) ? 0 : subtotal;
 
-          // Total after adding tax
-          const totalBeforeShipping = subtotal + tax;
+    // Calculate tax (18% of subtotal)
+    const tax = subtotal * taxRate;
 
-          // Determine shipping
-          const shipping = totalBeforeShipping > shippingThreshold ? shippingCharge : 0;
+    // Total before shipping
+    const totalBeforeShipping = subtotal + tax;
 
-          // Final total
-          const total = totalBeforeShipping + shipping;
+    // Apply shipping: if totalBeforeShipping > 1000, shipping is 0
+    const shipping = totalBeforeShipping > 1000 ? 0 : shippingCharge;
 
-          // Update DOM elements
-          subtotalElem.innerText = `₹${subtotal.toFixed(2)}`;
-          taxElem.innerText = `₹${tax.toFixed(2)}`;
-          shipElem.innerText = `₹${shipping.toFixed(2)}`;
-          totalElem.innerText = `₹${total.toFixed(2)}`;
+    // Final total
+    const total = totalBeforeShipping + shipping;
 
-          console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Shipping: ₹${shipping}, Total: ₹${total}`);
-        }
+    // Update DOM elements
+    subtotalElem.innerText = `₹${subtotal.toFixed(2)}`;
+    taxElem.innerText = `₹${tax.toFixed(2)}`;
+    shipElem.innerText = `₹${shipping.toFixed(2)}`;
+    totalElem.innerText = `₹${total.toFixed(2)}`;
+
+    console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Shipping: ₹${shipping}, Total: ₹${total}`);
+}
+
 
 
         // Remove an item from the cart
