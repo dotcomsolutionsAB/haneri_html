@@ -24,6 +24,7 @@
 
         "../admin/pages/add_order.php",
         "../admin/pages/show_orders.php",
+        "../admin/pages/view_order.php",
     ];
 
     // List of pages that only customers can access
