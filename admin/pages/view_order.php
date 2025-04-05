@@ -1,26 +1,39 @@
+<base href="../">
 <?php include("../../configs/auth_check.php"); ?>
 <?php include("../../configs/config.php"); ?>
+<?php 
+    $current_page = "order details"; // Dynamically set this based on the page
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Order Details</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For print icon -->
-</head>
-<body class="bg-gray-100 text-gray-800">
-
-  <div class="max-w-6xl mx-auto px-4 py-8">
-    <!-- Header -->
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold">Order Details</h1>
-      <button id="printInvoice" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">
-        <i class="fas fa-print mr-2"></i> Print Invoice
-      </button>
-    </div>
+<?php include("header1.php");?>
+            <!-- End of Header -->
+            <!-- Content -->
+            <main class="grow content pt-5" id="content" role="content">
+                <!-- Container -->
+                <div class="container-fixed" id="content_container">
+                </div>
+                <!-- End of Container -->
+                <!-- Container -->
+                <div class="container-fixed">
+                    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                        <div class="flex flex-col justify-center gap-2">
+                            <h1 class="text-xl font-medium leading-none text-gray-900">
+                                Order Details
+                            </h1>
+                            <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
+                                <button id="printButton" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">
+                                    Print Invoice
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="flex items-center gap-2.5">
+                            <a class="btn btn-sm btn-light" href="html/demo1/public-profile/profiles/default.html">
+                                View Profile
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- End of Container -->
 
     <!-- Main Card -->
     <div class="bg-white rounded-lg shadow p-6 space-y-8">
@@ -282,6 +295,6 @@
     });
   </script>
 
-</body>
-</html>
+<!-- Footer -->
+<?php include("footer.php");?>
 
