@@ -469,9 +469,10 @@
         width: 15px !important;
      }
     .create_user_checkbox label{
-        margin:0px;
-        font-weight: 400;
+        margin: 0px;
+        font-weight: 600;
         font-family: sans-serif !important;
+        color: #1b4e47;
     }
 </style>
         <div class="row">
