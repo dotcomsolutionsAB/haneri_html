@@ -15,12 +15,12 @@
 
     <div class="max-w-6xl mx-auto px-4 py-8">
         <!-- Header -->
-        <div class="flex justify-between items-center mb-6">
+        <!-- <div class="flex justify-between items-center mb-6">
             <h1 class="text-3xl font-bold">Order Details</h1>
             <button id="printButton"
                 class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Print
                 Invoice</button>
-        </div>
+        </div> -->
 
         <!-- Main Card -->
         <div class="bg-white rounded-lg shadow p-6 space-y-8" id="orderDetailsContainer">
