@@ -156,34 +156,34 @@
         // }
 
 
-// Update the displayed subtotal, tax, shipping, and total
-function updateCartTotals(subtotal) {
-    const taxRate = 0.18;
-    const shippingCharge = 80;
+        function updateCartTotals(subtotalWithTax) {
+          const taxRate = 0.18;
+          const shippingCharge = 80;
 
-    // Ensure subtotal is a valid number
-    subtotal = isNaN(subtotal) ? 0 : subtotal;
+          // Ensure the input is valid
+          subtotalWithTax = isNaN(subtotalWithTax) ? 0 : subtotalWithTax;
 
-    // Calculate tax (18% of subtotal)
-    const tax = subtotal * taxRate;
+          // Calculate base subtotal (exclusive of tax)
+          const baseSubtotal = subtotalWithTax / (1 + taxRate);
 
-    // Total before shipping
-    const totalBeforeShipping = subtotal + tax;
+          // Calculate tax
+          const tax = subtotalWithTax - baseSubtotal;
 
-    // Apply shipping: if totalBeforeShipping > 1000, shipping is 0
-    const shipping = totalBeforeShipping > 1000 ? 0 : shippingCharge;
+          // Determine shipping based on subtotalWithTax
+          const shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
 
-    // Final total
-    const total = totalBeforeShipping + shipping;
+          // Final total
+          const total = subtotalWithTax + shipping;
 
-    // Update DOM elements
-    subtotalElem.innerText = `₹${subtotal.toFixed(2)}`;
-    taxElem.innerText = `₹${tax.toFixed(2)}`;
-    shipElem.innerText = `₹${shipping.toFixed(2)}`;
-    totalElem.innerText = `₹${total.toFixed(2)}`;
+          // Update DOM elements
+          subtotalElem.innerText = `₹${baseSubtotal.toFixed(2)}`;
+          taxElem.innerText = `₹${tax.toFixed(2)}`;
+          shipElem.innerText = `₹${shipping.toFixed(2)}`;
+          totalElem.innerText = `₹${total.toFixed(2)}`;
 
-    console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Shipping: ₹${shipping}, Total: ₹${total}`);
-}
+          console.log(`Updating totals: Subtotal (excl. tax): ₹${baseSubtotal.toFixed(2)}, Tax: ₹${tax.toFixed(2)}, Shipping: ₹${shipping}, Total: ₹${total.toFixed(2)}`);
+        }
+
 
 
 
