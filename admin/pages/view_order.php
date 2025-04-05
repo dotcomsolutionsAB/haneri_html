@@ -169,8 +169,8 @@
                         <p class="pt-2">${address}</p>
                       </div>
                     </div>
-                    <div class="text-sm space-y-2">
-                        <div class="right-box">
+                    <div class="text-sm space-y-2 text-sm space-y-1 flex justify-end w-full">
+                        <div class="right-box w-full max-w-xs space-y-1">
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Order #</span>
                                 <span class="text-indigo-600 font-semibold">${order.id}</span>
