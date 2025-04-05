@@ -1,0 +1,27 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "DongCheng Armature 11E",
+        "sku": "DC-AR-11",
+        "hsn_code": "8467",
+        "delivery_type": "Home Delivery",
+        "qty": 1,
+        "price": "1568.00",
+        "total": "1568.00",
+        "photo": "https://placehold.co/60x60"
+      },
+      {
+        "id": 2,
+        "name": "Fan Motor 24V",
+        "sku": "FM-24V",
+        "hsn_code": "8472",
+        "delivery_type": "Store Pickup",
+        "qty": 2,
+        "price": "500.00",
+        "total": "1000.00",
+        "photo": "https://placehold.co/60x60"
+      }
+    ]
+}
+  
