@@ -49,6 +49,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const token = localStorage.getItem('auth_token'); // Replace with actual token
       // Assuming the order ID is passed as a query parameter
       const orderId = new URLSearchParams(window.location.search).get('o_id');
       if (orderId) {
