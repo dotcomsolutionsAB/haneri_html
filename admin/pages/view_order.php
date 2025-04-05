@@ -5,6 +5,8 @@
 <?php 
     $current_page = "Order Detail"; // Dynamically set this based on the page
 ?>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For print icon -->
 <?php include("header1.php"); ?>
 <!-- End of Header -->
 <!-- Content -->
