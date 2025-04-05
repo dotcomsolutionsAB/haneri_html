@@ -18,6 +18,12 @@
         <div class="bg-white rounded-lg shadow p-6 space-y-8" id="orderDetailsContainer">
             <!-- Order details will be populated here -->
         </div>
+
+        <!-- Product Table -->
+        <div id="productTableContainer">
+        <!-- The product details will be dynamically inserted here -->
+        </div>
+        
     </div>
 
     <script>
