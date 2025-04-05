@@ -43,17 +43,42 @@
         <!-- Products table will be populated dynamically -->
       </div>
 
+      <!-- Divider -->
+      <hr class="border-gray-200 mt-6" />
+
       <!-- Totals -->
-      <div class="flex justify-end" id="totalsContainer">
-        <!-- Totals will be populated dynamically -->
+      <div class="flex justify-end space-x-6 text-sm w-full max-w-xs">
+        <div class="space-y-1">
+          <div class="flex justify-between">
+            <span class="text-gray-700 font-medium">Sub Total</span>
+            <span id="subTotal">₹0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700 font-medium">Tax</span>
+            <span id="tax">₹0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700 font-medium">Shipping</span>
+            <span id="shipping">₹0.00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-700 font-medium">Coupon</span>
+            <span id="coupon">₹0.00</span>
+          </div>
+          <hr class="my-2" />
+          <div class="flex justify-between text-base font-bold text-gray-900">
+            <span>Total</span>
+            <span id="totalAmount">₹0.00</span>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const token = localStorage.getItem('auth_token'); // Replace with actual token
+    document.addEventListener('DOMContentLoaded', function() {  
+      const token = localStorage.getItem('auth_token'); // Replace with actual token
       const orderId = new URLSearchParams(window.location.search).get('o_id');
       if (orderId) {
         fetchOrderDetails(orderId);  // Fetch order details on page load
@@ -181,6 +206,13 @@
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:ring focus:ring-indigo-500 focus:outline-none" />
           </div>
         `;
+
+        // Populate the totals dynamically
+        document.getElementById("subTotal").innerText = `₹${order.sub_total || 0}`;
+        document.getElementById("tax").innerText = `₹${order.tax || 0}`;
+        document.getElementById("shipping").innerText = `₹${order.shipping || 0}`;
+        document.getElementById("coupon").innerText = `₹${order.coupon || 0}`;
+        document.getElementById("totalAmount").innerText = `₹${order.total_amount || 0}`;
       }
 
       // Function to populate product details dynamically
@@ -235,3 +267,4 @@
 
 </body>
 </html>
+
