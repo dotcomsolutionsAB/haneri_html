@@ -2,25 +2,25 @@
     "products": [
       {
         "id": 1,
-        "name": "DongCheng Armature 11E",
-        "sku": "DC-AR-11",
+        "name": "Fengshui",
+        "sku": "HAN-AR-11",
         "hsn_code": "8467",
         "delivery_type": "Home Delivery",
-        "qty": 1,
-        "price": "1568.00",
-        "total": "1568.00",
-        "photo": "https://placehold.co/60x60"
+        "qty": 2,
+        "price": "1049.00",
+        "total": "2098.00",
+        "photo": "../images/Velvet_Black.png"
       },
       {
         "id": 2,
-        "name": "Fan Motor 24V",
-        "sku": "FM-24V",
+        "name": "Fengshui Air",
+        "sku": "HAN-AR-13",
         "hsn_code": "8472",
-        "delivery_type": "Store Pickup",
+        "delivery_type": "Home Delivery",
         "qty": 2,
-        "price": "500.00",
-        "total": "1000.00",
-        "photo": "https://placehold.co/60x60"
+        "price": "1049.00",
+        "total": "1049.00",
+        "photo": "../images/Natural_Pine.png"
       }
     ]
 }
