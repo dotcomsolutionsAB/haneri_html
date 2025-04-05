@@ -459,8 +459,6 @@
         </script>
 <style>
     .create_user_checkbox{
-        margin-top: 10px;
-        margin-top: 10px;
         height: 45px;
         display: flex;
         justify-content: flex-start;
@@ -472,6 +470,8 @@
      }
     .create_user_checkbox label{
         margin:0px;
+        font-weight: 400;
+        font-family: sans-serif !important;
     }
 </style>
         <div class="row">
