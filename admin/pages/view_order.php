@@ -47,8 +47,8 @@
       <hr class="border-gray-200 mt-6" />
 
       <!-- Totals -->
-      <div class="flex justify-end space-x-6 text-sm w-full max-w-xs">
-        <div class="space-y-1">
+      <div class="flex justify-end">
+        <div class="text-sm w-full max-w-xs space-y-1">
           <div class="flex justify-between">
             <span class="text-gray-700 font-medium">Sub Total</span>
             <span id="subTotal">₹0.00</span>
@@ -207,12 +207,29 @@
           </div>
         `;
 
+        // Assuming order.total_amount is already fetched from the order data
+        const totalAmount = parseFloat(order.total_amount) || 0;
+        // Calculate tax (18%)
+        const tax = (totalAmount * 0.18).toFixed(2);  // Tax is 18% of the total amount
+        const subTotal = (totalAmount - parseFloat(tax)).toFixed(2);  // Subtotal is total amount minus tax
+        // Determine shipping
+        const shipping = totalAmount > 1000 ? 0 : 80;  // Shipping is free if order > ₹1000
+        // Final total amount (Total Amount + Shipping)
+        const finalTotal = (parseFloat(totalAmount) + shipping).toFixed(2);
+
+        // Populate the totals dynamically in the DOM
+        document.getElementById("subTotal").innerText = `₹${subTotal}`;
+        document.getElementById("tax").innerText = `₹${tax}`;
+        document.getElementById("shipping").innerText = `₹${shipping}`;
+        document.getElementById("coupon").innerText = `₹0.00`; // You can add coupon logic if applicable
+        document.getElementById("totalAmount").innerText = `₹${finalTotal}`;
+
         // Populate the totals dynamically
-        document.getElementById("subTotal").innerText = `₹${order.sub_total || 0}`;
-        document.getElementById("tax").innerText = `₹${order.tax || 0}`;
-        document.getElementById("shipping").innerText = `₹${order.shipping || 0}`;
-        document.getElementById("coupon").innerText = `₹${order.coupon || 0}`;
-        document.getElementById("totalAmount").innerText = `₹${order.total_amount || 0}`;
+        // document.getElementById("subTotal").innerText = `₹${order.sub_total || 0}`;
+        // document.getElementById("tax").innerText = `₹${order.tax || 0}`;
+        // document.getElementById("shipping").innerText = `₹${order.shipping || 0}`;
+        // document.getElementById("coupon").innerText = `₹${order.coupon || 0}`;
+        // document.getElementById("totalAmount").innerText = `₹${order.total_amount || 0}`;
       }
 
       // Function to populate product details dynamically

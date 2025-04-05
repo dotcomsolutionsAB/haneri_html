@@ -68,7 +68,8 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const token = localStorage.getItem('auth_token'); // Replace with actual token
-      const orderId = new URLSearchParams(window.location.search).get('o_id');
+    //   const orderId = new URLSearchParams(window.location.search).get('o_id');
+    const orderId = 16;
       if (orderId) {
         fetchOrderDetails(orderId);  // Fetch order details on page load
       } else {
