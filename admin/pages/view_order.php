@@ -23,7 +23,7 @@
         <div id="productTableContainer">
         <!-- The product details will be dynamically inserted here -->
         </div>
-        
+
     </div>
 
     <script>
@@ -373,7 +373,7 @@
 
             // Fetch product details from the local JSON file
             function fetchProductDetails() {
-                fetch("json/order_detail.json")
+                fetch("../order_detail.json")
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.products && data.products.length > 0) {
