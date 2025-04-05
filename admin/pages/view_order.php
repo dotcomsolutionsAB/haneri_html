@@ -177,7 +177,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Order Status</span>
-                                <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-medium">${order.status}</span>
+                                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">${order.status}</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Order Date</span>
@@ -211,7 +211,11 @@
                     </div>
                     <div>
                       <label class="text-sm font-medium block mb-1">Delivery Status</label>
-                      <input type="text" value="${order.delivery_status || 'Pending'}" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:ring focus:ring-indigo-500 focus:outline-none" />
+                      <select class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:ring focus:ring-indigo-500 focus:outline-none">
+                        <option selected>${order.delivery_status || 'Pending'}</option>
+                        <option>Paid</option>
+                        <option>Refunded</option>
+                      </select>
                     </div>
                     <div>
                       <label class="text-sm font-medium block mb-1">Tracking Code (optional)</label>
