@@ -324,153 +324,169 @@
 
         //         document.getElementById("orderDetailsContainer").innerHTML = orderDetailsHtml;
         // }
+    </script>
 
-        function fetchOrderDetails(orderId) {
-            fetch("<?php echo BASE_URL; ?>/fetch_all", {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('auth_token'); 
+            // Fetch the order details when the page is loaded
+            const orderId = new URLSearchParams(window.location.search).get('o_id'); // Get order_id from URL
+            if (orderId) {
+                fetchOrderDetails(orderId);
+            } else {
+                console.error('Order ID is missing in the URL.');
+            }
+
+            function fetchOrderDetails(orderId) {
+                fetch("<?php echo BASE_URL; ?>/fetch_all", {
                 method: "POST",
                 headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`, // Make sure token is being passed
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`, // Make sure token is passed
                 },
                 body: JSON.stringify({
-                order_id: orderId,
+                    order_id: orderId,
                 }),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                // Ensure data and data.data are available
+                })
+                .then((response) => response.json())
+                .then((data) => {
                 if (data.success && data.data && data.data.length > 0) {
-                const order = data.data[0]; // Access the first order in the array
-                populateOrderDetails(order);
-                fetchProductDetails();  // Fetch the product details
+                    const order = data.data[0]; // Access the first order in the array
+                    populateOrderDetails(order);
+                    fetchProductDetails();  // Fetch the product details
                 } else {
-                console.error("No order data found");
-                document.getElementById("orderDetailsContainer").innerHTML = "<p class='text-red-500'>No order details available.</p>";
+                    console.error("No order data found");
+                    document.getElementById("orderDetailsContainer").innerHTML = "<p class='text-red-500'>No order details available.</p>";
                 }
-            })
-            .catch((error) => {
+                })
+                .catch((error) => {
                 console.error("Error fetching order details:", error);
                 document.getElementById("orderDetailsContainer").innerHTML = "<p class='text-red-500'>There was an error loading the order details.</p>";
-            });
-        }
+                });
+            }
 
-// Fetch product details from the local JSON file
-function fetchProductDetails() {
-  fetch("../order_detail.json")
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.products && data.products.length > 0) {
-        populateProductTable(data.products);
-      } else {
-        console.error("No products found");
-        document.getElementById("productTableContainer").innerHTML = "<p class='text-red-500'>No product details available.</p>";
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching product details:", error);
-      document.getElementById("productTableContainer").innerHTML = "<p class='text-red-500'>There was an error loading the product details.</p>";
-    });
-}
+            // Fetch product details from the local JSON file
+            function fetchProductDetails() {
+                fetch("json/order_detail.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.products && data.products.length > 0) {
+                    populateProductTable(data.products);
+                    } else {
+                    console.error("No products found");
+                    document.getElementById("productTableContainer").innerHTML = "<p class='text-red-500'>No product details available.</p>";
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching product details:", error);
+                    document.getElementById("productTableContainer").innerHTML = "<p class='text-red-500'>There was an error loading the product details.</p>";
+                });
+            }
 
-// Populate product details into the table dynamically
-function populateProductTable(products) {
-  let productsHtml = "";
-  products.forEach((product, index) => {
-    productsHtml += `
-      <tr class="hover:bg-gray-50">
-        <td class="px-4 py-3">${index + 1}</td>
-        <td class="px-4 py-3">
-          <img src="${product.photo}" alt="Product" class="w-14 h-14 border rounded" />
-        </td>
-        <td class="px-4 py-3">
-          <div class="font-semibold">${product.name}</div>
-          <div class="text-xs text-gray-500">SKU: ${product.sku}<br />HSN Code: ${product.hsn_code}</div>
-        </td>
-        <td class="px-4 py-3">${product.delivery_type}</td>
-        <td class="px-4 py-3">${product.qty}</td>
-        <td class="px-4 py-3">₹${product.price}</td>
-        <td class="px-4 py-3">₹${product.total}</td>
-      </tr>
-    `;
-  });
-  document.getElementById("productTableContainer").innerHTML = `
-    <table class="min-w-full text-sm">
-      <thead class="bg-gray-100 text-gray-600 text-left uppercase tracking-wide">
-        <tr>
-          <th class="px-4 py-3">#</th>
-          <th class="px-4 py-3">Photo</th>
-          <th class="px-4 py-3">Description</th>
-          <th class="px-4 py-3">Delivery Type</th>
-          <th class="px-4 py-3">Qty</th>
-          <th class="px-4 py-3">Price</th>
-          <th class="px-4 py-3">Total</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y">
-        ${productsHtml}
-      </tbody>
-    </table>
-  `;
-}
+            // Populate product details into the table dynamically
+            function populateProductTable(products) {
+                let productsHtml = "";
+                products.forEach((product, index) => {
+                productsHtml += `
+                    <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3">${index + 1}</td>
+                    <td class="px-4 py-3">
+                        <img src="${product.photo}" alt="Product" class="w-14 h-14 border rounded" />
+                    </td>
+                    <td class="px-4 py-3">
+                        <div class="font-semibold">${product.name}</div>
+                        <div class="text-xs text-gray-500">SKU: ${product.sku}<br />HSN Code: ${product.hsn_code}</div>
+                    </td>
+                    <td class="px-4 py-3">${product.delivery_type}</td>
+                    <td class="px-4 py-3">${product.qty}</td>
+                    <td class="px-4 py-3">₹${product.price}</td>
+                    <td class="px-4 py-3">₹${product.total}</td>
+                    </tr>
+                `;
+                });
+                // Ensure that the element with id 'productTableContainer' exists
+                const productTableContainer = document.getElementById("productTableContainer");
+                if (productTableContainer) {
+                productTableContainer.innerHTML = `
+                    <table class="min-w-full text-sm">
+                    <thead class="bg-gray-100 text-gray-600 text-left uppercase tracking-wide">
+                        <tr>
+                        <th class="px-4 py-3">#</th>
+                        <th class="px-4 py-3">Photo</th>
+                        <th class="px-4 py-3">Description</th>
+                        <th class="px-4 py-3">Delivery Type</th>
+                        <th class="px-4 py-3">Qty</th>
+                        <th class="px-4 py-3">Price</th>
+                        <th class="px-4 py-3">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        ${productsHtml}
+                    </tbody>
+                    </table>
+                `;
+                } else {
+                console.error("Element with id 'productTableContainer' not found.");
+                }
+            }
 
-function populateOrderDetails(order) {
-  const user = order.user || {};
-  const userName = user.name || "N/A";
-  const userEmail = user.email || "N/A";
-  const userMobile = user.mobile || "N/A";
-  const fullAddress = order.shipping_address || "N/A";
+            function populateOrderDetails(order) {
+                const user = order.user || {};
+                const userName = user.name || "N/A";
+                const userEmail = user.email || "N/A";
+                const userMobile = user.mobile || "N/A";
+                const fullAddress = order.shipping_address || "N/A";
 
-  const addressParts = fullAddress.split(',');
-  const name = addressParts[0]?.trim();  
-  const phone = addressParts[1]?.trim() || userMobile;
-  const address = addressParts.slice(2).join(',').trim();
+                const addressParts = fullAddress.split(',');
+                const name = addressParts[0]?.trim();  
+                const phone = addressParts[1]?.trim() || userMobile;
+                const address = addressParts.slice(2).join(',').trim();
 
-  const email = userEmail !== "N/A" ? userEmail : "Email not available";
+                const email = userEmail !== "N/A" ? userEmail : "Email not available";
 
-  const orderDetailsHtml = `
-    <!-- Customer Info -->
-    <div class="flex gap-4">
-      <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=Sample-QR" class="w-32 h-32 border rounded" alt="QR" />
-      <div class="text-sm space-y-1">
-        <p class="text-lg font-semibold">${name || userName}</p>
-        <p>Email: ${email}</p>
-        <p>Phone: ${phone}</p>
-        <p class="pt-2">${address}</p>
-      </div>
-    </div>
+                const orderDetailsHtml = `
+                <!-- Customer Info -->
+                <div class="flex gap-4">
+                    <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=Sample-QR" class="w-32 h-32 border rounded" alt="QR" />
+                    <div class="text-sm space-y-1">
+                    <p class="text-lg font-semibold">${name || userName}</p>
+                    <p>Email: ${email}</p>
+                    <p>Phone: ${phone}</p>
+                    <p class="pt-2">${address}</p>
+                    </div>
+                </div>
 
-    <!-- Order Info -->
-    <div class="text-sm space-y-2">
-      <div class="flex justify-between">
-        <span class="text-gray-600">Order #</span>
-        <span class="text-indigo-600 font-semibold">${order.id}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Order Status</span>
-        <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-medium">${order.status}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Order Date</span>
-        <span>${new Date(order.created_at).toLocaleString()}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Total Amount</span>
-        <span class="font-medium">₹${order.total_amount}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Payment Status</span>
-        <span>${order.payment_status}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Payment Method</span>
-        <span>Razorpay (Optional)</span>
-      </div>
-    </div>
-  `;
-  document.getElementById("orderDetailsContainer").innerHTML = orderDetailsHtml;
-}
-
-
+                <!-- Order Info -->
+                <div class="text-sm space-y-2">
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Order #</span>
+                    <span class="text-indigo-600 font-semibold">${order.id}</span>
+                    </div>
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Order Status</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-medium">${order.status}</span>
+                    </div>
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Order Date</span>
+                    <span>${new Date(order.created_at).toLocaleString()}</span>
+                    </div>
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Total Amount</span>
+                    <span class="font-medium">₹${order.total_amount}</span>
+                    </div>
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Payment Status</span>
+                    <span>${order.payment_status}</span>
+                    </div>
+                    <div class="flex justify-between">
+                    <span class="text-gray-600">Payment Method</span>
+                    <span>Razorpay (Optional)</span>
+                    </div>
+                </div>
+                `;
+                document.getElementById("orderDetailsContainer").innerHTML = orderDetailsHtml;
+            }
+        });
     </script>
 
 </body>
