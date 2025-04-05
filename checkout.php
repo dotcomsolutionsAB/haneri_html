@@ -251,7 +251,75 @@
                     });
                 };
 
+                // old approch
+                // window.openAddAddressForm = function () {
+                //     Swal.fire({
+                //         title: 'Add New Address',
+                //         width: '700px', // Wider popup
+                //         customClass: {
+                //             confirmButton: 'confirmation-btn'
+                //         },
+                //         html: `			
+                //             <form id="swal-address-form">
+                //                 <input type="text" id="swal_name" placeholder="Name*" required>
+                //                 <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
+                //                 <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
+                //                 <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
+                //                 <input type="text" id="swal_city" placeholder="City*" required>
+                //                 <select id="swal_state" required>
+                //                     <option value="">Select State*</option>
+                //                     <option value="Mumbai">Mumbai</option>
+                //                     <option value="Delhi">Delhi</option>
+                //                     <option value="West Bengal">West Bengal</option>
+                //                 </select>
+                //                 <select id="swal_country" required>
+                //                     <option value="India">India</option>
+                //                     <option value="Australia">Australia</option>
+                //                 </select>
+                //                 <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
+                //             </form>
+                //         `,
+                //         showCancelButton: true,
+                //         confirmButtonText: 'Add Address',
+                //         cancelButtonText: 'Cancel',
+                //         focusConfirm: false,
+                //         preConfirm: () => {
+                //             const name = document.getElementById('swal_name').value.trim();
+                //             const contact_no = document.getElementById('swal_contact_no').value.trim();
+                //             const address_line1 = document.getElementById('swal_address_line1').value.trim();
+                //             const address_line2 = document.getElementById('swal_address_line2').value.trim();
+                //             const city = document.getElementById('swal_city').value.trim();
+                //             const state = document.getElementById('swal_state').value;
+                //             const country = document.getElementById('swal_country').value;
+                //             const postal_code = document.getElementById('swal_postal_code').value.trim();
+
+                //             if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+                //                 Swal.showValidationMessage('Please fill all required fields.');
+                //                 return false;
+                //             }
+
+                //             return {
+                //                 name,
+                //                 contact_no,
+                //                 address_line1,
+                //                 address_line2,
+                //                 city,
+                //                 state,
+                //                 country,
+                //                 postal_code
+                //             };
+                //         }
+                //     }).then((result) => {
+                //         if (result.isConfirmed && result.value) {
+                //             submitAddress(result.value);
+                //         }
+                //     });
+                // };
+
+                // new approach
                 window.openAddAddressForm = function () {
+                    const showCreateUserCheckbox = !localStorage.getItem('auth_token');
+
                     Swal.fire({
                         title: 'Add New Address',
                         width: '700px', // Wider popup
@@ -265,17 +333,27 @@
                                 <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
                                 <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
                                 <input type="text" id="swal_city" placeholder="City*" required>
+
                                 <select id="swal_state" required>
                                     <option value="">Select State*</option>
                                     <option value="Mumbai">Mumbai</option>
                                     <option value="Delhi">Delhi</option>
                                     <option value="West Bengal">West Bengal</option>
                                 </select>
+
                                 <select id="swal_country" required>
                                     <option value="India">India</option>
                                     <option value="Australia">Australia</option>
                                 </select>
+
                                 <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
+
+                                ${showCreateUserCheckbox ? `
+                                <div style="margin-top: 10px;">
+                                    <input type="checkbox" id="swal_create_user" name="create_user" required>
+                                    <label for="swal_create_user">Create as User</label>
+                                </div>
+                                ` : ''}
                             </form>
                         `,
                         showCancelButton: true,
@@ -297,6 +375,14 @@
                                 return false;
                             }
 
+                            if (showCreateUserCheckbox) {
+                                const createUserChecked = document.getElementById('swal_create_user').checked;
+                                if (!createUserChecked) {
+                                    Swal.showValidationMessage('Please check "Create as User" to proceed.');
+                                    return false;
+                                }
+                            }
+
                             return {
                                 name,
                                 contact_no,
@@ -305,7 +391,8 @@
                                 city,
                                 state,
                                 country,
-                                postal_code
+                                postal_code,
+                                create_user: showCreateUserCheckbox ? document.getElementById('swal_create_user').checked : false
                             };
                         }
                     }).then((result) => {
@@ -314,6 +401,7 @@
                         }
                     });
                 };
+
 
                 function submitAddress(data) {
                     const authToken = localStorage.getItem("auth_token");
@@ -369,58 +457,6 @@
                 fetchAddresses();
             });
         </script>
-        <!-- Update Address Modal -->
-        <!-- <div class="modal fade" id="updateAddressModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="updateModalLabel">Update Address</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body custom-modal">
-                        <input type="hidden" id="update_address_id">
-                        <div class="form-group">
-                            <label class="labl">Name</label>
-                            <input type="text" class="form-control inp" id="update_name">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Contact No</label>
-                            <input type="text" class="form-control inp" id="update_contact_no">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Address Line 1</label>
-                            <input type="text" class="form-control inp" id="update_address_line1">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Address Line 2</label>
-                            <input type="text" class="form-control inp" id="update_address_line2">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">City</label>
-                            <input type="text" class="form-control inp" id="update_city">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">State</label>
-                            <input type="text" class="form-control inp" id="update_state">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Postal Code</label>
-                            <input type="text" class="form-control inp" id="update_postal_code">
-                        </div>
-                        <div class="form-group">
-                            <label class="labl">Country</label>
-                            <input type="text" class="form-control inp" id="update_country">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success dft" onclick="updateAddress()">Save Changes</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <div class="row">
             <div class="col-lg-8">
@@ -432,73 +468,7 @@
                                 Add another Address?
                             </a>
                         </div>
-                        <!-- Address Modal -->
-                        <!-- <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="addressModalLabel">Add a New Address</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="checkout-form" class="check-form">
-                                            <div class="form-group in">
-                                                <label class="labl">Name <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="name">
-                                            </div>
 
-                                            <div class="form-group in">
-                                                <label class="labl">Contact No <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="contact_no">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 1 <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="address_line1" placeholder="House number and street name">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Address 2 (optional)</label>
-                                                <input type="text" class="form-control inp" id="address_line2">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Town / City <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="city">
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">State <abbr class="required" title="required">*</abbr></label>
-                                                <select class="form-control inp" id="state">
-                                                    <option value="Mumbai" selected>Mumbai</option>
-                                                    <option value="Delhi">Delhi</option>
-                                                    <option value="West Bengal">West Bengal</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Country <span class="required">*</span></label>
-                                                <select class="form-control inp" id="country">
-                                                    <option value="India" selected>India</option>
-                                                    <option value="Australia">Australia</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group in">
-                                                <label class="labl">Pincode <abbr class="required" title="required">*</abbr></label>
-                                                <input type="text" class="form-control inp" id="postal_code">
-                                            </div>
-
-                                            <div class="form-group text-end btt">
-                                                <button type="button" class="btn btn-primary" id="addAddressBtn">Add Address</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="addresses">
                             <div class="address">                            
                                 <div class="vvv">
