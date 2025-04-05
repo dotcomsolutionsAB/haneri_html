@@ -29,7 +29,7 @@
                 <!-- <a class="btn btn-sm btn-light" href="#">
                             Import Brands
                         </a> -->
-                <a class="btn btn-sm btn-primary" href="#">
+                <a class="btn btn-sm btn-primary" href="index.php">
                     Print
                 </a>
             </div>

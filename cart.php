@@ -26,7 +26,7 @@
         const subtotalElem = document.getElementById("cart-subtotal");
         const taxElem = document.getElementById("cart-tax");
         const totalElem = document.getElementById("cart-total");
-
+        const shipElem = document.getElementById("shipping_price");
         if (!cartTableBody) {
             console.error("Cart table body not found. Ensure the table has ID 'cartTable'.");
             return;
@@ -148,12 +148,43 @@
         }
 
         // Update the displayed subtotal, tax, and total
-        function updateCartTotals(subtotal, tax, total) {
-            console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Total: ₹${total}`);
-            subtotalElem.innerText = `₹${(isNaN(subtotal) ? 0 : subtotal).toFixed(2)}`;
-            taxElem.innerText = `₹${(isNaN(tax) ? 0 : tax).toFixed(2)}`;
-            totalElem.innerText = `₹${(isNaN(total) ? 0 : total).toFixed(2)}`;
+        // function updateCartTotals(subtotal, tax, total) {
+        //     console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Total: ₹${total}`);
+        //     subtotalElem.innerText = `₹${(isNaN(subtotal) ? 0 : subtotal).toFixed(2)}`;
+        //     taxElem.innerText = `₹${(isNaN(tax) ? 0 : tax).toFixed(2)}`;
+        //     totalElem.innerText = `₹${(isNaN(total) ? 0 : total).toFixed(2)}`;
+        // }
+
+        // Update the displayed subtotal, tax, shipping, and total
+        function updateCartTotals(subtotal) {
+          const taxRate = 0.18;
+          const shippingThreshold = 1000;
+          const shippingCharge = 80;
+
+          // Ensure subtotal is a valid number
+          subtotal = isNaN(subtotal) ? 0 : subtotal;
+
+          // Calculate tax (18% of subtotal)
+          const tax = subtotal * taxRate;
+
+          // Total after adding tax
+          const totalBeforeShipping = subtotal + tax;
+
+          // Determine shipping
+          const shipping = totalBeforeShipping > shippingThreshold ? shippingCharge : 0;
+
+          // Final total
+          const total = totalBeforeShipping + shipping;
+
+          // Update DOM elements
+          subtotalElem.innerText = `₹${subtotal.toFixed(2)}`;
+          taxElem.innerText = `₹${tax.toFixed(2)}`;
+          shipElem.innerText = `₹${shipping.toFixed(2)}`;
+          totalElem.innerText = `₹${total.toFixed(2)}`;
+
+          console.log(`Updating totals: Subtotal: ₹${subtotal}, Tax: ₹${tax}, Shipping: ₹${shipping}, Total: ₹${total}`);
         }
+
 
         // Remove an item from the cart
         window.removeCartItem = function(cartItemId) {
@@ -558,6 +589,10 @@
                             <tr>
                                 <td>Tax</td>
                                 <td id="cart-tax">₹0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td id="shipping_price">₹0.00</td>
                             </tr>
                         </tbody>
                         <tfoot>
