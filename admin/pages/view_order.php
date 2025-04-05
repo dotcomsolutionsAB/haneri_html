@@ -1,5 +1,5 @@
-<?php include("../configs/auth_check.php"); ?>
-<?php include("../configs/config.php"); ?>
+<?php include("../../configs/auth_check.php"); ?>
+<?php include("../../configs/config.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
