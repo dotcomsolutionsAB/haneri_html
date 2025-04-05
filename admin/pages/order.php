@@ -1,6 +1,10 @@
-<?php include("../configs/auth_check.php"); ?>
-<?php include("../configs/config.php"); ?>
-<?php include("header.php");?>
+<base href="../">
+<?php include("../../configs/auth_check.php"); ?>
+<?php include("../../configs/config.php"); ?>
+<?php 
+    $current_page = "order details"; // Dynamically set this based on the page
+?>
+<?php include("header1.php");?>
             <!-- End of Header -->
             <!-- Content -->
             <main class="grow content pt-5" id="content" role="content">

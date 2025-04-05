@@ -1,5 +1,6 @@
-<?php include("../../configs/auth_check.php"); ?>
-<?php include("../../configs/config.php"); ?>
+<?php include("../configs/auth_check.php"); ?>
+<?php include("../configs/config.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For print icon -->
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -15,7 +17,9 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold">Order Details</h1>
-      <button id="printInvoice" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">Print Invoice</button>
+      <button id="printInvoice" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded hover:bg-indigo-700 transition">
+        <i class="fas fa-print mr-2"></i> Print Invoice
+      </button>
     </div>
 
     <!-- Main Card -->
@@ -49,8 +53,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const token = localStorage.getItem('auth_token'); // Replace with actual token
-      // Assuming the order ID is passed as a query parameter
+        const token = localStorage.getItem('auth_token'); // Replace with actual token
       const orderId = new URLSearchParams(window.location.search).get('o_id');
       if (orderId) {
         fetchOrderDetails(orderId);  // Fetch order details on page load
@@ -222,6 +225,11 @@
           </table>
         `;
       }
+
+      // Example: Print invoice function
+      document.getElementById('printInvoice').addEventListener('click', function() {
+        window.print();
+      });
     });
   </script>
 
