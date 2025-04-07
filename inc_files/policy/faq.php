@@ -377,7 +377,7 @@
 
 <div class="row faq faq_section">
     <div class="col-lg-12">
-        <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
+        <h2 class="heading2 mb-2">Frequently Asked Questions</h2>
         <div id="accordion">
             <?php foreach ($faqs as $index => $faq): ?>
                 <div class="card card-accordion mb-3">
@@ -385,7 +385,7 @@
                         <?= htmlspecialchars($faq['question']) ?>
                     </a>
                     <div id="collapse<?= $index ?>" class="collapse <?= $index === 0 ? 'show' : '' ?>" data-parent="#accordion">
-                        <p><?= htmlspecialchars($faq['answer']) ?></p>
+                        <p class="paragraph1"><?= htmlspecialchars($faq['answer']) ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
