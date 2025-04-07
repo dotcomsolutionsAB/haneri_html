@@ -384,7 +384,7 @@
                     <a class="card-header _ques <?= $index !== 0 ? 'collapsed' : '' ?>" href="#" data-toggle="collapse" data-target="#collapse<?= $index ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="collapse<?= $index ?>">
                         <?= htmlspecialchars($faq['question']) ?>
                     </a>
-                    <div id="collapse<?= $index ?>" class="collapse <?= $index === 0 ? 'show' : '' ?>" data-parent="#accordion">
+                    <div id="collapse<?= $index ?>" class="collapse <?= $index < 5 ? 'show' : '' ?>" data-parent="#accordion">
                         <p class="paragraph1"><?= htmlspecialchars($faq['answer']) ?></p>
                     </div>
                 </div>
