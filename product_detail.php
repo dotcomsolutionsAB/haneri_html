@@ -406,6 +406,7 @@
                             quantityElem.val(cartItem.quantity);
                             cartItemIds.show();
                         } else {
+                            quantityElem.show();//
                             addCartBtn.show();
                             viewCartBtn.hide();
                             quantityElem.val(1);
