@@ -20,13 +20,13 @@
   }
 </style>
 <section class="">
-  <div class="card shadow-lg p-4">
+  <div class="card shadow-lg pt-4 pb-4">
     <!-- Main Heading -->
     <h2 class="text-primary heading2">Privacy Policy</h2>
     <!-- <div class="border-bottom mb-3"></div> -->
 
     <!-- Intro Section -->
-    <p>
+    <p class="paragraph1">
       At HANERI ELECTRICALS LLP and its subsidiaries (“we,” “us,” “our,” or “HANERI”),
       we are committed to safeguarding your privacy. This Privacy Policy (“Policy”)
       outlines our practices regarding the collection, use, and processing of your
@@ -36,7 +36,7 @@
 
     <!-- Scope of this Policy -->
     <h4 class="heading4 text-primary">Scope of this Policy</h4>
-    <p>This Policy applies to:</p>
+    <p class="paragraph1">This Policy applies to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         Applications and websites hosted by HANERI ELECTRICALS LLP
@@ -125,7 +125,7 @@
 
     <!-- Purpose and Legal Basis -->
     <h4 class="heading4 text-primary">Purpose and Legal Basis for Processing Personal Data</h4>
-    <p>
+    <p class="paragraph1">
       We process your Personal Data for the following purposes:
     </p>
     <ul class="list-group list-group-flush">
@@ -159,7 +159,7 @@
 
     <!-- Sharing Personal Data -->
     <h4 class="heading4 text-primary">Sharing Personal Data</h4>
-    <p>
+    <p class="paragraph1">
       We share Personal Data only as outlined below:
     </p>
     <ul class="list-group list-group-flush">
@@ -192,7 +192,7 @@
 
     <!-- How We Use Your Information -->
     <h4 class="heading4 text-primary">How We Use Your Information</h4>
-    <p>We utilize the collected information to:</p>
+    <p class="paragraph1">We utilize the collected information to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Personalize your experience</li>
       <li class="list-group-item">Improve services and customer support</li>
@@ -203,14 +203,14 @@
 
     <!-- Use of Email/Contact -->
     <h4 class="heading4 text-primary">Use of Email Address/Contact Number</h4>
-    <p>
+    <p class="paragraph1">
       By sharing your email or phone number, you consent to receive communications from
       us. We ensure that these messages are sent only to users who have authorized contact.
     </p>
 
     <!-- International Data Transfers -->
     <h4 class="heading4 text-primary">International Data Transfers</h4>
-    <p>
+    <p class="paragraph1">
       Your Personal Data may be transferred to and processed in countries with different
       privacy laws than your own. We ensure compliance with applicable laws and safeguard
       your data throughout this process.
@@ -218,7 +218,7 @@
 
     <!-- Your Rights -->
     <h4 class="heading4 text-primary">Your Rights</h4>
-    <p>We respect your rights regarding your Personal Data. You may:</p>
+    <p class="paragraph1">We respect your rights regarding your Personal Data. You may:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Access the Personal Data we process about you.</li>
       <li class="list-group-item">Request corrections to inaccurate or incomplete data.</li>
@@ -227,7 +227,7 @@
       <li class="list-group-item">Request data transfer to yourself or a third party.</li>
       <li class="list-group-item">Object to or opt out of data processing based on your consent.</li>
     </ul>
-    <p>
+    <p class="paragraph1">
       To exercise your rights, contact us at
       <a href="mailto:INFO@HANERI.co.in">INFO@HANERI.co.in</a>. We may verify your identity
       before proceeding with your request to ensure security.
@@ -235,7 +235,7 @@
 
     <!-- Security Measures -->
     <h4 class="heading4 text-primary">Security Measures</h4>
-    <p>
+    <p class="paragraph1">
       We employ industry-standard security practices, including encryption, access
       authentication, and secure data storage, to protect your Personal Data. If you
       suspect a security issue, please notify us immediately at
@@ -244,7 +244,7 @@
 
     <!-- Data Retention -->
     <h4 class="heading4 text-primary">Data Retention</h4>
-    <p>
+    <p class="paragraph1">
       Personal Data is retained only for as long as necessary for the purposes outlined
       in this Policy, unless a longer retention period is legally required. Upon expiration
       of the retention period, we securely delete or anonymize your data.
@@ -252,14 +252,14 @@
 
     <!-- Policy Updates -->
     <h4 class="heading4 text-primary">Policy Updates</h4>
-    <p>
+    <p class="paragraph1">
       This Privacy Policy may be updated periodically to reflect changes in our practices.
       Material updates will be communicated via email or app notifications. We encourage
       you to review this Policy regularly for the latest information.
     </p>
 
     <!-- Contact Information -->
-    <p>
+    <p class="paragraph1">
       For any questions or concerns regarding this Privacy Policy, please contact us at
       <a href="mailto:INFO@HANERI.in">INFO@HANERI.in</a>.
     </p>
