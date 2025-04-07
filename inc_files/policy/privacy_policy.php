@@ -18,6 +18,15 @@
   .text-primary {
     color: #1d696e !important;
   }
+
+  .m_top{
+      margin-top: 20px;
+      margin-bottom: 5px;        
+  }
+  .p_top{
+      padding-top: 20px;
+      padding-bottom: 5px;
+  }
 </style>
 <section class="">
   <div class="card shadow-lg pt-4 pb-4">
@@ -35,7 +44,7 @@
     </p>
 
     <!-- Scope of this Policy -->
-    <h4 class="heading4 text-primary">Scope of this Policy</h4>
+    <h4 class="m_top heading4 text-primary">Scope of this Policy</h4>
     <p class="paragraph1">This Policy applies to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
@@ -68,7 +77,7 @@
     </ul>
 
     <!-- Information We Collect -->
-    <h4 class="heading4 text-primary">Information We Collect</h4>
+    <h4 class="m_top heading4 text-primary">Information We Collect</h4>
 
     <!-- 1. Information You Provide -->
     <h5 class="mt-3 text-primary">1. Information You Provide</h5>
@@ -124,7 +133,7 @@
     </ul>
 
     <!-- Purpose and Legal Basis -->
-    <h4 class="heading4 text-primary">Purpose and Legal Basis for Processing Personal Data</h4>
+    <h4 class="m_top heading4 text-primary">Purpose and Legal Basis for Processing Personal Data</h4>
     <p class="paragraph1">
       We process your Personal Data for the following purposes:
     </p>
@@ -158,7 +167,7 @@
     </ul>
 
     <!-- Sharing Personal Data -->
-    <h4 class="heading4 text-primary">Sharing Personal Data</h4>
+    <h4 class="m_top heading4 text-primary">Sharing Personal Data</h4>
     <p class="paragraph1">
       We share Personal Data only as outlined below:
     </p>
@@ -191,7 +200,7 @@
     </ul>
 
     <!-- How We Use Your Information -->
-    <h4 class="heading4 text-primary">How We Use Your Information</h4>
+    <h4 class="m_top heading4 text-primary">How We Use Your Information</h4>
     <p class="paragraph1">We utilize the collected information to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Personalize your experience</li>
@@ -202,14 +211,14 @@
     </ul>
 
     <!-- Use of Email/Contact -->
-    <h4 class="heading4 text-primary">Use of Email Address/Contact Number</h4>
+    <h4 class="m_top heading4 text-primary">Use of Email Address/Contact Number</h4>
     <p class="paragraph1">
       By sharing your email or phone number, you consent to receive communications from
       us. We ensure that these messages are sent only to users who have authorized contact.
     </p>
 
     <!-- International Data Transfers -->
-    <h4 class="heading4 text-primary">International Data Transfers</h4>
+    <h4 class="m_top heading4 text-primary">International Data Transfers</h4>
     <p class="paragraph1">
       Your Personal Data may be transferred to and processed in countries with different
       privacy laws than your own. We ensure compliance with applicable laws and safeguard
@@ -217,7 +226,7 @@
     </p>
 
     <!-- Your Rights -->
-    <h4 class="heading4 text-primary">Your Rights</h4>
+    <h4 class="m_top heading4 text-primary">Your Rights</h4>
     <p class="paragraph1">We respect your rights regarding your Personal Data. You may:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Access the Personal Data we process about you.</li>
@@ -234,7 +243,7 @@
     </p>
 
     <!-- Security Measures -->
-    <h4 class="heading4 text-primary">Security Measures</h4>
+    <h4 class="m_top heading4 text-primary">Security Measures</h4>
     <p class="paragraph1">
       We employ industry-standard security practices, including encryption, access
       authentication, and secure data storage, to protect your Personal Data. If you
@@ -243,7 +252,7 @@
     </p>
 
     <!-- Data Retention -->
-    <h4 class="heading4 text-primary">Data Retention</h4>
+    <h4 class="m_top heading4 text-primary">Data Retention</h4>
     <p class="paragraph1">
       Personal Data is retained only for as long as necessary for the purposes outlined
       in this Policy, unless a longer retention period is legally required. Upon expiration
@@ -251,7 +260,7 @@
     </p>
 
     <!-- Policy Updates -->
-    <h4 class="heading4 text-primary">Policy Updates</h4>
+    <h4 class="m_top heading4 text-primary">Policy Updates</h4>
     <p class="paragraph1">
       This Privacy Policy may be updated periodically to reflect changes in our practices.
       Material updates will be communicated via email or app notifications. We encourage
