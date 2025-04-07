@@ -36,7 +36,7 @@
     <!-- <div class="border-bottom mb-3"></div> -->
 
     <!-- Intro Section -->
-    <p class="paragraph1">
+    <p class="paragraph1 mb-0">
       At HANERI ELECTRICALS LLP and its subsidiaries (“we,” “us,” “our,” or “HANERI”),
       we are committed to safeguarding your privacy. This Privacy Policy (“Policy”)
       outlines our practices regarding the collection, use, and processing of your
@@ -57,7 +57,7 @@
       </li>
     </ul>
 
-    <p class="mt-3">
+    <p class="mt-1 mb-0">
       In this Policy:
     </p>
     <ul class="list-group list-group-flush">
@@ -135,7 +135,7 @@
 
     <!-- Purpose and Legal Basis -->
     <h4 class="m_top heading4 text-primary">Purpose and Legal Basis for Processing Personal Data</h4>
-    <p class="paragraph1">
+    <p class="paragraph1 mb-1">
       We process your Personal Data for the following purposes:
     </p>
     <ul class="list-group list-group-flush">
@@ -169,7 +169,7 @@
 
     <!-- Sharing Personal Data -->
     <h4 class="m_top heading4 text-primary">Sharing Personal Data</h4>
-    <p class="paragraph1">
+    <p class="paragraph1 mb-1">
       We share Personal Data only as outlined below:
     </p>
     <ul class="list-group list-group-flush">
@@ -202,7 +202,7 @@
 
     <!-- How We Use Your Information -->
     <h4 class="m_top heading4 text-primary">How We Use Your Information</h4>
-    <p class="paragraph1">We utilize the collected information to:</p>
+    <p class="paragraph1 mb-0">We utilize the collected information to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Personalize your experience</li>
       <li class="list-group-item">Improve services and customer support</li>
