@@ -46,7 +46,7 @@
 
     <!-- Scope of this Policy -->
     <h4 class="m_top heading4 text-primary">Scope of this Policy</h4>
-    <p class="paragraph1">This Policy applies to:</p>
+    <p class="paragraph1 mb-0">This Policy applies to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         Applications and websites hosted by HANERI ELECTRICALS LLP
@@ -81,7 +81,7 @@
     <h4 class="m_top heading4 text-primary">Information We Collect</h4>
 
     <!-- 1. Information You Provide -->
-    <h5 class="m_top text-primary">1. Information You Provide</h5>
+    <h5 class="mb-0 text-primary">1. Information You Provide</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Account or Profile Data:</strong> When you create an account, we collect
@@ -97,7 +97,7 @@
     </ul>
 
     <!-- 2. Information We Collect Automatically -->
-    <h5 class="m_top text-primary">2. Information We Collect Automatically</h5>
+    <h5 class="mb-0 text-primary">2. Information We Collect Automatically</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Device Information:</strong> We automatically gather data such as device
@@ -120,7 +120,7 @@
     </ul>
 
     <!-- 3. Smart Device Data -->
-    <h5 class="m_top text-primary">3. Smart Device Data</h5>
+    <h5 class="mb-0 text-primary">3. Smart Device Data</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Basic Device Information:</strong> When connecting Smart Devices to our
