@@ -397,5 +397,9 @@
     .faq_section ._ques{
         padding: 10px 10px;
         border-radius: 5px;
+        padding-left: 10px !important;
+    }
+    .faq_section ._ques:hover {
+        color: #fff;
     }
 </style>
