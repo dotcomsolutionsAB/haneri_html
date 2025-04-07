@@ -399,7 +399,7 @@
         border-radius: 5px;
         padding-left: 10px !important;
     }
-    .faq_section ._ques:hover {
-        color: #fff;
+    ._ques:focus, ._ques:hover {
+        color: #fff !important;
     }
 </style>
