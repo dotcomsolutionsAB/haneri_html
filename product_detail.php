@@ -402,7 +402,7 @@
                         if (cartItem) {
                             cartItemId = cartItem.id;
                             addCartBtn.hide();
-                            viewCartBtn.show();
+                            // viewCartBtn.show();
                             quantityElem.val(cartItem.quantity);
                             cartItemIds.show();
                         } else {
