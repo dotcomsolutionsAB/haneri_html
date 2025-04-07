@@ -406,16 +406,15 @@
                             quantityElem.val(cartItem.quantity);
                             cartItemIds.show();
                         } else {
-                            quantityElem.show();//
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(1);
+                            quantityElem.val(cartItem.quantity);
                             cartItemIds.hide();
                         }
                     } else {
                         addCartBtn.show();
                         viewCartBtn.hide();
-                        quantityElem.val(1);
+                        quantityElem.val(cartItem.quantity);
                         cartItemIds.hide();
                     }
                 },
