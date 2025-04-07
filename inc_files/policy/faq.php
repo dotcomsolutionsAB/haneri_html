@@ -375,12 +375,16 @@
     ];
 ?>
 
+<?php
+    // Your $faqs array here (as shared)
+?>
+
 <div class="row faq faq_section">
     <div class="col-lg-12 padlr_0">
         <h2 class="heading2 mb-2">Frequently Asked Questions</h2>
         <div id="accordion">
             <?php foreach ($faqs as $index => $faq): ?>
-                <div class="card card-accordion mb-3">
+                <div class="card card-accordion mb-3 faq-item" data-index="<?= $index ?>" style="<?= $index >= 6 ? 'display: none;' : '' ?>">
                     <a class="card-header _ques <?= $index !== 0 ? 'collapsed' : '' ?>" href="#" data-toggle="collapse" data-target="#collapse<?= $index ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="collapse<?= $index ?>">
                         <?= htmlspecialchars($faq['question']) ?>
                     </a>
@@ -390,9 +394,37 @@
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <?php if (count($faqs) > 6): ?>
+            <div class="text-center mt-3">
+                <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 
-<style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const items = document.querySelectorAll('.faq-item');
+        let currentlyVisible = 6;
+        const increment = 5;
 
-</style>
+        showMoreBtn.addEventListener('click', function () {
+            let itemsShown = 0;
+
+            for (let i = currentlyVisible; i < items.length && itemsShown < increment; i++) {
+                items[i].style.display = 'block';
+                itemsShown++;
+            }
+
+            currentlyVisible += itemsShown;
+
+            // Hide button if all items are shown
+            if (currentlyVisible >= items.length) {
+                showMoreBtn.style.display = 'none';
+            }
+        });
+    });
+</script>
+
