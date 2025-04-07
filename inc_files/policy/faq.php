@@ -376,7 +376,7 @@
 ?>
 
 <div class="row faq faq_section">
-    <div class="col-lg-12">
+    <div class="col-lg-12 padlr_0">
         <h2 class="heading2 mb-2">Frequently Asked Questions</h2>
         <div id="accordion">
             <?php foreach ($faqs as $index => $faq): ?>
@@ -416,5 +416,9 @@
         transform: translateY(-50%);
         font-family: "porto";
         transition: 0.35s;
+    }
+    .padlr_0{
+        padding-left: 0px;
+        padding-right: 0px;
     }
 </style>
