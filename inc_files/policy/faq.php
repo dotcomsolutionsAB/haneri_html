@@ -375,13 +375,13 @@
     ];
 ?>
 
-<div class="row faq">
+<div class="row faq faq_section">
     <div class="col-lg-12">
         <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
         <div id="accordion">
             <?php foreach ($faqs as $index => $faq): ?>
                 <div class="card card-accordion mb-3">
-                    <a class="card-header <?= $index !== 0 ? 'collapsed' : '' ?>" href="#" data-toggle="collapse" data-target="#collapse<?= $index ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="collapse<?= $index ?>">
+                    <a class="card-header _ques <?= $index !== 0 ? 'collapsed' : '' ?>" href="#" data-toggle="collapse" data-target="#collapse<?= $index ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="collapse<?= $index ?>">
                         <?= htmlspecialchars($faq['question']) ?>
                     </a>
                     <div id="collapse<?= $index ?>" class="collapse <?= $index === 0 ? 'show' : '' ?>" data-parent="#accordion">
@@ -392,3 +392,10 @@
         </div>
     </div>
 </div>
+
+<style>
+    .faq_section ._ques{
+        padding: 10px 10px;
+        border-radius: 5px;
+    }
+</style>
