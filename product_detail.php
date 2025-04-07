@@ -448,7 +448,6 @@
                 console.error("No variant selected.");
                 return;
             }
-
             let requestData = token ? {} : { cart_id: tempId };
 
             $.ajax({
