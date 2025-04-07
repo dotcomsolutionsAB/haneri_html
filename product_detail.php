@@ -408,13 +408,13 @@
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(cartItem.quantity);
+                            quantityElem.val(1);
                             cartItemIds.hide();
                         }
                     } else {
                         addCartBtn.show();
                         viewCartBtn.hide();
-                        quantityElem.val(cartItem.quantity);
+                        quantityElem.val(1);
                         cartItemIds.hide();
                     }
                 },
