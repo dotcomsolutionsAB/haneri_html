@@ -1,6 +1,7 @@
 <style>
-  .list-group-item {
+  .privacy_page .list-group-item {
     border: 0px solid rgba(0, 0, 0, .125);
+    padding: .35rem 2.25rem;
   }
 
   .border-bottom {
@@ -28,7 +29,7 @@
       padding-bottom: 5px;
   }
 </style>
-<section class="">
+<section class="privacy_page">
   <div class="card shadow-lg pt-4 pb-4">
     <!-- Main Heading -->
     <h2 class="text-primary heading2">Privacy Policy</h2>
@@ -80,7 +81,7 @@
     <h4 class="m_top heading4 text-primary">Information We Collect</h4>
 
     <!-- 1. Information You Provide -->
-    <h5 class="mt-3 text-primary">1. Information You Provide</h5>
+    <h5 class="m_top text-primary">1. Information You Provide</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Account or Profile Data:</strong> When you create an account, we collect
@@ -96,7 +97,7 @@
     </ul>
 
     <!-- 2. Information We Collect Automatically -->
-    <h5 class="mt-4 text-primary">2. Information We Collect Automatically</h5>
+    <h5 class="m_top text-primary">2. Information We Collect Automatically</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Device Information:</strong> We automatically gather data such as device
@@ -119,7 +120,7 @@
     </ul>
 
     <!-- 3. Smart Device Data -->
-    <h5 class="mt-4 text-primary">3. Smart Device Data</h5>
+    <h5 class="m_top text-primary">3. Smart Device Data</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <strong>Basic Device Information:</strong> When connecting Smart Devices to our
