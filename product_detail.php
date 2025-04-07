@@ -440,54 +440,60 @@
         // Update cart quantity function
         function updateCartQuantity() {
             const newQuantity = parseInt(quantityElem.val()) || 1;
+            const token = localStorage.getItem("auth_token");
+            const tempId = localStorage.getItem("temp_id");
+            const variantId = $('#selected-variant').val();
 
-            if (!cartItemId) {
-                console.error("Cart item ID is missing.");
+            if (!variantId) {
+                console.error("No variant selected.");
                 return;
             }
 
-            const token = localStorage.getItem("auth_token");
-            const tempId = localStorage.getItem("temp_id");
+            let requestData = token ? {} : { cart_id: tempId };
 
-            let requestData = { quantity: newQuantity };
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/cart/fetch`,
+                type: "POST",
+                headers: token ? { "Authorization": `Bearer ${token}` } : {},
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (data) {
+                    if (data.data && data.data.length > 0) {
+                        const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
+                        if (!cartItem) {
+                            console.warn("Cart item not found for this variant.");
+                            return;
+                        }
 
-            if (token) {
-                // If the user is authenticated, send the cart ID and new quantity
-                $.ajax({
-                    url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-                    type: "POST",
-                    headers: { "Authorization": `Bearer ${token}` },
-                    contentType: "application/json",
-                    data: JSON.stringify(requestData),
-                    success: function (data) {
-                        console.log("Cart quantity updated:", data);
-                        updatePrice();
-                    },
-                    error: function (error) {
-                        console.error("Error updating cart quantity:", error);
+                        const requestDataUpdate = {
+                            quantity: newQuantity,
+                            ...(tempId && !token ? { cart_id: tempId } : {})
+                        };
+
+                        $.ajax({
+                            url: `<?php echo BASE_URL; ?>/cart/update/${cartItem.id}`,
+                            type: "POST",
+                            headers: token ? { "Authorization": `Bearer ${token}` } : {},
+                            contentType: "application/json",
+                            data: JSON.stringify(requestDataUpdate),
+                            success: function (data) {
+                                console.log("Cart quantity updated:", data);
+                                updatePrice();
+                            },
+                            error: function (error) {
+                                console.error("Error updating cart quantity:", error);
+                            }
+                        });
+                    } else {
+                        console.warn("No items in cart.");
                     }
-                });
-            } else if (tempId) {
-                // If the user is a guest (temp_id), send the temp_id along with the quantity
-                requestData.cart_id = tempId;
-                $.ajax({
-                    url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-                    type: "POST",
-                    contentType: "application/json",
-                    data: JSON.stringify(requestData),
-                    success: function (data) {
-                        console.log("Cart quantity updated:", data);
-                        updatePrice();
-                    },
-                    error: function (error) {
-                        console.error("Error updating cart quantity:", error);
-                    }
-                });
-            } else {
-                // If neither auth_token nor temp_id is found, show a warning
-                console.warn("No auth_token or temp_id found. Cannot update cart.");
-            }
+                },
+                error: function (error) {
+                    console.error("Error fetching cart for quantity update:", error);
+                }
+            });
         }
+
 
         // Call the checkCart function when the page loads
         checkCart();
