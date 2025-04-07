@@ -201,6 +201,40 @@
         }
 
         // Variant update function
+        // window.updateVariant = function(element) {
+        //     const variantId    = $(element).data("variant-id");
+        //     const sellingPrice = $(element).data("selling-price");
+        //     const regularPrice = $(element).data("regular-price");
+        //     const vendorPrice  = $(element).data("vendor-price");
+
+        //     // Update UI
+        //     $('.variant').removeClass('selected');
+        //     $(element).addClass('selected');
+        //     $('#selected-variant').val(variantId);
+
+        //     // Show regular price with strike-through
+        //     regularPriceElem.text(`₹${regularPrice}`).css("text-decoration", "line-through");
+
+        //     if (userRole === "vendor") {
+        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "line-through");
+        //         specialPriceElem.text(`₹${vendorPrice}`).show();
+        //         sPriceContainer.show();
+        //         tPriceElem.attr("data-price", vendorPrice).text(`₹${vendorPrice}`);
+        //     } else {
+        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "none");
+        //         specialPriceElem.hide();
+        //         sPriceContainer.hide();
+        //         tPriceElem.attr("data-price", sellingPrice).text(`₹${sellingPrice}`);
+        //     }
+
+        //     // Update image section based on selected variant
+        //     if (parseInt(productId) === 14) {
+        //         setImageSection(variantId);
+        //     }
+
+        //     updatePrice();
+        // }
+
         window.updateVariant = function(element) {
             const variantId    = $(element).data("variant-id");
             const sellingPrice = $(element).data("selling-price");
@@ -232,8 +266,12 @@
                 setImageSection(variantId);
             }
 
+            // ✅ CHECK if selected variant is already in cart
+            checkVariantInCart(variantId);
+
             updatePrice();
-        }
+        };
+
 
         // Add to Cart function
         function addToCart() {
@@ -295,90 +333,6 @@
         }
 
         // Check the current state of the cart
-        // function checkCart() {
-        //     const token  = localStorage.getItem("auth_token");
-        //     const tempId = localStorage.getItem("temp_id");
-
-        //     if (!token && !tempId) {
-        //         console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
-        //         return;
-        //     }
-
-        //     let requestData = {};
-        //     if (token) {
-        //         requestData = {};
-        //     } else if (tempId) {
-        //         requestData = { cart_id: tempId };
-        //     }
-
-        //     $.ajax({
-        //         url: `<?php echo BASE_URL; ?>/cart/fetch`,
-        //         type: "POST",
-        //         headers: token ? { "Authorization": `Bearer ${token}` } : {},
-        //         contentType: "application/json",
-        //         data: JSON.stringify(requestData),
-        //         success: function (data) {
-        //             if (data.data && data.data.length > 0) {
-        //                 const cartItem = data.data.find(item => item.product_id == productId);
-        //                 if (cartItem) {
-        //                     addCartBtn.hide();
-        //                     viewCartBtn.show();
-        //                     quantityElem.val(cartItem.quantity);
-        //                     cartItemIds.show(); // want to hide after have data in cart use .hide()
-        //                     updatePrice();
-        //                 } else {
-        //                     addCartBtn.show();
-        //                     viewCartBtn.hide();
-        //                     quantityElem.val(1);
-        //                     updatePrice();
-        //                 }
-        //             }
-        //         },
-        //         error: function (error) {
-        //             console.error("Error checking cart:", error);
-        //         }
-        //     });
-        // }
-
-        // Price update function based on quantity change
-        // window.updatePrice = function() {
-        //     const quantity = parseFloat(quantityElem.val()) || 1;
-        //     // Pull the base price from #selling-tprice's data-price
-        //     const basePrice = parseFloat(tPriceElem.attr("data-price")) || 0;
-
-        //     if (!isNaN(basePrice)) {
-        //         const updatedPrice = (quantity * basePrice).toFixed(2);
-        //         // Update #selling-tprice text to reflect the total
-        //         tPriceElem.text(`₹${updatedPrice}`);
-        //     }
-        // }
-
-        // Update cart quantity function
-        // function updateCartQuantity() {
-        //     const newQuantity = quantityElem.val() || 1;
-
-        //     if (!cartItemId) {
-        //         console.error("Cart item ID is missing.");
-        //         return;
-        //     }
-
-        //     $.ajax({
-        //         url: `<?php echo BASE_URL; ?>/cart/update/${cartItemId}`,
-        //         type: "POST",
-        //         headers: { "Authorization": `Bearer ${token}` },
-        //         contentType: "application/json",
-        //         data: JSON.stringify({ quantity: newQuantity }),
-        //         success: function (data) {
-        //             console.log("Cart quantity updated:", data);
-        //             updatePrice();
-        //         },
-        //         error: function (error) {
-        //             console.error("Error updating cart quantity:", error);
-        //         }
-        //     });
-        // }
-
-        // Check the current state of the cart
         function checkCart() {
             const token  = localStorage.getItem("auth_token");
             const tempId = localStorage.getItem("temp_id");
@@ -421,6 +375,51 @@
                 },
                 error: function (error) {
                     console.error("Error checking cart:", error);
+                }
+            });
+        }
+
+        function checkVariantInCart(variantId) {
+            const token  = localStorage.getItem("auth_token");
+            const tempId = localStorage.getItem("temp_id");
+
+            if (!token && !tempId) {
+                console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
+                return;
+            }
+
+            let requestData = token ? {} : { cart_id: tempId };
+
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/cart/fetch`,
+                type: "POST",
+                headers: token ? { "Authorization": `Bearer ${token}` } : {},
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (data) {
+                    if (data.data && data.data.length > 0) {
+                        const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
+                        if (cartItem) {
+                            cartItemId = cartItem.id;
+                            addCartBtn.hide();
+                            viewCartBtn.show();
+                            quantityElem.val(cartItem.quantity);
+                            cartItemIds.show();
+                        } else {
+                            addCartBtn.show();
+                            viewCartBtn.hide();
+                            quantityElem.val(1);
+                            cartItemIds.hide();
+                        }
+                    } else {
+                        addCartBtn.show();
+                        viewCartBtn.hide();
+                        quantityElem.val(1);
+                        cartItemIds.hide();
+                    }
+                },
+                error: function (error) {
+                    console.error("Error checking cart for variant:", error);
                 }
             });
         }
@@ -1451,39 +1450,3 @@
     </div><!-- End .page-wrapper -->
 </main><!-- End .main -->
 
-<!-- <style>
-    .product-desc-content .feature-box p {
-        font-size: 14px;
-        line-height: 27px;
-        color: #4a505e;
-        letter-spacing: 0;
-        text-align: justify;
-    }
-    .product-single-details .old-price {
-        font-size: 2.9rem !important;
-    }
-    .product-single-details .new-price {
-        color: #585f66;
-        font-size: 2.9rem !important;
-        letter-spacing: -0.02em;
-        vertical-align: middle;
-        line-height: 0.8;
-        margin-left: 3px;
-        /* text-decoration: line-through; */
-    }
-    .special-price{
-        color:#f0340efa;
-        font-size: 3.3rem;
-        letter-spacing: -0.02em;
-        vertical-align: middle;
-        line-height: 0.8;
-        margin-left: 3px;
-        /* font-family: 'Barlow Condensed'; */
-        /* text-decoration: line-through; */
-    }
-    .s_price{
-        font-style: italic;
-        font-weight: 800;
-        font-size: 24px;
-    }
-</style> -->
