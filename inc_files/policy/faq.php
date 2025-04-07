@@ -402,4 +402,19 @@
     ._ques:focus, ._ques:hover {
         color: #fff !important;
     }
+
+    /* Faq Pages Css */
+    .faq_section .card.card-accordion .card-header.collapsed:after {
+        content: "+";
+        transition: 0.35s;
+    }
+    .faq_section .card.card-accordion .card-header:after {
+        content: "-";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-family: "porto";
+        transition: 0.35s;
+    }
 </style>
