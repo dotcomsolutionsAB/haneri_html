@@ -377,7 +377,7 @@
 
 <div class="row faq faq_section">
     <div class="col-lg-12 padlr_0">
-        <h2 class="heading2 mb-2">Frequently Asked Questions</h2>
+        <h2 class="heading2 mt-3 mb-2">Frequently Asked Questions</h2>
         <div id="accordion">
             <?php foreach ($faqs as $index => $faq): ?>
                 <div class="card card-accordion mb-3">
