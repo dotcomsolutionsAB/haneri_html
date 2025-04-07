@@ -40,8 +40,8 @@
             };
 
             const imageMap = {
-                13: ["Natural_Pine.png", "Natural_Pine2.png", "Natural_Pine3.png", "Natural_Pine4.png", "Natural_Pine5.png", videoUrl],
-                14: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
+                14: ["Natural_Pine.png", "Natural_Pine2.png", "Natural_Pine3.png", "Natural_Pine4.png", "Natural_Pine5.png", videoUrl],
+                13: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
                 15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
                 16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
             };
