@@ -1,22 +1,22 @@
 <style>
-  .privacy_page .list-group-item {
+  /* .privacy_page .list-group-item {
     border: 0px solid rgba(0, 0, 0, .125);
     padding: .35rem 2.25rem;
   }
 
-  .border-bottom {
+  .privacy_page .border-bottom {
     border-bottom: 0px solid #dee2e6 !important;
   }
 
-  .shadow-lg {
+  .privacy_page .shadow-lg {
     box-shadow: none !important;
   }
 
-  .card {
+  .privacy_page .card {
     border: 0px solid rgba(0, 0, 0, .125);
   }
 
-  .text-primary {
+  .privacy_page .text-primary {
     color: #1d696e !important;
   }
 
@@ -27,7 +27,7 @@
   .p_top{
       padding-top: 20px;
       padding-bottom: 5px;
-  }
+  } */
 </style>
 <section class="privacy_page">
   <div class="card shadow-lg pt-4 pb-4">

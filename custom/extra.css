@@ -2975,3 +2975,36 @@ footer .social-icon {
             padding-right: 0px;
         }
     /* end Faq Pages Css */
+
+
+    /* Privacy Policy */
+    .privacy_page .list-group-item {
+        border: 0px solid rgba(0, 0, 0, .125);
+        padding: .35rem 2.25rem;
+      }
+    
+      .privacy_page .border-bottom {
+        border-bottom: 0px solid #dee2e6 !important;
+      }
+    
+      .privacy_page .shadow-lg {
+        box-shadow: none !important;
+      }
+    
+      .privacy_page .card {
+        border: 0px solid rgba(0, 0, 0, .125);
+      }
+    
+      .privacy_page .text-primary {
+        color: #1d696e !important;
+      }
+    
+      .m_top{
+          margin-top: 20px;
+          margin-bottom: 5px;        
+      }
+      .p_top{
+          padding-top: 20px;
+          padding-bottom: 5px;
+      }
+      /* End Privacy Policy */
