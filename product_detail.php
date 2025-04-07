@@ -361,7 +361,7 @@
                         if (cartItem) {
                             cartItemId = cartItem.id; // Get the cart ID
                             addCartBtn.hide();
-                            viewCartBtn.show();
+                            // viewCartBtn.show();
                             quantityElem.val(cartItem.quantity);
                             cartItemIds.show();
                             updatePrice();
@@ -402,7 +402,7 @@
                         if (cartItem) {
                             cartItemId = cartItem.id;
                             addCartBtn.hide();
-                            // viewCartBtn.show();
+                            viewCartBtn.show();
                             quantityElem.val(cartItem.quantity);
                             cartItemIds.show();
                         } else {
