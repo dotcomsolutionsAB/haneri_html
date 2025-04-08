@@ -1,5 +1,5 @@
 <style>
-    .shipping_policy .list-group-item {
+    /* .shipping_policy .list-group-item {
         border:0px solid rgba(0, 0, 0, .125);
     }
     .shipping_policy .border-bottom {
@@ -17,7 +17,7 @@
     .shipping_policy .list-group-item {
         border: 0px solid rgba(0, 0, 0, .125);
         padding: .35rem 2.25rem;
-    }
+    } */
 </style>
 <section class="shipping_policy">
     <div class="card shadow-lg pt-4 pb-4">
@@ -87,7 +87,7 @@
         </ul>
         
         <h4 class="m_top heading4 text-primary">8. Contact Us</h4>
-        <p>For any shipping-related queries or concerns, please contact:</p>
+        <p class="paragraph1 mb-1">For any shipping-related queries or concerns, please contact:</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
             <li class="list-group-item">Phone: [Insert Contact Number]</li>
@@ -95,7 +95,7 @@
             <li class="list-group-item">Office Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</li>
         </ul>
         
-        <p class="text-muted mt-4"><strong>Haneri Electricals LLP reserves the right to update this Shipping Policy at its discretion. Any changes will be communicated via our website or official communication channels.</strong></p>
-        <p class="text-center text-success">Thank you for choosing Haneri. We are dedicated to ensuring your products reach you swiftly and safely.</p>
+        <p class="heading4 mb-1 mt-1 text-primary">Haneri Electricals LLP reserves the right to update this Shipping Policy at its discretion. Any changes will be communicated via our website or official communication channels.</p>
+        <p class="heading4 mb-1 mt-1 text-primary text-center">Thank you for choosing Haneri. We are dedicated to ensuring your products reach you swiftly and safely.</p>
     </div>
 </section>
