@@ -1,37 +1,37 @@
 <style>
-    .list-group-item {
+    .shipping_policy .list-group-item {
         border:0px solid rgba(0, 0, 0, .125);
     }
-    .border-bottom {
+    .shipping_policy .border-bottom {
         border-bottom: 0px solid #dee2e6 !important;
     }
-    .shadow-lg {
+    .shipping_policy .shadow-lg {
         box-shadow: none !important;
     }
-    .card{
+    .shipping_policy .card{
         border: 0px solid rgba(0, 0, 0, .125);
     }
-    .text-primary {
+    .shipping_policy .text-primary {
         color: #1d696e !important;
     }
 </style>
-<section class="py-5">
-    <div class="card shadow-lg p-4">
-        <h2 class="text-primary mb-3">Shipping Policy</h2>
-        <p class="text-muted">Effective Date: [Insert Date]</p>
-        <div class="border-bottom mb-3"></div>
+<section class="shipping_policy">
+    <div class="card shadow-lg pt-4 pb-4">
+        <h2 class="text-primary heading2">Shipping Policy</h2>
+        <p class="paragraph1 mb-0">Effective Date: [Insert Date]</p>
+        <div class="border-bottom mb-2"></div>
         
-        <p><strong>Haneri Electricals LLP</strong></p>
-        <p>Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
-        <p>Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
+        <p class="heading4"><b>Haneri Electricals LLP</b></p>
+        <p class="paragraph1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="paragraph1">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
-        <h4 class="mt-4 text-primary">1. Shipping Destinations</h4>
+        <h4 class="m_top heading4 text-primary">1. Shipping Destinations</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">We ship our products across all major cities and towns in India.</li>
             <li class="list-group-item">Delivery services may not be available in remote or non-serviceable areas. Customers in such locations will be notified during the order placement process.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">2. Delivery Timelines</h4>
+        <h4 class="m_top heading4 text-primary">2. Delivery Timelines</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Standard Delivery:</strong> Orders are typically delivered within 5-7 business days from the date of order confirmation.</li>
             <li class="list-group-item"><strong>Express Delivery:</strong> Available in select cities, with delivery within 2-3 business days.</li>
@@ -39,26 +39,26 @@
             <li class="list-group-item">Customers will be notified of any delays due to unforeseen circumstances or high demand.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">3. Shipping Charges</h4>
+        <h4 class="m_top heading4 text-primary">3. Shipping Charges</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Free Shipping:</strong> Shipping charges are included in the finished product cost, and no additional fees are applied. However, spares and component shipping may attract extra charges as per actual for out-of-warranty cases.</li>
             <li class="list-group-item">Any additional packaging request made by the customer will be charged extra as per actual.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">4. Order Tracking</h4>
+        <h4 class="m_top heading4 text-primary">4. Order Tracking</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Once an order is shipped, customers will receive a confirmation email or SMS with a tracking ID and link.</li>
             <li class="list-group-item">Customers can use the tracking ID to monitor the shipment status via our logistics partner’s portal.</li>
             <li class="list-group-item">For any tracking issues, please contact our customer support team at <strong>[Insert Contact Information]</strong>.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">5. Shipping Restrictions</h4>
+        <h4 class="m_top heading4 text-primary">5. Shipping Restrictions</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">We do not deliver to P.O. Boxes or military addresses (e.g., APO/FPO).</li>
             <li class="list-group-item">Certain products may have shipping restrictions due to legal or regulatory requirements. Such restrictions will be communicated at the time of purchase.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">6. Damaged or Lost Shipments</h4>
+        <h4 class="m_top heading4 text-primary">6. Damaged or Lost Shipments</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>If a product arrives damaged:</strong>
                 <ul>
@@ -75,14 +75,14 @@
             </li>
         </ul>
         
-        <h4 class="mt-4 text-primary">7. Cancellation of Orders</h4>
+        <h4 class="m_top heading4 text-primary">7. Cancellation of Orders</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Orders can be cancelled before they are shipped. Once shipped, cancellations are not allowed.</li>
             <li class="list-group-item">To cancel an order, contact Haneri Customer Support at <a href="mailto:info@haneri.in">info@haneri.in</a>.</li>
             <li class="list-group-item">Refunds for cancelled orders will be processed within <strong>[Insert Time Period, e.g., 7-10 business days]</strong>.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">8. Contact Us</h4>
+        <h4 class="m_top heading4 text-primary">8. Contact Us</h4>
         <p>For any shipping-related queries or concerns, please contact:</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
