@@ -14,6 +14,10 @@
     .shipping_policy .text-primary {
         color: #1d696e !important;
     }
+    .shipping_policy .list-group-item {
+        border: 0px solid rgba(0, 0, 0, .125);
+        padding: .35rem 2.25rem;
+    }
 </style>
 <section class="shipping_policy">
     <div class="card shadow-lg pt-4 pb-4">
@@ -22,8 +26,8 @@
         <div class="border-bottom mb-2"></div>
         
         <p class="heading4"><b>Haneri Electricals LLP</b></p>
-        <p class="paragraph1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
-        <p class="paragraph1">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
+        <p class="paragraph1 mb-1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="paragraph1 mb-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Shipping Destinations</h4>
         <ul class="list-group list-group-flush">
