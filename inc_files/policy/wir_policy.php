@@ -29,8 +29,7 @@
   // include('../../con')
 
   // Load the data from the JSON file
-  $data = loadData('haneri.json');
-  if($data){
+  if(isset($data)){
     echo "okay !";
   }else{
     echo "not okay !";

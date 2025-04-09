@@ -1,4 +1,5 @@
 <?php
+$filePath= "/haneri.json";
 function loadData($filePath) {
     // Check if file exists
     if (file_exists($filePath)) {
