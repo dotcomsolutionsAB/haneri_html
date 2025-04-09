@@ -31,7 +31,7 @@
         
         <p class="heading4 mt-0"><b>Haneri Electricals LLP</b></p>
         <p class="paragraph1 mb-1 mt-0">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
-        <p class="paragraph1 mb-0 mt-1">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
+        <p class="paragraph1 mb-0 mt-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
         <p class="paragraph1 mb-0 mt-0"><strong>Accessories : </strong></p>
@@ -183,7 +183,7 @@
             <li class="list-group-item">Office Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</li>
         </ul>
         
-        <p class="heading4 mb-1 mt-1 text-primary text-center">Haneri Electricals LLP reserves the right to modify this policy as necessary. Updates will be communicated via our website or official communication channels.</p>
+        <p class="heading4 mb-1 mt-1 text-primary">Haneri Electricals LLP reserves the right to modify this policy as necessary. Updates will be communicated via our website or official communication channels.</p>
         <p class="heading4 mb-1 mt-1 text-primary text-center">Thank you for choosing Haneri. We’re dedicated to providing superior products and services.</p>
     </div>
 </section>
