@@ -1,7 +1,16 @@
 <?php
-    // Include the read_data.php to fetch JSON data
-    include('configs/read.php');
+// Include the loadData.php file
+include('configs/read.php');
+
+// Load the data from the JSON file
+$data = loadData('configs/haneri.json');
+
+// Use the data
+// if ($data) {
+//     echo "Name: " . $data['name'] . "<br>";
+// }
 ?>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-top top-border d-flex align-items-center justify-content-between flex-wrap">
@@ -96,7 +105,11 @@
                                             <span>
                                                 HANERI ELECTRICALS LLP, A-48 
                                             <br>
-                                                <?php echo $data['address']; ?>
+                                                <?php 
+                                                    if ($data['name']) {
+                                                        echo  $data['name'];
+                                                    }
+                                                ?>
                                             </span>
                                         </p>
                                         <!-- <p>

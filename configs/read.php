@@ -1,16 +1,15 @@
 <?php
-// Read the JSON file
-$json_data = file_get_contents('haneri.json');
-
-// Decode the JSON data into an associative array
-$data = json_decode($json_data, true);
-
-// Access the data like a regular PHP array
-// echo 'Name: ' . $data['name'] . '<br>';
-// echo 'Address: ' . $data['address'] . '<br>';
-// echo 'Phone: ' . $data['phone'] . '<br>';
-// echo 'Email: ' . $data['email'] . '<br>';
-// echo 'Facebook Link: ' . $data['facebooklink'] . '<br>';
-// echo 'Instagram Link: ' . $data['instagramlink'] . '<br>';
-// echo 'YouTube Link: ' . $data['youtube'] . '<br>';
-?>
+function loadData($filePath) {
+    // Check if file exists
+    if (file_exists($filePath)) {
+        // Read the file contents
+        $jsonData = file_get_contents($filePath);
+        
+        // Decode the JSON data into an associative array
+        $data = json_decode($jsonData, true);
+        
+        return $data;
+    } else {
+        return null; // Return null if the file doesn't exist
+    }
+}
