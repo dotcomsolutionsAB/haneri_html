@@ -232,94 +232,64 @@
                         </nav>
                     </div><!-- End .header-left -->
 
-<div class="header-right">
-    <?php 
-        $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
-    ?>
+                    <div class="header-right">
+                        <?php 
+                            $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
+                        ?>
 
-    <?php if ($isLoggedIn === "true") : ?>
-        <!-- Show when user is logged in -->
-        <div class="header-icon-wrapper">
-            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                <i class="icon-user-2"></i>
-            </a> 
+                        <?php if ($isLoggedIn === "true") : ?>
+                            <!-- Show when user is logged in -->
+                            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                <i class="icon-user-2"></i>
+                            </a> 
+                                <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <ul class="submenu">
+                                                <li>
+                                                    <a href="#">Cart</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Account</a>
+                                                    <div class="submenu-description">
+                                                        <a href="#" class="description-link">FORM</a> 
+                                                    </div>
+                                                </li>
+                                                <li><a href="contact.php">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            |  
+                            <a href="#" class="header-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a> | 
+                            <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
+                                <!-- <i class="icon-wishlist-2"></i> -->
+                                <i class="minicart-icon"></i>
+                            </a> |
+                            <a href="#" class="header-icon" id="logout-btn" title="Logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        <?php else : ?>
+                            <!-- Show when user is NOT logged in -->
+                            <a href="login.php" class="header-icon header-icon-user" title="Login">
+                                <i class="icon-user-2"></i>
+                            </a> |  
+                            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> 
+                        <?php endif; ?>
 
-            <!-- Profile Dropdown Menu -->
-            <div class="dropdown-menu d-none">
-                <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
-                <a href="cart.php" class="dropdown-item">Cart</a>
-                <a href="profile.php" class="dropdown-item">Account</a>
-                <a href="#" class="dropdown-item" id="logout-link">Logout</a>
-            </div> 
-
-            | 
-            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-            </div>
-        </div>
-
-    <?php else : ?>
-        <!-- Show when user is NOT logged in -->
-        <div class="header-icon-wrapper">
-            <a href="login.php" class="header-icon header-icon-user" title="Login">
-                <i class="icon-user-2"></i>
-            </a> |  
-            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-            </div>
-        </div>
-    <?php endif; ?>
-</div>
-
-
-
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </header><!-- End .header -->
 <style>
-    /* Wrapper for all icons */
-    .header-icon-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    /* Dropdown menu (hidden by default) */
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-    }
-
-    /* Dropdown item styling */
-    .dropdown-item {
-        padding: 10px 15px;
-        color: #333;
-        text-decoration: none;
-    }
-
-    /* Highlight item on hover */
-    .dropdown-item:hover {
-        background-color: #f5f5f5;
-    }
-
-    /* Show the dropdown menu when hovering over Profile link */
-    .header-icon-wrapper:hover .dropdown-menu {
-        display: block !important;
-    }
-
-    /* Optional: style for icon hover */
-    .header-icon-wrapper:hover .header-icon {
-        cursor: pointer;
-    }
-
+    
 </style>
 
     <script>
@@ -363,52 +333,6 @@
         //         `;
         //     }
         // });
-
-document.addEventListener("DOMContentLoaded", function() {
-    const authToken = localStorage.getItem("auth_token");
-
-    if (authToken) {
-        document.querySelector(".header-right").innerHTML = `
-            <div class="header-icon-wrapper">
-                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                    <i class="icon-user-2"></i>
-                </a> 
-                <div class="dropdown-menu d-none">
-                    <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
-                    <a href="cart.php" class="dropdown-item">Cart</a>
-                    <a href="profile.php" class="dropdown-item">Account</a>
-                    <a href="#" class="dropdown-item" id="logout-link">Logout</a>
-                </div> 
-                | 
-                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                </div>
-            </div>
-        `;
-
-        // Logout functionality
-        document.getElementById("logout-link").addEventListener("click", function() {
-            localStorage.removeItem("auth_token");
-            localStorage.removeItem("user_name");
-            localStorage.removeItem("user_role");
-            localStorage.removeItem("user_id");
-            window.location.href = "login.php"; // Redirect to login page after logout
-        });
-
-    } else {
-        document.querySelector(".header-right").innerHTML = `
-            <div class="header-icon-wrapper">
-                <a href="login.php" class="header-icon header-icon-user" title="Login">
-                    <i class="icon-user-2"></i>
-                </a> |  
-                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                </div>
-            </div>
-        `;
-    }
-});
 
 
     </script>
