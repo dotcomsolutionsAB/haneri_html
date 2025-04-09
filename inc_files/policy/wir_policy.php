@@ -23,20 +23,7 @@
       margin-top: 1.5rem;
     } */
   </style>
-<?php
-  // Include the loadData.php file
-  include('../configs/read.php');
 
-  // Load the data from the JSON file
-  $data = loadData('../configs/haneri.json');
-
-  // Load the data from the JSON file
-  if(isset($data)){
-    echo "okay !";
-  }else{
-    echo "not okay !";
-  }
-?>
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
