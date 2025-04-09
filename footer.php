@@ -103,7 +103,7 @@ $data = loadData('configs/haneri.json');
                                             <span>
                                                 <?php 
                                                     if ($data && isset($data['name'])) {
-                                                        echo $data['name']."<br>";
+                                                        echo $data['name'];
                                                     } else {
                                                         echo 'Name not found';
                                                     }
