@@ -1,34 +1,3 @@
-<style>
-  /* .privacy_page .list-group-item {
-    border: 0px solid rgba(0, 0, 0, .125);
-    padding: .35rem 2.25rem;
-  }
-
-  .privacy_page .border-bottom {
-    border-bottom: 0px solid #dee2e6 !important;
-  }
-
-  .privacy_page .shadow-lg {
-    box-shadow: none !important;
-  }
-
-  .privacy_page .card {
-    border: 0px solid rgba(0, 0, 0, .125);
-  }
-
-  .privacy_page .text-primary {
-    color: #1d696e !important;
-  }
-
-  .m_top{
-      margin-top: 20px;
-      margin-bottom: 5px;        
-  }
-  .p_top{
-      padding-top: 20px;
-      padding-bottom: 5px;
-  } */
-</style>
 <section class="privacy_page">
   <div class="card shadow-lg pt-4 pb-4">
     <!-- Main Heading -->
@@ -37,7 +6,13 @@
 
     <!-- Intro Section -->
     <p class="paragraph1 mb-0">
-      At HANERI ELECTRICALS LLP and its subsidiaries (“we,” “us,” “our,” or “HANERI”),
+      At <?php 
+              if ($data && isset($data['name'])) {
+                  echo $data['name'];
+              } else {
+                  echo 'Name not found';
+              }
+          ?> and its subsidiaries (“we,” “us,” “our,” or “HANERI”),
       we are committed to safeguarding your privacy. This Privacy Policy (“Policy”)
       outlines our practices regarding the collection, use, and processing of your
       Personal Data when you interact with our services, products, and related web
@@ -49,7 +24,7 @@
     <p class="paragraph1 mb-0">This Policy applies to:</p>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        Applications and websites hosted by HANERI ELECTRICALS LLP
+        Applications and websites hosted by <?php echo $data['name']; ?>
       </li>
       <li class="list-group-item">
         Related services accessed through
@@ -239,7 +214,15 @@
     </ul>
     <p class="paragraph1 mb-0">
       To exercise your rights, contact us at
-      <a href="mailto:INFO@HANERI.co.in">INFO@HANERI.co.in</a>. We may verify your identity
+      <a href="mailto:<?php echo $data['email']; ?>">
+            <?php 
+              if ($data && isset($data['email'])) {
+                  echo $data['email'];
+              } else {
+                  echo 'email not found';
+              }
+            ?>
+      </a>. We may verify your identity
       before proceeding with your request to ensure security.
     </p>
 
@@ -249,7 +232,7 @@
       We employ industry-standard security practices, including encryption, access
       authentication, and secure data storage, to protect your Personal Data. If you
       suspect a security issue, please notify us immediately at
-      <a href="mailto:INFO@HANERI.in">INFO@HANERI.in</a>.
+      <a href="mailto:<?php echo $data['email']; ?>"><?php echo $data['email']; ?></a>.
     </p>
 
     <!-- Data Retention -->
@@ -271,7 +254,7 @@
     <!-- Contact Information -->
     <p class="paragraph1 mb-0">
       For any questions or concerns regarding this Privacy Policy, please contact us at
-      <a href="mailto:INFO@HANERI.in">INFO@HANERI.in</a>.
+      <a href="mailto:<?php echo $data['email']; ?>"><?php echo $data['email']; ?></a>.
     </p>
 
   </div>
