@@ -12,7 +12,7 @@
     </nav>
     <?php
   // Include the loadData.php file
-  include('../configs/read.php');
+  include('configs/read.php');
 
   // Load the data from the JSON file
 //   $data = loadData('/haneri.json');
