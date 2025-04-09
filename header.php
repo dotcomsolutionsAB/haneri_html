@@ -45,9 +45,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-<?php 
-    // Include the loadEnv.php to load .env file
-    require_once 'loadEnv.php';
+<?php
+    // Include the read_data.php to fetch JSON data
+    include('read_data.php');
 ?>
 <body class="full-screen-slider">
 <!-- Loader HTML -->
