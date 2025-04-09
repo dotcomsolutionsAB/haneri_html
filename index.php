@@ -1,4 +1,5 @@
 <?php include("header.php"); ?>
+<?php include("configs/config.php"); ?>
     <!-- Category section  -->
     <main class="main">
         <!-- Slider section -->
