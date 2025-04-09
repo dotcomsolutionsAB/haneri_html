@@ -102,12 +102,19 @@ $data = loadData('configs/haneri.json');
                                         <p>
                                             <span>
                                                 HANERI ELECTRICALS LLP, A-48 
-                                            <br>
                                                 <?php 
                                                     if ($data && isset($data['name'])) {
-                                                        echo $data['name'];
+                                                        echo $data['name']."<br>";
                                                     } else {
                                                         echo 'Name not found';
+                                                    }
+                                                ?>
+                                            <br>
+                                                <?php 
+                                                    if ($data && isset($data['address'])) {
+                                                        echo $data['address'];
+                                                    } else {
+                                                        echo 'Address not found';
                                                     }
                                                 ?>
                                             </span>
@@ -123,11 +130,31 @@ $data = loadData('configs/haneri.json');
                                     </div>
                                     <div class="contact-widget">
                                         <p><i class="fas fa-phone"></i></p>
-                                        <p><a href="#">(123) 456-7890</a></p>
+                                        <p>
+                                            <a href="#">
+                                                <?php 
+                                                    if ($data && isset($data['phone'])) {
+                                                        echo $data['phone'];
+                                                    } else {
+                                                        echo 'phone not found';
+                                                    }
+                                                ?>
+                                            </a>
+                                        </p>
                                     </div>
                                     <div class="contact-widget email">
                                         <p><i class="fas fa-envelope"></i></p>
-                                        <p><a href="mailto:info@haneri.in">info@haneri.in</a></p>
+                                        <p>
+                                            <a href="mailto:<?php echo $data['email']; ?>">
+                                                <?php 
+                                                    if ($data && isset($data['email'])) {
+                                                        echo $data['email'];
+                                                    } else {
+                                                        echo 'email not found';
+                                                    }
+                                                ?>
+                                            </a>
+                                        </p>
                                     </div>
                                     <div class="contact-widget">
                                         <p><i class="fas fa-clock"></i></p>
