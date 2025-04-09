@@ -88,7 +88,13 @@
                                     <div class="contact-widget">
                                         <!-- <h4 class="widget-title">ADDRESS:</h4> -->
                                         <p><i class="fas fa-home"></i></p>
-                                        <?php echo Address; ?>
+                                        <p>
+                                            <span>
+                                                HANERI ELECTRICALS LLP, A-48 
+                                            <br>
+                                                <?php echo getenv('APP_ADDRESS'); ?>
+                                            </span>
+                                        </p>
                                         <!-- <p>
                                             <span>
                                                 HANERI ELECTRICALS LLP, A-48 
