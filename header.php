@@ -45,10 +45,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-<?php
-    // Include the read_data.php to fetch JSON data
-    include('configs/read.php');
-?>
+
 <body class="full-screen-slider">
 <!-- Loader HTML -->
 <script>console.log("🔄 DC Loader is showing...");</script>

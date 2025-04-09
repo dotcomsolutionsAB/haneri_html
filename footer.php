@@ -1,3 +1,7 @@
+<?php
+    // Include the read_data.php to fetch JSON data
+    include('configs/read.php');
+?>
     <footer class="footer">
         <div class="container">
             <div class="footer-top top-border d-flex align-items-center justify-content-between flex-wrap">
