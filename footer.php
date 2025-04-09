@@ -9,7 +9,7 @@ $data = loadData('configs/haneri.json');
 echo '<pre>';
 print_r($data); // This will show the contents of the $data array
 echo '</pre>';
-die();
+// die();
 ?>
 
 
