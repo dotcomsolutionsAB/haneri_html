@@ -27,4 +27,4 @@ function loadEnv($file)
 }
 
 // Load the .env file
-loadEnv(__DIR__ . '/.env');
+loadEnv('.env');
