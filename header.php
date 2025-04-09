@@ -236,36 +236,12 @@
                         <?php 
                             $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
                         ?>
-                        <nav class="main-nav font2">
-                            <ul class="menu">
                                 
                         <?php if ($isLoggedIn === "true") : ?>
-                            <li class="active">
-                                <!-- Show when user is logged in -->
-                                <a href="profile.php" class="header-icon header-icon-user sf-with-ul" title="Profile">
-                                    <i class="icon-user-2"></i>
-                                </a> 
-                                    <div class="megamenu megamenu-fixed-width megamenu-3cols">
-                                        <div class="row">
-                                            <div class="col-lg-10">
-                                                <ul class="submenu">
-                                                    <li>
-                                                        <a href="#">Cart</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Account</a>
-                                                        <div class="submenu-description">
-                                                            <a href="#" class="description-link">FORM</a> 
-                                                        </div>
-                                                    </li>
-                                                    <li><a href="contact.php">Logout</a></li>
-                                                </ul>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                            </li>
-                            |  
+                            <!-- Show when user is logged in -->
+                            <a href="profile.php" class="header-icon header-icon-user sf-with-ul" title="Profile">
+                                <i class="icon-user-2"></i>
+                            </a> |  
                             <a href="#" class="header-icon">
                                 <i class="fab fa-whatsapp"></i>
                             </a> | 
@@ -276,9 +252,9 @@
                             <a href="#" class="header-icon" id="logout-btn" title="Logout">
                                 <i class="fas fa-sign-out-alt"></i>
                             </a>
-                        </ul>
-                        </nav>
+
                         <?php else : ?>
+                            
                             <!-- Show when user is NOT logged in -->
                             <a href="login.php" class="header-icon header-icon-user" title="Login">
                                 <i class="icon-user-2"></i>
@@ -295,7 +271,47 @@
 
         </header><!-- End .header -->
 <style>
-    
+    /* Wrapper for all icons */
+    .header-icon-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown menu (hidden by default) */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        padding: 10px 15px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* Highlight item on hover */
+    .dropdown-item:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Show the dropdown menu when hovering over Profile link */
+    .header-icon-wrapper:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Optional: style for icon hover */
+    .header-icon-wrapper:hover .header-icon {
+        cursor: pointer;
+    }
+
 </style>
 
     <script>
@@ -339,4 +355,6 @@
                 `;
             }
         });
+
+
     </script>
