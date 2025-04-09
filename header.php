@@ -232,40 +232,46 @@
                         </nav>
                     </div><!-- End .header-left -->
 
-                    <div class="header-right">
-                        <?php 
-                            $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
-                        ?>
-                                
-                        <?php if ($isLoggedIn === "true") : ?>
-                            <!-- Show when user is logged in -->
-                            <a href="profile.php" class="header-icon header-icon-user sf-with-ul" title="Profile">
-                                <i class="icon-user-2"></i>
-                            </a> |  
-                            <a href="#" class="header-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </a> | 
-                            <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
-                                <!-- <i class="icon-wishlist-2"></i> -->
-                                <i class="minicart-icon"></i>
-                            </a> |
-                            <a href="#" class="header-icon" id="logout-btn" title="Logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </a>
+<div class="header-right">
+    <?php 
+        $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
+    ?>
 
-                        <?php else : ?>
-                            
-                            <!-- Show when user is NOT logged in -->
-                            <a href="login.php" class="header-icon header-icon-user" title="Login">
-                                <i class="icon-user-2"></i>
-                            </a> |  
-                            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> 
-                        <?php endif; ?>
+    <?php if ($isLoggedIn === "true") : ?>
+        <!-- Show when user is logged in -->
+        <div class="header-icon-wrapper">
+            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                <i class="icon-user-2"></i>
+            </a> 
 
-                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                        </div>
-                    </div>
+            <!-- Profile Dropdown Menu -->
+            <div class="dropdown-menu d-none">
+                <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
+                <a href="cart.php" class="dropdown-item">Cart</a>
+                <a href="profile.php" class="dropdown-item">Account</a>
+                <a href="#" class="dropdown-item" id="logout-link">Logout</a>
+            </div> 
+
+            | 
+            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+            </div>
+        </div>
+
+    <?php else : ?>
+        <!-- Show when user is NOT logged in -->
+        <div class="header-icon-wrapper">
+            <a href="login.php" class="header-icon header-icon-user" title="Login">
+                <i class="icon-user-2"></i>
+            </a> |  
+            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+            </div>
+        </div>
+    <?php endif; ?>
+</div>
+
                 </div>
             </div>
 
