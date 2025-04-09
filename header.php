@@ -279,13 +279,15 @@
 <style>
     /* Wrapper for all icons */
     .header-icon-wrapper {
-        position: relative;
-        display: inline-block;
+        display: flex;
+        /* background: antiquewhite; */
+        justify-content: flex-end;
+        align-items: center;
     }
 
     /* Dropdown menu (hidden by default) */
     .dropdown-menu {
-        display: none;
+        /* display: none;
         position: absolute;
         top: 100%;
         right: 0;
@@ -293,7 +295,17 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
+        min-width: 200px; */
+        display: none;
+        /* position: absolute; */
+        top: 140%;
+        right: 4%;
+        background-color: #edefed;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        left: 87%;
     }
 
     /* Dropdown item styling */
@@ -301,6 +313,10 @@
         padding: 10px 15px;
         color: #333;
         text-decoration: none;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        font-weight:600;
     }
 
     /* Highlight item on hover */
