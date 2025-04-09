@@ -81,7 +81,17 @@
         <h4 class="m_top heading4 text-primary">7. Cancellation of Orders</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Orders can be cancelled before they are shipped. Once shipped, cancellations are not allowed.</li>
-            <li class="list-group-item">To cancel an order, contact Haneri Customer Support at <a href="mailto:info@haneri.in">info@haneri.in</a>.</li>
+            <li class="list-group-item">To cancel an order, contact Haneri Customer Support at 
+                <a href="mailto:<?php echo $data['email']; ?>">
+                    <?php 
+                        if ($data && isset($data['email'])) {
+                            echo $data['email'];
+                        } else {
+                            echo 'email not found';
+                        }
+                    ?>
+                </a>
+            </li>
             <li class="list-group-item">Refunds for cancelled orders will be processed within <strong>[Insert Time Period, e.g., 7-10 business days]</strong>.</li>
         </ul>
         
