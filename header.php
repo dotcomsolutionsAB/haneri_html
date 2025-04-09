@@ -236,34 +236,34 @@
                         <?php 
                             $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
                         ?>
-                        <!-- <nav class="main-nav font2"> -->
-                            <!-- <ul class="menu"> -->
+                        <nav class="main-nav font2">
+                            <ul class="menu">
                                 
                         <?php if ($isLoggedIn === "true") : ?>
                             <li class="active">
-                            <!-- Show when user is logged in -->
-                            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                                <i class="icon-user-2"></i>
-                            </a> 
-                                <div class="megamenu megamenu-fixed-width megamenu-3cols">
-                                    <div class="row">
-                                        <div class="col-lg-10">
-                                            <ul class="submenu">
-                                                <li>
-                                                    <a href="#">Cart</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Account</a>
-                                                    <div class="submenu-description">
-                                                        <a href="#" class="description-link">FORM</a> 
-                                                    </div>
-                                                </li>
-                                                <li><a href="contact.php">Logout</a></li>
-                                            </ul>
+                                <!-- Show when user is logged in -->
+                                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                    <i class="icon-user-2"></i>
+                                </a> 
+                                    <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                        <div class="row">
+                                            <div class="col-lg-10">
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <a href="#">Cart</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Account</a>
+                                                        <div class="submenu-description">
+                                                            <a href="#" class="description-link">FORM</a> 
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="contact.php">Logout</a></li>
+                                                </ul>
+                                            </div>
+                                            
                                         </div>
-                                        
                                     </div>
-                                </div>
                             </li>
                             |  
                             <a href="#" class="header-icon">
@@ -276,6 +276,8 @@
                             <a href="#" class="header-icon" id="logout-btn" title="Logout">
                                 <i class="fas fa-sign-out-alt"></i>
                             </a>
+                        </ul>
+                        </nav>
                         <?php else : ?>
                             <!-- Show when user is NOT logged in -->
                             <a href="login.php" class="header-icon header-icon-user" title="Login">
