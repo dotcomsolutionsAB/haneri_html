@@ -4,7 +4,6 @@
 
 // // Load the data from the JSON file
 // $data = loadData('configs/haneri.json');
-
 ?>
 
 
@@ -118,14 +117,6 @@
                                                 ?>
                                             </span>
                                         </p>
-                                        <!-- <p>
-                                            <span>
-                                                HANERI ELECTRICALS LLP, A-48 
-                                            <br>
-                                                SECTOR 57 , NOIDA , UTTAR PRADESH
-                                                PINCODE - 201301
-                                            </span>
-                                        </p> -->
                                     </div>
                                     <div class="contact-widget">
                                         <p><i class="fas fa-phone"></i></p>

@@ -1,29 +1,3 @@
-  <style>
-    /* .wir_policy .list-group-item {
-        border:0px solid rgba(0, 0, 0, .125);
-        padding: .35rem 2.25rem;
-    }
-    .wir_policy .border-bottom {
-        border-bottom: 0px solid #dee2e6 !important;
-    }
-    .wir_policy .shadow-lg {
-        box-shadow: none !important;
-    }
-    .wir_policy .card{
-        border: 0px solid rgba(0, 0, 0, .125);
-    }
-    .wir_policy .text-primary {
-        color: #1d696e !important;
-    }
-    .wir_policy .mb-3 {
-        margin-bottom: 0rem !important;
-    }
-    .wir_policy p {
-      margin-bottom: 0.5rem;
-      margin-top: 1.5rem;
-    } */
-  </style>
-
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>

@@ -5,8 +5,27 @@
         <p class="paragraph1 mb-0">Effective Date: [Insert Date]</p>
         <div class="border-bottom mb-2"></div>
         
-        <p class="heading4"><b>Haneri Electricals LLP</b></p>
-        <p class="paragraph1 mb-1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="heading4">
+            <b>
+                <?php 
+                    if ($data && isset($data['name'])) {
+                        echo $data['name'];
+                    } else {
+                        echo 'Name not found';
+                    }
+                ?>
+            </b>
+        </p>
+        <p class="paragraph1 mb-1">
+            Address: 
+            <?php 
+                if ($data && isset($data['address'])) {
+                    echo $data['address'];
+                } else {
+                    echo 'address not found';
+                }
+            ?>
+        </p>
         <p class="paragraph1 mb-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Shipping Destinations</h4>
@@ -70,9 +89,36 @@
         <p class="paragraph1 mb-1">For any shipping-related queries or concerns, please contact:</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
-            <li class="list-group-item">Phone: [Insert Contact Number]</li>
-            <li class="list-group-item">Email: <a href="mailto:info@haneri.in">info@haneri.in</a></li>
-            <li class="list-group-item">Office Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</li>
+            <li class="list-group-item">
+                Phone: 
+                <?php 
+                    if ($data && isset($data['phone'])) {
+                        echo $data['phone'];
+                    } else {
+                        echo 'phone not found';
+                    }
+                ?>    
+            </li>
+            <li class="list-group-item">Email: 
+                <a href="mailto:<?php echo $data['email']; ?>">
+                    <?php 
+                        if ($data && isset($data['email'])) {
+                            echo $data['email'];
+                        } else {
+                            echo 'email not found';
+                        }
+                    ?>
+                </a>
+            </li>
+            <li class="list-group-item">Office Address: 
+                <?php 
+                    if ($data && isset($data['address'])) {
+                        echo $data['address'];
+                    } else {
+                        echo 'address not found';
+                    }
+                ?>
+            </li>
         </ul>
         
         <p class="heading4 mb-1 mt-1 text-primary">Haneri Electricals LLP reserves the right to update this Shipping Policy at its discretion. Any changes will be communicated via our website or official communication channels.</p>

@@ -10,20 +10,6 @@
             </ol>
         </div><!-- End .container -->
     </nav>
-    <?php
-  // Include the loadData.php file
-//   include('configs/read.php');
-
-  // Load the data from the JSON file
-//   $data = loadData('/haneri.json');
-
-  // Load the data from the JSON file
-  if(isset($data)){
-    echo "okay !";
-  }else{
-    echo "not okay !";
-  }
-?>
     <div class="container">                
         <div id="wir_policy" class="wir_policy">
             <?php include("inc_files/policy/wir_policy.php"); ?>
