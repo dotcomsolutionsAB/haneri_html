@@ -47,7 +47,7 @@
 </head>
 <?php
     // Include the read_data.php to fetch JSON data
-    include('read_data.php');
+    include('configs/read.php');
 ?>
 <body class="full-screen-slider">
 <!-- Loader HTML -->
