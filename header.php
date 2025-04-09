@@ -293,46 +293,44 @@
 </style>
 
     <script>
-        // document.addEventListener("DOMContentLoaded", function() {
-        //     const authToken = localStorage.getItem("auth_token");
+        document.addEventListener("DOMContentLoaded", function() {
+            const authToken = localStorage.getItem("auth_token");
 
-        //     if (authToken) {
-        //         document.querySelector(".header-right").innerHTML = `
-        //             <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-        //                 <i class="icon-user-2"></i>
-        //             </a> |  
-        //             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
-        //             <a href="cart.php" class="header-icon cart" title="cart">
-        //                 <i class="minicart-icon"></i>
-        //                 <span class="cart-count badge-circle">3</span>
-        //             </a> |                
-        //             <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-        //                 <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a> |
-        //             </div> 
-        //             <a href="#" class="header-icon" id="logout-btn" title="Logout">
-        //                 <i class="fas fa-sign-out-alt"></i>
-        //             </a>
-        //         `;
+            if (authToken) {
+                document.querySelector(".header-right").innerHTML = `
+                    <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                        <i class="icon-user-2"></i>
+                    </a> |  
+                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
+                    <a href="cart.php" class="header-icon cart" title="cart">
+                        <i class="minicart-icon"></i>
+                        <span class="cart-count badge-circle">3</span>
+                    </a> |                
+                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a> |
+                    </div> 
+                    <a href="#" class="header-icon" id="logout-btn" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                `;
 
-        //         document.getElementById("logout-btn").addEventListener("click", function() {
-        //             localStorage.removeItem("auth_token");
-        //             localStorage.removeItem("user_name");
-        //             localStorage.removeItem("user_role");
-        //             localStorage.removeItem("user_id");
-        //             window.location.href = "login.php"; // Redirect to login page after logout
-        //         });
-        //     } else {
-        //         document.querySelector(".header-right").innerHTML = `
-        //             <a href="login.php" class="header-icon header-icon-user" title="Login">
-        //                 <i class="icon-user-2"></i>
-        //             </a> |  
-        //             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-        //             <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-        //                 <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-        //             </div>
-        //         `;
-        //     }
-        // });
-
-
+                document.getElementById("logout-btn").addEventListener("click", function() {
+                    localStorage.removeItem("auth_token");
+                    localStorage.removeItem("user_name");
+                    localStorage.removeItem("user_role");
+                    localStorage.removeItem("user_id");
+                    window.location.href = "login.php"; // Redirect to login page after logout
+                });
+            } else {
+                document.querySelector(".header-right").innerHTML = `
+                    <a href="login.php" class="header-icon header-icon-user" title="Login">
+                        <i class="icon-user-2"></i>
+                    </a> |  
+                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                    </div>
+                `;
+            }
+        });
     </script>
