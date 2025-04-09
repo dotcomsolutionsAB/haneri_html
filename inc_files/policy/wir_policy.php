@@ -25,7 +25,7 @@
   </style>
 <?php
   // Include the loadData.php file
-  include('../../configs/read.php');
+  include('../configs/read.php');
   // include('../../con')
 
   // Load the data from the JSON file
