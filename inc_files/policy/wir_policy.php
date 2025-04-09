@@ -27,11 +27,11 @@
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
         <p class="paragraph1 mb-0">Effective Date: 31.01.2025</p>
-        <div class="border-bottom mb-2"></div>
+        <div class="border-bottom mb-1"></div>
         
         <p class="heading4"><b>Haneri Electricals LLP</b></p>
-        <p class="paragraph1 mb-1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
-        <p class="paragraph1 mb-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
+        <p class="paragraph1 mb-1 mt-0">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="paragraph1 mb-0 mt-1">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
         <p class="paragraph1 mb-0 mt-0"><strong>Accessories : </strong></p>
