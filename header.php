@@ -236,8 +236,11 @@
                         <?php 
                             $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
                         ?>
-
+                        <!-- <nav class="main-nav font2"> -->
+                            <!-- <ul class="menu"> -->
+                                
                         <?php if ($isLoggedIn === "true") : ?>
+                            <li class="active">
                             <!-- Show when user is logged in -->
                             <a href="profile.php" class="header-icon header-icon-user" title="Profile">
                                 <i class="icon-user-2"></i>
@@ -261,6 +264,7 @@
                                         
                                     </div>
                                 </div>
+                            </li>
                             |  
                             <a href="#" class="header-icon">
                                 <i class="fab fa-whatsapp"></i>
