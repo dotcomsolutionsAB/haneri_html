@@ -183,7 +183,7 @@
             <li class="list-group-item">Office Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</li>
         </ul>
         
-        <p class="text-muted mt-4"><strong>Haneri Electricals LLP reserves the right to modify this policy as necessary. Updates will be communicated via our website or official communication channels.</strong></p>
-        <p class="text-center text-success">Thank you for choosing Haneri. We’re dedicated to providing superior products and services.</p>
+        <p class="heading4 mb-1 mt-1 text-primary text-center">Haneri Electricals LLP reserves the right to modify this policy as necessary. Updates will be communicated via our website or official communication channels.</p>
+        <p class="heading4 mb-1 mt-1 text-primary text-center">Thank you for choosing Haneri. We’re dedicated to providing superior products and services.</p>
     </div>
 </section>
