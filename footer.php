@@ -6,10 +6,13 @@ include('configs/read.php');
 $data = loadData('configs/haneri.json');
 
 // Use the data
-// if ($data) {
-//     echo "Name: " . $data['name'] . "<br>";
-// }
+echo '<pre>';
+print_r($data); // This will show the contents of the $data array
+echo '</pre>';
+die();
 ?>
+
+
 
     <footer class="footer">
         <div class="container">
