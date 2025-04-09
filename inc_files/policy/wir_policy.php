@@ -26,33 +26,33 @@
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
-        <p class="text-muted">Effective Date: 31.01.2025</p>
-        <div class="border-bottom mb-3"></div>
+        <p class="paragraph1 mb-0">Effective Date: 31.01.2025</p>
+        <div class="border-bottom mb-2"></div>
         
         <p class="heading4"><b>Haneri Electricals LLP</b></p>
         <p class="paragraph1 mb-1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
         <p class="paragraph1 mb-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
-        <p class="paragraph1 mb-0"><strong>Accessories : </strong></p>
+        <p class="paragraph1 mb-0 mt-0"><strong>Accessories : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Remote Controls and Blade Sets:</strong> 1-year warranty.</li>
             <li class="list-group-item"><strong>Mounting Kits, Down rods, and Canopies:</strong> 10 days warranty (against transit damage only).</li>
         </ul>        
-        <p>Note: Warranty is applicable only for purchases made through authorized Haneri dealers, retailers, or official e-commerce platforms.</p>
+        <p class="paragraph1 mb-0 mt-0">Note: Warranty is applicable only for purchases made through authorized Haneri dealers, retailers, or official e-commerce platforms.</p>
         
         <h4 class="m_top heading4 text-primary">2. Warranty Terms</h4>
-        <p><strong> 1.	Coverage Period : </strong></p>
+        <p class="paragraph1 mb-0 mt-0"><strong> 1.	Coverage Period : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">o	The warranty period begins from the date of purchase as per the original invoice.</li>
             <li class="list-group-item">o	For serialized products, warranty is validated based on the serial number and invoice.</li>
         </ul>
-        <p><strong> 2.	Scope of Warranty : </strong></p>
+        <p class="paragraph1 mb-0 mt-0"><strong> 2.	Scope of Warranty : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">o	Covers manufacturing defects and functional failures under normal usage.</li>
             <li class="list-group-item">o	Includes free repair or replacement of defective parts during the warranty period.</li>
         </ul>
-        <p><strong> 3.	Exclusions : </strong></p>
+        <p class="paragraph1 mb-0 mt-0"><strong> 3.	Exclusions : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">o	Damage caused by improper installation, mishandling, unauthorized repairs, or modifications.</li>
             <li class="list-group-item">o	Voltage fluctuations beyond 160V-250V.</li>
@@ -60,7 +60,7 @@
             <li class="list-group-item">o	Damage due to liquid exposure, pests, or external environmental factors.</li>
             <li class="list-group-item">o	Normal wear and tear, including scratches, discoloration, or dents.</li>
         </ul>
-        <p><strong> 4.	Additional Warranty Conditions : </strong></p>
+        <p class="paragraph1 mb-0 mt-0"><strong> 4.	Additional Warranty Conditions : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">o	For availing free home/onsite service, the product must be within the warranty period.</li>
             <li class="list-group-item">o	For serialized products with Sticker/Printed Manufacture Month, warranty will be considered from the End User Sale Invoice date till the time period mentioned in the warranty table.</li>
@@ -79,35 +79,35 @@
 
 
         <h4 class="m_top heading4 text-primary">3. Claim Process</h4>
-        <p><strong>1.	Reporting a Claim:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>1.	Reporting a Claim:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Contact Haneri Customer Support at [Insert Contact Details] or email info@haneri.in .</li>
           <li class="list-group-item">o	Provide details including invoice, product serial number, and a description of the issue</li>
         </ul>
-        <p><strong>2.	Inspection :</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>2.	Inspection :</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	A service technician will inspect the product on-site or at an authorized service centre.</li>
         </ul>
-        <p><strong>3.	Resolution:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>3.	Resolution:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Products will be repaired, replaced, or refunded based on the technician’s assessment.</li>
           <li class="list-group-item">o	Replacement units will carry the remaining warranty period of the original product.</li>
         </ul>
         
         <h4 class="m_top heading4 text-primary">4. Additional Terms</h4>
-        <p><strong>•	Wobbling Issues:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>•	Wobbling Issues:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Claims must be reported within 30 days of purchase.</li>
         </ul>
-        <p><strong>•	Transit Damage:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>•	Transit Damage:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Claims for transit damage must be filed within 2 days of delivery.</li>
         </ul>
-        <p><strong>•	Service Outside Warranty:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>•	Service Outside Warranty:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Repairs for out-of-warranty products will be chargeable, subject to spare parts availability.</li>
         </ul>
-        <p><strong>•	Force Majeure:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>•	Force Majeure:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Haneri is not liable for delays or non-performance due to circumstances beyond its control, including natural disasters, pandemics, or government restrictions.</li>
         </ul>
@@ -120,7 +120,7 @@
         </ul>
         
         <h4 class="m_top heading4 text-primary">Refund and Replacement Policy</h4>
-        <p><strong>1.	Eligibility</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>1.	Eligibility</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Refunds or replacements are valid if:
             <ul class="list-group list-group-flush">
@@ -129,27 +129,27 @@
             </ul>
           </li>
         </ul>
-        <p><strong>2.	Conditions</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>2.	Conditions</strong> </p>
         <ul class="list-group list-group-flush">
               <li class="list-group-item">o	The product must be returned in its original condition, with all accessories and packaging intact.</li>
               <li class="list-group-item">o	Proof of purchase is mandatory for processing refunds or replacements.</li>
           </li>
         </ul>
-        <p><strong>3.	Process</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>3.	Process</strong> </p>
         <ul class="list-group list-group-flush">
               <li class="list-group-item">o	Reach out to Haneri Customer Support at [Insert Contact Details].</li>
               <li class="list-group-item">o	Provide the purchase receipt and a description of the issue.</li>
               <li class="list-group-item">o	After verification, the product may be inspected before processing a refund or replacement.</li>
           </li>
         </ul>
-        <p><strong>4.	Refunds</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>4.	Refunds</strong> </p>
         <ul class="list-group list-group-flush">
               <li class="list-group-item">o	Refunds will be processed through the original payment method within 15 business days.</li>
           </li>
         </ul>
         
         <h4 class="m_top heading4 text-primary">Installation and Service Guidelines</h4>
-        <p><strong>1.	Free Installation</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>1.	Free Installation</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Free installation services are available for select products and cities. Contact Haneri Customer Support to confirm availability.</li>
           <li class="list-group-item">o	To avail of the free installation offer, customers need to call or email Haneri Customer Support (Call us at [Insert Contact Number] or Email: [Insert Email Address]).</li>
@@ -160,7 +160,7 @@
           <li class="list-group-item">o	Turnaround time/SLA starts from the date and time the request is registered, after receiving all necessary details (Name, Number, Purchase details, Address with pin code, Serial number of the product, etc.).</li>
           <li class="list-group-item">o	Free installation services are available for select products and cities. Contact Haneri Customer Support to confirm availability.</li>
         </ul>
-        <p><strong>2.	Customer Responsibilities</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>2.	Customer Responsibilities</strong> </p>
         <ul class="list-group list-group-flush">
               <li class="list-group-item">o	Ensure that power supply requirements are met as specified on the products.</li>
               <li class="list-group-item">o	Ensure that there are no voltage fluctuations at the site.</li>
@@ -168,7 +168,7 @@
               <li class="list-group-item">o	Arrange for any additional modifications, such as false ceiling adjustments, at the customer’s expense.</li>
           </li>
         </ul>
-        <p><strong>3.	Service Limitations</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>3.	Service Limitations</strong> </p>
         <ul class="list-group list-group-flush">
               <li class="list-group-item">o	Haneri reserves the right to reject any service or installation request if the area is beyond our serviceable zones or if no authorized service centre is available.</li>
               <li class="list-group-item">o	Haneri is not responsible for delays caused by force majeure events such as natural disasters, pandemics, or government restrictions.</li>
