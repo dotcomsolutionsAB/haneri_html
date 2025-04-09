@@ -1,7 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    // Include the loadData.php file
+    include('configs/read.php');
+    // Load the data from the JSON file
+    $data = loadData('configs/haneri.json');
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -263,6 +268,7 @@
             </div>
 
         </header><!-- End .header -->
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

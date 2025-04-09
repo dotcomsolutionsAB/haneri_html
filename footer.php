@@ -1,9 +1,9 @@
 <?php
-// Include the loadData.php file
-include('configs/read.php');
+// // Include the loadData.php file
+// include('configs/read.php');
 
-// Load the data from the JSON file
-$data = loadData('configs/haneri.json');
+// // Load the data from the JSON file
+// $data = loadData('configs/haneri.json');
 
 ?>
 
