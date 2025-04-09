@@ -296,7 +296,7 @@
         border-radius: 5px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         min-width: 200px; */
-        display: block !important;
+        display: none;
         /* position: absolute; */
         top: 140%;
         right: 4%;
@@ -389,20 +389,27 @@
                 </a> 
                 <div class="dropdown-menu d-none">
                     <a href="#" class="dropdown-item" id="whatsapp-link">
+                        <span class="header_icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </span>
                         WhatsApp
-                        <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="cart.php" class="dropdown-item">
-                        Cart
-                        <i class="minicart-icon"></i>
-                        <span class="cart-count badge-circle">3</span>    
+                    <a href="cart.php" class="dropdown-item">                            
+                        <span class="header_icon">
+                            <i class="minicart-icon"></i> 
+                        </span>
+                        Cart  
                     </a>
                     <a href="profile.php" class="dropdown-item">
+                        <span class="header_icon">
+                            <i class="icon-user-2"></i> 
+                        </span>
                         Account
-                        <i class="icon-user-2"></i>
                     </a>
                     <a href="#" class="dropdown-item" id="logout-link">
-                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="header_icon">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </span>
                         Logout
                     </a>
                 </div> 
