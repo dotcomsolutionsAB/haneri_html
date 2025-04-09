@@ -26,7 +26,9 @@
 <?php
   // Include the loadData.php file
   include('../configs/read.php');
-  // include('../../con')
+
+  // Load the data from the JSON file
+  $data = loadData('configs/haneri.json');
 
   // Load the data from the JSON file
   if(isset($data)){
