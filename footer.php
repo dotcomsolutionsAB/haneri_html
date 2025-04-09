@@ -92,7 +92,7 @@
                                             <span>
                                                 HANERI ELECTRICALS LLP, A-48 
                                             <br>
-                                                <?php echo getenv('APP_ADDRESS'); ?>
+                                                <?php echo $data['address']; ?>
                                             </span>
                                         </p>
                                         <!-- <p>
