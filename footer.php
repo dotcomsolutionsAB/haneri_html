@@ -5,11 +5,6 @@ include('configs/read.php');
 // Load the data from the JSON file
 $data = loadData('configs/haneri.json');
 
-// Use the data
-echo '<pre>';
-print_r($data); // This will show the contents of the $data array
-echo '</pre>';
-// die();
 ?>
 
 
@@ -109,8 +104,10 @@ echo '</pre>';
                                                 HANERI ELECTRICALS LLP, A-48 
                                             <br>
                                                 <?php 
-                                                    if ($data['name']) {
-                                                        echo  $data['name'];
+                                                    if ($data && isset($data['name'])) {
+                                                        echo $data['name'];
+                                                    } else {
+                                                        echo 'Name not found';
                                                     }
                                                 ?>
                                             </span>
