@@ -277,6 +277,14 @@
 
         </header><!-- End .header -->
 <style>
+    .header_icon{
+        font-size: 28px;
+    }
+    .header_a{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
     /* Wrapper for all icons */
     .header-icon-wrapper {
         display: flex;
@@ -287,15 +295,6 @@
 
     /* Dropdown menu (hidden by default) */
     .dropdown-menu {
-        /* display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        min-width: 200px; */
         display: none;
         /* position: absolute; */
         top: 140%;
@@ -313,10 +312,10 @@
         padding: 10px 15px;
         color: #333;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 15px;
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
-        font-weight:600;
+        font-weight:500;
     }
 
     /* Highlight item on hover */
@@ -388,25 +387,25 @@
                     <i class="icon-user-2"></i>
                 </a> 
                 <div class="dropdown-menu d-none">
-                    <a href="#" class="dropdown-item" id="whatsapp-link">
+                    <a href="#" class="dropdown-item header_a" id="whatsapp-link">
                         <span class="header_icon">
                             <i class="fab fa-whatsapp"></i>
                         </span>
                         WhatsApp
                     </a>
-                    <a href="cart.php" class="dropdown-item">                            
+                    <a href="cart.php" class="dropdown-item header_a">                            
                         <span class="header_icon">
                             <i class="minicart-icon"></i> 
                         </span>
                         Cart  
                     </a>
-                    <a href="profile.php" class="dropdown-item">
+                    <a href="profile.php" class="dropdown-item header_a">
                         <span class="header_icon">
                             <i class="icon-user-2"></i> 
                         </span>
                         Account
                     </a>
-                    <a href="#" class="dropdown-item" id="logout-link">
+                    <a href="#" class="dropdown-item header_a" id="logout-link">
                         <span class="header_icon">
                             <i class="fas fa-sign-out-alt"></i>
                         </span>
