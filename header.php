@@ -304,7 +304,7 @@
 
     /* Show the dropdown menu when hovering over Profile link */
     .header-icon-wrapper:hover .dropdown-menu {
-        display: block;
+        display: block !important;
     }
 
     /* Optional: style for icon hover */
