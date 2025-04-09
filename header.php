@@ -242,7 +242,7 @@
                         <?php if ($isLoggedIn === "true") : ?>
                             <li class="active">
                                 <!-- Show when user is logged in -->
-                                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                <a href="profile.php" class="header-icon header-icon-user sf-with-ul" title="Profile">
                                     <i class="icon-user-2"></i>
                                 </a> 
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols">
