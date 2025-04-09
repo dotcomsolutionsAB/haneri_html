@@ -29,8 +29,12 @@
   // include('../../con')
 
   // Load the data from the JSON file
-  $data = loadData('../../configs/haneri.json');
-
+  $data = loadData('haneri.json');
+  if($data){
+    echo "okay !";
+  }else{
+    echo "not okay !";
+  }
 ?>
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
