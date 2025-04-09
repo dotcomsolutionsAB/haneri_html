@@ -278,7 +278,13 @@
         </header><!-- End .header -->
 <style>
     .header_icon{
-        font-size: 28px;
+        font-size: 24px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* font-weight: 100; */
+        height: 35px;
     }
     .header_a{
         display: flex;
@@ -316,6 +322,8 @@
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
         font-weight:500;
+        display: flex;
+        justify-content: flex-start;
     }
 
     /* Highlight item on hover */
