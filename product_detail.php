@@ -560,7 +560,7 @@
                             </div> -->
 
                             <div class="product-single-details mb-1">
-                                <h1 class="product-title primary_light" id="product-title">Loading...</h1>
+                                <h1 class="product-title primary_light" id="product-title"></h1>
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
@@ -580,7 +580,7 @@
                                 </div> -->
 
                                 <ul class="single-info-list">
-                                    <!-- <li>Brand: <strong><span id="product-brand">Loading...</span></strong></li> -->
+                                    <!-- <li>Brand: <strong><span id="product-brand"></span></strong></li> -->
                                     <div class="brand_image">
                                         <img src="images/Haneri Logo.png" alt="Haneri">
                                     </div>
@@ -588,7 +588,7 @@
                                 </ul>
                                 <ul class="single-info-list">
                                     <strong>
-                                        <li class="primary_light">Category: <span id="product-category">Loading...</span></li>
+                                        <li class="primary_light">Category: <span id="product-category"></span></li>
                                     </strong>
                                 </ul>
                                 <div class="select_variant">
@@ -626,7 +626,7 @@
 
                                 <!-- description -->
                                 <!-- <div class="product-desc">
-                                    <p id="product-description">Loading...</p>
+                                    <p id="product-description"></p>
                                 </div> -->
                                 <div class="product-action">
                                     <div class="price-box">
