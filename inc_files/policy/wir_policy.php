@@ -1,6 +1,7 @@
-<style>
+  <style>
     .wir_policy .list-group-item {
         border:0px solid rgba(0, 0, 0, .125);
+        padding: .35rem 2.25rem;
     }
     .wir_policy .border-bottom {
         border-bottom: 0px solid #dee2e6 !important;
@@ -21,19 +22,19 @@
       margin-bottom: 0.5rem;
       margin-top: 1.5rem;
     }
-</style>
+  </style>
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
         <p class="text-muted">Effective Date: 31.01.2025</p>
         <div class="border-bottom mb-3"></div>
         
-        <p><strong>Haneri Electricals LLP</strong></p>
-        <p>Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
-        <p>Haneri Electricals LLP ("we," "our," or "us") is committed to ensuring customer satisfaction and confidence in our products. This Warranty and Refunds Policy provides clarity on the warranty coverage and refund/replacement terms for all Haneri products.</p>
+        <p class="heading4"><b>Haneri Electricals LLP</b></p>
+        <p class="paragraph1 mb-1">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="paragraph1 mb-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
-        <p><strong>Accessories : </strong></p>
+        <p class="paragraph1 mb-0"><strong>Accessories : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Remote Controls and Blade Sets:</strong> 1-year warranty.</li>
             <li class="list-group-item"><strong>Mounting Kits, Down rods, and Canopies:</strong> 10 days warranty (against transit damage only).</li>
