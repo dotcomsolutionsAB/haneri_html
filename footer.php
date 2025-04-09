@@ -101,7 +101,6 @@ $data = loadData('configs/haneri.json');
                                         <p><i class="fas fa-home"></i></p>
                                         <p>
                                             <span>
-                                                HANERI ELECTRICALS LLP, A-48 
                                                 <?php 
                                                     if ($data && isset($data['name'])) {
                                                         echo $data['name']."<br>";
