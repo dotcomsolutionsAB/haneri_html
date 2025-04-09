@@ -1,5 +1,5 @@
   <style>
-    .wir_policy .list-group-item {
+    /* .wir_policy .list-group-item {
         border:0px solid rgba(0, 0, 0, .125);
         padding: .35rem 2.25rem;
     }
@@ -21,16 +21,43 @@
     .wir_policy p {
       margin-bottom: 0.5rem;
       margin-top: 1.5rem;
-    }
+    } */
   </style>
+<?php
+  // Include the loadData.php file
+  include('configs/read.php');
+
+  // Load the data from the JSON file
+  $data = loadData('configs/haneri.json');
+
+?>
 <section class="wir_policy">
     <div class="card shadow-lg p-4">
         <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
         <p class="paragraph1 mb-0 mt-0">Effective Date: 31.01.2025</p>
         <div class="border-bottom mb-1"></div>
         
-        <p class="heading4 mt-0"><b>Haneri Electricals LLP</b></p>
-        <p class="paragraph1 mb-1 mt-0">Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
+        <p class="heading4 mt-0">
+          <b>
+            <?php 
+                if ($data && isset($data['name'])) {
+                    echo $data['name'];
+                } else {
+                    echo 'Name not found';
+                }
+            ?>
+          </b>
+        </p>
+        <p class="paragraph1 mb-1 mt-0">
+          Address: 
+            <?php 
+                if ($data && isset($data['address'])) {
+                    echo $data['address'];
+                } else {
+                    echo 'address not found';
+                }
+            ?>
+        </p>
         <p class="paragraph1 mb-0 mt-0">Haneri Electricals LLP ("we," "our," or "us") is committed to providing a seamless and efficient shipping experience for all our customers. This Shipping Policy outlines the terms and conditions for the delivery of our products.</p>
         
         <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
@@ -95,19 +122,19 @@
         </ul>
         
         <h4 class="m_top heading4 text-primary">4. Additional Terms</h4>
-        <p class="paragraph1 mb-0 mt-0"><strong>•	Wobbling Issues:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>Wobbling Issues:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Claims must be reported within 30 days of purchase.</li>
         </ul>
-        <p class="paragraph1 mb-0 mt-0"><strong>•	Transit Damage:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>Transit Damage:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Claims for transit damage must be filed within 2 days of delivery.</li>
         </ul>
-        <p class="paragraph1 mb-0 mt-0"><strong>•	Service Outside Warranty:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>Service Outside Warranty:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Repairs for out-of-warranty products will be chargeable, subject to spare parts availability.</li>
         </ul>
-        <p class="paragraph1 mb-0 mt-0"><strong>•	Force Majeure:</strong> </p>
+        <p class="paragraph1 mb-0 mt-0"><strong>Force Majeure:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Haneri is not liable for delays or non-performance due to circumstances beyond its control, including natural disasters, pandemics, or government restrictions.</li>
         </ul>
@@ -178,9 +205,35 @@
         <h4 class="m_top heading4 text-primary">Contact Us</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
-            <li class="list-group-item">Phone: [Insert Contact Number]</li>
-            <li class="list-group-item">Email: <a href="mailto:info@haneri.in">info@haneri.in</a></li>
-            <li class="list-group-item">Office Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</li>
+            <li class="list-group-item">Phone: 
+              <?php 
+                  if ($data && isset($data['phone'])) {
+                      echo $data['phone'];
+                  } else {
+                      echo 'phone not found';
+                  }
+              ?>
+            </li>
+            <li class="list-group-item">Email: 
+              <a href="mailto:info@haneri.in">
+                <?php 
+                    if ($data && isset($data['email'])) {
+                        echo $data['email'];
+                    } else {
+                        echo 'email not found';
+                    }
+                ?>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <?php 
+                if ($data && isset($data['address'])) {
+                    echo $data['address'];
+                } else {
+                    echo 'address not found';
+                }
+              ?>
+            </li>
         </ul>
         
         <p class="heading4 mb-1 mt-1 text-primary">Haneri Electricals LLP reserves the right to modify this policy as necessary. Updates will be communicated via our website or official communication channels.</p>
