@@ -1,30 +1,30 @@
 <style>
-    .list-group-item {
+    .wir_policy .list-group-item {
         border:0px solid rgba(0, 0, 0, .125);
     }
-    .border-bottom {
+    .wir_policy .border-bottom {
         border-bottom: 0px solid #dee2e6 !important;
     }
-    .shadow-lg {
+    .wir_policy .shadow-lg {
         box-shadow: none !important;
     }
-    .card{
+    .wir_policy .card{
         border: 0px solid rgba(0, 0, 0, .125);
     }
-    .text-primary {
+    .wir_policy .text-primary {
         color: #1d696e !important;
     }
-    .mb-3 {
+    .wir_policy .mb-3 {
         margin-bottom: 0rem !important;
     }
-    p {
+    .wir_policy p {
       margin-bottom: 0.5rem;
       margin-top: 1.5rem;
     }
 </style>
-<section class="py-5">
+<section class="wir_policy">
     <div class="card shadow-lg p-4">
-        <h2 class="text-primary mb-3">Warranty, Installation and Refund Policy</h2>
+        <h2 class="text-primary heading2">Warranty, Installation and Refund Policy</h2>
         <p class="text-muted">Effective Date: 31.01.2025</p>
         <div class="border-bottom mb-3"></div>
         
@@ -32,7 +32,7 @@
         <p>Address: A48, Sector 57, Noida, Uttar Pradesh - 201301</p>
         <p>Haneri Electricals LLP ("we," "our," or "us") is committed to ensuring customer satisfaction and confidence in our products. This Warranty and Refunds Policy provides clarity on the warranty coverage and refund/replacement terms for all Haneri products.</p>
         
-        <h4 class="mt-4 text-primary">1. Warranty Offering</h4>
+        <h4 class="m_top heading4 text-primary">1. Warranty Offering</h4>
         <p><strong>Accessories : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Remote Controls and Blade Sets:</strong> 1-year warranty.</li>
@@ -40,7 +40,7 @@
         </ul>        
         <p>Note: Warranty is applicable only for purchases made through authorized Haneri dealers, retailers, or official e-commerce platforms.</p>
         
-        <h4 class="mt-4 text-primary">2. Warranty Terms</h4>
+        <h4 class="m_top heading4 text-primary">2. Warranty Terms</h4>
         <p><strong> 1.	Coverage Period : </strong></p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">o	The warranty period begins from the date of purchase as per the original invoice.</li>
@@ -77,7 +77,7 @@
         </ul>
 
 
-        <h4 class="mt-4 text-primary">3. Claim Process</h4>
+        <h4 class="m_top heading4 text-primary">3. Claim Process</h4>
         <p><strong>1.	Reporting a Claim:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Contact Haneri Customer Support at [Insert Contact Details] or email info@haneri.in .</li>
@@ -93,7 +93,7 @@
           <li class="list-group-item">o	Replacement units will carry the remaining warranty period of the original product.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">4. Additional Terms</h4>
+        <h4 class="m_top heading4 text-primary">4. Additional Terms</h4>
         <p><strong>•	Wobbling Issues:</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Claims must be reported within 30 days of purchase.</li>
@@ -111,14 +111,14 @@
           <li class="list-group-item">o	Haneri is not liable for delays or non-performance due to circumstances beyond its control, including natural disasters, pandemics, or government restrictions.</li>
         </ul>
                        
-        <h4 class="mt-4 text-primary">5. Customer Responsibilities</h4>
+        <h4 class="m_top heading4 text-primary">5. Customer Responsibilities</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Ensure correct installation and usage as per the user manual.</li>
             <li class="list-group-item">Provide necessary tools or access for service, such as ladders or clear workspaces.</li>
             <li class="list-group-item">Report any performance issues promptly to avoid further damage.</li>
         </ul>
         
-        <h4 class="mt-4 text-primary">Refund and Replacement Policy</h4>
+        <h4 class="m_top heading4 text-primary">Refund and Replacement Policy</h4>
         <p><strong>1.	Eligibility</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Refunds or replacements are valid if:
@@ -147,7 +147,7 @@
           </li>
         </ul>
         
-        <h4 class="mt-4 text-primary">Installation and Service Guidelines</h4>
+        <h4 class="m_top heading4 text-primary">Installation and Service Guidelines</h4>
         <p><strong>1.	Free Installation</strong> </p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">o	Free installation services are available for select products and cities. Contact Haneri Customer Support to confirm availability.</li>
@@ -174,7 +174,7 @@
           </li>
         </ul>
 
-        <h4 class="mt-4 text-primary">Contact Us</h4>
+        <h4 class="m_top heading4 text-primary">Contact Us</h4>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Haneri Customer Support</strong></li>
             <li class="list-group-item">Phone: [Insert Contact Number]</li>

@@ -1,24 +1,4 @@
-<style>
-    /* .shipping_policy .list-group-item {
-        border:0px solid rgba(0, 0, 0, .125);
-    }
-    .shipping_policy .border-bottom {
-        border-bottom: 0px solid #dee2e6 !important;
-    }
-    .shipping_policy .shadow-lg {
-        box-shadow: none !important;
-    }
-    .shipping_policy .card{
-        border: 0px solid rgba(0, 0, 0, .125);
-    }
-    .shipping_policy .text-primary {
-        color: #1d696e !important;
-    }
-    .shipping_policy .list-group-item {
-        border: 0px solid rgba(0, 0, 0, .125);
-        padding: .35rem 2.25rem;
-    } */
-</style>
+
 <section class="shipping_policy">
     <div class="card shadow-lg pt-4 pb-4">
         <h2 class="text-primary heading2">Shipping Policy</h2>

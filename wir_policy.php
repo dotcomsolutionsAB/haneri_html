@@ -11,11 +11,6 @@
         </div><!-- End .container -->
     </nav>
 
-    <div class="heading">
-        <div class="containe text-left">
-            <h1 class="text-uppercase text-left about_section">WIR Policy</h1>
-        </div><!-- End .container -->
-    </div><!-- End .page-header -->
     <div class="container">                
         <div id="wir_policy" class="wir_policy">
             <?php include("inc_files/policy/wir_policy.php"); ?>
