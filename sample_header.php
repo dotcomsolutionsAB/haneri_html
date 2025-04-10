@@ -402,9 +402,11 @@
                                     </div> 
 
                                     | 
+                                    <!-- This works for both login and non-login views -->
                                     <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                        <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
                                     </div>
+
                                 </div>
 
                             <?php else : ?>
@@ -413,17 +415,12 @@
                                     <a href="login.php" class="header-icon header-icon-user" title="Login">
                                         <i class="icon-user-2"></i>
                                     </a> |
+                                    <!-- This works for both login and non-login views -->
                                     <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                        <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
                                     </div>
                                 </div>
                             <?php endif; ?>
-
-                            <!-- This works for both login and non-login views -->
-                            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                                <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
-                            </div>
-
                         </div>
                     </div>
 
