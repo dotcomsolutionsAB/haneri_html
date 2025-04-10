@@ -351,114 +351,129 @@
         cursor: pointer;
     }
 
+    .search-bar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: yellow;
+        padding: 10px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+
+    .close-search {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        display: none;
+    }
+
 </style>
 
     <script>
-        // document.addEventListener("DOMContentLoaded", function() {
-        //     const authToken = localStorage.getItem("auth_token");
-
-        //     if (authToken) {
-        //         document.querySelector(".header-right").innerHTML = `
-        //             <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-        //                 <i class="icon-user-2"></i>
-        //             </a> |  
-        //             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
-        //             <a href="cart.php" class="header-icon cart" title="cart">
-        //                 <i class="minicart-icon"></i>
-        //                 <span class="cart-count badge-circle">3</span>
-        //             </a> |                
-        //             <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-        //                 <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a> |
-        //             </div> 
-        //             <a href="#" class="header-icon" id="logout-btn" title="Logout">
-        //                 <i class="fas fa-sign-out-alt"></i>
-        //             </a>
-        //         `;
-
-        //         document.getElementById("logout-btn").addEventListener("click", function() {
-        //             localStorage.removeItem("auth_token");
-        //             localStorage.removeItem("user_name");
-        //             localStorage.removeItem("user_role");
-        //             localStorage.removeItem("user_id");
-        //             window.location.href = "login.php"; // Redirect to login page after logout
-        //         });
-        //     } else {
-        //         document.querySelector(".header-right").innerHTML = `
-        //             <a href="login.php" class="header-icon header-icon-user" title="Login">
-        //                 <i class="icon-user-2"></i>
-        //             </a> |  
-        //             <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-        //             <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-        //                 <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-        //             </div>
-        //         `;
-        //     }
-        // });
-
         document.addEventListener("DOMContentLoaded", function() {
-    const authToken = localStorage.getItem("auth_token");
+            const authToken = localStorage.getItem("auth_token");
 
-    if (authToken) {
-        document.querySelector(".header-right").innerHTML = `
-            <div class="header-icon-wrapper">
-                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                    <i class="icon-user-2"></i>
-                </a> 
-                <div class="dropdown-menu d-none">
-                    <a href="#" class="dropdown-item header_a" id="whatsapp-link">
-                        <span class="header_icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </span>
-                        <span class="header_icon_text">WhatsApp</span>
-                    </a>
-                    <a href="cart.php" class="dropdown-item header_a">                            
-                        <span class="header_icon">
-                            <i class="icon-cart"></i> 
-                        </span>
-                        <span class="header_icon_text">Cart</span>
-                    </a>
-                    <a href="profile.php" class="dropdown-item header_a">
-                        <span class="header_icon">
-                            <i class="fas fa-user-cog"></i> 
-                        </span>
-                        <span class="header_icon_text">Account</span>
-                    </a>
-                    <a href="#" class="dropdown-item header_a" id="logout-link">
-                        <span class="header_icon">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </span>
-                        <span class="header_icon_text">Logout</span>
-                    </a>
-                </div> 
-                | 
-                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                </div>
-            </div>
-        `;
+            if (authToken) {
+                document.querySelector(".header-right").innerHTML = `
+                    <div class="header-icon-wrapper">
+                        <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                            <i class="icon-user-2"></i>
+                        </a> 
+                        <div class="dropdown-menu d-none">
+                            <a href="#" class="dropdown-item header_a" id="whatsapp-link">
+                                <span class="header_icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </span>
+                                <span class="header_icon_text">WhatsApp</span>
+                            </a>
+                            <a href="cart.php" class="dropdown-item header_a">                            
+                                <span class="header_icon">
+                                    <i class="fas fa-shopping-cart"></i> 
+                                </span>
+                                <span class="header_icon_text">Cart</span>
+                            </a>
+                            <a href="profile.php" class="dropdown-item header_a">
+                                <span class="header_icon">
+                                    <i class="fas fa-user-cog"></i> 
+                                </span>
+                                <span class="header_icon_text">Account</span>
+                            </a>
+                            <a href="#" class="dropdown-item header_a" id="logout-link">
+                                <span class="header_icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                                <span class="header_icon_text">Logout</span>
+                            </a>
+                        </div> 
+                        | 
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                            <a href="#" class="search-toggle" role="button">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                            <div class="search-bar">
+                                <input type="text" placeholder="Search..." class="search-input" />
+                                <span class="close-search">&times;</span>
+                            </div>
+                        </div>
 
-        // Logout functionality
-        document.getElementById("logout-link").addEventListener("click", function() {
-            localStorage.removeItem("auth_token");
-            localStorage.removeItem("user_name");
-            localStorage.removeItem("user_role");
-            localStorage.removeItem("user_id");
-            window.location.href = "login.php"; // Redirect to login page after logout
+                    </div>
+                `;
+
+                // Logout functionality
+                document.getElementById("logout-link").addEventListener("click", function() {
+                    localStorage.removeItem("auth_token");
+                    localStorage.removeItem("user_name");
+                    localStorage.removeItem("user_role");
+                    localStorage.removeItem("user_id");
+                    window.location.href = "login.php"; // Redirect to login page after logout
+                });
+
+            } else {
+                document.querySelector(".header-right").innerHTML = `
+                    <div class="header-icon-wrapper">
+                        <a href="login.php" class="header-icon header-icon-user" title="Login">
+                            <i class="icon-user-2"></i>
+                        </a> |  
+                        <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                        </div>
+                    </div>
+                `;
+            }
         });
 
-    } else {
-        document.querySelector(".header-right").innerHTML = `
-            <div class="header-icon-wrapper">
-                <a href="login.php" class="header-icon header-icon-user" title="Login">
-                    <i class="icon-user-2"></i>
-                </a> |  
-                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                </div>
-            </div>
-        `;
-    }
-});
+        $(document).ready(function(){
+            $('.search-toggle').on('click', function(e){
+                e.preventDefault();
+                $('.search-bar').slideToggle();
+                $(this).find('i').toggleClass('icon-magnifier icon-close');
+            });
+
+            $('.search-input').on('input', function(){
+                if($(this).val().length >= 2){
+                    $('.close-search').fadeIn();
+                } else {
+                    $('.close-search').fadeOut();
+                }
+            });
+
+            $('.close-search').on('click', function(){
+                $('.search-input').val('');
+                $(this).fadeOut();
+            });
+        });
 
     </script>
