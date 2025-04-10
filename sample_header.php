@@ -291,6 +291,15 @@
             </div>
 
         </header><!-- End .header -->
+        <!-- Fullscreen Search Overlay -->
+        <div id="fullscreenSearch" class="fullscreen-search hidden">
+            <div class="search-container">
+                <input type="text" id="globalSearchInput" placeholder="Search for products..." />
+                <i class="fas fa-times close-icon" id="closeSearch"></i>
+                <div id="globalSearchResults" class="results-box"></div>
+            </div>
+        </div>
+
 <style>
     .header_icon{
         font-size: 20px;
@@ -382,6 +391,99 @@
     animation: slideIn 0.3s ease-out;
     }
 </style>
+<style>
+.fullscreen-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+}
+
+#globalSearchInput {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid #00aaff;
+    outline: none;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.close-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #00aaff;
+    cursor: pointer;
+}
+
+.results-box {
+    margin-top: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background: #efefef;
+}
+
+.result-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.result-item .info {
+    flex-grow: 1;
+}
+
+.result-item .info .name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.result-item .info .brand {
+    font-size: 13px;
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const authToken = localStorage.getItem("auth_token");
@@ -478,8 +580,6 @@
         }
     });
 </script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
 <script>
 $(document).ready(function() {
     $('#searchToggle').on('click', function(e) {
@@ -503,55 +603,69 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function () {
-    let productsData = [];
 
-    // Load JSON data
+</script>
+<script>
+$(document).ready(function () {
+    let productList = [];
+
+    // Load product data
     $.getJSON('product.json', function (data) {
-        productsData = data.products;
+        productList = data.products;
     });
 
-    // Handle input
-    $('#searchInput').on('input', function () {
-        const query = $(this).val().toLowerCase();
+    // Show fullscreen search
+    $(document).on('click', '#searchToggle', function () {
+        $('#fullscreenSearch').fadeIn();
+        $('#globalSearchInput').val('').focus();
+        $('#globalSearchResults').empty();
+    });
 
-        if (query.length < 2) {
-            $('#searchResults').hide().empty();
-            return;
+    // Close search
+    $(document).on('click', '#closeSearch', function () {
+        $('#fullscreenSearch').fadeOut();
+        $('#globalSearchInput').val('');
+        $('#globalSearchResults').empty();
+    });
+
+    // ESC key closes search
+    $(document).on('keydown', function(e) {
+        if (e.key === "Escape") {
+            $('#fullscreenSearch').fadeOut();
         }
+    });
 
-        const results = productsData.filter(product =>
-            product.name.toLowerCase().includes(query) ||
-            product.brand.toLowerCase().includes(query) ||
-            product.category.toLowerCase().includes(query)
+    // Search input logic
+    $(document).on('input', '#globalSearchInput', function () {
+        const query = $(this).val().toLowerCase();
+        const resultsBox = $('#globalSearchResults');
+        resultsBox.empty();
+
+        if (query.length < 2) return;
+
+        const filtered = productList.filter(p =>
+            p.name.toLowerCase().includes(query) ||
+            p.brand.toLowerCase().includes(query) ||
+            p.category.toLowerCase().includes(query)
         );
 
-        if (results.length === 0) {
-            $('#searchResults').html('<div class="p-3 text-gray-500">No results found.</div>').show();
+        if (filtered.length === 0) {
+            resultsBox.append('<div class="p-4 text-gray-500">No results found</div>');
             return;
         }
 
-        let html = '';
-        results.forEach(product => {
-            html += `
-                <div class="search-result-item" onclick="window.location.href='product_details.php?id=${product.id}'">
-                    <img src="${product.image}" alt="${product.name}" />
+        filtered.forEach(product => {
+            resultsBox.append(`
+                <div class="result-item" onclick="window.location.href='product_details.php?id=${product.id}'">
+                    <img src="${product.image}" alt="${product.name}">
                     <div class="info">
-                        <p class="name">${product.name}</p>
-                        <p class="brand">${product.brand} – ₹${product.price}</p>
+                        <div class="name">${product.name}</div>
+                        <div class="brand">${product.brand} – ₹${product.price}</div>
                     </div>
                 </div>
-            `;
+            `);
         });
-
-        $('#searchResults').html(html).show();
-    });
-
-    // Hide results when clicking outside
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('#searchBar').length) {
-            $('#searchResults').hide();
-        }
     });
 });
 </script>
+
