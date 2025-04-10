@@ -307,42 +307,44 @@
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        <?php 
-                            $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
-                        ?>
+                        <div class="profile_box">
+                            <?php 
+                                $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
+                            ?>
 
-                        <?php if ($isLoggedIn === "true") : ?>
-                            <!-- Show when user is logged in -->
-                            <div class="header-icon-wrapper">
-                                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                                    <i class="icon-user-2"></i>
-                                </a> 
+                            <?php if ($isLoggedIn === "true") : ?>
+                                <!-- Show when user is logged in -->
+                                <div class="header-icon-wrapper">
+                                    <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                        <i class="icon-user-2"></i>
+                                    </a> 
 
-                                <!-- Profile Dropdown Menu -->
-                                <div class="dropdown-menu d-none">
-                                    <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
-                                    <a href="cart.php" class="dropdown-item">Cart</a>
-                                    <a href="profile.php" class="dropdown-item">Account</a>
-                                    <a href="#" class="dropdown-item" id="logout-link">Logout</a>
-                                </div> 
+                                    <!-- Profile Dropdown Menu -->
+                                    <div class="dropdown-menu d-none">
+                                        <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
+                                        <a href="cart.php" class="dropdown-item">Cart</a>
+                                        <a href="profile.php" class="dropdown-item">Account</a>
+                                        <a href="#" class="dropdown-item" id="logout-link">Logout</a>
+                                    </div> 
 
-                                | 
-                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                    | 
+                                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                        <?php else : ?>
-                            <!-- Show when user is NOT logged in -->
-                            <div class="header-icon-wrapper">
-                                <a href="login.php" class="header-icon header-icon-user" title="Login">
-                                    <i class="icon-user-2"></i>
-                                </a> |
-                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                            <?php else : ?>
+                                <!-- Show when user is NOT logged in -->
+                                <div class="header-icon-wrapper">
+                                    <a href="login.php" class="header-icon header-icon-user" title="Login">
+                                        <i class="icon-user-2"></i>
+                                    </a> |
+                                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
 
                 </div>
@@ -407,6 +409,7 @@
 
             } else {
                 document.querySelector(".header-right").innerHTML = `
+                <div class="profile_box">
                     <div class="header-icon-wrapper">
                         <a href="login.php" class="header-icon header-icon-user" title="Login">
                             <i class="icon-user-2"></i>
@@ -415,6 +418,7 @@
                             <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                         </div>
                     </div>
+                </div>
                 `;
             }
         });
