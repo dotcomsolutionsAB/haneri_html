@@ -251,10 +251,11 @@
                                     <a href="profile.php" class="dropdown-item">Account</a>
                                     <a href="#" class="dropdown-item" id="logout-link">Logout</a>
                                 </div> 
+
                                 | 
-                                <!-- <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                                </div> -->
+                                </div>
                             </div>
 
                         <?php else : ?>
@@ -264,42 +265,17 @@
                                     <i class="icon-user-2"></i>
                                 </a> |  
                                 <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                                <!-- <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                                </div> -->
-                            </div>
-                        <?php endif; ?>
-                        <div class="relative">
-                            <div class="header-search hidden sm:block">
-                                <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
-                                    <i class="icon-magnifier text-xl"></i>
-                                </button>
-
-                                <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
-                                    <div class="relative">
-                                        <input type="text" id="searchInput" placeholder="Search..." 
-                                            class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
-                                        <span id="clearSearch" 
-                                            class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>
             </div>
 
         </header><!-- End .header -->
-        <!-- Fullscreen Search Overlay -->
-        <div id="fullscreenSearch" class="fullscreen-search hidden">
-            <div class="search-container">
-                <input type="text" id="globalSearchInput" placeholder="Search for products..." />
-                <i class="fas fa-times close-icon" id="closeSearch"></i>
-                <div id="globalSearchResults" class="results-box"></div>
-            </div>
-        </div>
-
 <style>
     .header_icon{
         font-size: 20px;
@@ -325,7 +301,7 @@
         align-items: center;
     }
     /* Wrapper for all icons */
-    .profile_box {
+    .header-icon-wrapper {
         display: flex;
         /* background: antiquewhite; */
         justify-content: flex-end;
@@ -375,297 +351,74 @@
         cursor: pointer;
     }
 </style>
-<style>
-    @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    }
 
-    .animate-slide-in {
-    animation: slideIn 0.3s ease-out;
-    }
-</style>
-<style>
-.fullscreen-search {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    z-index: 9999;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    animation: fadeIn 0.3s ease-in-out;
-    padding: 20px;
-}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const authToken = localStorage.getItem("auth_token");
 
-.search-container {
-    position: relative;
-    width: 90%;
-    max-width: 700px;
-}
+            if (authToken) {
+                document.querySelector(".header-right").innerHTML = `
+                    <div class="profile_box">
+                        <div class="header-icon-wrapper">
+                            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                <i class="icon-user-2"></i>
+                            </a> 
+                            <div class="dropdown-menu d-none">
+                                <a href="#" class="dropdown-item header_a" id="whatsapp-link">
+                                    <span class="header_icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </span>
+                                    <span class="header_icon_text">WhatsApp</span>
+                                </a>
+                                <a href="cart.php" class="dropdown-item header_a">                            
+                                    <span class="header_icon">
+                                        <i class="fas fa-shopping-cart"></i> 
+                                    </span>
+                                    <span class="header_icon_text">Cart</span>
+                                </a>
+                                <a href="profile.php" class="dropdown-item header_a">
+                                    <span class="header_icon">
+                                        <i class="fas fa-user-cog"></i> 
+                                    </span>
+                                    <span class="header_icon_text">Account</span>
+                                </a>
+                                <a href="#" class="dropdown-item header_a" id="logout-link">
+                                    <span class="header_icon">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </span>
+                                    <span class="header_icon_text">Logout</span>
+                                </a>
+                            </div>
+                        </div> |
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                            <a href="#" class="search-toggle" role="button">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
 
-#globalSearchInput {
-    width: 100%;
-    padding: 16px 50px 16px 20px;
-    font-size: 20px;
-    border: none;
-    border-bottom: 2px solid #00aaff;
-    outline: none;
-    color: #333;
-    font-family: 'Open Sans', sans-serif;
-}
+                // Logout functionality
+                document.getElementById("logout-link").addEventListener("click", function() {
+                    localStorage.removeItem("auth_token");
+                    localStorage.removeItem("user_name");
+                    localStorage.removeItem("user_role");
+                    localStorage.removeItem("user_id");
+                    window.location.href = "login.php"; // Redirect to login page after logout
+                });
 
-.close-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 22px;
-    color: #00aaff;
-    cursor: pointer;
-}
-
-.results-box {
-    margin-top: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.result-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-}
-
-.result-item:hover {
-    background: #efefef;
-}
-
-.result-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 12px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.result-item .info {
-    flex-grow: 1;
-}
-
-.result-item .info .name {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.result-item .info .brand {
-    font-size: 13px;
-    color: #666;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const authToken = localStorage.getItem("auth_token");
-
-        if (authToken) {
-            document.querySelector(".header-right").innerHTML = `
-                <div class="profile_box">
+            } else {
+                document.querySelector(".header-right").innerHTML = `
                     <div class="header-icon-wrapper">
-                        <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                        <a href="login.php" class="header-icon header-icon-user" title="Login">
                             <i class="icon-user-2"></i>
-                        </a> 
-                        <div class="dropdown-menu d-none">
-                            <a href="#" class="dropdown-item header_a" id="whatsapp-link">
-                                <span class="header_icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </span>
-                                <span class="header_icon_text">WhatsApp</span>
-                            </a>
-                            <a href="cart.php" class="dropdown-item header_a">                            
-                                <span class="header_icon">
-                                    <i class="fas fa-shopping-cart"></i> 
-                                </span>
-                                <span class="header_icon_text">Cart</span>
-                            </a>
-                            <a href="profile.php" class="dropdown-item header_a">
-                                <span class="header_icon">
-                                    <i class="fas fa-user-cog"></i> 
-                                </span>
-                                <span class="header_icon_text">Account</span>
-                            </a>
-                            <a href="#" class="dropdown-item header_a" id="logout-link">
-                                <span class="header_icon">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </span>
-                                <span class="header_icon_text">Logout</span>
-                            </a>
-                        </div>
-                    </div> |
-                    <div class="relative">
-                        <div class="header-search hidden sm:block">
-                            <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
-                                <i class="icon-magnifier text-xl"></i>
-                            </button>
-
-                            <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
-                                <div class="relative">
-                                    <input type="text" id="searchInput" placeholder="Search..." 
-                                        class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
-                                    <span id="clearSearch" 
-                                        class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
-                                </div>
-                            </div>
-                            <div id="searchResults"></div>
+                        </a> |  
+                        <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                         </div>
                     </div>
-                </div>
-            `;
-
-            // Logout functionality
-            document.getElementById("logout-link").addEventListener("click", function() {
-                localStorage.removeItem("auth_token");
-                localStorage.removeItem("user_name");
-                localStorage.removeItem("user_role");
-                localStorage.removeItem("user_id");
-                window.location.href = "login.php"; // Redirect to login page after logout
-            });
-
-        } else {
-            document.querySelector(".header-right").innerHTML = `
-                <div class="header-icon-wrapper">
-                    <a href="login.php" class="header-icon header-icon-user" title="Login">
-                        <i class="icon-user-2"></i>
-                    </a> |  
-                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                    <div class="relative">
-                        <div class="header-search hidden sm:block">
-                            <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
-                                <i class="icon-magnifier text-xl"></i>
-                            </button>
-
-                            <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
-                                <div class="relative">
-                                    <input type="text" id="searchInput" placeholder="Search..." 
-                                        class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
-                                    <span id="clearSearch" 
-                                        class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
-                                </div>
-                            </div>
-                            <div id="searchResults"></div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-    });
-</script>
-<script>
-$(document).ready(function() {
-    $('#searchToggle').on('click', function(e) {
-        e.preventDefault();
-        $('#searchBar').toggle();
-        $('#searchInput').val('');
-        $('#clearSearch').hide();
-    });
-
-    $('#searchInput').on('input', function() {
-        if ($(this).val().length >= 2) {
-            $('#clearSearch').fadeIn();
-        } else {
-            $('#clearSearch').fadeOut();
-        }
-    });
-
-    $('#clearSearch').on('click', function() {
-        $('#searchInput').val('').focus();
-        $(this).fadeOut();
-    });
-});
-
-
-</script>
-<script>
-$(document).ready(function () {
-    let productList = [];
-
-    // Load product data
-    $.getJSON('product.json', function (data) {
-        productList = data.products;
-    });
-
-    // Show fullscreen search
-    $(document).on('click', '#searchToggle', function () {
-        $('#fullscreenSearch').fadeIn();
-        $('#globalSearchInput').val('').focus();
-        $('#globalSearchResults').empty();
-    });
-
-    // Close search
-    $(document).on('click', '#closeSearch', function () {
-        $('#fullscreenSearch').fadeOut();
-        $('#globalSearchInput').val('');
-        $('#globalSearchResults').empty();
-    });
-
-    // ESC key closes search
-    $(document).on('keydown', function(e) {
-        if (e.key === "Escape") {
-            $('#fullscreenSearch').fadeOut();
-        }
-    });
-
-    // Search input logic
-    $(document).on('input', '#globalSearchInput', function () {
-        const query = $(this).val().toLowerCase();
-        const resultsBox = $('#globalSearchResults');
-        resultsBox.empty();
-
-        if (query.length < 2) return;
-
-        const filtered = productList.filter(p =>
-            p.name.toLowerCase().includes(query) ||
-            p.brand.toLowerCase().includes(query) ||
-            p.category.toLowerCase().includes(query)
-        );
-
-        if (filtered.length === 0) {
-            resultsBox.append('<div class="p-4 text-gray-500">No results found</div>');
-            return;
-        }
-
-        filtered.forEach(product => {
-            resultsBox.append(`
-                <div class="result-item" onclick="window.location.href='product_details.php?id=${product.id}'">
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="info">
-                        <div class="name">${product.name}</div>
-                        <div class="brand">${product.brand} – ₹${product.price}</div>
-                    </div>
-                </div>
-            `);
+                `;
+            }
         });
-    });
-});
-</script>
-
+    </script>
