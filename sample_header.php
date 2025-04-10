@@ -279,12 +279,21 @@
 <style>
     .header_icon{
         font-size: 24px;
-        width: 50px;
+        width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
         /* font-weight: 100; */
-        height: 35px;
+        height: 100%;
+    }
+    .header_icon_text{
+        width: 70%;
+        background: aqua;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px;
     }
     .header_a{
         display: flex;
@@ -315,7 +324,7 @@
 
     /* Dropdown item styling */
     .dropdown-item {
-        padding: 10px 15px;
+        padding: 10px;
         color: #333;
         text-decoration: none;
         font-size: 15px;
@@ -324,6 +333,7 @@
         font-weight:500;
         display: flex;
         justify-content: flex-start;
+        height:50px;
     }
 
     /* Highlight item on hover */
