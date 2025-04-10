@@ -278,7 +278,7 @@
         </header><!-- End .header -->
 <style>
     .header_icon{
-        font-size: 24px;
+        font-size: 20px;
         width: 30%;
         display: flex;
         justify-content: center;
@@ -327,7 +327,7 @@
         padding: 10px;
         color: #333;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 14px;
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
         font-weight:500;
@@ -413,13 +413,13 @@
                     </a>
                     <a href="cart.php" class="dropdown-item header_a">                            
                         <span class="header_icon">
-                            <i class="minicart-icon"></i> 
+                            <i class="icon-cart"></i> 
                         </span>
                         <span class="header_icon_text">Cart</span>
                     </a>
                     <a href="profile.php" class="dropdown-item header_a">
                         <span class="header_icon">
-                            <i class="icon-user-2"></i> 
+                            <i class="fas fa-user-cog"></i> 
                         </span>
                         <span class="header_icon_text">Account</span>
                     </a>
