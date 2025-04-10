@@ -409,8 +409,8 @@
 
             } else {
                 document.querySelector(".header-right").innerHTML = `
-                <div class="profile_box">
-                    <div class="header-icon-wrapper">
+                <div class="">
+                    <div class="header-icon-wrapper profile_box">
                         <a href="login.php" class="header-icon header-icon-user" title="Login">
                             <i class="icon-user-2"></i>
                         </a> |
