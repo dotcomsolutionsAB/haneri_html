@@ -140,6 +140,80 @@
     }
 </style>
 
+<style>
+.search-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+.search-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #00aaff;
+}
+.search-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+    border: 2px solid #00aaff;
+    margin-top: 30px;
+}
+.search-container button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00aaff;
+    margin-top: 10px;
+}
+.search-results {
+    margin-top: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+}
+.search-result-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.search-result-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.search-result-item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+</style>
+
+    <!-- Search Overlay -->
+    <div id="searchOverlay" class="search-overlay">
+        <span class="search-close" onclick="closeSearch()">&times;</span>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Type keywords here" oninput="performSearch()" />
+            <button onclick="performSearch()"><i class="icon-magnifier"></i></button>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
     <!-- <div class="page-wrapper" id="dc-page-content"> -->
     <div class="page-wrapper">
         <header class="header header-transparent">
@@ -344,6 +418,12 @@
                                     </div>
                                 </div>
                             <?php endif; ?>
+
+                            <!-- This works for both login and non-login views -->
+                            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
+                            </div>
+
                         </div>
                     </div>
 
@@ -423,3 +503,55 @@
             }
         });
     </script>
+    <script>
+        function openSearch() {
+            document.getElementById("searchOverlay").style.display = "block";
+            document.getElementById("searchInput").focus();
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.display = "none";
+            document.getElementById("searchInput").value = "";
+            document.getElementById("searchResults").innerHTML = "";
+        }
+
+        function performSearch() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = "";
+
+            if (query.length < 2) return;
+
+            fetch("product.json")
+                .then(res => res.json())
+                .then(data => {
+                    const filtered = data.products.filter(product =>
+                        product.name.toLowerCase().includes(query)
+                    );
+
+                    if (filtered.length === 0) {
+                        resultsContainer.innerHTML = "<p>No products found.</p>";
+                        return;
+                    }
+
+                    filtered.forEach(product => {
+                        const item = document.createElement("div");
+                        item.className = "search-result-item";
+                        item.innerHTML = `
+                            <img src="${product.image}" alt="${product.name}" />
+                            <div>
+                                <h4>${product.name}</h4>
+                                <p>₹${product.price.toFixed(2)} - ${product.brand}</p>
+                            </div>
+                        `;
+                        item.onclick = () => {
+                            window.location.href = `product_details.php?id=${product.id}`;
+                        };
+                        resultsContainer.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    resultsContainer.innerHTML = "<p>Error loading products.</p>";
+                });
+        }
+</script>
