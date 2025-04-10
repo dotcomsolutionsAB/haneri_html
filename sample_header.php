@@ -288,7 +288,7 @@
     }
     .header_icon_text{
         width: 70%;
-        background: aqua;
+        /* background: aqua; */
         height: 100%;
         display: flex;
         justify-content: flex-start;
