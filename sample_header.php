@@ -303,12 +303,12 @@
     .dropdown-menu {
         display: none;
         /* position: absolute; */
-        top: 140%;
+        top: 85%;
         right: 4%;
         background-color: #fff;
         border: 0px solid #ccc;
         border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
         max-width: 300px;
         left: 85%;
     }
