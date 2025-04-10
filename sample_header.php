@@ -399,25 +399,25 @@
                         <span class="header_icon">
                             <i class="fab fa-whatsapp"></i>
                         </span>
-                        WhatsApp
+                        <span class="header_icon_text">WhatsApp</span>
                     </a>
                     <a href="cart.php" class="dropdown-item header_a">                            
                         <span class="header_icon">
                             <i class="minicart-icon"></i> 
                         </span>
-                        Cart  
+                        <span class="header_icon_text">Cart</span>
                     </a>
                     <a href="profile.php" class="dropdown-item header_a">
                         <span class="header_icon">
                             <i class="icon-user-2"></i> 
                         </span>
-                        Account
+                        <span class="header_icon_text">Account</span>
                     </a>
                     <a href="#" class="dropdown-item header_a" id="logout-link">
                         <span class="header_icon">
                             <i class="fas fa-sign-out-alt"></i>
                         </span>
-                        Logout
+                        <span class="header_icon_text">Logout</span>
                     </a>
                 </div> 
                 | 
