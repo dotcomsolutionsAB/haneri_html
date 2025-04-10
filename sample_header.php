@@ -232,45 +232,45 @@
                         </nav>
                     </div><!-- End .header-left -->
 
-<div class="header-right">
-    <?php 
-        $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
-    ?>
+                    <div class="header-right">
+                        <?php 
+                            $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
+                        ?>
 
-    <?php if ($isLoggedIn === "true") : ?>
-        <!-- Show when user is logged in -->
-        <div class="header-icon-wrapper">
-            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                <i class="icon-user-2"></i>
-            </a> 
+                        <?php if ($isLoggedIn === "true") : ?>
+                            <!-- Show when user is logged in -->
+                            <div class="header-icon-wrapper">
+                                <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                    <i class="icon-user-2"></i>
+                                </a> 
 
-            <!-- Profile Dropdown Menu -->
-            <div class="dropdown-menu d-none">
-                <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
-                <a href="cart.php" class="dropdown-item">Cart</a>
-                <a href="profile.php" class="dropdown-item">Account</a>
-                <a href="#" class="dropdown-item" id="logout-link">Logout</a>
-            </div> 
+                                <!-- Profile Dropdown Menu -->
+                                <div class="dropdown-menu d-none">
+                                    <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
+                                    <a href="cart.php" class="dropdown-item">Cart</a>
+                                    <a href="profile.php" class="dropdown-item">Account</a>
+                                    <a href="#" class="dropdown-item" id="logout-link">Logout</a>
+                                </div> 
 
-            | 
-            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-            </div>
-        </div>
+                                | 
+                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                </div>
+                            </div>
 
-    <?php else : ?>
-        <!-- Show when user is NOT logged in -->
-        <div class="header-icon-wrapper">
-            <a href="login.php" class="header-icon header-icon-user" title="Login">
-                <i class="icon-user-2"></i>
-            </a> |  
-            <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-            <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-            </div>
-        </div>
-    <?php endif; ?>
-</div>
+                        <?php else : ?>
+                            <!-- Show when user is NOT logged in -->
+                            <div class="header-icon-wrapper">
+                                <a href="login.php" class="header-icon header-icon-user" title="Login">
+                                    <i class="icon-user-2"></i>
+                                </a> |  
+                                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                    <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
 
                 </div>
             </div>
@@ -387,37 +387,38 @@
 
             if (authToken) {
                 document.querySelector(".header-right").innerHTML = `
-                    <div class="header-icon-wrapper">
-                        <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                            <i class="icon-user-2"></i>
-                        </a> 
-                        <div class="dropdown-menu d-none">
-                            <a href="#" class="dropdown-item header_a" id="whatsapp-link">
-                                <span class="header_icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </span>
-                                <span class="header_icon_text">WhatsApp</span>
-                            </a>
-                            <a href="cart.php" class="dropdown-item header_a">                            
-                                <span class="header_icon">
-                                    <i class="fas fa-shopping-cart"></i> 
-                                </span>
-                                <span class="header_icon_text">Cart</span>
-                            </a>
-                            <a href="profile.php" class="dropdown-item header_a">
-                                <span class="header_icon">
-                                    <i class="fas fa-user-cog"></i> 
-                                </span>
-                                <span class="header_icon_text">Account</span>
-                            </a>
-                            <a href="#" class="dropdown-item header_a" id="logout-link">
-                                <span class="header_icon">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </span>
-                                <span class="header_icon_text">Logout</span>
-                            </a>
-                        </div> 
-                        | 
+                    <div class="profile_box">
+                        <div class="header-icon-wrapper">
+                            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                <i class="icon-user-2"></i>
+                            </a> 
+                            <div class="dropdown-menu d-none">
+                                <a href="#" class="dropdown-item header_a" id="whatsapp-link">
+                                    <span class="header_icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </span>
+                                    <span class="header_icon_text">WhatsApp</span>
+                                </a>
+                                <a href="cart.php" class="dropdown-item header_a">                            
+                                    <span class="header_icon">
+                                        <i class="fas fa-shopping-cart"></i> 
+                                    </span>
+                                    <span class="header_icon_text">Cart</span>
+                                </a>
+                                <a href="profile.php" class="dropdown-item header_a">
+                                    <span class="header_icon">
+                                        <i class="fas fa-user-cog"></i> 
+                                    </span>
+                                    <span class="header_icon_text">Account</span>
+                                </a>
+                                <a href="#" class="dropdown-item header_a" id="logout-link">
+                                    <span class="header_icon">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </span>
+                                    <span class="header_icon_text">Logout</span>
+                                </a>
+                            </div>
+                        </div> |
                         <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                             <a href="#" class="search-toggle" role="button">
                                 <i class="icon-magnifier"></i>
@@ -427,7 +428,6 @@
                                 <span class="close-search">&times;</span>
                             </div>
                         </div>
-
                     </div>
                 `;
 
