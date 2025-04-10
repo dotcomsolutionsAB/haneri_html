@@ -251,7 +251,6 @@
                                     <a href="profile.php" class="dropdown-item">Account</a>
                                     <a href="#" class="dropdown-item" id="logout-link">Logout</a>
                                 </div> 
-
                                 | 
                                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
@@ -265,9 +264,26 @@
                                     <i class="icon-user-2"></i>
                                 </a> |  
                                 <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                                <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                <!-- <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                                </div> -->
+                                <div class="relative">
+                                    <div class="header-search hidden sm:block">
+                                        <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
+                                            <i class="icon-magnifier text-xl"></i>
+                                        </button>
+
+                                        <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
+                                            <div class="relative">
+                                                <input type="text" id="searchInput" placeholder="Search..." 
+                                                    class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
+                                                <span id="clearSearch" 
+                                                    class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         <?php endif; ?>
                     </div>
@@ -350,130 +366,127 @@
     .header-icon-wrapper:hover .header-icon {
         cursor: pointer;
     }
-
-    .search-bar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: yellow;
-        padding: 10px;
-        width: 250px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        z-index: 10;
-    }
-
-    .search-input {
-        width: 100%;
-        padding: 5px;
-        border: none;
-        outline: none;
-    }
-
-    .close-search {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 18px;
-        display: none;
-    }
-
 </style>
+<style>
+    @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const authToken = localStorage.getItem("auth_token");
+    .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const authToken = localStorage.getItem("auth_token");
 
-            if (authToken) {
-                document.querySelector(".header-right").innerHTML = `
-                    <div class="profile_box">
-                        <div class="header-icon-wrapper">
-                            <a href="profile.php" class="header-icon header-icon-user" title="Profile">
-                                <i class="icon-user-2"></i>
-                            </a> 
-                            <div class="dropdown-menu d-none">
-                                <a href="#" class="dropdown-item header_a" id="whatsapp-link">
-                                    <span class="header_icon">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </span>
-                                    <span class="header_icon_text">WhatsApp</span>
-                                </a>
-                                <a href="cart.php" class="dropdown-item header_a">                            
-                                    <span class="header_icon">
-                                        <i class="fas fa-shopping-cart"></i> 
-                                    </span>
-                                    <span class="header_icon_text">Cart</span>
-                                </a>
-                                <a href="profile.php" class="dropdown-item header_a">
-                                    <span class="header_icon">
-                                        <i class="fas fa-user-cog"></i> 
-                                    </span>
-                                    <span class="header_icon_text">Account</span>
-                                </a>
-                                <a href="#" class="dropdown-item header_a" id="logout-link">
-                                    <span class="header_icon">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                    </span>
-                                    <span class="header_icon_text">Logout</span>
-                                </a>
-                            </div>
-                        </div> |
-                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                            <a href="#" class="search-toggle" role="button">
-                                <i class="icon-magnifier"></i>
-                            </a>
-                            <div class="search-bar">
-                                <input type="text" placeholder="Search..." class="search-input" />
-                                <span class="close-search">&times;</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                // Logout functionality
-                document.getElementById("logout-link").addEventListener("click", function() {
-                    localStorage.removeItem("auth_token");
-                    localStorage.removeItem("user_name");
-                    localStorage.removeItem("user_role");
-                    localStorage.removeItem("user_id");
-                    window.location.href = "login.php"; // Redirect to login page after logout
-                });
-
-            } else {
-                document.querySelector(".header-right").innerHTML = `
+        if (authToken) {
+            document.querySelector(".header-right").innerHTML = `
+                <div class="profile_box">
                     <div class="header-icon-wrapper">
-                        <a href="login.php" class="header-icon header-icon-user" title="Login">
+                        <a href="profile.php" class="header-icon header-icon-user" title="Profile">
                             <i class="icon-user-2"></i>
-                        </a> |  
-                        <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
-                        <div class="header-search header-search-popup header-search-category d-none d-sm-block">
-                            <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                        </a> 
+                        <div class="dropdown-menu d-none">
+                            <a href="#" class="dropdown-item header_a" id="whatsapp-link">
+                                <span class="header_icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </span>
+                                <span class="header_icon_text">WhatsApp</span>
+                            </a>
+                            <a href="cart.php" class="dropdown-item header_a">                            
+                                <span class="header_icon">
+                                    <i class="fas fa-shopping-cart"></i> 
+                                </span>
+                                <span class="header_icon_text">Cart</span>
+                            </a>
+                            <a href="profile.php" class="dropdown-item header_a">
+                                <span class="header_icon">
+                                    <i class="fas fa-user-cog"></i> 
+                                </span>
+                                <span class="header_icon_text">Account</span>
+                            </a>
+                            <a href="#" class="dropdown-item header_a" id="logout-link">
+                                <span class="header_icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                                <span class="header_icon_text">Logout</span>
+                            </a>
+                        </div>
+                    </div> |
+                    <div class="relative">
+                        <div class="header-search hidden sm:block">
+                            <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
+                                <i class="icon-magnifier text-xl"></i>
+                            </button>
+
+                            <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
+                                <div class="relative">
+                                    <input type="text" id="searchInput" placeholder="Search..." 
+                                        class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
+                                    <span id="clearSearch" 
+                                        class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                `;
-            }
-        });
 
-        $(document).ready(function(){
-            $('.search-toggle').on('click', function(e){
-                e.preventDefault();
-                $('.search-bar').slideToggle();
-                $(this).find('i').toggleClass('icon-magnifier icon-close');
+                </div>
+            `;
+
+            // Logout functionality
+            document.getElementById("logout-link").addEventListener("click", function() {
+                localStorage.removeItem("auth_token");
+                localStorage.removeItem("user_name");
+                localStorage.removeItem("user_role");
+                localStorage.removeItem("user_id");
+                window.location.href = "login.php"; // Redirect to login page after logout
             });
 
-            $('.search-input').on('input', function(){
-                if($(this).val().length >= 2){
-                    $('.close-search').fadeIn();
-                } else {
-                    $('.close-search').fadeOut();
-                }
-            });
+        } else {
+            document.querySelector(".header-right").innerHTML = `
+                <div class="header-icon-wrapper">
+                    <a href="login.php" class="header-icon header-icon-user" title="Login">
+                        <i class="icon-user-2"></i>
+                    </a> |  
+                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                        <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+                    </div>
+                </div>
+            `;
+        }
+    });
+</script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-            $('.close-search').on('click', function(){
-                $('.search-input').val('');
-                $(this).fadeOut();
-            });
-        });
+<script>
+$(document).ready(function() {
+    $('#searchToggle').on('click', function(e) {
+        e.preventDefault();
+        $('#searchBar').toggle();
+        $('#searchInput').val('');
+        $('#clearSearch').hide();
+    });
 
-    </script>
+    $('#searchInput').on('input', function() {
+        if ($(this).val().length >= 2) {
+            $('#clearSearch').fadeIn();
+        } else {
+            $('#clearSearch').fadeOut();
+        }
+    });
+
+    $('#clearSearch').on('click', function() {
+        $('#searchInput').val('').focus();
+        $(this).fadeOut();
+    });
+});
+</script>
