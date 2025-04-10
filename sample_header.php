@@ -64,7 +64,7 @@
     <div class="dc-letter">I</div>
   </div>
 </div>
-<!-- <style>
+<style>
     .header_icon{
         font-size: 20px;
         width: 30%;
@@ -138,90 +138,71 @@
     .header-icon-wrapper:hover .header-icon {
         cursor: pointer;
     }
-</style> -->
-
-<style>
-     .header-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .header-icon-wrapper i {
-        font-size: 20px;
-        cursor: pointer;
-        color: #00aaff;
-    }
-
-    .search-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: white;
-        z-index: 9999;
-        padding: 60px 20px;
-        box-sizing: border-box;
-    }
-    .search-close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 40px;
-        cursor: pointer;
-        color: #00aaff;
-    }
-    .search-container {
-        max-width: 800px;
-        margin: auto;
-        text-align: center;
-    }
-    .search-container input[type="text"] {
-        width: 100%;
-        padding: 14px 16px;
-        font-size: 20px;
-        border: 2px solid #00aaff;
-        border-radius: 4px;
-    }
-    .search-container button {
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        color: #00aaff;
-        margin-top: 10px;
-    }
-    .search-results {
-        margin-top: 30px;
-        max-height: 300px;
-        overflow-y: auto;
-        text-align: left;
-    }
-    .search-result-item {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #eee;
-        padding: 10px 0;
-        cursor: pointer;
-    }
-    .search-result-item img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        margin-right: 15px;
-        border-radius: 6px;
-    }
-    .search-result-item h4 {
-        margin: 0;
-        font-size: 18px;
-    }
-    .search-result-item p {
-        margin: 2px 0 0;
-        font-size: 14px;
-        color: #555;
-    }
 </style>
 
+<style>
+.search-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+.search-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #00aaff;
+}
+.search-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+    border: 2px solid #00aaff;
+    margin-top: 30px;
+}
+.search-container button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00aaff;
+    margin-top: 10px;
+}
+.search-results {
+    margin-top: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+}
+.search-result-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.search-result-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.search-result-item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+</style>
 
     <!-- Search Overlay -->
     <div id="searchOverlay" class="search-overlay">
@@ -400,7 +381,47 @@
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
-                        
+                        <div class="profile_box">
+                            <?php 
+                                $isLoggedIn = "<script>document.write(localStorage.getItem('auth_token') ? 'true' : 'false');</script>";
+                            ?>
+
+                            <?php if ($isLoggedIn === "true") : ?>
+                                <!-- Show when user is logged in -->
+                                <div class="header-icon-wrapper">
+                                    <a href="profile.php" class="header-icon header-icon-user" title="Profile">
+                                        <i class="icon-user-2"></i>
+                                    </a> 
+
+                                    <!-- Profile Dropdown Menu -->
+                                    <div class="dropdown-menu d-none">
+                                        <a href="#" class="dropdown-item" id="whatsapp-link">WhatsApp</a>
+                                        <a href="cart.php" class="dropdown-item">Cart</a>
+                                        <a href="profile.php" class="dropdown-item">Account</a>
+                                        <a href="#" class="dropdown-item" id="logout-link">Logout</a>
+                                    </div> 
+
+                                    | 
+                                    <!-- This works for both login and non-login views -->
+                                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                        <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
+                                    </div>
+
+                                </div>
+
+                            <?php else : ?>
+                                <!-- Show when user is NOT logged in -->
+                                <div class="header-icon-wrapper">
+                                    <a href="login.php" class="header-icon header-icon-user" title="Login">
+                                        <i class="icon-user-2"></i>
+                                    </a> |
+                                    <!-- This works for both login and non-login views -->
+                                    <div class="header-search header-search-popup header-search-category d-none d-sm-block">
+                                        <a href="javascript:void(0);" onclick="openSearch()" role="button"><i class="icon-magnifier"></i></a>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </div>
 
                 </div>
@@ -408,7 +429,7 @@
 
         </header><!-- End .header -->
 
-    <!-- <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const authToken = localStorage.getItem("auth_token");
 
@@ -478,95 +499,56 @@
                 `;
             }
         });
-    </script> -->
-
-<!-- SCRIPT -->
+    </script>
 <script>
-    // Build header icons depending on login state
-    document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("auth_token");
-        const headerRight = document.getElementById("headerRight");
-
-        if (token) {
-            headerRight.innerHTML = `
-                <div class="header-icon-wrapper">
-                    <a href="profile.php" title="Profile"><i class="fas fa-user"></i></a>
-                    <a href="cart.php" title="Cart"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="javascript:void(0)" id="logout-link" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
-                    <a href="javascript:void(0)" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></a>
-                </div>
-            `;
-
-            document.getElementById("logout-link").addEventListener("click", function () {
-                localStorage.removeItem("auth_token");
-                localStorage.removeItem("user_name");
-                localStorage.removeItem("user_role");
-                localStorage.removeItem("user_id");
-                window.location.href = "login.php";
-            });
-
-        } else {
-            headerRight.innerHTML = `
-                <div class="header-icon-wrapper">
-                    <a href="login.php" title="Login"><i class="fas fa-user"></i></a>
-                    <a href="javascript:void(0)" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></a>
-                </div>
-            `;
+        function openSearch() {
+            document.getElementById("searchOverlay").style.display = "block";
+            document.getElementById("searchInput").focus();
         }
-    });
 
-    function openSearch() {
-        document.getElementById("searchOverlay").style.display = "block";
-        document.getElementById("searchInput").focus();
-    }
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.display = "none";
+            document.getElementById("searchInput").value = "";
+            document.getElementById("searchResults").innerHTML = "";
+        }
 
-    function closeSearch() {
-        document.getElementById("searchOverlay").style.display = "none";
-        document.getElementById("searchInput").value = "";
-        document.getElementById("searchResults").innerHTML = "";
-    }
+        function performSearch() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = "";
 
-    function performSearch() {
-        const query = document.getElementById("searchInput").value.toLowerCase();
-        const resultsContainer = document.getElementById("searchResults");
-        resultsContainer.innerHTML = "";
+            if (query.length < 2) return;
 
-        if (query.length < 2) return;
+            fetch("product.json")
+                .then(res => res.json())
+                .then(data => {
+                    const filtered = data.products.filter(product =>
+                        product.name.toLowerCase().includes(query)
+                    );
 
-        fetch("product.json")
-            .then(res => res.json())
-            .then(data => {
-                const filtered = data.products.filter(product =>
-                    product.name.toLowerCase().includes(query)
-                );
+                    if (filtered.length === 0) {
+                        resultsContainer.innerHTML = "<p>No products found.</p>";
+                        return;
+                    }
 
-                if (filtered.length === 0) {
-                    resultsContainer.innerHTML = "<p>No products found.</p>";
-                    return;
-                }
-
-                filtered.forEach(product => {
-                    const item = document.createElement("div");
-                    item.className = "search-result-item";
-                    item.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}" />
-                        <div>
-                            <h4>${product.name}</h4>
-                            <p>₹${product.price.toFixed(2)} - ${product.brand}</p>
-                        </div>
-                    `;
-                    item.onclick = () => {
-                        window.location.href = `product_details.php?id=${product.id}`;
-                    };
-                    resultsContainer.appendChild(item);
+                    filtered.forEach(product => {
+                        const item = document.createElement("div");
+                        item.className = "search-result-item";
+                        item.innerHTML = `
+                            <img src="${product.image}" alt="${product.name}" />
+                            <div>
+                                <h4>${product.name}</h4>
+                                <p>₹${product.price.toFixed(2)} - ${product.brand}</p>
+                            </div>
+                        `;
+                        item.onclick = () => {
+                            window.location.href = `product_details.php?id=${product.id}`;
+                        };
+                        resultsContainer.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    resultsContainer.innerHTML = "<p>Error loading products.</p>";
                 });
-            })
-            .catch(() => {
-                resultsContainer.innerHTML = "<p>Error loading products.</p>";
-            });
-    }
-
-    document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeSearch();
-    });
+        }
 </script>
