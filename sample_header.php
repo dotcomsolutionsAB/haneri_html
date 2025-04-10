@@ -64,7 +64,81 @@
     <div class="dc-letter">I</div>
   </div>
 </div>
+<style>
+    .header_icon{
+        font-size: 20px;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* font-weight: 100; */
+        height: 100%;
+    }
+    .header_icon_text{
+        width: 70%;
+        /* background: aqua; */
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px;
+    }
+    .header_a{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /* Wrapper for all icons */
+    .profile_box {
+        display: flex;
+        /* background: antiquewhite; */
+        justify-content: flex-end;
+        align-items: center;
+    }
 
+    /* Dropdown menu (hidden by default) */
+    .dropdown-menu {
+        display: none;
+        /* position: absolute; */
+        top: 85%;
+        right: 4%;
+        background-color: #fff;
+        border: 0px solid #ccc;
+        border-radius: 5px;
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        max-width: 300px;
+        left: 85%;
+    }
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        font-weight:500;
+        display: flex;
+        justify-content: flex-start;
+        height:50px;
+    }
+
+    /* Highlight item on hover */
+    .dropdown-item:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Show the dropdown menu when hovering over Profile link */
+    .header-icon-wrapper:hover .dropdown-menu {
+        display: block !important;
+    }
+
+    /* Optional: style for icon hover */
+    .header-icon-wrapper:hover .header-icon {
+        cursor: pointer;
+    }
+</style>
 
     <!-- <div class="page-wrapper" id="dc-page-content"> -->
     <div class="page-wrapper">
@@ -263,8 +337,7 @@
                             <div class="header-icon-wrapper">
                                 <a href="login.php" class="header-icon header-icon-user" title="Login">
                                     <i class="icon-user-2"></i>
-                                </a> |  
-                                <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                                </a> |
                                 <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                                 </div>
@@ -276,81 +349,6 @@
             </div>
 
         </header><!-- End .header -->
-<style>
-    .header_icon{
-        font-size: 20px;
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* font-weight: 100; */
-        height: 100%;
-    }
-    .header_icon_text{
-        width: 70%;
-        /* background: aqua; */
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px;
-    }
-    .header_a{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    /* Wrapper for all icons */
-    .profile_box {
-        display: flex;
-        /* background: antiquewhite; */
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    /* Dropdown menu (hidden by default) */
-    .dropdown-menu {
-        display: none;
-        /* position: absolute; */
-        top: 85%;
-        right: 4%;
-        background-color: #fff;
-        border: 0px solid #ccc;
-        border-radius: 5px;
-        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-        max-width: 300px;
-        left: 85%;
-    }
-
-    /* Dropdown item styling */
-    .dropdown-item {
-        padding: 10px;
-        color: #333;
-        text-decoration: none;
-        font-size: 14px;
-        font-family: 'Open Sans', sans-serif;
-        text-transform: uppercase;
-        font-weight:500;
-        display: flex;
-        justify-content: flex-start;
-        height:50px;
-    }
-
-    /* Highlight item on hover */
-    .dropdown-item:hover {
-        background-color: #f5f5f5;
-    }
-
-    /* Show the dropdown menu when hovering over Profile link */
-    .header-icon-wrapper:hover .dropdown-menu {
-        display: block !important;
-    }
-
-    /* Optional: style for icon hover */
-    .header-icon-wrapper:hover .header-icon {
-        cursor: pointer;
-    }
-</style>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -412,8 +410,7 @@
                     <div class="header-icon-wrapper">
                         <a href="login.php" class="header-icon header-icon-user" title="Login">
                             <i class="icon-user-2"></i>
-                        </a> |  
-                        <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                        </a> |
                         <div class="header-search header-search-popup header-search-category d-none d-sm-block">
                             <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
                         </div>
