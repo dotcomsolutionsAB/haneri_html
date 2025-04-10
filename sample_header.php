@@ -420,6 +420,22 @@
                             </a>
                         </div>
                     </div> |
+                    <div class="relative">
+                        <div class="header-search hidden sm:block">
+                            <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
+                                <i class="icon-magnifier text-xl"></i>
+                            </button>
+
+                            <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
+                                <div class="relative">
+                                    <input type="text" id="searchInput" placeholder="Search..." 
+                                        class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
+                                    <span id="clearSearch" 
+                                        class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `;
 
@@ -439,6 +455,22 @@
                         <i class="icon-user-2"></i>
                     </a> |  
                     <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                    <div class="relative">
+                        <div class="header-search hidden sm:block">
+                            <button id="searchToggle" class="text-gray-700 hover:text-yellow-500 transition">
+                                <i class="icon-magnifier text-xl"></i>
+                            </button>
+
+                            <div id="searchBar" class="absolute right-0 top-12 bg-yellow-300 p-3 rounded-lg shadow-lg w-72 hidden z-50 animate-slide-in">
+                                <div class="relative">
+                                    <input type="text" id="searchInput" placeholder="Search..." 
+                                        class="w-full px-4 py-2 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-inner">
+                                    <span id="clearSearch" 
+                                        class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `;
         }
