@@ -301,7 +301,7 @@
         align-items: center;
     }
     /* Wrapper for all icons */
-    .header-icon-wrapper {
+    .profile_box {
         display: flex;
         /* background: antiquewhite; */
         justify-content: flex-end;
