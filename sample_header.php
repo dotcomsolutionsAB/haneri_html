@@ -434,6 +434,7 @@
                                         class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
                                 </div>
                             </div>
+                            <div id="searchResults"></div>
                         </div>
                     </div>
                 </div>
@@ -469,6 +470,7 @@
                                         class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 text-xl cursor-pointer hidden">&times;</span>
                                 </div>
                             </div>
+                            <div id="searchResults"></div>
                         </div>
                     </div>
                 </div>
@@ -498,6 +500,58 @@ $(document).ready(function() {
     $('#clearSearch').on('click', function() {
         $('#searchInput').val('').focus();
         $(this).fadeOut();
+    });
+});
+
+$(document).ready(function () {
+    let productsData = [];
+
+    // Load JSON data
+    $.getJSON('product.json', function (data) {
+        productsData = data.products;
+    });
+
+    // Handle input
+    $('#searchInput').on('input', function () {
+        const query = $(this).val().toLowerCase();
+
+        if (query.length < 2) {
+            $('#searchResults').hide().empty();
+            return;
+        }
+
+        const results = productsData.filter(product =>
+            product.name.toLowerCase().includes(query) ||
+            product.brand.toLowerCase().includes(query) ||
+            product.category.toLowerCase().includes(query)
+        );
+
+        if (results.length === 0) {
+            $('#searchResults').html('<div class="p-3 text-gray-500">No results found.</div>').show();
+            return;
+        }
+
+        let html = '';
+        results.forEach(product => {
+            html += `
+                <div class="search-result-item" onclick="window.location.href='product_details.php?id=${product.id}'">
+                    <img src="${product.image}" alt="${product.name}" />
+                    <div class="info">
+                        <p class="name">${product.name}</p>
+                        <p class="brand">${product.brand} – ₹${product.price}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        $('#searchResults').html(html).show();
+    });
+
+    // Hide results when clicking outside
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#searchBar').length) {
+            $('#searchResults').hide();
+        }
     });
 });
 </script>
