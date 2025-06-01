@@ -74,7 +74,7 @@
         </section>
 
         <!-- Why Choose Us section -->
-        <section class="why-choose-us">
+        <!-- <section class="why-choose-us">
             <div class="icons-container">
                 <div class="icon-item">
                     <img src="images/Logo1.png" alt="Quality">
@@ -86,7 +86,7 @@
                     <img src="images/Logo3.png" alt="Customer Focus">
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 
     <section class="container pb-3 mb-1">
