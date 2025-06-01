@@ -169,4 +169,9 @@
 .logo{
     display: none;
 }
+.slider_text{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+}
 
