@@ -92,7 +92,20 @@
     <section class="container pb-3 mb-1">
         <h2 class="heading_1">Best Sellers</h2>
         <div class="row py-4">
-            <?php
+                    <?php
+                    $products = [
+                        ["src" => "images/f1.png", "alt" => "Black Fan"],
+                        ["src" => "images/f2.png", "alt" => "Wooden Fan"],
+                        ["src" => "images/f3.png", "alt" => "White Fan"],
+                        ["src" => "images/f4.png", "alt" => "Black Fan 2"]
+                    ];
+                    foreach ($products as $product) {
+                        echo "<div class='product'>
+                                <a href='#'><img src='{$product['src']}' alt='{$product['alt']}'></a>
+                              </div>";
+                    }
+                    ?>
+            <!-- <?php
             $best_sellers = [
                 ["src" => "images/f5.png", "alt" => "Product 1"],
                 ["src" => "images/f6.png", "alt" => "Product 2"],
@@ -116,7 +129,7 @@
                             </div>
                         </div>";
             }
-            ?>
+            ?> -->
         </div>
     </section>
 
