@@ -119,19 +119,6 @@
         </div>
     </section> -->
 
-    <?php
-                    $products = [
-                        ["src" => "images/f1.png", "alt" => "Black Fan"],
-                        ["src" => "images/f2.png", "alt" => "Wooden Fan"],
-                        ["src" => "images/f3.png", "alt" => "White Fan"],
-                        ["src" => "images/f4.png", "alt" => "Black Fan 2"]
-                    ];
-                    foreach ($products as $product) {
-                        echo "<div class='product'>
-                                <a href='#'><img src='{$product['src']}' alt='{$product['alt']}'></a>
-                              </div>";
-                    }
-                    ?>
         <?php include("inc_files/best_sellers.php"); ?>
 
     <div class="bespoke-content">
