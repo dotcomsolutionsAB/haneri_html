@@ -2487,7 +2487,7 @@ footer .social-icon {
 
     /* featured page */
         .featured .card_image{
-            height: 240px;
+            height: 200px;
             /* background: antiquewhite; */
             display: flex;
             justify-content: center;
