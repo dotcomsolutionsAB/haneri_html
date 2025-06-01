@@ -119,7 +119,7 @@
             ?>
         </div>
     </section> -->
-    <?php
+     <?php
                     $products = [
                         ["src" => "images/f1.png", "alt" => "Black Fan"],
                         ["src" => "images/f2.png", "alt" => "Wooden Fan"],
@@ -132,9 +132,7 @@
                               </div>";
                     }
                     ?>
-                </div>
-            </section>
-        <?php include("inc_files/featured_products.php"); ?>
+                    <?php include("inc_files/featured_products.php"); ?>
 
     <div class="bespoke-content">
         <div class="bespoke-text">
