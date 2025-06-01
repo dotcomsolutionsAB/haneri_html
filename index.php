@@ -119,7 +119,6 @@
             ?>
         </div>
     </section> -->
-     <?php include("inc_files/featured_products.php"); ?>
 
     <div class="bespoke-content">
         <div class="bespoke-text">
