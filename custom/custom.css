@@ -147,9 +147,8 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: lighter;
     color: rgb(255, 255, 255);
-    border-width: 2px;
     border-style: solid;
-    border-color: rgb(51, 119, 120);
+    background-color: rgb(51, 119, 120);
     border-image: initial;
     text-decoration: none;
     padding: 13px 22px;

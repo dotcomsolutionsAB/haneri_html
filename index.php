@@ -15,7 +15,7 @@
                 Haneri as a brand that caters to consumers seeking products that seamlessly <br>
                 blend with modern living. At Haneri, our mission is to inspire everyday life by <br>
                 offering thoughtfully designed, functional, and future-ready solutions.</p>
-                    <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Shop Now</a>
+                    <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
             </div><!-- End .banner-layer -->
         </div><!-- End .home-slide -->
     </div><!-- End .home-slider -->
