@@ -40,89 +40,86 @@
                     ?>
                 </div>
             </section> -->
-        
+            <?php include("inc_files/featured_products.php"); ?>
 
-        <!-- About Haneri section -->
-        <section class="about-haneri">
-            <div class="about-content">
-                <div class="about-image">
-                    <!-- Replace this placeholder with the actual image -->
-                    <img src="images/about13.jpg" alt="Haneri Image">
-                </div>
-                <div class="about-text">
-                    <div class="q_head">
-                        <h3>What is</h3>
-                        <p><span>HANERI?</span></p>
+            <!-- About Haneri section -->
+            <section class="about-haneri">
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Replace this placeholder with the actual image -->
+                        <img src="images/about13.jpg" alt="Haneri Image">
                     </div>
-                    <div class="q_answer">
-                        <p>
-                            Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry.
-                            With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand
-                            that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire
-                            everyday life by offering thoughtfully designed, functional, and future-ready solutions.
-                        </p>
-                        <p>
-                            Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations
-                            of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with
-                            evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your
-                            needs, including home, office, and commercial spaces.
-                        </p>
-                        <button class="btn-know-more">KNOW MORE</button>
+                    <div class="about-text">
+                        <div class="q_head">
+                            <h3>What is</h3>
+                            <p><span>HANERI?</span></p>
+                        </div>
+                        <div class="q_answer">
+                            <p>
+                                Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry.
+                                With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand
+                                that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire
+                                everyday life by offering thoughtfully designed, functional, and future-ready solutions.
+                            </p>
+                            <p>
+                                Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations
+                                of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with
+                                evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your
+                                needs, including home, office, and commercial spaces.
+                            </p>
+                            <button class="btn-know-more">KNOW MORE</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Featured Products -->
-        <?php include("inc_files/featured_products.php"); ?>
-
-        <!-- Why Choose Us section -->
-        <!-- <section class="why-choose-us">
-            <div class="icons-container">
-                <div class="icon-item">
-                    <img src="images/Logo1.png" alt="Quality">
+            <!-- Why Choose Us section -->
+            <!-- <section class="why-choose-us">
+                <div class="icons-container">
+                    <div class="icon-item">
+                        <img src="images/Logo1.png" alt="Quality">
+                    </div>
+                    <div class="icon-item">
+                        <img src="images/Logo2.png" alt="Innovation">
+                    </div>
+                    <div class="icon-item">
+                        <img src="images/Logo3.png" alt="Customer Focus">
+                    </div>
                 </div>
-                <div class="icon-item">
-                    <img src="images/Logo2.png" alt="Innovation">
-                </div>
-                <div class="icon-item">
-                    <img src="images/Logo3.png" alt="Customer Focus">
-                </div>
-            </div>
-        </section> -->
+            </section> -->
 
-        <!-- <section class="container pb-3 mb-1">
-            <h2 class="heading_1">Best Sellers</h2>
-            <div class="row py-4">
-                <?php
-                $best_sellers = [
-                    ["src" => "images/f5.png", "alt" => "Product 1"],
-                    ["src" => "images/f6.png", "alt" => "Product 2"],
-                    ["src" => "images/f13.png", "alt" => "Product 3"],
-                    ["src" => "images/f8.png", "alt" => "Product 4"],
-                    ["src" => "images/f9.png", "alt" => "Product 5"],
-                    ["src" => "images/f10.png", "alt" => "Product 6"]
-                ];
-                foreach ($best_sellers as $product) {
-                    echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
-                                <div class='product-default inner-quickview inner-icon'>
-                                    <figure>
-                                        <a href='#'>
-                                            <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
-                                        </a>
-                                        <div class='btn-icon-group'>
-                                            <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
-                                        </div>
-                                        <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
-                                    </figure>
-                                </div>
-                            </div>";
-                }
-                ?>
-            </div>
-        </section> -->
+            <!-- <section class="container pb-3 mb-1">
+                <h2 class="heading_1">Best Sellers</h2>
+                <div class="row py-4">
+                    <?php
+                    $best_sellers = [
+                        ["src" => "images/f5.png", "alt" => "Product 1"],
+                        ["src" => "images/f6.png", "alt" => "Product 2"],
+                        ["src" => "images/f13.png", "alt" => "Product 3"],
+                        ["src" => "images/f8.png", "alt" => "Product 4"],
+                        ["src" => "images/f9.png", "alt" => "Product 5"],
+                        ["src" => "images/f10.png", "alt" => "Product 6"]
+                    ];
+                    foreach ($best_sellers as $product) {
+                        echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
+                                    <div class='product-default inner-quickview inner-icon'>
+                                        <figure>
+                                            <a href='#'>
+                                                <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
+                                            </a>
+                                            <div class='btn-icon-group'>
+                                                <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
+                                            </div>
+                                            <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
+                                        </figure>
+                                    </div>
+                                </div>";
+                    }
+                    ?>
+                </div>
+            </section> -->
 
-        <?php include("inc_files/best_sellers.php"); ?>
+            <?php include("inc_files/best_sellers.php"); ?>
     </div>
 
     <div class="bespoke-content">

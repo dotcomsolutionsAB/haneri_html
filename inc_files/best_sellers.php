@@ -1,9 +1,9 @@
 <?php include("configs/config.php"); ?>
 <section class="featured">
-    <h2 class="heading_1">Featured Products</h2>
+    <h2 class="heading_1">Best Seller Products</h2>
 
     <!-- Grid wrapper for cards -->
-    <div class="featured-products-grid" id="featured-carousel">
+    <div class="featured-products-grid" id="best-seller-carousel">
         <!-- Cards will be inserted here -->
     </div>
 </section>
@@ -26,7 +26,7 @@
         .then(res => {
             if (res.success && res.data.length > 0) {
                 const product = res.data[0];
-                const container = document.getElementById("featured-carousel");
+                const container = document.getElementById("best-seller-carousel");
 
                 product.variants.forEach(variant => {
                     const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
@@ -132,7 +132,7 @@
                     }
                 });
             } else {
-                document.getElementById("featured-carousel").innerHTML = "<p>No featured products found.</p>";
+                document.getElementById("best-seller-carousel").innerHTML = "<p>No Best Seller products found.</p>";
             }
         })
         .catch(error => {
