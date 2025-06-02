@@ -22,8 +22,8 @@
 
     <div class="container">
         <!-- Featured Products section -->
-        <!-- <section class="heading_1">
-                <h2 class="heading_1">Featured Products</h2>
+            <!-- <section class="heading_1">
+                <h2 class="heading_1">Featured Product</h2>
                 <div class="product-grid">
                     <?php
                     $products = [
@@ -88,36 +88,36 @@
             </div>
         </section> -->
 
-    <section class="container pb-3 mb-1">
-        <h2 class="heading_1">Best Sellers</h2>
-        <div class="row py-4">
-            <?php
-            $best_sellers = [
-                ["src" => "images/f5.png", "alt" => "Product 1"],
-                ["src" => "images/f6.png", "alt" => "Product 2"],
-                ["src" => "images/f13.png", "alt" => "Product 3"],
-                ["src" => "images/f8.png", "alt" => "Product 4"],
-                ["src" => "images/f9.png", "alt" => "Product 5"],
-                ["src" => "images/f10.png", "alt" => "Product 6"]
-            ];
-            foreach ($best_sellers as $product) {
-                echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
-                            <div class='product-default inner-quickview inner-icon'>
-                                <figure>
-                                    <a href='#'>
-                                        <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
-                                    </a>
-                                    <div class='btn-icon-group'>
-                                        <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
-                                    </div>
-                                    <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
-                                </figure>
-                            </div>
-                        </div>";
-            }
-            ?>
-        </div>
-    </section>
+        <!-- <section class="container pb-3 mb-1">
+            <h2 class="heading_1">Best Sellers</h2>
+            <div class="row py-4">
+                <?php
+                $best_sellers = [
+                    ["src" => "images/f5.png", "alt" => "Product 1"],
+                    ["src" => "images/f6.png", "alt" => "Product 2"],
+                    ["src" => "images/f13.png", "alt" => "Product 3"],
+                    ["src" => "images/f8.png", "alt" => "Product 4"],
+                    ["src" => "images/f9.png", "alt" => "Product 5"],
+                    ["src" => "images/f10.png", "alt" => "Product 6"]
+                ];
+                foreach ($best_sellers as $product) {
+                    echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
+                                <div class='product-default inner-quickview inner-icon'>
+                                    <figure>
+                                        <a href='#'>
+                                            <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
+                                        </a>
+                                        <div class='btn-icon-group'>
+                                            <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
+                                        </div>
+                                        <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
+                                    </figure>
+                                </div>
+                            </div>";
+                }
+                ?>
+            </div>
+        </section> -->
 
         <?php include("inc_files/best_sellers.php"); ?>
 
