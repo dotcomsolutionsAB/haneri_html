@@ -40,7 +40,7 @@
                     ?>
                 </div>
             </section> -->
-        <?php include("inc_files/featured_products.php"); ?>
+        
 
         <!-- About Haneri section -->
         <section class="about-haneri">
@@ -72,6 +72,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- Featured Products -->
+        <?php include("inc_files/featured_products.php"); ?>
 
         <!-- Why Choose Us section -->
         <!-- <section class="why-choose-us">
@@ -120,6 +123,7 @@
         </section> -->
 
         <?php include("inc_files/best_sellers.php"); ?>
+    </div>
 
     <div class="bespoke-content">
         <div class="bespoke-text">
