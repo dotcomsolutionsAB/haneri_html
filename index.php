@@ -88,7 +88,7 @@
             </div>
         </section> -->
 
-    <!-- <section class="container pb-3 mb-1">
+    <section class="container pb-3 mb-1">
         <h2 class="heading_1">Best Sellers</h2>
         <div class="row py-4">
             <?php
@@ -117,7 +117,7 @@
             }
             ?>
         </div>
-    </section> -->
+    </section>
 
         <?php include("inc_files/best_sellers.php"); ?>
 
