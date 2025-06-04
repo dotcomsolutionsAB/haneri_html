@@ -1,6 +1,6 @@
 <?php include("configs/config.php"); ?>
 <section class="featured">
-    <h2 class="heading_1">Best Seller Products</h2>
+    <h2 class="heading_1">Best Sellers</h2>
 
     <!-- Grid wrapper for cards -->
     <div class="featured-products-grid" id="best-seller-carousel">
