@@ -43,7 +43,6 @@
             <?php include("inc_files/featured_products.php"); ?>
 
             <!-- About Haneri section -->
-             <div class="container">
             <section class="about-haneri">
                 <div class="about-content">
                     <div class="about-image">
@@ -73,7 +72,6 @@
                     </div>
                 </div>
             </section>
-            </div>
 
             <!-- Why Choose Us section -->
             <!-- <section class="why-choose-us">
@@ -123,7 +121,8 @@
 
             <?php include("inc_files/best_sellers.php"); ?>
     </div>
-
+    
+    <div class="container">
     <div class="bespoke-content">
         <div class="bespoke-text">
             <img src="images/Haneri_Bespoke.jpg" alt="Haneri_Bespoke.jpg">
@@ -132,7 +131,7 @@
             <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
         </div>
     </div>
-
+    </div>
     <!-- FAQ Section -->
     <div class="container">
         <div class="row faq">
