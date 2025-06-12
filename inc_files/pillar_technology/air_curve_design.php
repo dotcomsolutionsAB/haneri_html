@@ -223,46 +223,6 @@ footer .copyright {
 
 </style>
 <body>
-
-    <section class="intro">
-        <div class="intro-text">
-            <h1>Introducing Air Curve Design: <span class="light">Redefining Ceiling Fan Efficiency</span></h1>
-        </div>
-        <div class="intro-image">
-            <img src="https://placehold.co/736x559" alt="Air Curve Design">
-        </div>
-    </section>
-
-    <section class="what-is">
-        <h2>What is Air Curve Design?</h2>
-        <p>Air Curve Design is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</p>
-    </section>
-
-    <section class="key-features">
-        <h2>Key Features of Air Curve Design</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>High Air Delivery</h3>
-                <p>Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience.</p>
-            </div>
-            <div class="feature">
-                <h3>Advanced Materials</h3>
-                <p>Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight.</p>
-            </div>
-            <div class="feature">
-                <h3>Energy Efficiency</h3>
-                <p>The aerodynamic profile of Air Curve blades optimizes drag, ensuring energy-efficient operation and reduced electricity bills.</p>
-            </div>
-            <div class="feature">
-                <h3>Silent Performance</h3>
-                <p>The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="science">
-        <h2>The Science Behind Air Curve Design</h2>
-        <p>Computational Fluid Dynamics (CFD): Advanced CFD simulations analyze airflow patterns to achieve peak aerodynamic efficiency.<br>Prototyping and Testing: Prototypes are tested under real-world conditions to validate performance.<br>Iterative Design: Continuous refinement based on data ensures Air Curve blades exceed industry benchmarks.</p>
-    </section>
+<div style="width: 1746px; height: 0px; outline: 1px black solid; outline-offset: -0.50px"></div>
 </body>
 </html>
