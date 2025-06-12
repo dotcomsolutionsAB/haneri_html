@@ -101,9 +101,14 @@ img[src*="200x41"] {
   left: 82px;
 }
 </style>
+    <div class="feature-tabs">
+      <div class="tab">Air curve design</div>
+      <div class="tab">Turbosilent BLDC</div>
+      <div class="tab">M.A.S.S</div>
+      <div class="tab">Lumiambience</div>
+      <div class="tab">S.C.A.N</div>
+    </div>
 
-<body>
-  <div class="container">
     <section class="hero">
       <h1>Introducing Air Curve Design: <span class="light">Redefining Ceiling Fan Efficiency</span></h1>
     </section>
