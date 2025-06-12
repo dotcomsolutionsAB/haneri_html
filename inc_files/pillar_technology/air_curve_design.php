@@ -1,182 +1,20 @@
-
-
-<div class="containe">
-    <div class="row row-bg">
-        <div class="col-md-12">
-            <h2 class="primary heading2 ">
-                Introducing Air Curve Design: Redefining Ceiling Fan Efficiency
-            </h2>
-            <p class="dark paragraph1 margp">
-                At <span class="highlight_p">Haneri</span>, innovation drives us to create products that are not only stylish but also deliver superior performance. Our revolutionary Air Curve Design technology transforms how ceiling fan blades are conceptualized, designed, and manufactured. With high-tech design and precision engineering, blades designed with Air Curve Design Technology offer unmatched air delivery, efficiency, and durability, showcasing the superiority of our product.
-            </p>
-            <h2 class="primary heading2 ">
-                What is Air Curve Design?
-            </h2>
-            <p class="dark paragraph1 margp">
-                <span class="highlight_p">Air Curve Design</span> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.
-            </p>
-        </div>
-    </div><!-- End .row -->
-</div><!-- End .container -->
-
-
-<div class="history-section pb-3">
-    <div class="containe">
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/f5.png"
-                            src="images/f5.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="primary heading2">Key Features of Air Curve Design</h2>
-                <ul class="dark ulclass margp">
-                    <li>
-                        <span class="highlight_p">High Air Delivery</span>
-                        Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.
-                    </li>
-                    <li>
-                        <span class="highlight_p">Energy Efficiency</span>
-                        The aerodynamic profile of Air Curve blades optimizes drag, reducing the load on the motor and ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful cooling experience while saving on electricity bills.
-                    </li>
-                    <li>
-                        <span class="highlight_p">Advanced Materials</span>
-                        Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight for efficient rotation. You can trust in the longevity of your cooling solution.
-                    </li>
-                    <li>
-                        <span class="highlight_p">Precision Manufacturing</span>
-                        Our state-of-the-art manufacturing processes ensure the highest uniformity and balance, reducing noise and vibrations during operation. You can count on a consistently quiet and smooth performance.
-                    </li>
-                    <li>
-                        <span class="highlight_p">Silent Performance</span>
-                        The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and professional settings.
-                    </li>
-                </ul>
-            </div><!-- End .col-lg-7 -->
-        </div><!-- End .row -->
-
-        <br>
-        <div class="row-bg">
-            <div class="containe margp">
-                <h2 class="primary heading2">Benefits for Customers</h2>
-            </div>
-            <div class="eow rowws">
-                <!-- Column 1 -->
-                <div class="col">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="primary heading2 highlight_h1">Enhanced Comfort</h2>
-                                <p class="dark paragraph1 left margp">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="col">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="primary heading2 highlight_h1">Cost Savings</h2>
-                                <p class="dark paragraph1 left margp">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
-                            </div>           
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="col">
-                    <div class="custom-box">
-                    <div class="icon-box">
-                        <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
-                    </div>
-                    <div class="custom-content">
-                        <div class="txtt">
-                            <h2 class="primary heading2 highlight_h1">Sustainable Choice</h2>
-                            <p class="dark paragraph1 left margp">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- column 4 -->
-                <div class="col">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <img src="images/place.jpg" alt="Modern Aesthetics" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="primary heading2 highlight_h1">Modern Aesthetics</h2>
-                                <p class="dark paragraph1 left margp">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <br><br> -->
-
-        <div class="row row-bg">
-            <div class="col-xl-4 col-lg-6">
-                <div class="work-together-section">
-                    <img src="assets/images/ACD.png" alt="Work Together Image" class="fit-image" />
-                    <!-- <div class="contentss">
-                        <h2 class="dark heading2">Air Curve Design</h2>
-                        <div class="c">
-                            <a href="#" class="contact-btn">
-                                CONTACT US 
-                            </a>
-                        </div>
-                    </div> -->
-                </div>
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-8 col-lg-6 contents">
-                <h2 class="primary heading2">The Science Behind Air Curve Design</h2>
-                <ul class="dark ulclass margp">
-                    <li>
-                        <span class="highlight_p">
-                                Computational Fluid Dynamics (CFD)
-                        </span>
-                        Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                                Prototyping and Testing
-                        </span>
-                        Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                                Iterative Design
-                        </span>
-                        Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        
-
-    </div><!-- End .container -->
-</div><!-- End .history-section -->
-
-<!-- <div class="mb-3"></div>margin -->
+<div data-layer="|" style="width: 16.43px; height: 41px; left: 2005px; top: 31px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #464646; font-size: 30px; font-family: Open Sans; font-weight: 300; line-height: 42px; word-wrap: break-word">|</div>
+  <div data-layer="Line 4" class="Line4" style="width: 1746px; height: 0px; left: 306px; top: 181.50px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Line 5" class="Line5" style="width: 1746px; height: 0px; left: 306px; top: 280px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Air curve design" class="AirCurveDesign" style="left: 330px; top: 221px; position: absolute; color: #00473E; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Air curve design</div>
+  <div data-layer="Turbosilent BLDC" class="TurbosilentBldc" style="left: 543px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Turbosilent BLDC</div>
+  <div data-layer="M.a.s.s" class="MASS" style="left: 764px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">M.a.s.s</div>
+  <div data-layer="S.c.a.n" class="SCAN" style="left: 1128px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">S.c.a.n</div>
+  <div data-layer="Lumiambience" class="Lumiambience" style="left: 918px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Lumiambience</div>
+  <div data-layer="Line 6" class="Line6" style="width: 41px; height: 0px; left: 500px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Line 7" class="Line7" style="width: 41px; height: 0px; left: 721px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Line 8" class="Line8" style="width: 41px; height: 0px; left: 867px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Line 9" class="Line9" style="width: 41px; height: 0px; left: 1068px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 894px; height: 182px; left: 1219px; top: 379px; position: absolute"><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 500; line-height: 100px; word-wrap: break-word">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 300; line-height: 100px; word-wrap: break-word">Redefining Ceiling Fan Efficiency<br/></span></div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 807px; height: 99px; left: 306px; top: 979px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">What is Air Curve Design?</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 906px; height: 99px; left: 306px; top: 1572px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Key Features of Air Curve Design</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 1004px; height: 99px; left: 1212px; top: 2382px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">The Science Behind Air Curve Design</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 391px; height: 99px; left: 498px; top: 1765px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">High Air Delivery</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 391px; height: 99px; left: 498px; top: 2033px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Advanced Materials</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 391px; height: 99px; left: 1493px; top: 2033px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Silent Performance</div>
+  <div data-layer="Strong → A true" class="StrongATrue" style="width: 391px; height: 99px; left: 1493px; top: 1765px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Energy Efficiency</div>
