@@ -1,150 +1,207 @@
-<style>
-/* General Reset */
-body, h1, h2, h3, h4, h5, h6, p, ul, li, address {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
-
-body {
-  background: #fff;
-  color: #000;
-  line-height: 1.5;
-}
-
-.container {
-  max-width: 2367px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.hero {
-  position: absolute;
-  top: 379px;
-  left: 1219px;
-  width: 894px;
-  font-size: 80px;
-  font-family: 'Barlow Condensed', sans-serif;
-  color: #00473E;
-  line-height: 100px;
-}
-
-.hero .light {
-  font-weight: 300;
-}
-
-.what-is, .key-features, .science {
-  position: absolute;
-  left: 306px;
-  width: 807px;
-  font-size: 16px;
-  line-height: 28.8px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.what-is {
-  top: 979px;
-}
-
-.key-features {
-  top: 1572px;
-}
-
-.science {
-  top: 2382px;
-  left: 1212px;
-  width: 938px;
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.feature {
-  width: 525px;
-  font-weight: 600;
-  color: black;
-}
-
-img {
-  position: absolute;
-  object-fit: cover;
-}
-
-img[src*="736x559"] {
-  width: 736px;
-  height: 559px;
-  top: 2337px;
-  left: 306px;
-}
-
-img[src*="712x475"] {
-  width: 712px;
-  height: 475px;
-  top: 410px;
-  left: 306px;
-}
-
-img[src*="894x596"] {
-  width: 894px;
-  height: 596px;
-  top: 915px;
-  left: 1219px;
-}
-
-img[src*="200x41"] {
-  top: 54px;
-  left: 82px;
-}
-</style>
-    <div class="feature-tabs">
-      <div class="tab">Air curve design</div>
-      <div class="tab">Turbosilent BLDC</div>
-      <div class="tab">M.A.S.S</div>
-      <div class="tab">Lumiambience</div>
-      <div class="tab">S.C.A.N</div>
+<div style="width: 2367px; height: 3443px; position: relative; background: white; overflow: hidden">
+  <div style="width: 200px; height: 41.30px; left: 306px; top: 26px; position: absolute">
+    <img style="width: 200px; height: 41.30px; left: 0px; top: 0px; position: absolute" src="https://placehold.co/200x41" />
+  </div>
+  <div style="width: 597.47px; height: 50px; left: 622px; top: 23px; position: absolute">
+    <div style="width: 141.27px; height: 50px; left: 0px; top: 0px; position: absolute">
+      <div style="width: 111.27px; height: 50px; left: 15px; top: 0px; position: absolute">
+        <div style="width: 81.60px; height: 19px; left: 15px; top: 15px; position: absolute; color: #315858; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Categories</div>
+      </div>
     </div>
-
-    <section class="hero">
-      <h1>Introducing Air Curve Design: <span class="light">Redefining Ceiling Fan Efficiency</span></h1>
-    </section>
-
-    <section class="what-is">
-      <h2>What is Air Curve Design?</h2>
-      <p><strong>Air Curve Design</strong> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</p>
-    </section>
-
-    <section class="key-features">
-      <h2>Key Features of Air Curve Design</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>High Air Delivery</h3>
-          <p>Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.</p>
-        </div>
-        <div class="feature">
-          <h3>Advanced Materials</h3>
-          <p>Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight for efficient rotation.</p>
-        </div>
-        <div class="feature">
-          <h3>Energy Efficiency</h3>
-          <p>The aerodynamic profile of Air Curve blades optimizes drag, reducing the load on the motor and ensuring energy-efficient operation.</p>
-        </div>
-        <div class="feature">
-          <h3>Silent Performance</h3>
-          <p>The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and professional settings.</p>
+    <div style="width: 207.22px; height: 50px; left: 141.27px; top: 0px; position: absolute">
+      <div style="width: 177.22px; height: 50px; left: 15px; top: 0px; position: absolute">
+        <div style="width: 147.53px; height: 19px; left: 15px; top: 15px; position: absolute; color: #464646; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Pillar Technololgy</div>
+      </div>
+    </div>
+    <div style="width: 127.55px; height: 50px; left: 348.49px; top: 0px; position: absolute">
+      <div style="width: 97.55px; height: 50px; left: 15px; top: 0px; position: absolute">
+        <div style="width: 67.85px; height: 19px; left: 15px; top: 15px; position: absolute; color: #464646; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">About Us</div>
+      </div>
+    </div>
+    <div style="width: 121.44px; height: 50px; left: 476.03px; top: 0px; position: absolute">
+      <div style="width: 91.44px; height: 50px; left: 15px; top: 0px; position: absolute">
+        <div style="width: 61.83px; height: 19px; left: 15px; top: 15px; position: absolute; color: #464646; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Support</div>
+      </div>
+    </div>
+  </div>
+  <div style="width: 16.43px; height: 41px; left: 1946.86px; top: 30.98px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #464646; font-size: 30px; font-family: Open Sans; font-weight: 300; line-height: 42px; word-wrap: break-word">|</div>
+  <div style="width: 17.50px; height: 38.39px; left: 1976.09px; top: 35.30px; position: absolute">
+    <div style="width: 17.80px; height: 21px; left: 0px; top: 10px; position: absolute; color: #464646; font-size: 20px; font-family: Font Awesome 5 Brands; font-weight: 400; line-height: 20px; word-wrap: break-word"></div>
+  </div>
+  <div data-svg-wrapper style="left: 2032px; top: 45px; position: absolute">
+    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.1381 19L11.4936 11.7386C10.8832 12.2326 10.1813 12.6149 9.38778 12.8854C8.59427 13.156 7.7967 13.2913 6.99506 13.2913C5.04018 13.2913 3.38562 12.6485 2.03137 11.3629C0.677125 10.0773 0 8.50603 0 6.64913C0 4.79223 0.67631 3.2202 2.02893 1.93305C3.38155 0.645898 5.0353 0.00154891 6.99017 2.78081e-06C8.94505 -0.00154335 10.6004 0.641647 11.9563 1.92957C13.3122 3.2175 13.9901 4.78953 13.9901 6.64565C13.9901 7.45119 13.84 8.23082 13.5396 8.98456C13.2393 9.7383 12.8446 10.383 12.3555 10.9188L20 18.179L19.1381 19ZM6.99628 12.1305C8.61584 12.1305 9.98311 11.601 11.0981 10.5419C12.2131 9.4828 12.7706 8.18367 12.7706 6.64449C12.7706 5.10532 12.2131 3.80657 11.0981 2.74825C9.98311 1.68992 8.61584 1.16037 6.99628 1.1596C5.37671 1.15883 4.00903 1.68838 2.89324 2.74825C1.77745 3.80812 1.21996 5.10687 1.22078 6.64449C1.22159 8.18212 1.77908 9.48087 2.89324 10.5407C4.00741 11.6006 5.37468 12.1302 6.99506 12.1294" fill="#464646"/>
+    </svg>
+  </div>
+  <div data-svg-wrapper style="left: 1926px; top: 44px; position: absolute">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 9C7.20914 9 9 7.20914 9 5C9 2.79086 7.20914 1 5 1C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9Z" stroke="#464646" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div data-svg-wrapper style="left: 1922px; top: 55px; position: absolute">
+    <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 5.5C17 7.985 17 10 9 10C1 10 1 7.985 1 5.5C1 3.015 4.582 1 9 1C13.418 1 17 3.015 17 5.5Z" stroke="#464646" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div style="width: 16.43px; height: 41px; left: 2005px; top: 31px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #464646; font-size: 30px; font-family: Open Sans; font-weight: 300; line-height: 42px; word-wrap: break-word">|</div>
+  <div style="width: 1746px; height: 0px; left: 306px; top: 181.50px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="width: 1746px; height: 0px; left: 306px; top: 280px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="left: 330px; top: 221px; position: absolute; color: #00473E; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Air curve design</div>
+  <div style="left: 543px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Turbosilent BLDC</div>
+  <div style="left: 764px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">M.a.s.s</div>
+  <div style="left: 1128px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">S.c.a.n</div>
+  <div style="left: 918px; top: 221px; position: absolute; color: black; font-size: 14px; font-family: Open Sans; font-weight: 600; text-transform: uppercase; line-height: 20px; word-wrap: break-word">Lumiambience</div>
+  <div style="width: 41px; height: 0px; left: 500px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="width: 41px; height: 0px; left: 721px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="width: 41px; height: 0px; left: 867px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="width: 41px; height: 0px; left: 1068px; top: 210px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 1px black solid; outline-offset: -0.50px"></div>
+  <div style="width: 894px; height: 182px; left: 1219px; top: 379px; position: absolute"><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 500; line-height: 100px; word-wrap: break-word">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 300; line-height: 100px; word-wrap: break-word">Redefining Ceiling Fan Efficiency<br/></span></div>
+  <div style="width: 807px; height: 99px; left: 306px; top: 979px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">What is Air Curve Design?</div>
+  <div style="width: 906px; height: 99px; left: 306px; top: 1572px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Key Features of Air Curve Design</div>
+  <div style="width: 1004px; height: 99px; left: 1212px; top: 2382px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">The Science Behind Air Curve Design</div>
+  <div style="width: 391px; height: 99px; left: 498px; top: 1765px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">High Air Delivery</div>
+  <div style="width: 391px; height: 99px; left: 498px; top: 2033px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Advanced Materials</div>
+  <div style="width: 391px; height: 99px; left: 1493px; top: 2033px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Silent Performance</div>
+  <div style="width: 391px; height: 99px; left: 1493px; top: 1765px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 54px; font-family: Barlow Condensed; font-weight: 400; line-height: 100px; word-wrap: break-word">Energy Efficiency</div>
+  <div style="width: 137px; height: 137px; left: 306px; top: 1795px; position: absolute; overflow: hidden">
+    <div data-svg-wrapper style="left: 15.99px; top: 109.60px; position: absolute">
+      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.689 0.598633H7.83937C4.05656 0.598633 0.989746 3.66545 0.989746 7.44826V12.0148C0.989746 15.7976 4.05656 18.8644 7.83937 18.8644H14.689C18.4718 18.8644 21.5386 15.7976 21.5386 12.0148V7.44826C21.5386 3.66518 18.4718 0.598633 14.689 0.598633ZM16.9721 12.0145C16.9721 13.2755 15.9498 14.2976 14.689 14.2976H7.83937C6.57834 14.2976 5.55625 13.2753 5.55625 12.0145V7.44799C5.55625 6.18696 6.57861 5.16487 7.83937 5.16487H14.689C15.95 5.16487 16.9721 6.18696 16.9721 7.44799V12.0145Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 41.10px; top: 95.90px; position: absolute">
+      <svg width="21" height="33" viewBox="0 0 21 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.8042 0.899414H6.9546C3.17152 0.899414 0.10498 3.96623 0.10498 7.74904V26.0148C0.10498 29.7976 3.17179 32.8644 6.9546 32.8644H13.8042C17.5873 32.8644 20.6539 29.7976 20.6539 26.0148V7.74904C20.6539 3.96596 17.5873 0.899414 13.8042 0.899414ZM16.0876 26.0145C16.0876 27.2756 15.0653 28.2977 13.8045 28.2977H6.95487C5.69385 28.2977 4.67175 27.2753 4.67175 26.0145V7.74878C4.67175 6.48775 5.69411 5.46566 6.95487 5.46566H13.8045C15.0655 5.46566 16.0876 6.48775 16.0876 7.74878V26.0145Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 66.22px; top: 82.20px; position: absolute">
+      <svg width="21" height="46" viewBox="0 0 21 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.07033 45.8642H13.92C17.7028 45.8642 20.7696 42.7974 20.7696 39.0146V7.04982C20.7696 3.26701 17.7028 0.200195 13.92 0.200195H7.07033C3.28752 0.200195 0.220703 3.26701 0.220703 7.04982V39.0148C0.220703 42.7976 3.28752 45.8642 7.07033 45.8642ZM4.78721 7.04982C4.78721 5.7888 5.8093 4.7667 7.07033 4.7667H13.92C15.181 4.7667 16.2031 5.78906 16.2031 7.04982V39.0148C16.2031 40.2759 15.181 41.298 13.92 41.298H7.07033C5.8093 41.298 4.78721 40.2756 4.78721 39.0148V7.04982Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 91.34px; top: 68.50px; position: absolute">
+      <svg width="21" height="60" viewBox="0 0 21 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.18556 0.500488C3.40275 0.500488 0.335938 3.5673 0.335938 7.35012V53.0144C0.335938 56.7972 3.40275 59.864 7.18556 59.864H14.0352C17.818 59.864 20.8848 56.7972 20.8848 53.0144V7.35012C20.8848 3.5673 17.818 0.500488 14.0352 0.500488H7.18556ZM16.3183 7.35012V53.0144C16.3183 54.2754 15.2962 55.2975 14.0352 55.2975H7.18556C5.92454 55.2975 4.90244 54.2751 4.90244 53.0144V7.35012C4.90244 6.08909 5.92454 5.067 7.18556 5.067H14.0352C15.2962 5.06673 16.3183 6.08909 16.3183 7.35012Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 116.45px; top: 54.80px; position: absolute">
+      <svg width="21" height="74" viewBox="0 0 21 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.0001 67.0141V7.6509C21.0001 3.86808 17.9335 0.80127 14.1504 0.80127H7.3008C3.51799 0.80127 0.451172 3.86808 0.451172 7.6509V67.0144C0.451172 70.7972 3.51799 73.864 7.3008 73.864H14.1504C17.9335 73.8638 21.0001 70.7972 21.0001 67.0141ZM5.01768 67.0141V7.6509C5.01768 6.38987 6.03977 5.36778 7.3008 5.36778H14.1504C15.4115 5.36778 16.4335 6.39014 16.4335 7.6509V67.0144C16.4335 68.2754 15.4115 69.2975 14.1504 69.2975H7.3008C6.04004 69.2975 5.01768 68.2752 5.01768 67.0141Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 16.82px; top: 25.93px; position: absolute">
+      <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M45.4871 42.165C46.7219 43.1432 48.1248 43.8884 49.6266 44.3638C51.8789 45.1366 54.2434 45.5323 56.6247 45.5352C58.6049 45.4432 60.4172 46.6437 61.1043 48.5033C61.4063 49.1366 61.5888 49.82 61.6431 50.5194C61.7317 51.7114 62.7244 52.6334 63.9196 52.6337H64.0863C64.692 52.5911 65.2558 52.3089 65.6528 51.8495C66.0499 51.3901 66.2479 50.7915 66.2027 50.186C66.1106 48.9183 65.7815 47.6792 65.2322 46.533C63.8527 43.1167 60.5116 40.9029 56.8278 40.9642C54.8874 40.9821 52.9577 40.6733 51.1199 40.051C49.7411 39.7085 48.5224 38.9023 47.6678 37.7679C53.0889 37.4273 58.2692 35.4058 62.4881 31.9845C65.7235 29.4448 67.6317 25.5742 67.6756 21.4612C67.6885 18.6641 67.1127 15.8953 65.986 13.3353C64.1505 8.50819 60.2395 4.76417 55.3372 3.14087C52.4424 2.00667 49.2111 2.09469 46.3824 3.38515C42.9907 4.78237 40.7997 8.11273 40.8593 11.7805C40.8711 13.7297 40.5522 15.6666 39.9164 17.509C39.5774 18.8757 38.7796 20.0849 37.6561 20.9338C37.3189 15.5103 35.2916 10.3284 31.859 6.1159C29.3212 2.88936 25.4608 0.982966 21.3564 0.928383C18.5568 0.917146 15.7865 1.49589 13.2259 2.62714C8.38729 4.45567 4.63204 8.37013 3.00632 13.2807C1.89246 16.1715 1.98798 19.3884 3.27121 22.208C4.66281 25.6098 7.99611 27.8124 11.6711 27.7586C13.6232 27.7275 15.5652 28.0476 17.4042 28.7039C18.7704 29.0378 19.9797 29.8319 20.829 30.9528C15.4114 31.296 10.2359 33.3218 6.02471 36.7476C2.79227 39.2874 0.880798 43.1515 0.82354 47.2618C0.808288 50.064 1.3798 52.8381 2.5017 55.4059C4.33638 60.2376 8.2519 63.9845 13.1598 65.6049C14.5528 66.102 16.019 66.3637 17.4978 66.379C19.088 66.3835 20.6591 66.0301 22.094 65.3446C25.4841 63.9468 27.6746 60.618 27.6171 56.9514C27.6058 54.9989 27.9296 53.0591 28.5736 51.2159C28.9126 49.8502 29.7086 48.6416 30.8294 47.7911C31.1663 53.214 33.1891 58.3965 36.615 62.6135C38.1684 64.589 40.2426 66.0916 42.6038 66.9515C43.7929 67.3714 45.0973 66.7479 45.5173 65.5589C45.9372 64.3698 45.3137 63.0655 44.1247 62.6454C42.5605 62.0669 41.1914 61.0587 40.1746 59.7367C37.4535 56.3895 35.8013 52.3014 35.4323 48.0032C39.4849 47.6484 43.1697 45.5087 45.4871 42.165ZM44.2199 19.0042C45.0296 16.6766 45.4371 14.2284 45.4256 11.7642C45.3852 9.85778 46.5673 8.13895 48.3618 7.49466C50.1125 6.73264 52.0983 6.71873 53.8597 7.45586C57.5192 8.65589 60.4308 11.4605 61.7665 15.0726C62.6494 17.0485 63.1032 19.1893 63.0976 21.3536C63.0984 24.1291 61.805 26.7464 59.5997 28.4315C56.252 31.1451 52.1687 32.7944 47.8754 33.1668C47.515 29.117 45.3745 25.4364 42.0326 23.1206C43.0049 21.8923 43.7461 20.4974 44.2199 19.0042ZM18.8763 24.3924C16.5573 23.5659 14.1091 23.1624 11.6476 23.2006C9.73956 23.2432 8.01993 22.0552 7.38473 20.2553C6.62218 18.5081 6.5989 16.5265 7.32079 14.7619C8.52241 11.0998 11.3334 8.18872 14.9512 6.85973C16.929 5.96553 19.0732 5.4989 21.2437 5.48981C24.0143 5.50158 26.622 6.80006 28.3012 9.00372C31.0264 12.3496 32.6821 16.438 33.0526 20.7372C29.0012 21.0933 25.3171 23.2295 22.9952 26.5685C21.7684 25.5935 20.3709 24.8558 18.8739 24.3926L18.8763 24.3924ZM24.2648 49.736C23.4533 52.0616 23.0425 54.5082 23.05 56.9714C23.0896 58.877 21.9075 60.5948 20.1138 61.2388C18.3701 61.9992 16.392 62.0182 14.6341 61.2912C10.9714 60.091 8.05819 57.2821 6.72519 53.6654C5.83821 51.6892 5.37694 49.5481 5.37132 47.382C5.38095 44.603 6.68318 41.9871 8.89433 40.3041C12.2373 37.5865 16.3179 35.9332 20.6096 35.5573C20.882 38.7635 22.2813 41.7693 24.5596 44.0417C25.1416 44.6204 25.7736 45.1467 26.4478 45.6147C25.4699 46.8409 24.729 48.2384 24.2629 49.736H24.2648ZM34.2379 43.5007C30.975 43.4983 27.9614 41.7554 26.332 38.9283C24.7028 36.1015 24.7052 32.6199 26.3389 29.7955C27.9724 26.9711 30.9886 25.2325 34.2516 25.2352C39.2954 25.2389 43.3814 29.3311 43.3776 34.3749C43.3739 39.4187 39.2818 43.5044 34.2379 43.5007Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 0px; top: 9.14px; position: absolute">
+      <svg width="101" height="98" viewBox="0 0 101 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M33.4953 97.7283C34.6844 98.1481 35.9888 97.5247 36.4088 96.3357C36.8286 95.1466 36.2052 93.8423 35.0162 93.4222C13.122 85.6813 0.524548 62.7415 5.7407 40.1128C10.9568 17.4842 32.3253 2.37406 55.3986 4.99832C78.4719 7.62258 95.901 27.1459 95.9021 50.3677C95.9021 51.0984 95.8794 51.8519 95.8563 52.5823C95.8379 53.1884 96.0613 53.7768 96.4771 54.218C96.8929 54.6592 97.4673 54.9168 98.0734 54.934C99.3248 54.9476 100.363 53.9691 100.423 52.7193C100.446 51.9431 100.469 51.1439 100.469 50.3677C100.467 24.8232 81.2947 3.34772 55.9139 0.461243C30.5331 -2.42523 7.02795 14.1969 1.29085 39.0886C-4.44625 63.9803 9.41167 89.2139 33.4953 97.7283Z" fill="#00473E"/>
+      </svg>
+    </div>
+    <div data-svg-wrapper style="left: 47.96px; top: 57.08px; position: absolute">
+      <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.23832 4.65096C4.49932 4.65096 5.52156 3.62872 5.52156 2.36772C5.52156 1.10672 4.49932 0.0844727 3.23832 0.0844727C1.97732 0.0844727 0.955078 1.10672 0.955078 2.36772C0.955078 3.62872 1.97732 4.65096 3.23832 4.65096Z" fill="#00473E"/>
+      </svg>
+    </div>
+  </div>
+  <div style="width: 876px; left: 1219px; top: 613px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 28.80px; word-wrap: break-word">Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.</div>
+  <div style="width: 876px; left: 1219px; top: 744px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 28.80px; word-wrap: break-word">Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.</div>
+  <div style="width: 807px; left: 306px; top: 1106px; position: absolute"><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Air Curve Design</span><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 28.80px; word-wrap: break-word"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
+  <div style="width: 807px; left: 306px; top: 1250px; position: absolute"><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Air Curve Design</span><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 28.80px; word-wrap: break-word"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
+  <div style="width: 807px; left: 306px; top: 1394px; position: absolute"><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Air Curve Design</span><span style="color: black; font-size: 16px; font-family: Open Sans; font-weight: 400; line-height: 28.80px; word-wrap: break-word"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
+  <div style="width: 525px; left: 498px; top: 1858px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.</div>
+  <div style="width: 525px; left: 498px; top: 2126px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight for efficient rotation. You can trust in the longevity of your cooling solution.</div>
+  <div style="width: 465px; left: 1493px; top: 2126px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and professional settings.</div>
+  <div style="width: 938px; left: 1212px; top: 2530px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">Computational Fluid Dynamics (CFD) Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.<br/>Prototyping and Testing Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption.<br/>Iterative Design Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.</div>
+  <div style="width: 525px; left: 1493px; top: 1858px; position: absolute; color: black; font-size: 16px; font-family: Open Sans; font-weight: 600; line-height: 28.80px; word-wrap: break-word">The aerodynamic profile of Air Curve blades optimizes drag, reducing the load on the motor and ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful cooling experience while saving on electricity bills.</div>
+  <div style="width: 148px; height: 148px; left: 1290px; top: 1784px; position: absolute; overflow: hidden">
+    <div data-svg-wrapper style="left: 13.90px; top: 5.21px; position: absolute">
+      <svg width="122" height="138" viewBox="0 0 122 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M61.4811 110.066H41.4563V118.039C41.4623 119.539 42.0606 120.975 43.1209 122.035C44.1813 123.096 45.6177 123.694 47.1173 123.7H75.8449C77.3446 123.694 78.7811 123.096 79.8415 122.036C80.9019 120.975 81.5003 119.539 81.5062 118.039V110.066H61.4811ZM115.378 81.559C115.64 81.7108 115.87 81.9128 116.054 82.1534C116.238 82.394 116.373 82.6685 116.451 82.9613C116.529 83.254 116.549 83.5593 116.509 83.8596C116.469 84.1599 116.37 84.4494 116.218 84.7116C116.067 84.9738 115.865 85.2035 115.624 85.3876C115.383 85.5717 115.109 85.7066 114.816 85.7846C114.523 85.8626 114.218 85.8822 113.918 85.8423C113.617 85.8023 113.328 85.7036 113.066 85.5518L106.622 81.8313C106.357 81.6806 106.125 81.4792 105.939 81.2384C105.753 80.9977 105.616 80.7225 105.536 80.4287C105.457 80.1348 105.436 79.8281 105.476 79.5263C105.516 79.2245 105.615 78.9335 105.767 78.6701C105.92 78.4067 106.123 78.1761 106.365 77.9915C106.607 77.807 106.883 77.6722 107.178 77.595C107.472 77.5177 107.779 77.4994 108.08 77.5413C108.382 77.5831 108.672 77.6842 108.934 77.8387L115.378 81.559ZM118.192 35.7408C118.784 35.5827 119.414 35.6661 119.945 35.9727C120.475 36.2793 120.861 36.784 121.02 37.3758C121.178 37.9675 121.094 38.5978 120.788 39.128C120.481 39.6582 119.976 40.045 119.385 40.2031L112.197 42.1288C111.606 42.2869 110.975 42.2034 110.445 41.8968C109.915 41.5902 109.528 41.0855 109.37 40.4937C109.212 39.902 109.296 39.2717 109.602 38.7415C109.909 38.2113 110.414 37.8246 111.005 37.6665L118.192 35.7408ZM11.7551 88.7716C11.4929 88.9262 11.2026 89.0273 10.9011 89.0691C10.5996 89.1109 10.2928 89.0927 9.99834 89.0154C9.70391 88.9381 9.42768 88.8033 9.18558 88.6188C8.94348 88.4343 8.74029 88.2037 8.58772 87.9403C8.43515 87.6768 8.33622 87.3858 8.29663 87.084C8.25704 86.7822 8.27757 86.4755 8.35704 86.1817C8.43651 85.8878 8.57335 85.6126 8.75967 85.3719C8.94599 85.1312 9.1781 84.9297 9.44264 84.7791L15.8864 81.0586C16.4159 80.7519 17.0455 80.6682 17.6368 80.8257C18.228 80.9833 18.7324 81.3693 19.0391 81.8987C19.3457 82.4282 19.4295 83.0578 19.2719 83.6491C19.1144 84.2403 18.7284 84.7447 18.1989 85.0514L11.7551 88.7716ZM2.61556 43.7935C2.32257 43.7152 2.04786 43.58 1.80713 43.3955C1.5664 43.2111 1.36436 42.981 1.21254 42.7185C1.06072 42.4559 0.962099 42.166 0.922308 41.8654C0.882517 41.5647 0.902334 41.2592 0.980627 40.9662C1.13875 40.3745 1.52545 39.8698 2.05568 39.5632C2.31822 39.4114 2.60809 39.3127 2.90875 39.2729C3.2094 39.2332 3.51495 39.253 3.80795 39.3313L10.9952 41.257C11.2882 41.3353 11.5629 41.4705 11.8036 41.655C12.0444 41.8394 12.2464 42.0695 12.3982 42.3321C12.55 42.5946 12.6487 42.8845 12.6885 43.1851C12.7282 43.4858 12.7084 43.7913 12.6301 44.0843C12.5518 44.3773 12.4166 44.652 12.2321 44.8927C12.0477 45.1335 11.8176 45.3355 11.5551 45.4873C11.2925 45.6392 11.0027 45.7378 10.702 45.7776C10.4014 45.8174 10.0958 45.7975 9.80281 45.7193L2.61556 43.7935ZM27.9617 5.5254C27.6551 4.99592 27.5713 4.3663 27.7289 3.77507C27.8864 3.18383 28.2724 2.6794 28.8019 2.37274C29.3314 2.06608 29.961 1.98232 30.5522 2.13988C31.1434 2.29744 31.6479 2.68342 31.9545 3.2129L35.6748 9.65668C35.8293 9.91895 35.9304 10.2092 35.9722 10.5107C36.0141 10.8122 35.9958 11.1191 35.9185 11.4135C35.8412 11.7079 35.7065 11.9841 35.5219 12.2262C35.3374 12.4683 35.1068 12.6715 34.8434 12.8241C34.58 12.9767 34.289 13.0756 33.9872 13.1152C33.6853 13.1548 33.3787 13.1343 33.0848 13.0548C32.791 12.9753 32.5158 12.8385 32.275 12.6522C32.0343 12.4658 31.8328 12.2337 31.6822 11.9692L27.9617 5.5254ZM87.7887 1.3629C88.0929 0.833419 88.5951 0.446484 89.1846 0.287215C89.7741 0.127947 90.4028 0.209393 90.9323 0.513634C91.4617 0.817876 91.8487 1.31999 92.0079 1.90952C92.1672 2.49905 92.0858 3.12771 91.7815 3.65719L88.061 10.1015C87.9103 10.3638 87.7095 10.5938 87.47 10.7784C87.2305 10.963 86.9569 11.0986 86.665 11.1775C86.373 11.2564 86.0684 11.2771 85.7685 11.2382C85.4686 11.1994 85.1792 11.1019 84.917 10.9512C84.6548 10.8006 84.4248 10.5998 84.2402 10.3603C84.0555 10.1207 83.9199 9.84718 83.841 9.55523C83.7621 9.26329 83.7415 8.95866 83.7803 8.65874C83.8191 8.35882 83.9167 8.06949 84.0673 7.80726L87.7875 1.36348L87.7887 1.3629ZM83.684 83.9073C83.684 83.294 83.9277 82.7058 84.3613 82.2721C84.795 81.8384 85.3832 81.5948 85.9965 81.5948C86.6098 81.5948 87.198 81.8384 87.6317 82.2721C88.0654 82.7058 88.309 83.294 88.309 83.9073V89.2243C88.9354 88.3594 89.5809 87.4963 90.2379 86.6201C95.4778 79.6231 101.386 71.7334 101.386 55.2508C101.357 44.6861 97.1407 34.5638 89.6603 27.1035C82.1799 19.6432 72.0463 15.4537 61.4816 15.4537C50.9168 15.4537 40.7832 19.6432 33.3028 27.1035C25.8224 34.5638 21.6056 44.6861 21.5772 55.2508C21.5772 84.3131 39.9509 86.7135 41.3702 105.44H57.7493V89.0171C48.6019 86.7005 40.6438 79.3962 35.7043 70.8402C32.7601 65.8215 30.8751 60.2529 30.1652 54.4778C29.5293 48.857 30.2476 43.5449 32.2618 39.1966L32.2659 39.1983C32.4646 38.768 32.7911 38.4095 33.201 38.1715C33.6109 37.9336 34.0842 37.8278 34.5564 37.8686C39.3384 38.299 44.3045 40.3346 48.8578 43.6987C53.6712 47.2542 57.9011 52.194 61.0643 58.1313L61.4112 57.5179L61.4074 57.5156C64.2816 52.4599 68.1608 48.0464 72.806 44.5474C77.359 41.1833 82.3254 39.1477 87.1071 38.7173C87.5793 38.6764 88.0526 38.7822 88.4625 39.0201C88.8724 39.2581 89.1989 39.6167 89.3976 40.047L89.4017 40.0452C91.4159 44.3936 92.1345 49.7057 91.4982 55.3268C90.2264 66.556 83.6487 77.9515 74.5609 84.6667C70.6753 87.5376 66.4891 89.4405 62.3735 90.2045V105.442H83.8187C84.432 105.442 85.0202 105.685 85.4539 106.119C85.8876 106.553 86.1312 107.141 86.1312 107.754V118.04C86.1249 120.766 85.0392 123.378 83.1115 125.306C81.1839 127.234 78.5713 128.319 75.8452 128.326H72.9303V132.218C72.9276 133.695 72.3394 135.111 71.2947 136.156C70.2499 137.201 68.8338 137.789 67.3563 137.791H55.6059C54.1285 137.789 52.7123 137.201 51.6676 136.156C50.6228 135.111 50.0347 133.695 50.0319 132.218V128.325H47.1173C44.3912 128.319 41.7786 127.233 39.851 125.305C37.9234 123.378 36.8377 120.765 36.8313 118.039V107.754C36.8313 89.3191 16.9519 86.941 16.9519 55.2514C16.9819 43.4611 21.6867 32.164 30.0343 23.8376C38.3819 15.5113 49.691 10.8353 61.4813 10.8353C73.2716 10.8353 84.5806 15.5113 92.9282 23.8376C101.276 32.164 105.981 43.4611 106.011 55.2514C106.011 73.2438 99.6047 81.7983 93.9232 89.385C92.9693 90.6569 92.0388 91.8999 91.1719 93.155L98.4314 90.5381C99.0059 90.3339 99.638 90.3659 100.189 90.6271C100.74 90.8882 101.165 91.3572 101.371 91.9312C101.576 92.5052 101.546 93.1374 101.286 93.689C101.026 94.2407 100.559 94.6668 99.9851 94.874L86.9787 99.5623C86.6264 99.7292 86.2375 99.804 85.8484 99.7798C85.4592 99.7557 85.0826 99.6334 84.7535 99.4243C84.4245 99.2152 84.1538 98.9261 83.9666 98.5841C83.7795 98.2421 83.6821 97.8582 83.6834 97.4684V83.9079L83.684 83.9073ZM69.2066 69.5779C69.5136 69.0538 70.0153 68.6723 70.6023 68.5164C71.1893 68.3605 71.8141 68.4428 72.3407 68.7454C72.8673 69.048 73.253 69.5465 73.4139 70.1322C73.5747 70.7178 73.4976 71.3433 73.1994 71.8725L66.0185 84.31C77.1474 79.6055 85.5545 66.7928 86.91 54.8221C87.3768 50.6989 87.0117 46.82 85.8448 43.536C77.4307 45.0871 69.8827 52.0662 65.4005 59.8293L65.3968 59.8269C61.2054 67.0885 59.029 76.1211 60.9698 83.8449L69.2066 69.5779ZM55.945 82.1602L50.0053 71.8725C49.7071 71.3433 49.6301 70.7178 49.7909 70.1322C49.9517 69.5465 50.3374 69.048 50.864 68.7454C51.3906 68.4428 52.0155 68.3605 52.6025 68.5164C53.1895 68.6723 53.6911 69.0538 53.9982 69.5779L55.9791 73.0096C56.4399 69.747 57.2917 66.5516 58.5162 63.4925C58.2568 62.8838 57.9732 62.261 57.6652 61.6243C54.8538 55.822 50.8144 50.8787 46.1114 47.4025C42.7765 44.9388 39.2395 43.3169 35.819 42.6864C32.959 50.7365 35.2079 60.7713 39.6965 68.5459C43.5549 75.2288 49.4394 81.0262 56.2054 83.689C56.105 83.1861 56.0183 82.6762 55.9453 82.1593L55.945 82.1602ZM68.3056 132.218V128.325H54.6569V132.218C54.6593 132.469 54.76 132.709 54.9375 132.886C55.1149 133.064 55.355 133.164 55.6059 133.167H67.3563C67.6073 133.164 67.8474 133.064 68.0249 132.886C68.2024 132.709 68.3032 132.469 68.3056 132.218Z" fill="#00473E"/>
+      </svg>
+    </div>
+  </div>
+  <div style="width: 148px; height: 148px; left: 308px; top: 2056px; position: absolute; overflow: hidden">
+    <div data-svg-wrapper style="left: 8.54px; top: 14.90px; position: absolute">
+      <svg width="132" height="120" viewBox="0 0 132 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M53.9961 67.4507C53.1688 66.7365 51.9152 66.827 51.198 67.6576L30.9398 91.115L20.9705 79.151C20.269 78.3095 19.0187 78.1934 18.1739 78.8964C17.3338 79.5979 17.2193 80.8483 17.9208 81.6898L29.3885 95.4499C30.1717 96.3903 31.6129 96.4036 32.4139 95.4769L54.2024 70.2491C54.9173 69.4218 54.8264 68.1682 53.9961 67.4507ZM127.486 51.2284C127.486 47.4601 124.431 44.3947 120.658 44.3947C116.888 44.3947 113.821 47.4601 113.821 51.2284C113.821 54.9986 116.888 58.0654 120.658 58.0654C124.432 58.0654 127.486 54.9983 127.486 51.2284ZM98.6963 51.2284L86.8577 71.7332H71.3959C71.7762 64.9759 71.5676 58.172 71.3719 51.7899C71.3417 50.8211 70.6147 50.0145 69.6524 49.8858C64.336 49.176 59.2039 48.0725 54.039 46.5691L63.1843 30.7284H86.858L98.6963 51.2284ZM97.8263 83.9169C92.6392 83.9169 89.2746 89.5811 91.9214 94.1677C93.8031 97.4334 97.9933 98.555 101.256 96.6701C104.527 94.7804 105.648 90.6059 103.758 87.3339C102.494 85.1432 100.19 83.9169 97.8263 83.9169ZM67.457 53.5828C67.8196 65.5898 68.0392 78.9473 64.1036 90.1255C59.7356 102.538 50.5631 110.694 36.0727 115.046C21.5826 110.694 12.412 102.538 8.04211 90.1255C4.1065 78.9473 4.32761 65.5898 4.68577 53.5828C15.625 51.9424 26.9003 48.5058 36.073 43.6819C45.2428 48.504 56.5228 51.9421 67.457 53.5828ZM21.9855 45.3505C26.7561 43.739 31.2023 41.8301 35.122 39.6906C35.7137 39.3677 36.4312 39.3677 37.0229 39.6906C40.9425 41.8301 45.3887 43.739 50.1626 45.3505L59.7486 28.7446L47.9118 8.23976H24.2366L12.3998 28.7446L21.9855 45.3505ZM91.2359 13.4795C92.8165 19.3516 100.726 20.3811 103.758 15.1277C106.799 9.85976 101.933 3.54401 96.0701 5.106C92.4296 6.0757 90.2608 9.82779 91.2359 13.4795ZM131.463 51.2284C131.463 57.1872 126.611 62.0327 120.658 62.0327C115.379 62.0327 110.976 58.2244 110.04 53.2119H102.131L90.2943 73.7167L94.2489 80.5665C99.0562 78.8674 104.555 80.7796 107.194 85.3498C111.377 92.5938 106.068 101.556 97.8583 101.556C93.9964 101.556 90.4299 99.5205 88.4854 96.1512C85.8463 91.5809 86.9409 85.8637 90.8129 82.5503L86.8583 75.7005H71.0972C70.5819 81.1218 69.6036 86.4492 67.8471 91.4442C62.9652 105.306 52.7541 114.327 36.6271 119.018C36.2663 119.125 35.8797 119.124 35.5183 119.018C19.3913 114.327 9.18023 105.306 4.30126 91.4442C-0.0653273 79.0459 0.381633 64.5653 0.772945 51.7899C0.804617 50.8211 1.53159 50.0145 2.49418 49.8858C7.81064 49.1763 12.9439 48.0728 18.1091 46.5691L8.38962 29.7356C8.03649 29.1217 8.03649 28.366 8.38962 27.7518L21.3734 5.26496C21.7265 4.65105 22.3836 4.27247 23.0913 4.27247H49.0574C49.7651 4.27247 50.419 4.65105 50.7739 5.26496L63.1848 26.7608H86.8586L90.8132 19.914C84.263 14.3323 86.6094 3.53661 95.0439 1.27369C100.806 -0.272318 106.726 3.14293 108.273 8.91404C110.122 15.8117 104.902 22.5149 97.8216 22.5149C96.6047 22.5149 95.4021 22.3051 94.2489 21.896L90.2943 28.7443L102.131 49.2458H110.04C110.976 44.2334 115.379 40.4283 120.658 40.4283C126.611 40.4286 131.463 45.2726 131.463 51.2284ZM81.8027 67.0659C82.7498 67.6073 83.9602 67.2959 84.5102 66.3404L91.8596 53.6112C92.4083 52.6617 92.0821 51.4478 91.1358 50.9005C90.1863 50.3532 88.9724 50.6779 88.4251 51.6274L81.0742 64.3566C80.5284 65.3032 80.8528 66.5171 81.8027 67.0659ZM43.4239 16.4387H28.7236C27.6293 16.4387 26.7416 15.5524 26.7416 14.4549C26.7416 13.3606 27.6293 12.4711 28.7236 12.4711H43.4239C44.5182 12.4711 45.4077 13.3603 45.4077 14.4549C45.4077 15.5524 44.5185 16.4387 43.4239 16.4387Z" fill="#00473E"/>
+      </svg>
+    </div>
+  </div>
+  <div data-svg-wrapper style="left: 1304px; top: 2067px; position: absolute">
+    <svg width="106" height="130" viewBox="0 0 106 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M103.942 0.55224C103.265 0.0885174 102.433 -0.093271 101.624 0.0454061C100.815 0.184083 100.092 0.632326 99.6082 1.29512L84.8744 22.4054C84.1443 21.3255 83.1683 20.4343 82.0267 19.8053C80.6056 18.9848 78.9936 18.5529 77.3527 18.5529C75.7118 18.5529 74.0998 18.9848 72.6787 19.8053L27.9819 43.3299H15.6005C13.5577 43.3136 11.5319 43.7018 9.63983 44.4723C7.74779 45.2428 6.027 46.3802 4.57671 47.8189C3.12643 49.2577 1.97534 50.9694 1.18983 52.8552C0.404319 54.7411 -6.53657e-05 56.7638 7.92506e-09 58.8066V71.188C7.92507e-09 75.2927 1.63058 79.2293 4.53303 82.1317C7.43548 85.0342 11.372 86.6648 15.4767 86.6648H27.8581L36.587 91.184L12.9385 125.109C12.4748 125.786 12.293 126.617 12.4317 127.426C12.5704 128.235 13.0186 128.958 13.6814 129.442C14.2111 129.803 14.8362 129.997 15.4767 130C15.974 130.008 16.4655 129.893 16.9081 129.666C17.3507 129.44 17.7308 129.108 18.0149 128.7L42.2205 94.0936L72.493 110.066C73.9772 110.937 75.6628 111.406 77.3837 111.428C79.0109 111.413 80.608 110.987 82.0267 110.189C83.4375 109.419 84.6138 108.282 85.4312 106.898C86.2485 105.514 86.6765 103.935 86.6697 102.327V52.8017C86.6697 51.9807 86.3436 51.1934 85.7631 50.6129C85.1826 50.0325 84.3953 49.7063 83.5743 49.7063C82.7534 49.7063 81.9661 50.0325 81.3856 50.6129C80.8051 51.1934 80.479 51.9807 80.479 52.8017V102.327C80.4746 102.835 80.3345 103.332 80.0733 103.768C79.812 104.203 79.4392 104.561 78.9932 104.803C78.4706 105.12 77.8711 105.288 77.2598 105.288C76.6486 105.288 76.0491 105.12 75.5264 104.803L45.8111 89.141L104.685 4.88572C105.148 4.20853 105.33 3.37737 105.191 2.56842C105.053 1.75947 104.605 1.03632 103.942 0.55224ZM6.19069 71.188V58.8066C6.19069 56.3438 7.16904 53.9819 8.91051 52.2404C10.652 50.499 13.0139 49.5206 15.4767 49.5206H24.7628V80.4741H15.4767C13.0139 80.4741 10.652 79.4957 8.91051 77.7543C7.16904 76.0128 6.19069 73.6508 6.19069 71.188ZM30.9535 81.217V48.7777L75.7122 25.2531C76.2109 24.9651 76.7768 24.8135 77.3527 24.8135C77.9286 24.8135 78.4944 24.9651 78.9932 25.2531C79.4533 25.5111 79.8346 25.8893 80.0963 26.3473C80.358 26.8053 80.4903 27.3258 80.479 27.8532C80.4444 28.0581 80.4444 28.2674 80.479 28.4723L40.2395 86.1076L30.9535 81.217Z" fill="#00473E"/>
+    </svg>
+  </div>
+  <img style="width: 736px; height: 559px; left: 306px; top: 2337px; position: absolute" src="https://placehold.co/736x559" />
+  <div style="width: 1936px; height: 384px; left: 216px; top: 3081px; position: absolute; background: #00473E">
+    <div style="width: 1920px; height: 383.94px; left: 8px; top: 0px; position: absolute">
+      <div style="width: 255.94px; height: 191.94px; left: 684.05px; top: 54px; position: absolute">
+        <div style="width: 159.80px; height: 21px; left: 0px; top: 0px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Pillar Technology</div>
+        <div style="width: 275.94px; height: 155.94px; left: -10px; top: 36px; position: absolute">
+          <div style="width: 101.13px; height: 18px; left: 20px; top: 6px; position: absolute">
+            <div style="width: 101.49px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Air Curve Design</div>
+          </div>
+          <div style="width: 106.11px; height: 18px; left: 20px; top: 37.18px; position: absolute">
+            <div style="width: 106.47px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Turbosilent BLDC</div>
+          </div>
+          <div style="width: 44.88px; height: 18px; left: 20px; top: 68.37px; position: absolute">
+            <div style="width: 45.22px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">M.A.S.S</div>
+          </div>
+          <div style="width: 90.16px; height: 18px; left: 20px; top: 99.56px; position: absolute">
+            <div style="width: 90.50px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Lumiambience</div>
+          </div>
+          <div style="width: 44.03px; height: 18px; left: 20px; top: 130.75px; position: absolute">
+            <div style="width: 44.36px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">S.C.A.N</div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="science">
-      <h2>The Science Behind Air Curve Design</h2>
-      <p>Computational Fluid Dynamics (CFD): Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.<br>
-      Prototyping and Testing: Multiple prototypes are tested under real-world conditions to validate performance metrics.<br>
-      Iterative Design: Continuous refinement based on data-driven insights ensures that Air Curve blades exceed industry benchmarks for performance and reliability.</p>
-    </section>
+      <div style="width: 255.94px; height: 160.75px; left: 979.98px; top: 54px; position: absolute">
+        <div style="width: 91.79px; height: 21px; left: 0px; top: 0px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Our Policy</div>
+        <div style="width: 275.94px; height: 124.75px; left: -10px; top: 36px; position: absolute">
+          <div style="width: 31.50px; height: 18px; left: 20px; top: 6px; position: absolute">
+            <div style="width: 31.89px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">FAQs</div>
+          </div>
+          <div style="width: 82.11px; height: 18px; left: 20px; top: 37.18px; position: absolute">
+            <div style="width: 82.44px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Privacy Policy</div>
+          </div>
+          <div style="width: 91.91px; height: 18px; left: 20px; top: 68.37px; position: absolute">
+            <div style="width: 92.25px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Shipping Policy</div>
+          </div>
+          <div style="width: 62.64px; height: 18px; left: 20px; top: 99.56px; position: absolute">
+            <div style="width: 63.03px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">WIR Policy</div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 119.36px; height: 21px; left: 1275.92px; top: 54px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Company Info</div>
+      <div style="width: 15.07px; height: 13px; left: 1285px; top: 93px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      <div style="width: 377.85px; height: 36.18px; left: 1310.63px; top: 90px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 18.20px; letter-spacing: 0.06px; word-wrap: break-word">HANERI ELECTRICALS LLP<br/>A-48, SECTOR 57, NOIDA, UTTAR PRADESH, PINCODE - 201301</div>
+      <div style="width: 6.02px; height: 5.83px; left: 1296.13px; top: 144.43px; position: absolute; transform: rotate(104deg); transform-origin: top left; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      <div style="width: 90.48px; height: 31.19px; left: 1309px; top: 126.37px; position: absolute">
+        <div style="width: 90.82px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">(123) 456-7890</div>
+      </div>
+      <div style="width: 13.43px; height: 13px; left: 1286px; top: 172px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      <div style="width: 89.75px; height: 31.19px; left: 1309px; top: 157.56px; position: absolute">
+        <div style="width: 90.09px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">info@haneri.in</div>
+      </div>
+      <div style="width: 13.43px; height: 13px; left: 1286px; top: 204px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      <div style="width: 183.45px; height: 31.19px; left: 1309px; top: 188.75px; position: absolute">
+        <div style="width: 183.79px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Mon - Sun / 9:00 AM - 8:00 PM</div>
+      </div>
+      <div style="width: 99.83px; height: 18px; left: 82.17px; top: 308.84px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 18.20px; letter-spacing: 0.06px; word-wrap: break-word">© 2025 | Haneri</div>
+      <div style="width: 50px; height: 50px; left: 1670.92px; top: 292.93px; position: absolute; border-radius: 25px">
+        <div style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      </div>
+      <div style="width: 50px; height: 50px; left: 1728.38px; top: 292.93px; position: absolute; border-radius: 25px">
+        <div style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      </div>
+      <div style="width: 50px; height: 50px; left: 1785.83px; top: 292.93px; position: absolute; border-radius: 25px">
+        <div style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
+      </div>
+      <img style="width: 200px; height: 41.30px; left: 82px; top: 54px; position: absolute" src="https://placehold.co/200x41" />
+    </div>
   </div>
-</body>
+  <img style="width: 712px; height: 475px; left: 306px; top: 410px; position: absolute" src="https://placehold.co/712x475" />
+  <img style="width: 894px; height: 596px; left: 1219px; top: 915px; position: absolute" src="https://placehold.co/894x596" />
+</div>
