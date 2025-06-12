@@ -1,8 +1,4 @@
-<div style="width: 2367px; height: 3443px; position: relative; background: white; overflow: hidden">
-  <div style="width: 200px; height: 41.30px; left: 306px; top: 26px; position: absolute">
-    <img style="width: 200px; height: 41.30px; left: 0px; top: 0px; position: absolute" src="https://placehold.co/200x41" />
-  </div>
-  <div style="width: 597.47px; height: 50px; left: 622px; top: 23px; position: absolute">
+<div style="width: 597.47px; height: 50px; left: 622px; top: 23px; position: absolute">
   <div style="width: 16.43px; height: 41px; left: 2005px; top: 31px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #464646; font-size: 30px; font-family: Open Sans; font-weight: 300; line-height: 42px; word-wrap: break-word">|</div>
   <div style="width: 1746px; height: 0px; left: 306px; top: 181.50px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
   <div style="width: 1746px; height: 0px; left: 306px; top: 280px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
