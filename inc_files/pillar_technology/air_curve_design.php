@@ -7,7 +7,7 @@
             </div>
             <!-- Text on the right side -->
             <div class="col-md-6">
-               <div><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 500; word-wrap: break-word">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 300; word-wrap: break-word">Redefining Ceiling Fan Efficiency<br/></span></div>
+               <div><span style="color: #00473E; font-size: 40px; font-family: Barlow Condensed; font-weight: 500; word-wrap: break-word">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 40px; font-family: Barlow Condensed; font-weight: 300; word-wrap: break-word">Redefining Ceiling Fan Efficiency<br/></span></div>
                 <p>Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.</p>
                 <p>Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.</p>
             </div>
