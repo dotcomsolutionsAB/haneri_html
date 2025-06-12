@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Figma Export</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Font+Awesome+5+Brands:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<?php include("header.php"); ?>
 <body>
 <div data-layer="Categories Page" class="CategoriesPage" style="width: 2367px; height: 2211px; position: relative; background: white; overflow: hidden">
   <div data-layer="Rectangle 20" class="Rectangle20" style="width: 106px; height: 27px; left: 720px; top: 993px; position: absolute; border-radius: 6px; border: 1px #00473E solid"></div>
@@ -390,74 +376,7 @@
   <div data-layer="Free Delivery" class="FreeDelivery" style="width: 122px; height: 28px; left: 1129px; top: 1083px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 20px; font-family: Barlow Condensed; font-weight: 400; line-height: 80px; word-wrap: break-word">Free Delivery</div>
   <div data-layer="Easy Returns" class="EasyReturns" style="width: 122px; height: 28px; left: 1465px; top: 1084px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 20px; font-family: Barlow Condensed; font-weight: 400; line-height: 80px; word-wrap: break-word">Easy Returns</div>
   <div data-layer="GST Billing" class="GstBilling" style="width: 122px; height: 28px; left: 1845px; top: 1084px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 20px; font-family: Barlow Condensed; font-weight: 400; line-height: 80px; word-wrap: break-word">GST Billing</div>
-  <div data-layer="Footer" class="Footer" style="width: 1936px; height: 384px; left: 216px; top: 1813px; position: absolute; background: #00473E">
-    <div data-layer="Container" class="Container" style="width: 1920px; height: 383.94px; left: 8px; top: 0px; position: absolute">
-      <div data-layer="Container" class="Container" style="width: 255.94px; height: 191.94px; left: 684.05px; top: 54px; position: absolute">
-        <div data-layer="Heading 4 → Pillar Technology" class="Heading4PillarTechnology" style="width: 159.80px; height: 21px; left: 0px; top: 0px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Pillar Technology</div>
-        <div data-layer="List" class="List" style="width: 275.94px; height: 155.94px; left: -10px; top: 36px; position: absolute">
-          <div data-layer="Item → Link" class="ItemLink" style="width: 101.13px; height: 18px; left: 20px; top: 6px; position: absolute">
-            <div data-layer="Air Curve Design" class="AirCurveDesign" style="width: 101.49px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Air Curve Design</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 106.11px; height: 18px; left: 20px; top: 37.18px; position: absolute">
-            <div data-layer="Turbosilent BLDC" class="TurbosilentBldc" style="width: 106.47px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Turbosilent BLDC</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 44.88px; height: 18px; left: 20px; top: 68.37px; position: absolute">
-            <div data-layer="M.A.S.S" class="MASS" style="width: 45.22px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">M.A.S.S</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 90.16px; height: 18px; left: 20px; top: 99.56px; position: absolute">
-            <div data-layer="Lumiambience" class="Lumiambience" style="width: 90.50px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Lumiambience</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 44.03px; height: 18px; left: 20px; top: 130.75px; position: absolute">
-            <div data-layer="S.C.A.N" class="SCAN" style="width: 44.36px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">S.C.A.N</div>
-          </div>
-        </div>
-      </div>
-      <div data-layer="Container" class="Container" style="width: 255.94px; height: 160.75px; left: 979.98px; top: 54px; position: absolute">
-        <div data-layer="Heading 4 → Our Policy" class="Heading4OurPolicy" style="width: 91.79px; height: 21px; left: 0px; top: 0px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Our Policy</div>
-        <div data-layer="List" class="List" style="width: 275.94px; height: 124.75px; left: -10px; top: 36px; position: absolute">
-          <div data-layer="Item → Link" class="ItemLink" style="width: 31.50px; height: 18px; left: 20px; top: 6px; position: absolute">
-            <div data-layer="FAQs" class="Faqs" style="width: 31.89px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">FAQs</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 82.11px; height: 18px; left: 20px; top: 37.18px; position: absolute">
-            <div data-layer="Privacy Policy" class="PrivacyPolicy" style="width: 82.44px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Privacy Policy</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 91.91px; height: 18px; left: 20px; top: 68.37px; position: absolute">
-            <div data-layer="Shipping Policy" class="ShippingPolicy" style="width: 92.25px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Shipping Policy</div>
-          </div>
-          <div data-layer="Item → Link" class="ItemLink" style="width: 62.64px; height: 18px; left: 20px; top: 99.56px; position: absolute">
-            <div data-layer="WIR Policy" class="WirPolicy" style="width: 63.03px; height: 18px; left: 0px; top: 0px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">WIR Policy</div>
-          </div>
-        </div>
-      </div>
-      <div data-layer="Heading 4 → Company Info" class="Heading4CompanyInfo" style="width: 119.36px; height: 21px; left: 1275.92px; top: 54px; position: absolute; color: white; font-size: 15px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 21px; letter-spacing: 0.06px; word-wrap: break-word">Company Info</div>
-      <div data-layer="Symbol" class="Symbol" style="width: 15.07px; height: 13px; left: 1285px; top: 93px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      <div data-layer="HANERI ELECTRICALS LLP A-48, SECTOR 57, NOIDA, UTTAR PRADESH, PINCODE - 201301" class="HaneriElectricalsLlpA48Sector57NoidaUttarPradeshPincode201301" style="width: 377.85px; height: 36.18px; left: 1310.63px; top: 90px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 18.20px; letter-spacing: 0.06px; word-wrap: break-word">HANERI ELECTRICALS LLP<br/>A-48, SECTOR 57, NOIDA, UTTAR PRADESH, PINCODE - 201301</div>
-      <div data-layer="Symbol" class="Symbol" style="width: 6.02px; height: 5.83px; left: 1296.13px; top: 144.43px; position: absolute; transform: rotate(104deg); transform-origin: top left; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      <div data-layer="Link" class="Link" style="width: 90.48px; height: 31.19px; left: 1309px; top: 126.37px; position: absolute">
-        <div data-layer="(123) 456-7890" class="1234567890" style="width: 90.82px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">(123) 456-7890</div>
-      </div>
-      <div data-layer="Symbol" class="Symbol" style="width: 13.43px; height: 13px; left: 1286px; top: 172px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      <div data-layer="Link" class="Link" style="width: 89.75px; height: 31.19px; left: 1309px; top: 157.56px; position: absolute">
-        <div data-layer="info@haneri.in" class="InfoHaneriIn" style="width: 90.09px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">info@haneri.in</div>
-      </div>
-      <div data-layer="Symbol" class="Symbol" style="width: 13.43px; height: 13px; left: 1286px; top: 204px; position: absolute; color: white; font-size: 13px; font-family: Font Awesome 5 Free; font-weight: 900; line-height: 13px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      <div data-layer="Link" class="Link" style="width: 183.45px; height: 31.19px; left: 1309px; top: 188.75px; position: absolute">
-        <div data-layer="Mon - Sun / 9:00 AM - 8:00 PM" class="MonSun900Am800Pm" style="width: 183.79px; height: 18px; left: 0px; top: 6px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 31.20px; letter-spacing: 0.06px; word-wrap: break-word">Mon - Sun / 9:00 AM - 8:00 PM</div>
-      </div>
-      <div data-layer="© 2025 | Haneri" class="2025Haneri" style="width: 99.83px; height: 18px; left: 82.17px; top: 308.84px; position: absolute; color: white; font-size: 13px; font-family: Open Sans; font-weight: 400; line-height: 18.20px; letter-spacing: 0.06px; word-wrap: break-word">© 2025 | Haneri</div>
-      <div data-layer="Link" class="Link" style="width: 50px; height: 50px; left: 1670.92px; top: 292.93px; position: absolute; border-radius: 25px">
-        <div data-layer="Symbol" class="Symbol" style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      </div>
-      <div data-layer="Link" class="Link" style="width: 50px; height: 50px; left: 1728.38px; top: 292.93px; position: absolute; border-radius: 25px">
-        <div data-layer="Symbol" class="Symbol" style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      </div>
-      <div data-layer="Link" class="Link" style="width: 50px; height: 50px; left: 1785.83px; top: 292.93px; position: absolute; border-radius: 25px">
-        <div data-layer="Symbol" class="Symbol" style="width: 28.20px; height: 28px; left: 11px; top: 11px; position: absolute; text-align: center; color: white; font-size: 28px; font-family: Barlow Condensed; font-weight: 400; line-height: 28px; letter-spacing: 0.06px; word-wrap: break-word"></div>
-      </div>
-      <img data-layer="Haneri" class="Haneri" style="width: 200px; height: 41.30px; left: 82px; top: 54px; position: absolute" src="images/haneri_1749721122895_788.png" />
-    </div>
-  </div>
-  <div data-layer="View Details" class="ViewDetails" style="width: 98px; height: 19px; left: 1773px; top: 1603px; position: absolute; color: #00473E; font-size: 14px; font-family: Open Sans; font-weight: 700; text-transform: uppercase; line-height: 20.01px; word-wrap: break-word">View Details</div>
 </div>
+<?php include("footer.php"); ?>
 </body>
 </html>
