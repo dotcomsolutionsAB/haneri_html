@@ -223,7 +223,8 @@ footer .copyright {
 
 </style>
 <body>
-   <section class="intro">
+
+    <section class="intro">
         <div class="intro-text">
             <h1>Introducing Air Curve Design: <span class="light">Redefining Ceiling Fan Efficiency</span></h1>
         </div>
@@ -264,3 +265,4 @@ footer .copyright {
         <p>Computational Fluid Dynamics (CFD): Advanced CFD simulations analyze airflow patterns to achieve peak aerodynamic efficiency.<br>Prototyping and Testing: Prototypes are tested under real-world conditions to validate performance.<br>Iterative Design: Continuous refinement based on data ensures Air Curve blades exceed industry benchmarks.</p>
     </section>
 </body>
+</html>
