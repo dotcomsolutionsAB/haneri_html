@@ -31,5 +31,51 @@
             </div>
         </div>
     </section>
+    <section class="container my-5">
+        <h2 class="section-title">Key Features of Air Curve Design</h2>
+        <div class="row text-center text-md-start">
+            <!-- Feature 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="https://placehold.co/50x50" alt="High Air Delivery">
+                    </div>
+                    <h3>High Air Delivery</h3>
+                    <p>Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience. They are designed to deliver optimal air circulation even in large spaces.</p>
+                </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="https://placehold.co/50x50" alt="Advanced Materials">
+                    </div>
+                    <h3>Advanced Materials</h3>
+                    <p>Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade weight for efficient rotation. You can trust in the longevity of your cooling solution.</p>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="https://placehold.co/50x50" alt="Energy Efficiency">
+                    </div>
+                    <h3>Energy Efficiency</h3>
+                    <p>The aerodynamic profile of Air Curve blades optimizes drag, reducing the load on the motor and ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful cooling experience while saving on electricity bills.</p>
+                </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <img src="https://placehold.co/50x50" alt="Silent Performance">
+                    </div>
+                    <h3>Silent Performance</h3>
+                    <p>The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and professional settings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
