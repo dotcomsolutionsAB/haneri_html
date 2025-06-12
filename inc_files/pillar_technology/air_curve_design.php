@@ -7,7 +7,7 @@
             </div>
             <!-- Text on the right side -->
             <div class="col-md-6">
-                <h2 style="width: 894px; height: 182px"><span style="color: #00473E; font-size: 50px; font-family: Barlow Condensed; font-weight: 500; line-height: 100px;">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 50px; font-family: Barlow Condensed; font-weight: 300; line-height: 100px;">Redefining Ceiling Fan Efficiency<br/></span></h2>
+                <h2><span style="color: #00473E; font-size: 50px; font-family: Barlow Condensed; font-weight: 500;">Introducing Air Curve Design: </span><span style="color: #00473E; font-size: 50px; font-family: Barlow Condensed; font-weight: 300;">Redefining Ceiling Fan Efficiency<br/></span></h2>
                 <p>Air Curve Design is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</p>
             </div>
         </div>
