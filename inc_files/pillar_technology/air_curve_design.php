@@ -1,5 +1,5 @@
 <body>
-<section class="container">
+<section class="content-container">
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">
