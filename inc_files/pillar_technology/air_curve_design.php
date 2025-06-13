@@ -27,7 +27,7 @@
             </div>
             <!-- Image on the right side -->
             <div class="col-md-6 order-md-2 order-1">
-                <img src="https://placehold.co/600x400" alt="Air Curve Design" class="img-fluid">
+                <img src="../assets/images/2.png" alt="Air Curve Design" class="img-fluid">
             </div>
         </div>
     </section>
