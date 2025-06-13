@@ -32,7 +32,7 @@
         </div>
     </section>
      <section class="container my-5">
-        <div style="justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 80px; font-family: Barlow Condensed; font-weight: 400; word-wrap: break-word">Key Features of Air Curve Design</div>
+        <div style="justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 40px; font-family: Barlow Condensed; font-weight: 400; word-wrap: break-word">Key Features of Air Curve Design</div>
     </section>
         <section class="container my-5">
         <div class="row align-items-center">
