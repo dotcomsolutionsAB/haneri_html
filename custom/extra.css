@@ -2733,10 +2733,10 @@ footer .social-icon {
         transition: 0.3s ease;
     }
     .shop .card .bgremoved .view {
-        background: transparent;
-        color: #000;
+        background: transparent !important;
+        color: #000 !important;
     }
-    
+
     .shop .sidebar-shop .widget-title {
         padding-bottom: 0.7rem;
         margin-bottom: 1rem;
