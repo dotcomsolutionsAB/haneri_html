@@ -3,11 +3,9 @@
     <nav class="mobile-nav">
         <ul class="mobile-menu">
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">Our Products</a></li>
-            <li><a href="#">Pillar Technololgy</a></li>
-            <li><a href="#">Our Brands</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="air_curve_design.php">Pillar Technololgy</a></li>
+            <li><a href="our_story.php">About us</a></li>
+            <li><a href="contact.php">Support</a></li>
             <!-- <li>
                 <a href="#">Categories</a>
                 <ul>
@@ -137,13 +135,4 @@
         <input type="text" class="form-control mb-0" placeholder="Search..." required />
         <button class="btn icon-search text-white bg-transparent p-0" type="submit"></button>
     </form>
-
-    <div class="social-icons">
-        <a href="#" class="social-icon social-facebook icon-facebook" target="_blank">
-        </a>
-        <a href="#" class="social-icon social-twitter icon-twitter" target="_blank">
-        </a>
-        <a href="#" class="social-icon social-instagram icon-instagram" target="_blank">
-        </a>
-    </div>
 </div><!-- End .mobile-menu-wrapper -->
