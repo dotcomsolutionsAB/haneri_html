@@ -2735,7 +2735,7 @@ footer .social-icon {
     .cart_view_add{
         display: flex;
         align-items: center;
-        justify-content: left;
+        justify-content: space-between;
     }
     
     .shop .card .view {
@@ -2751,6 +2751,15 @@ footer .social-icon {
         border-bottom: 2px solid #dfdfdf;
         font-family: 'Open Sans' !important;
         letter-spacing: 0.02em;
+    }
+    .sidebar-shop .widget-title:hover {
+        padding-bottom: 0.7rem;
+        margin-bottom: 1rem;
+        border: 2px solid #00473E;
+        background: #f5f5f5;
+        font-family: "Oswald";
+        letter-spacing: 0.02em;
+        color: #00473E;
     }
     .shop label {
         color: #222529;
