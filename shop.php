@@ -124,7 +124,7 @@
                                         htmlStr += `
                                             <li>
                                                 <label>
-                                                    <input type="checkbox" name="category" value="${category.name}">
+                                                    <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
                                                     <span>${category.name}</span>
                                                 </label>
                                             </li>

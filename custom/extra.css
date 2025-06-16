@@ -2209,7 +2209,7 @@ footer .social-icon {
         color: #fff;
     }
     .wid{
-        /* background: #e0ecee; */
+        background: #f5f5f5;
         /* border: 2px solid #f5f1f1 !important; */
         border-radius: 10px;
         padding: 5px !important;
@@ -3090,3 +3090,11 @@ footer .social-icon {
             margin-top: 1.5rem;
         }
     /* End Wir Policy */
+
+
+
+
+    /* Extra */
+    .sidebar-shop .widget-title a:after, .sidebar-shop .widget-title a:before {
+        background-color: #fff;
+    }
