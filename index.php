@@ -27,9 +27,9 @@
 
     <!-- Mobile Slider -->
     <div class="home-slider mobile-slider owl-carousel owl-theme">
-        <div class="home-slide"><img src="images/Slider1_mobile.jpg" alt="Mobile Slide 1"></div>
-        <div class="home-slide"><img src="images/Slider2_mobile.jpg" alt="Mobile Slide 2"></div>
-        <div class="home-slide"><img src="images/Slider3_mobile.jpg" alt="Mobile Slide 3"></div>
+        <div class="home-slide"><img src="images/Slide1_mobile.jpg" alt="Mobile Slide 1"></div>
+        <div class="home-slide"><img src="images/Slide2_mobile.jpg" alt="Mobile Slide 2"></div>
+        <div class="home-slide"><img src="images/Slide3_mobile.jpg" alt="Mobile Slide 3"></div>
     </div>
 <style>
     /* Hide mobile slider by default */
