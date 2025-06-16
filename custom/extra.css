@@ -1440,9 +1440,7 @@ Turbosilent
     .categories{
         display: none;
     }
-    .about-haneri{
-        display:none;
-    }
+    
     .footer_logo{
         width: 110px;
         padding: 10px;
@@ -3254,6 +3252,16 @@ footer .social-icon {
         }
         .mobile-slider {
             display: block !important;
+        }
+
+        .featured .heading1{
+            margin-bottom: 0rem;
+        }
+        .featured-products-grid {
+            gap:0px;
+        }
+        .featured-products-grid .card{
+            margin-bottom: 5px;
         }
     }
 
