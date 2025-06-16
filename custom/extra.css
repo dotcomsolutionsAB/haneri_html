@@ -2199,9 +2199,18 @@ footer .social-icon {
         left: 14px;
         top: 6px;
     }
+    .sidebar-shop .widget-title{
+        padding-bottom: 0.7rem;
+        margin-bottom: 1rem;
+        border: 2px solid #00473E;
+        background: #00473E;
+        font-family: "Oswald";
+        letter-spacing: 0.02em;
+        color: #fff;
+    }
     .wid{
         /* background: #e0ecee; */
-        border: 2px solid #f5f1f1 !important;
+        /* border: 2px solid #f5f1f1 !important; */
         border-radius: 10px;
         padding: 5px !important;
         margin-bottom: 10px;
