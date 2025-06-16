@@ -1944,10 +1944,15 @@ footer .social-icon {
     gap: 10px;
 }
  .read-more-button{
+    display: inline-block;
+    padding: 7px 20px;
+    margin: 25px 30px;
+    font-size: 16px;
     border-radius: 10px;
-    padding: 1em 1.6em;
-    font-size: 12px;
-    /* margin-bottom: 10px; */
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s ease;
+    width: fit-content;
  }
  .blog-item img {
     width: 100%;
@@ -1979,14 +1984,16 @@ footer .social-icon {
  .blog-content p{
     display: flex;
     text-align: justify;
-    padding: 0px 15px;
+    padding: 0px 30px;
 
  }
  .blog-content h3{
-    margin-top: 5px;
+    /* margin-top: 5px; */
     margin-bottom: 10px;
     font-family: 'Barlow Condensed';
     color: #464646;
+    display: flex;
+    margin: 20px 30px;
  }
  .btns{
     height: 100%;
