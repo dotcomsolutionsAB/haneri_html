@@ -3237,7 +3237,32 @@ footer .social-icon {
     }
 
     .air_curve-feature-box.highlight img {
-    padding: 6px;
-    border-radius: 5px;
+        padding: 6px;
+        border-radius: 5px;
     }
 
+    /* Home Slider */
+    /* Hide mobile slider by default */
+    .mobile-slider {
+        display: none !important;
+    }
+
+    /* Hide desktop slider on mobile */
+    @media (max-width: 520px) {
+        .desktop-slider {
+            display: none !important;
+        }
+        .mobile-slider {
+            display: block !important;
+        }
+    }
+
+    /* Optional: slider image styling */
+    .home-slider .home-slide img {
+        /* width: 100%; */
+        /* height: auto; */
+        display: block !important;
+    }
+    .home-slide .slide-bg, .home-slider {
+        height: auto !important;
+    }

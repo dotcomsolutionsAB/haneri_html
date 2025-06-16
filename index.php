@@ -31,52 +31,28 @@
         <!-- <div class="home-slide"><img src="images/Slide2_mobile.jpg" alt="Mobile Slide 2"></div> -->
         <div class="home-slide"><img src="images/Slide3_mobile.jpg" alt="Mobile Slide 3"></div>
     </div>
-<style>
-    /* Hide mobile slider by default */
-    .mobile-slider {
-        display: none !important;
-    }
 
-    /* Hide desktop slider on mobile */
-    @media (max-width: 520px) {
-        .desktop-slider {
-            display: none !important;
-        }
-        .mobile-slider {
-            display: block !important;
-        }
-    }
+    <script>
+        $(document).ready(function(){
+            $(".desktop-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000
+            });
 
-    /* Optional: slider image styling */
-    .home-slider .home-slide img {
-        /* width: 100%; */
-        /* height: auto; */
-        display: block !important;
-    }
-
-</style>
-<script>
-    $(document).ready(function(){
-  $(".desktop-slider").owlCarousel({
-    items: 1,
-    loop: true,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 5000
-  });
-
-  $(".mobile-slider").owlCarousel({
-    items: 1,
-    loop: true,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 5000
-  });
-});
-
-</script>
+            $(".mobile-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000
+            });
+        });
+    </script>
 
     <div class="container">
         <!-- Featured Products section -->
