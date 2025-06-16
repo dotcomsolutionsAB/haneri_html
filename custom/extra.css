@@ -1985,15 +1985,16 @@ footer .social-icon {
     display: flex;
     text-align: justify;
     padding: 0px 30px;
+    color: #000;
 
  }
  .blog-content h3{
     /* margin-top: 5px; */
-    margin-bottom: 10px;
     font-family: 'Barlow Condensed';
-    color: #464646;
+    color: #315858;
     display: flex;
     margin: 20px 30px;
+    font-weight: 300;
  }
  .btns{
     height: 100%;
