@@ -11,6 +11,12 @@
             <div class="container mb-3">
                 <div class="row">
                     <div class="col-lg-9 main-content shop">
+                        <!-- images area -->
+                        <div class="image_area">
+                            <img class="slide-bg" src="images/categories.png" alt="banner"
+                            width="100%">
+                        </div>
+
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
@@ -69,12 +75,6 @@
                             </div><!-- End .toolbox-right -->
                         </nav>
                         <!-- End Mobile view -->
-
-                        <div class="image_area">
-                            <img class="slide-bg" src="images/categories.png" alt="banner"
-                            width="100%">
-                        </div>
-
 
                         <div class="row products_area" id="products-table">
                             <!-- products showing here  -->
