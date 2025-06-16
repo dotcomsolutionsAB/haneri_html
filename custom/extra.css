@@ -3318,6 +3318,13 @@ footer .social-icon {
         .open>a>.mmenu-btn:after {
             content: "-" !important;
         }
+        .mobile-menu-container .search-wrapper .form-control {
+            background: #4d7575;
+        }
+        .search-wrapper input::placeholder {
+            color: white !important;
+            opacity: 1; /* for Firefox */
+        }
     }
 
     /* Optional: slider image styling */
