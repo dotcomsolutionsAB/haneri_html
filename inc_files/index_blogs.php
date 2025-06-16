@@ -7,19 +7,19 @@
                 [
                     'image'   => 'images/f14.png',
                     'title'   => 'Blog Title 1',
-                    'content' => 'This is a short snippet or summary of the blog content for Blog Title 1...',
+                    'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
                 ],
                 [
                     'image'   => 'images/f15.png',
                     'title'   => 'Blog Title 2',
-                    'content' => 'A short snippet or summary for Blog Title 2. This could be a couple of lines...',
+                    'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
                 ],
                 [
                     'image'   => 'images/f16.png',
                     'title'   => 'Blog Title 3',
-                    'content' => 'A short snippet or summary for Blog Title 3. Add a teaser or interesting excerpt...',
+                    'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
                 ]
             ];
