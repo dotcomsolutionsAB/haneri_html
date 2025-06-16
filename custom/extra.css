@@ -3287,8 +3287,14 @@ footer .social-icon {
         .faq .col-lg-6 {
             width: 100%;
         }
-
-
+        .blogs-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+        }
     }
 
     /* Optional: slider image styling */
