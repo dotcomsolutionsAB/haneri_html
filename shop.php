@@ -16,7 +16,7 @@
                             <img class="slide-bg" src="images/categories.png" alt="banner"
                             width="100%">
                         </div>
-
+                        <br><br>
                         <!-- For Mobile And Desktop View -->
                         <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                             <div class="toolbox-left">
