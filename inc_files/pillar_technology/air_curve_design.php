@@ -44,13 +44,16 @@
         .air_curve_span{
             color: black; 
             font-size: 14px; 
+            text-align: justify;
             font-family: Open Sans; 
             font-weight: 600; 
             word-wrap: break-word;
         }
         .air_curve_span2{
             color: black; 
+            text-align
             font-size: 16px; 
+            text-align: justify;
             font-family: Open Sans; 
             font-weight: 400; 
             word-wrap: break-word
@@ -125,7 +128,6 @@
             <div class="col-md-6">
                <div><span class="air_curve_span_h2">The Science Behind Air Curve Design
                 <div class="air_curve_span">Computational Fluid Dynamics (CFD) Advanced CFD simulations analyze airflow patterns, ensuring that each blade design achieves peak aerodynamic efficiency.Prototyping and Testing Multiple prototypes are tested under real-world conditions to validate performance metrics such as air delivery, noise levels, and energy consumption. Iterative Design Continuous refinement based on data-driven insights ensures that AirCurve blades exceed industry benchmarks for performance and reliability.</div>
-                <br>
                 <div class="air_curve_span">Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.</div>
             </div>
         </div>
