@@ -33,6 +33,7 @@
 
                     const card = document.createElement("div");
                     card.className = "card";
+                    card.setAttribute("data-product-id", product.id); // Add product ID for redirection
                     card.innerHTML = `
                         <div class="card_image">
                             <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid">
@@ -54,6 +55,24 @@
                     `;
                     container.appendChild(card);
                 });
+
+                // Make entire card clickable (excluding controls)
+                document.addEventListener("click", function (e) {
+                    const card = e.target.closest(".card");
+
+                    if (
+                        card &&
+                        !e.target.closest(".qty-btn") &&
+                        !e.target.closest(".qty-input") &&
+                        !e.target.closest(".add-to-cart-btn")
+                    ) {
+                        const productId = card.getAttribute("data-product-id");
+                        if (productId) {
+                            window.location.href = `product_detail.php?id=${productId}`;
+                        }
+                    }
+                });
+
 
                 // Quantity control
                 document.addEventListener('click', function (e) {

@@ -2597,7 +2597,7 @@ footer .social-icon {
             text-align: justify;
             border: none;
             width: 299.462px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
 
         }
         .featured .card .bgremoved{
