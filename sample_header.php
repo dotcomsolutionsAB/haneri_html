@@ -53,7 +53,7 @@
 
 <body class="full-screen-slider">
 <!-- Loader HTML -->
-<script>console.log("🔄 DC Loader is showing...");</script>
+<!-- <script>console.log("🔄 DC Loader is showing...");</script>
 <div id="dc-loader-wrapper">
   <div class="dc-haneri-container" id="dc-haneri">
     <div class="dc-letter">H</div>
@@ -63,7 +63,7 @@
     <div class="dc-letter">R</div>
     <div class="dc-letter">I</div>
   </div>
-</div>
+</div> -->
 <style>
     .header_icon{
         font-size: 20px;
