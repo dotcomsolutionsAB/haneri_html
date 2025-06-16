@@ -741,6 +741,7 @@ footer a {
     .custom-box {
         width: 100%;
         min-height: 220px;
+        padding: 5px;
         /* padding: 1.2rem 3.4rem; */
     }
     .rowws{

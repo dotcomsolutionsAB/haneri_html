@@ -96,7 +96,6 @@
             </div>
         </div><!-- End .row -->
 
-        <br>
         <div class="row-bg">
             <div class="containe">
                 <h2 class="heading2 primary margp">Benefits for Customers</h2>
