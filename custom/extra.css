@@ -2972,8 +2972,10 @@ footer .social-icon {
         .faq_section .card.card-accordion .card-header.collapsed:after {
             content: "+";
             transition: 0.35s;
+            display: none !important;
         }
         .faq_section .card.card-accordion .card-header:after {
+            display: none !important;
             content: "-";
             position: absolute;
             top: 50%;
