@@ -72,6 +72,7 @@
     gap: 40px;
     max-width: 100%;
     align-items: center;
+    background-color: #D9D9D9;
 }
 
 .about-image {
@@ -137,7 +138,7 @@
 
 .q_head {
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 100px;
+    font-size: 80px;
     margin: 0px;
     margin: 0px;
     padding: 0px;
@@ -145,7 +146,7 @@
 }
 
 .q_answer{
-    margin-top:30px;
+    margin-right: 50px;
 }
 /* end About haneri */
 
@@ -1362,6 +1363,7 @@ Turbosilent
     .about-content {
         flex-direction: column;
         text-align: center;
+        background-color: #D9D9D9;
     }
 
     .about-image {
