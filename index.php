@@ -3,7 +3,7 @@
 <!-- Category section  -->
 <main class="main">
     <!-- Slider section -->
-    <!-- <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
             <img class="slide-bg" src="images/Slider1.jpg"
                 style="background-color: #ecc;" alt="home banner">
@@ -28,7 +28,7 @@
     <!-- Mobile Slider -->
     <div class="home-slider mobile-slider owl-carousel owl-theme">
         <div class="home-slide"><img src="images/Slide1_mobile.jpg" alt="Mobile Slide 1"></div>
-        <div class="home-slide"><img src="images/Slide2_mobile.jpg" alt="Mobile Slide 2"></div>
+        <!-- <div class="home-slide"><img src="images/Slide2_mobile.jpg" alt="Mobile Slide 2"></div> -->
         <div class="home-slide"><img src="images/Slide3_mobile.jpg" alt="Mobile Slide 3"></div>
     </div>
 <style>
@@ -49,8 +49,8 @@
 
     /* Optional: slider image styling */
     .home-slider .home-slide img {
-        width: 100%;
-        height: auto;
+        /* width: 100%; */
+        /* height: auto; */
         display: block !important;
     }
 
