@@ -1,5 +1,4 @@
 <section class="blogs_section">
-    <h2 class="heading_1">BLOGS</h2>
     <div class="blogs-container">
         <?php 
             // Sample data for blogs

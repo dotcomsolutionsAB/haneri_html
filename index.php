@@ -22,24 +22,6 @@
 
     <div class="container">
         <!-- Featured Products section -->
-            <!-- <section class="heading_1">
-                <h2 class="heading_1">Featured Product</h2>
-                <div class="product-grid">
-                    <?php
-                    $products = [
-                        ["src" => "images/f1.png", "alt" => "Black Fan"],
-                        ["src" => "images/f2.png", "alt" => "Wooden Fan"],
-                        ["src" => "images/f3.png", "alt" => "White Fan"],
-                        ["src" => "images/f4.png", "alt" => "Black Fan 2"]
-                    ];
-                    foreach ($products as $product) {
-                        echo "<div class='product'>
-                                <a href='#'><img src='{$product['src']}' alt='{$product['alt']}'></a>
-                              </div>";
-                    }
-                    ?>
-                </div>
-            </section> -->
             <?php include("inc_files/featured_products.php"); ?>
 
             <!-- About Haneri section -->
@@ -72,18 +54,18 @@
                 </div>
             </section>
 
-            <?php //include("inc_files/best_sellers.php"); ?>
+            <?php include("inc_files/best_sellers.php"); ?>
     </div>
     
     <div class="container">
-    <div class="bespoke-content">
-        <div class="bespoke-text">
-            <img src="images/Haneri_Bespoke.jpg" alt="Haneri_Bespoke.jpg">
+        <div class="bespoke-content">
+            <div class="bespoke-text">
+                <img src="images/Haneri_Bespoke.jpg" alt="Haneri_Bespoke.jpg">
+            </div>
+            <div class="bespoke-image">
+                <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
+            </div>
         </div>
-        <div class="bespoke-image">
-            <img src="images/Haneri_Website_Wireframe_V1.1.png" alt="Crafting Image">
-        </div>
-    </div>
     </div>
     <!-- FAQ Section -->
     <div class="container">
@@ -143,61 +125,3 @@
 </main><!-- End .main -->
 <?php include("footer.php"); ?>
 
-<!-- <style>
- .blog-item{
-    min-height: 580px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    border-radius: 50px;
-    gap:20px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 16%); 
- } 
- .read-more-button{
-    border-radius: 10px;
-    padding: 1em 1.6em;
-    font-size: 12px;
-    margin-bottom: 10px;
- }
- .blog-item img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    /* object-fit: contain; */
- }
- .contents{
-    min-height: 530px;
-    display: flex;
-    /* background: antiquewhite; */
-    justify-content: space-between;
-    flex-direction: column;
- }  
- .blog-content{
-    min-height: 235px;
- }
- .blog-content p{
-    display: flex;
-    text-align: justify;
-    padding: 0px 15px;
-
- }
- .blog-content h3{
-    margin-top: 20px;
- }
- .btns{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- .btns a{
-
- }
- .blog-image{
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
- }
-</style> -->

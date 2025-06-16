@@ -41,9 +41,9 @@
                         <p class="product-price">MRP ₹${variant.selling_price}</p>
                         <div class="card-foot">
                             <div class="qty-selector">
-                                <button class="qty-btn minus">−</button>
+                                <button class="qty-btn minusb">−</button>
                                 <input type="text" class="qty-input" value="1" min="1" readonly>
-                                <button class="qty-btn plus">+</button>
+                                <button class="qty-btn plusb">+</button>
                             </div>
                             <div class="add-to-cart">
                                 <a href="#" id="addcart" class="add-to-cart-btn" data-product-id="${product.id}" 
@@ -57,10 +57,10 @@
 
                 // Quantity control
                 document.addEventListener('click', function (e) {
-                    if (e.target.classList.contains('plus')) {
+                    if (e.target.classList.contains('plusb')) {
                         const input = e.target.previousElementSibling;
                         input.value = parseInt(input.value) + 1;
-                    } else if (e.target.classList.contains('minus')) {
+                    } else if (e.target.classList.contains('minusb')) {
                         const input = e.target.nextElementSibling;
                         if (parseInt(input.value) > 1) {
                             input.value = parseInt(input.value) - 1;
