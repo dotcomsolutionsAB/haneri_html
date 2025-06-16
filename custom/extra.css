@@ -3295,6 +3295,14 @@ footer .social-icon {
             flex-direction: column;
             width: 100%;
         }
+        .blog-item {
+            flex: 1 1 calc(30% - 20px);
+            max-width:100% !important;
+        }
+
+        footer {
+            margin-bottom: 2px;
+        }
     }
 
     /* Optional: slider image styling */
