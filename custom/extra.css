@@ -3284,6 +3284,9 @@ footer .social-icon {
             display: flex;
             flex-direction: column;
         }
+        .faq .col-lg-6 {
+            width: 100%;
+        }
 
 
     }
