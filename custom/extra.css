@@ -2752,15 +2752,7 @@ footer .social-icon {
         font-family: 'Open Sans' !important;
         letter-spacing: 0.02em;
     }
-    .sidebar-shop .widget-title:hover {
-        padding-bottom: 0.7rem;
-        margin-bottom: 1rem;
-        border: 2px solid #00473E;
-        background: #f5f5f5;
-        font-family: "Oswald";
-        letter-spacing: 0.02em;
-        color: #00473E;
-    }
+    
     .shop label {
         color: #222529;
         font-family: sans-serif !important;
@@ -3124,8 +3116,22 @@ footer .social-icon {
 
 
     /* Extra */
-    .sidebar-shop .widget-title a:after, .sidebar-shop .widget-title a:before {
+    .sidebar-shop .widget-title a:after, 
+    .sidebar-shop .widget-title a:before {
         background-color: #fff;
+    }
+    .sidebar-shop .widget-title:hover {
+        padding-bottom: 0.7rem;
+        margin-bottom: 1rem;
+        border: 2px solid #00473E;
+        background: #f5f5f5;
+        font-family: "Oswald";
+        letter-spacing: 0.02em;
+        color: #00473E;
+    }
+    .sidebar-shop .widget-title:hover a::before,
+    .sidebar-shop .widget-title:hover a::after {
+        background-color: #00473E;
     }
 
     .ratings-container .ratings:before {
