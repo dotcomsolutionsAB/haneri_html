@@ -2724,6 +2724,7 @@ footer .social-icon {
         border-top: 1px solid #315858;
         text-align: left;
         padding-left: 0px !important;
+        width: fit-content;
     }
     .shop .sidebar-shop .widget-title {
         padding-bottom: 0.7rem;
