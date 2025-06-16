@@ -3193,3 +3193,42 @@ footer .social-icon {
         color: #00473E;
         letter-spacing: 0.02em;
     }
+
+.air_curve-grid-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.air_curve-feature-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.air_curve-feature-box img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.air_curve-feature-box h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #00473E;
+}
+
+.air_curve-feature-box p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.air_curve-feature-box.highlight img {
+  border: 2px solid #f9bd2c;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
