@@ -60,7 +60,7 @@
         }
         .air_curve_span_h2{
             color: #00473E; 
-            font-size: 50px; 
+            font-size: 40px; 
             font-family: Barlow Condensed; 
             font-weight: 500;
         }
@@ -117,7 +117,6 @@
     </div>
     </section>
 
-
     <section class="container my-5">
         <div class="row align-items-center">
             <!-- Image on the left side -->
@@ -132,6 +131,5 @@
             </div>
         </div>
     </section>
-
 </body>
 </html>
