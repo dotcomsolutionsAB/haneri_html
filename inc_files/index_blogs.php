@@ -36,8 +36,6 @@
                                 <h3 class='blog-title'>{$blog['title']}</h3>
                                 <p class='blog-snippet'>{$blog['content']}</p>
                             </div>
-                        </div>
-                        <div class='btns'>
                             <a href='{$blog['link']}' class='btn btn_darkGreen read-more-button'>Read More</a>
                         </div>
                     </div>
