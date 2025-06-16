@@ -3303,6 +3303,21 @@ footer .social-icon {
         footer {
             margin-bottom: 2px;
         }
+        .mobile-menu-container {
+            background-color: #053d3d !important;
+        }
+        .open a{
+            background-color: #053d3d !important;
+        }
+        .mmenu-btn:after {
+            display: inline-block;
+            margin-top: -2px;
+            font-family: "Barlow Condensed";
+            content: "+" !important;
+        }
+        .open>a>.mmenu-btn:after {
+            content: "-" !important;
+        }
     }
 
     /* Optional: slider image styling */
