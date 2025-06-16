@@ -34,24 +34,24 @@
 <style>
     /* Hide mobile slider by default */
     .mobile-slider {
-    display: none;
+        display: none;
     }
 
     /* Hide desktop slider on mobile */
-    @media (max-width: 767px) {
-    .desktop-slider {
-        display: none;
-    }
-    .mobile-slider {
-        display: block;
-    }
+    @media (max-width: 520px) {
+        .desktop-slider {
+            display: none;
+        }
+        .mobile-slider {
+            display: block;
+        }
     }
 
     /* Optional: slider image styling */
     .home-slider .home-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
 </style>
