@@ -35,56 +35,56 @@
         <div style="justify-content: center; display: flex; flex-direction: column; color: #00473E; font-size: 40px; font-family: Barlow Condensed; font-weight: 400; word-wrap: break-word">Key Features of Air Curve Design</div>
     </section> -->
 
-<section class="air_curve-grid-features">
-  <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
+    <section class="air_curve-grid-features container my-5">
+    <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
 
-  <div class="air_curve-features-wrapper">
-    <div class="air_curve-feature-box">
-      <img src="images/Group_104.png" alt="High Air Delivery">
-      <div>
-        <h3>High Air Delivery</h3>
-        <p>
-          Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience.
-          They are designed to deliver optimal air circulation even in large spaces.
-        </p>
-      </div>
-    </div>
+    <div class="air_curve-features-wrapper">
+        <div class="air_curve-feature-box">
+        <img src="images/Group_104.png" alt="High Air Delivery">
+        <div>
+            <h3>High Air Delivery</h3>
+            <p>
+            Air Curve blades are engineered to maximize airflow, providing a powerful and consistent cooling experience.
+            They are designed to deliver optimal air circulation even in large spaces.
+            </p>
+        </div>
+        </div>
 
-    <div class="air_curve-feature-box">
-      <img src="images/Group_101.png" alt="Energy Efficiency">
-      <div>
-        <h3>Energy Efficiency</h3>
-        <p>
-          The <em>aerodynamic</em> profile of Air Curve blades optimizes drag, reducing the load on the motor and
-          ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful
-          cooling experience while saving on electricity bills.
-        </p>
-      </div>
-    </div>
+        <div class="air_curve-feature-box">
+        <img src="images/Group_101.png" alt="Energy Efficiency">
+        <div>
+            <h3>Energy Efficiency</h3>
+            <p>
+            The <em>aerodynamic</em> profile of Air Curve blades optimizes drag, reducing the load on the motor and
+            ensuring energy-efficient operation. Thanks to their energy-efficient operation, you can enjoy a powerful
+            cooling experience while saving on electricity bills.
+            </p>
+        </div>
+        </div>
 
-    <div class="air_curve-feature-box">
-      <img src="images/Group_102.png" alt="Advanced Materials">
-      <div>
-        <h3>Advanced Materials</h3>
-        <p>
-          Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade
-          weight for efficient rotation. You can trust in the longevity of your cooling solution.
-        </p>
-      </div>
-    </div>
+        <div class="air_curve-feature-box">
+        <img src="images/Group_102.png" alt="Advanced Materials">
+        <div>
+            <h3>Advanced Materials</h3>
+            <p>
+            Air Curve blades are crafted using high-strength, lightweight materials, ensuring durability and optimal blade
+            weight for efficient rotation. You can trust in the longevity of your cooling solution.
+            </p>
+        </div>
+        </div>
 
-    <div class="air_curve-feature-box highlight">
-      <img src="images/Group_103.png" alt="Silent Performance">
-      <div>
-        <h3>Silent Performance</h3>
-        <p>
-          The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and
-          professional settings.
-        </p>
-      </div>
+        <div class="air_curve-feature-box highlight">
+        <img src="images/Group_103.png" alt="Silent Performance">
+        <div>
+            <h3>Silent Performance</h3>
+            <p>
+            The streamlined blade design minimizes turbulence, ensuring whisper-quiet operation, ideal for residential and
+            professional settings.
+            </p>
+        </div>
+        </div>
     </div>
-  </div>
-</section>
+    </section>
 
 
     <section class="container my-5">
