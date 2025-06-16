@@ -485,7 +485,15 @@
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
-        
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
+                <li class="breadcrumb-item active breadcrumb-title" id="breadcrumb-title" aria-current="page">
+                    Load...
+                </li>
+            </ol>
+        </div><!-- End .container -->
     </nav>
     <div class="containe text-left pro_detail">
         <!-- <h1 class="text-uppercase about_section">
