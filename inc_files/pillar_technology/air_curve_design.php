@@ -36,9 +36,7 @@
     </section> -->
 
 <section class="air_curve-grid-features">
-  <div class="air_curve-title">
-    Key Features of Air Curve Design
-  </div>
+  <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
 
   <div class="air_curve-features-wrapper">
     <div class="air_curve-feature-box">
