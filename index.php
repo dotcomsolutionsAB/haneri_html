@@ -129,7 +129,7 @@
                         <textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message" required></textarea>
                     </div>
                     <div class="form-footer mb-0">
-                        <button type="submit" class="btn btn-dark font-weight-normal">Send Message</button>
+                        <button type="submit" class="btn-send-msg font-weight-normal">Send Message</button>
                     </div>
                 </form>
             </div>
