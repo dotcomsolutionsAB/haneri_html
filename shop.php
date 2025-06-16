@@ -69,19 +69,19 @@
 
                         <section class="shop-features-section">
                             <div class="shop-feature-card">
-                                <img src="images/group_19.png" alt="Pan India Delivery">
+                                <img src="images/Group_19.png" alt="Pan India Delivery">
                                 <span>Pan India Delivery</span>
                             </div>
                             <div class="shop-feature-card">
-                                <img src="images/group_20.png" alt="Free Delivery">
+                                <img src="images/Group_20.png" alt="Free Delivery">
                                 <span>Free Delivery</span>
                             </div>
                             <div class="shop-feature-card">
-                                <img src="images/group_18.png" alt="Easy Returns">
+                                <img src="images/Group_18.png" alt="Easy Returns">
                                 <span>Easy Returns</span>
                             </div>
                             <div class="shop-feature-card">
-                                <img src="images/group_.png" alt="GST Billing">
+                                <img src="images/Group_.png" alt="GST Billing">
                                 <span>GST Billing</span>
                             </div>
                         </section>
