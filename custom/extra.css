@@ -1957,7 +1957,7 @@ footer .social-icon {
  .blog-item img {
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 0px;
     /* object-fit: contain; */
  }
  .btn_darkGreen{
@@ -2006,7 +2006,7 @@ footer .social-icon {
 
  }
  .blog-image{
-    height: 280px;
+    /* height: 280px; */
     display: flex;
     justify-content: center;
     align-items: center;
