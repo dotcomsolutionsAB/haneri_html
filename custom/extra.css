@@ -3304,7 +3304,7 @@ footer .social-icon {
             gap: 10px;
         }
         .q_answer {
-            /* margin-right: 50px; */
+            margin-right: 0px;
             padding: 10px;
             text-align: left;
         }
