@@ -103,7 +103,7 @@
             </div>
             <div class="eow rowws">
                 <!-- Column 1 -->
-                <div class="col">
+                <div class="">
                     <div class="custom-box">
                         <div class="icon-box">
                             <!-- Replace with your icon path/size -->
@@ -119,7 +119,7 @@
                 </div>
 
                 <!-- Column 2 -->
-                <div class="col">
+                <div class="">
                     <div class="custom-box">
                         <div class="icon-box">
                             <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
@@ -134,7 +134,7 @@
                 </div>
 
                 <!-- Column 3 -->
-                <div class="col">
+                <div class="">
                     <div class="custom-box">
                     <div class="icon-box">
                         <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
@@ -149,7 +149,7 @@
                 </div>
 
                 <!-- column 4 -->
-                <div class="col">
+                <div class="">
                     <div class="custom-box">
                         <div class="icon-box">
                             <img src="images/benifits/enh.jpeg" alt="Modern Aesthetics" style="">

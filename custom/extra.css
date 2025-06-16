@@ -758,7 +758,7 @@ footer a {
     .custom-content {
         margin-top: 75px;
         height: 175px;
-        width: 260px;
+        /* width: 260px; */
     }
 
     .custom-content .btnn{
@@ -1299,7 +1299,7 @@ Turbosilent
     .custom-content {
         margin-top: 75px;
         height: 175px;
-        width: 260px;
+        /* width: 260px; */
     }
 
     .custom-content .btnn{
