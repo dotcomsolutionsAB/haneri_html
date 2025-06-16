@@ -6,29 +6,19 @@
             <li><a href="air_curve_design.php">Pillar Technololgy</a></li>
             <li><a href="our_story.php">About us</a></li>
             <li><a href="contact.php">Support</a></li>
-            <!-- <li>
+            <li>
                 <a href="#">Categories</a>
                 <ul>
                     <li><a href="category.html">Full Width Banner</a></li>
                     <li><a href="category-banner-boxed-slider.html">Boxed Slider Banner</a></li>
-                    <li><a href="category-banner-boxed-image.html">Boxed Image Banner</a></li>
-                    <li><a href="category-sidebar-left.html">Left Sidebar</a></li>
-                    <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
-                    <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
-                    <li><a href="category-horizontal-filter1.html">Horizontal Filter 1</a></li>
-                    <li><a href="category-horizontal-filter2.html">Horizontal Filter 2</a></li>
                     <li><a href="#">List Types</a></li>
                     <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll<span
                                 class="tip tip-new">New</span></a></li>
                     <li><a href="category.html">3 Columns Products</a></li>
                     <li><a href="category-4col.html">4 Columns Products</a></li>
-                    <li><a href="category-5col.html">5 Columns Products</a></li>
-                    <li><a href="category-6col.html">6 Columns Products</a></li>
-                    <li><a href="category-7col.html">7 Columns Products</a></li>
-                    <li><a href="category-8col.html">8 Columns Products</a></li>
                 </ul>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">Products</a>
                 <ul>
                     <li>
