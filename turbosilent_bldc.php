@@ -21,10 +21,10 @@
     <a class="btn button" href="/lumiambience.php">Lumiambience</a>
     <span class="divider">|</span>
     <a class="btn button" href="/scan.php">S.C.A.N</a>
-</div>><!-- End .container -->
+</div><!-- End .container -->
     </div><!-- End .page-header -->
 
-    <div class="content-container">
+    <div class="container">
         <h2 class="heading2 primary">Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
         <p class="paragraph1 light">
         At Haneri, we redefine engineering excellence with our proprietary
