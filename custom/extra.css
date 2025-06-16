@@ -2968,6 +2968,10 @@ footer .social-icon {
             color: #fff !important;
         }
 
+        .card.card-accordion .card-header:after {
+            display: none !important;
+        }
+
 
         .faq_section .card.card-accordion .card-header.collapsed:after {
             content: "+";
