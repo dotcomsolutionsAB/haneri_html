@@ -2,22 +2,57 @@
     <span class="mobile-menu-close"><i class="fa fa-times"></i></span>
     <nav class="mobile-nav">
         <ul class="mobile-menu">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="air_curve_design.php">Pillar Technololgy</a></li>
-            <li><a href="our_story.php">About us</a></li>
-            <li><a href="contact.php">Support</a></li>
             <li>
-                <a href="#">Categories</a>
+                <a href="shop.php">Categories</a>
                 <ul>
-                    <li><a href="category.html">Full Width Banner</a></li>
-                    <li><a href="category-banner-boxed-slider.html">Boxed Slider Banner</a></li>
-                    <li><a href="#">List Types</a></li>
-                    <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll<span
-                                class="tip tip-new">New</span></a></li>
-                    <li><a href="category.html">3 Columns Products</a></li>
-                    <li><a href="category-4col.html">4 Columns Products</a></li>
+                    <li><a href="shop.php">Ceiling Fan</a></li>
+                    <li><a href="shop.php">able Wall Pedestals</a></li>
+                    <li><a href="shop.php">Domestic Exhaust</a></li>
+                    <li><a href="shop.php">Personal</a></li>
+                    <!-- <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll<span
+                                class="tip tip-new">New</span></a></li> -->
                 </ul>
             </li>
+            <li>
+                <a href="air_curve_design.php">Pillar Technololgy</a>
+                <ul>
+                    <li><a href="air_curve_design.php">Air Curve Design</a></li>
+                    <li><a href="turbosilent_bldc.php">TurboSilent BLDC</a></li>
+                    <li><a href="mass.php">M.A.S.S®</a></li>
+                    <li><a href="lumiambience.php">LumiAmbience</a></li>
+                    <li><a href="scan.php">S.C.A.N</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="our_story.php">About Us</a>
+                <ul>
+                    <li><a href="our_story.php#vision">VISION</a></li>
+                    <li><a href="our_story.php#mission">MISSION</a></li>
+                    <li><a href="our_story.php#values">VALUES</a></li>
+                </ul>
+                <a href="our_brands.php">Our Brands</a>
+                <ul>
+                    <li><a href="our_brands.php#haner">Haneri</a></li>
+                    <li><a href="our_brands.php#bespoke">Bespoke</a></li>
+                    <li><a href="our_brands.php#professional">Professional</a></li>
+                </ul>
+                <a href="capabilities.php">Capabilities</a>
+            </li>
+            <li>
+                <a href="contact.php">Support</a>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Catalogues</a></li>
+                    <li><a href="#">Manuals</a></li>
+                </ul>
+                <a href="our_brands.php">Corporate Enquiry</a>
+                <ul>
+                    <li><a href="#">FORM</a></li>
+                </ul>
+                <a href="contact.php">Contact Us</a>
+            </li>
+            
             <!-- <li>
                 <a href="#">Products</a>
                 <ul>
@@ -95,29 +130,6 @@
                 </ul>
             </li> -->
         </ul>
-
-        <!-- <ul class="mobile-menu mt-2 mb-2">
-            <li class="border-0">
-                <a href="#">
-                    Special Offer!
-                </a>
-            </li>
-            <li class="border-0">
-                <a href="https://1.envato.market/DdLk5" target="_blank">
-                    Buy Porto!
-                    <span class="tip tip-hot">Hot</span>
-                </a>
-            </li>
-        </ul>
-
-        <ul class="mobile-menu">
-            <li><a href="login.html">My Account</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="wishlist.html">My Wishlist</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="login.html" class="login-link">Log In</a></li>
-        </ul> -->
     </nav>
     <!-- End .mobile-nav -->
 
