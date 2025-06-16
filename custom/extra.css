@@ -741,7 +741,7 @@ footer a {
     .custom-box {
         width: 100%;
         min-height: 220px;
-        padding: 1.2rem 3.4rem;
+        /* padding: 1.2rem 3.4rem; */
     }
     .rowws{
         gap: 10px;
@@ -1282,7 +1282,7 @@ Turbosilent
     .custom-box {
         width: 100%;
         min-height: 220px;
-        padding: 1.2rem 3.4rem;
+        /* padding: 1.2rem 3.4rem; */
     }
     .rowws{
         gap: 10px;
@@ -3356,6 +3356,13 @@ footer .social-icon {
         .air_curve-feature-box{
             flex-direction: column !important;
         }
+
+        .rowws {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
     }
 
     /* Optional: slider image styling */
@@ -3367,5 +3374,6 @@ footer .social-icon {
     .home-slide .slide-bg, .home-slider {
         height: auto !important;
     }
+
 
     
