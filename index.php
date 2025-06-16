@@ -3,7 +3,7 @@
 <!-- Category section  -->
 <main class="main">
     <!-- Slider section -->
-    <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
             <img class="slide-bg" src="images/Slider1.jpg"
                 style="background-color: #ecc;" alt="home banner">
@@ -16,14 +16,14 @@
             <img class="slide-bg" src="images/Slider3.jpg"
                 style="background-color: #ecc;" alt="home banner">
         </div>
-    </div> -->
+    </div>
 
     <!-- Desktop Slider -->
-    <div class="home-slider desktop-slider owl-carousel owl-theme">
+    <!-- <div class="home-slider desktop-slider owl-carousel owl-theme">
         <div class="home-slide"><img src="images/Slider1.jpg" alt="Desktop Slide 1"></div>
         <div class="home-slide"><img src="images/Slider2.jpg" alt="Desktop Slide 2"></div>
         <div class="home-slide"><img src="images/Slider3.jpg" alt="Desktop Slide 3"></div>
-    </div>
+    </div> -->
 
     <!-- Mobile Slider -->
     <div class="home-slider mobile-slider owl-carousel owl-theme">
