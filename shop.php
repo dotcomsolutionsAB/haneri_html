@@ -70,6 +70,12 @@
                         </nav>
                         <!-- End Mobile view -->
 
+                        <div class="image_area">
+                            <img class="slide-bg" src="images/categories.png" alt="banner"
+                            width="100%">
+                        </div>
+
+
                         <div class="row products_area" id="products-table">
                             <!-- products showing here  -->
                         </div>
