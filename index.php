@@ -5,18 +5,25 @@
     <!-- Slider section -->
     <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider1.jpg"
-                style="background-color: #ecc;" alt="home banner">
-        </div><!-- End .home-slide -->
+            <picture>
+            <source srcset="images/slide1_mobile.jpg" media="(max-width: 767px)">
+            <img class="slide-bg" src="images/Slider1.jpg" alt="home banner" style="background-color: #ecc;">
+            </picture>
+        </div>
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider2.jpg"
-                style="background-color: #ecc;" alt="home banner">
-        </div><!-- End .home-slide -->
+            <picture>
+            <source srcset="images/slide2_mobile.jpg" media="(max-width: 767px)">
+            <img class="slide-bg" src="images/Slider2.jpg" alt="home banner" style="background-color: #ecc;">
+            </picture>
+        </div>
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider3.jpg"
-                style="background-color: #ecc;" alt="home banner">
-        </div><!-- End .home-slide -->
-    </div><!-- End .home-slider -->
+            <picture>
+            <source srcset="images/slide3_mobile.jpg" media="(max-width: 767px)">
+            <img class="slide-bg" src="images/Slider3.jpg" alt="home banner" style="background-color: #ecc;">
+            </picture>
+        </div>
+    </div>
+
 
     <div class="container">
         <!-- Featured Products section -->
