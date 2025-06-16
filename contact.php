@@ -44,7 +44,7 @@
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="sicon-location-pin fs-3 mb-2 d-block"></i>
 					<h5 class="heading4 primary mb-1"></h5>
-					<p class="paragraph1 mb-0 text-center">Sector 8A, BHEL Township,<br>Haridwar</p>
+					<p class="paragraph1 mb-0 text-center">A-48, SECTOR 57, NOIDA, <br/>UTTAR PRADESH, <br/>PINCODE - 201301</p>
 				</div>
 				<div class="feature-box px-2 flex-fill min-w-150">
 					<i class="fa fa-mobile-alt fs-3 mb-2 d-block"></i>
