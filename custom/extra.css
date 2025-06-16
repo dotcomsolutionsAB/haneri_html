@@ -3263,6 +3263,26 @@ footer .social-icon {
         .featured-products-grid .card{
             margin-bottom: 5px;
         }
+
+        .about-text {
+            flex: 1;
+            color: #333;
+            width: 100%;
+        }
+        .q_head {
+            font-family: "Barlow Condensed", sans-serif;
+            font-size: 50px;
+            padding: 5px 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .q_answer {
+            /* margin-right: 50px; */
+            padding: 10px;
+            text-align: left;
+        }
+        
+
     }
 
     /* Optional: slider image styling */
@@ -3274,3 +3294,5 @@ footer .social-icon {
     .home-slide .slide-bg, .home-slider {
         height: auto !important;
     }
+
+    
