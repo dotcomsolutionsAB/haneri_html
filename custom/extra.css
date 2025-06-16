@@ -3182,18 +3182,14 @@ footer .social-icon {
     }
 
     .shop-feature-card img {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
         object-fit: contain;
     }
 
     .shop-feature-card span {
-        font-family: 'Oswald', sans-serif;
-        font-size: 1rem;
+        font-family: 'Barlow Condensed';
+        font-size: 1.5rem;
         color: #00473E;
         letter-spacing: 0.02em;
-    }
-
-    .shop-feature-card:hover {
-        background: #e0f0ec;
     }
