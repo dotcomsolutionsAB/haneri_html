@@ -51,8 +51,7 @@
                     </div>
                     <div class="about-text">
                         <div class="q_head">
-                            <h3>What is</h3>
-                            <p><span>HANERI?</span></p>
+                            <span style="font-weight: 700">What is</span> HANERI?
                         </div>
                         <div class="q_answer">
                             <p>
@@ -72,52 +71,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Why Choose Us section -->
-            <!-- <section class="why-choose-us">
-                <div class="icons-container">
-                    <div class="icon-item">
-                        <img src="images/Logo1.png" alt="Quality">
-                    </div>
-                    <div class="icon-item">
-                        <img src="images/Logo2.png" alt="Innovation">
-                    </div>
-                    <div class="icon-item">
-                        <img src="images/Logo3.png" alt="Customer Focus">
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- <section class="container pb-3 mb-1">
-                <h2 class="heading_1">Best Sellers</h2>
-                <div class="row py-4">
-                    <?php
-                    $best_sellers = [
-                        ["src" => "images/f5.png", "alt" => "Product 1"],
-                        ["src" => "images/f6.png", "alt" => "Product 2"],
-                        ["src" => "images/f13.png", "alt" => "Product 3"],
-                        ["src" => "images/f8.png", "alt" => "Product 4"],
-                        ["src" => "images/f9.png", "alt" => "Product 5"],
-                        ["src" => "images/f10.png", "alt" => "Product 6"]
-                    ];
-                    foreach ($best_sellers as $product) {
-                        echo "<div class='col-6 col-sm-4 col-md-3 col-xl-2 appear-animate' data-animation-name='fadeIn' data-animation-delay='300' data-animation-duration='1000'>
-                                    <div class='product-default inner-quickview inner-icon'>
-                                        <figure>
-                                            <a href='#'>
-                                                <img src='{$product['src']}' width='273' height='273' alt='{$product['alt']}' />
-                                            </a>
-                                            <div class='btn-icon-group'>
-                                                <a href='#' class='btn-icon btn-add-cart product-type-simple'><i class='icon-shopping-cart'></i></a>
-                                            </div>
-                                            <a href='#' class='btn-quickview' title='Quick View'>Quick View</a>
-                                        </figure>
-                                    </div>
-                                </div>";
-                    }
-                    ?>
-                </div>
-            </section> -->
 
             <?php //include("inc_files/best_sellers.php"); ?>
     </div>
