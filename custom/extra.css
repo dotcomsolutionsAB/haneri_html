@@ -937,7 +937,7 @@ Turbosilent
 
   .turbosilent_bldc {
     position: relative;
-    background: url('../images/benifits/image_201.jpg') center center/cover no-repeat;
+    /* background: url('../images/benifits/image_201.jpg') center center/cover no-repeat; */
     /* height: 450px; */
     /* display: flex; */
     /* align-items: flex-end; */
@@ -960,7 +960,7 @@ Turbosilent
     color: #fff;
     height: 160px;
     border-radius: 15px;
-    box-shadow: 10px 10px 1px 1px #ccccccab;
+    /* box-shadow: 10px 10px 1px 1px #ccccccab; */
     }
     .why p, .why h2{
         color:#fff;
@@ -1249,8 +1249,8 @@ Turbosilent
     left: 0;
     width: 80px;
     height: 80px;
-    border-bottom: 1px solid #74787c30;
-    border-right: 1px solid #74787c30;
+    border-bottom: 0px solid #74787c30;
+    border-right: 0px solid #74787c30;
     transform: translate(-1px, -1px); /* merges corner with outer border */
     background-color: #fff;
     display: flex;
