@@ -141,20 +141,20 @@
     </div><!-- End .page-wrapper -->
 
     <div class="loading-overlay">
-        <?php include("../inc_files/loading.php"); ?>
+        <?php include("inc_files/loading.php"); ?>
     </div>
 
     <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
 
     <div class="mobile-menu-container">
         <!-- Mobile_sidebar code -->
-         <?php include("../inc_files/mobile_sidebar.php"); ?>
+         <?php include("inc_files/mobile_sidebar.php"); ?>
 
     </div><!-- End .mobile-menu-container -->
 
     <div class="sticky-navbar">
         <!-- Mobile sitky bottom nav -->
-        <?php include("../inc_files/mobile_sticky_bottom_nav.php"); ?>
+        <?php include("inc_files/mobile_sticky_bottom_nav.php"); ?>
     </div>
 
     <!-- <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a> -->
