@@ -200,41 +200,6 @@
             });
         }
 
-        // Variant update function
-        // window.updateVariant = function(element) {
-        //     const variantId    = $(element).data("variant-id");
-        //     const sellingPrice = $(element).data("selling-price");
-        //     const regularPrice = $(element).data("regular-price");
-        //     const vendorPrice  = $(element).data("vendor-price");
-
-        //     // Update UI
-        //     $('.variant').removeClass('selected');
-        //     $(element).addClass('selected');
-        //     $('#selected-variant').val(variantId);
-
-        //     // Show regular price with strike-through
-        //     regularPriceElem.text(`₹${regularPrice}`).css("text-decoration", "line-through");
-
-        //     if (userRole === "vendor") {
-        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "line-through");
-        //         specialPriceElem.text(`₹${vendorPrice}`).show();
-        //         sPriceContainer.show();
-        //         tPriceElem.attr("data-price", vendorPrice).text(`₹${vendorPrice}`);
-        //     } else {
-        //         productPriceElem.text(`₹${sellingPrice}`).css("text-decoration", "none");
-        //         specialPriceElem.hide();
-        //         sPriceContainer.hide();
-        //         tPriceElem.attr("data-price", sellingPrice).text(`₹${sellingPrice}`);
-        //     }
-
-        //     // Update image section based on selected variant
-        //     if (parseInt(productId) === 14) {
-        //         setImageSection(variantId);
-        //     }
-
-        //     updatePrice();
-        // }
-
         window.updateVariant = function(element) {
             const variantId    = $(element).data("variant-id");
             const sellingPrice = $(element).data("selling-price");
@@ -271,7 +236,6 @@
 
             updatePrice();
         };
-
 
         // Add to Cart function
         function addToCart() {
@@ -493,7 +457,6 @@
             });
         }
 
-
         // Call the checkCart function when the page loads
         checkCart();
 
@@ -522,15 +485,7 @@
 
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="#">Pillar Technology</a></li> -->
-                <li class="breadcrumb-item active breadcrumb-title" id="breadcrumb-title" aria-current="page">
-                    Load...
-                </li>
-            </ol>
-        </div><!-- End .container -->
+        
     </nav>
     <div class="containe text-left pro_detail">
         <!-- <h1 class="text-uppercase about_section">

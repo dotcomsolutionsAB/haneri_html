@@ -2774,7 +2774,7 @@ footer .social-icon {
         vertical-align: middle;
         line-height: 0.8;
         margin-left: 3px;
-        color: #a7a7a7;
+        color: #315858;
     }
     .span-txt{
 
@@ -3137,4 +3137,23 @@ footer .social-icon {
     .ratings-container .ratings:before {
         content: "";
         color: #ffc107 !important;
+    }
+
+    .product-single-details .product-action .add-cart:before {
+        content: "";
+        margin-top: -2px;
+        font-family: "Barlow Condensed";
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-right: 7px;
+        display: none;
+    }
+    .product-single-details .product-action .add-cart:before {
+        content: "";
+        margin-top: -2px;
+        font-family: "Barlow Condensed";
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-right: 7px;
+        display: none;
     }
