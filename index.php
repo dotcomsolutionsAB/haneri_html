@@ -34,16 +34,16 @@
 <style>
     /* Hide mobile slider by default */
     .mobile-slider {
-        display: none;
+        display: none !important;
     }
 
     /* Hide desktop slider on mobile */
     @media (max-width: 520px) {
         .desktop-slider {
-            display: none;
+            display: none !important;
         }
         .mobile-slider {
-            display: block;
+            display: block !important;
         }
     }
 
@@ -51,7 +51,7 @@
     .home-slider .home-slide img {
         width: 100%;
         height: auto;
-        display: block;
+        display: block !important;
     }
 
 </style>
