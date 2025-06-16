@@ -119,7 +119,7 @@
                 </div>
             </section> -->
 
-            <?php include("inc_files/best_sellers.php"); ?>
+            <?php //include("inc_files/best_sellers.php"); ?>
     </div>
     
     <div class="container">
