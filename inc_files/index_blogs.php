@@ -4,19 +4,19 @@
             // Sample data for blogs
             $blogs = [
                 [
-                    'image'   => 'images/f14.png',
+                    'image'   => 'images/blog.jpg',
                     'title'   => 'Blog Title 1',
                     'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
                 ],
                 [
-                    'image'   => 'images/f15.png',
+                    'image'   => 'images/blog.jpg',
                     'title'   => 'Blog Title 2',
                     'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
                 ],
                 [
-                    'image'   => 'images/f16.png',
+                    'image'   => 'images/blog.jpg',
                     'title'   => 'Blog Title 3',
                     'content' => 'Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing.',
                     'link'    => '#'
