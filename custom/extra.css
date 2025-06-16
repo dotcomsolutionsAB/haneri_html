@@ -139,17 +139,11 @@
     font-family: "Barlow Condensed", sans-serif;
     font-size: 100px;
     margin: 0px;
-}
-.q_head p {
     margin: 0px;
     padding: 0px;
-    font-size: 74px;
-    line-height: 1.0;
     color: #00473E;
-    font-family: "Barlow Condensed";
-    font-size: 85px;
-    font-weight: lighter;
 }
+
 .q_answer{
     margin-top:30px;
 }

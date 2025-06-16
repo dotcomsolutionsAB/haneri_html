@@ -51,7 +51,7 @@
                     </div>
                     <div class="about-text">
                         <div class="q_head">
-                            <span style="font-weight: 700">What is</span> HANERI?
+                            <span style="font-weight: 700">What is</span> <span style="font-weight: lighter">HANERI?</span>
                         </div>
                         <div class="q_answer">
                             <p>
