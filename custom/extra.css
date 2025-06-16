@@ -2732,10 +2732,17 @@ footer .social-icon {
         cursor: pointer;
         transition: 0.3s ease;
     }
+    .cart_view_add{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+    
     .shop .card .view {
         background: transparent !important;
         color: #000 !important;
         text-align: left;
+        padding-left: 0px !important;
     }
 
     .shop .sidebar-shop .widget-title {
