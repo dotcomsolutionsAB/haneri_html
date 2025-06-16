@@ -3193,12 +3193,25 @@ footer .social-icon {
         color: #00473E;
         letter-spacing: 0.02em;
     }
-
 .air_curve-grid-features {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.air_curve-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  color: #00473E;
+  margin-bottom: 2rem;
+}
+
+.air_curve-features-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 3rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem 3rem;
 }
 
 .air_curve-feature-box {
@@ -3214,16 +3227,16 @@ footer .social-icon {
 }
 
 .air_curve-feature-box h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
   color: #00473E;
+  margin-bottom: 0.5rem;
 }
 
 .air_curve-feature-box p {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #333;
 }
 
@@ -3232,3 +3245,4 @@ footer .social-icon {
   padding: 0.5rem;
   border-radius: 5px;
 }
+
