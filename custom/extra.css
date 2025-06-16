@@ -3157,3 +3157,43 @@ footer .social-icon {
         margin-right: 7px;
         display: none;
     }
+
+
+    .shop-features-section{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .shop-feature-card{
+        flex: 1 1 200px;
+        max-width: 260px;
+        background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+        border-radius: 10px;
+        padding: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: background 0.3s ease;
+    }
+
+    .shop-feature-card img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+
+    .shop-feature-card span {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1rem;
+        color: #00473E;
+        letter-spacing: 0.02em;
+    }
+
+    .shop-feature-card:hover {
+        background: #e0f0ec;
+    }

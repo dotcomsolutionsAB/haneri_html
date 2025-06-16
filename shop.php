@@ -67,6 +67,26 @@
                         </nav>
                         <!-- End Mobile view -->
 
+                        <section class="shop-features-section">
+                            <div class="shop-feature-card">
+                                <img src="images/group_19.png" alt="Pan India Delivery">
+                                <span>Pan India Delivery</span>
+                            </div>
+                            <div class="shop-feature-card">
+                                <img src="images/group_20.png" alt="Free Delivery">
+                                <span>Free Delivery</span>
+                            </div>
+                            <div class="shop-feature-card">
+                                <img src="images/group_18.png" alt="Easy Returns">
+                                <span>Easy Returns</span>
+                            </div>
+                            <div class="shop-feature-card">
+                                <img src="images/group_.png" alt="GST Billing">
+                                <span>GST Billing</span>
+                            </div>
+                        </section>
+
+
                         <div class="row products_area" id="products-table">
                             <!-- products showing here  -->
                         </div>
@@ -488,7 +508,6 @@
                                     ${priceSnippet}
                                     <div class="cart_view_add">
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
-
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved rounded-pill px-4">Add to Cart</a>
                                     </div>
                                 </div>
