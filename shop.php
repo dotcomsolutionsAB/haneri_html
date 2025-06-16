@@ -496,7 +496,8 @@
                                     </div>
                                     ${priceSnippet}
                                     <div class="cart_view_add">
-                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved rounded-pill px-4">View Details</a>
+                                        <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
+
                                         <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved rounded-pill px-4">Add to Cart</a>
                                     </div>
                                 </div>
