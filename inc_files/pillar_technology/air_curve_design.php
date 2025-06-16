@@ -40,31 +40,7 @@
             </div>
         </div>
     </section>
-    <style>
-        .air_curve_span{
-            color: black; 
-            font-size: 14px; 
-            text-align: justify;
-            font-family: Open Sans; 
-            font-weight: 600; 
-            word-wrap: break-word;
-        }
-        .air_curve_span2{
-            color: black; 
-            text-align
-            font-size: 16px; 
-            text-align: justify;
-            font-family: Open Sans; 
-            font-weight: 400; 
-            word-wrap: break-word
-        }
-        .air_curve_span_h2{
-            color: #00473E; 
-            font-size: 40px; 
-            font-family: Barlow Condensed; 
-            font-weight: 500;
-        }
-    </style>
+
 
     <section class="air_curve-grid-features container my-5">
     <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
