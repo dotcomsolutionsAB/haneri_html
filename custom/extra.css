@@ -3253,9 +3253,8 @@ footer .social-icon {
         .mobile-slider {
             display: block !important;
         }
-
         .featured .heading1{
-            margin-bottom: 0rem;
+            margin-bottom: 0rem !important;
         }
         .featured-products-grid {
             gap:0px;
@@ -3263,7 +3262,6 @@ footer .social-icon {
         .featured-products-grid .card{
             margin-bottom: 5px;
         }
-
         .about-text {
             flex: 1;
             color: #333;
@@ -3281,7 +3279,12 @@ footer .social-icon {
             padding: 10px;
             text-align: left;
         }
-        
+        .faq {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
 
     }
 
