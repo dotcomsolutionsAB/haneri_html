@@ -3417,6 +3417,7 @@ footer .social-icon {
         }
         .products_area{
             flex-direction: row;
+            gap: 25px;
         }
         .price-box .c_price{
             display: flex;
