@@ -74,31 +74,38 @@
 
         <!-- Right: Customer Benefits -->
         <div>
-        <h2 class="bldc103 mb-4">Benefits For Customers</h2>
-        <div class="bldc108">
-            <div>
-            <h3 class="bldc109"><img src="images/benifits/comfort.png" class="bldc110" alt="Comfort Icon" /> Enhanced
-                Comfort</h3>
-            <p>Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the
-                room.</p>
+            <h2 class="bldc103 mb-4">Benefits For Customers</h2>
+            <div class="bldc108">
+                <div>
+                    <div class="bldc109">
+                        <img src="images/benifits/comfort.png" class="bldc110" alt="Comfort Icon"/> 
+                        <div class="bldch3">
+                            <h3>Enhanced Comfort</h3>
+                            <p>
+                                Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the  room.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="bldc109">
+                        <img src="images/benifits/cost savings.png" class="bldc110" alt="Savings Icon" /> 
+                        Cost Savings</h3>
+                    <p>Energy-efficient operation translates to long-term savings on electricity bills.</p>
+                </div>
+                <div>
+                    <h3 class="bldc109"><img src="images/benifits/sustainable choice.png" class="bldc110" alt="Eco Icon" />
+                        Sustainable Choice</h3>
+                    <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption</p>
+                </div>
+                <div>
+                    <h3 class="bldc109">
+                        <img src="images/benifits/enh.jpeg" class="bldc110" alt="Design Icon" /> Modern Aesthetics
+                    </h3>
+                    <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your
+                        space.</p>
+                </div>
             </div>
-            <div>
-            <h3 class="bldc109"><img src="images/benifits/cost savings.png" class="bldc110" alt="Savings Icon" /> Cost
-                Savings</h3>
-            <p>Energy-efficient operation translates to long-term savings on electricity bills.</p>
-            </div>
-            <div>
-            <h3 class="bldc109"><img src="images/benifits/sustainable choice.png" class="bldc110" alt="Eco Icon" />
-                Sustainable Choice</h3>
-            <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption</p>
-            </div>
-            <div>
-            <h3 class="bldc109"><img src="images/benifits/enh.jpeg" class="bldc110" alt="Design Icon" /> Modern Aesthetics
-            </h3>
-            <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your
-                space.</p>
-            </div>
-        </div>
         </div>
     </div>
 </div>
@@ -117,15 +124,15 @@
 
 <style>
     .bldc-img {
-  width: 100%;
-  max-width: 762px;
-  height: auto;
-  aspect-ratio: 762 / 508;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+        width: 100%;
+        max-width: 762px;
+        height: auto;
+        aspect-ratio: 762 / 508;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
   /* Container and Layout */
   .bldc001 {
@@ -225,8 +232,8 @@
   }
 
   .bldc110 {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 124.28px;
+    height: 135px;
     margin-top: 0.25rem;
   }
 </style>
