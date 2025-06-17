@@ -5,7 +5,7 @@
     <!-- Slider section -->
     <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider1.jpg"
+            <img class="slide-bg" src="images/Slider.jpg"
                 style="background-color: #ecc;" alt="home banner">
         </div>
         <div class="home-slide home-slide1 banner d-flex align-items-center">
