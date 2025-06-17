@@ -3474,6 +3474,36 @@ footer .social-icon {
             display: flex !important;
             margin-top: 5px;
         } */
+
+        .secure-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+        }
+        .secure-section h2 {
+            font-size: 2.5rem;
+        }
+        .secure-item{
+            min-width: 140px;
+        }
+        .secure-text {
+            font-size: 12px;
+        }
+        .secure-item img {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+        .specification-list {
+            gap: 15px;
+            margin: 0px;
+        }
+        .specification-section {
+            padding: 20px 20px;
+        }
+
+
+
+
     }
 
     /* Optional: slider image styling */
