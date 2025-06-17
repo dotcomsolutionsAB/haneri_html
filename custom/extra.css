@@ -3509,24 +3509,18 @@ footer .social-icon {
             display: block;
             width: 100%;
         }
-
         .specs-json-table tr {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #ccc;
+            margin-bottom: 0.2rem;
         }
-
         .specs-json-table th {
-            background-color: transparent;
+            background-color: #00473e2e;
             color: #00473E;
             font-weight: 600;
             padding-bottom: 4px;
         }
-
         .specs-json-table td {
-            background-color: transparent;
-            padding-top: 0;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
+            background-color: #31585824;
+            border-bottom: 3px solid #fff;
         }
 
 
