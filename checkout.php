@@ -324,8 +324,10 @@
                         title: 'Add New Address',
                         width: '700px', // Wider popup
                         customClass: {
-                            confirmButton: 'confirmation-btn'
+                            confirmButton: 'add-address-btn',
+                            cancelButton: 'cancel-address-btn'
                         },
+
                         html: `			
                             <form id="swal-address-form">
                                 <input type="text" id="swal_name" placeholder="Name*" required>
