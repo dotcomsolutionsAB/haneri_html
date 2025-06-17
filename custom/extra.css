@@ -3500,6 +3500,14 @@ footer .social-icon {
             margin-bottom: 15px;
         }
 
+        .specification-section h2{
+            font-size: 2.5rem;
+        }
+        .specification-list li {
+            width: 65px;
+            height: 65px;
+        }
+
         .specs-json-table,
         .specs-json-table thead,
         .specs-json-table tbody,
