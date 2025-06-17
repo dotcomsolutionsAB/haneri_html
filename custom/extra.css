@@ -3368,6 +3368,60 @@ footer .social-icon {
             padding: 5px;
             margin-top: 60px;
         }
+        .shop-features-section{
+            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .shop_products{
+            height: fit-content;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .products_area{
+
+        }
+        .price-box .c_price{
+            display: flex;
+            flex-direction: column;
+        }
+        .c_price .paragraph1{
+            margin-bottom: 2px;
+        }
+        .c_price .old-price {
+            font-size: 13px;
+        }
+        .c_price .product-price {
+            font-size: 1.8rem !important;
+        }
+        .shop .card .bgremoved {
+            padding: 5px 2px;
+            font-size: 10px;
+            padding-right: 4px !important;
+            padding-left: 4px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center !important;
+        }
+        .shop .card_image {
+            height: 150px;
+        }
+        .shop .card {
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1.4rem;
+            min-height: 350px;
+            background: #f5f5f5;
+            margin-top: 0px;
+            border-radius: 20px;
+            padding: 5px;
+            text-align: justify;
+            border: none;
+            width: 160.462px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
     }
 
     /* Optional: slider image styling */

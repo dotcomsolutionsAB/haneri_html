@@ -480,7 +480,7 @@
 
                         // Append the row for each product
                         tbody.append(`
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
                                 <div class="card featured" id="pro-table">
                                     <div class="card_image">
                                         <img src="${
