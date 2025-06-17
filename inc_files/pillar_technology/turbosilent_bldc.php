@@ -151,11 +151,12 @@
     font-family: 'Barlow Condensed';
     font-weight: 100;
     line-height: 1;
+    color:#047857;
   }
 
   @media (min-width: 768px) {
     .bldc103 {
-      font-size: 1.875rem;
+      font-size: 50px;
     }
   }
 
