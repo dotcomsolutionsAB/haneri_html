@@ -148,44 +148,39 @@
                         //     alert("An error occurred while adding to cart.");
                         // });
                         fetch("<?php echo BASE_URL; ?>/cart/add", {
-                            method: "POST",
-                            headers,
-                            body: JSON.stringify(cartPayload)
-                        })
-                        .then(async (response) => {
-                            if (!response.ok && response.status !== 201) {
-                                // handle HTTP error
-                                throw new Error(`HTTP error! Status: ${response.status}`);
-                            }
-                            return await response.json();
-                        })
-                        .then(cartRes => {
-                            if (cartRes.data) {
-                                const existingTempId = localStorage.getItem("temp_id");
-                                const authToken = localStorage.getItem("auth_token");
+    method: "POST",
+    headers,
+    body: JSON.stringify(cartPayload)
+})
+.then(response => {
+    // Accept both 200 and 201 as success
+    if (response.status === 200 || response.status === 201) {
+        return response.json();
+    } else {
+        throw new Error("Unexpected response status: " + response.status);
+    }
+})
+.then(cartRes => {
+    if (cartRes.data) {
+        const existingTempId = localStorage.getItem("temp_id");
+        const authToken = localStorage.getItem("auth_token");
 
-                                if (existingTempId) {
-                                    console.log("Temp ID is:", existingTempId);
-                                } else {
-                                    console.log("Auth token is:", authToken);
-                                }
+        if (!authToken && !existingTempId && cartRes.data.user_id) {
+            localStorage.setItem("temp_id", cartRes.data.user_id);
+        }
 
-                                if (!authToken && !existingTempId && cartRes.data.user_id) {
-                                    localStorage.setItem("temp_id", cartRes.data.user_id);
-                                }
-
-                                const cardFoot = e.target.closest(".card-foot");
-                                cardFoot.innerHTML = `
-                                    <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
-                                `;
-                            } else {
-                                alert("Failed to add product to cart.");
-                            }
-                        })
-                        .catch(err => {
-                            console.error("Cart Add Error:", err);
-                            alert("An error occurred while adding to cart.");
-                        });
+        const cardFoot = e.target.closest(".card-foot");
+        cardFoot.innerHTML = `
+            <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
+        `;
+    } else {
+        alert("Failed to add product to cart.");
+    }
+})
+.catch(err => {
+    console.error("Cart Add Error:", err);
+    alert("An error occurred while adding to cart.");
+});
 
 
                     }
