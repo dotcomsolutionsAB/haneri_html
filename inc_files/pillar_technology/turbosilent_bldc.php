@@ -1,6 +1,64 @@
 
 <div class="history-section pb-3">
     <div class="containe">
+
+        <div class="row row-bg">
+            <div class="col-xl-5 col-lg-6">
+                <div class="about-slider owl-carousel owl-theme dots-simple">
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/f12.png"
+                            src="images/f12.png" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                </div><!-- End .about-slider -->
+            </div><!-- End .col-lg-5 -->
+            <div class="col-xl-7 col-lg-6 contents">
+                <h2 class="heading2 primary margp">Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
+                <p class="paragraph1 light">
+                    At Haneri, we redefine engineering excellence with our proprietary
+                    <span class="highlight_p">TurboSilent BLDC Technology</span>. This advanced motor design not only delivers
+                    higher torque and exceptional durability but also ensures unmatched energy efficiency,
+                    setting a new benchmark for ceiling fan performance and contributing to a greener environment.
+                </p>
+            </div>
+        </div>
+
+        <div class="row row-bg">
+            <div class="col-xl-5 col-lg-6">
+                <div class="about-slider owl-carousel owl-theme dots-simple">
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/f12.png"
+                            src="images/f12.png" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                    <div class="about-slider-item">
+                        <img class="owl-lazy" data-src="images/place.jpg"
+                            src="images/place.jpg" alt="About image description">
+                    </div>
+                </div><!-- End .about-slider -->
+            </div><!-- End .col-lg-5 -->
+            <div class="col-xl-7 col-lg-6 contents">
+                <h2 class="heading2 primary margp">Why TurboSilent BLDC Technology?</h2>
+                <p class="paragraph1">
+                    <span class="highlight_p">TurboSilent BLDC (Brushless Direct Current) Technology</span> is an in-house developed
+                    motor system that employs high-tech electromagnetic and mechanical design principles. This
+                    cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended
+                    motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering
+                    industry-leading reliability and precision that you can trust.
+                </p>
+            </div>
+        </div>
+
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
@@ -53,7 +111,7 @@
                     </li>
                 </ul>
             </div><!-- End .col-lg-7 -->
-        </div><!-- End .row -->
+        </div>
 
         <div class="row row-bg">
             <div class="col-xl-5 col-lg-6">
@@ -176,6 +234,7 @@
                 </p>
             </div>
         </div><!-- End .row -->
+
     </div><!-- End .container -->
 </div><!-- End .history-section -->
 
