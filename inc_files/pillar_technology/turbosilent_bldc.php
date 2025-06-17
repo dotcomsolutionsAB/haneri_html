@@ -3,7 +3,7 @@
     <div class="containe">
 
         <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
+            <div class="col-xl-6 col-lg-6">
                 <div class="about-slider owl-carousel owl-theme dots-simple">
                     <div class="about-slider-item">
                         <img class="owl-lazy" data-src="images/f12.png"
@@ -19,7 +19,7 @@
                     </div>
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
+            <div class="col-xl-6 col-lg-6 contents">
                 <h2 class="heading2 primary margp"><b>Introducing TurboSilent BLDC Technology:</b> Unleashing Unmatched Power and Efficiency</h2>
                 <p class="paragraph1 light">
                     At Haneri, we redefine engineering excellence with our proprietary
