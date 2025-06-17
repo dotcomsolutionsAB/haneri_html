@@ -113,28 +113,28 @@
 
                 cartTableBody.innerHTML += `
                     <tr data-cart-id="${item.id}">
-                        <td><img src="images/f${(index % 10) + 1}.png" alt="${productName}" width="50"></td>
-                        <td>${productName} ${variantName}</td>
-                        <td>₹${sellingPrice.toFixed(2)}</td>
-                        <td>
-                            <div class="quantity-container">
-                                <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'decrease')">-</button>
-                                <input 
-                                    type="text" 
-                                    class="horizontal-quantity" 
-                                    value="${quantity}" 
-                                    onchange="updateCartQuantity('${item.id}', 'input', this.value)"
-                                >
-                                <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'increase')">+</button>
-                            </div>
-                        </td>
-                        <td class="text-right">₹${subtotal.toFixed(2)}</td>
-                        <td>
-                            <button class="btn-remove-item" onclick="removeCartItem('${item.id}')">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+    <td data-label="Image"><img src="images/f${(index % 10) + 1}.png" alt="${productName}" width="50"></td>
+    <td data-label="Product">${productName} ${variantName}</td>
+    <td data-label="Price">₹${sellingPrice.toFixed(2)}</td>
+    <td data-label="Quantity">
+        <div class="quantity-container">
+            <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'decrease')">-</button>
+            <input 
+                type="text" 
+                class="horizontal-quantity" 
+                value="${quantity}" 
+                onchange="updateCartQuantity('${item.id}', 'input', this.value)"
+            >
+            <button class="btn-quantity" onclick="updateCartQuantity('${item.id}', 'increase')">+</button>
+        </div>
+    </td>
+    <td data-label="Subtotal" class="text-right">₹${subtotal.toFixed(2)}</td>
+    <td data-label="Remove">
+        <button class="btn-remove-item" onclick="removeCartItem('${item.id}')">
+            <i class="fa fa-trash"></i>
+        </button>
+    </td>
+</tr>
                 `;
             });
 
