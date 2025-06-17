@@ -3454,7 +3454,10 @@ footer .social-icon {
         .prices {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 15px;
+        }
+        .price-box{
+            width: 100%;
         }
         ._price{
             display: flex;
