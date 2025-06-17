@@ -236,6 +236,8 @@
   }
   .bldc106 li{
     color:#000000;
+    font-size: 16px;
+    line-height: 28.8px;
   }
   .bldc106 strong{
     color:#00473E !important;
