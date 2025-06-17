@@ -23,7 +23,6 @@
         </ul>
         <!-- Your existing jQuery script with minimal changes -->
         <script>
-            
             $(document).ready(function () {
                 const authToken = localStorage.getItem('auth_token'); // Replace with actual token
                 const baseUrl = "<?php echo BASE_URL; ?>/address";
@@ -317,11 +316,6 @@
                 //     });
                 // };
 
-                document.getElementById("addAddressLink").addEventListener("click", function (e) {
-                    e.preventDefault();
-                    openAddAddressForm();
-                });
-
                 // new approach
                 window.openAddAddressForm = function () {
                     const showCreateUserCheckbox = !localStorage.getItem('auth_token');
@@ -329,9 +323,9 @@
                     Swal.fire({
                         title: 'Add New Address',
                         width: '700px', // Wider popup
-                        // customClass: {
-                        //     confirmButton: 'confirmation-btn'
-                        // },
+                        customClass: {
+                            confirmButton: 'confirmation-btn'
+                        },
                         html: `			
                             <form id="swal-address-form">
                                 <input type="text" id="swal_name" placeholder="Name*" required>
@@ -366,10 +360,6 @@
                         confirmButtonText: 'Add Address',
                         cancelButtonText: 'Cancel',
                         focusConfirm: false,
-                        customClass: {
-                            confirmButton: 'address-confirm-btn',
-                            cancelButton: 'address-cancel-btn'
-                        }
                         preConfirm: () => {
                             const name = document.getElementById('swal_name').value.trim();
                             const contact_no = document.getElementById('swal_contact_no').value.trim();
