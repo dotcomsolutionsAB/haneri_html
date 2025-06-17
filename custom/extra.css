@@ -3652,3 +3652,131 @@ footer .social-icon {
         line-height: 28.8px;
         font-weight: 400;
     }
+
+
+
+
+    /* new */
+    .bldc-img {
+        width: 100%;
+        max-width: 762px;
+        height: auto;
+        aspect-ratio: 762 / 508;
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Container and Layout */
+    .bldc001 {
+        /* max-width: 72rem; max-w-6xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem 0rem;
+    }
+
+    .bldc102 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        /* gap-10 */
+    }
+
+    @media (min-width: 1024px) {
+        .bldc102 {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .bldc107 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .bldc107 {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Headings */
+    .bldc103 {
+        font-size: 50px;
+        font-family: 'Barlow Condensed';
+        font-weight: 100;
+        line-height: 1;
+        color: #00473E;
+    }
+
+    @media (min-width: 768px) {
+        .bldc103 {
+        font-size: 50px;
+        }
+    }
+
+    .bldch3 h3{
+        font-family: 'Barlow Condensed' !important;
+        font-weight: 100 !important;
+        line-height: 1 !important;
+        font-size: 35px !important;
+        color: #00473E !important;
+    }
+    .bldch3 p{
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: #000000 !important;
+    }
+    /* Text and Paragraphs */
+    .bldc104 {
+        margin-top: 1rem;
+        text-align: justify;
+        line-height: 1.75;
+        color: #000000;
+        font-size: 16px;
+        line-height: 28.8px;
+        font-weight: 400;
+        font-family: 'Open Sans';
+    }
+
+    /* List Styling */
+    .bldc106 {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        line-height: 1.75;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .bldc106 li{
+        color: #000000;
+        font-size: 16px;
+        line-height: 28.8px;
+    }
+    .bldc106 strong{
+        color: #00473E !important;
+    }
+
+    /* Benefits Block */
+    .bldc108 {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .bldc109 {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #00473E;
+        padding: 5px;
+        align-items: center;
+    }
+    .bldc110 {
+        width: 121px;
+        padding:10px;
+        /* margin-top: 0.25rem; */
+    }
