@@ -3440,6 +3440,14 @@ footer .social-icon {
             padding-left: 10px !important;
             padding-right: 10px !important;
         }
+        .owl-item{
+            width: 302.6px !important;
+            margin-right: 21px !important;
+        }
+        .fst_product_section .container-fluid {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
         /* .container-fluid {
             padding-left: 20px;
             padding-right: 20px;
@@ -3448,9 +3456,7 @@ footer .social-icon {
         .fst_product_section {
             height: max-content;
         }
-        .owl-item{
-            margin-right: 21px !important;
-        } */
+         */
     }
 
     /* Optional: slider image styling */
