@@ -3413,9 +3413,10 @@ footer .social-icon {
             height: fit-content;
             padding-left: 0px;
             padding-right: 0px;
+            max-width: 155px;
         }
         .products_area{
-
+            flex-direction: row;
         }
         .price-box .c_price{
             display: flex;
