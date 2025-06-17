@@ -3644,4 +3644,11 @@ footer .social-icon {
     }
 
 
-    
+    .contents h2{
+        font-size: 55px !important;
+        font-weight: 300;
+    }
+    .contents p{
+        line-height: 28.8px;
+        font-weight: 400;
+    }

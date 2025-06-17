@@ -20,7 +20,7 @@
                 </div><!-- End .about-slider -->
             </div><!-- End .col-lg-5 -->
             <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="heading2 primary margp">Introducing TurboSilent BLDC Technology: Unleashing Unmatched Power and Efficiency</h2>
+                <h2 class="heading2 primary margp"><b>Introducing TurboSilent BLDC Technology:</b> Unleashing Unmatched Power and Efficiency</h2>
                 <p class="paragraph1 light">
                     At Haneri, we redefine engineering excellence with our proprietary
                     <span class="highlight_p">TurboSilent BLDC Technology</span>. This advanced motor design not only delivers
