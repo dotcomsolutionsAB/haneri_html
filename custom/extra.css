@@ -3160,7 +3160,14 @@ footer .social-icon {
         margin-right: 7px;
         display: none;
     }
-
+    .q_head_1{
+        font-weight: 700; 
+        font-size: 100px;
+    }
+    .q_head_2{
+        font-weight: 300; 
+        font-size: 85px;
+    }
 
     .shop-features-section{
         display: flex;
@@ -3371,6 +3378,14 @@ footer .social-icon {
             height: 100%;
             padding: 5px;
             margin-top: 60px;
+        }
+        .q_head_1{
+            font-weight: 700; 
+            font-size: 100px;
+        }
+        .q_head_2{
+            font-weight: 300; 
+            font-size: 85px;
         }
         .shop-features-section{
             gap: 1rem;
