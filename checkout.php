@@ -23,6 +23,7 @@
         </ul>
         <!-- Your existing jQuery script with minimal changes -->
         <script>
+            
             $(document).ready(function () {
                 const authToken = localStorage.getItem('auth_token'); // Replace with actual token
                 const baseUrl = "<?php echo BASE_URL; ?>/address";
@@ -315,6 +316,11 @@
                 //         }
                 //     });
                 // };
+
+                document.getElementById("addAddressLink").addEventListener("click", function (e) {
+                    e.preventDefault();
+                    openAddAddressForm();
+                });
 
                 // new approach
                 window.openAddAddressForm = function () {
