@@ -3440,10 +3440,6 @@ footer .social-icon {
             padding-left: 10px !important;
             padding-right: 10px !important;
         }
-        /* .owl-item{
-            width: 302.6px !important;
-            margin-right: 21px !important;
-        } */
         .fst_product_section .container-fluid {
             padding-left: 10px !important;
             padding-right: 10px !important;
@@ -3500,8 +3496,38 @@ footer .social-icon {
         .specification-section {
             padding: 20px 20px;
         }
+        .spec-title {
+            margin-bottom: 15px;
+        }
 
+        .specs-json-table,
+        .specs-json-table thead,
+        .specs-json-table tbody,
+        .specs-json-table tr,
+        .specs-json-table th,
+        .specs-json-table td {
+            display: block;
+            width: 100%;
+        }
 
+        .specs-json-table tr {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .specs-json-table th {
+            background-color: transparent;
+            color: #00473E;
+            font-weight: 600;
+            padding-bottom: 4px;
+        }
+
+        .specs-json-table td {
+            background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
 
 
     }

@@ -822,8 +822,8 @@
             </div>
 
             <div class="product-box-spec container">
-            <h2 class="spec-title">Technical Specifications</h2>
-            <table id="spec-table" class="specs-json-table"></table>
+                <h2 class="spec-title">Technical Specifications</h2>
+                <table id="spec-table" class="specs-json-table"></table>
             </div>
 
             <script>
