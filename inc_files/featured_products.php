@@ -152,16 +152,11 @@
     headers,
     body: JSON.stringify(cartPayload)
 })
-.then(response => {
-    // Accept both 200 and 201 as success
-    if (response.status === 200 || response.status === 201) {
-        return response.json();
-    } else {
-        throw new Error("Unexpected response status: " + response.status);
-    }
-})
+.then(response => response.json())
 .then(cartRes => {
-    if (cartRes.data) {
+    console.log("Cart response:", cartRes); // ✅ Check actual structure
+
+    if (cartRes && cartRes.data && cartRes.message === "Item added to cart successfully!") {
         const existingTempId = localStorage.getItem("temp_id");
         const authToken = localStorage.getItem("auth_token");
 
@@ -177,8 +172,8 @@
         alert("Failed to add product to cart.");
     }
 })
-.catch(err => {
-    console.error("Cart Add Error:", err);
+.catch(error => {
+    console.error("Cart Add Error:", error);
     alert("An error occurred while adding to cart.");
 });
 
