@@ -7,9 +7,7 @@
         <div>
             <h2 class="bldc103"><b>Introducing TurboSilent BLDC:</b><br>Unleashing Unmatched Power and Efficiency</h2>
             <p class="bldc104">
-                At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced
-                motor design delivers higher torque, exceptional durability and unmatched energy efficiency, setting a new
-                benchmark for fan performance and contributing to a greener environment.
+                At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design not only delivers higher torque and exceptional durability but also ensures unmatched energy efficiency, setting a new benchmark for ceiling fan performance and contributing to a greener environment. Our innovative technology guarantees whisper-quiet operation, providing a peaceful and comfortable atmosphere in your home or office. Additionally, the low maintenance requirements and long-lasting build make our fans a reliable and cost-effective choice for modern living
             </p>
         </div>
     </div>
@@ -19,9 +17,7 @@
         <div>
             <h2 class="bldc103 mb-4">Why TurboSilent BLDC Technology?</h2>
             <p class="bldc104">
-                TurboSilent BLDC Technology features advanced thermal management, a compact design, and smart control systems
-                that optimize performance and responsiveness. Real-time monitoring and predictive diagnostics further enhance
-                its efficiency.
+                TurboSilent BLDC Technology also features advanced thermal management solutions, allowing the motor to operate efficiently across a wide range of temperatures. Its compact and lightweight design facilitates easy integration into various applications, from industrial machinery to consumer electronics. Additionally, the system incorporates sophisticated control algorithms that optimize performance and responsiveness, providing smooth and quiet operation even under demanding conditions. With its innovative features, TurboSilent BLDC motors set a new standard for durability, efficiency, and performance in modern motor technology. The integration of intelligent sensors and feedback systems enhances real-time monitoring, enabling predictive diagnostics and further optimizing operational efficiency. Overall, TurboSilent BLDC motors represent a cutting-edge solution that combines innovation, durability, and versatility to meet the evolving demands of modern industries and electronic devices.
             </p>
         </div>
         <div class="bldc105">
@@ -38,17 +34,15 @@
             <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
             <ul class="bldc106">
                 <li>
-                    <strong>Electromagnetic Optimization:</strong> Finite Element Analysis (FEA) validates the magnetic circuit,
-                    minimizing losses.</li>
+                    <strong>Electromagnetic Optimization:</strong> Uses Finite Element Analysis (FEA) to design and validate the magnetic circuit, maximizing flux density while minimizing losses.</li>
                 <li>
-                    <strong>Thermal Management:</strong> Optimized cooling and ventilation ensure performance under load.
+                    <strong>Thermal Management:</strong>  Employs advanced cooling designs, including optimized ventilation paths and materials, to maintain motor efficiency under continuous operation.
                 </li>
                 <li>
-                    <strong>Smart Power Electronics:</strong> FOC technology ensures consistent torque and speed regulation.
+                    <strong>Smart Power Electronics:</strong> Integrated drivers, meticulously designed for seamless operation, instil confidence with precise speed control and minimal switching losses. Advanced motor control algorithms, including Field-Oriented Control (FOC), enable precise torque and speed regulation.
                 </li>
                 <li>
-                    <strong>Structural Engineering:</strong> Durable, lightweight materials reduce weight and improve
-                efficiency.
+                    <strong>Structural Engineering:</strong> The magnet rotor dynamics are meticulously optimized, providing reassuring stability and minimizing resonance at all operating speeds. Lightweight, high-strength materials not only reduce the motor's overall weight but also enhance its durability and performance, achieving the perfect balance between these factors.
                 </li>
             </ul>
         </div>
