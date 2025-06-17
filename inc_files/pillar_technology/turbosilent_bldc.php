@@ -78,7 +78,7 @@
             <div class="bldc108">
                 <div>
                     <div class="bldc109">
-                        <img src="images/benifits/comfort.png" class="bldc110" alt="Comfort Icon"/> 
+                        <img src="images/g_4.png" class="bldc110" alt="Comfort Icon"/> 
                         <div class="bldch3">
                             <h3>Enhanced Comfort</h3>
                             <p>
@@ -88,22 +88,37 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="bldc109">
-                        <img src="images/benifits/cost savings.png" class="bldc110" alt="Savings Icon" /> 
-                        Cost Savings</h3>
-                    <p>Energy-efficient operation translates to long-term savings on electricity bills.</p>
+                    <div class="bldc109">
+                        <img src="images/g_5.png" class="bldc110" alt="Cost Savings"/> 
+                        <div class="bldch3">
+                            <h3>Cost Savings</h3>
+                            <p>
+                                Energy-efficient operation translates to long-term savings on electricity bills.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="bldc109"><img src="images/benifits/sustainable choice.png" class="bldc110" alt="Eco Icon" />
-                        Sustainable Choice</h3>
-                    <p>Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption</p>
+                    <div class="bldc109">
+                        <img src="images/g_6.png" class="bldc110" alt="Sustainable Choice"/> 
+                        <div class="bldch3">
+                            <h3>Sustainable Choice</h3>
+                            <p>
+                                This Technology contributes to a greener, more sustainable environment by reducing energy consumption.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="bldc109">
-                        <img src="images/benifits/enh.jpeg" class="bldc110" alt="Design Icon" /> Modern Aesthetics
-                    </h3>
-                    <p>Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your
-                        space.</p>
+                    <div class="bldc109">
+                        <img src="images/g_7.png" class="bldc110" alt="Modern Aesthetics"/> 
+                        <div class="bldch3">
+                            <h3>Modern Aesthetics</h3>
+                            <p>
+                                Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,6 +198,16 @@
     }
   }
 
+  .bldch3 h3{
+    font-family: 'Barlow Condensed' !important;
+    font-weight: 100 !important;
+    line-height: 1 !important;
+  }
+  .bldch3 p{
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+  }
   /* Text and Paragraphs */
   .bldc104 {
     margin-top: 1rem;
@@ -228,12 +253,13 @@
     font-size: 1.125rem;
     font-weight: 700;
     color: #047857;
-    /* text-green-700 */
+    padding: 5px;
+    align-items: center;
   }
 
   .bldc110 {
     width: 124.28px;
     height: 135px;
-    margin-top: 0.25rem;
+    /* margin-top: 0.25rem; */
   }
 </style>
