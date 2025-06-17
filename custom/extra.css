@@ -3555,67 +3555,62 @@ footer .social-icon {
             background-color: #31585824;
             border-bottom: 3px solid #fff;
         }
-
-
         .table-cart thead {
-    display: none; /* Hide headers */
-  }
+            display: none; /* Hide headers */
+        }
+        .table-cart tr {
+            display: block;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .table-cart td {
+            display: flex;
+            width: 100%;
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+        .table-cart td::before {
+            content: attr(data-label);
+            font-weight: 600;
+            color: #00473E;
+            flex: 1;
+            text-align: left;
+        }
+        .table-cart td:last-child {
+            border-bottom: none;
+        }
+        .table-cart td > *:not(:first-child) {
+            flex: 1;
+            text-align: right;
+        }
+        /* Quantity container better stacking */
+        .quantity-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+        }
+        .horizontal-quantity {
+            width: 40px;
+            text-align: center;
+        }
+        .btn-remove-item {
+            background: none;
+            border: none;
+            color: #c00;
+        }
 
-  .table-cart tr {
-    display: block;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-  }
 
-  .table-cart td {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    border: none;
-    border-bottom: 1px solid #eee;
-  }
+    }
 
-  .table-cart td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #00473E;
-    flex: 1;
-    text-align: left;
-  }
-
-  .table-cart td:last-child {
-    border-bottom: none;
-  }
-
-  .table-cart td > *:not(:first-child) {
-    flex: 1;
-    text-align: right;
-  }
-
-  /* Quantity container better stacking */
-  .quantity-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .horizontal-quantity {
-    width: 40px;
-    text-align: center;
-  }
-
-  .btn-remove-item {
-    background: none;
-    border: none;
-    color: #c00;
-  }
-
+    .checkout-methods a{
+        background-color: #00473E;
     }
 
     /* Optional: slider image styling */
