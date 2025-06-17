@@ -3609,7 +3609,10 @@ footer .social-icon {
 
     }
 
-    .payment-methods button{
+    .btn-place-order{
+        background-color: #00473E !important;
+    }
+    .btn-get-quotation{
         background-color: #00473E !important;
     }
     .checkout-methods a{
