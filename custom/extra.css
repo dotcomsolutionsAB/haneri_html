@@ -3451,6 +3451,26 @@ footer .social-icon {
         .fst_product_section {
             height: max-content;
         }
+        .prices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        ._price{
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 10px;
+        }
+        .product-single-details .old-price {
+            font-size: 2rem !important;
+        }
+        .s_price {
+            font-style: italic;
+            font-weight: 800;
+            font-size: 18px;
+            display: flex !important;
+            margin-top: 5px;
+        }
     }
 
     /* Optional: slider image styling */
