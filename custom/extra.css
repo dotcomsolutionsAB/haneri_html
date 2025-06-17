@@ -3312,6 +3312,10 @@ footer .social-icon {
             color: #333;
             width: 100%;
         }
+        .about-content {
+            display: flex;
+            gap: 10px;
+        }
         .q_head {
             font-family: "Barlow Condensed", sans-serif;
             font-size: 50px;
