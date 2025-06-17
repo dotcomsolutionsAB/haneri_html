@@ -55,20 +55,19 @@
             <h2 class="bldc103 mb-4">Unique Advantages of TurboSilent BLDC Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
-                    <strong>Higher Torque:</strong> Optimized magnetic design achieves better torque across speeds.
+                    <strong>Higher Torque for Optimized Performance :</strong> The TurboSilent motor stands out with its superior performance. It achieves higher torque through optimized magnetic flux density and reduced electromagnetic losses. Advanced stator and magnet designs enhance the torque constant (kT), providing superior air circulation, even at varying speeds.
                 </li>
                 <li>
-                    <strong>Long-Term Durability:</strong> Balanced rotors, precision bearings, and low-degradation materials.
+                    <strong>Long-Term Durability : </strong>  Designed for long-term durability, the TurboSilent motors are constructed with premium-grade laminations and heat-resistant winding materials to minimize core losses and thermal degradation. The motor is fitted with high-precision ball bearings and balanced rotor assemblies, reducing mechanical wear and extending operational life.
                 </li>
                 <li>
-                    <strong>Energy Efficiency:</strong> Reduced current ripple and improved performance up to 65% more
-                efficient.
+                    <strong>Enhanced Energy Efficiency :</strong>  TurboSilent motors utilize sinusoidal commutation to reduce current ripple and improve efficiency. Power electronics are optimized to deliver consistent performance while consuming up to 65% less energy than traditional motors.
                 </li>
                 <li>
-                    <strong>Electronics Reliability:</strong> Indian-made PCBs with rigorous heat and load testing.
+                    <strong>Thermal Management of Electronics : </strong> Electronics PCBs are made in India and have been tested according to Indian conditions. A key focus is the thermal management of critical components to ensure longer life and better performance.
                 </li>
                 <li>
-                    <strong>Custom Testing:</strong> CAE simulation ensures robust design in real-world conditions.
+                    <strong>In-House Innovation and Testing :</strong> Developed using simulation tools for computational electromagnetic analysis (CEM). Rigorously validated under real-world conditions to ensure robustness across a wide range of operating environments
                 </li>
             </ul>
         </div>
