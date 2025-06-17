@@ -3435,15 +3435,16 @@ footer .social-icon {
             justify-content: center;
             align-items: center;
         }
+        .product-single-gallery {
+            margin-bottom: 1.5rem;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
         /* .container-fluid {
             padding-left: 20px;
             padding-right: 20px;
         }
-        .product-single-gallery {
-            margin-bottom: 1.5rem;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
+        
         .fst_product_section {
             height: max-content;
         }
