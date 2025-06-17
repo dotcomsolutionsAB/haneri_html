@@ -2,7 +2,7 @@
 <div class="bldc001">
     <div class="bldc102">
         <div>
-            <img src="images/f12.png" alt="Motor Visual" class="bldc-img" />
+            <img src="images/g_1.png" alt="Motor Visual" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103">Introducing TurboSilent BLDC:<br>Unleashing Unmatched Power and Efficiency</h2>
@@ -25,14 +25,14 @@
             </p>
         </div>
         <div class="bldc105">
-        <img src="images/f12.png" alt="Blade Design" class="bldc-img" />
+        <img src="images/g_2.png" alt="Blade Design" class="bldc-img" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
         <div>
-        <img src="images/f12.png" alt="Motor Render" class="bldc-img" />
+        <img src="images/g_3.png" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
