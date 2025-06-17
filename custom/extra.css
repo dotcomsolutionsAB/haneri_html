@@ -3372,6 +3372,7 @@ footer .social-icon {
             gap: 1rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            padding: 2rem 0rem;
         }
         .shop_products{
             height: fit-content;
