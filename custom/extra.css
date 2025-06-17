@@ -3607,6 +3607,27 @@ footer .social-icon {
         }
 
 
+        #swal-address-form {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+        }
+        .address-confirm-btn {
+            background-color: #00473E !important;
+            color: white !important;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-weight: 600;
+        }
+        .address-cancel-btn {
+            background-color: #e0e0e0 !important;
+            color: #333 !important;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-weight: 500;
+        }
+
+
     }
 
     .btn-place-order{

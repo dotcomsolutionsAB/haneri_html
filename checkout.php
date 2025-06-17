@@ -360,6 +360,10 @@
                         confirmButtonText: 'Add Address',
                         cancelButtonText: 'Cancel',
                         focusConfirm: false,
+                        customClass: {
+                            confirmButton: 'address-confirm-btn',
+                            cancelButton: 'address-cancel-btn'
+                        }
                         preConfirm: () => {
                             const name = document.getElementById('swal_name').value.trim();
                             const contact_no = document.getElementById('swal_contact_no').value.trim();
