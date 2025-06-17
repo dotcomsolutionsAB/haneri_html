@@ -3609,6 +3609,9 @@ footer .social-icon {
 
     }
 
+    .btn-place-order{
+        background-color: #00473E !important;
+    }
     .checkout-methods a{
         background-color: #00473E;
     }
