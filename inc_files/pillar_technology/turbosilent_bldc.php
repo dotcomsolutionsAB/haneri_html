@@ -202,6 +202,8 @@
     font-family: 'Barlow Condensed' !important;
     font-weight: 100 !important;
     line-height: 1 !important;
+    font-size: 35px !important;
+    color: #00473E !important;
   }
   .bldch3 p{
     font-size: 16px !important;
@@ -258,8 +260,7 @@
   }
 
   .bldc110 {
-    width: 124.28px;
-    height: 135px;
+    width: 121px;
     /* margin-top: 0.25rem; */
   }
 </style>
