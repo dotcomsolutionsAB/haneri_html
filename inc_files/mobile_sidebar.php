@@ -6,7 +6,7 @@
                 <a href="shop.php">Categories</a>
                 <ul>
                     <li><a href="shop.php">Ceiling Fan</a></li>
-                    <li><a href="shop.php">able Wall Pedestals</a></li>
+                    <li><a href="shop.php">Table Wall Pedestals</a></li>
                     <li><a href="shop.php">Domestic Exhaust</a></li>
                     <li><a href="shop.php">Personal</a></li>
                     <!-- <li><a href="category-infinite-scroll.html">Ajax Infinite Scroll<span
