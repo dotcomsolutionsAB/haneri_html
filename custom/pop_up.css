@@ -25,10 +25,36 @@
     justify-content: flex-end;
     margin-top: 20px;
 }
-.confirmation-btn {
-    background-color: #1b4e47 !important;
+.add-address-btn {
+    
 }
 
+.add-address-btn {
+    background-color: #00473E !important;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+}
+
+.add-address-btn:hover {
+    background-color: rgb(24, 93, 84);
+}
+
+.cancel-address-btn {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    margin-left: 10px;
+}
+
+.cancel-address-btn:hover {
+    background-color: #c82333;
+}
 
 @media (max-width: 520px) {
     #swal-address-form {
