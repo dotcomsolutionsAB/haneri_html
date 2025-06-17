@@ -2,10 +2,10 @@
 <div class="bldc001">
     <div class="bldc102">
         <div>
-            <img src="images/g_1.png" alt="Motor Visual" class="bldc-img" />
+            <img src="images/g_3.png" alt="Motor Visual" class="bldc-img" />
         </div>
         <div>
-            <h2 class="bldc103">Introducing TurboSilent BLDC:<br>Unleashing Unmatched Power and Efficiency</h2>
+            <h2 class="bldc103"><b>Introducing TurboSilent BLDC:</b><br>Unleashing Unmatched Power and Efficiency</h2>
             <p class="bldc104">
                 At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced
                 motor design delivers higher torque, exceptional durability and unmatched energy efficiency, setting a new
@@ -32,7 +32,7 @@
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
         <div>
-        <img src="images/g_3.png" alt="Motor Render" class="bldc-img" />
+        <img src="images/g_1.png" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
