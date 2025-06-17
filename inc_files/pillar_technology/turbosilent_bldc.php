@@ -215,7 +215,7 @@
     margin-top: 1rem;
     text-align: justify;
     line-height: 1.75;
-    color: #1f2937;
+    color: #000000;
     font-size: 16px;
     line-height: 28.8px;
     font-weight: 400;
@@ -223,13 +223,7 @@
   }
 
   /* Image Wrapper Border */
-  .bldc105 {
-    border-width: 4px;
-    border-color: #60a5fa;
-    /* border-blue-400 */
-    border-radius: 0.5rem;
-    overflow: hidden;
-  }
+
 
   /* List Styling */
   .bldc106 {
@@ -239,6 +233,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+  .bldc106 li{
+    color:#000000;
+  }
+  .bldc106 strong{
+    color:#00473E !important;
   }
 
   /* Benefits Block */
@@ -261,6 +261,7 @@
 
   .bldc110 {
     width: 121px;
+    padding:10px;
     /* margin-top: 0.25rem; */
   }
 </style>
