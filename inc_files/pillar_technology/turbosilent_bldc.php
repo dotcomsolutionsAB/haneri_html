@@ -1,242 +1,176 @@
 
-<div class="history-section pb-3">
-    <div class="containe">
+  <style>
 
-        <div class="row row-bg">
-            <div class="col-xl-6 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/f12.png"
-                            src="images/f12.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-6 col-lg-6 contents">
-                <h2 class="heading2 primary margp"><b>Introducing TurboSilent BLDC Technology:</b> Unleashing Unmatched Power and Efficiency</h2>
-                <p class="paragraph1 light">
-                    At Haneri, we redefine engineering excellence with our proprietary
-                    <span class="highlight_p">TurboSilent BLDC Technology</span>. This advanced motor design not only delivers
-                    higher torque and exceptional durability but also ensures unmatched energy efficiency,
-                    setting a new benchmark for ceiling fan performance and contributing to a greener environment.
-                </p>
-            </div>
+    /* Container and Layout */
+    .bldc001 {
+        max-width: 72rem; /* max-w-6xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem 1rem;
+    }
+    .bldc102 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem; /* gap-10 */
+    }
+    @media (min-width: 1024px) {
+        .bldc102 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .bldc107 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+    @media (min-width: 768px) {
+        .bldc107 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Headings */
+    .bldc103 {
+        font-size: 1.5rem; /* text-2xl */
+        font-weight: 700; /* font-bold */
+        color: #065f46; /* text-green-800 */
+    }
+    @media (min-width: 768px) {
+        .bldc103 {
+            font-size: 1.875rem;
+        }
+    }
+
+    /* Text and Paragraphs */
+    .bldc104 {
+        margin-top: 1rem;
+        text-align: justify;
+        line-height: 1.75;
+        color: #1f2937; /* text-gray-800 */
+    }
+
+    /* Image Wrapper Border */
+    .bldc105 {
+        border-width: 4px;
+        border-color: #60a5fa; /* border-blue-400 */
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    /* List Styling */
+    .bldc106 {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        line-height: 1.75;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Benefits Block */
+    .bldc108 {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .bldc109 {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #047857; /* text-green-700 */
+    }
+    .bldc110 {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: 0.25rem;
+    }
+
+  </style>
+
+
+  <!-- Section 1 -->
+  <div class="bldc001">
+    <div class="bldc102">
+      <div>
+        <img src="images/motor1.jpg" alt="Motor Visual" class="w-full rounded" />
+      </div>
+      <div>
+        <h2 class="bldc103">Introducing TurboSilent BLDC:<br>Unleashing Unmatched Power and Efficiency</h2>
+        <p class="bldc104">
+          At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design delivers higher torque, exceptional durability and unmatched energy efficiency, setting a new benchmark for fan performance and contributing to a greener environment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="bldc102 mt-10">
+      <div>
+        <h2 class="bldc103 mb-4">Why TurboSilent BLDC Technology?</h2>
+        <p class="bldc104">
+          TurboSilent BLDC Technology features advanced thermal management, a compact design, and smart control systems that optimize performance and responsiveness. Real-time monitoring and predictive diagnostics further enhance its efficiency.
+        </p>
+      </div>
+      <div class="bldc105">
+        <img src="images/blade.png" alt="Blade Design" class="w-full object-contain" />
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="bldc102 mt-10">
+      <div>
+        <img src="images/motor2.jpg" alt="Motor Render" class="w-full rounded" />
+      </div>
+      <div>
+        <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
+        <ul class="bldc106">
+          <li><strong>Electromagnetic Optimization:</strong> Finite Element Analysis (FEA) validates the magnetic circuit, minimizing losses.</li>
+          <li><strong>Thermal Management:</strong> Optimized cooling and ventilation ensure performance under load.</li>
+          <li><strong>Smart Power Electronics:</strong> FOC technology ensures consistent torque and speed regulation.</li>
+          <li><strong>Structural Engineering:</strong> Durable, lightweight materials reduce weight and improve efficiency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="bldc107">
+      <!-- Left: Advantages -->
+      <div>
+        <h2 class="bldc103 mb-4">Unique Advantages of TurboSilent BLDC Technology</h2>
+        <ul class="bldc106 text-justify">
+          <li><strong>Higher Torque:</strong> Optimized magnetic design achieves better torque across speeds.</li>
+          <li><strong>Long-Term Durability:</strong> Balanced rotors, precision bearings, and low-degradation materials.</li>
+          <li><strong>Energy Efficiency:</strong> Reduced current ripple and improved performance up to 65% more efficient.</li>
+          <li><strong>Electronics Reliability:</strong> Indian-made PCBs with rigorous heat and load testing.</li>
+          <li><strong>Custom Testing:</strong> CAE simulation ensures robust design in real-world conditions.</li>
+        </ul>
+      </div>
+
+      <!-- Right: Customer Benefits -->
+      <div>
+        <h2 class="bldc103 mb-4">Benefits For Customers</h2>
+        <div class="bldc108">
+          <div>
+            <h3 class="bldc109"><img src="icons/comfort.png" class="bldc110" alt="Comfort Icon"/> Enhanced Comfort</h3>
+            <p>Superior cooling with high air delivery for a refreshing experience.</p>
+          </div>
+          <div>
+            <h3 class="bldc109"><img src="icons/savings.png" class="bldc110" alt="Savings Icon"/> Cost Savings</h3>
+            <p>Energy-efficient motors save on long-term electricity bills.</p>
+          </div>
+          <div>
+            <h3 class="bldc109"><img src="icons/sustainability.png" class="bldc110" alt="Eco Icon"/> Sustainable Choice</h3>
+            <p>Eco-friendly technology that helps reduce carbon footprint.</p>
+          </div>
+          <div>
+            <h3 class="bldc109"><img src="icons/design.png" class="bldc110" alt="Design Icon"/> Modern Aesthetics</h3>
+            <p>Stylish blade designs that complement modern interiors.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/f12.png"
-                            src="images/f12.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="heading2 primary margp">Why TurboSilent BLDC Technology?</h2>
-                <p class="paragraph1">
-                    <span class="highlight_p">TurboSilent BLDC (Brushless Direct Current) Technology</span> is an in-house developed
-                    motor system that employs high-tech electromagnetic and mechanical design principles. This
-                    cutting-edge innovation enhances torque delivery, minimizes energy losses, and ensures extended
-                    motor lifespan. TurboSilent motors are engineered to outperform conventional systems, offering
-                    industry-leading reliability and precision that you can trust.
-                </p>
-            </div>
-        </div>
-
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/f12.png"
-                            src="images/f12.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 contents">
-                <h2 class="heading2 primary margp">Unique Advantages of TurboSilent BLDC Technology</h2>
-                <ul class="ulclass">
-                    <li>
-                        <span class="highlight_p">
-                            Higher Torque for Optimized Performance
-                        </span>
-                        The TurboSilent motor stands out with its superior performance. It achieves higher torque through optimized magnetic flux density and reduced electromagnetic losses. Advanced stator and magnet designs enhance the torque constant (kT), providing superior air circulation, even at varying speeds.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                            Long-Term Durability
-                        </span>
-                        Designed for long-term durability, the TurboSilent motors are constructed with premium-grade laminations and heat-resistant winding materials to minimize core losses and thermal degradation. The motor is fitted with high-precision ball bearings and balanced rotor assemblies, reducing mechanical wear and extending operational life.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                            Enhanced Energy Efficiency
-                        </span>
-                        TurboSilent motors utilize sinusoidal commutation to reduce current ripple and improve efficiency. Power electronics are optimized to deliver consistent performance while consuming up to 65% less energy than traditional motors.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                            Thermal Management of Electronics
-                        </span>
-                        Electronics PCBs are made in India and have been tested according to Indian conditions. A key focus is the thermal management of critical components to ensure longer life and better performance.
-                    </li>
-                    <li>
-                        <span class="highlight_p">
-                            In-House Innovation and Testing
-                        </span>
-                        Developed using simulation tools for computational electromagnetic analysis (CEM). Rigorously validated under real-world conditions to ensure robustness across a wide range of operating environments.
-                    </li>
-                </ul>
-            </div><!-- End .col-lg-7 -->
-        </div>
-
-        <div class="row row-bg">
-            <div class="col-xl-5 col-lg-6">
-                <div class="about-slider owl-carousel owl-theme dots-simple">
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/f8.png"
-                            src="images/f8.png" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                    <div class="about-slider-item">
-                        <img class="owl-lazy" data-src="images/place.jpg"
-                            src="images/place.jpg" alt="About image description">
-                    </div>
-                </div><!-- End .about-slider -->
-            </div><!-- End .col-lg-5 -->
-            <div class="col-xl-7 col-lg-6 order-lg-first contents">
-                <h2 class="heading2 primary margp">
-                    The Science Behind TurboSilent BLDC Technology
-                </h2>
-                <ul class="ulclass dark">
-                    <li>
-                        <span class="highlight_p">
-                            Electromagnetic Optimization
-                        </span>
-                        Uses Finite Element Analysis (FEA) to design and validate the magnetic circuit, maximizing flux density while minimizing losses.
-                    </li>
-                    <li><span class="highlight_p">Thermal Management</span>
-                        Employs advanced cooling designs, including optimized ventilation paths and materials, to maintain motor efficiency under continuous operation.
-                    </li>
-                    <li><span class="highlight_p">Smart Power Electronics</span>
-                        Integrated drivers, meticulously designed for seamless operation, instil confidence with precise speed control and minimal switching losses. Advanced motor control algorithms, including Field-Oriented Control (FOC), enable precise torque and speed regulation.
-                    </li>
-                    <li><span class="highlight_p">Structural Engineering</span>
-                        The magnet rotor dynamics are meticulously optimized, providing reassuring stability and minimizing resonance at all operating speeds. Lightweight, high-strength materials not only reduce the motor's overall weight but also enhance its durability and performance, achieving the perfect balance between these factors.
-                    </li>
-                </ul>                
-            </div>
-        </div><!-- End .row -->
-
-        <div class="row-bg">
-            <div class="containe">
-                <h2 class="heading2 primary margp">Benefits for Customers</h2>
-            </div>
-            <div class="eow rowws">
-                <!-- Column 1 -->
-                <div class="">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <!-- Replace with your icon path/size -->
-                            <img src="images/benifits/comfort.png" alt="Enhanced Comfort" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="heading2 primary highlight_h1">Enhanced Comfort</h2>
-                                <p class="paragraph1 dark">Experience superior cooling with high air delivery, ensuring a refreshing breeze in every corner of the room.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <img src="images/benifits/cost savings.png" alt="Cost Savings" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="heading2 primary highlight_h1">Cost Savings</h2>
-                                <p class="paragraph1 dark">Energy-efficient operation translates to long-term savings on electricity bills.</p> 
-                            </div>           
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="">
-                    <div class="custom-box">
-                    <div class="icon-box">
-                        <img src="images/benifits/sustainable choice.png" alt="Sustainable Choice" style="">
-                    </div>
-                    <div class="custom-content">
-                        <div class="txtt">
-                            <h2 class="heading2 primary highlight_h1">Sustainable Choice</h2>
-                            <p class="paragraph1 dark">Air Curve Design contributes to a greener, more sustainable environment by reducing energy consumption.</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- column 4 -->
-                <div class="">
-                    <div class="custom-box">
-                        <div class="icon-box">
-                            <img src="images/benifits/enh.jpeg" alt="Modern Aesthetics" style="">
-                        </div>
-                        <div class="custom-content">
-                            <div class="txtt">
-                                <h2 class="heading2 primary highlight_h1">Modern Aesthetics</h2>
-                                <p class="paragraph1 dark">Sleek, innovative blade designs complement contemporary interiors, adding a touch of sophistication to your space.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-
-        <div class="row-bg why">
-            <div class="col-md-12">
-                <p class="pb-2"></p>
-                <h2 class="heading2 light">
-                    Why Choose HANERI TurboSilent Ceiling Fans?
-                </h2>
-                <p class="paragraph1 light">
-                    HANERI’S TurboSilent BLDC Technology offers a sophisticated combination of engineering precision and operational excellence. Focusing on high torque, energy savings, and durability, TurboSilent motors set the gold standard in modern ceiling fan design.
-                </p>
-            </div>
-        </div><!-- End .row -->
-
-    </div><!-- End .container -->
-</div><!-- End .history-section -->
-
-<div class="mb-3"></div><!-- margin -->
 
