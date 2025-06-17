@@ -46,7 +46,7 @@
                                 <button class="qty-btn plusb">+</button>
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" id="addcart" class="add-to-cart-btn" data-product-id="${product.id}" 
+                                <a href="#" id="addcartbs" class="add-to-cart-btn" data-product-id="${product.id}" 
                                    data-variant-id="${variant.id}">Add to Cart</a>
                             </div>
                         </div>
@@ -67,8 +67,8 @@
                         }
                     }
 
-                    // Add to Cart handler using id="addcart"
-                    if (e.target.id === 'addcart') {
+                    // Add to Cart handler using id="addcartbs"
+                    if (e.target.id === 'addcartbs') {
                         e.preventDefault();
 
                         const productId = e.target.dataset.productId;
