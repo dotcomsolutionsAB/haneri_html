@@ -502,7 +502,6 @@
     </div>
     <div class="page-wrapper">
         <main class="main">
-
             <div class="container product-single-container product-single-default product-full-width fst_product_section">
                 
                 <div class="container-fluid pl-lg-0 padding-right-lg">

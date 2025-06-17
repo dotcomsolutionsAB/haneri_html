@@ -115,75 +115,38 @@
                             cartPayload.cart_id = existingTempId;
                         }
 
-                        // fetch("<?php echo BASE_URL; ?>/cart/add", {
-                        //     method: "POST",
-                        //     headers,
-                        //     body: JSON.stringify(cartPayload)
-                        // })
-                        // .then(response => response.json())
-                        // .then(cartRes => {
-                        //     if (cartRes.data) {
-                        //         // Save temp_id if first time (you can use user_id or generate cart_id depending on your backend logic)
-                        //         const existingTempId = localStorage.getItem("temp_id");
-                        //         const authToken = localStorage.getItem("auth_token");
-                        //         if(existingTempId){
-                        //             console.log("Temp ID is:", existingTempId);
-                        //         }else{
-                        //             console.log("Auth token is:", authToken)
-                        //         }
-                        //         if (!authToken && !existingTempId && cartRes.data.user_id) {
-                        //             localStorage.setItem("temp_id", cartRes.data.user_id);
-                        //         }
-
-                        //         const cardFoot = e.target.closest(".card-foot");
-                        //         cardFoot.innerHTML = `
-                        //             <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
-                        //         `;
-                        //     } else {
-                        //         alert("Failed to add product to cart.");
-                        //     }
-                        // })
-                        // .catch(err => {
-                        //     console.error("Cart Add Error:", err);
-                        //     alert("An error occurred while adding to cart.");
-                        // });
                         fetch("<?php echo BASE_URL; ?>/cart/add", {
-    method: "POST",
-    headers,
-    body: JSON.stringify(cartPayload)
-})
-.then(response => {
-    // Always manually parse status 200 or 201
-    if (response.status === 200 || response.status === 201) {
-        return response.json();
-    } else {
-        throw new Error("Unexpected status: " + response.status);
-    }
-})
-.then(cartRes => {
-    console.log("✅ Cart API success:", cartRes);
+                            method: "POST",
+                            headers,
+                            body: JSON.stringify(cartPayload)
+                        })
+                        .then(response => response.json())
+                        .then(cartRes => {
+                            if (cartRes.data) {
+                                // Save temp_id if first time (you can use user_id or generate cart_id depending on your backend logic)
+                                const existingTempId = localStorage.getItem("temp_id");
+                                const authToken = localStorage.getItem("auth_token");
+                                if(existingTempId){
+                                    console.log("Temp ID is:", existingTempId);
+                                }else{
+                                    console.log("Auth token is:", authToken)
+                                }
+                                if (!authToken && !existingTempId && cartRes.data.user_id) {
+                                    localStorage.setItem("temp_id", cartRes.data.user_id);
+                                }
 
-    if (cartRes.data) {
-        const existingTempId = localStorage.getItem("temp_id");
-        const authToken = localStorage.getItem("auth_token");
-
-        if (!authToken && !existingTempId && cartRes.data.user_id) {
-            localStorage.setItem("temp_id", cartRes.data.user_id);
-        }
-
-        const cardFoot = e.target.closest(".card-foot");
-        cardFoot.innerHTML = `
-            <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
-        `;
-    } else {
-        alert("❌ Failed to add product to cart.");
-    }
-})
-.catch(error => {
-    console.error("❌ Cart Add Error:", error);
-    alert("An error occurred while adding to cart.");
-});
-
+                                const cardFoot = e.target.closest(".card-foot");
+                                cardFoot.innerHTML = `
+                                    <a href="cart.php" class="go-to-cart-btn heading2">View Cart</a>
+                                `;
+                            } else {
+                                alert("Failed to add product to cart.");
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Cart Add Error:", err);
+                            alert("An error occurred while adding to cart.");
+                        });
 
                     }
                 });
