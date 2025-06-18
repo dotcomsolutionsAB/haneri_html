@@ -33,7 +33,7 @@
                             <input type="password" class="form-input form-wide" id="register-password" required />
 
                             <div class="form-footer mb-2">
-                                <button type="submit" class="btn btn-dark btn-md w-100 mr-0">REGISTER</button>                                        
+                                <button type="submit" class="btn register_btn btn-md w-100 mr-0">REGISTER</button>                                        
                             </div>
                             <p>Already have an account?
                                 <a href="login.php" class="forget-password text-dark form-footer-right">Login</a>

@@ -1015,6 +1015,14 @@ Turbosilent
         background-color:#075e5e !important;
         color: #ffffff !important;
     }
+    .register_btn{
+        background-color:#00473E !important;
+        color: #ffffff !important;
+    }
+    .register_btn:hover {
+        background-color:#075e5e !important;
+        color: #ffffff !important;
+    }
   /* Body Main heading */
     .primary{
       color:#00473E !important;
