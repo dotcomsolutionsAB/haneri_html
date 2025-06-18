@@ -1007,11 +1007,11 @@ Turbosilent
     .list li:before {
       font-size: 18px;
     }
-    .login_btn, .reset_btn, .register_btn{
+    .login_btn, .reset_btn, .register_btn, .profile_save {
         background-color:#00473E !important;
         color: #ffffff !important;
     }
-    .login_btn:hover, .register_btn:hover, .reset_btn:hover {
+    .login_btn:hover, .register_btn:hover, .reset_btn:hover, .profile_save:hover {
         background-color:#075e5e !important;
         color: #ffffff !important;
     }

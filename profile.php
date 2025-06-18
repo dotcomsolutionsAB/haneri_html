@@ -782,7 +782,7 @@
 							</div>
 
 							<div class="form-footer mt-3 mb-0">
-								<button type="button" class="btn btn-dark mr-0" id="saveProfileBtn">
+								<button type="button" class="btn profile_save mr-0" id="saveProfileBtn">
 									Save changes
 								</button>
 							</div>
