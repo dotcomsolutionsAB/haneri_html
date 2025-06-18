@@ -137,12 +137,12 @@
 }
 
 .btn-send-msg{
-    color: #fff;
+    color: #fff !important;
     background-color: #315858;
     border-color: #315858;
  }
  .btn-send-msg:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #00473e;
     border-color: #00473eb3;
 }
