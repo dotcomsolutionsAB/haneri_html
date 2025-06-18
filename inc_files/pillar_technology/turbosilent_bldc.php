@@ -137,6 +137,3 @@
     </div>
 </div><!-- End .row -->
 
-<style>
-    
-</style>
