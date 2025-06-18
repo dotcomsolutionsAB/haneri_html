@@ -214,8 +214,8 @@
 								</tbody>
 							</table>
 							<hr class="mt-0 mb-3 pb-2" />
-							<a href="shop.php" class="btn btn-dark">Go Shop</a>
 						</div>
+						<!-- <a href="shop.php" class="btn btn-dark">Go Shop</a> -->
 					</div>
 				</div>
 				<!--Orders Fetch Script -->
