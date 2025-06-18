@@ -3286,12 +3286,11 @@ footer .social-icon {
     }
     .air_curve_span2{
         color: black; 
-        text-align: justify;
+        line-height: 1.8;
         font-size: 16px; 
-        text-align: justify;
-        font-family: Open Sans; 
+        /* text-align: justify; */
+        font-family: 'Open Sans'; 
         font-weight: 400; 
-        word-wrap: break-word
     }
     .air_curve_span_h2{
         color: #00473E; 
