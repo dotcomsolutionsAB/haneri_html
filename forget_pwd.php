@@ -10,7 +10,7 @@
                 <div class="login_reg_container">
                     <div class="col-md-6">
                         <p>
-                            Lost your password? 
+                            <strong>Lost your password?</strong> 
                             <br>
                             Please enter your username or email address. You will receive a link to create a new password via email.
                         </p>
