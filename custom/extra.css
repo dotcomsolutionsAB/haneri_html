@@ -1007,6 +1007,14 @@ Turbosilent
     .list li:before {
       font-size: 18px;
     }
+    .login_btn{
+        background-color:#00473E !important;
+        color: #ffffff !important;
+    }
+    .login_btn:hover {
+        background-color:#075e5e !important;
+        color: #ffffff !important;
+    }
   /* Body Main heading */
     .primary{
       color:#00473E !important;
