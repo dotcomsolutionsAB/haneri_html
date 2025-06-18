@@ -94,7 +94,7 @@
     }
     /* Paragraph */
     .our_104 {
-        font-size: 30px;
+        font-size: 24px;
         font-family: 'Open Sans', sans-serif;
         line-height: 1.8;
         color: #000000;
