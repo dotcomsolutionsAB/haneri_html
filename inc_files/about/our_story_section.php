@@ -135,4 +135,62 @@
         width: 50%;
     }
     }
+
+    @media (max-width: 520px) {
+  .our_110 {
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .our_103_main {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .our_104_main {
+    font-size: 14px;
+    padding: 0 1rem;
+    text-align: justify;
+  }
+
+  .our_105 {
+    height: auto;
+  }
+
+  .our_106_main {
+    width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    object-fit: cover;
+  }
+
+  .our_108 {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .our_103 {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .our_104 {
+    font-size: 16px;
+    padding: 0;
+    text-align: justify;
+  }
+
+  .our_106 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .our_107,
+  .our_109 {
+    width: 100%;
+  }
+}
+
 </style>

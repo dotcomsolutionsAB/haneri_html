@@ -3244,10 +3244,11 @@ footer .social-icon {
     }
 
     .air_curve-feature-box h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    color: #00473E;
-    margin-bottom: 0.4rem;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 22px;
+        color: #00473E;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
     }
 
     .air_curve-feature-box p {
