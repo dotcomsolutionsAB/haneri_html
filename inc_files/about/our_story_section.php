@@ -92,7 +92,6 @@
     .our_103.green {
         color: #00473E;
     }
-
     /* Paragraph */
     .our_104 {
         font-size: 30px;
@@ -102,7 +101,6 @@
         padding: 0rem 15rem 0rem 0rem;
         text-align: left;
     }
-
     /* Banner Image */
     .our_105 {
         width: 100%;
@@ -114,7 +112,6 @@
         border-radius: 0.375rem;
         object-fit: cover;
     }
-
     /* Two-column content */
     .our_108 {
     display: flex;
@@ -126,7 +123,6 @@
     .our_107 {
         width: 100%;
     }
-
     @media (min-width: 768px) {
     .our_108 {
         flex-direction: row;
