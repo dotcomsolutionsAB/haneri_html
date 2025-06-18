@@ -482,7 +482,7 @@
                             // Append the row for each product
                             tbody.append(`
                                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
-                                    <div class="card featured" id="pro-table" >
+                                    <div class="card featured" id="pro-table" onclick="handleCardClick(event, '${product.variants[0]?.product_id || "NA"}')">
                                         <div class="card_image">
                                             <img src="${
                                                     product.variants[0]?.product_id === 14 ? 'images/Natural_Pine.png' :
@@ -517,6 +517,17 @@
                         }
                     });
                 };
+
+                function handleCardClick(event, productId) {
+                    // Prevent click if the user clicked on a button, link, or inside one
+                    const tagName = event.target.tagName.toLowerCase();
+                    const isInsideButtonOrLink = event.target.closest('a') || tagName === 'button';
+
+                    if (!isInsideButtonOrLink) {
+                        openProductDetail(productId);
+                    }
+                }
+
 
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
