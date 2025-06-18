@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">
-                <img src="../assets/images/1.png" alt="Air Curve Design" class="img-fluid">
+                <img src="images/air_1.png" alt="Air Curve Design" class="img-fluid">
             </div>
             <!-- Text on the right side -->
             <div class="col-md-6">
@@ -36,7 +36,7 @@
             </div>
             <!-- Image on the right side -->
             <div class="col-md-6 order-md-2 order-1">
-                <img src="../assets/images/2.png" alt="Air Curve Design" class="img-fluid">
+                <img src="images/air_2.png" alt="Air Curve Design" class="img-fluid">
             </div>
         </div>
     </section>
