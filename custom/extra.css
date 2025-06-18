@@ -3334,6 +3334,15 @@ footer .social-icon {
 
     /* Hide desktop slider on mobile */
     @media (max-width: 520px) {
+        .add-List {
+            display: grid;
+            grid-template-columns: repeat(1, 2fr);
+            gap: 10px;
+        }
+        .address-card {
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+        }
         .desktop-slider {
             display: none !important;
         }
