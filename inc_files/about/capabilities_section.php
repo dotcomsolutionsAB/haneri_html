@@ -1,136 +1,115 @@
-
-<div class="aab">
-    <!-- Row 1 -->
-    <div class="row-container">
-        <div class="capability-row">
-            <div class="capability-content">
-                <h2 class="heading2 primary">Excellence in Manufacturing, R&D, and Innovation</h2>
-                <p class="paragraph1">
-                    At Haneri, we seamlessly integrate design, innovation, and precision manufacturing, ensuring every product exemplifies quality, functionality, and elegance.
-                </p>
-            </div>
-            <div class="capability-image">
-                <img src="images/place.jpg" alt="Excellence in Manufacturing">
-            </div>
+<!-- Manufacturing & R&D Section -->
+<div class="cpblts_107">
+    <div class="cpblts_108">
+        <div class="cpblts_109">
+            <h2 class="cpblts_110">Excellence in Manufacturing, R&D, and Innovation</h2>
+            <p class="cpblts_111">
+                At Haneri, we seamlessly integrate design, innovation, and precision manufacturing, ensuring every product
+                exemplifies quality, functionality, and elegance.
+            </p>
         </div>
-        <div class="capability-row reverse">
-            <div class="capability-content">
-                <h2 class="heading2 primary">Product-Specific R&D and Prototyping Facilities</h2>
-                <p class="paragraph1">
-                    Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products that redefine everyday living.
-                </p>
-            </div>
-            <div class="capability-image">
-                <img src="images/place.jpg" alt="R&D and Prototyping Facilities">
-            </div>
+        <div>
+            <img src="images/capa_2.png" alt="Manufacturing Image" class="cpblts_img" />
         </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="row-container">
-        <div class="capability-row">
-            <div class="capability-content">
-                <h2 class="heading2 primary">Comprehensive Manufacturing Processes</h2>
-                <p class="paragraph1">
-                    Our robust manufacturing capabilities allow us to oversee every aspect of production.
-                </p>
-                <ul class="ulclass list">
-                    <li>Injection Moulding</li>
-                    <li>Sheet Metal Forming</li>
-                    <li>Specialized assembly lines for FG and BLDC motors</li>
-                </ul>
-            </div>
-            <div class="capability-image">
-                <img src="images/place.jpg" alt="Comprehensive Manufacturing">
-            </div>
+    <div class="cpblts_108">
+        <div class="cpblts_109">
+            <h2 class="cpblts_110">Product-Specific R&D and Prototyping Facilities</h2>
+            <p class="cpblts_111">
+                Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products
+                that redefine everyday living.
+            </p>
         </div>
-        <div class="capability-row reverse">
-            <div class="capability-content">
-                <h2 class="heading2 primary">Superior Surface Finishing Capabilities</h2>
-                <p class="paragraph1">
-                    Haneri’s advanced surface finishing ensures that every product meets the highest standards of aesthetics and longevity.
-                </p>
-            </div>
-            <div class="capability-image">
-                <img src="images/place.jpg" alt="Surface Finishing Capabilities">
-            </div>
+        <div>
+            <img src="images/capa_2.png" alt="R&D Facility Image" class="cpblts_img" />
         </div>
     </div>
 
-    <!-- Row 3 -->
-    <div class="row-container">
-        <div class="capability-row">
-            <div class="capability-content">
-                <h2 class="heading2 primary">Design & Tooling Expertise</h2>
-                <p class="paragraph1">
-                    Our in-house tool room for mold manufacturing and sophisticated 3D CAD design capabilities empower us to innovate with precision.
-                </p>
-            </div>
-            <div class="capability-image">
-                <img src="images/place.jpg" alt="Design & Tooling Expertise">
-            </div>
+    <div class="cpblts_108">
+        <div class="cpblts_109">
+            <h2 class="cpblts_110">Product-Specific R&D and Prototyping Facilities</h2>
+            <p class="cpblts_111">
+                Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products
+                that redefine everyday living.
+            </p>
+        </div>
+        <div>
+            <img src="images/rd-2.jpg" alt="R&D Facility Image" class="cpblts_img" />
         </div>
     </div>
 
-    <p style="text-align: justify; margin-top: 20px;">
-        With a relentless focus on R&D, superior manufacturing capabilities, and rigorous quality control, Haneri creates products that set a new benchmark in innovation, durability, and style.
-    </p>
-
-    <h5 class="capability-conclusion">
-        <strong>At Haneri, we don’t just make products—we craft experiences.</strong>
-    </h5>
+    <div class="cpblts_108">
+        <div class="cpblts_109">
+            <h2 class="cpblts_110">Product-Specific R&D and Prototyping Facilities</h2>
+            <p class="cpblts_111">
+                Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products
+                that redefine everyday living.
+            </p>
+        </div>
+        <div>
+            <img src="images/rd-2.jpg" alt="R&D Facility Image" class="cpblts_img" />
+        </div>
+    </div>
 </div>
-<div class="mb-3"></div><!-- margin -->
+
 <style>
-    /* Main Heading Style */
-    .about_section {
-        color: #fff; /* White text color */
-        padding: 5px 65px; /* Spacing inside the heading */
-        position: relative; /* Enable pseudo-elements */
-        display: inline-block; /* Allow background to wrap the text */
-        background: linear-gradient(135deg, #047f89, #3a9aa2);
-        border-radius: 0px; /* Rounded corners */
-        overflow: hidden; /* Prevent overflow of child elements */
-        width:100%;
-    }
+  /* Outer wrapper */
+  .cpblts_107 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 
-    /* Geometric Decorative Element */
-    .about_section::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: -10px;
-        width: 260px;
-        height: 170px;
-        background: #f4f4f42e;
-        transform: rotate(45deg);
-        z-index: 100;
-    }
+  /* Each block (text + image) */
+  .cpblts_108 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .about_section::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        right: -15px;
-        width: 230px;
-        height: 150px;
-        background: #dfdfdf;
-        transform: rotate(45deg);
-        z-index: 1;
+  @media (min-width: 768px) {
+    .cpblts_108 {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
+  }
 
-    /* Text Layer */
-    .about_section span {
-        position: relative; /* Ensure text is above pseudo-elements */
-        z-index: 2; /* Bring text to the front */
-    }
+  /* Text column */
+  .cpblts_109 {
+    flex: 1;
+  }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .about_section {
-            font-size: 2.5rem; /* Adjust font size for smaller screens */
-            padding: 15px 20px; /* Reduce padding */
-        }
-    }
+  /* Headings */
+  .cpblts_110 {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #065f46;
+    /* dark green */
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
 
+  /* Paragraph */
+  .cpblts_111 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #111827;
+    line-height: 1.75;
+  }
+
+  /* Image Styling */
+  .cpblts_img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 0.375rem;
+    object-fit: cover;
+  }
 </style>
