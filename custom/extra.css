@@ -3263,10 +3263,10 @@ footer .social-icon {
 
     .air_curve-feature-box p {
         font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.6;
         color: #333;
-        text-align: justify;
+        /* text-align: justify; */
     }
 
     .air_curve-feature-box.highlight img {
@@ -3277,12 +3277,12 @@ footer .social-icon {
 
     /*  */
     .air_curve_span{
-        color: black; 
-        font-size: 14px; 
-        text-align: justify;
-        font-family: Open Sans; 
-        font-weight: 600; 
-        word-wrap: break-word;
+        color: black;
+        font-size: 16px;
+        /* text-align: justify; */
+        font-family: 'Open Sans';
+        font-weight: 400;
+        line-height: 1.8;
     }
     .air_curve_span2{
         color: black; 
@@ -3296,7 +3296,7 @@ footer .social-icon {
     .air_curve_span_h2{
         color: #00473E; 
         font-size: 40px; 
-        font-family: Barlow Condensed; 
+        font-family: 'Barlow Condensed'; 
         font-weight: 500;
     }
     /*  */
