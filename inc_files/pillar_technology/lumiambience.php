@@ -2,7 +2,7 @@
 <div class="bldc001">
     <div class="bldc102">
         <div>
-            <img src="images/place.jpg" alt="Motor Visual" class="bldc-img" />
+            <img src="images/lumi_1.png" alt="Motor Visual" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103"><b>Introducing LumiAmbience Technology: </b>Revolutionizing Lighting with Precision</h2>
@@ -21,14 +21,14 @@
             </p>
         </div>
         <div class="bldc105">
-        <img src="images/place.jpg" alt="Blade Design" class="bldc-img" />
+        <img src="images/lumi_2.png" alt="Blade Design" class="bldc-img" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
         <div>
-        <img src="images/place.jpg" alt="Motor Render" class="bldc-img" />
+        <img src="images/lumi_3.png" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103 mb-4">Key Features of Silent LumiAmbience Technology</h2>
