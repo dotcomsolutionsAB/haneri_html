@@ -2,12 +2,12 @@
 <div class="bldc001">
     <div class="bldc102">
         <div>
-            <img src="images/g_3.png" alt="Motor Visual" class="bldc-img" />
+            <img src="images/place.jpg" alt="Motor Visual" class="bldc-img" />
         </div>
         <div>
-            <h2 class="bldc103"><b>Introducing TurboSilent BLDC:</b><br>Unleashing Unmatched Power and Efficiency</h2>
+            <h2 class="bldc103"><b>Introducing Silent M.A.S.S Technology:</b><br>More Air, Slow Speed</h2>
             <p class="bldc104">
-                At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design not only delivers higher torque and exceptional durability but also ensures unmatched energy efficiency, setting a new benchmark for ceiling fan performance and contributing to a greener environment. Our innovative technology guarantees whisper-quiet operation, providing a peaceful and comfortable atmosphere in your home or office. Additionally, the low maintenance requirements and long-lasting build make our fans a reliable and cost-effective choice for modern living
+                At Haneri, we believe that true innovation lies in challenging common misconceptions and delivering solutions that redefine industry standards. Our Silent M.A.S.S Technology (More Air, Slow Speed) embodies this philosophy, and debunks the myth that you don’t need high speed (RPM) to achieve superior air delivery. Leveraging our advanced Air Curve Design and TurboSilent BLDC Motor Technology, Silent M.A.S.S delivers unparalleled performance, offering powerful airflow with near-silent operation at lower rotational speeds.By optimizing airflow dynamics and minimizing noise, Haneri's Silent M.A.S.S Technology ensures a more comfortable and efficient user experience, whether in industrial settings or residential applications. Our commitment to innovation means you get the perfect balance of strength and silence, reducing energy consumption while maximizing output. Join us in redefining industry standards with solutions that are not only effective but also sustainable and user-friendly.
             </p>
         </div>
     </div>
@@ -15,34 +15,43 @@
     <!-- Section 2 -->
     <div class="bldc102 mt-10">
         <div>
-            <h2 class="bldc103 mb-4">Why TurboSilent BLDC Technology?</h2>
+            <h2 class="bldc103 mb-4">What is Silent M.A.S.S Technology?</h2>
             <p class="bldc104">
-                TurboSilent BLDC Technology also features advanced thermal management solutions, allowing the motor to operate efficiently across a wide range of temperatures. Its compact and lightweight design facilitates easy integration into various applications, from industrial machinery to consumer electronics. Additionally, the system incorporates sophisticated control algorithms that optimize performance and responsiveness, providing smooth and quiet operation even under demanding conditions. With its innovative features, TurboSilent BLDC motors set a new standard for durability, efficiency, and performance in modern motor technology. The integration of intelligent sensors and feedback systems enhances real-time monitoring, enabling predictive diagnostics and further optimizing operational efficiency. Overall, TurboSilent BLDC motors represent a cutting-edge solution that combines innovation, durability, and versatility to meet the evolving demands of modern industries and electronic devices.
+                At Haneri, we believe that true innovation lies in challenging common misconceptions and delivering solutions that redefine industry standards. Our Silent M.A.S.S Technology (More Air, Slow Speed) embodies this philosophy, and debunks the myth that you don’t need high speed (RPM) to achieve superior air delivery. Leveraging our advanced Air Curve Design and TurboSilent BLDC Motor Technology, Silent M.A.S.S delivers unparalleled performance, offering powerful airflow with near-silent operation at lower rotational speeds.By optimizing airflow dynamics and minimizing noise, Haneri's Silent M.A.S.S Technology ensures a more comfortable and efficient user experience, whether in industrial settings or residential applications. Our commitment to innovation means you get the perfect balance of strength and silence, reducing energy consumption while maximizing output. Join us in redefining industry standards with solutions that are not only effective but also sustainable and user-friendly.
             </p>
         </div>
         <div class="bldc105">
-        <img src="images/g_2.png" alt="Blade Design" class="bldc-img" />
+        <img src="images/place.jpg" alt="Blade Design" class="bldc-img" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
         <div>
-        <img src="images/g_1.png" alt="Motor Render" class="bldc-img" />
+        <img src="images/place.jpg" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
-            <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
+            <h2 class="bldc103 mb-4">Key Features of Silent M.A.S.S Technology</h2>
             <ul class="bldc106">
                 <li>
-                    <strong>Electromagnetic Optimization:</strong> Uses Finite Element Analysis (FEA) to design and validate the magnetic circuit, maximizing flux density while minimizing losses.</li>
-                <li>
-                    <strong>Thermal Management:</strong>  Employs advanced cooling designs, including optimized ventilation paths and materials, to maintain motor efficiency under continuous operation.
+                    <strong>High Air Delivery at Low RPM :</strong> 
+                     Powered by Air Curve Design, the blades feature precision-engineered contours that maximize air displacement while optimizing drag. High torque from the TurboSilent BLDC Motor ensures efficient blade rotation, delivering consistent airflow even at reduced speeds.
                 </li>
                 <li>
-                    <strong>Smart Power Electronics:</strong> Integrated drivers, meticulously designed for seamless operation, instil confidence with precise speed control and minimal switching losses. Advanced motor control algorithms, including Field-Oriented Control (FOC), enable precise torque and speed regulation.
+                    <strong>Ultra-Quiet Operation :</strong> 
+                    The low RPM operation, combined with Efficient Torque output from the TurboSilent BLDC Motor, eliminates mechanical noise, creating an ultra-quiet cooling experience. Streamlined blade profiles reduce turbulence, further contributing to silent performance
                 </li>
                 <li>
-                    <strong>Structural Engineering:</strong> The magnet rotor dynamics are meticulously optimized, providing reassuring stability and minimizing resonance at all operating speeds. Lightweight, high-strength materials not only reduce the motor's overall weight but also enhance its durability and performance, achieving the perfect balance between these factors.
+                    <strong>Enhanced Motor Efficiency :</strong> 
+                     TurboSilent BLDC motors utilize advanced electromagnetic design for optimal torque-to-RPM ratios, ensuring seamless operation at low speeds. The electronic controller, made in India for Indian conditions, minimizes energy losses, making the system highly efficient and cost-effective.
+                </li>
+                <li>
+                    <strong>Advanced Blade Aerodynamics :</strong> 
+                    Blades designed with Air Curve Design use computational fluid dynamics (CFD) to optimize airflow pathways, ensuring maximum air delivery per watt of power consumed.
+                </li>
+                <li>
+                    <strong>Trademarked Technology :</strong> 
+                    Silent M.A.S.S Technology is a trademarked pillar of Haneri, integrating proprietary engineering solutions to deliver performance and efficiency.
                 </li>
             </ul>
         </div>
