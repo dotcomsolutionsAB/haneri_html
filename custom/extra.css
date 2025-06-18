@@ -1810,6 +1810,14 @@ a.text-primary:focus, a.text-primary:hover {
     margin-left: 1.3rem !important;
     margin-top: 5px !important;
 }
+.header-icon {
+    /* margin-left: 13px; */
+    /* margin-right: 23px; */
+    font-size: 25px;
+    padding-bottom: 0px !important;
+    margin-right: 1.3rem !important;
+    margin-left: 1.3rem !important;
+}
 .header-icon i {
     font-size: 20px !important;
 }
