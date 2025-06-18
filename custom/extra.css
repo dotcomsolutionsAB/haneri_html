@@ -3843,6 +3843,7 @@ footer .social-icon {
         font-family: 'Open Sans', sans-serif;
         color: #000;
         line-height: 1.8;
+        text-align: left;
     }
     /* Image */
     .cpblts_img {
