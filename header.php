@@ -282,7 +282,6 @@
                     <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
                     <a href="cart.php" class="header-icon cart" title="cart">
                         <i class="minicart-icon"></i>
-                        <span class="cart-count badge-circle">3</span>
                     </a> |                
                     <a href="#" class="header-icon" id="logout-btn" title="Logout">
                         <i class="fas fa-sign-out-alt"></i>

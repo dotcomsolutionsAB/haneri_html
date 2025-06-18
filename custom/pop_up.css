@@ -26,7 +26,7 @@
     margin-top: 20px;
 }
 
-.add-address-btn {
+.add-address-btn, .update-address-btn {
     background-color: #00473E !important;
     color: white;
     /* font-weight: bold; */
@@ -36,7 +36,7 @@
     border: none;
 }
 
-.add-address-btn:hover {
+.add-address-btn:hover, .update-address-btn:hover {
     background-color: rgb(24, 93, 84);
 }
 

@@ -124,7 +124,8 @@
                         title: 'Update Address',
                         width: '700px',
                         customClass: {
-                            confirmButton: 'confirmation-btn'
+                            confirmButton: 'update-address-btn',
+                            cancelButton: 'cancel-address-btn'
                         },
                         html: `
                             <style>
