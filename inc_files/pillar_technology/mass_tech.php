@@ -27,8 +27,8 @@
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
-        <div>
-        <img src="images/hass_3.png" alt="Motor Render" class="bldc-img" />
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="images/hass_3.png" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103 mb-4">Key Features of Silent H.A.S.S Technology</h2>
