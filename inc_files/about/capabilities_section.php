@@ -55,65 +55,75 @@
 
 <style>
   /* Outer wrapper */
-  .cpblts_107 {
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
-    padding: 3rem 0rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
+.cpblts_107 {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
-  /* Each block (text + image) */
+/* Each block (text + image) */
+.cpblts_108 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
   .cpblts_108 {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-  .cpblts_109, .cpblts_img {
+}
+
+/* Text column */
+.cpblts_109 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .cpblts_109 {
     width: 50%;
     max-width: 50%;
   }
+}
 
-  @media (min-width: 768px) {
-    .cpblts_108 {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
+/* Image container */
+.cpblts_112 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .cpblts_112 {
+    width: 50%;
+    max-width: 50%;
   }
+}
 
-  /* Text column */
-  .cpblts_109 {
-    flex: 1;
-  }
+/* Headings */
+.cpblts_110 {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #00473E;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
 
-  /* Headings */
-  .cpblts_110 {
-    font-size: 48px;
-    font-weight: 600;
-    font-family: 'Barlow Condensed', sans-serif;
-    color: #00473E;
-    /* dark green */
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
+/* Paragraph */
+.cpblts_111 {
+  font-size: 26px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+  line-height: 1.75;
+}
 
-  /* Paragraph */
-  .cpblts_111 {
-    font-size: 26px;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
-    color: #000000;
-    line-height: 1.75;
-  }
+/* Image Styling */
+.cpblts_img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  object-fit: cover;
+}
 
-  /* Image Styling */
-  .cpblts_img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 0.375rem;
-    object-fit: cover;
-  }
 </style>
