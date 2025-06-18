@@ -11,9 +11,9 @@
 							<div class="feature-box-content">
 								<form class="mb-0" action="#">
 									<p>
-										Lost your password? Please enter your
-										username or email address. You will receive
-										a link to create a new password via email.
+										Lost your password? 
+										<br>
+										Please enter your username or email address. You will receive a link to create a new password via email.
 									</p>
 									<div class="form-group mb-0">
 										<label for="reset-email" class="font-weight-normal">Username or email</label>
