@@ -54,22 +54,22 @@
 </div>
 
 <style>
-  /* Outer wrapper */
+  /* Section Wrapper */
 .cpblts_107 {
-  padding: 3rem 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
+  padding: 3rem 0;
 }
 
-/* Each block (text + image) */
+/* Content Row */
 .cpblts_108 {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .cpblts_108 {
     flex-direction: row;
     justify-content: space-between;
@@ -77,22 +77,24 @@
   }
 }
 
-/* Text column */
+/* Text Column */
 .cpblts_109 {
   width: 100%;
+  padding-right: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .cpblts_109 {
     width: 50%;
     max-width: 50%;
+    padding-right: 0;
   }
 }
 
-/* Image container */
+/* Image Column */
 .cpblts_112 {
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .cpblts_112 {
     width: 50%;
     max-width: 50%;
@@ -105,25 +107,27 @@
   font-weight: 600;
   font-family: 'Barlow Condensed', sans-serif;
   color: #00473E;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 /* Paragraph */
 .cpblts_111 {
   font-size: 26px;
-  font-weight: 400;
   font-family: 'Open Sans', sans-serif;
-  color: #000000;
-  line-height: 1.75;
+  color: #000;
+  line-height: 1.8;
 }
 
-/* Image Styling */
+/* Image */
 .cpblts_img {
   width: 100%;
   height: auto;
-  border-radius: 0.375rem;
+  max-width: 880px;
+  max-height: 586.67px;
+  display: block;
   object-fit: cover;
 }
+
 
 </style>
