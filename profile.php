@@ -156,6 +156,41 @@
 						font-size:smaller;
 						text-align: start;
 					}
+					@media (max-width: 520px) {
+						.order-table-container {
+							overflow-x: auto;
+							width: 100%;
+						}
+
+						.table-order {
+							min-width: 600px; /* Allow full columns to be scrollable */
+						}
+
+						.table-order thead {
+							font-size: 14px;
+						}
+
+						.table-order tbody {
+							max-height: 200px;
+						}
+
+						.table-order tbody tr .addressess {
+							font-size: 12px;
+							text-align: left;
+						}
+
+						.table-order td,
+						.table-order th {
+							font-size: 13px;
+							padding: 0.5rem;
+						}
+
+						.btn.btn-dark {
+							font-size: 14px;
+							padding: 0.6rem 1rem;
+						}
+					}
+
 				</style>
 				<!-- Orders Showing For each Profile -->
 				<div class="tab-pane fade" id="order" role="tabpanel">
