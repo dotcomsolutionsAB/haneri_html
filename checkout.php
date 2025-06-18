@@ -234,7 +234,7 @@
                             if (response.message && response.message.includes("success")) {
                                 Swal.fire({
                                     title: "Success!",
-                                    text: "Address updated successfully.",
+                                    text: "Address updated successfully. ",
                                     icon: "success",
                                     timer: 2000,
                                     showConfirmButton: false
