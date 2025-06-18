@@ -2,10 +2,10 @@
 <div class="bldc001">
     <div class="bldc102">
         <div>
-            <img src="images/place.jpg" alt="Motor Visual" class="bldc-img" />
+            <img src="images/hass_1.png" alt="Motor Visual" class="bldc-img" />
         </div>
         <div>
-            <h2 class="bldc103"><b>Introducing Silent M.A.S.S Technology:</b> More Air, Slow Speed</h2>
+            <h2 class="bldc103"><b>Introducing Silent H.A.S.S Technology:</b> More Air, Slow Speed</h2>
             <p class="bldc104">
                 At Haneri, we believe that true innovation lies in challenging common misconceptions and delivering solutions that redefine industry standards. Our Silent M.A.S.S Technology (More Air, Slow Speed) embodies this philosophy, and debunks the myth that you don’t need high speed (RPM) to achieve superior air delivery. Leveraging our advanced Air Curve Design and TurboSilent BLDC Motor Technology, Silent M.A.S.S delivers unparalleled performance, offering powerful airflow with near-silent operation at lower rotational speeds.By optimizing airflow dynamics and minimizing noise, Haneri's Silent M.A.S.S Technology ensures a more comfortable and efficient user experience, whether in industrial settings or residential applications. Our commitment to innovation means you get the perfect balance of strength and silence, reducing energy consumption while maximizing output. Join us in redefining industry standards with solutions that are not only effective but also sustainable and user-friendly.
             </p>
@@ -21,14 +21,14 @@
             </p>
         </div>
         <div class="bldc105">
-        <img src="images/place.jpg" alt="Blade Design" class="bldc-img" />
+        <img src="images/hass_2.png" alt="Blade Design" class="bldc-img" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
         <div>
-        <img src="images/place.jpg" alt="Motor Render" class="bldc-img" />
+        <img src="images/hass_3.png" alt="Motor Render" class="bldc-img" />
         </div>
         <div>
             <h2 class="bldc103 mb-4">Key Features of Silent M.A.S.S Technology</h2>
