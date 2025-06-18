@@ -41,7 +41,7 @@
 }
 
 .cancel-address-btn {
-    background-color: #dc3545;
+    background-color: #999999;
     color: white;
     /* font-weight: bold; */
     font-size: 16px;
@@ -52,7 +52,7 @@
 }
 
 .cancel-address-btn:hover {
-    background-color: #c82333;
+    background-color: #878686;
 }
 
 @media (max-width: 520px) {
