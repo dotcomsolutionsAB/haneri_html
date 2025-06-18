@@ -1,7 +1,7 @@
 <!-- What We Stand For Section -->
 <div class="our_110">
-    <h2 class="our_103">What We Stand For</h2>
-    <p class="our_104">
+    <h2 class="our_103_main">What We Stand For</h2>
+    <p class="our_104_main">
         Haneri is redefining standards of aspirational design and value. Through excellence in engineering and design,
         Haneri delivers high-performing and elegant ceiling fan products.
         Our products are rooted in purposeful design, accessibility, and long-lasting value. What drives our vision is not
@@ -11,7 +11,7 @@
     </p>
 
     <div class="our_105">
-        <img src="images/place.jpg" alt="Banner" class="our_106" />
+        <img src="images/place.jpg" alt="Banner" class="our_106_main" />
     </div>
 
     <!-- Vision Block -->
@@ -62,44 +62,69 @@
 
 <style>
     .our_110 {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 3rem 1rem;
+        /* max-width: 1100px; */
+        /* margin: 0 auto; */
+        padding: 0rem 0rem;
         display: flex;
         flex-direction: column;
         gap: 3rem;
     }
-
-    /* Headings */
-    .our_103 {
-    font-size: 36px;
-    font-weight: 600;
-    font-family: 'Barlow Condensed', sans-serif;
-    color: #000;
+    .our_103_main{
+        font-size: 58px;
+        font-weight: 300;
+        font-family: 'Barlow Condensed', sans-serif;
+        color: #00473E;
+        text-align: center;
+        margin-bottom: 0px !important;
+    }
+    .our_104_main{
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8;
+        color: #000000;
+        padding: 0rem 15rem 0rem 0rem;
+        text-align: center;
+        padding: 0rem 15rem;
     }
 
+    .our_106_main{
+        width: 100%;
+        height: 100%;
+        border-radius: 0.375rem;
+        object-fit: cover;
+    }
+    /* Headings */
+    .our_103 {
+        font-size: 58px;
+        font-weight: 300;
+        font-family: 'Barlow Condensed', sans-serif;
+        color: #00473E;
+        text-align: left;
+    }
     .our_103.green {
-    color: #00473E;
+        color: #00473E;
     }
 
     /* Paragraph */
     .our_104 {
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.8;
-    color: #333;
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8;
+        color: #000000;
+        padding: 0rem 15rem 0rem 0rem;
+        text-align: left;
     }
 
     /* Banner Image */
     .our_105 {
-    width: 100%;
+        width: 100%;
+        height: 816px;
     }
-
     .our_106 {
-    width: 100%;
-    height: auto;
-    border-radius: 0.375rem;
-    object-fit: cover;
+        width: 636px;
+        height: 636px;
+        border-radius: 0.375rem;
+        object-fit: cover;
     }
 
     /* Two-column content */
@@ -109,7 +134,6 @@
     gap: 2rem;
     align-items: center;
     }
-
     .our_109,
     .our_107 {
         width: 100%;
