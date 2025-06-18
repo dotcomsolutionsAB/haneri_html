@@ -8,7 +8,7 @@
                 exemplifies quality, functionality, and elegance.
             </p>
         </div>
-        <div>
+        <div class="cpblts_div_img">
             <img src="images/capa_2.png" alt="Manufacturing Image" class="cpblts_img" />
         </div>
     </div>
@@ -21,40 +21,19 @@
                 that redefine everyday living.
             </p>
         </div>
-        <div>
+        <div class="cpblts_div_img">
             <img src="images/capa_1.png" alt="R&D Facility Image" class="cpblts_img" />
         </div>
     </div>
 
-    <div class="cpblts_108">
-        <div class="cpblts_109">
-            <h2 class="cpblts_110">Product-Specific R&D and Prototyping Facilities</h2>
-            <p class="cpblts_111">
-                Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products
-                that redefine everyday living.
-            </p>
-        </div>
-        <div>
-            <img src="images/rd-2.jpg" alt="R&D Facility Image" class="cpblts_img" />
-        </div>
-    </div>
-
-    <div class="cpblts_108">
-        <div class="cpblts_109">
-            <h2 class="cpblts_110">Product-Specific R&D and Prototyping Facilities</h2>
-            <p class="cpblts_111">
-                Innovation is at the heart of Haneri. Our dedicated research and development teams focus on creating products
-                that redefine everyday living.
-            </p>
-        </div>
-        <div>
-            <img src="images/rd-2.jpg" alt="R&D Facility Image" class="cpblts_img" />
-        </div>
-    </div>
 </div>
 
 <style>
-  /* Section Wrapper */
+    .cpblts_div_img {
+  width: 50%;
+}
+
+/* Section Wrapper */
 .cpblts_107 {
   max-width: 100%;
   display: flex;
@@ -103,8 +82,8 @@
 
 /* Headings */
 .cpblts_110 {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 58px;
+  font-weight: 300;
   font-family: 'Barlow Condensed', sans-serif;
   color: #00473E;
   margin-bottom: 1rem;
@@ -113,7 +92,7 @@
 
 /* Paragraph */
 .cpblts_111 {
-  font-size: 26px;
+  font-size: 30px;
   font-family: 'Open Sans', sans-serif;
   color: #000;
   line-height: 1.8;
@@ -129,5 +108,42 @@
   object-fit: cover;
 }
 
+/* ---------------------------- */
+/* ✅ Responsive for ≤520px */
+/* ---------------------------- */
+@media (max-width: 520px) {
+  .cpblts_107 {
+    padding: 2rem 1rem;
+    gap: 2.5rem;
+  }
+
+  .cpblts_108 {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cpblts_109,
+  .cpblts_div_img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cpblts_110 {
+    font-size: 36px;
+    text-align: left;
+  }
+
+  .cpblts_111 {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .cpblts_img {
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
 
 </style>
