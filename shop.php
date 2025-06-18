@@ -482,7 +482,7 @@
                             // Append the row for each product
                             tbody.append(`
                                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
-                                    <div class="card featured pro-card" id="pro-table" onclick="handleCardClick(event, '${product.variants[0]?.product_id || "NA"}')">
+                                    <div class="card featured pro-card" id="pro-table" data-product-id="${product.variants?.[0]?.product_id || ''}">
                                         <div class="card_image">
                                             <img src="${
                                                     product.variants[0]?.product_id === 14 ? 'images/Natural_Pine.png' :
