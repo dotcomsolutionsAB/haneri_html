@@ -138,33 +138,3 @@
         </div>
     </div>
 </div>
-
-
-<!-- Row 5: Why Choose? -->
-<div class="containe">
-    <div class="row-bg why">
-        <div class="col-md-12">
-            <p class="pb-2"></p>
-                <h2 class="heading2 light">
-                    Why Choose HANERI S.C.A.N Technology?
-                </h2>
-            <p class="paragraph1 margp light">
-                With S.C.A.N Technology, HANERI continues to lead the way in innovation and user-focused design. Our remote controllers offer a perfect combination of advanced features, precision engineering, and effortless usability, making them a must-have for modern homes and businesses.
-            </p>
-        </div>
-    </div><!-- End .row -->
-</div><!-- End .container -->
-<br>
-<div class="containe">
-    <div class="row-bg why">
-        <div class="col-md-12">
-            <p class="pb-2"></p>
-                <h2 class="heading2 light">
-                    Experience S.C.A.N Technology Today!
-                </h2>
-            <p class="paragraph1 margp light">
-                Transform your space with the HANERI S.C.A.N-enabled remote controller. Experience the ultimate convenience and modern functionality at your fingertips. Choose S.C.A.N Technology—designed to simplify, engineered to impress.
-            </p>
-        </div>
-    </div><!-- End .row -->
-</div><!-- End .container -->
