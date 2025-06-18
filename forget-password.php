@@ -26,9 +26,10 @@
                             <input type="email" class="form-input form-wide" id="reset-email" name="reset-email" required />
 
                             <div class="form-footer">
+                                Remember Password? 
                                 <a href="login.php" class="forget-password text-dark form-footer-right">
                                     Login
-                                </a>
+                                </a> here
                             </div>
                             <button type="submit" class="btn reset_btn btn-md w-100 mb-2">Reset Password</button>
                             <br>
