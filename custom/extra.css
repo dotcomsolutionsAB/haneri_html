@@ -137,22 +137,27 @@
 }
 
 .btn-send-msg{
+    color: #fff;
+    background-color: #315858;
+    border-color: #315858;
+ }
+ .btn-send-msg:hover {
+    color: #fff;
+    background-color: #00473e;
+    border-color: #00473eb3;
+}
+
+ .btn-send-msg{
     display: inline-block;
     padding: 7px 20px;
+    margin: 25px 30px;
     font-size: 16px;
-    color: #fff;
-    background-color: #00473E;
     border-radius: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    cursor: pointer;
     transition: 0.3s ease;
-}
-.btn-send-msg:hover {
-    background-color: #00473E;
-    color: #fff;
-}
-
+    width: fit-content;
+ }
 .q_head {
     font-family: "Barlow Condensed";
     margin: 0px;
