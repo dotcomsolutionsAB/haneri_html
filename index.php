@@ -49,7 +49,7 @@
                                 evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your
                                 needs, including home, office, and commercial spaces.
                             </p>
-                            <button class="btn-know-more">KNOW MORE</button>
+                            <a class="btn-know-more">KNOW MORE</a>
                         </div>
                     </div>
                 </div>

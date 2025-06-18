@@ -118,23 +118,28 @@
     text-align: justify;
 }
 
-.btn-know-more {
-    display: inline-block;
-    padding: 7px 20px;
-    font-size: 16px;
+ .btn-know-more{
     color: #fff;
-    background-color: #00473E;
+    background-color: #315858;
+    border-color: #315858;
+ }
+ .btn-know-more:hover {
+    color: #fff;
+    background-color: #00473e;
+    border-color: #00473eb3;
+}
+
+ .btn-know-more{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 25px 30px;
+    font-size: 16px;
     border-radius: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    cursor: pointer;
     transition: 0.3s ease;
-}
-
-.btn-know-more:hover {
-    background-color: #00473E;
-    color: #fff;
-}
+    width: fit-content;
+ }
 
 .btn-send-msg{
     color: #fff !important;
@@ -149,7 +154,7 @@
 
  .btn-send-msg{
     display: inline-block;
-    padding: 7px 20px;
+    padding: 10px 20px;
     margin: 25px 30px;
     font-size: 16px;
     border-radius: 10px;
