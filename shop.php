@@ -482,7 +482,7 @@
                             // Append the row for each product
                             tbody.append(`
                                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
-                                    <div class="card featured" id="pro-table" onclick="handleCardClick(event, '${product.variants[0]?.product_id || "NA"}')">
+                                    <div class="card featured pro-card" id="pro-table" onclick="handleCardClick(event, '${product.variants[0]?.product_id || "NA"}')">
                                         <div class="card_image">
                                             <img src="${
                                                     product.variants[0]?.product_id === 14 ? 'images/Natural_Pine.png' :
@@ -518,15 +518,19 @@
                     });
                 };
 
-                function handleCardClick(event, productId) {
-                    // Prevent click if the user clicked on a button, link, or inside one
-                    const tagName = event.target.tagName.toLowerCase();
-                    const isInsideButtonOrLink = event.target.closest('a') || tagName === 'button';
+                // Attach click handler after rendering
+                $('#products-table').on('click', '.pro-card', function (event) {
+                    const productId = $(this).data('product-id');
 
-                    if (!isInsideButtonOrLink) {
+                    // Prevent if clicked inside a link or button
+                    const tagName = event.target.tagName.toLowerCase();
+                    const isInsideLinkOrButton = $(event.target).closest('a, button').length > 0;
+
+                    if (!isInsideLinkOrButton) {
                         openProductDetail(productId);
                     }
-                }
+                });
+
 
 
                 const updatePagination = () => {
