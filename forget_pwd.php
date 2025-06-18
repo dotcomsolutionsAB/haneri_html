@@ -9,6 +9,10 @@
             <div class="col-lg-10 mx-auto">
                 <div class="login_reg_container">
                     <div class="col-md-6">
+                        <div class="heading mb-1">
+                            <h2 class="title">Forget Password</h2>
+                        </div>
+
                         <p>
                             <strong>Lost your password?</strong> 
                             <br>
