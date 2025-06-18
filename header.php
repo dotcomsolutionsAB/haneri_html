@@ -301,7 +301,7 @@
                     <a href="login.php" class="header-icon header-icon-user" title="Login">
                         <i class="icon-user-2"></i>
                     </a> |  
-                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> |
+                    <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a>
                 `;
             }
         });
