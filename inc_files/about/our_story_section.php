@@ -2,12 +2,7 @@
 <div class="our_110">
     <h2 class="our_103_main">What We Stand For</h2>
     <p class="our_104_main">
-        Haneri is redefining standards of aspirational design and value. Through excellence in engineering and design,
-        Haneri delivers high-performing and elegant ceiling fan products.
-        Our products are rooted in purposeful design, accessibility, and long-lasting value. What drives our vision is not
-        just innovation—but inclusion. We believe that well-crafted,
-        luxury solutions should be available to everyone. That's why we focus on smart design, intuitive function,
-        thoughtful pricing, and enduring customer care.
+        Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions. Our founding team is a diverse mix of individuals across different age groups and backgrounds, reflecting the aspirations of today’s consumers and those of the future. Together, we aim to redefine the experience with products that resonate with evolving lifestyles, delivering value and inspiration in every interaction. Haneri seeks to create solutions for all your needs, including home, Office and commercial spaces.
     </p>
 
     <div class="our_105">
@@ -22,9 +17,7 @@
         <div class="our_107">
         <h3 class="our_103 green">Our Vision</h3>
         <p class="our_104">
-            To redefine aspirational product experiences by creating beautifully crafted, technologically advanced, and
-            accessible luxury solutions blending exceptional quality with
-            an inclusive design that elevates everyday experiences for everyone.
+            To redefine aspirational product experiences by creating beautifully crafted, technologically advanced, and accessible luxury solutions blending exceptional quality with an inclusive design that elevates everyday experiences for everyone.
         </p>
         </div>
     </div>
@@ -34,9 +27,7 @@
         <div class="our_109">
         <h3 class="our_103 green">Our Mission</h3>
         <p class="our_104">
-            We will achieve our mission through thoughtful design, lasting quality, inclusive pricing, and exceptional
-            customer care—making luxury accessible and elevating everyday
-            living for all.
+            We will achieve our mission through thoughtful design, lasting quality, inclusive pricing, and exceptional customer care—making luxury accessible and elevating everyday living for all.
         </p>
         </div>
         <div class="our_107">
@@ -52,9 +43,7 @@
         <div class="our_107">
             <h3 class="our_103 green">Our Values</h3>
             <p class="our_104">
-                We focus on human-centric, intuitive design, lasting quality, and accessible luxury for all lifestyles. With a
-                commitment to transparency, responsiveness, and sustainability,
-                we create thoughtful, ethical, and enduring solutions.
+                We focus on human-centric, intuitive design, lasting quality, and accessible luxury for all lifestyles. With a commitment to transparency, responsiveness, and sustainability, we create thoughtful, ethical, and enduring solutions.
             </p>
         </div>
     </div>
@@ -107,7 +96,7 @@
 
     /* Paragraph */
     .our_104 {
-        font-size: 18px;
+        font-size: 30px;
         font-family: 'Open Sans', sans-serif;
         line-height: 1.8;
         color: #000000;
