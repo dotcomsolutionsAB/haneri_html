@@ -27,10 +27,10 @@
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
-        <div>
-        <img src="images/scan_3.png" alt="Motor Render" class="bldc-img" />
-        </div>
         <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="images/scan_3.png" alt="Motor Render" class="bldc-img" />
+        </div>
+        <div>
             <h2 class="bldc103 mb-4">Key Features of Silent S.C.A.N Technology</h2>
             <ul class="bldc106">
                 <li>
