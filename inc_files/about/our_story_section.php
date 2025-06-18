@@ -67,13 +67,12 @@
         margin-bottom: 0px !important;
     }
     .our_104_main{
-        font-size: 18px;
+        font-size: 14px;
         font-family: 'Open Sans', sans-serif;
         line-height: 1.8;
         color: #000000;
-        padding: 0rem 15rem 0rem 0rem;
         text-align: center;
-        padding: 0rem 15rem;
+        padding: 0rem 11rem;
     }
 
     .our_106_main{
