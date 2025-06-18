@@ -1328,7 +1328,9 @@ Turbosilent
   /* End benifits section css */
 
 
-
+.heading .btn {
+    font-weight: 500;
+}
   /* Brand content row container css */
   /* General Section Styling */
   .brands-section {
