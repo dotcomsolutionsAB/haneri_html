@@ -22,7 +22,7 @@
             </p>
         </div>
         <div>
-            <img src="images/capa_2.png" alt="R&D Facility Image" class="cpblts_img" />
+            <img src="images/capa_1.png" alt="R&D Facility Image" class="cpblts_img" />
         </div>
     </div>
 
@@ -56,9 +56,9 @@
 <style>
   /* Outer wrapper */
   .cpblts_107 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding: 3rem 0rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -70,12 +70,16 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+  .cpblts_109, .cpblts_img {
+    width: 50%;
+    max-width: 50%;
+  }
 
   @media (min-width: 768px) {
     .cpblts_108 {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
@@ -86,10 +90,10 @@
 
   /* Headings */
   .cpblts_110 {
-    font-size: 28px;
+    font-size: 48px;
     font-weight: 600;
     font-family: 'Barlow Condensed', sans-serif;
-    color: #065f46;
+    color: #00473E;
     /* dark green */
     margin-bottom: 0.75rem;
     line-height: 1.2;
@@ -97,10 +101,10 @@
 
   /* Paragraph */
   .cpblts_111 {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
-    color: #111827;
+    color: #000000;
     line-height: 1.75;
   }
 
