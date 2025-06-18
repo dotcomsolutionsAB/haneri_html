@@ -72,7 +72,7 @@
         line-height: 1.8;
         color: #000000;
         text-align: center;
-        padding: 0rem 11rem;
+        padding: 0rem 12rem;
     }
 
     .our_106_main{
