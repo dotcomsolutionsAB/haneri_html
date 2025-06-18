@@ -172,9 +172,9 @@
                         showCancelButton: true,
                         confirmButtonText: 'Save Changes',
                         cancelButtonText: 'Cancel',
-                        customClass: {
-                            confirmButton: 'swal-orange-btn'
-                        },
+                        // customClass: {
+                        //     confirmButton: 'swal-orange-btn'
+                        // },
                         focusConfirm: false,
                         preConfirm: () => {
                             return {
