@@ -360,7 +360,8 @@
 										title: 'Add New Address',
 										width: '700px', // Wider popup
 										customClass: {
-											confirmButton: 'confirmation-btn'
+											confirmButton: 'add-address-btn',
+											cancelButton: 'cancel-address-btn'
 										},
 										html: `			
 											<form id="swal-address-form">
@@ -549,7 +550,8 @@
 									title: 'Update Address',
 									width: '700px',
 									customClass: {
-										confirmButton: 'confirmation-btn'
+										confirmButton: 'update-address-btn',
+										cancelButton: 'cancel-address-btn'
 									},
 									html: `
 										<style>
