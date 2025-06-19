@@ -254,6 +254,7 @@
 
                         // Handle variants
                         if (data.data.variants.length > 0) {
+                            window.allVariants = data.data.variants; // ✅ IMPORTANT
                             const variants = data.data.variants;
                             const variantsContainer = $('.variants');
 
