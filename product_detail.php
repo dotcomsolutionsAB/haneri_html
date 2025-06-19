@@ -440,13 +440,12 @@
                             cartItemId = cartItem.id;
                             addCartBtn.hide();
                             viewCartBtn.show();
-                            quantityElem.hide(); // hide qty box
-                            cartItemIds.hide();  // also hide the wrapper div
 
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(1).show();
+                            // quantityElem.val(1).show();
+                            quantityElem.val(1);
                             cartItemIds.show();
                         }
 
