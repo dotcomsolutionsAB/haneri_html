@@ -10,10 +10,8 @@
             </ol>
         </div> -->
     </nav>
-    
-    <div class="heading">
-        <?php include("piller_links.php"); ?>
-    </div>
+
+    <?php include("piller_links.php"); ?>    
     
     <div class="container">                        
         <section id="mass" class="mass">
