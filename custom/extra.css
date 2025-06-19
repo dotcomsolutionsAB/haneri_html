@@ -2221,7 +2221,7 @@ footer .social-icon {
     }
     .shop_products{
         padding: 0px !important; 
-        max-width: 260px;
+        max-width: 255px;
     }
     .products_area{
         min-height: 695px;
@@ -2768,7 +2768,7 @@ footer .social-icon {
         padding: 20px;
         text-align: justify;
         border: none;
-        width: 260px;
+        width: 255px;
         cursor: pointer;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
@@ -3230,7 +3230,7 @@ footer .social-icon {
 
     .shop-feature-card{
         flex: 1 1 200px;
-        max-width: 260px;
+        max-width: 255px;
         background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
         border-radius: 10px;
         padding: 1.2rem;
