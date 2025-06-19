@@ -579,9 +579,6 @@
                                             </span>
                                             <span class="special_price" id="special_price">₹0.00</span>
                                         </div>
-                                        <span class="percentage">
-                                            15% OFF
-                                        </span>
                                     </div>
                                     <span class="in-ex paragraph2 primary_light">Inclusive All Taxes</span>
                                 </div>
