@@ -15,113 +15,146 @@
 	</nav>
 
 	<div class="contact_section">
-		<div class="contact-container">
-			<div class="contact-left">
-			<img src="https://images.unsplash.com/photo-1605742950025-40ecfa1c47d1?auto=format&fit=crop&w=800&q=80" alt="Family" />
+		<!-- Contact Section -->
+		<div class="contact_101">
+		<div class="contact_102">
+			<img src="https://images.unsplash.com/photo-1605742950025-40ecfa1c47d1?auto=format&fit=crop&w=800&q=80" alt="Family" class="contact_103" />
+		</div>
+		<div class="contact_104">
+			<h2 class="contact_105">Get In Touch</h2>
+			<form class="contact_106">
+			<div class="contact_107">
+				<input type="text" class="contact_108" placeholder="Full Name" required />
+				<input type="email" class="contact_109" placeholder="Email" required />
 			</div>
-			<div class="contact-right">
-			<h2>Get In Touch</h2>
-			<form>
-				<div class="form-group">
-				<input type="text" placeholder="Full Name" required />
-				<input type="email" placeholder="Email" required />
-				</div>
-				<div class="form-group">
-				<input type="tel" placeholder="Phone Number" required />
-				<input type="text" placeholder="Your Message" required />
-				</div>
-				<button type="submit">Submit</button>
+			<div class="contact_110">
+				<input type="tel" class="contact_111" placeholder="Phone Number" required />
+				<input type="text" class="contact_112" placeholder="Your Message" required />
+			</div>
+			<button type="submit" class="contact_113">Submit</button>
 			</form>
-			</div>
+		</div>
 		</div>
 
-		<div class="map-container">
-			<iframe
+		<!-- Map Section -->
+		<div class="contact_114">
+		<iframe
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3475.3208960627936!2d78.10577727445244!3d29.93814077497026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390947ca6c70279f%3A0x26369ac64b8ea295!2sElza%20International!5e0!3m2!1sen!2sin!4v1718797695984!5m2!1sen!2sin"
-			width="100%"
-			height="400"
-			style="border:0;"
-			allowfullscreen=""
-			loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"
-			></iframe>
+			width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
 		</div>
 	</div>
 
 
 	<div class="mb-8"></div>
 </main>
-
-<?php include("footer.php"); ?>
 <style>
-	.contact-container {
+	/* Main contact container */
+.contact_101 {
   display: flex;
   flex-wrap: wrap;
   background-color: #003d29;
-  color: #fff;
-  padding: 20px;
+  color: white;
 }
 
-.contact-left,
-.contact-right {
+/* Left section (image) */
+.contact_102 {
   flex: 1 1 50%;
   min-width: 300px;
 }
 
-.contact-left img {
+.contact_103 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.contact-right {
-  padding: 40px 20px;
+/* Right section (form) */
+.contact_104 {
+  flex: 1 1 50%;
+  padding: 40px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.contact-right h2 {
+.contact_105 {
+  font-size: 26px;
   margin-bottom: 20px;
-  font-size: 28px;
 }
 
-form {
+.contact_106 {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.form-group {
+/* Row 1 */
+.contact_107 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 20px;
 }
 
-.form-group input {
+/* Row 2 */
+.contact_110 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual input fields */
+.contact_108,
+.contact_109,
+.contact_111,
+.contact_112 {
   flex: 1 1 45%;
   padding: 10px;
-  border: none;
   border-radius: 5px;
+  border: none;
+  font-size: 14px;
 }
 
-button[type="submit"] {
-  width: 100px;
+/* Submit button */
+.contact_113 {
+  width: 120px;
   padding: 10px;
   border: none;
-  background-color: #fff;
+  background-color: white;
   color: #003d29;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+.contact_113:hover {
   background-color: #e0e0e0;
 }
 
-.map-container {
+/* Map section */
+.contact_114 {
   margin-top: 20px;
 }
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .contact_101 {
+    flex-direction: column;
+  }
+
+  .contact_107,
+  .contact_110 {
+    flex-direction: column;
+  }
+
+  .contact_108,
+  .contact_109,
+  .contact_111,
+  .contact_112 {
+    flex: 1 1 100%;
+  }
+}
 </style>
+<?php include("footer.php"); ?>
