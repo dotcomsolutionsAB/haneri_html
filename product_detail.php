@@ -449,50 +449,104 @@
             });
         }
 
+        // function checkVariantInCart(variantId) {
+        //     const token  = localStorage.getItem("auth_token");
+        //     const tempId = localStorage.getItem("temp_id");
+
+        //     if (!token && !tempId) {
+        //         console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
+        //         return;
+        //     }
+
+        //     let requestData = token ? {} : { cart_id: tempId };
+
+        //     $.ajax({
+        //         url: `<?php echo BASE_URL; ?>/cart/fetch`,
+        //         type: "POST",
+        //         headers: token ? { "Authorization": `Bearer ${token}` } : {},
+        //         contentType: "application/json",
+        //         data: JSON.stringify(requestData),
+        //         success: function (data) {
+        //             if (data.data && data.data.length > 0) {
+        //                 const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
+        //                 if (cartItem) {
+        //                     cartItemId = cartItem.id;
+        //                     addCartBtn.hide();
+        //                     viewCartBtn.show();
+        //                     quantityElem.val(cartItem.quantity);
+        //                     cartItemIds.show();
+        //                 } else {
+        //                     addCartBtn.show();
+        //                     viewCartBtn.hide();
+        //                     quantityElem.val(1);
+        //                     cartItemIds.hide();
+        //                 }
+        //             } else {
+        //                 addCartBtn.show();
+        //                 viewCartBtn.hide();
+        //                 quantityElem.val(1);
+        //                 cartItemIds.hide();
+        //             }
+        //         },
+        //         error: function (error) {
+        //             console.error("Error checking cart for variant:", error);
+        //         }
+        //     });
+        // }
+
         function checkVariantInCart(variantId) {
-            const token  = localStorage.getItem("auth_token");
-            const tempId = localStorage.getItem("temp_id");
+    const token  = localStorage.getItem("auth_token");
+    const tempId = localStorage.getItem("temp_id");
 
-            if (!token && !tempId) {
-                console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
-                return;
-            }
+    if (!token && !tempId) {
+        console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
+        return;
+    }
 
-            let requestData = token ? {} : { cart_id: tempId };
+    let requestData = token ? {} : { cart_id: tempId };
 
-            $.ajax({
-                url: `<?php echo BASE_URL; ?>/cart/fetch`,
-                type: "POST",
-                headers: token ? { "Authorization": `Bearer ${token}` } : {},
-                contentType: "application/json",
-                data: JSON.stringify(requestData),
-                success: function (data) {
-                    if (data.data && data.data.length > 0) {
-                        const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
-                        if (cartItem) {
-                            cartItemId = cartItem.id;
-                            addCartBtn.hide();
-                            viewCartBtn.show();
-                            quantityElem.val(cartItem.quantity);
-                            cartItemIds.show();
-                        } else {
-                            addCartBtn.show();
-                            viewCartBtn.hide();
-                            quantityElem.val(1);
-                            cartItemIds.hide();
-                        }
-                    } else {
-                        addCartBtn.show();
-                        viewCartBtn.hide();
-                        quantityElem.val(1);
-                        cartItemIds.hide();
-                    }
-                },
-                error: function (error) {
-                    console.error("Error checking cart for variant:", error);
+    $.ajax({
+        url: `<?php echo BASE_URL; ?>/cart/fetch`,
+        type: "POST",
+        headers: token ? { "Authorization": `Bearer ${token}` } : {},
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
+        success: function (data) {
+            if (data.data && data.data.length > 0) {
+                const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
+                if (cartItem) {
+                    cartItemId = cartItem.id;
+
+                    addCartBtn.hide();
+                    viewCartBtn.show();
+
+                    quantityElem.hide();         // ✅ HIDE Quantity input
+                    $('#cartId').hide();         // ✅ HIDE wrapper row
+                } else {
+                    cartItemId = null;
+
+                    addCartBtn.show();
+                    viewCartBtn.hide();
+
+                    quantityElem.val(1).show();  // ✅ SHOW Quantity
+                    $('#cartId').show();         // ✅ SHOW wrapper row
                 }
-            });
+            } else {
+                cartItemId = null;
+
+                addCartBtn.show();
+                viewCartBtn.hide();
+
+                quantityElem.val(1).show();
+                $('#cartId').show();
+            }
+        },
+        error: function (error) {
+            console.error("Error checking cart for variant:", error);
         }
+    });
+}
+
 
         // Price update function based on quantity change
         window.updatePrice = function() {
@@ -590,8 +644,8 @@
 </script>
 <style>
     #cartId {
-  transition: all 0.3s ease-in-out;
-}
+        transition: all 0.3s ease-in-out;
+    }
 
 </style>
 <main class="main about">
