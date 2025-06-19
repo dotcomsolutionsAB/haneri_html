@@ -521,36 +521,30 @@
                     });
                 };
 
-                // Attach click handler after rendering
-                $('#products-table').on('click', '.pro-card', function (event) {
-                    const productId = $(this).data('product-id');
-
-                    // Prevent if clicked inside a link or button
-                    const tagName = event.target.tagName.toLowerCase();
-                    const isInsideLinkOrButton = $(event.target).closest('a, button').length > 0;
-
-                    if (!isInsideLinkOrButton) {
-                        openProductDetail(productId);
-                    }
-                });
-
 function addToCartFromList(event, productId, variantId = null) {
-    event.stopPropagation(); // prevent card click
+    event.stopPropagation(); // Prevent triggering card click
+
     const token  = localStorage.getItem("auth_token");
     let tempId   = localStorage.getItem("temp_id");
     const quantity = 1;
 
-    if (!variantId) {
-        alert("This product has no variant selected.");
+    // Validation
+    if (!productId) {
+        alert("Product is missing.");
         return;
     }
 
     const requestData = {
-        product_id: productId,
-        variant_id: variantId,
+        product_id: parseInt(productId),
         quantity: quantity
     };
 
+    // Only send variant_id if provided
+    if (variantId) {
+        requestData.variant_id = parseInt(variantId);
+    }
+
+    // For guest user with existing temp_id
     if (!token && tempId) {
         requestData.cart_id = tempId;
     }
@@ -564,17 +558,20 @@ function addToCartFromList(event, productId, variantId = null) {
             if (data.success === true || data.message.includes("successfully")) {
                 console.log("Product added to cart:", data.message);
 
-                // Optionally update cart icon or UI
-                if (!token && !tempId && data.data?.user_id) {
+                // Handle guest: store temp_id (UUID) only if new
+                if (!token && !tempId && typeof data.data.user_id === "string") {
                     localStorage.setItem("temp_id", data.data.user_id);
                 }
+
+                // Optionally: toast or update cart count
+                alert("Added to cart successfully!");
             } else {
                 alert("Error: " + data.message);
             }
         },
         error: function (err) {
             console.error("Add to cart failed:", err);
-            alert("Something went wrong while adding the product to cart.");
+            alert("There was an error adding the product to your cart.");
         }
     };
 
@@ -584,6 +581,22 @@ function addToCartFromList(event, productId, variantId = null) {
 
     $.ajax(ajaxOptions);
 }
+
+
+                // Attach click handler after rendering
+                $('#products-table').on('click', '.pro-card', function (event) {
+                    const productId = $(this).data('product-id');
+
+                    // Prevent if clicked inside a link or button
+                    const tagName = event.target.tagName.toLowerCase();
+                    const isInsideLinkOrButton = $(event.target).closest('a, button').length > 0;
+
+                    if (!isInsideLinkOrButton) {
+                        openProductDetail(productId);
+                    }
+                });
+
+
 
 
                 const updatePagination = () => {
