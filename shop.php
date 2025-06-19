@@ -502,7 +502,9 @@
                                 populateTable(response.data);
                                 updatePagination();
                             } else {
-                                console.error("Unexpected products response format:", response);
+                                totalItems = 0;
+                                updatePagination();
+                                populateTable([]);  // Trigger "Coming Soon!" by passing an empty array
                             }
                         },
                         error: (error) => {
