@@ -478,8 +478,8 @@
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            $('#quantity').val(1).show();     // ✅ SHOW quantity for fresh variant
-                            $('#cartId').show();              // ✅ SHOW wrapper row
+                            quantityElem.val(1);
+                            cartItemIds.hide();
                         }
                     } else {
                         addCartBtn.show();
