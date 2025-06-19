@@ -1085,12 +1085,11 @@ Turbosilent
     }
     .ulclass{
         font-family: 'Open Sans';
-          line-height: 1.8;
-          margin-bottom: 20px;
-          color: #555;
-          text-align: justify;
-          font-size: 16px !important;
-      
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #555;
+        text-align: justify;
+        font-size: 16px !important;
     }
     .ulclass li{
       margin-bottom: 10px;
@@ -1102,55 +1101,57 @@ Turbosilent
     /* .history-section h2 {
       margin-bottom: 0rem;
     } */
-  /* Main Heading Style */
-  .page_heading {
-      color: #315859; /* White text color */
-      padding: 5px 65px; /* Spacing inside the heading */
-      position: relative; /* Enable pseudo-elements */
-      display: inline-block; /* Allow background to wrap the text */
-      border-radius: 0px; /* Rounded corners */
-      overflow: hidden; /* Prevent overflow of child elements */
-      width:100%;      
-  }
+    /* Main Heading Style */
+    .page_heading {
+        color: #315859; /* White text color */
+        padding: 5px 65px; /* Spacing inside the heading */
+        position: relative; /* Enable pseudo-elements */
+        display: inline-block; /* Allow background to wrap the text */
+        border-radius: 0px; /* Rounded corners */
+        overflow: hidden; /* Prevent overflow of child elements */
+        width:100%;      
+    }
 
-  /* Geometric Decorative Element */
-   /* .page_heading::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: -10px;
-      width: 260px;
-      height: 170px;
-      background: #f4f4f42e;
-      transform: rotate(45deg);
-      z-index: 100;
-  } */
+    /* Geometric Decorative Element */
+    /* .page_heading::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        width: 260px;
+        height: 170px;
+        background: #f4f4f42e;
+        transform: rotate(45deg);
+        z-index: 100;
+    } */
 
-  /* .page_heading::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: -15px;
-      width: 230px;
-      height: 150px;
-      background: #dfdfdf;
-      transform: rotate(45deg);
-      z-index: 1;
-  } */
+    /* .page_heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: -15px;
+        width: 230px;
+        height: 150px;
+        background: #dfdfdf;
+        transform: rotate(45deg);
+        z-index: 1;
+    } 
 
-  /* Text Layer */
-  .page_heading span {
-      position: relative; /* Ensure text is above pseudo-elements */
-      z-index: 2; /* Bring text to the front */
-  }
+    */
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-      .page_heading {
-          font-size: 2.5rem; /* Adjust font size for smaller screens */
-          padding: 15px 20px; /* Reduce padding */
-      }
-  }
+    /* Text Layer */
+    .page_heading span {
+        position: relative; /* Ensure text is above pseudo-elements */
+        z-index: 2; /* Bring text to the front */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .page_heading {
+            font-size: 2.5rem; /* Adjust font size for smaller screens */
+            padding: 15px 20px; /* Reduce padding */
+        }
+    }
 
 
 
@@ -2654,9 +2655,10 @@ footer .social-icon {
             text-align: justify;
             border: none;
             width: 299.462px;
+            cursor: pointer;
             /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
-
         }
+        
         .featured .card .bgremoved{
             border-top: 1px solid #315858;
             text-align: left;
