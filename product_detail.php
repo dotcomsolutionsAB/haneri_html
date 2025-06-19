@@ -588,7 +588,12 @@
         });
     });
 </script>
+<style>
+    #cartId {
+  transition: all 0.3s ease-in-out;
+}
 
+</style>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
