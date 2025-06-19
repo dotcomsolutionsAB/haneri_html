@@ -1,4 +1,4 @@
-<div class="header">
+<div class="heading">
     <div class="button-group container" style="display: flex; gap: 10px; align-items: center;">
         <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
         <span class="divider">|</span>
