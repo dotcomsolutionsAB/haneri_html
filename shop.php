@@ -339,8 +339,8 @@
                 bottom: -100px;
                 left: 50%;
                 transform: translateX(-50%);
-                background: #fdecea;
-                color: #b71c1c;
+                background:rgb(98, 151, 144);
+                color: #00473E;
                 padding: 14px 24px;
                 border-radius: 8px;
                 font-weight: 500;
@@ -348,7 +348,7 @@
                 box-shadow: 0 6px 16px rgba(0,0,0,0.15);
                 transition: bottom 0.4s ease;
                 z-index: 9999;
-                border: 1px solid #f5c6cb;
+                border: 1px solid 00473E;
             ">
                 Item added to cart!
             </div>
