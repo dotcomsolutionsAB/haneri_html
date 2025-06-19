@@ -91,7 +91,7 @@
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols categoryy">
                                         <div class="row">
                                             <section class="categories hover">
-                                                <a href="shop.php">
+                                                <a href="shop.php?category=Ceiling Fan">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Ceilimg Fan.png" alt="Ceiling Fan">
@@ -101,7 +101,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="shop.php">
+                                                <a href="shop.php?category=Table Wall Pedestals">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Table Wall Pedestals.png" alt="Table Wall Pedestals">
@@ -111,7 +111,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="shop.php">
+                                                <a href="shop.php?category=Domestic Exhaust">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Domestic Exhaust.png" alt="Domestic Exhaust">
@@ -121,7 +121,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a href="shop.php">
+                                                <a href="shop.php?category=Personal">
                                                     <div class="category hov">
                                                         <div class="img">
                                                             <img src="images/Personal.png" alt="Personal">
@@ -146,10 +146,6 @@
                                                     <li><a href="mass.php">H.A.S.S®</a></li>
                                                     <li><a href="lumiambience.php">LumiAmbience</a></li>
                                                     <li><a href="scan.php">S.C.A.N</a></li>
-                                                    <!-- <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
-                                                    <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
-                                                    <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
-                                                    <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li> -->
                                                 </ul>
                                             </div><!-- End .col-lg-4 -->
                                         </div>
