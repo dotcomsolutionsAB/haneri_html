@@ -509,7 +509,10 @@
                                         ${priceSnippet}
                                         <div class="cart_view_add">
                                             <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved rounded-pill px-4">Add to Cart</a>
+                                            <a href="javascript:void(0)" onclick="addToCartFromList(event, '${product.id}', '${product.variants?.[0]?.id || ''}')" class="btn bgremoved rounded-pill px-4">
+                                                Add to Cart
+                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -531,6 +534,56 @@
                     }
                 });
 
+function addToCartFromList(event, productId, variantId = null) {
+    event.stopPropagation(); // prevent card click
+    const token  = localStorage.getItem("auth_token");
+    let tempId   = localStorage.getItem("temp_id");
+    const quantity = 1;
+
+    if (!variantId) {
+        alert("This product has no variant selected.");
+        return;
+    }
+
+    const requestData = {
+        product_id: productId,
+        variant_id: variantId,
+        quantity: quantity
+    };
+
+    if (!token && tempId) {
+        requestData.cart_id = tempId;
+    }
+
+    const ajaxOptions = {
+        url: `<?php echo BASE_URL; ?>/cart/add`,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(requestData),
+        success: function (data) {
+            if (data.success === true || data.message.includes("successfully")) {
+                console.log("Product added to cart:", data.message);
+
+                // Optionally update cart icon or UI
+                if (!token && !tempId && data.data?.user_id) {
+                    localStorage.setItem("temp_id", data.data.user_id);
+                }
+            } else {
+                alert("Error: " + data.message);
+            }
+        },
+        error: function (err) {
+            console.error("Add to cart failed:", err);
+            alert("Something went wrong while adding the product to cart.");
+        }
+    };
+
+    if (token) {
+        ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+    }
+
+    $.ajax(ajaxOptions);
+}
 
 
                 const updatePagination = () => {
