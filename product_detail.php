@@ -423,19 +423,33 @@
                 success: function (data) {
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
+                        // if (cartItem) {
+                        //     cartItemId = cartItem.id; // Get the cart ID
+                        //     addCartBtn.hide();
+                        //     // viewCartBtn.show();
+                        //     quantityElem.val(cartItem.quantity);
+                        //     cartItemIds.show();
+                        //     updatePrice();
+                        // } else {
+                        //     addCartBtn.show();
+                        //     viewCartBtn.hide();
+                        //     quantityElem.val(1);
+                        //     updatePrice();
+                        // }
                         if (cartItem) {
-                            cartItemId = cartItem.id; // Get the cart ID
+                            cartItemId = cartItem.id;
                             addCartBtn.hide();
-                            // viewCartBtn.show();
-                            quantityElem.val(cartItem.quantity);
-                            cartItemIds.show();
-                            updatePrice();
+                            viewCartBtn.show();
+                            quantityElem.hide(); // hide qty box
+                            cartItemIds.hide();  // also hide the wrapper div
+
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(1);
-                            updatePrice();
+                            quantityElem.val(1).show();
+                            cartItemIds.show();
                         }
+
                     }
                 },
                 error: function (error) {
