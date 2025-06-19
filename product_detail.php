@@ -496,9 +496,7 @@
         </div><!-- End .container -->
     </nav>
     <div class="containe text-left pro_detail">
-        <!-- <h1 class="text-uppercase about_section">
-            Product Details
-        </h1> -->
+
     </div>
     <div class="page-wrapper">
         <main class="main">
