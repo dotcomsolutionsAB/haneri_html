@@ -521,68 +521,6 @@
                     });
                 };
 
-function addToCartFromList(event, productId, variantId = null) {
-    event.stopPropagation(); // Prevent triggering card click
-
-    const token  = localStorage.getItem("auth_token");
-    let tempId   = localStorage.getItem("temp_id");
-    const quantity = 1;
-
-    // Validation
-    if (!productId) {
-        alert("Product is missing.");
-        return;
-    }
-
-    const requestData = {
-        product_id: parseInt(productId),
-        quantity: quantity
-    };
-
-    // Only send variant_id if provided
-    if (variantId) {
-        requestData.variant_id = parseInt(variantId);
-    }
-
-    // For guest user with existing temp_id
-    if (!token && tempId) {
-        requestData.cart_id = tempId;
-    }
-
-    const ajaxOptions = {
-        url: `<?php echo BASE_URL; ?>/cart/add`,
-        type: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(requestData),
-        success: function (data) {
-            if (data.success === true || data.message.includes("successfully")) {
-                console.log("Product added to cart:", data.message);
-
-                // Handle guest: store temp_id (UUID) only if new
-                if (!token && !tempId && typeof data.data.user_id === "string") {
-                    localStorage.setItem("temp_id", data.data.user_id);
-                }
-
-                // Optionally: toast or update cart count
-                alert("Added to cart successfully!");
-            } else {
-                alert("Error: " + data.message);
-            }
-        },
-        error: function (err) {
-            console.error("Add to cart failed:", err);
-            alert("There was an error adding the product to your cart.");
-        }
-    };
-
-    if (token) {
-        ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
-    }
-
-    $.ajax(ajaxOptions);
-}
-
-
                 // Attach click handler after rendering
                 $('#products-table').on('click', '.pro-card', function (event) {
                     const productId = $(this).data('product-id');
@@ -595,9 +533,6 @@ function addToCartFromList(event, productId, variantId = null) {
                         openProductDetail(productId);
                     }
                 });
-
-
-
 
                 const updatePagination = () => {
                     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -638,6 +573,62 @@ function addToCartFromList(event, productId, variantId = null) {
             });
         </script>
         <script>
+  function addToCartFromList(event, productId, variantId = null) {
+    event.stopPropagation();
+
+    const token = localStorage.getItem("auth_token");
+    let tempId  = localStorage.getItem("temp_id");
+    const quantity = 1;
+
+    if (!productId) {
+      alert("Product is missing.");
+      return;
+    }
+
+    const requestData = {
+      product_id: parseInt(productId),
+      quantity: quantity
+    };
+
+    if (variantId) {
+      requestData.variant_id = parseInt(variantId);
+    }
+
+    if (!token && tempId) {
+      requestData.cart_id = tempId;
+    }
+
+    const ajaxOptions = {
+      url: `<?php echo BASE_URL; ?>/cart/add`,
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(requestData),
+      success: function (data) {
+        if (data.success === true || data.message.includes("successfully")) {
+          if (!token && !tempId && typeof data.data.user_id === "string") {
+            localStorage.setItem("temp_id", data.data.user_id);
+          }
+          alert("Added to cart successfully!");
+        } else {
+          alert("Error: " + data.message);
+        }
+      },
+      error: function (err) {
+        console.error("Add to cart failed:", err);
+        alert("There was an error adding the product to your cart.");
+      }
+    };
+
+    if (token) {
+      ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+    }
+
+    $.ajax(ajaxOptions);
+  }
+</script>
+
+        <script>
+            
             function openProductDetail(productId) {
                 window.location.href = 'product_detail.php?id=' + productId;
             }
