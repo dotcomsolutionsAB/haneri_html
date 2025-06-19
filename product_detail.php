@@ -444,8 +444,8 @@
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            // quantityElem.val(1).show();
-                            quantityElem.val(1);
+                            quantityElem.val(1).show();
+                            // quantityElem.val(1);
                             cartItemIds.show();
                         }
 
