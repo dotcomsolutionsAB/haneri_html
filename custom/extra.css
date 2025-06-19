@@ -2655,10 +2655,8 @@ footer .social-icon {
             text-align: justify;
             border: none;
             width: 299.462px;
-            cursor: pointer;
             /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
         }
-        
         .featured .card .bgremoved{
             border-top: 1px solid #315858;
             text-align: left;
@@ -2768,6 +2766,7 @@ footer .social-icon {
         text-align: justify;
         border: none;
         width: 255.462px;
+        cursor: pointer;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     .shop .card_image {
