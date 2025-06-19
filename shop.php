@@ -339,7 +339,7 @@
                 bottom: -100px;
                 left: 50%;
                 transform: translateX(-50%);
-                background:rgb(98, 151, 144);
+                background: #b3e3dd;
                 color: #00473E;
                 padding: 14px 24px;
                 border-radius: 8px;
@@ -646,7 +646,7 @@
                 $.ajax(ajaxOptions);
             }
 
-            function showFlashMessage(message = "Success!", background = '#fdecea', textColor = '#b71c1c') {
+            function showFlashMessage(message = "Success!", background = '#b3e3dd', textColor = '#00473E') {
                 const flash = document.getElementById("flash-message");
 
                 flash.innerText = message;
