@@ -336,18 +336,23 @@
             <div id="flash-message" style="
                 display: none;
                 position: fixed;
-                top: 20px;
-                right: 20px;
-                background: #28a745;
-                color: white;
-                padding: 12px 20px;
-                border-radius: 6px;
-                font-weight: bold;
+                bottom: -100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #fdecea;
+                color: #b71c1c;
+                padding: 14px 24px;
+                border-radius: 8px;
+                font-weight: 500;
+                font-size: 16px;
+                box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+                transition: bottom 0.4s ease;
                 z-index: 9999;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                border: 1px solid #f5c6cb;
             ">
                 Item added to cart!
             </div>
+
 
         <script>
             $(document).ready(function () {
@@ -625,7 +630,7 @@
                             }
                             showFlashMessage("Item added to cart!");
                         } else {
-                            showFlashMessage("Error: " + data.message, '#dc3545'); // Red color
+                            showFlashMessage("Failed to add to cart", "#ffeaea", "#ff0000");
                         }
                     },
                     error: function (err) {
@@ -641,15 +646,22 @@
                 $.ajax(ajaxOptions);
             }
 
-            function showFlashMessage(message, bgColor = '#28a745') {
+            function showFlashMessage(message = "Success!", background = '#fdecea', textColor = '#b71c1c') {
                 const flash = document.getElementById("flash-message");
+
                 flash.innerText = message;
-                flash.style.background = bgColor;
+                flash.style.background = background;
+                flash.style.color = textColor;
+                flash.style.bottom = "30px";
                 flash.style.display = "block";
 
+                // Hide after 3 seconds
                 setTimeout(() => {
-                    flash.style.display = "none";
-                }, 3000); // Hide after 3 seconds
+                    flash.style.bottom = "-100px";
+                    setTimeout(() => {
+                        flash.style.display = "none";
+                    }, 400);
+                }, 3000);
             }
         </script>
 
