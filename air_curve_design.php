@@ -10,18 +10,7 @@
         </div> -->
     </nav>
     <!-- <div class="page-header pt-3 bg-transparent"> -->
-    <div class="heading">
-    <div class="button-group container" style="display: flex; gap: 10px; align-items: center;">
-    <a class="btn button" href="/air_curve_design.php">Air Curve Design</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/turbosilent_bldc.php">TurboSilent BLDC</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/mass.php">H.A.S.S</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/lumiambience.php">Lumiambience</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/scan.php">S.C.A.N</a>
-</div><!-- End .page-header -->
+    <?php include("piller_links.php"); ?>
     <div class="container">                
         <section id="air_curve_design" class="air_curve_design">
             <?php include("inc_files/pillar_technology/air_curve_design.php"); ?>

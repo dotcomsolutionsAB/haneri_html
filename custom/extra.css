@@ -1588,7 +1588,11 @@ Turbosilent
     position: relative; /* Ensure text is above pseudo-elements */
     z-index: 2; /* Bring text to the front */
 }
-
+.comming_soon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .about_section {
@@ -1598,7 +1602,7 @@ Turbosilent
 }
 
 .menu .categoryy {
-    left: -26.5vw !important;
+    left: -21.5vw !important;
     width: 100vw !important;
     min-width: 100vw;
     box-shadow: none;

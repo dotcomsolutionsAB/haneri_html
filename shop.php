@@ -518,7 +518,94 @@
                     currentPage = 1; // reset to first page if needed
                     fetchProducts();
                 });
+                const populateTable = (data) => {
+                    const tbody = $("#products-table");
+                    tbody.empty();
 
+                    // Show "Coming Soon!" if no products
+                    if (!data || data.length === 0) {
+                        tbody.html(`
+                            <div class="col-12 text-center comming_soon">
+                                <h3 class="text-danger my-5">Coming Soon!</h3>
+                            </div>
+                        `);
+                        return;
+                    }
+                    const userRole = localStorage.getItem("user_role");
+
+                    data.forEach((product) => {
+                        if (!Array.isArray(product.variants)) return;
+
+                        product.variants.forEach((variant) => {
+                            let productImage = product.image?.length > 0 
+                                ? product.image[0]
+                                : "assets/images/placeholder.jpg";
+
+                            let regularPrice = variant.regular_price || "00";
+                            let sellingPrice = variant.selling_price || "00";
+                            let vendor_price = variant.sales_price_vendor || "00";
+
+                            // Price box
+                            let priceSnippet = userRole === "vendor"
+                                ? `
+                                    <div class="price-box">
+                                        <div class="c_price">
+                                            <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
+                                            <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
+                                        </div>
+                                        <br>
+                                        <div class="sp_price">
+                                            Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
+                                        </div>
+                                    </div>
+                                `
+                                : `
+                                    <div class="price-box">
+                                        <div class="c_price">
+                                            <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
+                                            <span class="product-price paragraph1">MRP ₹${sellingPrice}</span>
+                                        </div>
+                                        <div class="sp_price none">
+                                            Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
+                                        </div>
+                                    </div>
+                                `;
+
+                            // Image selection fallback
+                            const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
+
+                            tbody.append(`
+                                <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
+                                    <div class="card featured pro-card" id="pro-table" data-product-id="${variant.product_id}">
+                                        <div class="card_image">
+                                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid" />
+                                        </div>
+                                        <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
+                                        <h4 class="heading2 cardh">
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')">
+                                                ${product.name}
+                                            </a>
+                                            <span>${variant.variant_value}</span>
+                                        </h4>
+                                        <div class="ratings-container">
+                                            <div class="product-ratings">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                        </div>
+                                        ${priceSnippet}
+                                        <div class="cart_view_add">
+                                            <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
+                                            <a href="javascript:void(0)" onclick="addToCartFromList(event, '${product.id}', '${variant.id}')" class="btn bgremoved rounded-pill px-4">
+                                                Add to Cart
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    });
+                };
                 // const populateTable = (data) => {
                 //     const tbody = $("#products-table");
                 //     tbody.empty();
@@ -607,94 +694,7 @@
                 //         }
                 //     });
                 // };
-                const populateTable = (data) => {
-                    const tbody = $("#products-table");
-                    tbody.empty();
-
-                    // Show "Coming Soon!" if no products
-                    if (!data || data.length === 0) {
-                        tbody.html(`
-                            <div class="col-12 text-center">
-                                <h3 class="text-danger my-5">Coming Soon!</h3>
-                            </div>
-                        `);
-                        return;
-                    }
-                    const userRole = localStorage.getItem("user_role");
-
-                    data.forEach((product) => {
-                        if (!Array.isArray(product.variants)) return;
-
-                        product.variants.forEach((variant) => {
-                            let productImage = product.image?.length > 0 
-                                ? product.image[0]
-                                : "assets/images/placeholder.jpg";
-
-                            let regularPrice = variant.regular_price || "00";
-                            let sellingPrice = variant.selling_price || "00";
-                            let vendor_price = variant.sales_price_vendor || "00";
-
-                            // Price box
-                            let priceSnippet = userRole === "vendor"
-                                ? `
-                                    <div class="price-box">
-                                        <div class="c_price">
-                                            <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                                            <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
-                                        </div>
-                                        <br>
-                                        <div class="sp_price">
-                                            Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
-                                        </div>
-                                    </div>
-                                `
-                                : `
-                                    <div class="price-box">
-                                        <div class="c_price">
-                                            <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                                            <span class="product-price paragraph1">MRP ₹${sellingPrice}</span>
-                                        </div>
-                                        <div class="sp_price none">
-                                            Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
-                                        </div>
-                                    </div>
-                                `;
-
-                            // Image selection fallback
-                            const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
-
-                            tbody.append(`
-                                <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
-                                    <div class="card featured pro-card" id="pro-table" data-product-id="${variant.product_id}">
-                                        <div class="card_image">
-                                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid" />
-                                        </div>
-                                        <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
-                                        <h4 class="heading2 cardh">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')">
-                                                ${product.name}
-                                            </a>
-                                            <span>${variant.variant_value}</span>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        ${priceSnippet}
-                                        <div class="cart_view_add">
-                                            <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
-                                            <a href="javascript:void(0)" onclick="addToCartFromList(event, '${product.id}', '${variant.id}')" class="btn bgremoved rounded-pill px-4">
-                                                Add to Cart
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            `);
-                        });
-                    });
-                };
+                
 
 
                 // Attach click handler after rendering
