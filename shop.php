@@ -333,6 +333,21 @@
                 </div>
             </div>
         </main>
+            <div id="flash-message" style="
+                display: none;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 6px;
+                font-weight: bold;
+                z-index: 9999;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            ">
+                Item added to cart!
+            </div>
 
         <script>
             $(document).ready(function () {
@@ -573,62 +588,72 @@
             });
         </script>
         <script>
-  function addToCartFromList(event, productId, variantId = null) {
-    event.stopPropagation();
+            function addToCartFromList(event, productId, variantId = null) {
+                event.stopPropagation();
 
-    const token = localStorage.getItem("auth_token");
-    let tempId  = localStorage.getItem("temp_id");
-    const quantity = 1;
+                const token = localStorage.getItem("auth_token");
+                let tempId  = localStorage.getItem("temp_id");
+                const quantity = 1;
 
-    if (!productId) {
-      alert("Product is missing.");
-      return;
-    }
+                if (!productId) {
+                    alert("Product is missing.");
+                    return;
+                }
 
-    const requestData = {
-      product_id: parseInt(productId),
-      quantity: quantity
-    };
+                const requestData = {
+                    product_id: parseInt(productId),
+                    quantity: quantity
+                };
 
-    if (variantId) {
-      requestData.variant_id = parseInt(variantId);
-    }
+                if (variantId) {
+                    requestData.variant_id = parseInt(variantId);
+                }
 
-    if (!token && tempId) {
-      requestData.cart_id = tempId;
-    }
+                if (!token && tempId) {
+                    requestData.cart_id = tempId;
+                }
 
-    const ajaxOptions = {
-      url: `<?php echo BASE_URL; ?>/cart/add`,
-      type: "POST",
-      contentType: "application/json",
-      data: JSON.stringify(requestData),
-      success: function (data) {
-        if (data.success === true || data.message.includes("successfully")) {
-          if (!token && !tempId && typeof data.data.user_id === "string") {
-            localStorage.setItem("temp_id", data.data.user_id);
-          }
-          alert("Added to cart successfully!");
-        } else {
-          alert("Error: " + data.message);
-        }
-      },
-      error: function (err) {
-        console.error("Add to cart failed:", err);
-        alert("There was an error adding the product to your cart.");
-      }
-    };
+                const ajaxOptions = {
+                    url: `<?php echo BASE_URL; ?>/cart/add`,
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(requestData),
+                    success: function (data) {
+                        if (data.success === true || data.message.includes("successfully")) {
+                            if (!token && !tempId && typeof data.data.user_id === "string") {
+                                localStorage.setItem("temp_id", data.data.user_id);
+                            }
+                            showFlashMessage("Item added to cart!");
+                        } else {
+                            showFlashMessage("Error: " + data.message, '#dc3545'); // Red color
+                        }
+                    },
+                    error: function (err) {
+                        console.error("Add to cart failed:", err);
+                        alert("There was an error adding the product to your cart.");
+                    }
+                };
 
-    if (token) {
-      ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
-    }
+                if (token) {
+                    ajaxOptions.headers = { "Authorization": `Bearer ${token}` };
+                }
 
-    $.ajax(ajaxOptions);
-  }
-</script>
+                $.ajax(ajaxOptions);
+            }
+
+            function showFlashMessage(message, bgColor = '#28a745') {
+                const flash = document.getElementById("flash-message");
+                flash.innerText = message;
+                flash.style.background = bgColor;
+                flash.style.display = "block";
+
+                setTimeout(() => {
+                    flash.style.display = "none";
+                }, 3000); // Hide after 3 seconds
+            }
+        </script>
 
         <script>
-            
             function openProductDetail(productId) {
                 window.location.href = 'product_detail.php?id=' + productId;
             }
