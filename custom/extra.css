@@ -3241,6 +3241,9 @@ footer .social-icon {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         transition: background 0.3s ease;
     }
+    .cardh{
+        font-size: 22px !important;
+    }
 
     .shop-feature-card img {
         width: 30px;
