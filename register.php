@@ -49,59 +49,59 @@
 </main>
 
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    // Get input values
-    const name = document.getElementById("register-name").value;
-    const mobile = document.getElementById("register-mobile").value;
-    const email = document.getElementById("register-email").value;
-    const password = document.getElementById("register-password").value;
+        // Get input values
+        const name = document.getElementById("register-name").value;
+        const mobile = document.getElementById("register-mobile").value;
+        const email = document.getElementById("register-email").value;
+        const password = document.getElementById("register-password").value;
 
-    // API endpoint
-    const apiUrl = "<?php echo BASE_URL; ?>/register";
+        // API endpoint
+        const apiUrl = "<?php echo BASE_URL; ?>/register";
 
-    // Request body
-    const requestData = {
-        name: name,
-        mobile: mobile,
-        email: email,
-        password: password,
-        role: "customer" // Default role
-    };
+        // Request body
+        const requestData = {
+            name: name,
+            mobile: mobile,
+            email: email,
+            password: password,
+            role: "customer" // Default role
+        };
 
-    fetch(apiUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(requestData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("API Response:", data); // Debugging
+        fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("API Response:", data); // Debugging
 
-        if (data.message === "User registered successfully!" && data.data) {
-            // Store user details in localStorage
-            localStorage.setItem("auth_token", data.data.token);  // Assuming API returns a token
-            localStorage.setItem("user_name", data.data.name);
-            localStorage.setItem("user_email", data.data.email);
-            localStorage.setItem("user_mobile", data.data.mobile);
-            localStorage.setItem("user_role", "customer");
+            if (data.message === "User registered successfully!" && data.data) {
+                // Store user details in localStorage
+                localStorage.setItem("auth_token", data.data.token);  // Assuming API returns a token
+                localStorage.setItem("user_name", data.data.name);
+                localStorage.setItem("user_email", data.data.email);
+                localStorage.setItem("user_mobile", data.data.mobile);
+                localStorage.setItem("user_role", "customer");
 
-            // Redirect to home page after successful registration
-            window.location.href = "index.php";
-        } else {
-            document.getElementById("error-message").innerText = data.message || "Registration failed.";
+                // Redirect to home page after successful registration
+                window.location.href = "index.php";
+            } else {
+                document.getElementById("error-message").innerText = data.message || "Registration failed.";
+                document.getElementById("error-message").style.display = "block";
+            }
+        })
+        .catch(error => {
+            console.error("Fetch Error:", error);
+            document.getElementById("error-message").innerText = "Something went wrong. Please try again.";
             document.getElementById("error-message").style.display = "block";
-        }
-    })
-    .catch(error => {
-        console.error("Fetch Error:", error);
-        document.getElementById("error-message").innerText = "Something went wrong. Please try again.";
-        document.getElementById("error-message").style.display = "block";
+        });
     });
-});
 </script>
 
 <?php include("footer.php"); ?>
