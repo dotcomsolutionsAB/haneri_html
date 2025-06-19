@@ -287,7 +287,7 @@
                             $('#selected-variant').val(firstVariantElem.data("variant-id"));
                             updateVariant(firstVariantElem[0]); // This will call setImageSection internally
                         } else {
-                            setImageSection(null);
+                            setImageSectionFromVariant(null);
                         }
 
                     }
