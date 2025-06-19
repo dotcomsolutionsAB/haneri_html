@@ -368,12 +368,12 @@
                 success: function (data) {
                     console.log("API response received:", data);
 
-if (data.success === true || data.message.includes("successfully")) {
-    $('#quantity').hide();     // ❗ hide Quantity box after adding
-    $('#cartId').hide();       // ❗ hide the wrapper row
+                    if (data.success === true || data.message.includes("successfully")) {
+                        $('#quantity').hide();     // ❗ hide Quantity box after adding
+                        $('#cartId').hide();       // ❗ hide the wrapper row
 
-    addCartBtn.hide();         // hide Add to Cart
-    viewCartBtn.show();        // show View Cart
+                        addCartBtn.hide();         // hide Add to Cart
+                        viewCartBtn.show();        // show View Cart
                         checkCart();
 
                         // Store temp_id if user is not authenticated
@@ -425,23 +425,22 @@ if (data.success === true || data.message.includes("successfully")) {
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
                         if (cartItem) {
-    cartItemId = cartItem.id;
+                            cartItemId = cartItem.id;
 
-    addCartBtn.hide();         // hide Add to Cart
-    viewCartBtn.show();        // show View Cart
+                            addCartBtn.hide();         // hide Add to Cart
+                            viewCartBtn.show();        // show View Cart
 
-    $('#quantity').hide();     // ❗ hide Quantity box
-    $('#cartId').hide();       // ❗ hide the entire row if needed
-} else {
-    cartItemId = null;
+                            $('#quantity').hide();     // ❗ hide Quantity box
+                            $('#cartId').hide();       // ❗ hide the entire row if needed
+                        } else {
+                            cartItemId = null;
 
-    addCartBtn.show();
-    viewCartBtn.hide();
+                            addCartBtn.show();
+                            viewCartBtn.hide();
 
-    $('#quantity').val(1).show();  // show quantity box
-    $('#cartId').show();           // show the wrapper row
-}
-
+                            $('#quantity').val(1).show();  // show quantity box
+                            $('#cartId').show();           // show the wrapper row
+                        }
                     }
                 },
                 error: function (error) {
@@ -479,8 +478,8 @@ if (data.success === true || data.message.includes("successfully")) {
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(1);
-                            cartItemIds.hide();
+                            $('#quantity').val(1).show();     // ✅ SHOW quantity for fresh variant
+                            $('#cartId').show();              // ✅ SHOW wrapper row
                         }
                     } else {
                         addCartBtn.show();
