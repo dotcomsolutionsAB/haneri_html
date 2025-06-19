@@ -1831,8 +1831,8 @@ a.text-primary:focus, a.text-primary:hover {
     .container {
         /* padding-left: 10px; */
         /* padding-right: 10px; */
-        padding-left: 7vw !important;
-        padding-right: 7vw !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
     }
 }
 .header-icon:not(:last-child) {
