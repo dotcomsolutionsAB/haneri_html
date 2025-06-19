@@ -370,7 +370,7 @@
 
                     if (data.success === true || data.message.includes("successfully")) {
                         // alert(data.message);
-                        cartItemIds.show(); // want to hide after have data in cart use .hide()
+                        cartItemIds.hide(); // want to hide after have data in cart use .hide()
                         addCartBtn.hide();
                         viewCartBtn.show();
                         checkCart();
@@ -423,32 +423,20 @@
                 success: function (data) {
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
-                        // if (cartItem) {
-                        //     cartItemId = cartItem.id; // Get the cart ID
-                        //     addCartBtn.hide();
-                        //     // viewCartBtn.show();
-                        //     quantityElem.val(cartItem.quantity);
-                        //     cartItemIds.show();
-                        //     updatePrice();
-                        // } else {
-                        //     addCartBtn.show();
-                        //     viewCartBtn.hide();
-                        //     quantityElem.val(1);
-                        //     updatePrice();
-                        // }
                         if (cartItem) {
-                            cartItemId = cartItem.id;
+                            cartItemId = cartItem.id; // Get the cart ID
                             addCartBtn.hide();
-                            viewCartBtn.show();
-
+                            // viewCartBtn.show();
+                            quantityElem.val(cartItem.quantity);
+                            cartItemIds.show();
+                            updatePrice();
                         } else {
                             addCartBtn.show();
                             viewCartBtn.hide();
-                            quantityElem.val(1).show();
-                            // quantityElem.val(1);
                             cartItemIds.show();
+                            quantityElem.val(1);
+                            updatePrice();
                         }
-
                     }
                 },
                 error: function (error) {
