@@ -579,7 +579,7 @@
                                             <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid" />
                                         </div>
                                         <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
-                                        <h4 class="heading2">
+                                        <h4 class="heading2 cardh">
                                             <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')">
                                                 ${product.name}
                                             </a>
