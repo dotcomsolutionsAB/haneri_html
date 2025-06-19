@@ -10,7 +10,11 @@
             </ol>
         </div> -->
     </nav>
-    <?php include("piller_links.php"); ?>
+    
+    <div class="heading">
+        <?php include("piller_links.php"); ?>
+    </div>
+    
     <div class="container">                        
         <section id="mass" class="mass">
             <?php include("inc_files/pillar_technology/mass_tech.php"); ?>
