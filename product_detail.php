@@ -368,11 +368,12 @@
                 success: function (data) {
                     console.log("API response received:", data);
 
-                    if (data.success === true || data.message.includes("successfully")) {
-                        // alert(data.message);
-                        cartItemIds.hide(); // want to hide after have data in cart use .hide()
-                        addCartBtn.hide();
-                        viewCartBtn.show();
+if (data.success === true || data.message.includes("successfully")) {
+    $('#quantity').hide();     // ❗ hide Quantity box after adding
+    $('#cartId').hide();       // ❗ hide the wrapper row
+
+    addCartBtn.hide();         // hide Add to Cart
+    viewCartBtn.show();        // show View Cart
                         checkCart();
 
                         // Store temp_id if user is not authenticated
@@ -424,19 +425,23 @@
                     if (data.data && data.data.length > 0) {
                         const cartItem = data.data.find(item => item.product_id == productId);
                         if (cartItem) {
-                            cartItemId = cartItem.id; // Get the cart ID
-                            addCartBtn.hide();
-                            // viewCartBtn.show();
-                            quantityElem.val(cartItem.quantity);
-                            cartItemIds.show();
-                            updatePrice();
-                        } else {
-                            addCartBtn.show();
-                            viewCartBtn.hide();
-                            cartItemIds.show();
-                            quantityElem.val(1);
-                            updatePrice();
-                        }
+    cartItemId = cartItem.id;
+
+    addCartBtn.hide();         // hide Add to Cart
+    viewCartBtn.show();        // show View Cart
+
+    $('#quantity').hide();     // ❗ hide Quantity box
+    $('#cartId').hide();       // ❗ hide the entire row if needed
+} else {
+    cartItemId = null;
+
+    addCartBtn.show();
+    viewCartBtn.hide();
+
+    $('#quantity').val(1).show();  // show quantity box
+    $('#cartId').show();           // show the wrapper row
+}
+
                     }
                 },
                 error: function (error) {
