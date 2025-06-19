@@ -552,6 +552,7 @@
                                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
                                             <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
                                         </div>
+                                        <br>
                                         <div class="sp_price">
                                             Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
                                         </div>
