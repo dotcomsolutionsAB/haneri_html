@@ -441,17 +441,72 @@
             <script>
                 $(document).ready(function () {
                     const authToken = localStorage.getItem('auth_token'); // Replace with actual token
+                    const authTemp = localStorage.getItem('temp_id');
                     const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
                     const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
+                    // function fetchCartItems() {
+                    //     $.ajax({
+                    //         url: cartUrl,
+                    //         type: "POST",
+                    //         headers: {
+                    //             "Authorization": `Bearer ${authToken}`,
+                    //             "Content-Type": "application/json"
+                    //         },
+                    //         success: function (response) {
+                    //             if (response.data.length > 0) {
+                    //                 let cartHTML = "";
+                    //                 let subtotal = 0;
+                    //                 let totalTax = 0;
+                    //                 let total = 0;
+
+                    //                 response.data.forEach(item => {
+                    //                     let productName = item.product.name;
+                    //                     let quantity = item.quantity;
+                    //                     let price = parseFloat(item.variant.selling_price);
+                    //                     let tax = parseFloat(item.variant.selling_tax);
+                    //                     let itemTotal = (price + tax) * quantity;
+
+                    //                     subtotal += (price * quantity);
+                    //                     totalTax += (tax * quantity);
+                    //                     total += itemTotal;
+
+                    //                     cartHTML += `
+                    //                         <tr>
+                    //                             <td class="product-col">
+                    //                                 <h3 class="product-title">
+                    //                                     ${productName} × <span class="product-qty">${quantity}</span>
+                    //                                 </h3>
+                    //                             </td>
+                    //                             <td class="price-col">
+                    //                                 <span>₹ ${itemTotal.toFixed(2)}</span>
+                    //                             </td>
+                    //                         </tr>
+                    //                     `;
+                    //                 });
+
+                    //                 $("#cart-items").html(cartHTML);
+                    //                 $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                    //                 $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                    //                 $("#total").text(`₹ ${total.toFixed(2)}`);
+                    //             } else {
+                    //                 $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                    //                 $("#subtotal").text("₹ 0.00");
+                    //                 $("#total-tax").text("₹ 0.00");
+                    //                 $("#total").text("₹ 0.00");
+                    //             }
+                    //         },
+                    //         error: function () {
+                    //             console.error("Error fetching cart items.");
+                    //         }
+                    //     });
+                    // }
+
                     function fetchCartItems() {
-                        $.ajax({
+                        const ajaxOptions = {
                             url: cartUrl,
                             type: "POST",
-                            headers: {
-                                "Authorization": `Bearer ${authToken}`,
-                                "Content-Type": "application/json"
-                            },
+                            contentType: "application/json",
                             success: function (response) {
                                 if (response.data.length > 0) {
                                     let cartHTML = "";
@@ -498,8 +553,30 @@
                             error: function () {
                                 console.error("Error fetching cart items.");
                             }
-                        });
+                        };
+
+                        // Handle headers/body logic
+                        if (authToken) {
+                            ajaxOptions.headers = {
+                                "Authorization": `Bearer ${authToken}`
+                            };
+                            ajaxOptions.data = JSON.stringify({}); // Empty body for logged-in users
+                        } else if (authTemp) {
+                            ajaxOptions.data = JSON.stringify({
+                                cart_id: authTemp
+                            });
+                        } else {
+                            // No token and no temp_id
+                            $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                            $("#subtotal").text("₹ 0.00");
+                            $("#total-tax").text("₹ 0.00");
+                            $("#total").text("₹ 0.00");
+                            return;
+                        }
+
+                        $.ajax(ajaxOptions);
                     }
+
 
                     function getSelectedAddress() {
                         let selectedRadio = $("input[name='address_select']:checked").closest(".address-card");

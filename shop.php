@@ -333,23 +333,9 @@
                 </div>
             </div>
         </main>
-            <div id="flash-message" style="
-                display: none;
-                position: fixed;
-                bottom: -100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: #b3e3dd;
-                color: #00473E;
-                padding: 14px 24px;
-                border-radius: 8px;
-                font-weight: 500;
-                font-size: 16px;
-                box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-                transition: bottom 0.4s ease;
-                z-index: 9999;
-                border: 1px solid 00473E;
-            ">
+            <div id="flash-message" style="display: none; position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); 
+                background: #b3e3dd; color: #00473E; padding: 14px 24px; border-radius: 8px; font-weight: 500; font-size: 16px;
+                box-shadow: 0 6px 16px rgba(0,0,0,0.15); transition: bottom 0.4s ease; z-index: 9999; border: 1px solid 00473E;">
                 Item added to cart!
             </div>
 
