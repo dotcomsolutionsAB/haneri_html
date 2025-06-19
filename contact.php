@@ -80,12 +80,16 @@
 		padding: 40px 30px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		/* justify-content: center; */
 	}
 
 	.contact_105 {
-		font-size: 26px;
-		margin-bottom: 20px;
+		font-size: 30px;
+		margin-bottom: 40px;
+		color: #fff;
+		font-family: 'Barlow Condensed';
+		font-family: 'Barlow Condensed';
+    	font-weight: 300;
 	}
 
 	.contact_106 {
@@ -117,7 +121,11 @@
 		padding: 10px;
 		border-radius: 5px;
 		border: none;
-		font-size: 14px;
+		height: 60px;
+		font-size: 16px;
+		background: #003d29;
+		border: 1px solid #fff;
+		margin-bottom: 30px;
 	}
 
 	/* Submit button */
