@@ -3733,12 +3733,17 @@ footer .social-icon {
     }
 
     .bldc102 {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 1fr;
         gap: 2.5rem;
         background: #d9d9d9;
-        padding: 5px;
+        padding: 5px; */
         /* gap-10 */
+        display: flex;
+        flex-direction: row;
+        background: #d9d9d9;
+        width: 100%;
+        align-items: stretch !important;
     }
 
     @media (min-width: 1024px) {

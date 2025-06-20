@@ -1,10 +1,10 @@
 <!-- Section 1 -->
 <div class="bldc001">
     <div class="bldc102">
-        <div>
+        <div class="sm_h">
             <img src="images/lumi_1.png" alt="Motor Visual" class="bldc-img" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103"><b>Introducing LumiAmbience Technology: </b>Revolutionizing Lighting with Precision</h2>
             <p class="bldc104">
                At Haneri we push the boundaries of innovation, not just in cooling but also in creating holistic lifestyle solutions. Our revolutionary LumiAmbience Technology transforms lighting into an experience, offering unparalleled control, comfort, and a sense of ease. Designed as an optional feature for select ceiling fans, LumiAmbience combines advanced lighting engineering with Haneri’s signature aesthetic excellence.
@@ -14,23 +14,23 @@
 
     <!-- Section 2 -->
     <div class="bldc102 mt-10">
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">What is LumiAmbience Technology?</h2>
             <p class="bldc104">
                 LumiAmbience Technology integrates a state-of-the-art 3-in-1 LED lighting system into select Haneri ceiling fans, allowing you to adapt your lighting to any mood or occasion. The system features Warm White, Cool White, and Natural White light modes, each engineered for specific settings. LumiAmbience stands apart with its proprietary lens diffuser that ensures even light distribution, eliminates harsh LED spots, and creates a soothing ambience for your space. LumiAmbience Technology enhances your environment with customizable lighting options, seamlessly integrating into Haneri ceiling fans. Its energy-efficient design, long-lasting LEDs, and user-friendly controls make it an ideal choice for modern, stylish homes and offices. The innovative lens diffuser not only improves light quality but also reduces glare, providing comfort and elegance. Enjoy effortless mood setting, improved ambiance, and energy savings all in one sophisticated system. 
             </p>
         </div>
-        <div class="bldc105">
-        <img src="images/lumi_2.png" alt="Blade Design" class="bldc-img" />
+        <div class="bldc105 ">
+            <img src="images/lumi_2.png" alt="Blade Design" class="bldc-img" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-10">
-        <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="sm_h" style="display: flex; justify-content: center; align-items: center;">
             <img src="images/lumi_3.png" alt="Motor Render" class="bldc-img" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">Key Features of Silent LumiAmbience Technology</h2>
             <ul class="bldc106">
                 <li>
@@ -60,7 +60,7 @@
     <!-- Section 4 -->
     <div class="bldc107">
         <!-- Left: Advantages -->
-        <div style="background: #d9d9d9; padding: 10px;">
+        <div class="sm_h c01" style="background: #d9d9d9; padding: 10px;">
             <h2 class="bldc103 mb-4">The Science Behind LumiAmbience Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
