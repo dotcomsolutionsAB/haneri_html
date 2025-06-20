@@ -1,10 +1,10 @@
 <!-- Section 1 -->
 <div class="bldc001">
     <div class="bldc102">
-        <div>
-            <img src="images/turbo_2.png" alt="Motor Visual" class="bldc-img" />
+        <div class="sm_h">
+            <img src="images/turbo_2.png" alt="Motor Visual" class="img-fluid" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103"><b>Introducing TurboSilent BLDC:</b><br>Unleashing Unmatched Power and Efficiency</h2>
             <p class="bldc104">
                 At Haneri, we redefine engineering excellence with our proprietary TurboSilent BLDC Technology. This advanced motor design not only delivers higher torque and exceptional durability but also ensures unmatched energy efficiency, setting a new benchmark for ceiling fan performance and contributing to a greener environment. Our innovative technology guarantees whisper-quiet operation, providing a peaceful and comfortable atmosphere in your home or office. Additionally, the low maintenance requirements and long-lasting build make our fans a reliable and cost-effective choice for modern living
@@ -13,24 +13,24 @@
     </div>
 
     <!-- Section 2 -->
-    <div class="bldc102 mt-10">
-        <div>
+    <div class="bldc102 mt-2">
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">Why TurboSilent BLDC Technology?</h2>
             <p class="bldc104">
                 TurboSilent BLDC Technology also features advanced thermal management solutions, allowing the motor to operate efficiently across a wide range of temperatures. Its compact and lightweight design facilitates easy integration into various applications, from industrial machinery to consumer electronics. Additionally, the system incorporates sophisticated control algorithms that optimize performance and responsiveness, providing smooth and quiet operation even under demanding conditions. With its innovative features, TurboSilent BLDC motors set a new standard for durability, efficiency, and performance in modern motor technology. The integration of intelligent sensors and feedback systems enhances real-time monitoring, enabling predictive diagnostics and further optimizing operational efficiency. Overall, TurboSilent BLDC motors represent a cutting-edge solution that combines innovation, durability, and versatility to meet the evolving demands of modern industries and electronic devices.
             </p>
         </div>
-        <div class="bldc105">
-        <img src="images/turbo_1.png" alt="Blade Design" class="bldc-img" />
+        <div class="sm_h">
+            <img src="images/turbo_1.png" alt="Blade Design" class="img-fluid" />
         </div>
     </div>
 
     <!-- Section 3 -->
-    <div class="bldc102 mt-10">
-        <div>
-        <img src="images/turbo_3.png" alt="Motor Render" class="bldc-img" />
+    <div class="bldc102 mt-2">
+        <div class="sm_h">
+            <img src="images/turbo_3.png" alt="Motor Render" class="img-fluid" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">The Science Behind Turbosilent BLDC Technology</h2>
             <ul class="bldc106">
                 <li>
@@ -49,9 +49,9 @@
     </div>
 
     <!-- Section 4 -->
-    <div class="bldc107">
+    <div class="bldc107 mt-4">
         <!-- Left: Advantages -->
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">Unique Advantages of TurboSilent BLDC Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
@@ -73,7 +73,7 @@
         </div>
 
         <!-- Right: Customer Benefits -->
-        <div>
+        <div class="sm_h">
             <h2 class="bldc103 mb-4">Benefits For Customers</h2>
             <div class="bldc108">
                 <div>
