@@ -2,7 +2,7 @@
 <div class="bldc001">
     <div class="bldc102">
         <div class="sm_h">
-            <img src="images/hass_1.png" alt="Motor Visual" class="bldc-img" />
+            <img src="images/hass_1.png" alt="Motor Visual" class="img-fluid" />
         </div>
         <div class="sm_h c01">
             <h2 class="bldc103"><b>Introducing Silent H.A.S.S Technology:</b> More Air, Slow Speed</h2>
@@ -21,14 +21,14 @@
             </p>
         </div>
         <div class="sm_h">
-            <img src="images/hass_2.png" alt="Blade Design" class="bldc-img" />
+            <img src="images/hass_2.png" alt="Blade Design" class="img-fluid" />
         </div>
     </div>
 
     <!-- Section 3 -->
     <div class="bldc102 mt-4">
         <div class="sm_h" style="display: flex; justify-content: center; align-items: center;">
-            <img src="images/hass_3.png" alt="Motor Render" class="bldc-img" />
+            <img src="images/hass_3.png" alt="Motor Render" class="img-fluid" />
         </div>
         <div class="sm_h c01">
             <h2 class="bldc103 mb-4">Key Features of Silent H.A.S.S Technology</h2>
