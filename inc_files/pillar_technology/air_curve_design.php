@@ -9,15 +9,28 @@
             display: flex;
             flex-direction: column;
         }
+
+        .sm_h{
+            height: 100%;
+            width: 48%;
+        }
+        .air_sec{
+            display: flex;
+            /* justify-content: space-between; */
+            flex-direction: row;
+            width: 100%;
+            height: 500px;
+            gap: 25px;
+        }
     </style>
     <section class="air_style">
-        <div class="row align-items-center">
+        <div class="row align-items-center air_sec">
             <!-- Image on the left side -->
-            <div class="col-md-6">
+            <div class="sm_h">
                 <img src="images/air_1.png" alt="Air Curve Design" class="img-fluid">
             </div>
             <!-- Text on the right side -->
-            <div class="col-md-6">
+            <div class="sm_h">
                <div>
                     <span class="air_curve_span_h2">Introducing Air Curve Design: </span>
                     <br>
@@ -30,24 +43,26 @@
     </section>
 
     <section class="air_style">
-        <div class="row align-items-center">
+        <div class="row align-items-center air_sec">
             <!-- Text on the left side -->
-            <div class="col-md-6 order-md-1 order-2">
+            <div class="sm_h order-md-1 order-2">
                 <h2><span class="air_curve_span_h2">What is Air Curve Design?</h2>
                 <div>
                     <span class="air_curve_span">Air Curve Design</span>
-                    <span class="air_curve_span2"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
+                    <span class="air_curve_span2"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span>
+                </div>
                 <br>
                 <div>
                     <span class="air_curve_span">Air Curve Design</span>
-                    <span class="air_curve_span2"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
+                    <span class="air_curve_span2"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span>
+                </div>
                 <br>
                 <div>
                     <span class="air_curve_span">Air Curve Design</span>
                     <span class="air_curve_span2"> is a cutting-edge blade technology that leverages advanced computational modelling and simulation to craft blades optimized for maximum airflow and energy efficiency. This innovation ensures that every curve and angle of the blade is scientifically tailored for superior aerodynamics, delivering a ceiling fan that offers unparalleled performance, energy efficiency, and style.</span></div>
             </div>
             <!-- Image on the right side -->
-            <div class="col-md-6 order-md-2 order-1">
+            <div class="sm_h order-md-2 order-1">
                 <img src="images/air_2.png" alt="Air Curve Design" class="img-fluid">
             </div>
         </div>
