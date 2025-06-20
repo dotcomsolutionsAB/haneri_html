@@ -1,10 +1,10 @@
 <!-- Section 1 -->
 <div class="bldc001">
     <div class="bldc102">
-        <div>
-            <img src="images/place.jpg" alt="Motor Visual" class="bldc-img" />
+        <div class="sm_h">
+            <img src="images/place.jpg" alt="Motor Visual" class="img-fluid" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103">Discover the Future of Fan with :<b> S.C.A.N Technology</b></h2>
             <p class="bldc104">
                 At Haneri, we've combined innovation with convenience in our state-of-the-art S.C.A.N Technology (Smooth Control , Advance Navigation). This technology, designed for the modern home, redefines your interaction with ceiling fans, offering an optional LED light for added convenience. With its sleek aesthetics and advanced functionality, this futuristic remote controller ensures seamless control, an enhanced user experience, and cutting-edge technology, all at your fingertips. Our remote is intuitively designed to simplify your daily life, allowing you to adjust fan speed, set timers, and toggle lighting with just a touch. The advanced navigation system ensures quick and precise operation, even from a distance. Plus, its ergonomic design fits comfortably in your hand, making operation effortless. Elevate your living space with Haneri’s innovative remote, where technology meets elegance for the ultimate in home comfort and style.
@@ -13,24 +13,24 @@
     </div>
 
     <!-- Section 2 -->
-    <div class="bldc102 mt-10">
-        <div>
+    <div class="bldc102 mt-2">
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">What is S.C.A.N Technology?</h2>
             <p class="bldc104">
                 S.C.A.N Technology is a next-generation radio frequency (RF) control system that offers unparalleled convenience and precision when operating ceiling fans. With advanced control features such as speed adjustment, lighting control, timer settings, and unique operating modes, S.C.A.N Technology brings futuristic functionality into the palm of your hand. Furthermore, S.C.A.N Technology features a sleek, user-friendly interface with intuitive controls that can be customized to suit individual preferences. Its durable RF communication ensures stable and secure connections, minimizing interference and providing reliable operation even in complex home environments. With its innovative design and advanced features, S.C.A.N Technology not only enhances the functionality of ceiling fans but also elevates the overall smart home experience, combining convenience, efficiency, and cutting-edge technology in a sleek package.
             </p>
         </div>
-        <div class="bldc105">
-        <img src="images/place.jpg" alt="Blade Design" class="bldc-img" />
+        <div class="sm_h">
+        <img src="images/place.jpg" alt="Blade Design" class="img-fluid" />
         </div>
     </div>
 
     <!-- Section 3 -->
-    <div class="bldc102 mt-10">
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="images/scan_3.png" alt="Motor Render" class="bldc-img" />
+    <div class="bldc102 mt-2">
+        <div class="sm_h" style="display: flex; justify-content: center; align-items: center;">
+            <img src="images/scan_3.png" alt="Motor Render" class="img-fluid" />
         </div>
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">Key Features of Silent S.C.A.N Technology</h2>
             <ul class="bldc106">
                 <li>
@@ -60,9 +60,9 @@
     </div>
 
     <!-- Section 4 -->
-    <div class="bldc107">
+    <div class="bldc107 mt-4">
         <!-- Left: Advantages -->
-        <div>
+        <div class="sm_h c01">
             <h2 class="bldc103 mb-4">The Science behind S.C.A.N Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
@@ -87,7 +87,7 @@
         </div>
 
         <!-- Right: Customer Benefits -->
-        <div>
+        <div class="sm_h">
             <h2 class="bldc103 mb-4">Benefits For Customers</h2>
             <div class="bldc108">
                 <div>
