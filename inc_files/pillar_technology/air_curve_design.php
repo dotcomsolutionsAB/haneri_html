@@ -4,6 +4,11 @@
             background: #d9d9d9;
             padding: 10px;
         }
+        .air_curve_design{
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
     <section class="air_style">
         <div class="row align-items-center">
@@ -48,7 +53,7 @@
         </div>
     </section>
 
-    <section class="air_curve-grid-features air_style">
+    <section class="air_curve-grid-features">
     <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
 
     <div class="air_curve-features-wrapper">
