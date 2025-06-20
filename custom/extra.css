@@ -3741,6 +3741,7 @@ footer .social-icon {
         /* gap-10 */
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         /* background: #d9d9d9; */
         width: 100%;
         align-items: stretch !important;
@@ -3751,14 +3752,14 @@ footer .social-icon {
         padding: 5px 40px;
     }
     .sm_h{
-        width: 48%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     .air_sec{
         display: flex;
-        /* justify-content: space-between; */
+        justify-content: space-between;
         flex-direction: row;
         width: 100%;
         /* height: 500px; */
