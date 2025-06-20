@@ -13,7 +13,7 @@
     </div>
 
     <!-- Section 2 -->
-    <div class="bldc102 mt-10">
+    <div class="bldc102 mt-2">
         <div class="sm_h c01">
             <h2 class="bldc103 mb-4">What is LumiAmbience Technology?</h2>
             <p class="bldc104">
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Section 3 -->
-    <div class="bldc102 mt-10">
+    <div class="bldc102 mt-2">
         <div class="sm_h" style="display: flex; justify-content: center; align-items: center;">
             <img src="images/lumi_3.png" alt="Motor Render" class="img-fluid" />
         </div>
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Section 4 -->
-    <div class="bldc107">
+    <div class="bldc107 mt-2">
         <!-- Left: Advantages -->
         <div class="sm_h c01">
             <h2 class="bldc103 mb-4">The Science Behind LumiAmbience Technology</h2>
