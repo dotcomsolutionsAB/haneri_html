@@ -3818,6 +3818,7 @@ footer .social-icon {
     @media (min-width: 768px) {
         .bldc107 {
             grid-template-columns: repeat(2, 1fr);
+            flex-direction: column !important;
         }
     }
 
@@ -3832,7 +3833,7 @@ footer .social-icon {
 
     @media (min-width: 768px) {
         .bldc103 {
-            font-size: 50px;
+            font-size: 35px;
         }
     }
 
