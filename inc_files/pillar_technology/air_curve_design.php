@@ -29,7 +29,8 @@
         }
         .img-fluid{
             height:100%;
-            width:100%
+            width:100%;
+            background: #f2f2f2;
         }
     </style>
     <section class="air_style">
