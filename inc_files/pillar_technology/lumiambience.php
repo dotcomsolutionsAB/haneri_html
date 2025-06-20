@@ -83,7 +83,7 @@
         </div>
 
         <!-- Right: Customer Benefits -->
-        <div>
+        <div class="sm_h">
             <h2 class="bldc103 mb-4">Benefits For Customers</h2>
             <div class="bldc108">
                 <div>
