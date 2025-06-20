@@ -2,7 +2,7 @@
     <style>
         .air_style{
             background: #d9d9d9;
-            padding: 10px;
+            padding: 0px;
         }
         .air_curve_design{
             gap: 20px;
@@ -21,6 +21,10 @@
             width: 100%;
             height: 500px;
             gap: 25px;
+        }
+        .img-fluid{
+            height:100%;
+            width:100%
         }
     </style>
     <section class="air_style">
