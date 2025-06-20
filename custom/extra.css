@@ -3749,7 +3749,7 @@ footer .social-icon {
 
     .c01{
         background: #d9d9d9;
-        padding: 5px 40px;
+        padding: 15px 40px;
     }
     .sm_h{
         width: 50%;
@@ -3774,7 +3774,7 @@ footer .social-icon {
 
     @media (min-width: 1024px) {
         .bldc102 {
-        grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -3791,7 +3791,7 @@ footer .social-icon {
 
     @media (min-width: 768px) {
         .bldc107 {
-        grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
