@@ -8,30 +8,6 @@
             display: flex;
             flex-direction: column;
         }
-        .c01{
-            background: #d9d9d9;
-            padding: 15px 40px;
-        }
-        .sm_h{
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .air_sec{
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            width: 100%;
-            /* height: 500px; */
-            /* gap: 25px; */
-            align-items: stretch !important;
-        }
-        .img-fluid{
-            height:100%;
-            width:100%;
-            background: #f2f2f2;
-        }
     </style>
     <section class="air_style">
         <div class="align-items-center air_sec">
@@ -53,7 +29,7 @@
     </section>
 
     <section class="air_style">
-        <div class="row align-items-center air_sec">
+        <div class="align-items-center air_sec">
             <!-- Text on the left side -->
             <div class="sm_h c01 order-md-1 order-2">
                 <h2><span class="air_curve_span_h2">What is Air Curve Design?</h2>
