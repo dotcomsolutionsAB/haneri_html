@@ -3816,7 +3816,7 @@ footer .social-icon {
         .bldc107 {
             flex-direction: column !important;
         }
-        .bldc103 {
+        .bldc103, .air_curve_span_h2 {
             font-size: 35px !important;
         }
     }
