@@ -83,11 +83,11 @@
 
             if (data.message === "User registered successfully!" && data.data) {
                 // Store user details in localStorage
-                localStorage.setItem("auth_token", data.data.token);  // Assuming API returns a token
+                localStorage.setItem("auth_token", data.token);  // Assuming API returns a token
                 localStorage.setItem("user_name", data.data.name);
                 localStorage.setItem("user_email", data.data.email);
                 localStorage.setItem("user_mobile", data.data.mobile);
-                localStorage.setItem("user_role", "customer");
+                localStorage.setItem("user_role", data.data.role);
 
                 // Redirect to home page after successful registration
                 window.location.href = "index.php";

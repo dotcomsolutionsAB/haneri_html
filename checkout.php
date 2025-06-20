@@ -340,7 +340,6 @@
                     });
                 };
 
-
                 function submitAddress(data) {
                     const authToken = localStorage.getItem("auth_token");
                     if (!authToken) {
@@ -391,6 +390,7 @@
                         Swal.fire("Error", "Something went wrong. Please try again.", "error");
                     });
                 }
+                
                 // Load addresses on page load
                 fetchAddresses();
             });
