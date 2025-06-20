@@ -25,7 +25,7 @@
             width: 100%;
             /* height: 500px; */
             /* gap: 25px; */
-            align-items: stretch;
+            align-items: stretch !important;
         }
         .img-fluid{
             height:100%;
