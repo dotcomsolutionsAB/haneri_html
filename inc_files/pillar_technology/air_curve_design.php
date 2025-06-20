@@ -1,5 +1,5 @@
 <body>
-    <section class="container">
+    <section class="">
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">
@@ -17,7 +17,8 @@
             </div>
         </div>
     </section>
-    <section class="container">
+    
+    <section class="">
         <div class="row align-items-center">
             <!-- Text on the left side -->
             <div class="col-md-6 order-md-1 order-2">
@@ -41,8 +42,7 @@
         </div>
     </section>
 
-
-    <section class="air_curve-grid-features container">
+    <section class="air_curve-grid-features">
     <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
 
     <div class="air_curve-features-wrapper">
@@ -93,7 +93,7 @@
     </div>
     </section>
 
-    <section class="container">
+    <section class="">
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">

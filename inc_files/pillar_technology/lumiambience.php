@@ -60,7 +60,7 @@
     <!-- Section 4 -->
     <div class="bldc107">
         <!-- Left: Advantages -->
-        <div>
+        <div style="background: #d9d9d9; padding: 10px;">
             <h2 class="bldc103 mb-4">The Science Behind LumiAmbience Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
