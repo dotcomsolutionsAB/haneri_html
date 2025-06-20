@@ -3792,11 +3792,11 @@ footer .social-icon {
     @media (max-width: 520px) {
         .air_sec {
             flex-direction: column !important;
-            gap: 20px;
+            gap: 0px !;
         }
         .bldc102{
             flex-direction: column !important;
-            gap: 0px;
+            gap: 0px !important;
         }
         .sm_h {
             width: 100% !important;
