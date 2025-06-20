@@ -8,7 +8,7 @@
             display: flex;
             flex-direction: column;
         }
-        .sm_h .cont{
+        .c01{
             background: #d9d9d9;
             padding: 5px 40px;
         }
@@ -39,7 +39,7 @@
                 <img src="images/air_1.png" alt="Air Curve Design" class="img-fluid">
             </div>
             <!-- Text on the right side -->
-            <div class="sm_h cont">
+            <div class="sm_h c01">
                <div>
                     <span class="air_curve_span_h2">Introducing Air Curve Design: </span>
                     <br>
@@ -54,7 +54,7 @@
     <section class="air_style">
         <div class="row align-items-center air_sec">
             <!-- Text on the left side -->
-            <div class="sm_h cont order-md-1 order-2">
+            <div class="sm_h c01 order-md-1 order-2">
                 <h2><span class="air_curve_span_h2">What is Air Curve Design?</h2>
                 <div>
                     <span class="air_curve_span">Air Curve Design</span>
@@ -135,7 +135,7 @@
                 <img src="../assets/images/3.png" alt="Air Curve Design" class="img-fluid">
             </div>
             <!-- Text on the right side -->
-            <div class="sm_h cont">
+            <div class="sm_h c01">
                 <div>
                     <span class="air_curve_span_h2">The Science Behind Air Curve Design
                     <div class="air_curve_span">
