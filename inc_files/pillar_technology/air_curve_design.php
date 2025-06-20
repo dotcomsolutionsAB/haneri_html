@@ -1,5 +1,11 @@
 <body>
-    <section class="">
+    <style>
+        .air_style{
+            background: #d9d9d9;
+            padding: 10px;
+        }
+    </style>
+    <section class="air_style">
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">
@@ -17,8 +23,8 @@
             </div>
         </div>
     </section>
-    
-    <section class="">
+
+    <section class="air_style">
         <div class="row align-items-center">
             <!-- Text on the left side -->
             <div class="col-md-6 order-md-1 order-2">
@@ -42,7 +48,7 @@
         </div>
     </section>
 
-    <section class="air_curve-grid-features">
+    <section class="air_curve-grid-features air_style">
     <h2 class="air_curve-title">Key Features of Air Curve Design</h2>
 
     <div class="air_curve-features-wrapper">
@@ -93,7 +99,7 @@
     </div>
     </section>
 
-    <section class="">
+    <section class="air_style">
         <div class="row align-items-center">
             <!-- Image on the left side -->
             <div class="col-md-6">
