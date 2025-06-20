@@ -3791,20 +3791,27 @@ footer .social-icon {
     }
     @media (max-width: 520px) {
         .air_sec {
-            flex-direction: column;
+            flex-direction: column !important;
             gap: 20px;
         }
         .bldc102{
-            flex-direction: column;
-            gap: 20px;
+            flex-direction: column !important;
+            gap: 0px;
         }
         .sm_h {
-            width: 100%;
+            width: 100% !important;
             height: auto;
         }
         .img-fluid {
             height: auto;
             object-fit: contain; /* shows full image */
+        }
+        .c01 {
+            background: #d9d9d9;
+            padding: 5px 10px !important;
+        }
+        .air_style {
+            padding: 0px !important;
         }
     }
 
@@ -3825,7 +3832,7 @@ footer .social-icon {
 
     @media (min-width: 768px) {
         .bldc103 {
-        font-size: 50px;
+            font-size: 50px;
         }
     }
 
