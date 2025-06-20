@@ -3813,6 +3813,12 @@ footer .social-icon {
         .air_style {
             padding: 0px !important;
         }
+        .bldc107 {
+            flex-direction: column !important;
+        }
+        .bldc103 {
+            font-size: 50px;
+        }
     }
 
     @media (min-width: 768px) {
@@ -3833,7 +3839,7 @@ footer .social-icon {
 
     @media (min-width: 768px) {
         .bldc103 {
-            font-size: 35px;
+            font-size: 50px;
         }
     }
 
