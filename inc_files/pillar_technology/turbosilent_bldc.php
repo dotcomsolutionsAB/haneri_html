@@ -51,7 +51,7 @@
     <!-- Section 4 -->
     <div class="bldc107 mt-4">
         <!-- Left: Advantages -->
-        <div class="sm_h c01">
+        <div class="sm_h c01" style="justify-content: flex-start;">
             <h2 class="bldc103 mb-4">Unique Advantages of TurboSilent BLDC Technology</h2>
             <ul class="bldc106 text-justify">
                 <li>
@@ -73,7 +73,7 @@
         </div>
 
         <!-- Right: Customer Benefits -->
-        <div class="sm_h">
+        <div class="sm_h" style="justify-content: flex-start;">
             <h2 class="bldc103 mb-4">Benefits For Customers</h2>
             <div class="bldc108">
                 <div>
