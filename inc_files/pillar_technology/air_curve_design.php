@@ -10,17 +10,17 @@
         }
         .c01{
             background: #d9d9d9;
-            padding: 5px 40px;
+            padding: 15px 40px;
         }
         .sm_h{
-            width: 48%;
+            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .air_sec{
             display: flex;
-            /* justify-content: space-between; */
+            justify-content: space-between;
             flex-direction: row;
             width: 100%;
             /* height: 500px; */
