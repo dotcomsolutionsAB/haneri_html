@@ -504,7 +504,7 @@ function submitAddress(data) {
     } else if (tempId) {
         Swal.fire({ title: "Registering User...", allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
-        fetch("<?php echo BASE_URL; ?>/make-user", {
+        fetch("<?php echo BASE_URL; ?>/make_user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
