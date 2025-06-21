@@ -390,6 +390,7 @@
                 //         Swal.fire("Error", "Something went wrong. Please try again.", "error");
                 //     });
                 // }
+
 window.openAddAddressForm = function () {
     const authToken = localStorage.getItem('auth_token');
     const tempId = localStorage.getItem('temp_id');
@@ -499,27 +500,25 @@ function submitAddress(data) {
     };
 
     if (authToken) {
-        // ✅ Logged in – normal behavior
         sendAddress(addressData, authToken);
     } else if (tempId) {
-        // ✅ Guest – register first
-        const formData = new FormData();
-        formData.append("name", data.name);
-        formData.append("email", data.email);
-        formData.append("mobile", data.contact_no);
-        formData.append("cart_id", tempId);
-
         Swal.fire({ title: "Registering User...", allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
         fetch("<?php echo BASE_URL; ?>/make-user", {
             method: "POST",
-            body: formData
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                mobile: data.contact_no,
+                cart_id: tempId
+            })
         })
         .then(res => res.json())
         .then(resData => {
             if (resData.token && resData.user) {
-                // ✅ Clear old and store new login info
-                localStorage.clear();
                 localStorage.setItem("auth_token", resData.token);
                 localStorage.setItem("user_name", resData.user.name);
                 localStorage.setItem("user_email", resData.user.email);
@@ -527,7 +526,6 @@ function submitAddress(data) {
                 localStorage.setItem("user_role", resData.user.role);
                 localStorage.setItem("pwd_000", resData.password);
 
-                // ⏩ Then call address API
                 sendAddress(addressData, resData.token);
             } else {
                 Swal.close();
@@ -556,7 +554,7 @@ function sendAddress(addressData, token) {
     .then(res => res.json())
     .then(responseData => {
         Swal.close();
-        if (responseData.success || (responseData.message && responseData.message.includes("success"))) {
+        if (responseData.success || (responseData.message && responseData.message.toLowerCase().includes("success"))) {
             Swal.fire({
                 title: "Success",
                 text: "Address added successfully!",
@@ -577,7 +575,6 @@ function sendAddress(addressData, token) {
     });
 }
 
-                
                 // Load addresses on page load
                 fetchAddresses();
             });
