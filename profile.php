@@ -949,13 +949,12 @@
 	});
 </script>
 
-
-
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		const authToken = localStorage.getItem("auth_token");
 		const userName = localStorage.getItem("user_name");
 		const userEmail = localStorage.getItem("user_email"); // Store email if available
+		const pwd001 = localStorage.getItem("pwd_000"); // Store password if available
 
 		if (!authToken) {
 			// Redirect to login page if not logged in
@@ -966,6 +965,7 @@
 			document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
 			document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
 			document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
+			document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
 		}
 
 		// Logout functionality
