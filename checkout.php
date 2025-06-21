@@ -253,143 +253,330 @@
                 };
 
                 // new approach
-                window.openAddAddressForm = function () {
-                    const showCreateUserCheckbox = !localStorage.getItem('auth_token');
+                // window.openAddAddressForm = function () {
+                //     const showCreateUserCheckbox = !localStorage.getItem('auth_token');
 
-                    Swal.fire({
-                        title: 'Add New Address',
-                        width: '700px', // Wider popup
-                        customClass: {
-                            confirmButton: 'add-address-btn',
-                            cancelButton: 'cancel-address-btn'
-                        },
+                //     Swal.fire({
+                //         title: 'Add New Address',
+                //         width: '700px', // Wider popup
+                //         customClass: {
+                //             confirmButton: 'add-address-btn',
+                //             cancelButton: 'cancel-address-btn'
+                //         },
 
-                        html: `			
-                            <form id="swal-address-form">
-                                <input type="text" id="swal_name" placeholder="Name*" required>
-                                <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
-                                <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
-                                <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
-                                <input type="text" id="swal_city" placeholder="City*" required>
+                //         html: `			
+                //             <form id="swal-address-form">
+                //                 <input type="text" id="swal_name" placeholder="Name*" required>
+                //                 <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
+                //                 <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
+                //                 <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
+                //                 <input type="text" id="swal_city" placeholder="City*" required>
 
-                                <select id="swal_state" required>
-                                    <option value="">Select State*</option>
-                                    <option value="Mumbai">Mumbai</option>
-                                    <option value="Delhi">Delhi</option>
-                                    <option value="West Bengal">West Bengal</option>
-                                </select>
+                //                 <select id="swal_state" required>
+                //                     <option value="">Select State*</option>
+                //                     <option value="Mumbai">Mumbai</option>
+                //                     <option value="Delhi">Delhi</option>
+                //                     <option value="West Bengal">West Bengal</option>
+                //                 </select>
 
-                                <select id="swal_country" required>
-                                    <option value="India">India</option>
-                                    <option value="Australia">Australia</option>
-                                </select>
+                //                 <select id="swal_country" required>
+                //                     <option value="India">India</option>
+                //                     <option value="Australia">Australia</option>
+                //                 </select>
 
-                                <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
+                //                 <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
 
-                                ${showCreateUserCheckbox ? `
-                                <div class="create_user_checkbox">
-                                    <label for="swal_create_user">Create as User</label>
-                                    <input type="checkbox" id="swal_create_user" name="create_user" required>                                    
-                                </div>
-                                ` : ''}
-                            </form>
-                        `,
-                        showCancelButton: true,
-                        confirmButtonText: 'Add Address',
-                        cancelButtonText: 'Cancel',
-                        focusConfirm: false,
-                        preConfirm: () => {
-                            const name = document.getElementById('swal_name').value.trim();
-                            const contact_no = document.getElementById('swal_contact_no').value.trim();
-                            const address_line1 = document.getElementById('swal_address_line1').value.trim();
-                            const address_line2 = document.getElementById('swal_address_line2').value.trim();
-                            const city = document.getElementById('swal_city').value.trim();
-                            const state = document.getElementById('swal_state').value;
-                            const country = document.getElementById('swal_country').value;
-                            const postal_code = document.getElementById('swal_postal_code').value.trim();
+                //                 ${showCreateUserCheckbox ? `
+                //                 <div class="create_user_checkbox">
+                //                     <label for="swal_create_user">Create as User</label>
+                //                     <input type="checkbox" id="swal_create_user" name="create_user" required>                                    
+                //                 </div>
+                //                 ` : ''}
+                //             </form>
+                //         `,
+                //         showCancelButton: true,
+                //         confirmButtonText: 'Add Address',
+                //         cancelButtonText: 'Cancel',
+                //         focusConfirm: false,
+                //         preConfirm: () => {
+                //             const name = document.getElementById('swal_name').value.trim();
+                //             const contact_no = document.getElementById('swal_contact_no').value.trim();
+                //             const address_line1 = document.getElementById('swal_address_line1').value.trim();
+                //             const address_line2 = document.getElementById('swal_address_line2').value.trim();
+                //             const city = document.getElementById('swal_city').value.trim();
+                //             const state = document.getElementById('swal_state').value;
+                //             const country = document.getElementById('swal_country').value;
+                //             const postal_code = document.getElementById('swal_postal_code').value.trim();
 
-                            if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
-                                Swal.showValidationMessage('Please fill all required fields.');
-                                return false;
-                            }
+                //             if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
+                //                 Swal.showValidationMessage('Please fill all required fields.');
+                //                 return false;
+                //             }
 
-                            if (showCreateUserCheckbox) {
-                                const createUserChecked = document.getElementById('swal_create_user').checked;
-                                if (!createUserChecked) {
-                                    Swal.showValidationMessage('Please check "Create as User" to proceed.');
-                                    return false;
-                                }
-                            }
+                //             if (showCreateUserCheckbox) {
+                //                 const createUserChecked = document.getElementById('swal_create_user').checked;
+                //                 if (!createUserChecked) {
+                //                     Swal.showValidationMessage('Please check "Create as User" to proceed.');
+                //                     return false;
+                //                 }
+                //             }
 
-                            return {
-                                name,
-                                contact_no,
-                                address_line1,
-                                address_line2,
-                                city,
-                                state,
-                                country,
-                                postal_code,
-                                create_user: showCreateUserCheckbox ? document.getElementById('swal_create_user').checked : false
-                            };
-                        }
-                    }).then((result) => {
-                        if (result.isConfirmed && result.value) {
-                            submitAddress(result.value);
-                        }
-                    });
-                };
+                //             return {
+                //                 name,
+                //                 contact_no,
+                //                 address_line1,
+                //                 address_line2,
+                //                 city,
+                //                 state,
+                //                 country,
+                //                 postal_code,
+                //                 create_user: showCreateUserCheckbox ? document.getElementById('swal_create_user').checked : false
+                //             };
+                //         }
+                //     }).then((result) => {
+                //         if (result.isConfirmed && result.value) {
+                //             submitAddress(result.value);
+                //         }
+                //     });
+                // };
 
-                function submitAddress(data) {
-                    const authToken = localStorage.getItem("auth_token");
-                    if (!authToken) {
-                        Swal.fire("Error", "User not logged in.", "error");
-                        return;
-                    }
+                // function submitAddress(data) {
+                //     const authToken = localStorage.getItem("auth_token");
+                //     if (!authToken) {
+                //         Swal.fire("Error", "User not logged in.", "error");
+                //         return;
+                //     }
 
-                    const addressData = {
-                        ...data,
-                        is_default: true
-                    };
+                //     const addressData = {
+                //         ...data,
+                //         is_default: true
+                //     };
 
-                    Swal.fire({
-                        title: "Saving...",
-                        text: "Please wait",
-                        allowOutsideClick: false,
-                        didOpen: () => Swal.showLoading()
-                    });
+                //     Swal.fire({
+                //         title: "Saving...",
+                //         text: "Please wait",
+                //         allowOutsideClick: false,
+                //         didOpen: () => Swal.showLoading()
+                //     });
 
-                    fetch("<?php echo BASE_URL; ?>/address/register", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": `Bearer ${authToken}`
-                        },
-                        body: JSON.stringify(addressData)
-                    })
-                    .then(response => response.json())
-                    .then(responseData => {
-                        Swal.close();
-                        if (responseData.message && responseData.message.includes("success")) {
-                            Swal.fire({
-                                title: "Success",
-                                text: "Address added successfully!",
-                                icon: "success",
-                                showConfirmButton: false,
-                                timer: 1500
-                            }).then(() => {
-                                location.reload();
-                            });
-                        } else {
-                            Swal.fire("Error", responseData.message || "Failed to add address.", "error");
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                        Swal.close();
-                        Swal.fire("Error", "Something went wrong. Please try again.", "error");
-                    });
+                //     fetch("<?php echo BASE_URL; ?>/address/register", {
+                //         method: "POST",
+                //         headers: {
+                //             "Content-Type": "application/json",
+                //             "Authorization": `Bearer ${authToken}`
+                //         },
+                //         body: JSON.stringify(addressData)
+                //     })
+                //     .then(response => response.json())
+                //     .then(responseData => {
+                //         Swal.close();
+                //         if (responseData.message && responseData.message.includes("success")) {
+                //             Swal.fire({
+                //                 title: "Success",
+                //                 text: "Address added successfully!",
+                //                 icon: "success",
+                //                 showConfirmButton: false,
+                //                 timer: 1500
+                //             }).then(() => {
+                //                 location.reload();
+                //             });
+                //         } else {
+                //             Swal.fire("Error", responseData.message || "Failed to add address.", "error");
+                //         }
+                //     })
+                //     .catch(error => {
+                //         console.error("Error:", error);
+                //         Swal.close();
+                //         Swal.fire("Error", "Something went wrong. Please try again.", "error");
+                //     });
+                // }
+window.openAddAddressForm = function () {
+    const authToken = localStorage.getItem('auth_token');
+    const tempId = localStorage.getItem('temp_id');
+    const showCreateUserCheckbox = !authToken;
+
+    Swal.fire({
+        title: 'Add New Address',
+        width: '700px',
+        customClass: {
+            confirmButton: 'add-address-btn',
+            cancelButton: 'cancel-address-btn'
+        },
+        html: `
+            <form id="swal-address-form">
+                <input type="text" id="swal_name" placeholder="Name*" required>
+                <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
+                <input type="email" id="swal_email" placeholder="Email*" required>
+                <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
+                <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
+                <input type="text" id="swal_city" placeholder="City*" required>
+
+                <select id="swal_state" required>
+                    <option value="">Select State*</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+
+                <select id="swal_country" required>
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
+                </select>
+
+                <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
+
+                ${showCreateUserCheckbox ? `
+                <div class="create_user_checkbox">
+                    <label for="swal_create_user">Create as User</label>
+                    <input type="checkbox" id="swal_create_user" name="create_user" checked>
+                </div>` : ''}
+            </form>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Add Address',
+        cancelButtonText: 'Cancel',
+        focusConfirm: false,
+        preConfirm: () => {
+            const name = document.getElementById('swal_name').value.trim();
+            const email = document.getElementById('swal_email').value.trim();
+            const contact_no = document.getElementById('swal_contact_no').value.trim();
+            const address_line1 = document.getElementById('swal_address_line1').value.trim();
+            const address_line2 = document.getElementById('swal_address_line2').value.trim();
+            const city = document.getElementById('swal_city').value.trim();
+            const state = document.getElementById('swal_state').value;
+            const country = document.getElementById('swal_country').value;
+            const postal_code = document.getElementById('swal_postal_code').value.trim();
+
+            if (!name || !contact_no || !email || !address_line1 || !city || !state || !country || !postal_code) {
+                Swal.showValidationMessage('Please fill all required fields.');
+                return false;
+            }
+
+            let create_user = false;
+            if (showCreateUserCheckbox) {
+                const createUserChecked = document.getElementById('swal_create_user').checked;
+                if (!createUserChecked) {
+                    Swal.showValidationMessage('Please check "Create as User" to proceed.');
+                    return false;
                 }
+                create_user = true;
+            }
+
+            return {
+                name,
+                email,
+                contact_no,
+                address_line1,
+                address_line2,
+                city,
+                state,
+                country,
+                postal_code,
+                create_user
+            };
+        }
+    }).then((result) => {
+        if (result.isConfirmed && result.value) {
+            submitAddress(result.value);
+        }
+    });
+};
+
+function submitAddress(data) {
+    const authToken = localStorage.getItem("auth_token");
+    const tempId = localStorage.getItem("temp_id");
+
+    const addressData = {
+        name: data.name,
+        contact_no: data.contact_no,
+        address_line1: data.address_line1,
+        address_line2: data.address_line2,
+        city: data.city,
+        state: data.state,
+        country: data.country,
+        postal_code: data.postal_code,
+        is_default: true
+    };
+
+    if (authToken) {
+        // ✅ Logged in – normal behavior
+        sendAddress(addressData, authToken);
+    } else if (tempId) {
+        // ✅ Guest – register first
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("email", data.email);
+        formData.append("mobile", data.contact_no);
+        formData.append("cart_id", tempId);
+
+        Swal.fire({ title: "Registering User...", allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+
+        fetch("<?php echo BASE_URL; ?>/make-user", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(resData => {
+            if (resData.token && resData.user) {
+                // ✅ Clear old and store new login info
+                localStorage.clear();
+                localStorage.setItem("auth_token", resData.token);
+                localStorage.setItem("user_name", resData.user.name);
+                localStorage.setItem("user_email", resData.user.email);
+                localStorage.setItem("user_mobile", resData.user.mobile);
+                localStorage.setItem("user_role", resData.user.role);
+                localStorage.setItem("pwd_000", resData.password);
+
+                // ⏩ Then call address API
+                sendAddress(addressData, resData.token);
+            } else {
+                Swal.close();
+                Swal.fire("Error", resData.message || "Failed to register user.", "error");
+            }
+        })
+        .catch(err => {
+            Swal.close();
+            console.error(err);
+            Swal.fire("Error", "Registration failed. Please try again.", "error");
+        });
+    } else {
+        Swal.fire("Error", "User not logged in or cart session expired.", "error");
+    }
+}
+
+function sendAddress(addressData, token) {
+    fetch("<?php echo BASE_URL; ?>/address/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(addressData)
+    })
+    .then(res => res.json())
+    .then(responseData => {
+        Swal.close();
+        if (responseData.success || (responseData.message && responseData.message.includes("success"))) {
+            Swal.fire({
+                title: "Success",
+                text: "Address added successfully!",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                location.reload();
+            });
+        } else {
+            Swal.fire("Error", responseData.message || "Failed to add address.", "error");
+        }
+    })
+    .catch(err => {
+        Swal.close();
+        console.error(err);
+        Swal.fire("Error", "Something went wrong. Please try again.", "error");
+    });
+}
+
                 
                 // Load addresses on page load
                 fetchAddresses();
