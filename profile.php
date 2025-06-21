@@ -983,6 +983,7 @@
 			localStorage.removeItem("user_email");
 			localStorage.removeItem("user_role");
 			localStorage.removeItem("user_id");
+			localStorage.removeItem("pwd_000");
 			window.location.href = "login.php"; // Redirect to login page after logout
 		}
 
