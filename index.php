@@ -18,6 +18,23 @@
             </div>
         </div>
     </div> -->
+    <style>
+        .mobile-slider{
+            width: 100%;
+            height: 100vh;
+        }
+        .mobile-slider img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+        .mobile-slider .banner-layer {
+            bottom: 20px !important;
+        }
+        .mobile-slider .banner-layer h1 {
+            font-size: 50px;
+        }
+    </style>
             <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
                 <div class="home-slide home-slide1 banner d-flex align-items-center">
                     <img class="slide-bg" src="images/Slider1_old.jpg" style="background-color: #ecc;" alt="home banner">
@@ -50,12 +67,7 @@
                             <span> revolution</span>
                         </h1>
                         <p class="slider_text">
-                            Haneri is the brainchild of a passionate team with over 75 years of collective <br>
-                            experience in the consumer durable industry. With expertise spanning <br>
-                            product creation, innovation, engineering, and manufacturing, we envisioned <br>
-                            Haneri as a brand that caters to consumers seeking products that seamlessly <br>
-                            blend with modern living. At Haneri, our mission is to inspire everyday life by <br>
-                            offering thoughtfully designed, functional, and future-ready solutions.
+                            Haneri is the brainchild of a passionate team with over 75 years of collective experience in the consumer durable industry. With expertise spanning product creation, innovation, engineering, and manufacturing, we envisioned Haneri as a brand that caters to consumers seeking products that seamlessly blend with modern living. At Haneri, our mission is to inspire everyday life by offering thoughtfully designed, functional, and future-ready solutions.
                         </p>
                         <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
                     </div>
