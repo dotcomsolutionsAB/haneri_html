@@ -30,16 +30,13 @@
                     <li><a href="our_story.php#vision">VISION</a></li>
                     <li><a href="our_story.php#mission">MISSION</a></li>
                     <li><a href="our_story.php#values">VALUES</a></li>
+                    <li><a href="our_brands.php">Our Brands</a></li>
+                    <li><a href="capabilities.php">Capabilities</a></li>
                 </ul>
             </li>
+
             <li>
-                <a href="our_brands.php">Our Brands</a>
-            </li>
-            <li>
-                <a href="capabilities.php">Capabilities</a>
-            </li>
-            <li>
-                <a href="contact.php">Support</a>
+                <a href="contact.php">Contact Us</a>
                 <!-- <ul>
                     <li><a href="#">FAQs</a></li>
                     <li><a href="#">Videos</a></li>
