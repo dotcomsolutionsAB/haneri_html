@@ -1550,6 +1550,9 @@ Turbosilent
     .brand-content .paragraph1 {
         text-align: justify;
     }
+    .brand-row.reverse {
+        flex-direction: column;
+    }
 
 }
 
