@@ -3374,7 +3374,7 @@ footer .social-icon {
     /* Home Slider */
     /* Hide mobile slider by default */
     .mobile-slider {
-        display: none ;
+        display: none !important;
     }
 
     /* Hide desktop slider on mobile */
@@ -3389,10 +3389,10 @@ footer .social-icon {
             width: 100%;
         }
         .desktop-slider {
-            display: none ;
+            display: none !important;
         }
         .mobile-slider {
-            display: block ;
+            display: block !important;
         }
         .featured .heading1{
             margin-bottom: 0rem !important;
