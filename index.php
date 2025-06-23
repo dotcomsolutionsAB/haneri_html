@@ -3,40 +3,103 @@
 <!-- Category section  -->
 <main class="main">
     <!-- Slider section -->
-    <!-- Responsive Home Slider -->
+    <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+        <div class="home-slide home-slide1 banner d-flex align-items-center">
+            <img class="slide-bg" src="images/Slider1_old.jpg"
+                style="background-color: #ecc;" alt="home banner">
+            <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
+                <h1><strong>A true</strong><br><span> revolution</span></h1>
+                <p class="slider_text">Haneri is the brainchild of a passionate team with over 75 years of collective <br>
+                experience in the consumer durable industry. With expertise spanning <br>
+                product creation, innovation, engineering, and manufacturing, we envisioned <br>
+                Haneri as a brand that caters to consumers seeking products that seamlessly <br>
+                blend with modern living. At Haneri, our mission is to inspire everyday life by <br>
+                offering thoughtfully designed, functional, and future-ready solutions.</p>
+                    <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
+            </div>
+        </div>
+    </div> -->
+    <!-- ===== Home Slider (mobile-first, fully responsive) ===== -->
 <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
-    <div class="home-slide home-slide1 banner d-flex align-items-center justify-content-center position-relative">
-        <!-- Slide Background -->
-        <img class="slide-bg img-fluid w-100" src="images/Slider1_old.jpg" alt="home banner" style="background-color: #ecc; object-fit: cover; height: auto; max-height: 100vh;">
 
-        <!-- Banner Content -->
-        <div class="banner-layer appear-animate text-center px-3 px-md-5" data-animation-name="fadeInUpShorter"
-             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 800px;">
+    <!-- === Slide 1 === -->
+    <div class="home-slide home-slide1 banner d-flex align-items-center position-relative">
 
-            <h1 class="mb-3" style="font-size: 8vw; font-weight: 700; line-height: 1.1;">
-                <strong>A true</strong><br><span style="color: #e74c3c;">revolution</span>
+        <!-- Background image  -->
+        <img
+            class="slide-bg w-100 h-100"
+            src="images/Slider1_old.jpg"
+            alt="home banner"
+            style="object-fit: cover; background-color:#ecc;"
+        />
+
+        <!-- Layered caption  -->
+        <div
+            class="banner-layer appear-animate px-3 px-md-5 text-center text-md-left"
+            data-animation-name="fadeInUpShorter"
+            style="max-width: 960px;"
+        >
+            <!-- Heading -->
+            <h1 class="mb-3 lh-sm fw-bold">
+                <span class="d-block d-md-inline">A&nbsp;true</span>
+                <br class="d-md-none" />
+                <strong class="text-primary">revolution</strong>
             </h1>
 
-            <p class="slider_text mb-4 d-none d-md-block" style="font-size: 1.1rem; line-height: 1.6; color: #333;">
-                Haneri is the brainchild of a passionate team with over 75 years of collective<br>
-                experience in the consumer durable industry. With expertise spanning product creation,<br>
-                innovation, engineering, and manufacturing, we envisioned Haneri as a brand that<br>
-                caters to consumers seeking products that blend with modern living.
+            <!-- Long paragraph for ≥768 px, short teaser below  -->
+            <p class="slider_text d-none d-md-block mb-4">
+                Haneri is the brainchild of a passionate team with over&nbsp;75&nbsp;years of collective
+                experience in the consumer-durable industry. With expertise spanning product creation,
+                innovation, engineering and manufacturing, we envisioned Haneri as a brand that caters
+                to consumers seeking products that seamlessly blend with modern living. At Haneri our
+                mission is to inspire everyday life by offering thoughtfully designed, functional and
+                future-ready solutions.
             </p>
 
-            <!-- Mobile Text -->
-            <p class="slider_text mb-4 d-block d-md-none" style="font-size: 1rem; color: #333;">
-                75+ years of combined experience in durable consumer goods.<br>
-                Haneri blends function with modern lifestyle needs.
+            <p class="slider_text d-block d-md-none mb-4">
+                75+ years of consumer-durable know-how.  
+                Haneri blends function with modern living.
             </p>
 
-            <!-- Call to Action -->
-            <a href="#" class="btn btn-dark slider_btn btn-xl" role="button" style="padding: 0.75rem 2rem; font-size: 1rem;">
-                Buy Now
+            <!-- CTA  -->
+            <a href="#" class="btn btn-dark btn-xl slider_btn" role="button">
+                Buy&nbsp;Now
             </a>
         </div>
     </div>
 </div>
+
+<!-- ===== Extra CSS (add to your stylesheet) ===== -->
+<style>
+/* 1. Typography & spacing tweaks */
+.home-slide h1 {
+    font-size: 8vw;               /* scales with viewport */
+}
+@media (min-width: 576px) {       /* small tablets   */
+    .home-slide h1 { font-size: 42px; }
+}
+@media (min-width: 992px) {       /* desktop */
+    .home-slide h1 { font-size: 56px; }
+}
+.slider_text {
+    font-size: 4vw;
+    line-height: 1.5;
+}
+@media (min-width: 576px) {
+    .slider_text { font-size: 0.95rem; }
+}
+@media (min-width: 992px) {
+    .slider_text { font-size: 1.1rem; }
+}
+/* 2. Button sizing */
+.slider_btn {
+    padding: 0.65rem 2.25rem;
+    font-size: 4vw;
+}
+@media (min-width: 576px) {
+    .slider_btn { font-size: 0.9rem; }
+}
+</style>
 
 
     <!-- Mobile-Only Slider -->
