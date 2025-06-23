@@ -21,11 +21,7 @@
         align-items: center
     }
 
-    .heading .button-group {
-        padding: 0px 15px !important;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-    }
+    
 .category .img {
     width: 100px;
     height: 110px;
@@ -4192,6 +4188,12 @@ footer .social-icon {
         .contact_111,
         .contact_112 {
             flex: 1 1 100%;
+        }
+
+        .heading .button-group {
+            padding: 0px 15px !important;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
         }
     }
 
