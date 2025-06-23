@@ -147,7 +147,7 @@
             updateCartTotals(cartSubtotal, taxAmount, totalAmount);
         }
 
-        function updateCartTotals(subtotalWithTax) {
+        function updateCartTotals(subtotalWithTax, cartItemCount = 0) {
           const taxRate = 0.18;
           const shippingCharge = 80;
 
