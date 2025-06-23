@@ -3376,7 +3376,23 @@ footer .social-icon {
     .mobile-slider {
         display: none !important;
     }
-
+    @media (max-width: 520px) {
+        .mobile-slider .home-slide{
+            width: 100% !important;
+            height: 100vh !important;
+        }
+        .mobile-slider img{
+            width: 100% !important;
+            height: 100% !important;
+            object-fit:cover !important;
+        }
+        .mobile-slider .banner-layer {
+            bottom: 20px !important;
+        }
+        .mobile-slider .banner-layer h1 {
+            font-size: 50px !important;
+        }
+    }
     /* Hide desktop slider on mobile */
     @media (max-width: 520px) {
         .add-List {

@@ -3,6 +3,9 @@
     <nav class="mobile-nav">
         <ul class="mobile-menu">
             <li>
+                <a href="index.php">Home</a>
+            </li>
+            <li>
                 <a href="shop.php">Categories</a>
                 <ul>
                     <li><a href="shop.php">Ceiling Fan</a></li>
@@ -15,17 +18,17 @@
             </li>
             <li>
                 <a href="air_curve_design.php">Pillar Technololgy</a>
-                <ul>
+                <!-- <ul>
                     <li><a href="air_curve_design.php">Air Curve Design</a></li>
                     <li><a href="turbosilent_bldc.php">TurboSilent BLDC</a></li>
                     <li><a href="mass.php">M.A.S.S®</a></li>
                     <li><a href="lumiambience.php">LumiAmbience</a></li>
                     <li><a href="scan.php">S.C.A.N</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li>
                 <a href="our_story.php">About Us</a>
-                <ul>
+                <!-- <ul>
                     <li><a href="our_story.php#vision">VISION</a></li>
                     <li><a href="our_story.php#mission">MISSION</a></li>
                     <li><a href="our_story.php#values">VALUES</a></li>
@@ -36,11 +39,11 @@
                     <li><a href="our_brands.php#bespoke">Bespoke</a></li>
                     <li><a href="our_brands.php#professional">Professional</a></li>
                 </ul>
-                <a href="capabilities.php">Capabilities</a>
+                <a href="capabilities.php">Capabilities</a> -->
             </li>
             <li>
                 <a href="contact.php">Support</a>
-                <ul>
+                <!-- <ul>
                     <li><a href="#">FAQs</a></li>
                     <li><a href="#">Videos</a></li>
                     <li><a href="#">Catalogues</a></li>
@@ -50,7 +53,7 @@
                 <ul>
                     <li><a href="#">FORM</a></li>
                 </ul>
-                <a href="contact.php">Contact Us</a>
+                <a href="contact.php">Contact Us</a> -->
             </li>
         </ul>
     </nav>

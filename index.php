@@ -18,25 +18,7 @@
             </div>
         </div>
     </div> -->
-    <style>
-        @media (max-width: 520px) {
-            .mobile-slider .home-slide{
-                width: 100% !important;
-                height: 100vh !important;
-            }
-            .mobile-slider img{
-                width: 100% !important;
-                height: 100% !important;
-                object-fit:cover !important;
-            }
-            .mobile-slider .banner-layer {
-                bottom: 20px !important;
-            }
-            .mobile-slider .banner-layer h1 {
-                font-size: 50px !important;
-            }
-        }
-    </style>
+
             <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
                 <div class="home-slide home-slide1 banner d-flex align-items-center">
                     <img class="slide-bg" src="images/Slider1_old.jpg" style="background-color: #ecc;" alt="home banner">
