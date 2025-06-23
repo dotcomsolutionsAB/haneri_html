@@ -3373,9 +3373,9 @@ footer .social-icon {
 
     /* Home Slider */
     /* Hide mobile slider by default */
-    /* .mobile-slider {
-        display: none !important;
-    } */
+    .mobile-slider {
+        display: none ;
+    }
 
     /* Hide desktop slider on mobile */
     @media (max-width: 520px) {
@@ -3388,12 +3388,12 @@ footer .social-icon {
             font-family: 'Roboto', sans-serif;
             width: 100%;
         }
-        /* .desktop-slider {
-            display: none !important;
+        .desktop-slider {
+            display: none ;
         }
         .mobile-slider {
-            display: block !important;
-        } */
+            display: block ;
+        }
         .featured .heading1{
             margin-bottom: 0rem !important;
         }
