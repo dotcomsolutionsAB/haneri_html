@@ -3373,9 +3373,9 @@ footer .social-icon {
 
     /* Home Slider */
     /* Hide mobile slider by default */
-    .mobile-slider {
+    /* .mobile-slider {
         display: none !important;
-    }
+    } */
 
     /* Hide desktop slider on mobile */
     @media (max-width: 520px) {
@@ -3388,12 +3388,12 @@ footer .social-icon {
             font-family: 'Roboto', sans-serif;
             width: 100%;
         }
-        .desktop-slider {
+        /* .desktop-slider {
             display: none !important;
         }
         .mobile-slider {
             display: block !important;
-        }
+        } */
         .featured .heading1{
             margin-bottom: 0rem !important;
         }
@@ -3811,10 +3811,10 @@ footer .social-icon {
         /* background: #f2f2f2; */
     }
     .desktop-slider1{
-        display:block;
+        display:block !important;
     }
-    .mobile-slider{
-        display: none;
+    .mobile-slider1{
+        display: none !important;
     }
 
     @media (min-width: 1024px) {
@@ -3856,10 +3856,10 @@ footer .social-icon {
             object-fit: contain; /* shows full image */
         }
         .desktop-slider1{
-            display:none;
+            display:none !important;
         }
-        .mobile-slider{
-            display: block;
+        .mobile-slider1{
+            display: block !important;
         }
         .c01 {
             background: #d9d9d9;
