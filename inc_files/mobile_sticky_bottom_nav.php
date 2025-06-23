@@ -18,11 +18,19 @@
         <i class="sicon-earphones-alt"></i>Support
     </a>
 </div>
-<div class="sticky-info">
-    <a href="#" class="">
+<div class="sticky-info wpp-btn">
+    <a href="#" class="wpp">
         <i class="fab fa-whatsapp"></i>whatsapp
     </a>
 </div>
+<style>
+    .wpp{
+        gap: 5px !important;
+    }
+    .wpp i{
+        font-size: 32px !important;
+    }
+</style>
 <!-- <div class="sticky-info">
     <a href="#" class="">
         <i class="icon-shopping-cart position-relative">
