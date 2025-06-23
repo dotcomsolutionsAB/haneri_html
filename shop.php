@@ -578,7 +578,7 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
                                     <div class="card featured pro-card" id="pro-table" data-product-id="${variant.product_id}">
                                         <div class="card_image">
-                                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid" />
+                                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid-card" />
                                         </div>
                                         <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
                                         <h4 class="heading2 cardh">
@@ -664,7 +664,7 @@
                 //                                     product.category?.id === 2 ? 'images/f2.png' :
                 //                                     product.category?.id === 3 ? 'images/f3.png' :                                                    
                 //                                     'assets/images/products/product-1.jpg'
-                //                                 }" alt="Product 1" class="img-fluid"
+                //                                 }" alt="Product 1" class="img-fluid-card"
                 //                             />
                 //                         </div>
                 //                         <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>

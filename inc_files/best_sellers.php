@@ -35,7 +35,7 @@
                     card.className = "card";
                     card.innerHTML = `
                         <div class="card_image">
-                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid">
+                            <img src="images/${imageName}" alt="${variant.variant_value}" class="img-fluid-card">
                         </div>
                         <h4 class="heading2">${product.brand.name} ${product.name} <span>${product.category.name}</span></h4>
                         <p class="product-price">MRP ₹${variant.selling_price}</p>

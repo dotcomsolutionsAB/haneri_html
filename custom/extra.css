@@ -3771,6 +3771,11 @@ footer .social-icon {
         width:100%;
         background: #f2f2f2;
     }
+    .img-fluid-card {
+        height:100%;
+        width:100%;
+        background: #f2f2f2;
+    }
 
     @media (min-width: 1024px) {
         .bldc102 {
@@ -3803,6 +3808,10 @@ footer .social-icon {
             height: auto;
         }
         .img-fluid {
+            height: auto;
+            object-fit: contain; /* shows full image */
+        }
+        .img-fluid-card {
             height: auto;
             object-fit: contain; /* shows full image */
         }
