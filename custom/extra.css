@@ -1467,6 +1467,15 @@ Turbosilent
     .logo{
         display: block !important;
     }
+    .header-icon:not(:last-child) {
+        margin-right: 0.3rem !important;
+        margin-left: 0.3rem !important;
+        margin-top: 0px !important;
+    }
+    .header-right .header-icon
+    {
+        font-size: 20px !important;
+    }
     .logo_div{
         display: none;
     }
