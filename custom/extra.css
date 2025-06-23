@@ -1465,7 +1465,7 @@ Turbosilent
 }    
 @media (max-width: 520px) {
     .logo{
-        display: block;
+        display: block !important;
     }
     .logo_div{
         display: none;
