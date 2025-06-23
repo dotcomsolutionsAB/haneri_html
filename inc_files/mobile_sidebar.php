@@ -31,13 +31,6 @@
                     <li><a href="our_story.php#mission">MISSION</a></li>
                     <li><a href="our_story.php#values">VALUES</a></li>
                 </ul>
-                <a href="our_brands.php">Our Brands</a>
-                <ul>
-                    <li><a href="our_brands.php#haner">Haneri</a></li>
-                    <li><a href="our_brands.php#bespoke">Bespoke</a></li>
-                    <li><a href="our_brands.php#professional">Professional</a></li>
-                </ul>
-                <a href="capabilities.php">Capabilities</a>
             </li>
             <li>
                 <a href="contact.php">Support</a>
