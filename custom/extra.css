@@ -1543,7 +1543,7 @@ Turbosilent
         padding-top: 15px;
     }
     .brands-section {
-        padding: 0px 20px;
+        padding: 0px;
         /* background-color: #f9f9f9; */
         text-align: center;
     }
@@ -4153,7 +4153,7 @@ footer .social-icon {
     @media (max-width: 520px) {
         .our_110 {
             gap: 2rem;
-            padding: 2rem 1rem;
+            padding: 15px 0px;
         }
 
         .our_103_main {
