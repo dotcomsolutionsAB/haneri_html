@@ -33,6 +33,12 @@
                 </ul>
             </li>
             <li>
+                <a href="our_brands.php">Our Brands</a>
+            </li>
+            <li>
+                <a href="capabilities.php">Capabilities</a>
+            </li>
+            <li>
                 <a href="contact.php">Support</a>
                 <!-- <ul>
                     <li><a href="#">FAQs</a></li>
