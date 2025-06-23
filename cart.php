@@ -159,7 +159,7 @@
 
           // Calculate tax
           const tax = subtotalWithTax - baseSubtotal;
-          
+
             // Determine shipping
             let shipping = 0;
             if (cartItemCount > 0) {
@@ -167,7 +167,7 @@
             }
 
           // Determine shipping based on subtotalWithTax
-          const shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
+        //   const shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
 
           // Final total
           const total = subtotalWithTax + shipping;
