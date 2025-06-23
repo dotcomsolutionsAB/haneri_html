@@ -243,7 +243,7 @@
                             </a> | 
                             <a href="cart.php" class="header-icon header-icon-wishlist" title="Wishlist">
                                 <!-- <i class="icon-wishlist-2"></i> -->
-                                <i class="minicart-icon"></i>
+                                <i class="fas fa-shopping-cart"></i>
                             </a> |
                             <a href="#" class="header-icon" id="logout-btn" title="Logout">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -277,7 +277,7 @@
                     </a> |  
                     <a href="#" class="header-icon"><i class="fab fa-whatsapp"></i></a> | 
                     <a href="cart.php" class="header-icon cart" title="cart">
-                        <i class="minicart-icon"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </a> |                
                     <a href="#" class="header-icon" id="logout-btn" title="Logout">
                         <i class="fas fa-sign-out-alt"></i>
