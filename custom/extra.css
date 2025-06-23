@@ -3810,6 +3810,12 @@ footer .social-icon {
         width:100%;
         /* background: #f2f2f2; */
     }
+    .desktop-slider1{
+        display:block;
+    }
+    .mobile-slider{
+        display: none;
+    }
 
     @media (min-width: 1024px) {
         .bldc102 {
@@ -3848,6 +3854,12 @@ footer .social-icon {
         .img-fluid-card {
             height: auto;
             object-fit: contain; /* shows full image */
+        }
+        .desktop-slider1{
+            display:none;
+        }
+        .mobile-slider{
+            display: block;
         }
         .c01 {
             background: #d9d9d9;
