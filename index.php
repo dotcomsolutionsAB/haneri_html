@@ -20,7 +20,7 @@
     </div> -->
     <style>
         @media (max-width: 520px) {
-            .mobile-slider{
+            .mobile-slider .home-slide{
                 width: 100% !important;
                 height: 100vh !important;
             }
