@@ -1883,9 +1883,9 @@ a.text-primary:focus, a.text-primary:hover {
     }
 }
 .header-icon:not(:last-child) {
-    margin-right: 1.3rem !important;
-    margin-left: 1.3rem !important;
-    margin-top: 5px !important;
+    margin-right: 1.3rem ;
+    margin-left: 1.3rem ;
+    margin-top: 0px;
 }
 .header-icon {
     /* margin-left: 13px; */
@@ -1904,10 +1904,12 @@ a.text-primary:focus, a.text-primary:hover {
         /* max-width: 1200px; */
     }
 }
+
 [class*=" icon-"]:before, [class^=icon-]:before {
     /* font-family: "Barlow Condensed" !important; */
     /* font-family: "porto" !important; */
 }
+
 .sticky-header.header-middle.fixed {
     height: 100px !important;
     background: aliceblue;
