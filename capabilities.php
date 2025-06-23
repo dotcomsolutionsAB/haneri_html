@@ -10,15 +10,9 @@
         </div> -->
     </nav>
 
-    <div class="button-group container" style="display: flex; gap: 10px; align-items: center;">
-    <a class="btn button" href="/our_story.php">Our Story</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/our_brands.php">Our Brands</a>
-    <span class="divider">|</span>
-    <a class="btn button" href="/capabilities.php">Capabilities</a>
-    </div>
+    <?php include("our_story_links.php"); ?>
+    
     <div class="container">                
-        
         <section id="capabilities" class="capabilities-section">
             <?php include("inc_files/about/capabilities_section.php"); ?>
         </section>
