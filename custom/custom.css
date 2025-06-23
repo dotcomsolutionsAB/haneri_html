@@ -100,11 +100,11 @@
     font-weight: 100;
     font-family: 'Open Sans';
 }
-.header-icon:not(:last-child) {
+/* .header-icon:not(:last-child) {
     margin-right: 1.3rem;
     margin-left: 1.3rem;
-    margin-top: 5px;
-}
+    margin-top: 0px;
+} */
 .search-toggle i:before {
     font-size: 18px;
 }
