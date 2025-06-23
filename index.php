@@ -3,10 +3,9 @@
 <!-- Category section  -->
 <main class="main">
     <!-- Slider section -->
-    <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider1_old.jpg"
-                style="background-color: #ecc;" alt="home banner">
+            <img class="slide-bg" src="images/Slider1_old.jpg" style="background-color: #ecc;" alt="home banner">
             <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
                 <h1><strong>A true</strong><br><span> revolution</span></h1>
                 <p class="slider_text">Haneri is the brainchild of a passionate team with over 75 years of collective <br>
@@ -18,26 +17,50 @@
                     <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
             </div>
         </div>
-    </div>
-
-    <!-- Mobile-Only Slider -->
-    <div class="home-slider mobile-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big d-block d-lg-none">
-        <div class="home-slide home-slide1 banner d-flex align-items-center">
-            <img class="slide-bg" src="images/Slider1_old.jpg"
-                style="background-color: #ecc;" alt="home banner">
-            <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
-                <h1><strong>A true</strong><br><span> revolution</span></h1>
-                <p class="slider_text">
-                    Haneri is the brainchild of a passionate team with over 75 years of collective <br>
-                    experience in the consumer durable industry. With expertise spanning <br>
-                    product creation, innovation, engineering, and manufacturing, we envisioned <br>
-                    Haneri as a brand that caters to consumers seeking products that seamlessly <br>
-                    blend with modern living.
-                </p>
-                <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
-            </div><!-- End .banner-layer -->
-        </div><!-- End .home-slide -->
-    </div><!-- End .home-slider -->
+    </div> -->
+            <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+                <div class="home-slide home-slide1 banner d-flex align-items-center">
+                    <img class="slide-bg" src="images/Slider1_old.jpg" style="background-color: #ecc;" alt="home banner">
+                    <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
+                        <h1>
+                            <strong>A true</strong>
+                            <br>
+                            <span> revolution</span>
+                        </h1>
+                        <p class="slider_text">
+                            Haneri is the brainchild of a passionate team with over 75 years of collective <br>
+                            experience in the consumer durable industry. With expertise spanning <br>
+                            product creation, innovation, engineering, and manufacturing, we envisioned <br>
+                            Haneri as a brand that caters to consumers seeking products that seamlessly <br>
+                            blend with modern living. At Haneri, our mission is to inspire everyday life by <br>
+                            offering thoughtfully designed, functional, and future-ready solutions.
+                        </p>
+                        <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Slider -->
+            <div class="home-slider mobile-slider owl-carousel owl-theme">
+                <div class="home-slide">
+                    <img src="images/Slider1_old.jpg" alt="Mobile Slide 1">
+                    <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
+                        <h1>
+                            <strong>A true</strong>
+                            <br>
+                            <span> revolution</span>
+                        </h1>
+                        <p class="slider_text">
+                            Haneri is the brainchild of a passionate team with over 75 years of collective <br>
+                            experience in the consumer durable industry. With expertise spanning <br>
+                            product creation, innovation, engineering, and manufacturing, we envisioned <br>
+                            Haneri as a brand that caters to consumers seeking products that seamlessly <br>
+                            blend with modern living. At Haneri, our mission is to inspire everyday life by <br>
+                            offering thoughtfully designed, functional, and future-ready solutions.
+                        </p>
+                        <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
+                    </div>
+                </div>
+            </div>
 
     <div class="container">
         <!-- Featured Products section -->
@@ -80,7 +103,7 @@
                 <div class="home-slide"><img src="images/Slider2.jpg" alt="Desktop Slide 2"></div>
                 <div class="home-slide"><img src="images/Slider3.jpg" alt="Desktop Slide 3"></div>
             </div> -->
-        `   <div class="home-slider desktop-slider1 slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+            <div class="home-slider desktop-slider1 slide-animate owl-carousel owl-theme show-nav-hover nav-big">
                 <div class="home-slide home-slide1 banner d-flex align-items-center">
                     <img class="slide-bg" src="images/Slider.jpg"
                         style="background-color: #ecc;" alt="home banner">
