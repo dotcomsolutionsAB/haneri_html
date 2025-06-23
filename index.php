@@ -3,7 +3,7 @@
 <!-- Category section  -->
 <main class="main">
     <!-- Slider section -->
-    <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+    <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
         <div class="home-slide home-slide1 banner d-flex align-items-center">
             <img class="slide-bg" src="images/Slider1_old.jpg"
                 style="background-color: #ecc;" alt="home banner">
@@ -18,89 +18,7 @@
                     <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
             </div>
         </div>
-    </div> -->
-    <!-- ===== Home Slider (mobile-first, fully responsive) ===== -->
-<div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
-
-    <!-- === Slide 1 === -->
-    <div class="home-slide home-slide1 banner d-flex align-items-center position-relative">
-
-        <!-- Background image  -->
-        <img
-            class="slide-bg w-100 h-100"
-            src="images/Slider1_old.jpg"
-            alt="home banner"
-            style="object-fit: cover; background-color:#ecc;"
-        />
-
-        <!-- Layered caption  -->
-        <div
-            class="banner-layer appear-animate px-3 px-md-5 text-center text-md-left"
-            data-animation-name="fadeInUpShorter"
-            style="max-width: 960px;"
-        >
-            <!-- Heading -->
-            <h1 class="mb-3 lh-sm fw-bold">
-                <span class="d-block d-md-inline">A&nbsp;true</span>
-                <br class="d-md-none" />
-                <strong class="text-primary">revolution</strong>
-            </h1>
-
-            <!-- Long paragraph for ≥768 px, short teaser below  -->
-            <p class="slider_text d-none d-md-block mb-4">
-                Haneri is the brainchild of a passionate team with over&nbsp;75&nbsp;years of collective
-                experience in the consumer-durable industry. With expertise spanning product creation,
-                innovation, engineering and manufacturing, we envisioned Haneri as a brand that caters
-                to consumers seeking products that seamlessly blend with modern living. At Haneri our
-                mission is to inspire everyday life by offering thoughtfully designed, functional and
-                future-ready solutions.
-            </p>
-
-            <p class="slider_text d-block d-md-none mb-4">
-                75+ years of consumer-durable know-how.  
-                Haneri blends function with modern living.
-            </p>
-
-            <!-- CTA  -->
-            <a href="#" class="btn btn-dark btn-xl slider_btn" role="button">
-                Buy&nbsp;Now
-            </a>
-        </div>
     </div>
-</div>
-
-<!-- ===== Extra CSS (add to your stylesheet) ===== -->
-<style>
-/* 1. Typography & spacing tweaks */
-.home-slide h1 {
-    font-size: 8vw;               /* scales with viewport */
-}
-@media (min-width: 576px) {       /* small tablets   */
-    .home-slide h1 { font-size: 42px; }
-}
-@media (min-width: 992px) {       /* desktop */
-    .home-slide h1 { font-size: 56px; }
-}
-.slider_text {
-    font-size: 4vw;
-    line-height: 1.5;
-}
-@media (min-width: 576px) {
-    .slider_text { font-size: 0.95rem; }
-}
-@media (min-width: 992px) {
-    .slider_text { font-size: 1.1rem; }
-}
-/* 2. Button sizing */
-.slider_btn {
-    padding: 0.65rem 2.25rem;
-    font-size: 4vw;
-}
-@media (min-width: 576px) {
-    .slider_btn { font-size: 0.9rem; }
-}
-</style>
-
 
     <!-- Mobile-Only Slider -->
     <div class="home-slider mobile-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big d-block d-lg-none">
