@@ -1389,6 +1389,8 @@ Turbosilent
       justify-content: space-between;
       gap: 50px;
   }
+
+
   .brand-row.reverse {
       flex-direction: row-reverse;
   }
@@ -1520,6 +1522,34 @@ Turbosilent
         /* display: none; */
     }
 
+    .brand-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .brand-content {
+        /* flex: 1; */
+        max-width: 100%;
+        text-align: justify;
+        padding: 10px 0px;
+    }
+    .brand-image {
+        /* flex: 1; */
+        max-width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 15px;
+    }
+    .brands-section {
+        padding: 0px 20px;
+        /* background-color: #f9f9f9; */
+        text-align: center;
+    }
+    .brand-content .paragraph1 {
+        text-align: justify;
+    }
 
 }
 
