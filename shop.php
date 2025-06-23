@@ -785,6 +785,7 @@
                                 localStorage.setItem("temp_id", data.data.user_id);
                             }
                             showFlashMessage("Item added to cart!");
+                            window.location.href = 'cart.php'
                         } else {
                             showFlashMessage("Failed to add to cart", "#ffeaea", "#ff0000");
                         }
