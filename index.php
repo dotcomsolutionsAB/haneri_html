@@ -19,20 +19,22 @@
         </div>
     </div> -->
     <style>
-        .mobile-slider{
-            width: 100%;
-            height: 100vh;
-        }
-        .mobile-slider img{
-            width: 100%;
-            height: 100%;
-            object-fit:cover;
-        }
-        .mobile-slider .banner-layer {
-            bottom: 20px !important;
-        }
-        .mobile-slider .banner-layer h1 {
-            font-size: 50px;
+        @media (max-width: 520px) {
+            .mobile-slider{
+                width: 100%;
+                height: 100vh;
+            }
+            .mobile-slider img{
+                width: 100%;
+                height: 100%;
+                object-fit:cover;
+            }
+            .mobile-slider .banner-layer {
+                bottom: 20px !important;
+            }
+            .mobile-slider .banner-layer h1 {
+                font-size: 50px !important;
+            }
         }
     </style>
             <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
