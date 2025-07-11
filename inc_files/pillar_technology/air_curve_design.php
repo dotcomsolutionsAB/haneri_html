@@ -1,4 +1,4 @@
-<body>
+<!-- <body> -->
     <style>
         .air_style{
             padding: 10px;
@@ -109,7 +109,7 @@
         <div class="align-items-center air_sec">
             <!-- Image on the left side -->
             <div class="sm_h">
-                <img src="../assets/images/3.png" alt="Air Curve Design" class="img-fluid">
+                <img src="images/air_4.png" alt="Air Curve Design" class="img-fluid">
             </div>
             <!-- Text on the right side -->
             <div class="sm_h c01">
@@ -125,5 +125,5 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+<!-- </body>
+</html> -->

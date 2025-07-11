@@ -21,7 +21,7 @@
 
             <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
                 <div class="home-slide home-slide1 banner d-flex align-items-center">
-                    <img class="slide-bg" src="images/Slider1_old.jpg" style="background-color: #ecc;" alt="home banner">
+                    <img class="slide-bg" src="images/Slider1.jpg" style="background-color: #ecc;" alt="home banner">
                     <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
                         <h1>
                             <strong>A true</strong>
@@ -43,7 +43,7 @@
             <!-- Mobile Slider -->
             <div class="home-slider mobile-slider owl-carousel owl-theme">
                 <div class="home-slide">
-                    <img src="images/Slider1_old.jpg" alt="Mobile Slide 1">
+                    <img src="images/Slider1.jpg" alt="Mobile Slide 1">
                     <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
                         <h1>
                             <strong>A true</strong>
