@@ -16,8 +16,9 @@
     <meta name="keywords" content="" />
     <meta name="description" content="Haneri">
     <meta name="author" content="Cognitive Branding">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../images/Haneri_Favicon.jpg">
+    <link rel="icon" type="image/x-icon" href="images/Haneri_Favicon.jpg">
 
     <script>
         WebFontConfig = {
