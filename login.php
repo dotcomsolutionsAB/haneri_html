@@ -73,7 +73,10 @@
                 localStorage.setItem("user_id", data.data.id);
 
                 // Redirect based on role
-                if (data.data.role === "admin") {
+                const role = data.data.role;
+
+                // Redirect based on role
+                if (role === "admin") {
                     window.location.href = "admin/index.php"; // Redirect to admin dashboard
                 } else if (["customer", "vendor", "architect", "dealer"].includes(role))  {
                     window.location.href = "index.php"; // Redirect to customer dashboard
