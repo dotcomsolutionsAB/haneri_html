@@ -574,7 +574,7 @@
                                     </div>
                                 `
                                 : `
-                                    <span heading4 mbo>As ${userRole}</span>
+                                    ${userRole === 'customer' ? '' : `<span heading4 mbo>For ${userRole} Price </span>`}
                                     <div class="price-box">
                                         <div class="c_price">
                                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
