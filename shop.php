@@ -576,8 +576,9 @@
                                 : `
                                     <div class="price-box">
                                         <div class="c_price">
+                                            <span class="old-price paragraph1">MRP ₹${userRole}</span>
                                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                                            <span class="product-price paragraph1"><span class="role-name">${userRole}</span> MRP ₹${sellingPrice}</span>
+                                            <span class="product-price paragraph1"> MRP ₹${sellingPrice}</span>
                                         </div>
                                         <div class="sp_price none">
                                             Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
