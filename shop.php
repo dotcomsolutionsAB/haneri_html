@@ -349,88 +349,7 @@
                 // If you need them for pagination
                 let totalItems = 0;
 
-                // Modify your existing function to include category filters
-                // function fetchProducts() {
-                //     const offset = (currentPage - 1) * itemsPerPage;
-                //         // 1. For Product
-                //         const searchProduct = $('#search-product-input').val() || '';
-                //         // 2. For Brand
-                //         const selectedBrands = [];
-                //         $('input[name="brand"]:checked').each(function() {
-                //             selectedBrands.push($(this).val());
-                //         });
-                //         const searchBrand = selectedBrands.join(',');
-                //         // 3. For Category
-                //         const selectedCategories = [];
-                //         $('input[name="category"]:checked').each(function() {
-                //             selectedCategories.push($(this).val());
-                //         });
-                //         const searchCategory = selectedCategories.join(',');
-
-                //         // 4. Get the current min & max from noUiSlider
-                //         // Use the same slider element ID from earlier
-                //         const priceSlider = document.getElementById('price-slider');
-                //         const sliderValues = priceSlider.noUiSlider.get(); // This returns an array [min, max]
-                //         const minPrice = parseFloat(sliderValues[0]); 
-                //         const maxPrice = parseFloat(sliderValues[1]);
-
-                //         // 5. Get the price range from the select box
-                //         const priceRange = $('#price-range-select').val(); 
-
-                //         // 6. Sorting select box
-                //         const orderValue = $('#orderby-select').val(); 
-                //         let orderPrice;
-                //         if (orderValue === 'ascending') {
-                //             orderPrice = 'Ascending';
-                //         } else if (orderValue === 'descending') {
-                //             orderPrice = 'Descending';
-                //         } else {
-                //             orderPrice = ''; // or null, if no sort is selected
-                //         }
-                //         // 7. Gather selected variants
-                //         const selectedVariants = [];
-                //         $('input[name="variant"]:checked').each(function() {
-                //             selectedVariants.push($(this).val());
-                //         });
-                //         // If multiple can be selected, we can do something like a comma-separated string:
-                //         const variantType = selectedVariants.join(',');
-                //         // If your API needs a single combined search string for categories/brands:
-                //         // const combinedSearch = [...selectedCategories, ...selectedBrands].join(',');
-                    
-                //     $.ajax({
-                //         url: '<?php echo BASE_URL; ?>/products/get_products',
-                //         type: 'POST',
-                //         data: {
-                //             // Three separate search fields
-                //             search_product: searchProduct,   // e.g. "Haneri AirElite AEW1"
-                //             search_brand: searchBrand,     // e.g. "Stanley 600W Small 100mm Angle Grinder"
-                //             search_category: searchCategory,  // e.g. "Table Wall Pedestals, Domestic Exhaust"
-                //             price_range: priceRange,  // If you want to pass a price_range (replace with dynamic)
-                //             limit: itemsPerPage,
-                //             offset: offset,
-                //             order_price: orderPrice, // sort price asc or desc
-                //             min_priceFilter: minPrice, // newly added min & max
-                //             max_priceFilter: maxPrice,
-                //             variant_type: variantType, // Variant type(s)
-                //             // If needed: 
-                //             // is_active: 1,
-                //             // variant_type: "Speed",
-                //             // ...
-                //         },
-                //         success: (response) => {
-                //             if (response && response.data) {
-                //                 totalItems = response.total_records || 0; 
-                //                 populateTable(response.data);  // wherever you display products
-                //                 updatePagination();           // your existing pagination logic
-                //             } else {
-                //                 console.error("Unexpected products response format:", response);
-                //             }
-                //         },
-                //         error: (error) => {
-                //             console.error("Error fetching products:", error);
-                //         }
-                //     });
-                // }
+                
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
 
@@ -489,7 +408,7 @@
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${getAuthToken}`
                         }
-                    data: {
+                    data: JSON.stringify({
                             search_product: searchProduct,
                             search_brand: searchBrand,
                             search_category: searchCategory,
@@ -500,7 +419,7 @@
                             min_priceFilter: minPrice,
                             max_priceFilter: maxPrice,
                             variant_type: variantType,
-                        },
+                        }),
                         success: (response) => {
                             if (response && response.data) {
                                 totalItems = response.total_records || 0;
