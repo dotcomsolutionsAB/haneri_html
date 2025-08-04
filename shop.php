@@ -574,9 +574,9 @@
                                     </div>
                                 `
                                 : `
+                                    <span heading4 mbo>As ${userRole}</span>
                                     <div class="price-box">
                                         <div class="c_price">
-                                            <span class="old-price paragraph1">MRP ₹${userRole}</span>
                                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
                                             <span class="product-price paragraph1"> MRP ₹${sellingPrice}</span>
                                         </div>
@@ -595,7 +595,7 @@
                                         <div class="card_image">
                                             <img src="${imageName}" alt="${variant.variant_value}" class="img-fluid-card" />
                                         </div>
-                                        <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
+                                        <h4 class="heading4 mbo">${product.category?.name || ""}</h4>
                                         <h4 class="heading2 cardh">
                                             <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')">
                                                 ${product.name}
