@@ -479,14 +479,14 @@
                         selectedVariants.push($(this).val());
                     });
                     const variantType = selectedVariants.join(',');
-
+                    const getAuthToken = localStorage.getItem("auth_token");
                     // ---- AJAX Request ----
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `Bearer ${authToken}`
+                            "Authorization": `Bearer ${getAuthToken}`
                         }
                     data: {
                             search_product: searchProduct,
