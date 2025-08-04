@@ -33,10 +33,10 @@
                             <input type="password" class="form-input form-wide" id="register-password" required />
 
                             <label for="user-type">
-                                User Type <span class="required">*</span>
+                                Profession <span class="required">*</span>
                             </label>
                             <select class="form-input form-wide" id="user-type" name="user_type" required aria-required="true">
-                                <option value="" disabled selected>Select User Type</option>
+                                <option value="" selected>Select Profession</option>
                                 <option value="Architect">Architect</option>
                                 <option value="Dealer">Dealer</option>
                             </select>
@@ -77,7 +77,7 @@
             mobile: mobile,
             email: email,
             password: password,
-            role: user_type // Default role
+            selected_type: user_type // Default role
         };
 
         fetch(apiUrl, {
