@@ -32,6 +32,14 @@
                             </label>
                             <input type="password" class="form-input form-wide" id="register-password" required />
 
+                            <label for="register-user-type">
+                                User Type <span class="required">*</span>
+                            </label>
+                            <select type="user_type" class="form-input form-wide" id="user_type" required>
+                                <option value="Architect">Architect</option>
+                                <option value="Engineer">Engineer</option>
+                            </select>
+
                             <div class="form-footer mb-2">
                                 <button type="submit" class="btn register_btn btn-md w-100 mr-0">REGISTER</button>                                        
                             </div>

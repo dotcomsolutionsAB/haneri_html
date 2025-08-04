@@ -572,7 +572,7 @@
                                 `;
 
                             // Image selection fallback
-                            const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
+                            const imageName = variant.file_urls[0] || [];
 
                             tbody.append(`
                                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">

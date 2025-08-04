@@ -29,8 +29,8 @@
                 const container = document.getElementById("best-seller-carousel");
 
                 product.variants.forEach(variant => {
-                    const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
-
+                    // const imageName = variant.variant_value.replace(/\s+/g, '_') + ".png";
+                    const imageName = variant.file_urls[0] || [];
                     const card = document.createElement("div");
                     card.className = "card";
                     card.innerHTML = `

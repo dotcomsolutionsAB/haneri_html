@@ -26,115 +26,6 @@
             sPriceContainer.hide();
         }
 
-        // test
-        // function setImageSection(variantId) {
-        //     let imageHtml = '', thumbHtml = '';
-
-        //     let videoUrl = "https://youtu.be/MaX_zCDMyWc";
-
-        //     const getEmbedUrl = (url) => {
-        //         const videoId = url.includes("youtu.be")
-        //             ? url.split("youtu.be/")[1].split("?")[0]
-        //             : url.split("v=")[1].split("&")[0];
-        //         return `https://www.youtube.com/embed/${videoId}`;
-        //     };
-
-        //     const imageMap = {
-        //         14: ["Natural_Pine.png", "Natural_Pine2.png", "Natural_Pine3.png", "Natural_Pine4.png", "Natural_Pine5.png", videoUrl],
-        //         13: ["Espresso_Walnut.png", "Espresso_Walnut2.png", "Espresso_Walnut3.png", "Espresso_Walnut4.png", "Espresso_Walnut5.png",videoUrl],
-        //         15: ["Moonlit_White.png", "Moonlit_White2.png", "Moonlit_White3.png", "Moonlit_White4.png", videoUrl],
-        //         16: ["Velvet_Black.png", "Velvet_Black2.png", "Velvet_Black3.png", "Velvet_Black4.png",videoUrl]
-        //     };
-
-        //     const images = (productId == 14 && imageMap[variantId]) 
-        //         ? imageMap[variantId] 
-        //         : ["f1.png", "f2.png", "f3.png"];
-
-        //     images.forEach((item, index) => {
-        //         const isVideo = item.includes("youtu");
-
-        //         if (isVideo) {
-        //             const embedUrl = getEmbedUrl(item);
-        //             imageHtml += `
-        //                 <div class="product-item">
-        //                     <iframe
-        //                         width="635"
-        //                         height="355"
-        //                         src="${embedUrl}"
-        //                         frameborder="0"
-        //                         allow="autoplay; encrypted-media"
-        //                         allowfullscreen>
-        //                     </iframe>
-        //                 </div>
-        //             `;
-        //             thumbHtml += `
-        //                 <div class="owl-dot" data-index="${index}">
-        //                     <img src="images/video-thumb.png" width="98" height="98" alt="video" />
-        //                 </div>
-        //             `;
-        //         } else {
-        //             imageHtml += `
-        //                 <div class="product-item">
-        //                     <img class="product-single-image"
-        //                         src="images/${item}"
-        //                         data-zoom-image="images/${item}"
-        //                         width="635"
-        //                         height="355"
-        //                         alt="product" />
-        //                 </div>
-        //             `;
-        //             thumbHtml += `
-        //                 <div class="owl-dot small_thumb" data-index="${index}">
-        //                     <img src="images/${item}" width="98" height="98" alt="product" />
-        //                 </div>
-        //             `;
-        //         }
-        //     });
-
-        //     const fullImageHtml = `
-        //         <div class="product-slider-container">
-        //             <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-        //                 ${imageHtml}
-        //             </div>
-        //             <div class="prod-thumbnail horizontal-thumbs">
-        //                 <div class="thumbnail-carousel owl-carousel owl-theme">
-        //                     ${thumbHtml}
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     `;
-
-
-        //     $('#product-image-section').html(fullImageHtml);
-
-        //     // Main image carousel
-        //     $('.product-single-carousel').owlCarousel({
-        //         items: 1,
-        //         nav: true,
-        //         dots: false,
-        //         loop: true
-        //     });
-
-        //     // Thumbnail slider (scrollable)
-        //     $('.thumbnail-carousel').owlCarousel({
-        //         items: 5,
-        //         margin: 10,
-        //         nav: true,
-        //         dots: false,
-        //         responsive: {
-        //             0: { items: 3 },
-        //             600: { items: 4 },
-        //             1000: { items: 5 }
-        //         }
-        //     });
-
-        //     // Sync thumbnail click with main carousel
-        //     $(document).on('click', '.owl-dot', function () {
-        //         const index = $(this).data('index');
-        //         $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
-        //     });
-        // }
-
         // Overwrite this function completely
         function setImageSectionFromVariant(variant) {
             let imageHtml = '', thumbHtml = '';
@@ -449,104 +340,58 @@
             });
         }
 
-        // function checkVariantInCart(variantId) {
-        //     const token  = localStorage.getItem("auth_token");
-        //     const tempId = localStorage.getItem("temp_id");
-
-        //     if (!token && !tempId) {
-        //         console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
-        //         return;
-        //     }
-
-        //     let requestData = token ? {} : { cart_id: tempId };
-
-        //     $.ajax({
-        //         url: `<?php echo BASE_URL; ?>/cart/fetch`,
-        //         type: "POST",
-        //         headers: token ? { "Authorization": `Bearer ${token}` } : {},
-        //         contentType: "application/json",
-        //         data: JSON.stringify(requestData),
-        //         success: function (data) {
-        //             if (data.data && data.data.length > 0) {
-        //                 const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
-        //                 if (cartItem) {
-        //                     cartItemId = cartItem.id;
-        //                     addCartBtn.hide();
-        //                     viewCartBtn.show();
-        //                     quantityElem.val(cartItem.quantity);
-        //                     cartItemIds.show();
-        //                 } else {
-        //                     addCartBtn.show();
-        //                     viewCartBtn.hide();
-        //                     quantityElem.val(1);
-        //                     cartItemIds.hide();
-        //                 }
-        //             } else {
-        //                 addCartBtn.show();
-        //                 viewCartBtn.hide();
-        //                 quantityElem.val(1);
-        //                 cartItemIds.hide();
-        //             }
-        //         },
-        //         error: function (error) {
-        //             console.error("Error checking cart for variant:", error);
-        //         }
-        //     });
-        // }
-
         function checkVariantInCart(variantId) {
-    const token  = localStorage.getItem("auth_token");
-    const tempId = localStorage.getItem("temp_id");
+            const token  = localStorage.getItem("auth_token");
+            const tempId = localStorage.getItem("temp_id");
 
-    if (!token && !tempId) {
-        console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
-        return;
-    }
-
-    let requestData = token ? {} : { cart_id: tempId };
-
-    $.ajax({
-        url: `<?php echo BASE_URL; ?>/cart/fetch`,
-        type: "POST",
-        headers: token ? { "Authorization": `Bearer ${token}` } : {},
-        contentType: "application/json",
-        data: JSON.stringify(requestData),
-        success: function (data) {
-            if (data.data && data.data.length > 0) {
-                const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
-                if (cartItem) {
-                    cartItemId = cartItem.id;
-
-                    addCartBtn.hide();
-                    viewCartBtn.show();
-
-                    quantityElem.hide();         // ✅ HIDE Quantity input
-                    $('#cartId').hide();         // ✅ HIDE wrapper row
-                } else {
-                    cartItemId = null;
-
-                    addCartBtn.show();
-                    viewCartBtn.hide();
-
-                    quantityElem.val(1).show();  // ✅ SHOW Quantity
-                    $('#cartId').show();         // ✅ SHOW wrapper row
-                }
-            } else {
-                cartItemId = null;
-
-                addCartBtn.show();
-                viewCartBtn.hide();
-
-                quantityElem.val(1).show();
-                $('#cartId').show();
+            if (!token && !tempId) {
+                console.warn("No auth token or temp_id found in localStorage. Skipping cart check.");
+                return;
             }
-        },
-        error: function (error) {
-            console.error("Error checking cart for variant:", error);
-        }
-    });
-}
 
+            let requestData = token ? {} : { cart_id: tempId };
+
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/cart/fetch`,
+                type: "POST",
+                headers: token ? { "Authorization": `Bearer ${token}` } : {},
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                success: function (data) {
+                    if (data.data && data.data.length > 0) {
+                        const cartItem = data.data.find(item => item.product_id == productId && item.variant_id == variantId);
+                        if (cartItem) {
+                            cartItemId = cartItem.id;
+
+                            addCartBtn.hide();
+                            viewCartBtn.show();
+
+                            quantityElem.hide();         // ✅ HIDE Quantity input
+                            $('#cartId').hide();         // ✅ HIDE wrapper row
+                        } else {
+                            cartItemId = null;
+
+                            addCartBtn.show();
+                            viewCartBtn.hide();
+
+                            quantityElem.val(1).show();  // ✅ SHOW Quantity
+                            $('#cartId').show();         // ✅ SHOW wrapper row
+                        }
+                    } else {
+                        cartItemId = null;
+
+                        addCartBtn.show();
+                        viewCartBtn.hide();
+
+                        quantityElem.val(1).show();
+                        $('#cartId').show();
+                    }
+                },
+                error: function (error) {
+                    console.error("Error checking cart for variant:", error);
+                }
+            });
+        }
 
         // Price update function based on quantity change
         window.updatePrice = function() {
@@ -646,7 +491,6 @@
     #cartId {
         transition: all 0.3s ease-in-out;
     }
-
 </style>
 <main class="main about">
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
