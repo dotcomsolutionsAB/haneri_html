@@ -73,10 +73,10 @@
                 localStorage.setItem("user_id", data.data.id);
 
                 // Redirect based on role
-                if (data.data.role === "customer" || data.data.role === "vendor") {
-                    window.location.href = "index.php"; // Redirect to customer dashboard
-                } else if (data.data.role === "admin") {
+                if (data.data.role === "admin") {
                     window.location.href = "admin/index.php"; // Redirect to admin dashboard
+                } else if (["customer", "vendor", "architect", "dealer"].includes(role))  {
+                    window.location.href = "index.php"; // Redirect to customer dashboard
                 }
             } else {
                 document.getElementById("error-message").innerText = data.message;
