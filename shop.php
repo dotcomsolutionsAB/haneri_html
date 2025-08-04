@@ -484,7 +484,11 @@
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
-                        data: {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${authToken}`
+                        }
+                    data: {
                             search_product: searchProduct,
                             search_brand: searchBrand,
                             search_category: searchCategory,
