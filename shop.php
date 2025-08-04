@@ -480,6 +480,7 @@
                     });
                     const variantType = selectedVariants.join(',');
                     const getAuthToken = localStorage.getItem("auth_token");
+                    console.log(getAuthToken);
                     // ---- AJAX Request ----
                     $.ajax({
                         url: '<?php echo BASE_URL; ?>/products/get_products',
