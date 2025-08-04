@@ -33,10 +33,10 @@
                             <input type="password" class="form-input form-wide" id="register-password" required />
 
                             <label for="user-type">
-                                Profession <span class="required">*</span>
+                                Are you a 
                             </label>
-                            <select class="form-input form-wide" id="user-type" name="user_type" required aria-required="true">
-                                <option value="" selected>Select Profession</option>
+                            <select class="form-input form-wide" id="user-type" name="user_type">
+                                <option value="" selected>Select Option</option>
                                 <option value="Architect">Architect</option>
                                 <option value="Dealer">Dealer</option>
                             </select>
