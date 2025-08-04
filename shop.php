@@ -350,92 +350,182 @@
                 let totalItems = 0;
 
                 
+                // function fetchProducts() {
+                //     const offset = (currentPage - 1) * itemsPerPage;
+
+                //     // 1. Product name search
+                //     const searchProduct = $('#search-product-input').val() || '';
+
+                //     // 2. Brand filters
+                //     const selectedBrands = [];
+                //     $('input[name="brand"]:checked').each(function() {
+                //         selectedBrands.push($(this).val());
+                //     });
+                //     const searchBrand = selectedBrands.join(',');
+
+                //     // 3. Category filters from checkboxes
+                //     const selectedCategories = [];
+                //     $('input[name="category"]:checked').each(function() {
+                //         selectedCategories.push($(this).val());
+                //     });
+
+                //     // --- Extract category from URL if exists ---
+                //     const urlParams = new URLSearchParams(window.location.search);
+                //     const categoryFromURL = urlParams.get('category');
+
+                //     let searchCategory = selectedCategories.join(',');
+                //     if (categoryFromURL && !searchCategory) {
+                //         searchCategory = categoryFromURL;
+                //     }
+
+                //     // 4. Price range slider
+                //     const priceSlider = document.getElementById('price-slider');
+                //     const sliderValues = priceSlider.noUiSlider.get(); // [min, max]
+                //     const minPrice = parseFloat(sliderValues[0]);
+                //     const maxPrice = parseFloat(sliderValues[1]);
+
+                //     // 5. Static price range select (optional)
+                //     const priceRange = $('#price-range-select').val();
+
+                //     // 6. Sorting option
+                //     const orderValue = $('#orderby-select').val();
+                //     const orderPrice = orderValue === 'ascending' ? 'Ascending' :
+                //                     orderValue === 'descending' ? 'Descending' : '';
+
+                //     // 7. Variant filters
+                //     const selectedVariants = [];
+                //     $('input[name="variant"]:checked').each(function() {
+                //         selectedVariants.push($(this).val());
+                //     });
+                //     const variantType = selectedVariants.join(',');
+                //     const getAuthToken = localStorage.getItem("auth_token");
+                //     console.log(getAuthToken);
+                //     // ---- AJAX Request ----
+                //     $.ajax({
+                //         url: '<?php echo BASE_URL; ?>/products/get_products',
+                //         type: 'POST',
+                //         headers: {
+                //             "Content-Type": "application/json",
+                //             "Authorization": `Bearer ${getAuthToken}`
+                //         }
+                //     data: JSON.stringify({
+                //             search_product: searchProduct,
+                //             search_brand: searchBrand,
+                //             search_category: searchCategory,
+                //             price_range: priceRange,
+                //             limit: itemsPerPage,
+                //             offset: offset,
+                //             order_price: orderPrice,
+                //             min_priceFilter: minPrice,
+                //             max_priceFilter: maxPrice,
+                //             variant_type: variantType,
+                //         }),
+                //         success: (response) => {
+                //             if (response && response.data) {
+                //                 totalItems = response.total_records || 0;
+                //                 populateTable(response.data);
+                //                 updatePagination();
+                //             } else {
+                //                 totalItems = 0;
+                //                 updatePagination();
+                //                 populateTable([]);  // Trigger "Coming Soon!" by passing an empty array
+                //             }
+                //         },
+                //         error: (error) => {
+                //             console.error("Error fetching products:", error);
+                //         }
+                //     });
+                // }
+
                 function fetchProducts() {
-                    const offset = (currentPage - 1) * itemsPerPage;
+    const offset = (currentPage - 1) * itemsPerPage;
 
-                    // 1. Product name search
-                    const searchProduct = $('#search-product-input').val() || '';
+    // 1. Product name search
+    const searchProduct = $('#search-product-input').val() || '';
 
-                    // 2. Brand filters
-                    const selectedBrands = [];
-                    $('input[name="brand"]:checked').each(function() {
-                        selectedBrands.push($(this).val());
-                    });
-                    const searchBrand = selectedBrands.join(',');
+    // 2. Brand filters
+    const selectedBrands = [];
+    $('input[name="brand"]:checked').each(function() {
+        selectedBrands.push($(this).val());
+    });
+    const searchBrand = selectedBrands.join(',');
 
-                    // 3. Category filters from checkboxes
-                    const selectedCategories = [];
-                    $('input[name="category"]:checked').each(function() {
-                        selectedCategories.push($(this).val());
-                    });
+    // 3. Category filters from checkboxes
+    const selectedCategories = [];
+    $('input[name="category"]:checked').each(function() {
+        selectedCategories.push($(this).val());
+    });
 
-                    // --- Extract category from URL if exists ---
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const categoryFromURL = urlParams.get('category');
+    // --- Extract category from URL if exists ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get('category');
 
-                    let searchCategory = selectedCategories.join(',');
-                    if (categoryFromURL && !searchCategory) {
-                        searchCategory = categoryFromURL;
-                    }
+    let searchCategory = selectedCategories.join(',');
+    if (categoryFromURL && !searchCategory) {
+        searchCategory = categoryFromURL;
+    }
 
-                    // 4. Price range slider
-                    const priceSlider = document.getElementById('price-slider');
-                    const sliderValues = priceSlider.noUiSlider.get(); // [min, max]
-                    const minPrice = parseFloat(sliderValues[0]);
-                    const maxPrice = parseFloat(sliderValues[1]);
+    // 4. Price range slider
+    const priceSlider = document.getElementById('price-slider');
+    const sliderValues = priceSlider.noUiSlider.get(); // [min, max]
+    const minPrice = parseFloat(sliderValues[0]);
+    const maxPrice = parseFloat(sliderValues[1]);
 
-                    // 5. Static price range select (optional)
-                    const priceRange = $('#price-range-select').val();
+    // 5. Static price range select (optional)
+    const priceRange = $('#price-range-select').val();
 
-                    // 6. Sorting option
-                    const orderValue = $('#orderby-select').val();
-                    const orderPrice = orderValue === 'ascending' ? 'Ascending' :
-                                    orderValue === 'descending' ? 'Descending' : '';
+    // 6. Sorting option
+    const orderValue = $('#orderby-select').val();
+    const orderPrice = orderValue === 'ascending' ? 'Ascending' :
+                        orderValue === 'descending' ? 'Descending' : '';
 
-                    // 7. Variant filters
-                    const selectedVariants = [];
-                    $('input[name="variant"]:checked').each(function() {
-                        selectedVariants.push($(this).val());
-                    });
-                    const variantType = selectedVariants.join(',');
-                    const getAuthToken = localStorage.getItem("auth_token");
-                    console.log(getAuthToken);
-                    // ---- AJAX Request ----
-                    $.ajax({
-                        url: '<?php echo BASE_URL; ?>/products/get_products',
-                        type: 'POST',
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": `Bearer ${getAuthToken}`
-                        }
-                    data: JSON.stringify({
-                            search_product: searchProduct,
-                            search_brand: searchBrand,
-                            search_category: searchCategory,
-                            price_range: priceRange,
-                            limit: itemsPerPage,
-                            offset: offset,
-                            order_price: orderPrice,
-                            min_priceFilter: minPrice,
-                            max_priceFilter: maxPrice,
-                            variant_type: variantType,
-                        }),
-                        success: (response) => {
-                            if (response && response.data) {
-                                totalItems = response.total_records || 0;
-                                populateTable(response.data);
-                                updatePagination();
-                            } else {
-                                totalItems = 0;
-                                updatePagination();
-                                populateTable([]);  // Trigger "Coming Soon!" by passing an empty array
-                            }
-                        },
-                        error: (error) => {
-                            console.error("Error fetching products:", error);
-                        }
-                    });
-                }
+    // 7. Variant filters
+    const selectedVariants = [];
+    $('input[name="variant"]:checked').each(function() {
+        selectedVariants.push($(this).val());
+    });
+    const variantType = selectedVariants.join(',');
+
+    const getAuthToken = localStorage.getItem("auth_token");
+    console.log(getAuthToken);
+
+    // ---- AJAX Request ----
+    $.ajax({
+        url: '<?php echo BASE_URL; ?>/products/get_products',
+        type: 'POST',
+        headers: {
+            "Content-Type": "application/json",  // Ensuring Content-Type is JSON
+            "Authorization": `Bearer ${getAuthToken}`
+        },
+        data: JSON.stringify({
+            search_product: searchProduct,
+            search_brand: searchBrand,
+            search_category: searchCategory,
+            price_range: priceRange,
+            limit: itemsPerPage,
+            offset: offset,
+            order_price: orderPrice,
+            min_priceFilter: minPrice,
+            max_priceFilter: maxPrice,
+            variant_type: variantType,
+        }),
+        success: (response) => {
+            if (response && response.data) {
+                totalItems = response.total_records || 0;
+                populateTable(response.data);
+                updatePagination();
+            } else {
+                totalItems = 0;
+                updatePagination();
+                populateTable([]);  // Trigger "Coming Soon!" by passing an empty array
+            }
+        },
+        error: (error) => {
+            console.error("Error fetching products:", error);
+        }
+    });
+}
+
 
                 // When the user clicks "Apply Filters", fetch products again using selected filters
                 $('#apply-filters').on('click', function() {
