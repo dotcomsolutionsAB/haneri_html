@@ -32,14 +32,15 @@
                             </label>
                             <input type="password" class="form-input form-wide" id="register-password" required />
 
-                            <label for="register-user-type">
+                            <label for="user-type">
                                 User Type <span class="required">*</span>
                             </label>
-                            <select type="user_type" class="form-input form-wide" id="user_type" required>
+                            <select class="form-input form-wide" id="user-type" name="user_type" required aria-required="true">
+                                <option value="" disabled selected>Select User Type</option>
                                 <option value="Architect">Architect</option>
-                                <option value="Engineer">Engineer</option>
+                                <option value="Dealer">Dealer</option>
                             </select>
-
+                            
                             <div class="form-footer mb-2">
                                 <button type="submit" class="btn register_btn btn-md w-100 mr-0">REGISTER</button>                                        
                             </div>
@@ -65,6 +66,7 @@
         const mobile = document.getElementById("register-mobile").value;
         const email = document.getElementById("register-email").value;
         const password = document.getElementById("register-password").value;
+        const user_type = document.getElementById("user-type").value;
 
         // API endpoint
         const apiUrl = "<?php echo BASE_URL; ?>/register";
@@ -75,7 +77,7 @@
             mobile: mobile,
             email: email,
             password: password,
-            role: "customer" // Default role
+            role: user_type // Default role
         };
 
         fetch(apiUrl, {
