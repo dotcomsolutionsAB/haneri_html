@@ -72,19 +72,22 @@
                                                 <th class="min-w-[300px]">
                                                     <span class="sort asc">
                                                         <span class="sort-label text-gray-700 font-normal">
-                                                            Name
+                                                            User Name
                                                         </span>
                                                         <span class="sort-icon">
                                                         </span>
                                                     </span>
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
-                                                    Parent Id
+                                                    Product
+                                                </th>
+                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                    Category
                                                 </th>
                                                 <th class="min-w-[165px]">
                                                     <span class="sort">
                                                         <span class="sort-label text-gray-700 font-normal">
-                                                            Custom Sort
+                                                            Discount
                                                         </span>
                                                         <span class="sort-icon">
                                                         </span>
@@ -151,19 +154,12 @@
             }
 
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/categories/fetch`,
+                url: `<?php echo BASE_URL; ?>/discount/fetch`,
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(requestData), // Send limit, offset, and name (if any)
                 success: (response) => {
-                    // Expecting:
-                    // {
-                    //   "message": "...",
-                    //   "data": [...],
-                    //   "count_perpage": 10,
-                    //   "records": 14
-                    // }
                     if (response?.data) {
                         totalItems = response.records;    // total category count
                         populateTable(response.data);     // fill table rows
@@ -193,7 +189,7 @@
                 $tbody.append(`
                     <tr>
                         <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${category.name}">
+                            <input class="checkbox checkbox-sm" type="checkbox" value="${category.id}">
                         </td>
                         <td>
                             <div class="flex items-center gap-2.5">
@@ -202,22 +198,25 @@
                                 </div>
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
-                                        ${category.name}
+                                        ${category.user?.name}
                                     </a>
                                     <span class="text-xs text-gray-700 font-normal">
-                                        ${category.description ? category.description : 'No description available'}
+                                        ${category.user?.email ? category.user?.email : 'No Email'}
                                     </span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <span class="badge badge-sm badge-light badge-outline">
-                                ${category.parent_id}
+                                ${category.product_variant?.product.name} - ${category.product_variant?.variant_value}
                             </span>
                         </td>
                         <td>
+                            ${category.category?.name ? category.category?.name : 'No Category'} 
+                        </td>
+                        <td>
                             <span class="badge badge-sm badge-light badge-outline">
-                                ${category.custom_sort ? category.custom_sort : 'NA'}
+                                ${category.discount ? category.discount : 'NA'} %
                             </span>
                         </td>
                         <td class="w-[60px]">${generateActionButtons(category)}</td>
