@@ -964,8 +964,8 @@
 			document.getElementById("user-name").textContent = userName ? userName : "Not Showing !";
 			// document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
 			// document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
-			document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
-			document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
+			// document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
+			// document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
 		}
 
 		// Logout functionality
