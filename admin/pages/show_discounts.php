@@ -139,7 +139,7 @@
         const $searchInput = $("input[data-datatable-search=\"#discount_table\"]");
 
         // Function to fetch categories from the server
-        let fetchDiscounts = () => {
+        const fetchDiscounts = () => {
             // Calculate offset based on page number and limit
             const offset = (currentPage - 1) * itemsPerPage;
             
@@ -572,7 +572,7 @@
             });
         }
 
-        // PUT request to /products/:id (with the new data)  ///discount/edit/1
+        // POST request to /products/:id (with the new data)  ///discount/edit/1
         function updateDiscountViaProductsApi(discountId, payload) {
             $.ajax({
                 url: `<?php echo BASE_URL; ?>/discount/edit/${discountId}`,
@@ -583,7 +583,7 @@
                 },
                 data: JSON.stringify(payload),
                 success: function (data) {
-                    // Example: { "message": "Category updated successfully!" }
+                    // Example: { "message": "Discount updated successfully!" }
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
@@ -591,7 +591,7 @@
                     }).then(() => {
                         // Wait for 1 second (1000ms) before refreshing the discounts
                         setTimeout(() => {
-                            fetchDiscounts();  // Refresh the discount list
+                            fetchDiscounts();  // Refresh the discount list after 1 second
                         }, 1000);
                     });
                 },
