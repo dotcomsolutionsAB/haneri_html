@@ -26,51 +26,41 @@
                         <div class="card pb-2.5">
                             <div class="card-header" id="basic_settings">
                                 <h3 class="card-title">
-                                    General Settings
+                                    Add Discount
                                 </h3>
                             </div>
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                     <!-- Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Category Name</label>
-                                        <input class="input" type="text" id="categoryName" placeholder="Category Name">
+                                        <label class="form-label max-w-56">User Name</label>
+                                        <input class="input" type="text" id="userName" placeholder="User Name">
+                                        <input class="input" type="text" id="userId" placeholder="User Id">
                                     </div>
 
                                     <!-- Sort Number -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Sort Number</label>
-                                        <input class="input" type="text" id="sortNumber" placeholder="Sort Number">
+                                        <label class="form-label max-w-56">Product Variant ID</label>
+                                        <input class="input" type="text" id="variant_id" placeholder="Variant ID">
                                     </div>
 
                                     <!-- Description -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Description</label>
-                                        <div class="card cardx">
-                                            <textarea class="note-codable text-edit" id="description" aria-multiline="true"></textarea>
-                                        </div>
+                                        <label class="form-label max-w-56">Discount Value</label>
+                                        <input class="input" type="text" id="discount" placeholder="Discount Value">
                                     </div>
 
                                     <!-- Parent Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Parent Category</label>
+                                        <label class="form-label max-w-56">Select Category</label>
                                         <select class="select" id="parentCategory">
                                             <option value="">Loading categories...</option>
                                         </select>
                                     </div>
-
-                                    <!-- Category Logo -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
-                                        <label class="form-label max-w-56">Photo</label>
-                                        <div class="flex items-center justify-between flex-wrap grow gap-2.5">
-                                            <span class="text-2sm">150x150px JPEG, PNG Image</span>
-                                            <input type="file" id="photo" accept=".png, .jpg, .jpeg">
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary" id="saveCategory">Save Category</button>
+                                    <button class="btn btn-primary" id="saveCategory">Save Discount</button>
                                 </div>
                             </div>
                         </div>
