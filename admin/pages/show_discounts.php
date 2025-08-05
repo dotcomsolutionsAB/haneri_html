@@ -481,7 +481,7 @@
                 success: function (response) {
                     // Expecting { data: [ ... ], message: "...", records: ... }
                     if (response?.data && response.data.length > 0) {
-                        const discountItem = response.data; // Use the first match
+                        const discountItem = response.data[0]; // Use the first match
                         openEditDiscountPopup(discountItem);
                     } else {
                         Swal.fire({
@@ -521,7 +521,10 @@
                         <input id="swal-cat-parent" type="text" value="${discountData.product_variant_id || null }" readonly>
                     </div>
                     
-                   
+                    <div class="swal2-field-row">
+                        <label for="swal-cat-photo">User</label>
+                        <input id="swal-cat-photo" type="text" value="${discountData.user.name || null }" readonly>
+                    </div>
                     
                     <div class="swal2-field-row">
                         <label for="swal-cat-sort">Product</label>
