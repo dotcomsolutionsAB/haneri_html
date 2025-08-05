@@ -111,7 +111,6 @@
                                                     <!-- User name will go here -->
                                                 </span>
                                             </div>
-                                            </img>
                                         </div>
                                     </div>
                                     
