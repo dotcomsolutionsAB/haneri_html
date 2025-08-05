@@ -94,14 +94,16 @@
                                     <!-- <img alt="" class="size-9 rounded-full border-2 border-success shrink-0"
                                         src="../images/default/df001.png">
                                     </img> -->
-                                    <span class="size-9 rounded-full border-2 border-success shrink-0 flex items-center justify-center bg-gray-200 text-gray-800">
+                                    <span class="size-9 rounded-full border-2 border-success shrink-0 flex items-center justify-center" 
+                                        style="background-color: #2e7575; color: white; font-size: 20px; width: 40px; height: 40px; text-align: center; line-height: 40px;">
                                         <span id="userInitials"></span>  <!-- First letter will go here -->
                                     </span>
                                 </div>
                                 <div class="menu-dropdown menu-default light:border-gray-300 w-screen max-w-[250px]">
                                     <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
                                         <div class="flex items-center gap-2">
-                                            <span class="size-9 rounded-full border-2 border-success flex items-center justify-center bg-gray-200 text-gray-800">
+                                            <span class="size-9 rounded-full border-2 border-success flex items-center justify-center" 
+                                                style="background-color: #2e7575; color: white; font-size: 20px; width: 40px; height: 40px; text-align: center; line-height: 40px;">
                                                 <span id="userInitialsDropdown"></span>  <!-- First letter will go here -->
                                             </span>
                                             <div class="flex flex-col gap-1.5">
