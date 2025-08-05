@@ -169,7 +169,7 @@
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <div class="">
-                                    <img class="h-9 rounded-full" src="${brand.logo ? brand.logo : '../uploads/H.jpg'}" />
+                                    <img class="h-9 rounded-full" src="${brand.logo ? brand.logo : 'uploads/H.jpg'}" />
                                 </div>
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">

@@ -595,7 +595,7 @@
                                         <div class="card_image">
                                             <img src="${imageName}" alt="${variant.variant_value}" class="img-fluid-card" />
                                         </div>
-                                        <h4 class="heading4 mbo">${product.category?.name || ""}</h4>
+                                        <h4 class="heading4 mbo">${product.category || ""}</h4>
                                         <h4 class="heading2 cardh">
                                             <a href="javascript:void(0)" onclick="openProductDetail('${variant.product_id}')">
                                                 ${product.name}
