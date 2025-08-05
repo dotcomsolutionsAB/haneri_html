@@ -549,7 +549,7 @@
                     
                     <div class="swal2-field-row">
                         <label for="swal-dis-val">Discount</label>
-                        <input id="swal-dis-val" type="text" value="${discountData.discount || ''}%" readonly>
+                        <input id="swal-dis-val" type="text" value="${discountData.discount || ''}"> %
                     </div>
                 `,
                 focusConfirm: false,
@@ -557,11 +557,11 @@
                 confirmButtonText: 'Update',
                 // Collect values before closing
                 preConfirm: () => {
-                    const discount_user_id = document.getElementById('swal-dis-us-id').value.trim();
-                    const discount_variant_id = document.getElementById('swal-dis-var-id').value.trim() || null;
-                    const discount_category_id = document.getElementById('swal-dis-cat-id').value.trim() || null;
-                    const discount_val = document.getElementById('swal-dis-val').value.trim() || 0;
-                    return { discount_user_id, discount_variant_id, discount_category_id, discount_val};
+                    const user_id = document.getElementById('swal-dis-us-id').value.trim();
+                    const product_variant_id = document.getElementById('swal-dis-var-id').value.trim() || null;
+                    const category_id = document.getElementById('swal-dis-cat-id').value.trim() || null;
+                    const discount = document.getElementById('swal-dis-val').value.trim() || 0;
+                    return { user_id, product_variant_id, category_id, discount};
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
