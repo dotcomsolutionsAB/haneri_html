@@ -806,7 +806,7 @@
 		}
 
 		// Fetch user profile details
-		fetch("<?php echo BASE_URL; ?>/users/profile", {
+		fetch("<?php echo BASE_URL; ?>/profile", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -962,8 +962,8 @@
 		} else {
 			// Update Profile Details
 			document.getElementById("user-name").textContent = userName ? userName : "Not Showing !";
-			document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
-			document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
+			// document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
+			// document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
 			document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
 			document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
 		}
