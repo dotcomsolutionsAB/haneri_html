@@ -79,7 +79,7 @@
                                                     </span>
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
-                                                    Product
+                                                    Product-Variant
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
                                                     Category
@@ -296,19 +296,16 @@
     const generateActionButtons = (discount) => {
         return `
             <div class="menu" data-menu="true">
-                <div class="menu-item menu-item-dropdown"
-                     data-menu-item-offset="0, 10px"
-                     data-menu-item-placement="bottom-end"
-                     data-menu-item-placement-rtl="bottom-start"
-                     data-menu-item-toggle="dropdown"
-                     data-menu-item-trigger="click|lg:click">
+                <div class="menu-item menu-item-dropdown" data-menu-item-offset="0, 10px"
+                     data-menu-item-placement="bottom-end" data-menu-item-placement-rtl="bottom-start"
+                     data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                     <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
                         <i class="ki-filled ki-dots-vertical"></i>
                     </button>
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
                         
                         <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${discount.id}">
+                            <a class="menu-link" href="#" data-discount-id="${discount.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-search-list"></i>
                                 </span>
@@ -321,7 +318,7 @@
                         <div class="menu-separator"></div>
 
                         <div class="menu-item">
-                            <a class="menu-link edit-category-btn" href="#" data-category-id="${discount.name}">
+                            <a class="menu-link edit-discount-btn" href="#" data-discount-id="${discount.product_variant.product.name}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                 <span class="menu-title">Edit</span>
                             </a>
@@ -330,9 +327,8 @@
                         <div class="menu-separator"></div>
 
                         <!-- REMOVE -->
-                        <!-- Here is where we add the .delete-category-btn class -->
                         <div class="menu-item">
-                            <a class="menu-link delete-category-btn" href="#" data-category-id="${discount.id}">
+                            <a class="menu-link delete-discount-btn" href="#" data-discount-id="${discount.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash"></i>
                                 </span>
@@ -460,28 +456,28 @@
         const token = localStorage.getItem('auth_token');
 
         // Listen for "Edit" link clicks (where data-category-id holds the category's NAME)
-        $(document).on('click', '.edit-category-btn', function(e) {
+        $(document).on('click', '.edit-discount-btn', function(e) {
             e.preventDefault();
 
-            const categoryName = $(this).data('category-id');
-            if (!categoryName) {
+            const discountProductName = $(this).data('category-id');
+            if (!discountProductName) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: 'No category name found.'
+                    text: 'No Discount name found.'
                 });
                 return;
             }
 
             // Fetch the category by name
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/categories/fetch`,
+                url: `<?php echo BASE_URL; ?>/discount/fetch`,
                 type: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                data: JSON.stringify({ name: categoryName }),
+                data: JSON.stringify({ product_name: discountProductName }),
                 success: function (response) {
                     // Expecting { data: [ ... ], message: "...", records: ... }
                     if (response?.data && response.data.length > 0) {
