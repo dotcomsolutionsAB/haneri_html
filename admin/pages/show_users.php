@@ -139,6 +139,55 @@
             <!-- End of Container -->
         </main>
         <!-- End of Content -->
+<!-- Switch User -->
+<script>
+    // Function to handle the switch-user API call
+    function switchUser(userId, selectedType) {
+        const token = localStorage.getItem('auth_token');  // Get the auth token from local storage
+
+        // Data to send in the body
+        const requestData = {
+            user_id: userId,
+            selected_type: selectedType
+        };
+
+        // API call to switch user
+        $.ajax({
+            url: `<?php echo BASE_URL; ?>/switch-user`,  // Replace with the actual endpoint
+            type: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,  // Send the auth token in the header
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(requestData),  // Send user_id and selected_type in the body
+            success: function(response) {
+                // Handle the response from the API
+                if (response.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'User Switched',
+                        text: 'User type has been updated successfully!'
+                    });
+                    // Optionally, reload the page or update the table to reflect changes
+                    fetchUsers(); // Call your function to refresh the user list (if needed)
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.message || 'Failed to switch user.'
+                    });
+                }
+            },
+            error: function(xhr) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'API Error',
+                    text: xhr.responseJSON?.message || 'An error occurred while switching user.'
+                });
+            }
+        });
+    }
+</script>
 <script>
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
@@ -276,54 +325,6 @@
                 `);
             });
         };
-
-        // Function to handle the switch-user API call
-        function switchUser(userId, selectedType) {
-            const token = localStorage.getItem('auth_token');  // Get the auth token from local storage
-
-            // Data to send in the body
-            const requestData = {
-                user_id: userId,
-                selected_type: selectedType
-            };
-
-            // API call to switch user
-            $.ajax({
-                url: `<?php echo BASE_URL; ?>/switch-user`,  // Replace with the actual endpoint
-                type: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`,  // Send the auth token in the header
-                    'Content-Type': 'application/json'
-                },
-                data: JSON.stringify(requestData),  // Send user_id and selected_type in the body
-                success: function(response) {
-                    // Handle the response from the API
-                    if (response.success) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'User Switched',
-                            text: 'User type has been updated successfully!'
-                        });
-                        // Optionally, reload the page or update the table to reflect changes
-                        fetchUsers(); // Call your function to refresh the user list (if needed)
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: response.message || 'Failed to switch user.'
-                        });
-                    }
-                },
-                error: function(xhr) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'API Error',
-                        text: xhr.responseJSON?.message || 'An error occurred while switching user.'
-                    });
-                }
-            });
-        }
-
 
         const updatePagination = () => {
             const totalPages = Math.ceil(totalItems / itemsPerPage);
