@@ -482,7 +482,7 @@
                     // Expecting { data: [ ... ], message: "...", records: ... }
                     if (response?.data && response.data.length > 0) {
                         const discountItem = response.data; // Use the first match
-                        openEditCategoryPopup(discountItem);
+                        openEditDiscountPopup(discountItem);
                     } else {
                         Swal.fire({
                             icon: 'error',
@@ -502,7 +502,7 @@
         });
 
         // Open SweetAlert2 with smaller font, labels, etc.
-        function openEditCategoryPopup(discountData) {
+        function openEditDiscountPopup(discountData) {
             Swal.fire({
                 title: 'Edit Category',
                 // Use our custom class to reduce font size (except width)
