@@ -194,11 +194,9 @@
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <img class="h-9 rounded-full" src="${
-                                    product.id === 14 ? '../../images/Natura_Pine.png' :
-                                    product.category?.id == 1 ? '../../images/f1.png' :
-                                    product.category?.id == 2 ? '../../images/f2.png' :
-                                    product.category?.id == 3 ? '../../images/f3.png' :
-                                    'assets/images/products/product-1.jpg' // Default image
+                                    product.variants[0]?.file_urls && product.variants[0]?.file_urls[0]
+                                        ? product.variants[0].file_urls[0]  // If a valid image URL exists
+                                        : '../images/default/df001.png' // Use placeholder image if no valid image exists
                                 }">
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary">
@@ -213,7 +211,7 @@
                         <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
                         <td>
                             <div class="text-gray-700 text-xs">${variantDetails}</div>
-                            <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice} - ₹${lowestPrice}</b></div>
+                            <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
                         </td>
                         <td>
                             <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
