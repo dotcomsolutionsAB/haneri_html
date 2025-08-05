@@ -335,17 +335,17 @@
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
 
-        // Listen for clicks on elements with .delete-category-btn
-        $(document).on('click', '.delete-category-btn', function (e) {
+        // Listen for clicks on elements with .delete-discount-btn
+        $(document).on('click', '.delete-discount-btn', function (e) {
             e.preventDefault(); // Prevent link navigation
 
             // Get category ID from data attribute
-            const categoryId = $(this).data('discount-id');
+            const discountId = $(this).data('discount-id');
 
             // Show SweetAlert2 confirmation
             Swal.fire({
                 title: 'Are you sure?',
-                text: 'This action will permanently delete the category.',
+                text: 'This action will permanently delete the discount.',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes, delete it!',
@@ -357,17 +357,17 @@
                 if (result.isConfirmed) {
                     // If confirmed, send DELETE request
                     $.ajax({
-                        url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
+                        url: `<?php echo BASE_URL; ?>/discount/${discountId}`,
                         type: 'DELETE',
                         headers: {
                             'Authorization': `Bearer ${token}`
                         },
                         success: function (data) {
-                            // data = { "message": "Category deleted successfully!" }
+                            // data = { "message": "Discount deleted successfully!" }
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Deleted!',
-                                text: data.message || 'Category deleted successfully!'
+                                text: data.message || 'Discount deleted successfully!'
                             }).then(() => {
                                 // Optionally refresh/reload categories if needed:
                                 fetchDiscounts();
@@ -377,7 +377,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Error',
-                                text: xhr.responseJSON?.message || 'Unable to delete category.'
+                                text: xhr.responseJSON?.message || 'Unable to delete discount.'
                             });
                         }
                     });
@@ -437,6 +437,7 @@
   }
 </style>
 
+<!-- Edit Discount -->
 <script>
     $(document).ready(function() {
         const token = localStorage.getItem('auth_token');
