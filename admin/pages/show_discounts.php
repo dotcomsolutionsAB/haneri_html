@@ -503,6 +503,12 @@
 
         // Open SweetAlert2 with smaller font, labels, etc.
         function openEditDiscountPopup(discountData) {
+
+            // Check if required data exists before trying to access them
+            const userName = discountData.user?.name || 'Unknown User'; // Fallback if user is undefined
+            const productName = discountData.product_variant?.product?.name || 'Unknown Product'; // Fallback if product is undefined
+            const variantValue = discountData.product_variant?.variant_value || 'Unknown Variant'; // Fallback if variant_value is undefined
+
             Swal.fire({
                 title: 'Edit Category',
                 // Use our custom class to reduce font size (except width)
@@ -512,33 +518,38 @@
                 // Build the popup HTML with labels
                 html: `
                     <div class="swal2-field-row">
-                        <label for="swal-cat-name">User ID</label>
-                        <input id="swal-cat-name" type="text" value="${discountData.user_id || null }" readonly>
+                        <label for="swal-dis-us-id">User ID</label>
+                        <input id="swal-dis-us-id" type="text" value="${discountData.user_id || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                        <label for="swal-cat-parent">Variant ID</label>
-                        <input id="swal-cat-parent" type="text" value="${discountData.product_variant_id || null }" readonly>
+                        <label for="swal-dis-var-id">Variant ID</label>
+                        <input id="swal-dis-var-id" type="text" value="${discountData.product_variant_id || null }" readonly>
+                    </div>
+
+                    <div class="swal2-field-row">
+                        <label for="swal-dis-cat-id">Variant ID</label>
+                        <input id="swal-dis-cat-id" type="text" value="${discountData.category_id || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
                         <label for="swal-cat-photo">User</label>
-                        <input id="swal-cat-photo" type="text" value="${discountData.user.name || null }" readonly>
+                        <input id="swal-cat-photo" type="text" value="${userName}" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
                         <label for="swal-cat-sort">Product</label>
-                        <input id="swal-cat-sort" type="number" value="${discountData.product_variant.products.name || null }" readonly>
+                        <input id="swal-cat-sort" type="number" value="${productName}" readonly>
                     </div>
 
                     <div class="swal2-field-row">
                         <label for="swal-cat-sort">Variant</label>
-                        <input id="swal-cat-sort" type="number" value="${discountData.product_variant.variant_value || null }" readonly>
+                        <input id="swal-cat-sort" type="number" value="${variantValue}" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                        <label for="swal-cat-description">Discount</label>
-                        <textarea id="swal-cat-description">${discountData.discount || ''}%</textarea>
+                        <label for="swal-dis-val">Discount</label>
+                        <textarea id="swal-dis-val">${discountData.discount || ''}%</textarea>
                     </div>
                 `,
                 focusConfirm: false,
@@ -546,27 +557,26 @@
                 confirmButtonText: 'Update',
                 // Collect values before closing
                 preConfirm: () => {
-                    const name = document.getElementById('swal-cat-name').value.trim();
-                    const parent_id = document.getElementById('swal-cat-parent').value.trim() || null;
-                    const photo = document.getElementById('swal-cat-photo').value.trim() || null;
-                    const custom_sort = document.getElementById('swal-cat-sort').value.trim() || 0;
-                    const description = document.getElementById('swal-cat-description').value.trim() || null;
-                    return { name, parent_id, photo, custom_sort, description };
+                    const discount_user_id = document.getElementById('swal-dis-us-id').value.trim();
+                    const discount_variant_id = document.getElementById('swal-dis-var-id').value.trim() || null;
+                    const discount_category_id = document.getElementById('swal-dis-cat-id').value.trim() || null;
+                    const discount_val = document.getElementById('swal-dis-val').value.trim() || 0;
+                    return { discount_user_id, discount_variant_id, discount_category_id, discount_val};
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
                     // You said you are updating via /products/:id
                     // We use discountData.id from the fetch
-                    updateCategoryViaProductsApi(discountData.id, result.value);
+                    updateDiscountViaProductsApi(discountData.id, result.value);
                 }
             });
         }
 
-        // PUT request to /products/:id (with the new data)
-        function updateCategoryViaProductsApi(categoryId, payload) {
+        // PUT request to /products/:id (with the new data)  ///discount/edit/1
+        function updateDiscountViaProductsApi(discountId, payload) {
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/categories/${categoryId}`,
-                type: 'PUT',
+                url: `<?php echo BASE_URL; ?>/discount/edit/${discountId}`,
+                type: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
