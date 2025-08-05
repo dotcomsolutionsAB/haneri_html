@@ -188,6 +188,7 @@
         });
     }
 </script>
+
 <script>
     $(document).ready(function () {
         const token = localStorage.getItem('auth_token');
@@ -298,13 +299,13 @@
                                 </span>
                             </div>
                         </td>
-                        <td>
-                            <div class="flex flex-wrap gap-2.5 mb-2">
-                                <button 
-                                    class="btn btn-sm btn-outline-secondary" 
-                                    onclick="switchUser(${user.id}, '${user.selected_type}')">
-                                    ${user.selected_type}
-                                </button>
+                       <td>
+                            <div class="flex flex-wrap gap-2.5 mb-2">Switch to
+                                ${user.selected_type != null ? 
+                                    `<button class="btn btn-sm btn-primary" onclick="switchUser(${user.id}, '${user.selected_type}')">
+                                        ${user.selected_type}
+                                    </button>` 
+                                    : ''}
                             </div>
                         </td>
                         <td>
