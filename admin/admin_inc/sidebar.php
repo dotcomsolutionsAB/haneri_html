@@ -112,6 +112,19 @@
                     </a>
                 </div>
 
+                <!-- Discount Section -->
+                <div class="menu-item">
+                    <a class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] ps-[10px] pe-[10px] py-[6px] hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
+                        href="pages/show_discounts.php" tabindex="0">
+                        <span class="menu-icon items-start text-gray-500 dark:text-gray-400 w-[20px]">
+                            <i class="ki-filled ki-users text-lg"></i>
+                        </span>
+                        <span class="menu-title text-sm font-medium text-gray-800 menu-link-hover:!text-primary">
+                            Users
+                        </span>
+                    </a>
+                </div>
+
 
                 <div class="menu-item pt-2.25 pb-px">
                     <span class="menu-heading uppercase text-2sm font-medium text-gray-500 ps-[10px] pe-[10px]">
