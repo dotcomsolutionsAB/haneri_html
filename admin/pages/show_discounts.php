@@ -481,13 +481,13 @@
                 success: function (response) {
                     // Expecting { data: [ ... ], message: "...", records: ... }
                     if (response?.data && response.data.length > 0) {
-                        const categoryItem = response.data[0]; // Use the first match
-                        openEditCategoryPopup(categoryItem);
+                        const discountItem = response.data; // Use the first match
+                        openEditCategoryPopup(discountItem);
                     } else {
                         Swal.fire({
                             icon: 'error',
                             title: 'Not Found',
-                            text: `No categories found with name: ${categoryName}`
+                            text: `No Discount found with name: ${discountProductName}`
                         });
                     }
                 },
@@ -502,7 +502,7 @@
         });
 
         // Open SweetAlert2 with smaller font, labels, etc.
-        function openEditCategoryPopup(categoryData) {
+        function openEditCategoryPopup(discountData) {
             Swal.fire({
                 title: 'Edit Category',
                 // Use our custom class to reduce font size (except width)
@@ -511,34 +511,34 @@
                 },
                 // Build the popup HTML with labels
                 html: `
-                <div class="swal2-field-row">
-                    <label for="swal-cat-name">Name</label>
-                    <input id="swal-cat-name" type="text" 
-                            value="${categoryData.name || ''}">
+                    <div class="swal2-field-row">
+                        <label for="swal-cat-name">User ID</label>
+                        <input id="swal-cat-name" type="text" value="${discountData.user_id || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                    <label for="swal-cat-parent">Parent ID</label>
-                    <input id="swal-cat-parent" type="text" 
-                            value="${categoryData.parent_id || ''}">
+                        <label for="swal-cat-parent">Variant ID</label>
+                        <input id="swal-cat-parent" type="text" value="${discountData.product_variant_id || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                    <label for="swal-cat-photo">Photo URL</label>
-                    <input id="swal-cat-photo" type="text" 
-                            value="${categoryData.photo || ''}">
+                        <label for="swal-cat-photo">User</label>
+                        <input id="swal-cat-photo" type="text" value="${discountData.user.name || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                    <label for="swal-cat-sort">Custom Sort</label>
-                    <input id="swal-cat-sort" type="number" 
-                            value="${categoryData.custom_sort || 0}">
+                        <label for="swal-cat-sort">Product</label>
+                        <input id="swal-cat-sort" type="number" value="${discountData.product_variant.products.name || null }" readonly>
+                    </div>
+
+                    <div class="swal2-field-row">
+                        <label for="swal-cat-sort">Variant</label>
+                        <input id="swal-cat-sort" type="number" value="${discountData.product_variant.variant_value || null }" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
-                    <label for="swal-cat-description">Description</label>
-                    <textarea id="swal-cat-description"
-                    >${categoryData.description || ''}</textarea>
+                        <label for="swal-cat-description">Discount</label>
+                        <textarea id="swal-cat-description">${discountData.discount || ''}%</textarea>
                     </div>
                 `,
                 focusConfirm: false,
@@ -556,8 +556,8 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // You said you are updating via /products/:id
-                    // We use categoryData.id from the fetch
-                    updateCategoryViaProductsApi(categoryData.id, result.value);
+                    // We use discountData.id from the fetch
+                    updateCategoryViaProductsApi(discountData.id, result.value);
                 }
             });
         }
