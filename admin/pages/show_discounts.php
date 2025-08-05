@@ -549,7 +549,7 @@
                     
                     <div class="swal2-field-row">
                         <label for="swal-dis-val">Discount</label>
-                        <input id="swal-dis-val" type="number" value="${discountData.discount || ''}%" readonly>
+                        <input id="swal-dis-val" type="text" value="${discountData.discount || ''}%" readonly>
                     </div>
                 `,
                 focusConfirm: false,
