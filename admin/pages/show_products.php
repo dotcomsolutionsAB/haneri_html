@@ -175,7 +175,8 @@
 
                     // Find highest and lowest selling prices
                     product.variants.forEach(variant => {
-                        let sellingPrice = parseFloat(variant.selling_price) || 0;
+                        // let sellingPrice = parseFloat(variant.selling_price) || 0;
+                        let sellingPrice = parseFloat(variant.selling_price.replace(/,/g, '')) || 0;
                         if (sellingPrice > highestPrice) highestPrice = sellingPrice;
                         if (sellingPrice < lowestPrice) lowestPrice = sellingPrice;
                     });
@@ -212,7 +213,7 @@
                         <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
                         <td>
                             <div class="text-gray-700 text-xs">${variantDetails}</div>
-                            <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
+                            <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice} - ₹${lowestPrice}</b></div>
                         </td>
                         <td>
                             <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
