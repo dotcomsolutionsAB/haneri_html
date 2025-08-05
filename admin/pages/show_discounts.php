@@ -528,7 +528,7 @@
                     </div>
 
                     <div class="swal2-field-row">
-                        <label for="swal-dis-cat-id">Variant ID</label>
+                        <label for="swal-dis-cat-id">Category ID</label>
                         <input id="swal-dis-cat-id" type="text" value="${discountData.category_id || null }" readonly>
                     </div>
                     
@@ -539,17 +539,17 @@
                     
                     <div class="swal2-field-row">
                         <label for="swal-cat-sort">Product</label>
-                        <input id="swal-cat-sort" type="number" value="${productName}" readonly>
+                        <input id="swal-cat-sort" type="text" value="${productName}" readonly>
                     </div>
 
                     <div class="swal2-field-row">
                         <label for="swal-cat-sort">Variant</label>
-                        <input id="swal-cat-sort" type="number" value="${variantValue}" readonly>
+                        <input id="swal-cat-sort" type="text" value="${variantValue}" readonly>
                     </div>
                     
                     <div class="swal2-field-row">
                         <label for="swal-dis-val">Discount</label>
-                        <textarea id="swal-dis-val">${discountData.discount || ''}%</textarea>
+                        <input id="swal-dis-val" type="number" value="${discountData.discount || ''}%" readonly>
                     </div>
                 `,
                 focusConfirm: false,
