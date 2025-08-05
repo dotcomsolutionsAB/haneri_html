@@ -300,10 +300,10 @@
                             </div>
                         </td>
                        <td>
-                            <div class="flex flex-wrap gap-2.5 mb-2">Switch to
+                            <div class="flex flex-wrap gap-2.5 mb-2">
                                 ${user.selected_type != null ? 
                                     `<button class="btn btn-sm btn-primary" onclick="switchUser(${user.id}, '${user.selected_type}')">
-                                        ${user.selected_type}
+                                       Switch to ${user.selected_type}
                                     </button>` 
                                     : ''}
                             </div>
