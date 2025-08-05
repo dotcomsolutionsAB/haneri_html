@@ -589,8 +589,10 @@
                         title: 'Success',
                         text: data.message || 'Discount updated successfully!'
                     }).then(() => {
-                        // Optionally refresh your categories table/list:
-                        fetchDiscounts();
+                        // Wait for 1 second (1000ms) before refreshing the discounts
+                        setTimeout(() => {
+                            fetchDiscounts();  // Refresh the discount list
+                        }, 1000);
                     });
                 },
                 error: function (xhr) {
