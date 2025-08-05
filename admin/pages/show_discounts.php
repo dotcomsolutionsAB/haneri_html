@@ -150,7 +150,7 @@
             };
             // Include "name" in request if searchTerm >= 3
             if (searchTerm.length >= 3) {
-                requestData.name = searchTerm;
+                requestData.user_name = searchTerm;
             }
 
             $.ajax({
