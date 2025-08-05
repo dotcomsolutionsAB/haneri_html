@@ -139,7 +139,7 @@
         const $searchInput = $("input[data-datatable-search=\"#discount_table\"]");
 
         // Function to fetch categories from the server
-        const fetchDiscounts = () => {
+        let fetchDiscounts = () => {
             // Calculate offset based on page number and limit
             const offset = (currentPage - 1) * itemsPerPage;
             
@@ -587,7 +587,7 @@
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        text: data.message || 'Category updated successfully!'
+                        text: data.message || 'Discount updated successfully!'
                     }).then(() => {
                         // Optionally refresh your categories table/list:
                         fetchDiscounts();
@@ -597,7 +597,7 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Error',
-                        text: xhr.responseJSON?.message || 'Unable to update category.'
+                        text: xhr.responseJSON?.message || 'Unable to update Discount.'
                     });
                 }
             });
