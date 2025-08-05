@@ -148,7 +148,7 @@
         // Data to send in the body
         const requestData = {
             user_id: userId,
-            role: selectedType
+            role: selectedType.toLowerCase()
         };
 
         // API call to switch user
