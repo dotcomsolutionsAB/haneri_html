@@ -227,7 +227,7 @@
 							return;
 						}
 
-						fetch("<?php echo rtrim(BASE_URL, '/') . '/orders'; ?>", {
+						fetch("<?php echo rtrim(BASE_URL, '/api'); ?>/orders", {
 							method: "GET",
 							headers: {
 								"Content-Type": "application/json",
