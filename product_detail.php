@@ -694,10 +694,10 @@
                 </ul>
             </div>
             <div style="display: flex; flex-direction: column; align-items:center;">
-                <img src="images/images/1.jpeg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
-                <img src="images/images/2.jpeg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
-                <img src="images/images/3.jpeg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
-                <img src="images/images/4.jpeg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
+                <img src="images/1.jpeg" alt="Underlight with Dimming Options" style="max-width: 100%; height: auto;">
+                <img src="images/2.jpeg" alt="ActivBLDC Technology" style="max-width: 100%; height: auto;">
+                <img src="images/3.jpeg" alt="Nature Driven Design" style="max-width: 100%; height: auto;">
+                <img src="images/4.jpeg" alt="SilentPro Blossom Smart" style="max-width: 100%; height: auto;">
             </div>
 
             <div class="container specification-section">
