@@ -148,12 +148,12 @@
         // Data to send in the body
         const requestData = {
             user_id: userId,
-            selected_type: selectedType
+            role: selectedType
         };
 
         // API call to switch user
         $.ajax({
-            url: `<?php echo BASE_URL; ?>/switch-user`,  // Replace with the actual endpoint
+            url: `<?php echo BASE_URL; ?>/switch_user`,  // Replace with the actual endpoint
             type: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,  // Send the auth token in the header
@@ -309,7 +309,7 @@
                             </div>
                         </td>
                         <td>
-                            <span class="badge badge-sm badge-outline ${user.selected_type != null ? 'badge-success' : 'badge-danger'}">
+                            <span class="badge badge-sm badge-outline ${user.selected_type != null ? 'badge-primary' : 'badge-danger'}">
                                 ${user.selected_type != null ? user.selected_type : 'N/A'}
                             </span>
                         </td>
