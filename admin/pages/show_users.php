@@ -19,18 +19,7 @@
                         <h1 class="text-xl font-medium leading-none text-gray-900" id="">
                             Users
                         </h1>
-                        <!-- <div class="flex items-center gap-2 text-sm font-normal text-gray-700">
-                            Overview of all users and brands.
-                        </div> -->
                     </div>
-                    <!-- <div class="flex items-center gap-2.5">
-                        <a class="btn btn-sm btn-light" href="#">
-                            Import Users
-                        </a>
-                        <a class="btn btn-sm btn-primary" href="">
-                            Add User
-                        </a>
-                    </div> -->
                 </div>
             </div>
             <!-- End of Container -->
@@ -52,6 +41,8 @@
                                         <option value="customer">Customer</option>
                                         <option value="vendor">Vendor</option>
                                         <option value="admin">Admin</option>
+                                        <option value="dealer">Dealer</option>
+                                        <option value="architect">Architect</option>
                                     </select>
                                 </div>
                                 <div class="relative">
@@ -90,6 +81,9 @@
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
                                                     Roles
+                                                </th>
+                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                    Switch User
                                                 </th>
                                                 <th class="min-w-[165px]">
                                                     <span class="sort">
@@ -253,6 +247,20 @@
                             </div>
                         </td>
                         <td>
+                            <div class="flex flex-wrap gap-2.5 mb-2">
+                                <button 
+                                    class="btn btn-sm btn-outline-primary" 
+                                    onclick="switchUser(${user.id}, '${user.selected_type}')">
+                                    ${user.role}
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-sm badge-outline ${user.selected_type != null ? 'badge-success' : 'badge-danger'}">
+                                ${user.selected_type != null ? user.selected_type : 'N/A'}
+                            </span>
+                        </td>
+                        <td>
                             <span class="text-xs text-gray-700 font-normal">${user.mobile}</span>
                         </td>
                         <td>
@@ -265,6 +273,54 @@
                 `);
             });
         };
+
+        // Function to handle the switch-user API call
+        function switchUser(userId, selectedType) {
+            const token = localStorage.getItem('auth_token');  // Get the auth token from local storage
+
+            // Data to send in the body
+            const requestData = {
+                user_id: userId,
+                selected_type: selectedType
+            };
+
+            // API call to switch user
+            $.ajax({
+                url: `<?php echo BASE_URL; ?>/switch-user`,  // Replace with the actual endpoint
+                type: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,  // Send the auth token in the header
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(requestData),  // Send user_id and selected_type in the body
+                success: function(response) {
+                    // Handle the response from the API
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'User Switched',
+                            text: 'User type has been updated successfully!'
+                        });
+                        // Optionally, reload the page or update the table to reflect changes
+                        fetchUsers(); // Call your function to refresh the user list (if needed)
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: response.message || 'Failed to switch user.'
+                        });
+                    }
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'API Error',
+                        text: xhr.responseJSON?.message || 'An error occurred while switching user.'
+                    });
+                }
+            });
+        }
+
 
         const updatePagination = () => {
             const totalPages = Math.ceil(totalItems / itemsPerPage);

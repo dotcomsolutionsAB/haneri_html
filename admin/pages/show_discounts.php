@@ -303,19 +303,6 @@
                         <i class="ki-filled ki-dots-vertical"></i>
                     </button>
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
-                        
-                        <div class="menu-item">
-                            <a class="menu-link" href="#" data-discount-id="${discount.id}">
-                                <span class="menu-icon">
-                                    <i class="ki-filled ki-search-list"></i>
-                                </span>
-                                <span class="menu-title">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-
-                        <div class="menu-separator"></div>
 
                         <div class="menu-item">
                             <a class="menu-link edit-discount-btn" href="#" data-discount-id="${discount.product_variant.product.name}">
@@ -326,7 +313,6 @@
 
                         <div class="menu-separator"></div>
 
-                        <!-- REMOVE -->
                         <div class="menu-item">
                             <a class="menu-link delete-discount-btn" href="#" data-discount-id="${discount.id}">
                                 <span class="menu-icon">

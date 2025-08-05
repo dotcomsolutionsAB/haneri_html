@@ -101,7 +101,7 @@
                     // Default option
                     const defaultOption = document.createElement("option");
                     defaultOption.value = "";
-                    defaultOption.textContent = "Select Parent Category";
+                    defaultOption.textContent = "Select";
                     parentCategorySelect.appendChild(defaultOption);
 
                     // Populate dropdown with ALL categories (parent & child)
