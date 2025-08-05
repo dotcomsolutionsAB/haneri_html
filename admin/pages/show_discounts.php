@@ -354,7 +354,7 @@
             e.preventDefault(); // Prevent link navigation
 
             // Get category ID from data attribute
-            const categoryId = $(this).data('category-id');
+            const categoryId = $(this).data('discount-id');
 
             // Show SweetAlert2 confirmation
             Swal.fire({
@@ -455,11 +455,11 @@
     $(document).ready(function() {
         const token = localStorage.getItem('auth_token');
 
-        // Listen for "Edit" link clicks (where data-category-id holds the category's NAME)
+        // Listen for "Edit" link clicks (where data-discount-id holds the category's NAME)
         $(document).on('click', '.edit-discount-btn', function(e) {
             e.preventDefault();
 
-            const discountProductName = $(this).data('category-id');
+            const discountProductName = $(this).data('discount-id');
             if (!discountProductName) {
                 Swal.fire({
                     icon: 'error',
