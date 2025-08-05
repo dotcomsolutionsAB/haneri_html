@@ -42,14 +42,14 @@
                     <div class="card card-grid min-w-full">
                         <div class="card-header py-5 flex-wrap gap-2">
                             <h3 class="card-title">                                
-                                Overview of <span id="count-categories">00</span>
+                                Overview of <span id="count-discounts">00</span>
                             </h3>
                             <div class="flex gap-6">
                                 <div class="relative">
                                     <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
-                                    <input class="input input-sm pl-8" data-datatable-search="#categories_table"
-                                        placeholder="Search categories" type="text" />
+                                    <input class="input input-sm pl-8" data-datatable-search="#discount_table"
+                                        placeholder="Search Discounts By Name" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <div data-datatable="true" data-datatable-page-size="10">
                                 <div class="scrollable-x-auto">
-                                    <table class="table table-border" data-datatable-table="true" id="categories-table">
+                                    <table class="table table-border" data-datatable-table="true" id="discount-table">
                                         <thead>
                                             <tr>
                                                 <th class="w-[60px] text-center">
@@ -136,10 +136,10 @@
         let totalItems = 0;      // Will be set from response "records"
         let searchTerm = "";     // Will hold the search input text
 
-        const $searchInput = $("input[data-datatable-search=\"#categories_table\"]");
+        const $searchInput = $("input[data-datatable-search=\"#discount_table\"]");
 
         // Function to fetch categories from the server
-        const fetchCategories = () => {
+        const fetchDiscounts = () => {
             // Calculate offset based on page number and limit
             const offset = (currentPage - 1) * itemsPerPage;
             
@@ -176,50 +176,50 @@
 
         // Render categories into table
         const populateTable = (data) => {
-            const $tbody = $("#categories-table tbody");
+            const $tbody = $("#discount-table tbody");
             $tbody.empty();
 
             if (!data.length) {
-                $tbody.append('<tr><td colspan="6" class="text-center">No categories found</td></tr>');
+                $tbody.append('<tr><td colspan="6" class="text-center">No Discounts found</td></tr>');
                 return;
             }
 
             // For each category, build a row
-            data.forEach((category) => {
+            data.forEach((discount) => {
                 $tbody.append(`
                     <tr>
                         <td class="text-center">
-                            <input class="checkbox checkbox-sm" type="checkbox" value="${category.id}">
+                            <input class="checkbox checkbox-sm" type="checkbox" value="${discount.id}">
                         </td>
                         <td>
                             <div class="flex items-center gap-2.5">
                                 <div>
-                                    <img class="h-9 rounded-full" src="${category.photo ? category.photo : '../../images/default/df001.png'}" />
+                                    <img class="h-9 rounded-full" src="${discount.photo ? discount.photo : '../../images/default/df001.png'}" />
                                 </div>
                                 <div class="flex flex-col gap-0.5">
                                     <a class="leading-none font-medium text-sm text-gray-900 hover:text-primary" href="#">
-                                        ${category.user?.name}
+                                        ${discount.user?.name}
                                     </a>
                                     <span class="text-xs text-gray-700 font-normal">
-                                        ${category.user?.email ? category.user?.email : 'No Email'}
+                                        ${discount.user?.email ? discount.user?.email : 'No Email'}
                                     </span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <span class="badge badge-sm badge-light badge-outline">
-                                ${category.product_variant?.product.name} - ${category.product_variant?.variant_value}
+                                ${discount.product_variant?.product.name} - ${discount.product_variant?.variant_value}
                             </span>
                         </td>
                         <td>
-                            ${category.category?.name ? category.category?.name : 'No Category'} 
+                            ${discount.category?.name ? discount.category?.name : 'No Category'} 
                         </td>
                         <td>
                             <span class="badge badge-sm badge-light badge-outline">
-                                ${category.discount ? category.discount : 'NA'} %
+                                ${discount.discount ? discount.discount : 'NA'} %
                             </span>
                         </td>
-                        <td class="w-[60px]">${generateActionButtons(category)}</td>
+                        <td class="w-[60px]">${generateActionButtons(discount)}</td>
                     </tr>
                 `);
             });
@@ -253,20 +253,20 @@
             }
 
             // Show total items
-            $("#count-categories").text(`${totalItems} Categories`);
+            $("#count-discounts").text(`${totalItems} Discounts`);
         };
 
         // Handle pagination clicks (previous, next, or direct page)
         $(".pagination").on("click", "button", function () {
             currentPage = parseInt($(this).data("page"));
-            fetchCategories();
+            fetchDiscounts();
         });
 
         // Handle page-size changes (itemsPerPage)
         $("[data-datatable-size]").on("change", function () {
             itemsPerPage = parseInt($(this).val());
             currentPage = 1;   // Reset to first page
-            fetchCategories();
+            fetchDiscounts();
         });
 
         // Build page-size dropdown
@@ -280,17 +280,17 @@
         $searchInput.on("keyup", function () {
             searchTerm = $(this).val().trim();
             currentPage = 1;  // Always reset to page 1 on new search
-            fetchCategories();
+            fetchDiscounts();
         });
 
         // Initial fetch on page load
-        fetchCategories();
+        fetchDiscounts();
     });
 </script>
 
 <script>
     // This function generates the action buttons in your table
-    const generateActionButtons = (category) => {
+    const generateActionButtons = (discount) => {
         return `
             <div class="menu" data-menu="true">
                 <div class="menu-item menu-item-dropdown"
@@ -305,7 +305,7 @@
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
                         
                         <div class="menu-item">
-                            <a class="menu-link" href="#" data-category-id="${category.id}">
+                            <a class="menu-link" href="#" data-category-id="${discount.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-search-list"></i>
                                 </span>
@@ -318,7 +318,7 @@
                         <div class="menu-separator"></div>
 
                         <div class="menu-item">
-                            <a class="menu-link edit-category-btn" href="#" data-category-id="${category.name}">
+                            <a class="menu-link edit-category-btn" href="#" data-category-id="${discount.name}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                 <span class="menu-title">Edit</span>
                             </a>
@@ -329,7 +329,7 @@
                         <!-- REMOVE -->
                         <!-- Here is where we add the .delete-category-btn class -->
                         <div class="menu-item">
-                            <a class="menu-link delete-category-btn" href="#" data-category-id="${category.id}">
+                            <a class="menu-link delete-category-btn" href="#" data-category-id="${discount.id}">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-trash"></i>
                                 </span>
@@ -385,7 +385,7 @@
                                 text: data.message || 'Category deleted successfully!'
                             }).then(() => {
                                 // Optionally refresh/reload categories if needed:
-                                fetchCategories();
+                                fetchDiscounts();
                             });
                         },
                         error: function (xhr, status, error) {
@@ -581,7 +581,7 @@
                         text: data.message || 'Category updated successfully!'
                     }).then(() => {
                         // Optionally refresh your categories table/list:
-                        fetchCategories();
+                        fetchDiscounts();
                     });
                 },
                 error: function (xhr) {
