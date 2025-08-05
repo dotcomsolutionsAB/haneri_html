@@ -22,6 +22,9 @@
         "../admin/pages/add_brand.php",
         "../admin/pages/show_brands.php",
 
+        "../admin/pages/add_discount.php",
+        "../admin/pages/show_discounts.php",
+
         "../admin/pages/add_order.php",
         "../admin/pages/show_orders.php",
         "../admin/pages/view_order.php",
