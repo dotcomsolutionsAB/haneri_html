@@ -122,17 +122,17 @@
                 $('.product-single-carousel').trigger('to.owl.carousel', [index, 300]);
             });
         }
-        
+
         // Fetch product details
         if (productId) {
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
+                url: `<?php echo BASE_URL; ?>/get_products/${productId}`,
                 type: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`
                 },
-                data: JSON.stringify({ product_id: productId }),
+                // data: JSON.stringify({ product_id: productId }),
                 success: function (data) {
                     if (data.success) {
                         console.log("Product details fetched:", data);
