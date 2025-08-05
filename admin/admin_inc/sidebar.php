@@ -120,7 +120,7 @@
                             <i class="ki-filled ki-users text-lg"></i>
                         </span>
                         <span class="menu-title text-sm font-medium text-gray-800 menu-link-hover:!text-primary">
-                            Users
+                            Discounts
                         </span>
                     </a>
                 </div>

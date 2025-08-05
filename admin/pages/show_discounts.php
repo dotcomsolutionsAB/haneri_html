@@ -29,7 +29,7 @@
                         <!-- <a class="btn btn-sm btn-light" href="#">
                             Import Categories
                         </a> -->
-                        <a class="btn btn-sm btn-primary" href="pages/add_category.php">
+                        <a class="btn btn-sm btn-primary" href="pages/add_discount.php">
                             Add Discounts
                         </a>
                     </div>
