@@ -85,6 +85,9 @@
                                                 <th class="text-gray-700 font-normal min-w-[220px]">
                                                     Switch User
                                                 </th>
+                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                    Selected Type
+                                                </th>
                                                 <th class="min-w-[165px]">
                                                     <span class="sort">
                                                         <span class="sort-label text-gray-700 font-normal">
@@ -249,9 +252,9 @@
                         <td>
                             <div class="flex flex-wrap gap-2.5 mb-2">
                                 <button 
-                                    class="btn btn-sm btn-outline-primary" 
+                                    class="btn btn-sm btn-outline-secondary" 
                                     onclick="switchUser(${user.id}, '${user.selected_type}')">
-                                    ${user.role}
+                                    ${user.selected_type}
                                 </button>
                             </div>
                         </td>
