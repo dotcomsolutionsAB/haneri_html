@@ -203,8 +203,8 @@
                                     <span class="text-xs text-gray-700 font-normal">
                                         ${discount.user?.email ? discount.user?.email : 'No Email'}
                                     </span>
-                                    <span class="text-xs text-gray-700 font-normal">
-                                        ${discount.user?.role ? discount.user?.role : 'No Role Selected'}
+                                    <span class="badge badge-sm badge-light badge-outline">
+                                       Role : ${discount.user?.role ? discount.user?.role : 'No Role Selected'}
                                     </span>
                                 </div>
                             </div>
