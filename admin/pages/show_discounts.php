@@ -591,7 +591,7 @@
                     }).then(() => {
                         // Wait for 1 second (1000ms) before refreshing the discounts
                         setTimeout(() => {
-                            fetchDiscounts();  // Refresh the discount list after 1 second
+                            window.location.reload();  // Reload the page after 1 second
                         }, 1000);
                     });
                 },
