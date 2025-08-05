@@ -126,7 +126,7 @@
         // Fetch product details
         if (productId) {
             $.ajax({
-                url: `<?php echo BASE_URL; ?>/get_products/${productId}`,
+                url: `<?php echo BASE_URL; ?>/products/get_products/${productId}`,
                 type: "POST",
                 headers: {
                     "Content-Type": "application/json",
