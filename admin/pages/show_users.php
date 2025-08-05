@@ -167,9 +167,12 @@
                         icon: 'success',
                         title: 'User Switched',
                         text: 'User type has been updated successfully!'
+                    }).then(() => {
+                        setTimeout(() => {
+                            window.location.reload();  // Reload the page after 1 second
+                        }, 500); 
                     });
-                    // Optionally, reload the page or update the table to reflect changes
-                    fetchUsers(); // Call your function to refresh the user list (if needed)
+                    
                 } else {
                     Swal.fire({
                         icon: 'error',
