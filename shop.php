@@ -709,8 +709,6 @@
                 //         }
                 //     });
                 // };
-                
-
 
                 // Attach click handler after rendering
                 $('#products-table').on('click', '.pro-card', function (event) {
@@ -755,9 +753,9 @@
                 });
                 // Initialize dropdown for items per page
                 const perPageSelect = $("[data-datatable-size]");
-                [5, 10, 20, 40, 60, 100].forEach((size) => {
-                    perPageSelect.append(`<option value="${size}">${size}</option>`);
-                });
+                    [5, 10, 20, 40, 60, 100].forEach((size) => {
+                        perPageSelect.append(`<option value="${size}">${size}</option>`);
+                    });
                 perPageSelect.val(itemsPerPage);
 
                 fetchProducts();
