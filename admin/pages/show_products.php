@@ -207,8 +207,8 @@
                             </div>
                         </td>
                         <td><span class="badge badge-sm badge-light badge-outline">${product.added_by || "Admin"}</span></td>
-                        <td class="text-gray-800 font-normal">${product.brand?.name || "N/A"}</td>
-                        <td class="text-gray-800 font-normal">${product.category?.name || "Uncategorized"}</td>
+                        <td class="text-gray-800 font-normal">${product.brand "N/A"}</td>
+                        <td class="text-gray-800 font-normal">${product.category || "Uncategorized"}</td>
                         <td>
                             <div class="text-gray-700 text-xs">${variantDetails}</div>
                             <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
