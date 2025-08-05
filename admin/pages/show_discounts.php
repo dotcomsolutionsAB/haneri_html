@@ -49,7 +49,7 @@
                                     <i class="ki-filled ki-magnifier leading-none text-md text-gray-500 absolute top-1/2 start-0 -translate-y-1/2 ms-3">
                                     </i>
                                     <input class="input input-sm pl-8" data-datatable-search="#discount_table"
-                                        placeholder="Search Discounts By Name" type="text" />
+                                        placeholder="Search Discounts By User Name" type="text" />
                                 </div>
                                 <label class="switch switch-sm">
                                     <input class="order-2" name="check" type="checkbox" value="1" />
@@ -202,6 +202,9 @@
                                     </a>
                                     <span class="text-xs text-gray-700 font-normal">
                                         ${discount.user?.email ? discount.user?.email : 'No Email'}
+                                    </span>
+                                    <span class="text-xs text-gray-700 font-normal">
+                                        ${discount.user?.role ? discount.user?.role : 'No Role Selected'}
                                     </span>
                                 </div>
                             </div>
