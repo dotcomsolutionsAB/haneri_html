@@ -854,7 +854,7 @@
 		}
 
 		// Fetch user profile and fill the form
-		fetch("<?php echo BASE_URL; ?>/users/profile", {
+		fetch("<?php echo BASE_URL; ?>/profile", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
