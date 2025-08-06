@@ -171,6 +171,116 @@
     
             </main>
             <!-- End of Content -->
+<script>
+    // Get the Product ID from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    // Get auth token from local storage
+    const authToken = localStorage.getItem('auth_token');
+
+    // Fetch product details
+    fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer ' + authToken,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const product = data.data;
+            
+            // Pre-fill the form fields with the product details
+            document.querySelector('input[name="product_name"]').value = product.name;
+            document.querySelector('select[name="brand"]').value = product.brand;
+            document.querySelector('select[name="category"]').value = product.category;
+            document.querySelector('input[name="slug"]').value = product.slug;
+            document.querySelector('textarea[name="description"]').value = product.description;
+
+            // Pre-fill Features
+            product.features.forEach((feature, index) => {
+                document.querySelector(`textarea[name="features[${index}]"]`).value = feature.feature_value;
+            });
+
+            // Pre-fill Variants
+            const variantsTable = document.querySelector('#variants tbody');
+            product.variants.forEach((variant, index) => {
+                const row = variantsTable.insertRow();
+                row.innerHTML = `
+                    <td><input class="input" type="text" value="Variant ${index + 1}" /></td>
+                    <td><input class="input" type="text" value="${variant.variant_value}" /></td>
+                    <td><input class="input" type="text" value="${variant.regular_price}" /></td>
+                    <td><input class="input" type="text" value="${variant.customer_discount}" /></td>
+                    <td><input class="input" type="text" value="${variant.dealer_discount}" /></td>
+                    <td><input class="input" type="text" value="${variant.architect_discount}" /></td>
+                    <td><input class="input" type="text" value="${variant.description}" /></td>
+                    <td><input class="input" type="text" value="${variant.regular_tax}" /></td>
+                `;
+            });
+        }
+    })
+    .catch(error => console.error('Error fetching product:', error));
+
+
+    // Update Product Button Click Event
+    document.querySelector('.btn-danger').addEventListener('click', function() {
+        // Gather the updated product data from the form
+        const updatedProduct = {
+            name: document.querySelector('input[name="product_name"]').value,
+            brand_id: document.querySelector('select[name="brand"]').value,
+            category_id: document.querySelector('select[name="category"]').value,
+            slug: document.querySelector('input[name="slug"]').value,
+            description: document.querySelector('textarea[name="description"]').value,
+            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? true : false,
+            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
+                feature_name: `Feature ${index + 1}`,
+                feature_value: textarea.value,
+                is_filterable: true // Assuming filterable by default
+            })),
+            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => ({
+                photo_id: index + 1, // Just an example; you might need a real photo ID
+                min_qty: row.querySelector('input[type="text"]').value,
+                is_cod: true, // Assuming COD available by default
+                weight: row.querySelector('input[type="text"]').value,
+                description: row.querySelector('input[type="text"]').value,
+                variant_type: 'Size', // Assuming 'Size' as an example
+                variant_value: row.querySelector('input[type="text"]').value,
+                discount_price: 0, // Assuming 0 as an example
+                regular_price: row.querySelector('input[type="text"]').value,
+                selling_price: row.querySelector('input[type="text"]').value,
+                customer_discount: 0, // Example
+                dealer_discount: 0, // Example
+                architect_discount: 0, // Example
+                hsn: 'HSN1234', // Example
+                regular_tax: 18, // Example
+                video_url: 'https://example.com/video.mp4', // Example
+                product_pdf: 'https://example.com/pdf.pdf' // Example
+            }))
+        };
+
+        // Send PUT request to update product
+        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'Bearer ' + authToken,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Product updated successfully!');
+            } else {
+                alert('Error updating product!');
+            }
+        })
+        .catch(error => console.error('Error updating product:', error));
+    });
+
+</script>
             <!-- Footer -->
 <?php include("footer1.php"); ?>
 
