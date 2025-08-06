@@ -193,10 +193,22 @@
 
         /** SUBMIT DISCOUNT **/ 
         function submitDiscount() {
+            // Parse the discount value as a decimal (float)
+            const discountValue = parseFloat(discountInput.value.trim());
+
+            if (isNaN(discountValue)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Discount',
+                    text: 'Please enter a valid discount value.'
+                });
+                return; // Prevent submission if the discount value is invalid
+            }
+            
             const formData = {
                 user_id: userSelect.value,
                 product_variant_id: productSelect.value,
-                discount: discountInput.value.trim(),
+                discount: discountValue,
                 category_id: categorySelect.value
             };
 
