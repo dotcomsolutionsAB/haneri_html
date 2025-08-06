@@ -79,13 +79,13 @@
                                                         </span>
                                                     </span>
                                                 </th>
-                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                <th class="text-gray-700 font-normal min-w-[100px]">
                                                     Roles
                                                 </th>
-                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                <th class="text-gray-700 font-normal min-w-[100px]">
                                                     Switch User
                                                 </th>
-                                                <th class="text-gray-700 font-normal min-w-[220px]">
+                                                <th class="text-gray-700 font-normal min-w-[100px]">
                                                     Selected Type
                                                 </th>
                                                 <th class="min-w-[165px]">
