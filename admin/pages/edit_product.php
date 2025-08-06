@@ -298,9 +298,9 @@
                         <td><input class="input" type="text" value="Variant ${index + 1}" disabled /></td>
                         <td><input class="input" type="text" value="${variant.variant_value}" /></td>
                         <td><input class="input" type="number" value="${variant.regular_price}" /></td>
-                        <td><input class="input" type="number" value="${variant.customer_discount}" /></td>
-                        <td><input class="input" type="number" value="${variant.dealer_discount}" /></td>
-                        <td><input class="input" type="number" value="${variant.architect_discount}" /></td>
+                        <td><input class="input" type="number" value="${variant.customer_discount || null }" /></td>
+                        <td><input class="input" type="number" value="${variant.dealer_discount || null }" /></td>
+                        <td><input class="input" type="number" value="${variant.architect_discount || null }" /></td>
                         <td><input class="input" type="text" value="${variant.description}" /></td>
                         <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
                     `;
