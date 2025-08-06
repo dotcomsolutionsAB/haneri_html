@@ -67,14 +67,6 @@
                                         </select>
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Price</label>
-                                        <input class="input" type="text" placeholder="1199.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount (₹/%)</label>
-                                        <input class="input" type="text" placeholder="1199.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">HSN</label>
                                         <input class="input" placeholder="ABCD12" type="text" value="">
                                     </div>
@@ -86,14 +78,7 @@
                                         <label class="form-label max-w-56">
                                             Minimum Purchase Qty
                                         </label>
-                                        <input class="input" placeholder="" type="text" value="5">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Is COD Available</label>
-                                        <select class="select">
-                                            <option value="true">Yes</option>
-                                            <option value="false">No</option>
-                                        </select>
+                                        <input class="input" type="text" placeholder="5">
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">
@@ -194,6 +179,18 @@
                                         <label class="form-label max-w-56">Variant Price (₹)</label>
                                         <input class="input" type="text" placeholder="7299.00 /-">
                                     </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Customer Discount (%)</label>
+                                        <input class="input" type="text" placeholder="13%">                                        
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
+                                        <input class="input" type="text" placeholder="15%">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Architect Discount (%)</label>
+                                        <input class="input" type="text" placeholder="18%">
+                                    </div>
                                 </div>
                             </div>
 
@@ -216,6 +213,18 @@
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Price (₹)</label>
                                         <input class="input" type="text" placeholder="7299.00 /-">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Customer Discount (%)</label>
+                                        <input class="input" type="text" placeholder="13%">                                        
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
+                                        <input class="input" type="text" placeholder="15%">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Architect Discount (%)</label>
+                                        <input class="input" type="text" placeholder="18%">
                                     </div>
                                 </div>
                             </div>
