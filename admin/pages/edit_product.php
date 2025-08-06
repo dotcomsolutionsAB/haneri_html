@@ -295,7 +295,7 @@
                 product.variants.forEach((variant, index) => {
                     const row = variantsTable.insertRow();
                     row.innerHTML = `
-                        <td><input class="input" type="text" value="Variant ${index + 1}" disabled /></td>
+                        <td><input class="input" type="text" value="${variant.id}" disabled /></td>
                         <td><input class="input" type="text" value="${variant.variant_value}" /></td>
                         <td><input class="input" type="number" value="${variant.regular_price}" /></td>
                         <td><input class="input" type="number" value="${variant.customer_discount || null }" /></td>
