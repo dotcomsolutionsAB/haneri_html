@@ -204,11 +204,14 @@
                 });
                 return; // Prevent submission if the discount value is invalid
             }
-            
+
+            // Format the discount value to 2 decimal places
+            const formattedDiscount = discountValue.toFixed(2); // Format to 2 decimal places
+
             const formData = {
                 user_id: userSelect.value,
                 product_variant_id: productSelect.value,
-                discount: discountValue,
+                discount: formattedDiscount,
                 category_id: categorySelect.value
             };
 
