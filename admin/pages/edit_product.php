@@ -74,6 +74,10 @@
                                 <option value="false">No</option>
                             </select>
                         </div>
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">Description</label>
+                            <textarea class="note-codable text-edit" name="description" aria-multiline="true"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
