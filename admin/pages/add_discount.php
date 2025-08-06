@@ -180,7 +180,7 @@
                     // Populate dropdown with categories
                     data.data.forEach(category => {
                         const option = document.createElement("option");
-                        option.value = category.parent_id;  // Use category parent_id as the value
+                        option.value = category.id;  // Use category parent_id as the value
                         option.textContent = category.name;
                         categorySelect.appendChild(option);
                     });
