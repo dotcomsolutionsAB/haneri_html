@@ -222,8 +222,9 @@
                 const description = row.querySelector('input[type="text"]:nth-child(7)');
                 const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
 
+                // Check if all the necessary fields exist and extract values
                 return {
-                    id: variantId, // Pass the variant id here
+                    id: variantId, // Ensure variant id is passed
                     variant_value: variantValue ? variantValue.value.trim() : null,
                     regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
                     customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
@@ -232,7 +233,7 @@
                     description: description ? description.value.trim() : null,
                     regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
                 };
-            }).filter(Boolean) // Filter out any null rows (if any)
+            }).filter(Boolean) // Remove invalid or empty variants
         };
 
         // Log the final payload to inspect the structure
@@ -258,6 +259,7 @@
         .catch(error => console.error('Error updating product:', error));
     });
 </script>
+
 
 <!-- <script>
     const urlParams = new URLSearchParams(window.location.search);
