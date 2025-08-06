@@ -136,10 +136,11 @@
             <!-- End of Container -->
         </main>
         <!-- End of Content -->
+         
 <!-- Switch User -->
 <script>
     // Function to open the popup and switch user role
-    function openSwitchUserPopup(userId, selectedType,userName) {
+    function openSwitchUserPopup(userId, selectedType, userName) {
         // Define SweetAlert2 popup with role selection
         Swal.fire({
             title: 'Switch User Role',
@@ -149,8 +150,7 @@
                 'admin': 'Admin',
                 'customer': 'Customer',
                 'architect': 'Architect',
-                'dealer': 'Dealer',
-                'vendor': 'Vendor'
+                'dealer': 'Dealer'
             },
             inputValue: selectedType,  // Preselect current role
             showCancelButton: true,
@@ -446,5 +446,6 @@
         `;
     };
 </script>
+
     <!-- Footer -->
 <?php include("footer1.php"); ?>
