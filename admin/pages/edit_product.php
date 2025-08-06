@@ -113,6 +113,7 @@
                             <thead>
                                 <tr>
                                     <th>Variant No</th>
+                                    <th>Variant Type</th>
                                     <th>Variant Value</th>
                                     <th>Variant Price (₹)</th>
                                     <th>Customer Discount (%)</th>
@@ -182,6 +183,7 @@
                     const row = variantsTable.insertRow();
                     row.innerHTML = `
                         <td><input class="input" type="text" value="${variant.id}" disabled /></td>
+                        <td><input class="input" type="text" value="${variant.variant_type || ''}" /></td>
                         <td><input class="input" type="text" value="${variant.variant_value || ''}" /></td>
                         <td><input class="input" type="number" value="${variant.regular_price || ''}" /></td>
                         <td><input class="input" type="number" value="${variant.customer_discount || ''}" /></td>
@@ -214,17 +216,19 @@
         })),
         variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
             const variantId = row.querySelector('input[type="text"]:nth-child(1)').value;
-            const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
-            const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
-            const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
-            const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
-            const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
-            const description = row.querySelector('input[type="text"]:nth-child(7)');
-            const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
+            const variantType = row.querySelector('input[type="text"]:nth-child(2)');
+            const variantValue = row.querySelector('input[type="text"]:nth-child(3)');
+            const regularPrice = row.querySelector('input[type="number"]:nth-child(4)');
+            const customerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
+            const dealerDiscount = row.querySelector('input[type="number"]:nth-child(6)');
+            const architectDiscount = row.querySelector('input[type="number"]:nth-child(7)');
+            const description = row.querySelector('input[type="text"]:nth-child(8)');
+            const regularTax = row.querySelector('input[type="number"]:nth-child(9)');
 
             // Add console logs to verify the captured data
             console.log('Variant data:', {
-                variantId,
+                variantId,                
+                variantType: variantType ? variantType.value : null,
                 variantValue: variantValue ? variantValue.value : null,
                 regularPrice: regularPrice ? regularPrice.value : null,
                 customerDiscount: customerDiscount ? customerDiscount.value : null,
@@ -236,6 +240,7 @@
 
             return {
                 id: variantId, // Ensure variant id is passed
+                variant_type: variantType ? variantType.value.trim() : null,
                 variant_value: variantValue ? variantValue.value.trim() : null,
                 regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
                 customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
