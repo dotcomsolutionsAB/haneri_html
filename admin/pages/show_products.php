@@ -83,6 +83,7 @@
                                                             </span>
                                                         </span>
                                                     </th>
+                                                    <th class="text-gray-700 font-normal min-w-[100px]">Discount</th>
                                                     <th class="min-w-[100px]">
                                                         <span class="sort">
                                                             <span class="sort-label text-gray-700 font-normal">Publish</span>
@@ -213,6 +214,7 @@
                             <div class="text-gray-700 text-xs">${variantDetails}</div>
                             <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
                         </td>
+                        <td class="text-gray-800 font-normal">${product.discount_price || "00"}</td>
                         <td>
                             <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
                                 ${product.is_active ? "Active" : "Inactive"}
