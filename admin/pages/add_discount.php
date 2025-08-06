@@ -123,8 +123,8 @@
 
         /** FETCH USERS **/ 
         function fetchUsers() {
-            fetch("<?php echo BASE_URL; ?>/users/get_users", {  // Use your actual API endpoint
-                method: "GET",
+            fetch("<?php echo BASE_URL; ?>/get_users", {  // Use your actual API endpoint
+                method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`,
                     "Accept": "application/json",
