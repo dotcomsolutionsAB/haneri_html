@@ -140,13 +140,13 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-    const authToken = localStorage.getItem('auth_token');
+    const authTokenUpdate = localStorage.getItem('auth_token');
 
     // Fetch product details
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
         method: 'GET',  // Corrected to GET method
         headers: {
-            'Authorization': 'Bearer ' + authToken,
+            'Authorization': 'Bearer ' + authTokenUpdate,
             'Content-Type': 'application/json'
         }
     })
@@ -225,7 +225,7 @@
         fetch('<?php echo BASE_URL; ?>/products/' + productId, {
             method: 'PUT',
             headers: {
-                'Authorization': 'Bearer ' + authToken,
+                'Authorization': 'Bearer ' + authTokenUpdate,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(updatedProduct)
