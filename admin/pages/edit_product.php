@@ -154,9 +154,14 @@
                         </div>
                         
                         <div class="grid gap-3 grid-cols-span-1">
-                            <div class="card pb-2.5">
+                            <div class="card p-2.5">
                                 <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                                     <label class="form-label max-w-56">Features 1</label>
+                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
+                                </div>
+                                <br>
+                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
+                                    <label class="form-label max-w-56">Features 2</label>
                                     <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
                                 </div>
                                 <div class="flex justify-end">
