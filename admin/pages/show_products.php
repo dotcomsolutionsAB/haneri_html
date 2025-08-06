@@ -280,13 +280,7 @@
                     </button>
 
                     <div class="menu-dropdown menu-default w-full max-w-[175px]" data-menu-dismiss="true">
-                        <div class="menu-item">
-                            <a class="menu-link" href="product_details.php?slug=${product.slug}">
-                                <span class="menu-icon"><i class="ki-filled ki-search-list"></i></span>
-                                <span class="menu-title">View</span>
-                            </a>
-                        </div>
-                        <div class="menu-separator"></div>
+                        
                         <div class="menu-item">
                             <a class="menu-link" href="pages/edit_product.php?id=${product.id}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
