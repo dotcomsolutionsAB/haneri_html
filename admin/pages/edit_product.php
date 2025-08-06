@@ -259,10 +259,6 @@
     });
 </script>
 
-
-
-
-
 <style>
     .text-edit{
         width: 100%;
