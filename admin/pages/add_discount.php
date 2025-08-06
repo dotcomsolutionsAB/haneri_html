@@ -31,7 +31,15 @@
                             </div>
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                    <!-- Select Products -->
+                                    <!-- User Name -->
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">User Name</label>
+                                        <select class="select" id="chooseUser">
+                                            <option value="">Loading users...</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Product Variant ID -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Select Product</label>
                                         <select class="select" id="chooseProduct">
@@ -39,21 +47,13 @@
                                         </select>
                                     </div>
 
-                                    <!-- Select User -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Select User</label>
-                                        <select class="select" id="chooseUser">
-                                            <option value="">Loading users...</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Discount -->
+                                    <!-- Discount Value -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Discount %</label>
                                         <input class="input" type="text" id="discount" placeholder="Discount Value">
                                     </div>
 
-                                    <!-- Category Name -->
+                                    <!-- Category Select -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Select Category</label>
                                         <select class="select" id="chooseCategory">
@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary" id="saveCategory">Save Discount</button>
+                                    <button class="btn btn-primary" id="saveDiscount">Save Discount</button>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,6 @@
                 <!-- End of Container -->
             </main>
             <!-- End of Content -->
-
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -256,7 +255,6 @@
         fetchCategories();
     });
 </script>
-
 
 <style>
     .text-edit{
