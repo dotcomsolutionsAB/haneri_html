@@ -139,75 +139,6 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 1</h3>                                    
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Type</label>
-                                        <select class="select">
-                                            <option value="size">Size</option>
-                                            <option value="color">Color</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" placeholder="Red-600 / Large">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" placeholder="7299.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Customer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="13%">                                        
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="15%">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Architect Discount (%)</label>
-                                        <input class="input" type="text" placeholder="18%">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 2</h3>                                    
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Type</label>
-                                        <select class="select">
-                                            <option value="size">Size</option>
-                                            <option value="color">Color</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" placeholder="Red-600 / Large">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" placeholder="7299.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Customer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="13%">                                        
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="15%">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Architect Discount (%)</label>
-                                        <input class="input" type="text" placeholder="18%">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="flex justify-end">
                                 <button class="btn btn-primary">
                                     Add Variant
@@ -227,10 +158,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End of Container -->
-                 <!-- Table Container -->
-                <div class="container-fixed">
                     <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
                         <div class="col-span-2">
                             <div class="card pb-2.5">
@@ -293,6 +220,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- End of Container -->
     
             </main>
             <!-- End of Content -->
