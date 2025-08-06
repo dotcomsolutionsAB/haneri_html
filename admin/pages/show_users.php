@@ -139,11 +139,11 @@
 <!-- Switch User -->
 <script>
     // Function to open the popup and switch user role
-    function openSwitchUserPopup(userId, selectedType) {
+    function openSwitchUserPopup(userId, selectedType,userName) {
         // Define SweetAlert2 popup with role selection
         Swal.fire({
             title: 'Switch User Role',
-            text: `Change the role of ${userId} (Current: ${selectedType})`,
+            text: `Change the role of ${userName} (User Choose: ${selectedType})`,
             input: 'select',
             inputOptions: {
                 'admin': 'Admin',
@@ -407,7 +407,7 @@
                     <div class="menu-dropdown menu-default w-full max-w-[175px]"
                         data-menu-dismiss="true">
                         <div class="menu-item">
-                            <a class="menu-link" onclick="openSwitchUserPopup(${user.id}, '${user.selected_type}')">
+                            <a class="menu-link" onclick="openSwitchUserPopup(${user.id}, '${user.selected_type}', '${user.name}')">
                                 <span class="menu-icon">
                                     <i class="ki-filled ki-search-list"></i>
                                 </span>
