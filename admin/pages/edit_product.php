@@ -222,7 +222,6 @@
                 const description = row.querySelector('input[type="text"]:nth-child(7)');
                 const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
 
-                // Check if all the necessary fields exist and extract values
                 return {
                     id: variantId, // Ensure variant id is passed
                     variant_value: variantValue ? variantValue.value.trim() : null,
@@ -233,7 +232,7 @@
                     description: description ? description.value.trim() : null,
                     regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
                 };
-            }).filter(Boolean) // Remove invalid or empty variants
+            }).filter(Boolean) // Filter out any invalid rows or null values
         };
 
         // Log the final payload to inspect the structure
@@ -261,142 +260,8 @@
 </script>
 
 
-<!-- <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    const authTokenUpdate = localStorage.getItem('auth_token');
 
-    // Fetch product details using POST method
-    fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'POST',  // POST method as per your requirement
-        headers: {
-            'Authorization': 'Bearer ' + authTokenUpdate,
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            const product = data.data;
 
-            // Check and pre-fill the form fields if the elements exist
-            const productNameField = document.querySelector('input[name="product_name"]');
-            const brandField = document.querySelector('select[name="brand"]');
-            const categoryField = document.querySelector('select[name="category"]');
-            const slugField = document.querySelector('input[name="slug"]');
-            const descriptionField = document.querySelector('textarea[name="description"]');
-
-            // Pre-fill fields only if they exist
-            if (productNameField) productNameField.value = product.name;
-            if (brandField) brandField.value = product.brand;
-            if (categoryField) categoryField.value = product.category;
-            if (slugField) slugField.value = product.slug;
-            if (descriptionField) descriptionField.value = product.description || "";
-
-            // Pre-fill Features
-            const featuresContainer = document.querySelector('#features');
-            if (featuresContainer) {
-                product.features.forEach((feature, index) => {
-                    let featureField = document.querySelector(`textarea[name="features[${index}]"]`);
-                    if (featureField) {
-                        featureField.value = feature.feature_value;
-                    }
-                });
-            }
-
-            // Pre-fill Variants
-            const variantsTable = document.querySelector('#variants tbody');
-            if (variantsTable) {
-                product.variants.forEach((variant, index) => {
-                    const row = variantsTable.insertRow();
-                    row.innerHTML = `
-                        <td><input class="input" type="text" value="${variant.id}" disabled /></td>
-                        <td><input class="input" type="text" value="${variant.variant_value}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_price}" /></td>
-                        <td><input class="input" type="number" value="${variant.customer_discount || null }" /></td>
-                        <td><input class="input" type="number" value="${variant.dealer_discount || null }" /></td>
-                        <td><input class="input" type="number" value="${variant.architect_discount || null }" /></td>
-                        <td><input class="input" type="text" value="${variant.description}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
-                    `;
-                    // Log the row to ensure all inputs exist
-                    console.log('Row:', row);
-                });
-
-            }
-        } else {
-            console.error('Error fetching product details:', data.message);
-        }
-    })
-    .catch(error => console.error('Error fetching product:', error));
-
-    // Update Product Button
-    document.querySelector('.btn-danger').addEventListener('click', function() {
-        const updatedProduct = {
-            name: document.querySelector('input[name="product_name"]').value,
-            brand_id: document.querySelector('select[name="brand"]').value,
-            category_id: document.querySelector('select[name="category"]').value,
-            slug: document.querySelector('input[name="slug"]').value,
-            description: document.querySelector('textarea[name="description"]').value,
-            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? true : false,
-            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
-                feature_name: `Feature ${index + 1}`,
-                feature_value: textarea.value,
-                is_filterable: true
-            })),
-            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => {
-                // Log the row to verify its structure
-                console.log('Row:', row);
-
-                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value; // Get variant id
-                const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
-                const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
-                const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
-                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
-                const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
-                const description = row.querySelector('input[type="text"]:nth-child(7)');
-                const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
-
-                // Check if the necessary elements exist before accessing their values
-                // if (!variantId || !variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
-                //     console.error('One or more inputs are missing in the row:', row);
-                //     return; // Skip this variant if any input is missing
-                // }
-
-                return {
-                    id: variantId, // Pass the variant id here
-                    variant_value: variantValue.value,
-                    regular_price: parseFloat(regularPrice.value),
-                    customer_discount: parseFloat(customerDiscount.value),
-                    dealer_discount: parseFloat(dealerDiscount.value),
-                    architect_discount: parseFloat(architectDiscount.value),
-                    description: description.value,
-                    regular_tax: parseFloat(regularTax.value),
-                    // Add more fields here as needed
-                };
-            }).filter(Boolean) // Filter out any null rows
-        };
-
-        // Send PUT request to update the product
-        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
-            method: 'PUT',
-            headers: {
-                'Authorization': 'Bearer ' + authTokenUpdate,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedProduct)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Product updated successfully!');
-            } else {
-                alert('Error updating product!');
-            }
-        })
-        .catch(error => console.error('Error updating product:', error));
-    });
-</script> -->
 
 <style>
     .text-edit{
