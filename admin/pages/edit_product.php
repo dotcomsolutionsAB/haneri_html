@@ -141,6 +141,8 @@
     </div>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
@@ -192,73 +194,75 @@
     })
     .catch(error => console.error('Error fetching product:', error));
 
-
     // Update Product Button
-document.getElementById('update_product').addEventListener('click', function() {
-    const updatedProduct = {
-        name: document.getElementById('product_name').value,
-        brand_id: document.getElementById('brand').value,
-        category_id: document.getElementById('category').value,
-        slug: document.getElementById('slug').value,
-        description: document.getElementById('description').value,
-        is_active: document.getElementById('is_active').value === 'true' ? 1 : 0,
-        // features: [
-        //     { feature_name: "Feature 1", feature_value: document.getElementById('feature_1').value, is_filterable: true },
-        //     { feature_name: "Feature 2", feature_value: document.getElementById('feature_2').value, is_filterable: true }
-        // ],
-        variants: Array.from(document.querySelectorAll('#variants_body tr')).map((row, index) => {
-            const variantId = document.getElementById(`variant_${index}_id`).value;
-            const variantType = document.getElementById(`variant_${index}_type`);
-            const variantValue = document.getElementById(`variant_${index}_value`);
-            const regularPrice = document.getElementById(`variant_${index}_price`);
-            const customerDiscount = document.getElementById(`variant_${index}_customer_discount`);
-            const dealerDiscount = document.getElementById(`variant_${index}_dealer_discount`);
-            const architectDiscount = document.getElementById(`variant_${index}_architect_discount`);
-            const description = document.getElementById(`variant_${index}_description`);
-            const regularTax = document.getElementById(`variant_${index}_tax`);
+    document.getElementById('update_product').addEventListener('click', function() {
+        const updatedProduct = {
+            name: document.getElementById('product_name').value,
+            brand_id: document.getElementById('brand').value,
+            category_id: document.getElementById('category').value,
+            slug: document.getElementById('slug').value,
+            description: document.getElementById('description').value,
+            is_active: document.getElementById('is_active').value === 'true' ? 1 : 0,
+            variants: Array.from(document.querySelectorAll('#variants_body tr')).map((row, index) => {
+                const variantId = document.getElementById(`variant_${index}_id`).value;
+                const variantType = document.getElementById(`variant_${index}_type`);
+                const variantValue = document.getElementById(`variant_${index}_value`);
+                const regularPrice = document.getElementById(`variant_${index}_price`);
+                const customerDiscount = document.getElementById(`variant_${index}_customer_discount`);
+                const dealerDiscount = document.getElementById(`variant_${index}_dealer_discount`);
+                const architectDiscount = document.getElementById(`variant_${index}_architect_discount`);
+                const description = document.getElementById(`variant_${index}_description`);
+                const regularTax = document.getElementById(`variant_${index}_tax`);
 
-            // Handle invalid numbers (NaN)
-            const getValidNumber = (value) => {
-                const parsedValue = parseFloat(value.trim());
-                return isNaN(parsedValue) ? null : parsedValue;
-            };
+                // Handle invalid numbers (NaN)
+                const getValidNumber = (value) => {
+                    const parsedValue = parseFloat(value.trim());
+                    return isNaN(parsedValue) ? null : parsedValue;
+                };
 
-            return {
-                id: variantId,
-                variant_type: variantType ? variantType.value.trim() : null,
-                variant_value: variantValue ? variantValue.value.trim() : null,
-                regular_price: regularPrice ? getValidNumber(regularPrice.value) : null,
-                customer_discount: customerDiscount ? getValidNumber(customerDiscount.value) : null,
-                dealer_discount: dealerDiscount ? getValidNumber(dealerDiscount.value) : null,
-                architect_discount: architectDiscount ? getValidNumber(architectDiscount.value) : null,
-                description: description ? description.value.trim() : null,
-                regular_tax: regularTax ? getValidNumber(regularTax.value) : null,
-            };
-        }).filter(Boolean) // Filter out any invalid rows or null values
-    };
+                return {
+                    id: variantId,
+                    variant_type: variantType ? variantType.value.trim() : null,
+                    variant_value: variantValue ? variantValue.value.trim() : null,
+                    regular_price: regularPrice ? getValidNumber(regularPrice.value) : null,
+                    customer_discount: customerDiscount ? getValidNumber(customerDiscount.value) : null,
+                    dealer_discount: dealerDiscount ? getValidNumber(dealerDiscount.value) : null,
+                    architect_discount: architectDiscount ? getValidNumber(architectDiscount.value) : null,
+                    description: description ? description.value.trim() : null,
+                    regular_tax: regularTax ? getValidNumber(regularTax.value) : null,
+                };
+            }).filter(Boolean) // Filter out any invalid rows or null values
+        };
 
-    console.log('Updated Product Payload:', updatedProduct);
+        console.log('Updated Product Payload:', updatedProduct);
 
-    // Send PUT request to update the product
-    fetch('<?php echo BASE_URL; ?>/products/' + productId, {
-        method: 'PUT',
-        headers: {
-            'Authorization': 'Bearer ' + authTokenUpdate,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(updatedProduct)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Product updated successfully!');
-        } else {
-            alert('Error updating product!');
-        }
-    })
-    .catch(error => console.error('Error updating product:', error));
-});
-
+        // Send PUT request to update the product
+        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'Bearer ' + authTokenUpdate,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show SweetAlert success message and refresh page
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Product updated successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    location.reload();  // Refresh the page after successful update
+                });
+            } else {
+                alert('Error updating product!');
+            }
+        })
+        .catch(error => console.error('Error updating product:', error));
+    });
 </script>
 
 <style>
