@@ -304,7 +304,10 @@
                         <td><input class="input" type="text" value="${variant.description}" /></td>
                         <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
                     `;
+                    // Log the row to ensure all inputs exist
+                    console.log('Row:', row);
                 });
+
             }
         } else {
             console.error('Error fetching product details:', data.message);
@@ -377,8 +380,6 @@
         .catch(error => console.error('Error updating product:', error));
     });
 </script>
-
-
 
 <style>
     .text-edit{
