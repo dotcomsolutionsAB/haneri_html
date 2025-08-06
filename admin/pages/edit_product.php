@@ -65,27 +65,7 @@
                                             <option>Category 2</option>
                                             <option>Category 3</option>
                                         </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">HSN</label>
-                                        <input class="input" placeholder="ABCD12" type="text" value="">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Tax</label>
-                                        <input class="input" type="text" placeholder="156.04 /-">
-                                    </div>  
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Minimum Purchase Qty
-                                        </label>
-                                        <input class="input" type="text" placeholder="5">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Weight(in kgs)
-                                        </label>
-                                        <input class="input" type="text" placeholder="1.5 kg">
-                                    </div>                       
+                                    </div>                      
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Slug</label>
                                         <input class="input" type="text" placeholder="product-name-slug">
