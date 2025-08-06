@@ -1,279 +1,230 @@
 <base href="../">
 <?php include("../../configs/auth_check.php"); ?>
-<?php include("../../configs/config.php"); ?>
 <?php 
     $current_page = "Edit Product"; // Dynamically set this based on the page
 ?>
 <?php include("header1.php"); ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<style>
-    .cardx{
-        width:100%;
-    }
-</style>
-    <!-- End of Header -->
-    <!-- Content -->
-    <main class="grow content pt-5" id="content" role="content">
-        <!-- Container -->
-        <div class="container-fixed" id="content_container">
-        </div>
-        <!-- End of Container -->
-        
-        <!-- Container -->
-        <div class="container-fixed">
-            <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
-                <div class="card pb-2.5">
-                    <div class="card-header" id="basic_settings">
-                        <h3 class="card-title">
-                            Add Discount
-                        </h3>
-                    </div>
-                    <div class="card-body grid gap-5">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                            <!-- User Name -->
-                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                <label class="form-label max-w-56">User Name</label>
-                                <select class="select" id="chooseUser">
-                                    <option value="">Loading users...</option>
-                                </select>
-                            </div>
-
-                            <!-- Product Variant ID -->
-                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                <label class="form-label max-w-56">Select Product</label>
-                                <select class="select" id="chooseProduct">
-                                    <option value="">Loading products...</option>
-                                </select>
-                            </div>
-
-                            <!-- Discount Value -->
-                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                <label class="form-label max-w-56">Discount %</label>
-                                <input class="input" type="text" id="discount" placeholder="Discount Value">
-                            </div>
-
-                            <!-- Category Select -->
-                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                <label class="form-label max-w-56">Select Category</label>
-                                <select class="select" id="chooseCategory">
-                                    <option value="">Loading categories...</option>
-                                </select>
-                            </div>
+            <!-- End of Header -->
+            <!-- Content -->
+            <main class="grow content pt-5" id="content" role="content">
+                <!-- Container -->
+                <div class="container-fixed" id="content_container">
+                </div>
+                <!-- End of Container -->
+                
+                <!-- Container -->
+                <div class="container-fixed">
+                    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                        <div class="flex flex-col justify-center gap-2">
+                            <h1 class="text-xl font-medium leading-none text-gray-900">
+                                Edit - Product
+                            </h1>
                         </div>
-
-                        <div class="flex justify-end gap-5">
-                            <button class="btn btn-primary" id="saveDiscount">Save Discount</button>
+                        <div class="flex items-center gap-2.5">
+                            <a class="btn btn-sm btn-light" href="pages/show_products.php">
+                                Products
+                            </a>
+                            <!-- <a class="btn btn-sm btn-primary" href="#">
+                                Get Started
+                            </a> -->
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- End of Container -->
-    </main>
-    <!-- End of Content -->
+                <!-- End of Container -->
+                <!-- Container -->
+                <div class="container-fixed">
+                    <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
+                        <div class="col-span-1">
+                            <div class="card pb-2.5">
+                                <div class="card-header" id="basic_settings">
+                                    <h3 class="card-title">
+                                        General Settings
+                                    </h3>
+                                </div>
+                                <div class="card-body grid gap-5">
+                                    
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">
+                                            Product Name
+                                        </label>
+                                        <input class="input" type="text" value="Haneri AirElite AEW1">
+                                    </div>                                    
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Brands</label>
+                                        <select class="select">
+                                            <option>Brand 1</option>
+                                            <option>Brand 2</option>
+                                            <option>Brand 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Category</label>
+                                        <select class="select">
+                                            <option>Category 1</option>
+                                            <option>Category 2</option>
+                                            <option>Category 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Price</label>
+                                        <input class="input" type="text" value="1199.00 /-">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Discount (₹/%)</label>
+                                        <input class="input" type="text" value="1199.00 /-">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">HSN</label>
+                                        <input class="input" placeholder="ABCD12" type="text" value="">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Tax</label>
+                                        <input class="input" type="text" value="156.04 /-">
+                                    </div>  
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">
+                                            Minimum Purchase Qty
+                                        </label>
+                                        <input class="input" placeholder="" type="text" value="5">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Is COD Available</label>
+                                        <select class="select">
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">
+                                            Weight(in kgs)
+                                        </label>
+                                        <input class="input" type="text" value="13.5 kg">
+                                    </div>                       
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Slug</label>
+                                        <input class="input" type="text" value="product-name-slug">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Description</label>
+                                        <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Is Publish</label>
+                                        <select class="select">
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
+                                        <label class="form-label max-w-56">
+                                            Photo
+                                        </label>
+                                        <div class="flex items-center justify-between flex-wrap grow gap-2.5">
+                                            <span class="text-2sm">
+                                                150x150px JPEG, PNG Image
+                                            </span>
+                                            <div class="image-input size-16" data-image-input="true">
+                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file">
+                                                <input name="avatar_remove" type="hidden">
+                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -end-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
+                                                    <i class="ki-filled ki-cross">
+                                                    </i>
+                                                </div>
+                                                <span class="tooltip hidden" id="image_input_tooltip" style="z-index: 100;">
+                                                    Click to remove or revert
+                                                </span>
+                                                <div class="image-input-placeholder image-input-empty:border-gray-300" style="background-image:url(assets/media/avatars/blank.png)">
+                                                    <div class="image-input-preview" style="background-image:url(assets/media/avatars/300-2.png)">
+                                                    </div>
+                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                        <svg class="fill-light opacity-80" height="12" viewBox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
+                                                            </path>
+                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button class="btn btn-primary">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid gap-3 grid-cols-span-1">
+                            <div class="card pb-2.5">
+                                <div class="card-header" id="variants">
+                                    <h3 class="card-title">Variant</h3>                                    
+                                </div>
+                                <div class="card-body grid gap-5">
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Type</label>
+                                        <select class="select">
+                                            <option value="size">Size</option>
+                                            <option value="color">Color</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Value</label>
+                                        <input class="input" type="text" value="Red-600 / Large">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Price (₹)</label>
+                                        <input class="input" type="text" value="7299.00 /-">
+                                    </div>
+                                </div>
+                                <div class="card-body grid gap-5">
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Type</label>
+                                        <select class="select">
+                                            <option value="size">Size</option>
+                                            <option value="color">Color</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Value</label>
+                                        <input class="input" type="text" value="Red-600 / Large">
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Variant Price (₹)</label>
+                                        <input class="input" type="text" value="7299.00 /-">
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button class="btn btn-primary">
+                                        Add Variant
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
+                                    <div class="flex justify-end gap-2.5">
+                                        <button class="btn btn-light">
+                                            Deactivate Instead
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            Delete Product
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Container -->
+            </main>
+            <!-- End of Content -->
+            <!-- Footer -->
+<?php include("footer1.php"); ?>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const productSelect = document.querySelector("#chooseProduct");
-        const userSelect = document.querySelector("#chooseUser");
-        const categorySelect = document.querySelector("#chooseCategory");
-        const discountInput = document.querySelector("#discount");
-        const saveButton = document.querySelector("#saveDiscount");
-
-        const token = localStorage.getItem('auth_token');
-        
-        /** FETCH PRODUCTS **/ 
-        function fetchProducts() {
-            fetch("<?php echo BASE_URL; ?>/products/get_products", {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ limit: 200 })  // Send limit as 200
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.success) {
-                    productSelect.innerHTML = "";  // Clear existing options
-
-                    // Default option
-                    const defaultOption = document.createElement("option");
-                    defaultOption.value = "";
-                    defaultOption.textContent = "Select Product";
-                    productSelect.appendChild(defaultOption);
-
-                    // Populate dropdown with product variants
-                    data.data.forEach(product => {
-                        product.variants.forEach(variant => {
-                            const option = document.createElement("option");
-                            option.value = variant.id;  // Use variant ID
-                            option.textContent = `${product.name} - ${variant.variant_value}`;  // Show product name and variant value
-                            productSelect.appendChild(option);
-                        });
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching products:", error);
-            });
-        }
-
-        /** FETCH USERS **/ 
-        function fetchUsers() {
-            fetch("<?php echo BASE_URL; ?>/all_users", {  // Use your actual API endpoint
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.success) {
-                    userSelect.innerHTML = "";  // Clear existing options
-
-                    // Default option
-                    const defaultOption = document.createElement("option");
-                    defaultOption.value = "";
-                    defaultOption.textContent = "Select User";
-                    userSelect.appendChild(defaultOption);
-
-                    // Populate dropdown with users
-                    data.data.forEach(user => {
-                        const option = document.createElement("option");
-                        option.value = user.id;  // Use user ID
-                        option.textContent = user.name;  // Show user name
-                        userSelect.appendChild(option);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching users:", error);
-            });
-        }
-
-        /** FETCH CATEGORIES **/ 
-        function fetchCategories() {
-            fetch("<?php echo BASE_URL; ?>/categories/fetch", {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.data) {
-                    categorySelect.innerHTML = "";  // Clear existing options
-
-                    // Default option
-                    const defaultOption = document.createElement("option");
-                    defaultOption.value = "";
-                    defaultOption.textContent = "Select Category";
-                    categorySelect.appendChild(defaultOption);
-
-                    // Populate dropdown with categories
-                    data.data.forEach(category => {
-                        const option = document.createElement("option");
-                        option.value = category.id;  // Use category parent_id as the value
-                        option.textContent = category.name;
-                        categorySelect.appendChild(option);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching categories:", error);
-            });
-        }
-
-        /** SUBMIT DISCOUNT **/ 
-        function submitDiscount() {
-            // Parse the discount value as a decimal (float)
-            const discountValue = parseFloat(discountInput.value.trim());
-
-            if (isNaN(discountValue)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Invalid Discount',
-                    text: 'Please enter a valid discount value.'
-                });
-                return; // Prevent submission if the discount value is invalid
-            }
-
-            // Format the discount value to 2 decimal places
-            const formattedDiscount = discountValue.toFixed(2); // Format to 2 decimal places
-
-            const formData = {
-                user_id: userSelect.value,
-                product_variant_id: productSelect.value,
-                discount: formattedDiscount,
-                category_id: categorySelect.value
-            };
-
-            console.log("Submitting Discount:", formData); // Debugging
-
-            fetch(`<?php echo BASE_URL; ?>/discount/add`, {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Success Response:", data);
-                if (data.message) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: data.message,
-                        confirmButtonText: 'OK'
-                    }).then(() => {
-                        clearFields();      // Clear input fields after submission
-                        // Redirect to the show_discount.php page after success
-                        window.location.href = "pages/show_discounts.php";  // Redirect to the desired page
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error submitting discount:", error);
-                // Show error SweetAlert
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: 'Error submitting discount: ' + error.message
-                });
-            });
-        }
-
-        function clearFields() {
-            userSelect.value = "";
-            productSelect.value = "";
-            discountInput.value = "";
-            categorySelect.value = ""; // Reset dropdown
-        }
-
-        // Event listener for save button
-        saveButton.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default behavior
-            submitDiscount();
-        });
-
-        // Fetch products, users, and categories on page load
-        fetchProducts();
-        fetchUsers();
-        fetchCategories();
-    });
-</script>
-
-<style>
+<!-- <style>
     .text-edit{
         width: 100%;
         min-height: 120px;
@@ -283,7 +234,4 @@
         padding: 2px 10px;
         text-align: justify;
     }
-</style>
-
-            <!-- Footer -->
-<?php include("footer1.php"); ?>
+</style> -->
