@@ -50,17 +50,17 @@
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Brands</label>
                             <select class="select" name="brand">
-                                <option>Brand 1</option>
-                                <option>Brand 2</option>
-                                <option>Brand 3</option>
+                                <option value="">Select</option>
+                                <option value="haneri">Haneri</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Category</label>
                             <select class="select" name="category">
-                                <option>Category 1</option>
-                                <option>Category 2</option>
-                                <option>Category 3</option>
+                                <option value="">Select</option>
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                                <option value="3">Category 3</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
@@ -137,7 +137,7 @@
     </div>
 </main>
 
-<script>
+<!-- <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const authTokenUpdate = localStorage.getItem('auth_token');
@@ -160,7 +160,7 @@
             document.querySelector('select[name="brand"]').value = product.brand;
             document.querySelector('select[name="category"]').value = product.category;
             document.querySelector('input[name="slug"]').value = product.slug;
-            document.querySelector('textarea[name="description"]').value = product.description;
+            document.querySelector('textarea[name="description"]').value = product.description || "";
 
             // Pre-fill Features
             product.features.forEach((feature, index) => {
@@ -218,6 +218,104 @@
                 regular_tax: 18,
                 video_url: 'https://example.com/video.mp4',
                 product_pdf: 'https://example.com/pdf.pdf'
+            }))
+        };
+
+        // Send PUT request to update the product
+        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'Bearer ' + authTokenUpdate,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Product updated successfully!');
+            } else {
+                alert('Error updating product!');
+            }
+        })
+        .catch(error => console.error('Error updating product:', error));
+    });
+</script> -->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const authTokenUpdate = localStorage.getItem('auth_token');
+
+    // Fetch product details
+    fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
+        method: 'POST', // Corrected to GET method
+        headers: {
+            'Authorization': 'Bearer ' + authTokenUpdate,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const product = data.data;
+
+            // Pre-fill the form fields
+            document.querySelector('input[name="product_name"]').value = product.name;
+            document.querySelector('select[name="brand"]').value = product.brand;
+            document.querySelector('select[name="category"]').value = product.category;
+            document.querySelector('input[name="slug"]').value = product.slug;
+            document.querySelector('textarea[name="description"]').value = product.description || "";
+
+            // Pre-fill Features
+            product.features.forEach((feature, index) => {
+                let featureField = document.querySelector(`textarea[name="features[${index}]"]`);
+                if (featureField) {
+                    featureField.value = feature.feature_value;
+                }
+            });
+
+            // Pre-fill Variants
+            const variantsTable = document.querySelector('#variants tbody');
+            product.variants.forEach((variant, index) => {
+                const row = variantsTable.insertRow();
+                row.innerHTML = `
+                    <td><input class="input" type="text" value="Variant ${index + 1}" disabled /></td>
+                    <td><input class="input" type="text" value="${variant.variant_value}" /></td>
+                    <td><input class="input" type="number" value="${variant.regular_price}" /></td>
+                    <td><input class="input" type="number" value="${variant.customer_discount}" /></td>
+                    <td><input class="input" type="number" value="${variant.dealer_discount}" /></td>
+                    <td><input class="input" type="number" value="${variant.architect_discount}" /></td>
+                    <td><input class="input" type="text" value="${variant.description}" /></td>
+                    <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
+                `;
+            });
+        }
+    })
+    .catch(error => console.error('Error fetching product:', error));
+
+    // Update Product Button
+    document.querySelector('.btn-danger').addEventListener('click', function() {
+        const updatedProduct = {
+            name: document.querySelector('input[name="product_name"]').value,
+            brand_id: document.querySelector('select[name="brand"]').value,
+            category_id: document.querySelector('select[name="category"]').value,
+            slug: document.querySelector('input[name="slug"]').value,
+            description: document.querySelector('textarea[name="description"]').value,
+            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? true : false,
+            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
+                feature_name: `Feature ${index + 1}`,
+                feature_value: textarea.value,
+                is_filterable: true
+            })),
+            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => ({
+                variant_value: row.querySelector('input[type="text"]:nth-child(2)').value,
+                regular_price: parseFloat(row.querySelector('input[type="number"]:nth-child(3)').value),
+                customer_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(4)').value),
+                dealer_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(5)').value),
+                architect_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(6)').value),
+                description: row.querySelector('input[type="text"]:nth-child(7)').value,
+                regular_tax: parseFloat(row.querySelector('input[type="number"]:nth-child(8)').value),
+                // Other fields like weight, hsn, etc., can be added here as per requirement
             }))
         };
 
