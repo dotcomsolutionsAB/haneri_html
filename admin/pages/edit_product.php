@@ -235,98 +235,61 @@
                         <div class="col-span-2">
                             <div class="card pb-2.5">
                                 <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 1</h3>
+                                    <h3 class="card-title">Variants</h3>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Field</th>
-                                                <th>Value</th>
+                                                <th>Variant No</th>
+                                                <th>Variant Type</th>
+                                                <th>Variant Value</th>
+                                                <th>Variant Price (₹)</th>
+                                                <th>Customer Discount (%)</th>
+                                                <th>Dealer Discount (%)</th>
+                                                <th>Architect Discount (%)</th>
+                                                <th>Description</th>
+                                                <th>HSN</th>
+                                                <th>Regular Tax (%)</th>
+                                                <th>Video URL</th>
+                                                <th>Product PDF</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- Variant 1 -->
                                             <tr>
-                                                <td><label class="form-label">Variant Type</label></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option value="size">Size</option>
-                                                        <option value="color">Color</option>
-                                                    </select>
-                                                </td>
+                                                <td><input class="input" type="text" value="Variant 1" /></td>
+                                                <td><input class="input" type="text" value="Size" /></td>
+                                                <td><input class="input" type="text" value="Large" /></td>
+                                                <td><input class="input" type="text" value="7299.00" /></td>
+                                                <td><input class="input" type="text" value="13%" /></td>
+                                                <td><input class="input" type="text" value="15%" /></td>
+                                                <td><input class="input" type="text" value="18%" /></td>
+                                                <td><input class="input" type="text" value="Variant for size Medium." /></td>
+                                                <td><input class="input" type="text" value="123456" /></td>
+                                                <td><input class="input" type="text" value="18%" /></td>
+                                                <td><input class="input" type="text" value="https://example.com/video-medium.mp4" /></td>
+                                                <td><input class="input" type="text" value="https://example.com/pdf-medium.pdf" /></td>
                                             </tr>
+                                            <!-- Variant 2 -->
                                             <tr>
-                                                <td><label class="form-label">Variant Value</label></td>
-                                                <td><input class="input" type="text" placeholder="Red-600 / Large"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Variant Price (₹)</label></td>
-                                                <td><input class="input" type="text" placeholder="7299.00 /-"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Customer Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="13%"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Dealer Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="15%"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Architect Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="18%"></td>
+                                                <td><input class="input" type="text" value="Variant 2" /></td>
+                                                <td><input class="input" type="text" value="Color" /></td>
+                                                <td><input class="input" type="text" value="Red-600" /></td>
+                                                <td><input class="input" type="text" value="6299.00" /></td>
+                                                <td><input class="input" type="text" value="10%" /></td>
+                                                <td><input class="input" type="text" value="12%" /></td>
+                                                <td><input class="input" type="text" value="16%" /></td>
+                                                <td><input class="input" type="text" value="Variant for color Red-600." /></td>
+                                                <td><input class="input" type="text" value="123457" /></td>
+                                                <td><input class="input" type="text" value="18%" /></td>
+                                                <td><input class="input" type="text" value="https://example.com/video-red.mp4" /></td>
+                                                <td><input class="input" type="text" value="https://example.com/pdf-red.pdf" /></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 2</h3>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Field</th>
-                                                <th>Value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><label class="form-label">Variant Type</label></td>
-                                                <td>
-                                                    <select class="select">
-                                                        <option value="size">Size</option>
-                                                        <option value="color">Color</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Variant Value</label></td>
-                                                <td><input class="input" type="text" placeholder="Red-600 / Large"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Variant Price (₹)</label></td>
-                                                <td><input class="input" type="text" placeholder="7299.00 /-"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Customer Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="13%"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Dealer Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="15%"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="form-label">Architect Discount (%)</label></td>
-                                                <td><input class="input" type="text" placeholder="18%"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
