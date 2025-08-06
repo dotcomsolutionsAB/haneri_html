@@ -99,7 +99,7 @@
                                         <label class="form-label max-w-56">
                                             Weight(in kgs)
                                         </label>
-                                        <input class="input" type="text" value="13.5 kg">
+                                        <input class="input" type="text" placeholder="1.5 kg">
                                     </div>                       
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Slug</label>
