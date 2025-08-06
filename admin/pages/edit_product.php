@@ -200,63 +200,76 @@
 
     // Update Product Button
     document.querySelector('.btn-danger').addEventListener('click', function() {
-        const updatedProduct = {
-            name: document.querySelector('input[name="product_name"]').value,
-            brand_id: document.querySelector('select[name="brand"]').value,
-            category_id: document.querySelector('select[name="category"]').value,
-            slug: document.querySelector('input[name="slug"]').value,
-            description: document.querySelector('textarea[name="description"]').value,
-            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
-            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
-                feature_name: `Feature ${index + 1}`,
-                feature_value: textarea.value,
-                is_filterable: true
-            })),
-            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
-                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value; // Get variant id
-                const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
-                const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
-                const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
-                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
-                const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
-                const description = row.querySelector('input[type="text"]:nth-child(7)');
-                const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
+    const updatedProduct = {
+        name: document.querySelector('input[name="product_name"]').value,
+        brand_id: document.querySelector('select[name="brand"]').value,
+        category_id: document.querySelector('select[name="category"]').value,
+        slug: document.querySelector('input[name="slug"]').value,
+        description: document.querySelector('textarea[name="description"]').value,
+        is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
+        features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
+            feature_name: `Feature ${index + 1}`,
+            feature_value: textarea.value,
+            is_filterable: true
+        })),
+        variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
+            const variantId = row.querySelector('input[type="text"]:nth-child(1)').value;
+            const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
+            const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
+            const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
+            const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
+            const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
+            const description = row.querySelector('input[type="text"]:nth-child(7)');
+            const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
 
-                return {
-                    id: variantId, // Ensure variant id is passed
-                    variant_value: variantValue ? variantValue.value.trim() : null,
-                    regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
-                    customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
-                    dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value.trim()) : null,
-                    architect_discount: architectDiscount ? parseFloat(architectDiscount.value.trim()) : null,
-                    description: description ? description.value.trim() : null,
-                    regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
-                };
-            }).filter(Boolean) // Filter out any invalid rows or null values
-        };
+            // Add console logs to verify the captured data
+            console.log('Variant data:', {
+                variantId,
+                variantValue: variantValue ? variantValue.value : null,
+                regularPrice: regularPrice ? regularPrice.value : null,
+                customerDiscount: customerDiscount ? customerDiscount.value : null,
+                dealerDiscount: dealerDiscount ? dealerDiscount.value : null,
+                architectDiscount: architectDiscount ? architectDiscount.value : null,
+                description: description ? description.value : null,
+                regularTax: regularTax ? regularTax.value : null
+            });
 
-        // Log the final payload to inspect the structure
-        console.log('Updated Product Payload:', updatedProduct);
+            return {
+                id: variantId, // Ensure variant id is passed
+                variant_value: variantValue ? variantValue.value.trim() : null,
+                regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
+                customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
+                dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value.trim()) : null,
+                architect_discount: architectDiscount ? parseFloat(architectDiscount.value.trim()) : null,
+                description: description ? description.value.trim() : null,
+                regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
+            };
+        }).filter(Boolean) // Filter out any invalid rows or null values
+    };
 
-        // Send PUT request to update the product
-        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
-            method: 'PUT',
-            headers: {
-                'Authorization': 'Bearer ' + authTokenUpdate,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedProduct)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Product updated successfully!');
-            } else {
-                alert('Error updating product!');
-            }
-        })
-        .catch(error => console.error('Error updating product:', error));
-    });
+    // Log the final payload to inspect the structure
+    console.log('Updated Product Payload:', updatedProduct);
+
+    // Send PUT request to update the product
+    fetch('<?php echo BASE_URL; ?>/products/' + productId, {
+        method: 'PUT',
+        headers: {
+            'Authorization': 'Bearer ' + authTokenUpdate,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedProduct)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Product updated successfully!');
+        } else {
+            alert('Error updating product!');
+        }
+    })
+    .catch(error => console.error('Error updating product:', error));
+});
+
 </script>
 
 <style>
