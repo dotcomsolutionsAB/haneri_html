@@ -142,14 +142,14 @@
     </div>
 </main>
 
-<!-- <script>
+<script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const authTokenUpdate = localStorage.getItem('auth_token');
 
-    // Fetch product details
+    // Fetch product details using POST method
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'POST',  // Corrected to GET method
+        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + authTokenUpdate,
             'Content-Type': 'application/json'
@@ -169,24 +169,31 @@
 
             // Pre-fill Features
             product.features.forEach((feature, index) => {
-                document.querySelector(`textarea[name="features[${index}]"]`).value = feature.feature_value;
+                let featureField = document.querySelector(`textarea[name="features[${index}]"]`);
+                if (featureField) {
+                    featureField.value = feature.feature_value;
+                }
             });
 
             // Pre-fill Variants
             const variantsTable = document.querySelector('#variants tbody');
-            product.variants.forEach((variant, index) => {
-                const row = variantsTable.insertRow();
-                row.innerHTML = `
-                    <td><input class="input" type="text" value="Variant ${index + 1}" /></td>
-                    <td><input class="input" type="text" value="${variant.variant_value}" /></td>
-                    <td><input class="input" type="text" value="${variant.regular_price}" /></td>
-                    <td><input class="input" type="text" value="${variant.customer_discount}" /></td>
-                    <td><input class="input" type="text" value="${variant.dealer_discount}" /></td>
-                    <td><input class="input" type="text" value="${variant.architect_discount}" /></td>
-                    <td><input class="input" type="text" value="${variant.description}" /></td>
-                    <td><input class="input" type="text" value="${variant.regular_tax}" /></td>
-                `;
-            });
+            if (variantsTable) {
+                product.variants.forEach((variant, index) => {
+                    const row = variantsTable.insertRow();
+                    row.innerHTML = `
+                        <td><input class="input" type="text" value="${variant.id}" disabled /></td>
+                        <td><input class="input" type="text" value="${variant.variant_value}" /></td>
+                        <td><input class="input" type="number" value="${variant.regular_price}" /></td>
+                        <td><input class="input" type="number" value="${variant.customer_discount || ''}" /></td>
+                        <td><input class="input" type="number" value="${variant.dealer_discount || ''}" /></td>
+                        <td><input class="input" type="number" value="${variant.architect_discount || ''}" /></td>
+                        <td><input class="input" type="text" value="${variant.description || ''}" /></td>
+                        <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
+                    `;
+                });
+            }
+        } else {
+            console.error('Error fetching product details:', data.message);
         }
     })
     .catch(error => console.error('Error fetching product:', error));
@@ -199,32 +206,38 @@
             category_id: document.querySelector('select[name="category"]').value,
             slug: document.querySelector('input[name="slug"]').value,
             description: document.querySelector('textarea[name="description"]').value,
-            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? true : false,
+            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
             features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
                 feature_name: `Feature ${index + 1}`,
                 feature_value: textarea.value,
                 is_filterable: true
             })),
-            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => ({
-                photo_id: index + 1,
-                min_qty: row.querySelector('input[type="text"]').value,
-                is_cod: true,
-                weight: row.querySelector('input[type="text"]').value,
-                description: row.querySelector('input[type="text"]').value,
-                variant_type: 'Size',
-                variant_value: row.querySelector('input[type="text"]').value,
-                discount_price: 0,
-                regular_price: row.querySelector('input[type="text"]').value,
-                selling_price: row.querySelector('input[type="text"]').value,
-                customer_discount: 0,
-                dealer_discount: 0,
-                architect_discount: 0,
-                hsn: 'HSN1234',
-                regular_tax: 18,
-                video_url: 'https://example.com/video.mp4',
-                product_pdf: 'https://example.com/pdf.pdf'
-            }))
+            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
+                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value; // Get variant id
+                const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
+                const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
+                const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
+                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
+                const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
+                const description = row.querySelector('input[type="text"]:nth-child(7)');
+                const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
+
+                return {
+                    id: variantId, // Pass the variant id here
+                    variant_value: variantValue ? variantValue.value : null,
+                    regular_price: regularPrice ? parseFloat(regularPrice.value) : null,
+                    customer_discount: customerDiscount ? parseFloat(customerDiscount.value) : null,
+                    dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value) : null,
+                    architect_discount: architectDiscount ? parseFloat(architectDiscount.value) : null,
+                    description: description ? description.value : null,
+                    regular_tax: regularTax ? parseFloat(regularTax.value) : null,
+                    // Other fields like photo_id, video_url, etc., can be added if needed
+                };
+            }).filter(Boolean) // Filter out any null or invalid rows
         };
+
+        // Log the final payload to inspect the structure
+        console.log('Updated Product Payload:', updatedProduct);
 
         // Send PUT request to update the product
         fetch('<?php echo BASE_URL; ?>/products/' + productId, {
@@ -245,9 +258,10 @@
         })
         .catch(error => console.error('Error updating product:', error));
     });
-</script> -->
+</script>
 
-<script>
+
+<!-- <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
     const authTokenUpdate = localStorage.getItem('auth_token');
@@ -382,7 +396,7 @@
         })
         .catch(error => console.error('Error updating product:', error));
     });
-</script>
+</script> -->
 
 <style>
     .text-edit{
