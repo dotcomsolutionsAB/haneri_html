@@ -58,9 +58,10 @@
                             <label class="form-label max-w-56">Category</label>
                             <select class="select" name="category">
                                 <option value="">Select</option>
-                                <option value="1">Category 1</option>
-                                <option value="2">Category 2</option>
-                                <option value="3">Category 3</option>
+                                <option value="1">CEILING FAN</option>
+                                <option value="2">TABLE WALL PEDESTALS</option>
+                                <option value="3">DOMESTIC EXHAUSTS</option>
+                                <option value="4">PERSONAL</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
