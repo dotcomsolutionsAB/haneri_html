@@ -136,7 +136,7 @@
             <!-- End of Container -->
         </main>
         <!-- End of Content -->
-         
+
 <!-- Switch User -->
 <script>
     // Function to open the popup and switch user role
@@ -156,6 +156,13 @@
             showCancelButton: true,
             confirmButtonText: 'Switch Role',
             cancelButtonText: 'Cancel',
+            customClass: {
+                popup: 'swal2-popup-custom',   // Custom class for popup
+                title: 'swal2-title-custom',   // Custom class for title
+                content: 'swal2-content-custom', // Custom class for content
+                confirmButton: 'swal2-confirm-custom',  // Custom class for confirm button
+                cancelButton: 'swal2-cancel-custom'   // Custom class for cancel button
+            },
             preConfirm: (role) => {
                 if (!role) {
                     Swal.showValidationMessage('Please select a role');
