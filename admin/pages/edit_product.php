@@ -104,17 +104,17 @@
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Slug</label>
                                         <input class="input" type="text" value="product-name-slug">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Description</label>
-                                        <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
-                                    </div>
+                                    </div>                                    
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Is Publish</label>
                                         <select class="select">
                                             <option value="true">Yes</option>
                                             <option value="false">No</option>
                                         </select>
+                                    </div>
+                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                        <label class="form-label max-w-56">Description</label>
+                                        <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
                                         <label class="form-label max-w-56">
