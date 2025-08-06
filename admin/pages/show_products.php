@@ -288,7 +288,7 @@
                         </div>
                         <div class="menu-separator"></div>
                         <div class="menu-item">
-                            <a class="menu-link" href="edit/edit_product.php?id=${product.id}">
+                            <a class="menu-link" href="pages/edit/edit_product.php?id=${product.id}">
                                 <span class="menu-icon"><i class="ki-filled ki-pencil"></i></span>
                                 <span class="menu-title">Edit</span>
                             </a>

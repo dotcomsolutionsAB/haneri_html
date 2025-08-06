@@ -4,7 +4,7 @@
 <?php 
     $current_page = "Edit Product"; // Dynamically set this based on the page
 ?>
-<?php include("../header1.php"); ?>
+<?php include("header1.php"); ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
