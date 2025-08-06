@@ -344,10 +344,10 @@
                 const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
 
                 // Check if the necessary elements exist before accessing their values
-                if (!variantId || !variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
-                    console.error('One or more inputs are missing in the row:', row);
-                    return; // Skip this variant if any input is missing
-                }
+                // if (!variantId || !variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
+                //     console.error('One or more inputs are missing in the row:', row);
+                //     return; // Skip this variant if any input is missing
+                // }
 
                 return {
                     id: variantId, // Pass the variant id here
