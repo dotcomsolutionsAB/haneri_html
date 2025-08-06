@@ -149,7 +149,7 @@
 
     // Fetch product details using POST method
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'POST',
+        method: 'POST',  // POST method as per your requirement
         headers: {
             'Authorization': 'Bearer ' + authTokenUpdate,
             'Content-Type': 'application/json'
@@ -182,13 +182,13 @@
                     const row = variantsTable.insertRow();
                     row.innerHTML = `
                         <td><input class="input" type="text" value="${variant.id}" disabled /></td>
-                        <td><input class="input" type="text" value="${variant.variant_value}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_price}" /></td>
+                        <td><input class="input" type="text" value="${variant.variant_value || ''}" /></td>
+                        <td><input class="input" type="number" value="${variant.regular_price || ''}" /></td>
                         <td><input class="input" type="number" value="${variant.customer_discount || ''}" /></td>
                         <td><input class="input" type="number" value="${variant.dealer_discount || ''}" /></td>
                         <td><input class="input" type="number" value="${variant.architect_discount || ''}" /></td>
                         <td><input class="input" type="text" value="${variant.description || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_tax}" /></td>
+                        <td><input class="input" type="number" value="${variant.regular_tax || ''}" /></td>
                     `;
                 });
             }
@@ -224,16 +224,15 @@
 
                 return {
                     id: variantId, // Pass the variant id here
-                    variant_value: variantValue ? variantValue.value : null,
-                    regular_price: regularPrice ? parseFloat(regularPrice.value) : null,
-                    customer_discount: customerDiscount ? parseFloat(customerDiscount.value) : null,
-                    dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value) : null,
-                    architect_discount: architectDiscount ? parseFloat(architectDiscount.value) : null,
-                    description: description ? description.value : null,
-                    regular_tax: regularTax ? parseFloat(regularTax.value) : null,
-                    // Other fields like photo_id, video_url, etc., can be added if needed
+                    variant_value: variantValue ? variantValue.value.trim() : null,
+                    regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
+                    customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
+                    dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value.trim()) : null,
+                    architect_discount: architectDiscount ? parseFloat(architectDiscount.value.trim()) : null,
+                    description: description ? description.value.trim() : null,
+                    regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
                 };
-            }).filter(Boolean) // Filter out any null or invalid rows
+            }).filter(Boolean) // Filter out any null rows (if any)
         };
 
         // Log the final payload to inspect the structure
@@ -259,7 +258,6 @@
         .catch(error => console.error('Error updating product:', error));
     });
 </script>
-
 
 <!-- <script>
     const urlParams = new URLSearchParams(window.location.search);
