@@ -245,6 +245,7 @@
         .catch(error => console.error('Error updating product:', error));
     });
 </script> -->
+
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
@@ -325,16 +326,35 @@
                 feature_value: textarea.value,
                 is_filterable: true
             })),
-            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => ({
-                variant_value: row.querySelector('input[type="text"]:nth-child(2)').value,
-                regular_price: parseFloat(row.querySelector('input[type="number"]:nth-child(3)').value),
-                customer_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(4)').value),
-                dealer_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(5)').value),
-                architect_discount: parseFloat(row.querySelector('input[type="number"]:nth-child(6)').value),
-                description: row.querySelector('input[type="text"]:nth-child(7)').value,
-                regular_tax: parseFloat(row.querySelector('input[type="number"]:nth-child(8)').value),
-                // Other fields like weight, hsn, etc., can be added here as per requirement
-            }))
+            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => {
+                // Log the row to verify its structure
+                console.log('Row:', row);
+
+                const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
+                const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
+                const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
+                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
+                const architectDiscount = row.querySelector('input[type="number"]:nth-child(6)');
+                const description = row.querySelector('input[type="text"]:nth-child(7)');
+                const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
+
+                // Check if the necessary elements exist before accessing their values
+                if (!variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
+                    console.error('One or more inputs are missing in the row:', row);
+                    return; // Skip this variant if any input is missing
+                }
+
+                return {
+                    variant_value: variantValue.value,
+                    regular_price: parseFloat(regularPrice.value),
+                    customer_discount: parseFloat(customerDiscount.value),
+                    dealer_discount: parseFloat(dealerDiscount.value),
+                    architect_discount: parseFloat(architectDiscount.value),
+                    description: description.value,
+                    regular_tax: parseFloat(regularTax.value),
+                    // Add more fields here as needed
+                };
+            }).filter(Boolean) // Filter out any null rows
         };
 
         // Send PUT request to update the product
@@ -357,6 +377,7 @@
         .catch(error => console.error('Error updating product:', error));
     });
 </script>
+
 
 
 <style>
