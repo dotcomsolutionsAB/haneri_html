@@ -131,15 +131,12 @@
     <div class="card">
         <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
             <div class="flex justify-end gap-2.5">
-                <button class="btn btn-light">Deactivate Instead</button>
+                <!-- <button class="btn btn-light">Deactivate Instead</button> -->
                 <button class="btn btn-danger" id="update_product">Update Product</button>
             </div>
         </div>
     </div>
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
