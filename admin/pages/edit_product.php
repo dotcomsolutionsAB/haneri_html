@@ -155,9 +155,9 @@
                         
                         <div class="grid gap-3 grid-cols-span-1">
                             <div class="card pb-2.5">
-                                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                                     <label class="form-label max-w-56">Features 1</label>
-                                    <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
+                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
                                 </div>
                                 <div class="flex justify-end">
                                     <button class="btn btn-light">
@@ -240,6 +240,15 @@
     .text-edit{
         width: 100%;
         min-height: 120px;
+        border: 1px solid rgba(128, 128, 128, 0.34);
+        border-radius: 10px;
+        background: #fcfcfc;
+        padding: 2px 10px;
+        text-align: justify;
+    }
+    .text-edit-features{
+        width: 100%;
+        min-height: 80px;
         border: 1px solid rgba(128, 128, 128, 0.34);
         border-radius: 10px;
         background: #fcfcfc;
