@@ -144,7 +144,7 @@
 
     // Fetch product details
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'GET',  // Corrected to GET method
+        method: 'POST',  // Corrected to GET method
         headers: {
             'Authorization': 'Bearer ' + authTokenUpdate,
             'Content-Type': 'application/json'
