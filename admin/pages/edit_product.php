@@ -247,7 +247,7 @@
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
+            if (data.message && data.message === "Product updated successfully!") {
                 // Show SweetAlert success message and refresh page
                 Swal.fire({
                     title: 'Success!',
