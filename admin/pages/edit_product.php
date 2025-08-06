@@ -48,7 +48,7 @@
                                         <label class="form-label max-w-56">
                                             Product Name
                                         </label>
-                                        <input class="input" type="text" value="Haneri AirElite AEW1">
+                                        <input class="input" type="text" placeholder="Haneri AirElite AEW1">
                                     </div>                                    
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Brands</label>
@@ -68,11 +68,11 @@
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Price</label>
-                                        <input class="input" type="text" value="1199.00 /-">
+                                        <input class="input" type="text" placeholder="1199.00 /-">
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Discount (₹/%)</label>
-                                        <input class="input" type="text" value="1199.00 /-">
+                                        <input class="input" type="text" placeholder="1199.00 /-">
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">HSN</label>
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Tax</label>
-                                        <input class="input" type="text" value="156.04 /-">
+                                        <input class="input" type="text" placeholder="156.04 /-">
                                     </div>  
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">
@@ -103,7 +103,7 @@
                                     </div>                       
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Slug</label>
-                                        <input class="input" type="text" value="product-name-slug">
+                                        <input class="input" type="text" placeholder="product-name-slug">
                                     </div>                                    
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Is Publish</label>
@@ -149,11 +149,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-end">
-                                        <button class="btn btn-primary">
-                                            Save Changes
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -173,11 +168,11 @@
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" value="Red-600 / Large">
+                                        <input class="input" type="text" placeholder="Red-600 / Large">
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" value="7299.00 /-">
+                                        <input class="input" type="text" placeholder="7299.00 /-">
                                     </div>
                                 </div>
                             </div>
@@ -196,11 +191,11 @@
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" value="Red-600 / Large">
+                                        <input class="input" type="text" placeholder="Red-600 / Large">
                                     </div>
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" value="7299.00 /-">
+                                        <input class="input" type="text" placeholder="7299.00 /-">
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +211,7 @@
                                             Deactivate Instead
                                         </button>
                                         <button class="btn btn-danger">
-                                            Delete Product
+                                            Update Product
                                         </button>
                                     </div>
                                 </div>
