@@ -17,22 +17,22 @@
         <div class="card p-5 shadow-sm">
             <h3 class="text-xl font-medium text-gray-700 mb-4">Product Details</h3>
             <form>
-                <!-- Table for Input Fields -->
-                <table class="w-full table-auto">
+                <!-- Table for Product Fields -->
+                <table class="table-auto w-full">
                     <tbody>
                         <!-- Product Name -->
                         <tr>
                             <td><label class="form-label">Product Name</label></td>
-                            <td><input class="input" type="text" placeholder="Product Name"></td>
+                            <td><input class="input" type="text" placeholder="Enter product name" value=""></td>
                         </tr>
-                        <!-- Brands -->
+                        <!-- Brand -->
                         <tr>
                             <td><label class="form-label">Brand</label></td>
                             <td>
                                 <select class="select">
-                                    <option>Brand 1</option>
-                                    <option>Brand 2</option>
-                                    <option>Brand 3</option>
+                                    <option value="brand1">Brand 1</option>
+                                    <option value="brand2">Brand 2</option>
+                                    <option value="brand3">Brand 3</option>
                                 </select>
                             </td>
                         </tr>
@@ -41,36 +41,36 @@
                             <td><label class="form-label">Category</label></td>
                             <td>
                                 <select class="select">
-                                    <option>Category 1</option>
-                                    <option>Category 2</option>
-                                    <option>Category 3</option>
+                                    <option value="category1">Category 1</option>
+                                    <option value="category2">Category 2</option>
+                                    <option value="category3">Category 3</option>
                                 </select>
                             </td>
                         </tr>
                         <!-- HSN Code -->
                         <tr>
                             <td><label class="form-label">HSN</label></td>
-                            <td><input class="input" type="text" placeholder="ABCD12"></td>
+                            <td><input class="input" type="text" placeholder="Enter HSN code" value="ABCD12"></td>
                         </tr>
                         <!-- Tax -->
                         <tr>
                             <td><label class="form-label">Tax</label></td>
-                            <td><input class="input" type="text" placeholder="Tax Amount"></td>
+                            <td><input class="input" type="text" placeholder="Enter tax" value="5%"></td>
                         </tr>
                         <!-- Minimum Purchase Qty -->
                         <tr>
                             <td><label class="form-label">Minimum Purchase Qty</label></td>
-                            <td><input class="input" type="number" placeholder="5"></td>
+                            <td><input class="input" type="number" placeholder="Enter quantity" value="10"></td>
                         </tr>
                         <!-- Weight -->
                         <tr>
                             <td><label class="form-label">Weight (kg)</label></td>
-                            <td><input class="input" type="text" placeholder="1.5 kg"></td>
+                            <td><input class="input" type="text" placeholder="Enter weight" value="1.5 kg"></td>
                         </tr>
                         <!-- Slug -->
                         <tr>
                             <td><label class="form-label">Slug</label></td>
-                            <td><input class="input" type="text" placeholder="product-name-slug"></td>
+                            <td><input class="input" type="text" placeholder="Enter product slug" value="product-name-slug"></td>
                         </tr>
                         <!-- Publish Status -->
                         <tr>
@@ -85,12 +85,12 @@
                         <!-- Description -->
                         <tr>
                             <td><label class="form-label">Description</label></td>
-                            <td><textarea class="input w-full" placeholder="Product Description"></textarea></td>
+                            <td><textarea class="input w-full" placeholder="Enter product description"></textarea></td>
                         </tr>
-                        <!-- Photo Upload -->
+                        <!-- Product Image Upload -->
                         <tr>
                             <td><label class="form-label">Product Image</label></td>
-                            <td><input type="file" accept=".jpg, .jpeg, .png"></td>
+                            <td><input type="file" accept=".jpg, .jpeg, .png" class="input"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -99,24 +99,24 @@
                 <div class="mt-6">
                     <h4 class="text-xl font-medium text-gray-700 mb-4">Features & Variants</h4>
                     <!-- Features -->
-                    <table class="w-full table-auto mb-4">
+                    <table class="table-auto w-full mb-4">
                         <tbody>
                             <tr>
                                 <td><label class="form-label">Feature 1</label></td>
-                                <td><textarea class="input w-full" placeholder="Feature 1 Description"></textarea></td>
+                                <td><textarea class="input w-full" placeholder="Feature 1 description"></textarea></td>
                             </tr>
                             <tr>
                                 <td><label class="form-label">Feature 2</label></td>
-                                <td><textarea class="input w-full" placeholder="Feature 2 Description"></textarea></td>
+                                <td><textarea class="input w-full" placeholder="Feature 2 description"></textarea></td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="flex justify-end">
+                    <div class="flex justify-end mb-6">
                         <button class="btn btn-light">Add Feature</button>
                     </div>
 
                     <!-- Variant 1 -->
-                    <table class="w-full table-auto mb-4">
+                    <table class="table-auto w-full mb-4">
                         <thead>
                             <tr>
                                 <th colspan="2" class="text-lg font-semibold">Variant 1</th>
@@ -134,21 +134,21 @@
                             </tr>
                             <tr>
                                 <td><label class="form-label">Variant Value</label></td>
-                                <td><input class="input" type="text" placeholder="Size / Color"></td>
+                                <td><input class="input" type="text" placeholder="Enter variant value"></td>
                             </tr>
                             <tr>
                                 <td><label class="form-label">Variant Price (₹)</label></td>
-                                <td><input class="input" type="text" placeholder="Price"></td>
+                                <td><input class="input" type="text" placeholder="Enter variant price"></td>
                             </tr>
                             <tr>
                                 <td><label class="form-label">Discount (%)</label></td>
-                                <td><input class="input" type="text" placeholder="Discount"></td>
+                                <td><input class="input" type="text" placeholder="Enter discount percentage"></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <!-- Variant 2 -->
-                    <table class="w-full table-auto mb-4">
+                    <table class="table-auto w-full mb-4">
                         <thead>
                             <tr>
                                 <th colspan="2" class="text-lg font-semibold">Variant 2</th>
@@ -166,19 +166,19 @@
                             </tr>
                             <tr>
                                 <td><label class="form-label">Variant Value</label></td>
-                                <td><input class="input" type="text" placeholder="Size / Color"></td>
+                                <td><input class="input" type="text" placeholder="Enter variant value"></td>
                             </tr>
                             <tr>
                                 <td><label class="form-label">Variant Price (₹)</label></td>
-                                <td><input class="input" type="text" placeholder="Price"></td>
+                                <td><input class="input" type="text" placeholder="Enter variant price"></td>
                             </tr>
                             <tr>
                                 <td><label class="form-label">Discount (%)</label></td>
-                                <td><input class="input" type="text" placeholder="Discount"></td>
+                                <td><input class="input" type="text" placeholder="Enter discount percentage"></td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="flex justify-end">
+                    <div class="flex justify-end mb-6">
                         <button class="btn btn-primary">Add Variant</button>
                     </div>
                 </div>
