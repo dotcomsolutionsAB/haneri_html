@@ -155,8 +155,19 @@
                         
                         <div class="grid gap-3 grid-cols-span-1">
                             <div class="card pb-2.5">
+                                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                    <label class="form-label max-w-56">Features 1</label>
+                                    <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button class="btn btn-light">
+                                        Add Variant
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card pb-2.5">
                                 <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant</h3>                                    
+                                    <h3 class="card-title">Variant 1</h3>                                    
                                 </div>
                                 <div class="card-body grid gap-5">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
@@ -179,7 +190,7 @@
 
                             <div class="card pb-2.5">
                                 <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant</h3>                                    
+                                    <h3 class="card-title">Variant 2</h3>                                    
                                 </div>
                                 <div class="card-body grid gap-5">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
