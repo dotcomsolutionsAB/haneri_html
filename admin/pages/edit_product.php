@@ -154,6 +154,9 @@
                         </div>
                         
                         <div class="grid gap-3 grid-cols-span-1">
+                            <div class="card-header" id="features">
+                                <h3 class="card-title">Fetaures</h3>                                    
+                            </div>
                             <div class="card p-2.5">
                                 <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                                     <label class="form-label max-w-56">Features 1</label>
