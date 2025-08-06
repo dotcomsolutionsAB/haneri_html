@@ -122,9 +122,6 @@
                             </thead>
                             <tbody id="variants_body"></tbody>
                         </table>
-                        <div class="flex justify-end">
-                            <button class="btn btn-primary" id="add_variant">Add Variant</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -165,8 +162,6 @@
             document.getElementById('product_name').value = product.name;
             document.getElementById('description').value = product.description || "";
             document.getElementById('slug').value = product.slug;
-            // document.getElementById('brand').value = product.brand;
-            // document.getElementById('category').value = product.category;
             
             // Set the correct `brand` value based on the response
             const brandSelect = document.getElementById('brand');
