@@ -44,18 +44,18 @@
                         <!-- Form fields -->
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Product Name</label>
-                            <input class="input" type="text" name="product_name" placeholder="Haneri AirElite AEW1">
+                            <input class="input" type="text" id="product_name" placeholder="Haneri AirElite AEW1">
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Brands</label>
-                            <select class="select" name="brand">
+                            <select class="select" id="brand">
                                 <option value="">Select</option>
                                 <option value="Haneri">Haneri</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Category</label>
-                            <select class="select" name="category">
+                            <select class="select" id="category">
                                 <option value="">Select</option>
                                 <option value="CEILING FAN">CEILING FAN</option>
                                 <option value="TABLE WALL PEDESTALS">TABLE WALL PEDESTALS</option>
@@ -65,18 +65,18 @@
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Slug</label>
-                            <input class="input" type="text" name="slug" placeholder="product-name-slug">
+                            <input class="input" type="text" id="slug" placeholder="product-name-slug">
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Is Publish</label>
-                            <select class="select" name="is_active">
+                            <select class="select" id="is_active">
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Description</label>
-                            <textarea class="note-codable text-edit" name="description" aria-multiline="true"></textarea>
+                            <textarea class="note-codable text-edit" id="description" aria-multiline="true"></textarea>
                         </div>
                     </div>
                 </div>
@@ -89,11 +89,11 @@
                     </div>
                     <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                         <label class="form-label max-w-56">Feature 1</label>
-                        <textarea class="note-codable text-edit-features" name="features[0]" aria-multiline="true"></textarea>
+                        <textarea class="note-codable text-edit-features" id="feature_1" aria-multiline="true"></textarea>
                     </div>
                     <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                         <label class="form-label max-w-56">Feature 2</label>
-                        <textarea class="note-codable text-edit-features" name="features[1]" aria-multiline="true"></textarea>
+                        <textarea class="note-codable text-edit-features" id="feature_2" aria-multiline="true"></textarea>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                         <h3 class="card-title">Variants</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered" id="variants">
+                        <table class="table table-bordered" id="variants_table">
                             <thead>
                                 <tr>
                                     <th>Variant No</th>
@@ -120,10 +120,10 @@
                                     <th>Regular Tax (%)</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody id="variants_body"></tbody>
                         </table>
                         <div class="flex justify-end">
-                            <button class="btn btn-primary">Add Variant</button>
+                            <button class="btn btn-primary" id="add_variant">Add Variant</button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
         <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
             <div class="flex justify-end gap-2.5">
                 <button class="btn btn-light">Deactivate Instead</button>
-                <button class="btn btn-danger">Update Product</button>
+                <button class="btn btn-danger" id="update_product">Update Product</button>
             </div>
         </div>
     </div>
@@ -159,39 +159,33 @@
         if (data.success) {
             const product = data.data;
 
-            // Pre-fill the form fields
-            document.querySelector('input[name="product_name"]').value = product.name;
-            document.querySelector('select[name="brand"]').value = product.brand;
-            document.querySelector('select[name="category"]').value = product.category;
-            document.querySelector('input[name="slug"]').value = product.slug;
-            document.querySelector('textarea[name="description"]').value = product.description || "";
+            // Pre-fill the form fields using IDs
+            document.getElementById('product_name').value = product.name;
+            document.getElementById('brand').value = product.brand;
+            document.getElementById('category').value = product.category;
+            document.getElementById('slug').value = product.slug;
+            document.getElementById('description').value = product.description || "";
 
-            // Pre-fill Features
-            product.features.forEach((feature, index) => {
-                let featureField = document.querySelector(`textarea[name="features[${index}]"]`);
-                if (featureField) {
-                    featureField.value = feature.feature_value;
-                }
+            // Pre-fill Features using IDs
+            document.getElementById('feature_1').value = product.features[0]?.feature_value || "";
+            document.getElementById('feature_2').value = product.features[1]?.feature_value || "";
+
+            // Pre-fill Variants using IDs
+            const variantsBody = document.getElementById('variants_body');
+            product.variants.forEach((variant, index) => {
+                const row = variantsBody.insertRow();
+                row.innerHTML = `
+                    <td><input class="input" type="text" value="${variant.id}" id="variant_${index}_id" disabled /></td>
+                    <td><input class="input" type="text" value="${variant.variant_type || ''}" id="variant_${index}_type" /></td>
+                    <td><input class="input" type="text" value="${variant.variant_value || ''}" id="variant_${index}_value" /></td>
+                    <td><input class="input" type="number" value="${variant.regular_price || ''}" id="variant_${index}_price" /></td>
+                    <td><input class="input" type="number" value="${variant.customer_discount || ''}" id="variant_${index}_customer_discount" /></td>
+                    <td><input class="input" type="number" value="${variant.dealer_discount || ''}" id="variant_${index}_dealer_discount" /></td>
+                    <td><input class="input" type="number" value="${variant.architect_discount || ''}" id="variant_${index}_architect_discount" /></td>
+                    <td><input class="input" type="text" value="${variant.description || ''}" id="variant_${index}_description" /></td>
+                    <td><input class="input" type="number" value="${variant.regular_tax || ''}" id="variant_${index}_tax" /></td>
+                `;
             });
-
-            // Pre-fill Variants
-            const variantsTable = document.querySelector('#variants tbody');
-            if (variantsTable) {
-                product.variants.forEach((variant, index) => {
-                    const row = variantsTable.insertRow();
-                    row.innerHTML = `
-                        <td><input class="input" type="text" value="${variant.id}" disabled /></td>
-                        <td><input class="input" type="text" value="${variant.variant_type || ''}" /></td>
-                        <td><input class="input" type="text" value="${variant.variant_value || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_price || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.customer_discount || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.dealer_discount || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.architect_discount || ''}" /></td>
-                        <td><input class="input" type="text" value="${variant.description || ''}" /></td>
-                        <td><input class="input" type="number" value="${variant.regular_tax || ''}" /></td>
-                    `;
-                });
-            }
         } else {
             console.error('Error fetching product details:', data.message);
         }
@@ -199,29 +193,28 @@
     .catch(error => console.error('Error fetching product:', error));
 
     // Update Product Button
-    document.querySelector('.btn-danger').addEventListener('click', function() {
+    document.getElementById('update_product').addEventListener('click', function() {
         const updatedProduct = {
-            name: document.querySelector('input[name="product_name"]').value,
-            brand_id: document.querySelector('select[name="brand"]').value,
-            category_id: document.querySelector('select[name="category"]').value,
-            slug: document.querySelector('input[name="slug"]').value,
-            description: document.querySelector('textarea[name="description"]').value,
-            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
-            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
-                feature_name: `Feature ${index + 1}`,
-                feature_value: textarea.value,
-                is_filterable: true
-            })),
-            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
-                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value;
-                const variantType = row.querySelector('input[type="text"]:nth-child(2)');
-                const variantValue = row.querySelector('input[type="text"]:nth-child(3)');
-                const regularPrice = row.querySelector('input[type="number"]:nth-child(4)');
-                const customerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
-                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(6)');
-                const architectDiscount = row.querySelector('input[type="number"]:nth-child(7)');
-                const description = row.querySelector('input[type="text"]:nth-child(8)');
-                const regularTax = row.querySelector('input[type="number"]:nth-child(9)');
+            name: document.getElementById('product_name').value,
+            brand_id: document.getElementById('brand').value,
+            category_id: document.getElementById('category').value,
+            slug: document.getElementById('slug').value,
+            description: document.getElementById('description').value,
+            is_active: document.getElementById('is_active').value === 'true' ? 1 : 0,
+            features: [
+                { feature_name: "Feature 1", feature_value: document.getElementById('feature_1').value, is_filterable: true },
+                { feature_name: "Feature 2", feature_value: document.getElementById('feature_2').value, is_filterable: true }
+            ],
+            variants: Array.from(document.querySelectorAll('#variants_body tr')).map((row, index) => {
+                const variantId = document.getElementById(`variant_${index}_id`).value;
+                const variantType = document.getElementById(`variant_${index}_type`);
+                const variantValue = document.getElementById(`variant_${index}_value`);
+                const regularPrice = document.getElementById(`variant_${index}_price`);
+                const customerDiscount = document.getElementById(`variant_${index}_customer_discount`);
+                const dealerDiscount = document.getElementById(`variant_${index}_dealer_discount`);
+                const architectDiscount = document.getElementById(`variant_${index}_architect_discount`);
+                const description = document.getElementById(`variant_${index}_description`);
+                const regularTax = document.getElementById(`variant_${index}_tax`);
 
                 return {
                     id: variantId,
@@ -234,7 +227,7 @@
                     description: description ? description.value.trim() : null,
                     regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
                 };
-            }).filter(Boolean) // Filter out any invalid rows or null values
+            }).filter(Boolean)
         };
 
         console.log('Updated Product Payload:', updatedProduct);
