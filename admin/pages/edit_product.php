@@ -1,276 +1,225 @@
 <base href="../">
 <?php include("../../configs/auth_check.php"); ?>
 <?php 
-    $current_page = "Edit Product"; // Dynamically set this based on the page
+    $current_page = "Edit Product";
 ?>
 <?php include("header1.php"); ?>
 
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
-                <!-- Container -->
-                <div class="container-fixed" id="content_container">
-                </div>
-                <!-- End of Container -->
-                
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                        <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900">
-                                Edit - Product
-                            </h1>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <a class="btn btn-sm btn-light" href="pages/show_products.php">
-                                Products
-                            </a>
-                            <!-- <a class="btn btn-sm btn-primary" href="#">
-                                Get Started
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Container -->
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
-                        <div class="col-span-1">
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="basic_settings">
-                                    <h3 class="card-title">
-                                        General Settings
-                                    </h3>
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Product Name
-                                        </label>
-                                        <input class="input" type="text" placeholder="Haneri AirElite AEW1">
-                                    </div>                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Brands</label>
-                                        <select class="select">
-                                            <option>Brand 1</option>
-                                            <option>Brand 2</option>
-                                            <option>Brand 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Category</label>
-                                        <select class="select">
-                                            <option>Category 1</option>
-                                            <option>Category 2</option>
-                                            <option>Category 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">HSN</label>
-                                        <input class="input" placeholder="ABCD12" type="text" value="">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Tax</label>
-                                        <input class="input" type="text" placeholder="156.04 /-">
-                                    </div>  
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Minimum Purchase Qty
-                                        </label>
-                                        <input class="input" type="text" placeholder="5">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Weight(in kgs)
-                                        </label>
-                                        <input class="input" type="text" placeholder="1.5 kg">
-                                    </div>                       
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Slug</label>
-                                        <input class="input" type="text" placeholder="product-name-slug">
-                                    </div>                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Is Publish</label>
-                                        <select class="select">
-                                            <option value="true">Yes</option>
-                                            <option value="false">No</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Description</label>
-                                        <textarea class="note-codable text-edit" aria-multiline="true"></textarea>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mb-2.5">
-                                        <label class="form-label max-w-56">
-                                            Photo
-                                        </label>
-                                        <div class="flex items-center justify-between flex-wrap grow gap-2.5">
-                                            <span class="text-2sm">
-                                                150x150px JPEG, PNG Image
-                                            </span>
-                                            <div class="image-input size-16" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file">
-                                                <input name="avatar_remove" type="hidden">
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -end-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
-                                                    <i class="ki-filled ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip hidden" id="image_input_tooltip" style="z-index: 100;">
-                                                    Click to remove or revert
-                                                </span>
-                                                <div class="image-input-placeholder image-input-empty:border-gray-300" style="background-image:url(assets/media/avatars/blank.png)">
-                                                    <div class="image-input-preview" style="background-image:url(assets/media/avatars/300-2.png)">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12" viewBox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="grid gap-3 grid-cols-span-1">
-                            
-                            <div class="card p-2.5">
-                                <div class="card-header" id="features">
-                                    <h3 class="card-title">Fetaures</h3>                                    
-                                </div>
-                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
-                                    <label class="form-label max-w-56">Features 1</label>
-                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
-                                </div>
-                                <br>
-                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
-                                    <label class="form-label max-w-56">Features 2</label>
-                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
-                                </div>
-                                <div class="flex justify-end">
-                                    <button class="btn btn-light">
-                                        Add Fetaures
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 1</h3>                                    
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Type</label>
-                                        <select class="select">
-                                            <option value="size">Size</option>
-                                            <option value="color">Color</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" placeholder="Red-600 / Large">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" placeholder="7299.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Customer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="13%">                                        
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="15%">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Architect Discount (%)</label>
-                                        <input class="input" type="text" placeholder="18%">
-                                    </div>
-                                </div>
-                            </div>
+<main class="grow content pt-5" id="content" role="content">
+    <!-- Container -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-semibold text-gray-900">Edit Product</h1>
+            <a href="pages/show_products.php" class="btn btn-sm btn-light">Back to Products</a>
+        </div>
 
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variant 2</h3>                                    
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Type</label>
-                                        <select class="select">
-                                            <option value="size">Size</option>
-                                            <option value="color">Color</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Value</label>
-                                        <input class="input" type="text" placeholder="Red-600 / Large">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Variant Price (₹)</label>
-                                        <input class="input" type="text" placeholder="7299.00 /-">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Customer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="13%">                                        
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Dealer Discount (%)</label>
-                                        <input class="input" type="text" placeholder="15%">
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Architect Discount (%)</label>
-                                        <input class="input" type="text" placeholder="18%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex justify-end">
-                                <button class="btn btn-primary">
-                                    Add Variant
-                                </button>
-                            </div>
-                            <div class="card">
-                                <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
-                                    <div class="flex justify-end gap-2.5">
-                                        <button class="btn btn-light">
-                                            Deactivate Instead
-                                        </button>
-                                        <button class="btn btn-danger">
-                                            Update Product
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Product Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- General Settings Card -->
+            <div class="card p-5 shadow-sm">
+                <h3 class="text-xl font-medium text-gray-700 mb-4">General Settings</h3>
+                
+                <!-- Product Name -->
+                <div class="mb-4">
+                    <label class="form-label">Product Name</label>
+                    <input class="input" type="text" placeholder="Product Name">
+                </div>
+
+                <!-- Brands -->
+                <div class="mb-4">
+                    <label class="form-label">Brands</label>
+                    <select class="select">
+                        <option>Brand 1</option>
+                        <option>Brand 2</option>
+                        <option>Brand 3</option>
+                    </select>
+                </div>
+
+                <!-- Category -->
+                <div class="mb-4">
+                    <label class="form-label">Category</label>
+                    <select class="select">
+                        <option>Category 1</option>
+                        <option>Category 2</option>
+                        <option>Category 3</option>
+                    </select>
+                </div>
+
+                <!-- HSN Code -->
+                <div class="mb-4">
+                    <label class="form-label">HSN</label>
+                    <input class="input" type="text" placeholder="ABCD12">
+                </div>
+
+                <!-- Tax -->
+                <div class="mb-4">
+                    <label class="form-label">Tax</label>
+                    <input class="input" type="text" placeholder="Tax Amount">
+                </div>
+
+                <!-- Minimum Purchase Qty -->
+                <div class="mb-4">
+                    <label class="form-label">Minimum Purchase Qty</label>
+                    <input class="input" type="number" placeholder="5">
+                </div>
+
+                <!-- Weight -->
+                <div class="mb-4">
+                    <label class="form-label">Weight (kg)</label>
+                    <input class="input" type="text" placeholder="1.5 kg">
+                </div>
+
+                <!-- Slug -->
+                <div class="mb-4">
+                    <label class="form-label">Slug</label>
+                    <input class="input" type="text" placeholder="product-name-slug">
+                </div>
+
+                <!-- Publish Status -->
+                <div class="mb-4">
+                    <label class="form-label">Is Published</label>
+                    <select class="select">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <label class="form-label">Description</label>
+                    <textarea class="input w-full" placeholder="Product Description"></textarea>
+                </div>
+
+                <!-- Photo Upload -->
+                <div class="mb-4">
+                    <label class="form-label">Product Image</label>
+                    <div class="image-input">
+                        <input type="file" accept=".jpg, .jpeg, .png">
                     </div>
                 </div>
-                <!-- End of Container -->
-            </main>
-            <!-- End of Content -->
-            <!-- Footer -->
+            </div>
+
+            <!-- Features and Variants -->
+            <div class="card p-5 shadow-sm">
+                <h3 class="text-xl font-medium text-gray-700 mb-4">Features & Variants</h3>
+                
+                <!-- Features -->
+                <div class="mb-4">
+                    <label class="form-label">Feature 1</label>
+                    <textarea class="input w-full" placeholder="Feature 1 Description"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Feature 2</label>
+                    <textarea class="input w-full" placeholder="Feature 2 Description"></textarea>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button class="btn btn-light">Add Feature</button>
+                </div>
+
+                <!-- Variant 1 -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold">Variant 1</h4>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Type</label>
+                        <select class="select">
+                            <option value="size">Size</option>
+                            <option value="color">Color</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Value</label>
+                        <input class="input" type="text" placeholder="Size / Color">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Price (₹)</label>
+                        <input class="input" type="text" placeholder="Price">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Discount (%)</label>
+                        <input class="input" type="text" placeholder="Discount">
+                    </div>
+                </div>
+
+                <!-- Variant 2 -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold">Variant 2</h4>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Type</label>
+                        <select class="select">
+                            <option value="size">Size</option>
+                            <option value="color">Color</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Value</label>
+                        <input class="input" type="text" placeholder="Size / Color">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Variant Price (₹)</label>
+                        <input class="input" type="text" placeholder="Price">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Discount (%)</label>
+                        <input class="input" type="text" placeholder="Discount">
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button class="btn btn-primary">Add Variant</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-end gap-4 mt-6">
+            <button class="btn btn-light">Deactivate</button>
+            <button class="btn btn-danger">Update Product</button>
+        </div>
+    </div>
+</main>
+
 <?php include("footer1.php"); ?>
 
 <style>
-    .text-edit{
+    .input, .select, .textarea {
         width: 100%;
-        min-height: 120px;
-        border: 1px solid rgba(128, 128, 128, 0.34);
-        border-radius: 10px;
-        background: #fcfcfc;
-        padding: 2px 10px;
-        text-align: justify;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        font-size: 1rem;
     }
-    .text-edit-features{
-        width: 100%;
-        min-height: 80px;
-        border: 1px solid rgba(128, 128, 128, 0.34);
-        border-radius: 10px;
-        background: #fcfcfc;
-        padding: 2px 10px;
-        text-align: justify;
+
+    .textarea {
+        height: 120px;
+        resize: vertical;
+    }
+
+    .image-input input[type="file"] {
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .btn-light {
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
     }
 </style>
