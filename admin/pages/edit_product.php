@@ -14,167 +14,181 @@
         </div>
 
         <!-- Product Form -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- General Settings Card -->
-            <div class="card p-5 shadow-sm">
-                <h3 class="text-xl font-medium text-gray-700 mb-4">General Settings</h3>
-                
-                <!-- Product Name -->
-                <div class="mb-4">
-                    <label class="form-label">Product Name</label>
-                    <input class="input" type="text" placeholder="Product Name">
-                </div>
+        <div class="card p-5 shadow-sm">
+            <h3 class="text-xl font-medium text-gray-700 mb-4">Product Details</h3>
+            <form>
+                <!-- Table for Input Fields -->
+                <table class="w-full table-auto">
+                    <tbody>
+                        <!-- Product Name -->
+                        <tr>
+                            <td><label class="form-label">Product Name</label></td>
+                            <td><input class="input" type="text" placeholder="Product Name"></td>
+                        </tr>
+                        <!-- Brands -->
+                        <tr>
+                            <td><label class="form-label">Brand</label></td>
+                            <td>
+                                <select class="select">
+                                    <option>Brand 1</option>
+                                    <option>Brand 2</option>
+                                    <option>Brand 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Category -->
+                        <tr>
+                            <td><label class="form-label">Category</label></td>
+                            <td>
+                                <select class="select">
+                                    <option>Category 1</option>
+                                    <option>Category 2</option>
+                                    <option>Category 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- HSN Code -->
+                        <tr>
+                            <td><label class="form-label">HSN</label></td>
+                            <td><input class="input" type="text" placeholder="ABCD12"></td>
+                        </tr>
+                        <!-- Tax -->
+                        <tr>
+                            <td><label class="form-label">Tax</label></td>
+                            <td><input class="input" type="text" placeholder="Tax Amount"></td>
+                        </tr>
+                        <!-- Minimum Purchase Qty -->
+                        <tr>
+                            <td><label class="form-label">Minimum Purchase Qty</label></td>
+                            <td><input class="input" type="number" placeholder="5"></td>
+                        </tr>
+                        <!-- Weight -->
+                        <tr>
+                            <td><label class="form-label">Weight (kg)</label></td>
+                            <td><input class="input" type="text" placeholder="1.5 kg"></td>
+                        </tr>
+                        <!-- Slug -->
+                        <tr>
+                            <td><label class="form-label">Slug</label></td>
+                            <td><input class="input" type="text" placeholder="product-name-slug"></td>
+                        </tr>
+                        <!-- Publish Status -->
+                        <tr>
+                            <td><label class="form-label">Is Published</label></td>
+                            <td>
+                                <select class="select">
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Description -->
+                        <tr>
+                            <td><label class="form-label">Description</label></td>
+                            <td><textarea class="input w-full" placeholder="Product Description"></textarea></td>
+                        </tr>
+                        <!-- Photo Upload -->
+                        <tr>
+                            <td><label class="form-label">Product Image</label></td>
+                            <td><input type="file" accept=".jpg, .jpeg, .png"></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <!-- Brands -->
-                <div class="mb-4">
-                    <label class="form-label">Brands</label>
-                    <select class="select">
-                        <option>Brand 1</option>
-                        <option>Brand 2</option>
-                        <option>Brand 3</option>
-                    </select>
-                </div>
+                <!-- Features and Variants Section -->
+                <div class="mt-6">
+                    <h4 class="text-xl font-medium text-gray-700 mb-4">Features & Variants</h4>
+                    <!-- Features -->
+                    <table class="w-full table-auto mb-4">
+                        <tbody>
+                            <tr>
+                                <td><label class="form-label">Feature 1</label></td>
+                                <td><textarea class="input w-full" placeholder="Feature 1 Description"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Feature 2</label></td>
+                                <td><textarea class="input w-full" placeholder="Feature 2 Description"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="flex justify-end">
+                        <button class="btn btn-light">Add Feature</button>
+                    </div>
 
-                <!-- Category -->
-                <div class="mb-4">
-                    <label class="form-label">Category</label>
-                    <select class="select">
-                        <option>Category 1</option>
-                        <option>Category 2</option>
-                        <option>Category 3</option>
-                    </select>
-                </div>
+                    <!-- Variant 1 -->
+                    <table class="w-full table-auto mb-4">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="text-lg font-semibold">Variant 1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label class="form-label">Variant Type</label></td>
+                                <td>
+                                    <select class="select">
+                                        <option value="size">Size</option>
+                                        <option value="color">Color</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Variant Value</label></td>
+                                <td><input class="input" type="text" placeholder="Size / Color"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Variant Price (₹)</label></td>
+                                <td><input class="input" type="text" placeholder="Price"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Discount (%)</label></td>
+                                <td><input class="input" type="text" placeholder="Discount"></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <!-- HSN Code -->
-                <div class="mb-4">
-                    <label class="form-label">HSN</label>
-                    <input class="input" type="text" placeholder="ABCD12">
-                </div>
-
-                <!-- Tax -->
-                <div class="mb-4">
-                    <label class="form-label">Tax</label>
-                    <input class="input" type="text" placeholder="Tax Amount">
-                </div>
-
-                <!-- Minimum Purchase Qty -->
-                <div class="mb-4">
-                    <label class="form-label">Minimum Purchase Qty</label>
-                    <input class="input" type="number" placeholder="5">
-                </div>
-
-                <!-- Weight -->
-                <div class="mb-4">
-                    <label class="form-label">Weight (kg)</label>
-                    <input class="input" type="text" placeholder="1.5 kg">
-                </div>
-
-                <!-- Slug -->
-                <div class="mb-4">
-                    <label class="form-label">Slug</label>
-                    <input class="input" type="text" placeholder="product-name-slug">
-                </div>
-
-                <!-- Publish Status -->
-                <div class="mb-4">
-                    <label class="form-label">Is Published</label>
-                    <select class="select">
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-
-                <!-- Description -->
-                <div class="mb-4">
-                    <label class="form-label">Description</label>
-                    <textarea class="input w-full" placeholder="Product Description"></textarea>
-                </div>
-
-                <!-- Photo Upload -->
-                <div class="mb-4">
-                    <label class="form-label">Product Image</label>
-                    <div class="image-input">
-                        <input type="file" accept=".jpg, .jpeg, .png">
+                    <!-- Variant 2 -->
+                    <table class="w-full table-auto mb-4">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="text-lg font-semibold">Variant 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label class="form-label">Variant Type</label></td>
+                                <td>
+                                    <select class="select">
+                                        <option value="size">Size</option>
+                                        <option value="color">Color</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Variant Value</label></td>
+                                <td><input class="input" type="text" placeholder="Size / Color"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Variant Price (₹)</label></td>
+                                <td><input class="input" type="text" placeholder="Price"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label">Discount (%)</label></td>
+                                <td><input class="input" type="text" placeholder="Discount"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="flex justify-end">
+                        <button class="btn btn-primary">Add Variant</button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Features and Variants -->
-            <div class="card p-5 shadow-sm">
-                <h3 class="text-xl font-medium text-gray-700 mb-4">Features & Variants</h3>
-                
-                <!-- Features -->
-                <div class="mb-4">
-                    <label class="form-label">Feature 1</label>
-                    <textarea class="input w-full" placeholder="Feature 1 Description"></textarea>
+                <!-- Action Buttons -->
+                <div class="flex justify-end gap-4 mt-6">
+                    <button class="btn btn-light">Deactivate</button>
+                    <button class="btn btn-danger">Update Product</button>
                 </div>
-                <div class="mb-4">
-                    <label class="form-label">Feature 2</label>
-                    <textarea class="input w-full" placeholder="Feature 2 Description"></textarea>
-                </div>
-                
-                <div class="flex justify-end">
-                    <button class="btn btn-light">Add Feature</button>
-                </div>
-
-                <!-- Variant 1 -->
-                <div class="mb-4">
-                    <h4 class="text-lg font-semibold">Variant 1</h4>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Type</label>
-                        <select class="select">
-                            <option value="size">Size</option>
-                            <option value="color">Color</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Value</label>
-                        <input class="input" type="text" placeholder="Size / Color">
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Price (₹)</label>
-                        <input class="input" type="text" placeholder="Price">
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Discount (%)</label>
-                        <input class="input" type="text" placeholder="Discount">
-                    </div>
-                </div>
-
-                <!-- Variant 2 -->
-                <div class="mb-4">
-                    <h4 class="text-lg font-semibold">Variant 2</h4>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Type</label>
-                        <select class="select">
-                            <option value="size">Size</option>
-                            <option value="color">Color</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Value</label>
-                        <input class="input" type="text" placeholder="Size / Color">
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Variant Price (₹)</label>
-                        <input class="input" type="text" placeholder="Price">
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label">Discount (%)</label>
-                        <input class="input" type="text" placeholder="Discount">
-                    </div>
-                </div>
-
-                <div class="flex justify-end">
-                    <button class="btn btn-primary">Add Variant</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="flex justify-end gap-4 mt-6">
-            <button class="btn btn-light">Deactivate</button>
-            <button class="btn btn-danger">Update Product</button>
+            </form>
         </div>
     </div>
 </main>
@@ -187,18 +201,12 @@
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 6px;
-        margin-bottom: 16px;
         font-size: 1rem;
     }
 
     .textarea {
         height: 120px;
         resize: vertical;
-    }
-
-    .image-input input[type="file"] {
-        padding: 0;
-        font-size: 1rem;
     }
 
     .btn {
