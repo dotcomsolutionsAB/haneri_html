@@ -10,8 +10,7 @@
 <!-- Content -->
 <main class="grow content pt-5" id="content" role="content">
     <!-- Container -->
-    <div class="container-fixed" id="content_container">
-    </div>
+    <div class="container-fixed" id="content_container"></div>
     <!-- End of Container -->
 
     <!-- Container -->
@@ -30,6 +29,7 @@
         </div>
     </div>
     <!-- End of Container -->
+
     <!-- Container -->
     <div class="container-fixed">
         <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
@@ -41,10 +41,9 @@
                         </h3>
                     </div>
                     <div class="card-body grid gap-5">
+                        <!-- Form fields -->
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                            <label class="form-label max-w-56">
-                                Product Name
-                            </label>
+                            <label class="form-label max-w-56">Product Name</label>
                             <input class="input" type="text" name="product_name" placeholder="Haneri AirElite AEW1">
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
@@ -96,12 +95,10 @@
                         <label class="form-label max-w-56">Feature 2</label>
                         <textarea class="note-codable text-edit-features" name="features[1]" aria-multiline="true"></textarea>
                     </div>
-                    <div class="flex justify-end">
-                        <button class="btn btn-light">Add Features</button>
-                    </div>
                 </div>
             </div>
         </div>
+
         <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
             <div class="col-span-2">
                 <div class="card pb-2.5">
@@ -124,15 +121,16 @@
                                 </tr>
                             </thead>
                             <tbody></tbody>
-                            <div class="flex justify-end">
-                                <button class="btn btn-primary">Add Variant</button>
-                            </div>
                         </table>
+                        <div class="flex justify-end">
+                            <button class="btn btn-primary">Add Variant</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="card">
         <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
             <div class="flex justify-end gap-2.5">
@@ -150,7 +148,7 @@
 
     // Fetch product details using POST method
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'POST',  // POST method as per your requirement
+        method: 'POST',  
         headers: {
             'Authorization': 'Bearer ' + authTokenUpdate,
             'Content-Type': 'application/json'
@@ -202,79 +200,64 @@
 
     // Update Product Button
     document.querySelector('.btn-danger').addEventListener('click', function() {
-    const updatedProduct = {
-        name: document.querySelector('input[name="product_name"]').value,
-        brand_id: document.querySelector('select[name="brand"]').value,
-        category_id: document.querySelector('select[name="category"]').value,
-        slug: document.querySelector('input[name="slug"]').value,
-        description: document.querySelector('textarea[name="description"]').value,
-        is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
-        features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
-            feature_name: `Feature ${index + 1}`,
-            feature_value: textarea.value,
-            is_filterable: true
-        })),
-        variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
-            const variantId = row.querySelector('input[type="text"]:nth-child(1)').value;
-            const variantType = row.querySelector('input[type="text"]:nth-child(2)');
-            const variantValue = row.querySelector('input[type="text"]:nth-child(3)');
-            const regularPrice = row.querySelector('input[type="number"]:nth-child(4)');
-            const customerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
-            const dealerDiscount = row.querySelector('input[type="number"]:nth-child(6)');
-            const architectDiscount = row.querySelector('input[type="number"]:nth-child(7)');
-            const description = row.querySelector('input[type="text"]:nth-child(8)');
-            const regularTax = row.querySelector('input[type="number"]:nth-child(9)');
+        const updatedProduct = {
+            name: document.querySelector('input[name="product_name"]').value,
+            brand_id: document.querySelector('select[name="brand"]').value,
+            category_id: document.querySelector('select[name="category"]').value,
+            slug: document.querySelector('input[name="slug"]').value,
+            description: document.querySelector('textarea[name="description"]').value,
+            is_active: document.querySelector('select[name="is_active"]').value === 'true' ? 1 : 0,
+            features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
+                feature_name: `Feature ${index + 1}`,
+                feature_value: textarea.value,
+                is_filterable: true
+            })),
+            variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row) => {
+                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value;
+                const variantType = row.querySelector('input[type="text"]:nth-child(2)');
+                const variantValue = row.querySelector('input[type="text"]:nth-child(3)');
+                const regularPrice = row.querySelector('input[type="number"]:nth-child(4)');
+                const customerDiscount = row.querySelector('input[type="number"]:nth-child(5)');
+                const dealerDiscount = row.querySelector('input[type="number"]:nth-child(6)');
+                const architectDiscount = row.querySelector('input[type="number"]:nth-child(7)');
+                const description = row.querySelector('input[type="text"]:nth-child(8)');
+                const regularTax = row.querySelector('input[type="number"]:nth-child(9)');
 
-            // Add console logs to verify the captured data
-            console.log('Variant data:', {
-                variantId,                
-                variantType: variantType ? variantType.value : null,
-                variantValue: variantValue ? variantValue.value : null,
-                regularPrice: regularPrice ? regularPrice.value : null,
-                customerDiscount: customerDiscount ? customerDiscount.value : null,
-                dealerDiscount: dealerDiscount ? dealerDiscount.value : null,
-                architectDiscount: architectDiscount ? architectDiscount.value : null,
-                description: description ? description.value : null,
-                regularTax: regularTax ? regularTax.value : null
-            });
+                return {
+                    id: variantId,
+                    variant_type: variantType ? variantType.value.trim() : null,
+                    variant_value: variantValue ? variantValue.value.trim() : null,
+                    regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
+                    customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
+                    dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value.trim()) : null,
+                    architect_discount: architectDiscount ? parseFloat(architectDiscount.value.trim()) : null,
+                    description: description ? description.value.trim() : null,
+                    regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
+                };
+            }).filter(Boolean) // Filter out any invalid rows or null values
+        };
 
-            return {
-                id: variantId, // Ensure variant id is passed
-                variant_type: variantType ? variantType.value.trim() : null,
-                variant_value: variantValue ? variantValue.value.trim() : null,
-                regular_price: regularPrice ? parseFloat(regularPrice.value.trim()) : null,
-                customer_discount: customerDiscount ? parseFloat(customerDiscount.value.trim()) : null,
-                dealer_discount: dealerDiscount ? parseFloat(dealerDiscount.value.trim()) : null,
-                architect_discount: architectDiscount ? parseFloat(architectDiscount.value.trim()) : null,
-                description: description ? description.value.trim() : null,
-                regular_tax: regularTax ? parseFloat(regularTax.value.trim()) : null,
-            };
-        }).filter(Boolean) // Filter out any invalid rows or null values
-    };
+        console.log('Updated Product Payload:', updatedProduct);
 
-    // Log the final payload to inspect the structure
-    console.log('Updated Product Payload:', updatedProduct);
-
-    // Send PUT request to update the product
-    fetch('<?php echo BASE_URL; ?>/products/' + productId, {
-        method: 'PUT',
-        headers: {
-            'Authorization': 'Bearer ' + authTokenUpdate,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(updatedProduct)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Product updated successfully!');
-        } else {
-            alert('Error updating product!');
-        }
-    })
-    .catch(error => console.error('Error updating product:', error));
-});
-
+        // Send PUT request to update the product
+        fetch('<?php echo BASE_URL; ?>/products/' + productId, {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'Bearer ' + authTokenUpdate,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProduct)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Product updated successfully!');
+            } else {
+                alert('Error updating product!');
+            }
+        })
+        .catch(error => console.error('Error updating product:', error));
+    });
 </script>
 
 <style>
