@@ -58,9 +58,9 @@
                             <select class="select" id="category">
                                 <option value="">Select</option>
                                 <option value="1">CEILING FAN</option>
-                                <option value="TABLE WALL PEDESTALS">TABLE WALL PEDESTALS</option>
-                                <option value="DOMESTIC EXHAUSTS">DOMESTIC EXHAUSTS</option>
-                                <option value="PERSONAL">PERSONAL</option>
+                                <option value="2">TABLE WALL PEDESTALS</option>
+                                <option value="3">DOMESTIC EXHAUSTS</option>
+                                <option value="4">PERSONAL</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
@@ -163,10 +163,32 @@
 
             // Pre-fill the form fields using IDs
             document.getElementById('product_name').value = product.name;
-            document.getElementById('brand').value = product.brand;
-            document.getElementById('category').value = product.category;
-            document.getElementById('slug').value = product.slug;
             document.getElementById('description').value = product.description || "";
+            document.getElementById('slug').value = product.slug;
+            // document.getElementById('brand').value = product.brand;
+            // document.getElementById('category').value = product.category;
+            
+            // Set the correct `brand` value based on the response
+            const brandSelect = document.getElementById('brand');
+            const categorySelect = document.getElementById('category');
+
+            // Match the brand and set the correct `option` value
+            const brandOptions = brandSelect.getElementsByTagName('option');
+            for (let option of brandOptions) {
+                if (option.text === product.brand) {
+                    option.selected = true; // Set the correct brand option
+                    break;
+                }
+            }
+
+            // Match the category and set the correct `option` value
+            const categoryOptions = categorySelect.getElementsByTagName('option');
+            for (let option of categoryOptions) {
+                if (option.text === product.category) {
+                    option.selected = true; // Set the correct category option
+                    break;
+                }
+            }
 
             // Pre-fill Features using IDs
             document.getElementById('feature_1').value = product.features[0]?.feature_value || "";
