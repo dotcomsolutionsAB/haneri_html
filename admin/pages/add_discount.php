@@ -237,6 +237,8 @@
                         confirmButtonText: 'OK'
                     }).then(() => {
                         clearFields();      // Clear input fields after submission
+                        // Redirect to the show_discount.php page after success
+                        window.location.href = "pages/show_discounts.php";  // Redirect to the desired page
                     });
                 }
             })
