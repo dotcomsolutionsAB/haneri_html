@@ -192,7 +192,7 @@
     })
     .catch(error => console.error('Error fetching product:', error));
 
-    // Update Product Button
+
     // Update Product Button
 document.getElementById('update_product').addEventListener('click', function() {
     const updatedProduct = {
@@ -202,10 +202,10 @@ document.getElementById('update_product').addEventListener('click', function() {
         slug: document.getElementById('slug').value,
         description: document.getElementById('description').value,
         is_active: document.getElementById('is_active').value === 'true' ? 1 : 0,
-        features: [
-            { feature_name: "Feature 1", feature_value: document.getElementById('feature_1').value, is_filterable: true },
-            { feature_name: "Feature 2", feature_value: document.getElementById('feature_2').value, is_filterable: true }
-        ],
+        // features: [
+        //     { feature_name: "Feature 1", feature_value: document.getElementById('feature_1').value, is_filterable: true },
+        //     { feature_name: "Feature 2", feature_value: document.getElementById('feature_2').value, is_filterable: true }
+        // ],
         variants: Array.from(document.querySelectorAll('#variants_body tr')).map((row, index) => {
             const variantId = document.getElementById(`variant_${index}_id`).value;
             const variantType = document.getElementById(`variant_${index}_type`);
