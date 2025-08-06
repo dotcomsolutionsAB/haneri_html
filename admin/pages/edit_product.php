@@ -180,6 +180,12 @@
                                         <input class="input" type="text" value="7299.00 /-">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="card pb-2.5">
+                                <div class="card-header" id="variants">
+                                    <h3 class="card-title">Variant</h3>                                    
+                                </div>
                                 <div class="card-body grid gap-5">
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Variant Type</label>
@@ -197,11 +203,11 @@
                                         <input class="input" type="text" value="7299.00 /-">
                                     </div>
                                 </div>
-                                <div class="flex justify-end">
-                                    <button class="btn btn-primary">
-                                        Add Variant
-                                    </button>
-                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <button class="btn btn-primary">
+                                    Add Variant
+                                </button>
                             </div>
                             <div class="card">
                                 <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
