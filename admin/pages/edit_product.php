@@ -5,183 +5,145 @@
 ?>
 <?php include("header1.php"); ?>
 
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
-                <!-- Container -->
-                <div class="container-fixed" id="content_container">
-                </div>
-                <!-- End of Container -->
-                
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                        <div class="flex flex-col justify-center gap-2">
-                            <h1 class="text-xl font-medium leading-none text-gray-900">
-                                Edit - Product
-                            </h1>
+<!-- End of Header -->
+<!-- Content -->
+<main class="grow content pt-5" id="content" role="content">
+    <!-- Container -->
+    <div class="container-fixed" id="content_container">
+    </div>
+    <!-- End of Container -->
+
+    <!-- Container -->
+    <div class="container-fixed">
+        <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+            <div class="flex flex-col justify-center gap-2">
+                <h1 class="text-xl font-medium leading-none text-gray-900">
+                    Edit - Product
+                </h1>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <a class="btn btn-sm btn-light" href="pages/show_products.php">
+                    Products
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End of Container -->
+    <!-- Container -->
+    <div class="container-fixed">
+        <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
+            <div class="col-span-1">
+                <div class="card pb-2.5">
+                    <div class="card-header" id="basic_settings">
+                        <h3 class="card-title">
+                            General Settings
+                        </h3>
+                    </div>
+                    <div class="card-body grid gap-5">
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">
+                                Product Name
+                            </label>
+                            <input class="input" type="text" name="product_name" placeholder="Haneri AirElite AEW1">
                         </div>
-                        <div class="flex items-center gap-2.5">
-                            <a class="btn btn-sm btn-light" href="pages/show_products.php">
-                                Products
-                            </a>
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">Brands</label>
+                            <select class="select" name="brand">
+                                <option>Brand 1</option>
+                                <option>Brand 2</option>
+                                <option>Brand 3</option>
+                            </select>
+                        </div>
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">Category</label>
+                            <select class="select" name="category">
+                                <option>Category 1</option>
+                                <option>Category 2</option>
+                                <option>Category 3</option>
+                            </select>
+                        </div>
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">Slug</label>
+                            <input class="input" type="text" name="slug" placeholder="product-name-slug">
+                        </div>
+                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                            <label class="form-label max-w-56">Is Publish</label>
+                            <select class="select" name="is_active">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-                <!-- End of Container -->
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
-                        <div class="col-span-1">
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="basic_settings">
-                                    <h3 class="card-title">
-                                        General Settings
-                                    </h3>
-                                </div>
-                                <div class="card-body grid gap-5">
-                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">
-                                            Product Name
-                                        </label>
-                                        <input class="input" type="text" placeholder="Haneri AirElite AEW1">
-                                    </div>                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Brands</label>
-                                        <select class="select">
-                                            <option>Brand 1</option>
-                                            <option>Brand 2</option>
-                                            <option>Brand 3</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Category</label>
-                                        <select class="select">
-                                            <option>Category 1</option>
-                                            <option>Category 2</option>
-                                            <option>Category 3</option>
-                                        </select>
-                                    </div>                      
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Slug</label>
-                                        <input class="input" type="text" placeholder="product-name-slug">
-                                    </div>                                    
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Is Publish</label>
-                                        <select class="select">
-                                            <option value="true">Yes</option>
-                                            <option value="false">No</option>
-                                        </select>
-                                    </div>
-                                </div>
+            </div>
+
+            <div class="grid gap-3 grid-cols-span-1">
+                <div class="card p-2.5">
+                    <div class="card-header" id="features">
+                        <h3 class="card-title">Features</h3>
+                    </div>
+                    <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
+                        <label class="form-label max-w-56">Feature 1</label>
+                        <textarea class="note-codable text-edit-features" name="features[0]" aria-multiline="true"></textarea>
+                    </div>
+                    <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
+                        <label class="form-label max-w-56">Feature 2</label>
+                        <textarea class="note-codable text-edit-features" name="features[1]" aria-multiline="true"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button class="btn btn-light">Add Features</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
+            <div class="col-span-2">
+                <div class="card pb-2.5">
+                    <div class="card-header" id="variants">
+                        <h3 class="card-title">Variants</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" id="variants">
+                            <thead>
+                                <tr>
+                                    <th>Variant No</th>
+                                    <th>Variant Value</th>
+                                    <th>Variant Price (₹)</th>
+                                    <th>Customer Discount (%)</th>
+                                    <th>Dealer Discount (%)</th>
+                                    <th>Architect Discount (%)</th>
+                                    <th>Description</th>
+                                    <th>Regular Tax (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <div class="flex justify-end">
+                                <button class="btn btn-primary">Add Variant</button>
                             </div>
-                        </div>
-                        
-                        <div class="grid gap-3 grid-cols-span-1">
-                            <div class="card p-2.5">
-                                <div class="card-header" id="features">
-                                    <h3 class="card-title">Fetaures</h3>                                    
-                                </div>
-                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
-                                    <label class="form-label max-w-56">Features 1</label>
-                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
-                                </div>
-                                <br>
-                                <div class="p-2 flex items-center flex-wrap lg:flex-nowrap gap-2.5">
-                                    <label class="form-label max-w-56">Features 2</label>
-                                    <textarea class="note-codable text-edit-features" aria-multiline="true"></textarea>
-                                </div>
-                                <div class="flex justify-end">
-                                    <button class="btn btn-light">
-                                        Add Fetaures
-                                    </button>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                    <div class="grid gap-5 grid-cols-2 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
-                        <div class="col-span-2">
-                            <div class="card pb-2.5">
-                                <div class="card-header" id="variants">
-                                    <h3 class="card-title">Variants</h3>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Variant No</th>
-                                                <th>Variant Value</th>
-                                                <th>Variant Price (₹)</th>
-                                                <th>Customer Discount (%)</th>
-                                                <th>Dealer Discount (%)</th>
-                                                <th>Architect Discount (%)</th>
-                                                <th>Description</th>
-                                                <th>Regular Tax (%)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Variant 1 -->
-                                            <tr>
-                                                <td><input class="input" type="text" value="Variant 1" /></td>
-                                                <td><input class="input" type="text" value="Large" /></td>
-                                                <td><input class="input" type="text" value="7299.00" /></td>
-                                                <td><input class="input" type="text" value="13%" /></td>
-                                                <td><input class="input" type="text" value="15%" /></td>
-                                                <td><input class="input" type="text" value="18%" /></td>
-                                                <td><input class="input" type="text" value="Variant for size Medium." /></td>
-                                                <td><input class="input" type="text" value="18%" /></td>
-                                            </tr>
-                                            <!-- Variant 2 -->
-                                            <tr>
-                                                <td><input class="input" type="text" value="Variant 1" /></td>
-                                                <td><input class="input" type="text" value="Large" /></td>
-                                                <td><input class="input" type="text" value="7299.00" /></td>
-                                                <td><input class="input" type="text" value="13%" /></td>
-                                                <td><input class="input" type="text" value="15%" /></td>
-                                                <td><input class="input" type="text" value="18%" /></td>
-                                                <td><input class="input" type="text" value="Variant for size Medium." /></td>
-                                                <td><input class="input" type="text" value="18%" /></td>
-                                            </tr>
-                                        </tbody>
-                                        <div class="flex justify-end">
-                                            <button class="btn btn-primary">
-                                                Add Variant
-                                            </button>
-                                        </div>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        </table>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
-                        <div class="flex justify-end gap-2.5">
-                            <button class="btn btn-light">
-                                Deactivate Instead
-                            </button>
-                            <button class="btn btn-danger">
-                                Update Product
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Container -->
-    
-            </main>
-            <!-- End of Content -->
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body flex flex-col lg:py-6 lg:gap-7.5 gap-7">
+            <div class="flex justify-end gap-2.5">
+                <button class="btn btn-light">Deactivate Instead</button>
+                <button class="btn btn-danger">Update Product</button>
+            </div>
+        </div>
+    </div>
+</main>
+
 <script>
-    // Get the Product ID from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-
-    // Get auth token from local storage
     const authToken = localStorage.getItem('auth_token');
 
     // Fetch product details
     fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
-        method: 'POST',
+        method: 'GET',  // Corrected to GET method
         headers: {
             'Authorization': 'Bearer ' + authToken,
             'Content-Type': 'application/json'
@@ -191,8 +153,8 @@
     .then(data => {
         if (data.success) {
             const product = data.data;
-            
-            // Pre-fill the form fields with the product details
+
+            // Pre-fill the form fields
             document.querySelector('input[name="product_name"]').value = product.name;
             document.querySelector('select[name="brand"]').value = product.brand;
             document.querySelector('select[name="category"]').value = product.category;
@@ -223,10 +185,8 @@
     })
     .catch(error => console.error('Error fetching product:', error));
 
-
-    // Update Product Button Click Event
+    // Update Product Button
     document.querySelector('.btn-danger').addEventListener('click', function() {
-        // Gather the updated product data from the form
         const updatedProduct = {
             name: document.querySelector('input[name="product_name"]').value,
             brand_id: document.querySelector('select[name="brand"]').value,
@@ -237,30 +197,30 @@
             features: Array.from(document.querySelectorAll('.text-edit-features')).map((textarea, index) => ({
                 feature_name: `Feature ${index + 1}`,
                 feature_value: textarea.value,
-                is_filterable: true // Assuming filterable by default
+                is_filterable: true
             })),
             variants: Array.from(document.querySelectorAll('#variants tbody tr')).map((row, index) => ({
-                photo_id: index + 1, // Just an example; you might need a real photo ID
+                photo_id: index + 1,
                 min_qty: row.querySelector('input[type="text"]').value,
-                is_cod: true, // Assuming COD available by default
+                is_cod: true,
                 weight: row.querySelector('input[type="text"]').value,
                 description: row.querySelector('input[type="text"]').value,
-                variant_type: 'Size', // Assuming 'Size' as an example
+                variant_type: 'Size',
                 variant_value: row.querySelector('input[type="text"]').value,
-                discount_price: 0, // Assuming 0 as an example
+                discount_price: 0,
                 regular_price: row.querySelector('input[type="text"]').value,
                 selling_price: row.querySelector('input[type="text"]').value,
-                customer_discount: 0, // Example
-                dealer_discount: 0, // Example
-                architect_discount: 0, // Example
-                hsn: 'HSN1234', // Example
-                regular_tax: 18, // Example
-                video_url: 'https://example.com/video.mp4', // Example
-                product_pdf: 'https://example.com/pdf.pdf' // Example
+                customer_discount: 0,
+                dealer_discount: 0,
+                architect_discount: 0,
+                hsn: 'HSN1234',
+                regular_tax: 18,
+                video_url: 'https://example.com/video.mp4',
+                product_pdf: 'https://example.com/pdf.pdf'
             }))
         };
 
-        // Send PUT request to update product
+        // Send PUT request to update the product
         fetch('<?php echo BASE_URL; ?>/products/' + productId, {
             method: 'PUT',
             headers: {
@@ -279,10 +239,7 @@
         })
         .catch(error => console.error('Error updating product:', error));
     });
-
 </script>
-            <!-- Footer -->
-<?php include("footer1.php"); ?>
 
 <style>
     .text-edit{
@@ -304,3 +261,5 @@
         text-align: justify;
     }
 </style>
+
+<?php include("footer1.php"); ?>
