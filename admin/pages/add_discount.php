@@ -31,29 +31,32 @@
                             </div>
                             <div class="card-body grid gap-5">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                    <!-- Category Name -->
+                                    <!-- Select Products -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">User Name</label>
-                                        <input class="input" type="text" id="userName" placeholder="User Name">
-                                        <input class="input" type="text" id="userId" placeholder="User Id">
+                                        <label class="form-label max-w-56">Select Product</label>
+                                        <select class="select" id="chooseProduct">
+                                            <option value="">Loading products...</option>
+                                        </select>
                                     </div>
 
-                                    <!-- Sort Number -->
+                                    <!-- Select User -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Product Variant ID</label>
-                                        <input class="input" type="text" id="variant_id" placeholder="Variant ID">
+                                        <label class="form-label max-w-56">Select User</label>
+                                        <select class="select" id="chooseUser">
+                                            <option value="">Loading users...</option>
+                                        </select>
                                     </div>
 
-                                    <!-- Description -->
+                                    <!-- Discount -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount Value</label>
+                                        <label class="form-label max-w-56">Discount %</label>
                                         <input class="input" type="text" id="discount" placeholder="Discount Value">
                                     </div>
 
-                                    <!-- Parent Category Name -->
+                                    <!-- Category Name -->
                                     <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                                         <label class="form-label max-w-56">Select Category</label>
-                                        <select class="select" id="parentCategory">
+                                        <select class="select" id="chooseCategory">
                                             <option value="">Loading categories...</option>
                                         </select>
                                     </div>
@@ -73,22 +76,93 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const parentCategorySelect = document.querySelector("#parentCategory");
-        const saveButton = document.querySelector("#saveCategory");
-        const categoryNameInput = document.querySelector("#categoryName");
-        const sortNumberInput = document.querySelector("#sortNumber");
-        const descriptionInput = document.querySelector("#description");
-        const photoInput = document.querySelector("#photo");
+        const productSelect = document.querySelector("#chooseProduct");
+        const userSelect = document.querySelector("#chooseUser");
+        const categorySelect = document.querySelector("#chooseCategory");
+        const discountInput = document.querySelector("#discount");
+        const saveButton = document.querySelector("#saveDiscount");
 
-        const apiUrl = `<?php echo BASE_URL; ?>/categories/fetch`;
-        const authToken = localStorage.getItem('auth_token'); // Replace with actual token
-
-        /** FETCH CATEGORIES **/
-        function fetchCategories() {
-            fetch(apiUrl, {
+        const token = localStorage.getItem('auth_token');
+        
+        /** FETCH PRODUCTS **/ 
+        function fetchProducts() {
+            fetch("<?php echo BASE_URL; ?>/products/get_products", {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${authToken}`,
+                    "Authorization": `Bearer ${token}`,
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ limit: 200 })  // Send limit as 200
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.success) {
+                    productSelect.innerHTML = "";  // Clear existing options
+
+                    // Default option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select Product";
+                    productSelect.appendChild(defaultOption);
+
+                    // Populate dropdown with product variants
+                    data.data.forEach(product => {
+                        product.variants.forEach(variant => {
+                            const option = document.createElement("option");
+                            option.value = variant.id;  // Use variant ID
+                            option.textContent = `${product.name} - ${variant.variant_value}`;  // Show product name and variant value
+                            productSelect.appendChild(option);
+                        });
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching products:", error);
+            });
+        }
+
+        /** FETCH USERS **/ 
+        function fetchUsers() {
+            fetch("<?php echo BASE_URL; ?>/users/get_users", {  // Use your actual API endpoint
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.success) {
+                    userSelect.innerHTML = "";  // Clear existing options
+
+                    // Default option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select User";
+                    userSelect.appendChild(defaultOption);
+
+                    // Populate dropdown with users
+                    data.data.forEach(user => {
+                        const option = document.createElement("option");
+                        option.value = user.id;  // Use user ID
+                        option.textContent = user.name;  // Show user name
+                        userSelect.appendChild(option);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching users:", error);
+            });
+        }
+
+        /** FETCH CATEGORIES **/ 
+        function fetchCategories() {
+            fetch("<?php echo BASE_URL; ?>/categories/fetch", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 }
@@ -96,20 +170,20 @@
             .then(response => response.json())
             .then(data => {
                 if (data && data.data) {
-                    parentCategorySelect.innerHTML = ""; // Clear existing options
+                    categorySelect.innerHTML = "";  // Clear existing options
 
                     // Default option
                     const defaultOption = document.createElement("option");
                     defaultOption.value = "";
-                    defaultOption.textContent = "Select";
-                    parentCategorySelect.appendChild(defaultOption);
+                    defaultOption.textContent = "Select Category";
+                    categorySelect.appendChild(defaultOption);
 
-                    // Populate dropdown with ALL categories (parent & child)
+                    // Populate dropdown with categories
                     data.data.forEach(category => {
                         const option = document.createElement("option");
-                        option.value = category.parent_id; // Use category parent_id as the value
+                        option.value = category.parent_id;  // Use category parent_id as the value
                         option.textContent = category.name;
-                        parentCategorySelect.appendChild(option);
+                        categorySelect.appendChild(option);
                     });
                 }
             })
@@ -118,22 +192,21 @@
             });
         }
 
-        /** SUBMIT CATEGORY **/
-        function submitCategory() {
+        /** SUBMIT DISCOUNT **/ 
+        function submitDiscount() {
             const formData = {
-                name: categoryNameInput.value.trim(),
-                parent_id: parentCategorySelect.value !== "" ? parentCategorySelect.value : null,
-                photo: photoInput.files.length > 0 ? photoInput.files[0].name : null,
-                custom_sort: sortNumberInput.value.trim() || 0,
-                description: descriptionInput.value.trim() || null
+                user_id: userSelect.value,
+                product_variant_id: productSelect.value,
+                discount: discountInput.value.trim(),
+                category_id: categorySelect.value
             };
 
-            console.log("Submitting Data:", formData); // Debugging
+            console.log("Submitting Discount:", formData); // Debugging
 
-            fetch(`<?php echo BASE_URL; ?>/categories`, {
+            fetch(`<?php echo BASE_URL; ?>/discount/add`, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${authToken}`,
+                    "Authorization": `Bearer ${token}`,
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
@@ -143,7 +216,6 @@
             .then(data => {
                 console.log("Success Response:", data);
                 if (data.message) {
-                    // Show success SweetAlert
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
@@ -151,36 +223,36 @@
                         confirmButtonText: 'OK'
                     }).then(() => {
                         clearFields();      // Clear input fields after submission
-                        fetchCategories();  // Refresh dropdown
                     });
                 }
             })
             .catch(error => {
-                console.error("Error submitting category:", error);
+                console.error("Error submitting discount:", error);
                 // Show error SweetAlert
                 Swal.fire({
                     icon: 'error',
                     title: 'Error!',
-                    text: 'Error submitting category: ' + error.message
+                    text: 'Error submitting discount: ' + error.message
                 });
             });
         }
 
         function clearFields() {
-            categoryNameInput.value = "";
-            sortNumberInput.value = "";
-            descriptionInput.value = "";
-            parentCategorySelect.value = ""; // Reset dropdown
-            photoInput.value = "";           // Reset file input
+            userSelect.value = "";
+            productSelect.value = "";
+            discountInput.value = "";
+            categorySelect.value = ""; // Reset dropdown
         }
 
         // Event listener for save button
         saveButton.addEventListener("click", function (event) {
             event.preventDefault(); // Prevent default behavior
-            submitCategory();
+            submitDiscount();
         });
 
-        // Load categories on page load
+        // Fetch products, users, and categories on page load
+        fetchProducts();
+        fetchUsers();
         fetchCategories();
     });
 </script>
