@@ -50,14 +50,14 @@
                             <label class="form-label max-w-56">Brands</label>
                             <select class="select" id="brand">
                                 <option value="">Select</option>
-                                <option value="Haneri">Haneri</option>
+                                <option value="1">Haneri</option>
                             </select>
                         </div>
                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                             <label class="form-label max-w-56">Category</label>
                             <select class="select" id="category">
                                 <option value="">Select</option>
-                                <option value="CEILING FAN">CEILING FAN</option>
+                                <option value="1">CEILING FAN</option>
                                 <option value="TABLE WALL PEDESTALS">TABLE WALL PEDESTALS</option>
                                 <option value="DOMESTIC EXHAUSTS">DOMESTIC EXHAUSTS</option>
                                 <option value="PERSONAL">PERSONAL</option>
