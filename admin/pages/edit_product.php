@@ -236,7 +236,7 @@
             <!-- Footer -->
 <?php include("footer1.php"); ?>
 
-<!-- <style>
+<style>
     .text-edit{
         width: 100%;
         min-height: 120px;
@@ -246,4 +246,4 @@
         padding: 2px 10px;
         text-align: justify;
     }
-</style> -->
+</style>
