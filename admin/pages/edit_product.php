@@ -333,6 +333,7 @@
                 // Log the row to verify its structure
                 console.log('Row:', row);
 
+                const variantId = row.querySelector('input[type="text"]:nth-child(1)').value; // Get variant id
                 const variantValue = row.querySelector('input[type="text"]:nth-child(2)');
                 const regularPrice = row.querySelector('input[type="number"]:nth-child(3)');
                 const customerDiscount = row.querySelector('input[type="number"]:nth-child(4)');
@@ -342,12 +343,13 @@
                 const regularTax = row.querySelector('input[type="number"]:nth-child(8)');
 
                 // Check if the necessary elements exist before accessing their values
-                if (!variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
+                if (!variantId || !variantValue || !regularPrice || !customerDiscount || !dealerDiscount || !architectDiscount || !description || !regularTax) {
                     console.error('One or more inputs are missing in the row:', row);
                     return; // Skip this variant if any input is missing
                 }
 
                 return {
+                    id: variantId, // Pass the variant id here
                     variant_value: variantValue.value,
                     regular_price: parseFloat(regularPrice.value),
                     customer_discount: parseFloat(customerDiscount.value),
