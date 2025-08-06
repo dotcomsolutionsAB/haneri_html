@@ -83,9 +83,6 @@
                                                     Roles
                                                 </th>
                                                 <th class="text-gray-700 font-normal min-w-[100px]">
-                                                    Switch User
-                                                </th>
-                                                <th class="text-gray-700 font-normal min-w-[100px]">
                                                     Selected Type
                                                 </th>
                                                 <th class="min-w-[165px]">
@@ -141,6 +138,41 @@
         <!-- End of Content -->
 <!-- Switch User -->
 <script>
+    // Function to open the popup and switch user role
+    function openSwitchUserPopup(userId, selectedType) {
+        // Define SweetAlert2 popup with role selection
+        Swal.fire({
+            title: 'Switch User Role',
+            text: `Change the role of ${userId} (Current: ${selectedType})`,
+            input: 'select',
+            inputOptions: {
+                'admin': 'Admin',
+                'customer': 'Customer',
+                'architect': 'Architect',
+                'dealer': 'Dealer',
+                'vendor': 'Vendor'
+            },
+            inputValue: selectedType,  // Preselect current role
+            showCancelButton: true,
+            confirmButtonText: 'Switch Role',
+            cancelButtonText: 'Cancel',
+            preConfirm: (role) => {
+                if (!role) {
+                    Swal.showValidationMessage('Please select a role');
+                    return false;
+                }
+                return role;
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const selectedRole = result.value; // The selected role
+
+                // Call API to switch user role
+                switchUser(userId, selectedRole);
+            }
+        });
+    }
+
     // Function to handle the switch-user API call
     function switchUser(userId, selectedType) {
         const token = localStorage.getItem('auth_token');  // Get the auth token from local storage
@@ -148,7 +180,7 @@
         // Data to send in the body
         const requestData = {
             user_id: userId,
-            role: selectedType.toLowerCase()
+            role: selectedType.toLowerCase()  // Convert role to lowercase
         };
 
         // API call to switch user
@@ -302,15 +334,6 @@
                                 </span>
                             </div>
                         </td>
-                       <td>
-                            <div class="flex flex-wrap gap-2.5 mb-2">
-                                ${user.selected_type != null ? 
-                                    `<button class="btn btn-sm btn-primary" onclick="switchUser(${user.id}, '${user.selected_type}')">
-                                       Switch to ${user.selected_type}
-                                    </button>` 
-                                    : ''}
-                            </div>
-                        </td>
                         <td>
                             <span class="badge badge-sm badge-outline ${user.selected_type != null ? 'badge-primary' : 'badge-danger'}">
                                 ${user.selected_type != null ? user.selected_type : 'N/A'}
@@ -384,14 +407,11 @@
                     <div class="menu-dropdown menu-default w-full max-w-[175px]"
                         data-menu-dismiss="true">
                         <div class="menu-item">
-                            <a class="menu-link" href="users.php?id=${user.id}">
+                            <a class="menu-link" onclick="openSwitchUserPopup(${user.id}, '${user.selected_type}')">
                                 <span class="menu-icon">
-                                    <i class="ki-filled ki-search-list">
-                                    </i>
+                                    <i class="ki-filled ki-search-list"></i>
                                 </span>
-                                <span class="menu-title">
-                                    View
-                                </span>
+                                <span class="menu-title">Switch User</span>
                             </a>
                         </div>
                         <div class="menu-separator">

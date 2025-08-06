@@ -12,66 +12,66 @@
         width:100%;
     }
 </style>
-            <!-- End of Header -->
-            <!-- Content -->
-            <main class="grow content pt-5" id="content" role="content">
-                <!-- Container -->
-                <div class="container-fixed" id="content_container">
-                </div>
-                <!-- End of Container -->
-                
-                <!-- Container -->
-                <div class="container-fixed">
-                    <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
-                        <div class="card pb-2.5">
-                            <div class="card-header" id="basic_settings">
-                                <h3 class="card-title">
-                                    Add Discount
-                                </h3>
+    <!-- End of Header -->
+    <!-- Content -->
+    <main class="grow content pt-5" id="content" role="content">
+        <!-- Container -->
+        <div class="container-fixed" id="content_container">
+        </div>
+        <!-- End of Container -->
+        
+        <!-- Container -->
+        <div class="container-fixed">
+            <div class="grid gap-5 grid-cols-1 lg:gap-7.5 xl:w-[68.75rem] mx-auto">
+                <div class="card pb-2.5">
+                    <div class="card-header" id="basic_settings">
+                        <h3 class="card-title">
+                            Add Discount
+                        </h3>
+                    </div>
+                    <div class="card-body grid gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                            <!-- User Name -->
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <label class="form-label max-w-56">User Name</label>
+                                <select class="select" id="chooseUser">
+                                    <option value="">Loading users...</option>
+                                </select>
                             </div>
-                            <div class="card-body grid gap-5">
-                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                    <!-- User Name -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">User Name</label>
-                                        <select class="select" id="chooseUser">
-                                            <option value="">Loading users...</option>
-                                        </select>
-                                    </div>
 
-                                    <!-- Product Variant ID -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Select Product</label>
-                                        <select class="select" id="chooseProduct">
-                                            <option value="">Loading products...</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Discount Value -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Discount %</label>
-                                        <input class="input" type="text" id="discount" placeholder="Discount Value">
-                                    </div>
-
-                                    <!-- Category Select -->
-                                    <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-                                        <label class="form-label max-w-56">Select Category</label>
-                                        <select class="select" id="chooseCategory">
-                                            <option value="">Loading categories...</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-end gap-5">
-                                    <button class="btn btn-primary" id="saveDiscount">Save Discount</button>
-                                </div>
+                            <!-- Product Variant ID -->
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <label class="form-label max-w-56">Select Product</label>
+                                <select class="select" id="chooseProduct">
+                                    <option value="">Loading products...</option>
+                                </select>
                             </div>
+
+                            <!-- Discount Value -->
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <label class="form-label max-w-56">Discount %</label>
+                                <input class="input" type="text" id="discount" placeholder="Discount Value">
+                            </div>
+
+                            <!-- Category Select -->
+                            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                <label class="form-label max-w-56">Select Category</label>
+                                <select class="select" id="chooseCategory">
+                                    <option value="">Loading categories...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end gap-5">
+                            <button class="btn btn-primary" id="saveDiscount">Save Discount</button>
                         </div>
                     </div>
                 </div>
-                <!-- End of Container -->
-            </main>
-            <!-- End of Content -->
+            </div>
+        </div>
+        <!-- End of Container -->
+    </main>
+    <!-- End of Content -->
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
