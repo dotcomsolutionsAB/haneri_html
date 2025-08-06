@@ -369,8 +369,9 @@
                                 title: 'Deleted!',
                                 text: data.message || 'Discount deleted successfully!'
                             }).then(() => {
-                                // Optionally refresh/reload categories if needed:
-                                fetchDiscounts();
+                                setTimeout(() => {
+                                    window.location.reload();  // Reload the page after 1 second
+                                }, 1000);
                             });
                         },
                         error: function (xhr, status, error) {
