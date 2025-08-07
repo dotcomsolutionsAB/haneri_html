@@ -143,7 +143,7 @@
     const authTokenUpdate = localStorage.getItem('auth_token');
 
     // Fetch product details using POST method
-    fetch('<?php echo BASE_URL; ?>/products/get_products/' + productId, {
+    fetch('<?php echo BASE_URL; ?>/products/get_admin/' + productId, {
         method: 'POST',  
         headers: {
             'Authorization': 'Bearer ' + authTokenUpdate,
