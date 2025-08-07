@@ -99,7 +99,7 @@
                 // }
 
                 let productName = item.product_name;
-                let variantName = item.variant_value ? `(${item.variant.variant_value})` : "";
+                let variantName = item.variant_value ? `(${item.variant_value})` : "";
                 let sellingPrice = parseFloat((item.selling_price || "0").replace(/,/g, ""));
                 let productImage = item.file_urls[0];
                 let quantity = item.quantity || 1;
