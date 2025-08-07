@@ -421,6 +421,7 @@
         document.getElementById('quotation-methods').style.display = 'none'; // Hide the button
     }
 </script>
+
 <script>
     // Event listener for the 'Get Quotation' button
     document.getElementById('get-quotation-btn').addEventListener('click', function () {
@@ -436,10 +437,10 @@
                 </div>
             `,
             confirmButtonText: 'Create Quote',
-            confirmButtonColor: 'green',
+            confirmButtonColor: '#00473e',
             showCancelButton: true,
             cancelButtonText: 'Cancel',
-            cancelButtonColor: 'red',
+            cancelButtonColor: '#dc3545',
             preConfirm: () => {
                 const qUser = document.getElementById('q_user').value;
                 const qEmail = document.getElementById('q_email').value;
@@ -461,7 +462,7 @@
                 };
 
                 // API request
-                fetch('{{base_url}}/quotation', {
+                fetch('<?php echo BASE_URL; ?>/quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
