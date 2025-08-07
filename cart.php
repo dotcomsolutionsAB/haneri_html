@@ -398,7 +398,7 @@
                     </div>
                     <br>
                     <div class="quotation-methods" id="quotation-methods">
-                        <a href="#" class="btn btn-block btn-danger">
+                        <a href="#" class="btn btn-block btn-danger" id="get-quotation-btn">
                             📃 Get Quotation <i class="fa fa-arrow-down"></i>
                         </a>
                     </div>
