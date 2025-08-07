@@ -466,6 +466,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${cartAuthToken}`,  // Pass the auth token here
                     },
                     body: JSON.stringify(requestData),
                 })
