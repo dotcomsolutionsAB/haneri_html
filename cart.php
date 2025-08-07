@@ -396,9 +396,10 @@
                             Proceed to Checkout <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
+                    <br>
                     <div class="quotation-methods" id="quotation-methods">
-                        <a href="#" class="btn btn-block btn-dark">
-                            Get Quotation <i class="fa fa-arrow-down"></i>
+                        <a href="#" class="btn btn-block btn-danger">
+                            📃 Get Quotation <i class="fa fa-arrow-down"></i>
                         </a>
                     </div>
                 </div>
@@ -406,11 +407,7 @@
         </div>
     </div>
 </main>
-<div class="quotation-methods" id="quotation-methods">
-    <a href="#" class="btn btn-block btn-dark">
-        Get Quotation <i class="fa fa-arrow-down"></i>
-    </a>
-</div>
+
 
 <script>
     // Get values from localStorage
