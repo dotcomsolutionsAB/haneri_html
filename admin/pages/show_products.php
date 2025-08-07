@@ -265,6 +265,7 @@
         fetchProducts();
     });
 </script>
+
 <script>
     const generateActionButtons = (product) => {
         const productId = product.id || "invalid";
