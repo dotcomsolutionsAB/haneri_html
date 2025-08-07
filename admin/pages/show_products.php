@@ -138,7 +138,7 @@
             const offset = (currentPage - 1) * itemsPerPage;
 
             $.ajax({
-                url: '<?php echo BASE_URL; ?>/products/get_products',
+                url: '<?php echo BASE_URL; ?>/products/get_admin',
                 type: 'POST',
                 headers: { Authorization: `Bearer ${token}` },
                 data: { search: '', limit: itemsPerPage, offset: offset},
@@ -214,7 +214,10 @@
                             <div class="text-gray-700 text-xs">${variantDetails}</div>
                             <div class="text-gray-800 text-s pt-2"><b>₹${highestPrice}.00 - ₹${lowestPrice}.00</b></div>
                         </td>
-                        <td class="text-gray-800 font-normal">${product.discount_price || "00"}</td>
+                        <td class="text-gray-800 font-normal">
+                            <span class="text-gray-700 text-xs pt-3">Customer Discount(%): ${product.customer_discount || "N/A"}</span> <br>
+                            <span class="text-gray-700 text-xs pt-3">Dealer Discount(%): ${product.dealer_discount || "N/A"}</span> <br>
+                            <span class="text-gray-700 text-xs pt-3">Architect Discount(%): ${product.architect_discount || "N/A"}</span>
                         <td>
                             <span class="badge badge-sm badge-outline ${product.is_active ? "badge-success" : "badge-danger"}">
                                 ${product.is_active ? "Active" : "Inactive"}
