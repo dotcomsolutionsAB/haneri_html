@@ -93,10 +93,10 @@
             let taxRate = 0.18; // example tax rate
 
             cartItems.forEach((item, index) => {
-                if (!item.product) {
-                    console.warn("Missing product details:", item);
-                    return;
-                }
+                // if (!item.product) {
+                //     console.warn("Missing product details:", item);
+                //     return;
+                // }
 
                 let productName = item.product_name;
                 let variantName = item.variant_value ? `(${item.variant.variant_value})` : "";
