@@ -101,6 +101,7 @@
                 let productName = item.product_name;
                 let variantName = item.variant_value ? `(${item.variant.variant_value})` : "";
                 let sellingPrice = parseFloat((item.selling_price || "0").replace(/,/g, ""));
+                let productImage = item.file_urls[0];
                 let quantity = item.quantity || 1;
                 let subtotal = sellingPrice * quantity;
 
@@ -111,7 +112,7 @@
 
                 cartTableBody.innerHTML += `
                     <tr data-cart-id="${item.id}">
-                        <td data-label="Image"><img src="images/f${(index % 10) + 1}.png" alt="${productName}" width="50"></td>
+                        <td data-label="Image"><img src="${productImage}" alt="${productName}" width="50"></td>
                         <td data-label="Product">${productName} ${variantName}</td>
                         <td data-label="Price">₹${sellingPrice.toFixed(2)}</td>
                         <td data-label="Quantity">
