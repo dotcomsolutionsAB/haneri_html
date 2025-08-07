@@ -98,12 +98,10 @@
                     return;
                 }
 
-                let productName = item.product.name;
-                let variantName = item.variant ? `(${item.variant.variant_value})` : "";
-                let sellingPrice = item.variant
-                    ? parseFloat(item.variant.selling_price)
-                    : parseFloat(item.product.selling_price || 0);
-                let quantity = item.quantity;
+                let productName = item.product_name;
+                let variantName = item.variant_value ? `(${item.variant.variant_value})` : "";
+                let sellingPrice = parseFloat((item.selling_price || "0").replace(/,/g, ""));
+                let quantity = item.quantity || 1;
                 let subtotal = sellingPrice * quantity;
 
                 if (isNaN(subtotal)) subtotal = 0;
@@ -485,5 +483,6 @@
         });
     });
 </script>
+
 <link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
