@@ -396,11 +396,34 @@
                             Proceed to Checkout <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
+                    <div class="quotation-methods" id="quotation-methods">
+                        <a href="#" class="btn btn-block btn-dark">
+                            Get Quotation <i class="fa fa-arrow-down"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+<div class="quotation-methods" id="quotation-methods">
+    <a href="#" class="btn btn-block btn-dark">
+        Get Quotation <i class="fa fa-arrow-down"></i>
+    </a>
+</div>
+
+<script>
+    // Get values from localStorage
+    const cartAuthToken = localStorage.getItem('auth_token');
+    const userRole = localStorage.getItem('user_role');
+
+    // Check if auth_token exists and user_role is not 'customer'
+    if (cartAuthToken && userRole !== 'customer') {
+        document.getElementById('quotation-methods').style.display = 'block'; // Show the button
+    } else {
+        document.getElementById('quotation-methods').style.display = 'none'; // Hide the button
+    }
+</script>
 
 <link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
