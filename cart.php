@@ -421,6 +421,67 @@
         document.getElementById('quotation-methods').style.display = 'none'; // Hide the button
     }
 </script>
+<script>
+    // Event listener for the 'Get Quotation' button
+    document.getElementById('get-quotation-btn').addEventListener('click', function () {
+        // Show the SweetAlert popup with the form
+        Swal.fire({
+            title: 'Create Quotation',
+            html: `
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <input id="q_user" class="swal2-input" placeholder="User Name (required)" required>
+                    <input id="q_email" class="swal2-input" placeholder="Email (optional)">
+                    <input id="q_mobile" class="swal2-input" placeholder="Mobile (optional)">
+                    <input id="q_address" class="swal2-input" placeholder="Address (optional)">
+                </div>
+            `,
+            confirmButtonText: 'Create Quote',
+            confirmButtonColor: 'green',
+            showCancelButton: true,
+            cancelButtonText: 'Cancel',
+            cancelButtonColor: 'red',
+            preConfirm: () => {
+                const qUser = document.getElementById('q_user').value;
+                const qEmail = document.getElementById('q_email').value;
+                const qMobile = document.getElementById('q_mobile').value;
+                const qAddress = document.getElementById('q_address').value;
 
+                // Validate required fields
+                if (!qUser) {
+                    Swal.showValidationMessage('User Name is required');
+                    return false;
+                }
+
+                // Prepare the data for the API request
+                const requestData = {
+                    q_user: qUser,
+                    q_email: qEmail,
+                    q_mobile: qMobile,
+                    q_address: qAddress
+                };
+
+                // API request
+                fetch('{{base_url}}/quotation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire('Success', 'Quotation created successfully!', 'success');
+                    } else {
+                        Swal.fire('Error', 'Failed to create quotation.', 'error');
+                    }
+                })
+                .catch(error => {
+                    Swal.fire('Error', 'Something went wrong. Please try again later.', 'error');
+                });
+            }
+        });
+    });
+</script>
 <link rel="stylesheet" href="assets/css/style.min.css">
 <?php include("footer.php"); ?>
