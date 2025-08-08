@@ -165,8 +165,8 @@
                 shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
             }
 
-          // Determine shipping based on subtotalWithTax
-        //   const shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
+            // Determine shipping based on subtotalWithTax
+            //   const shipping = subtotalWithTax > 1000 ? 0 : shippingCharge;
 
           // Final total
           const total = subtotalWithTax + shipping;
@@ -461,7 +461,7 @@
                 };
 
                 // API request
-                fetch('<?php echo BASE_URL; ?>/quotation', {
+                fetch('<?php echo BASE_URL; ?>/quotation/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
