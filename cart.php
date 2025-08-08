@@ -471,9 +471,14 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.success) {
-                        Swal.fire('Success', 'Quotation created successfully!', 'success');
+                    if (data.data && data.data.message === "Quotation created successfully") {
+                        // Show success message
+                        Swal.fire('Success', data.data.message, 'success');
+                        
+                        // Optionally, you can log the quotation details if needed
+                        console.log('Quotation Details:', data.data.data);
                     } else {
+                        // Show error message if the message doesn't match or is missing
                         Swal.fire('Error', 'Failed to create quotation.', 'error');
                     }
                 })
