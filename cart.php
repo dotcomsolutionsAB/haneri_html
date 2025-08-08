@@ -475,6 +475,14 @@
                         // Show success message
                         Swal.fire('Success', data.data.message, 'success');
                         
+                        // Get the invoice_quotation URL
+                        const invoiceUrl = data.data.data.invoice_quotation;
+
+                        // Open the invoice in a new tab
+                        if (invoiceUrl) {
+                            window.open(invoiceUrl, '_blank');
+                        }
+                        
                         // Optionally, you can log the quotation details if needed
                         console.log('Quotation Details:', data.data.data);
                     } else {
