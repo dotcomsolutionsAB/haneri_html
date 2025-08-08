@@ -461,7 +461,7 @@
                 };
 
                 // API request
-                fetch('<?php echo BASE_URL; ?>/quotation/', {
+                fetch('<?php echo BASE_URL; ?>/quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
