@@ -471,7 +471,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.data && data.data.message === "Quotation created successfully") {
+                    if (data.data && data.message === "Quotation created successfully!") {
                         // Show success message
                         Swal.fire('Success', data.data.message, 'success');
                         
