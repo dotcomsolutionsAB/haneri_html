@@ -29,6 +29,11 @@
 					</li>
 
 					<li class="nav-item">
+						<a class="nav-link" id="quotation-tab" data-toggle="tab" href="#quotation" role="tab"
+							aria-controls="quotation" aria-selected="true">Quotation</a>
+					</li>
+
+					<li class="nav-item">
 						<a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab"
 							aria-controls="address" aria-selected="false">Addresses</a>
 					</li>
@@ -278,6 +283,34 @@
 						});
 					});
 				</script>
+
+				<!-- Orders Showing For each Profile -->
+				<div class="tab-pane fade" id="quotation" role="tabpanel">
+					<div class="quotation-content">
+						<h3 class="account-sub-title d-none d-md-block">
+							<i class="sicon-social-dropbox align-middle mr-3"></i>Orders
+						</h3>
+						<div class="quotation-table-container text-center">
+							<table class="table table-quotation text-left">
+								<thead>
+									<tr>
+										<th class="quotation-id">ORDER</th>
+										<th class="quotation-date">BILLING</th>
+										<th class="quotation-status">STATUS</th>
+										<th class="quotation-price">TOTAL</th>
+										<th class="quotation-action">ACTIONS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr> This is quotation</tr>
+								</tbody>
+							</table>
+							<hr class="mt-0 mb-3 pb-2" />
+						</div>
+						<!-- <a href="shop.php" class="btn btn-dark">Go Shop</a> -->
+					</div>
+				</div>
+
 
 				<div class="tab-pane fade" id="address" role="tabpanel">
 					<h3 class="account-sub-title d-none d-md-block mb-1">
