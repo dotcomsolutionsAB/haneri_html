@@ -298,7 +298,8 @@
 										<th class="quotation-date">USER</th>
 										<th class="quotation-status">DETAILS</th>
 										<th class="quotation-price">TOTAL</th>
-										<th class="quotation-action">ACTIONS</th>
+										<th class="quotation-action">DOWNLOAD</th>
+										<th class="quotation-action">ACTION</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -362,8 +363,69 @@
 												${quotation.invoice_quotation ? "View Invoice" : "No Invoice Available"}
 											</a>
 										</td>
+										<td class="text-center">
+											<a href="${quotation.invoice_quotation || '#'}" class="btn btn-default" target="_blank">
+												${quotation.invoice_quotation ? "View Invoice" : "No Invoice Available"}
+											</a>
+										</td>
 									</tr>
 								`;
+							});
+
+							// Attach event listeners for delete buttons
+							const deleteButtons = document.querySelectorAll(".delete-quotation");
+							deleteButtons.forEach(button => {
+								button.addEventListener("click", function () {
+									const quotationId = this.getAttribute("data-id");
+
+									// SweetAlert for delete confirmation
+									Swal.fire({
+										title: 'Are you sure?',
+										text: `Do you want to delete quotation #${quotationId}?`,
+										icon: 'warning',
+										showCancelButton: true,
+										confirmButtonColor: '#d33',
+										cancelButtonColor: '#3085d6',
+										confirmButtonText: 'Yes, delete it!'
+									}).then((result) => {
+										if (result.isConfirmed) {
+											// Send DELETE request to API
+											fetch(`{{base_url}}/quotation/${quotationId}`, {
+												method: "DELETE",
+												headers: {
+													"Content-Type": "application/json",
+													"Authorization": `Bearer ${authToken}`
+												}
+											})
+											.then(response => response.json())
+											.then(data => {
+												if (data.success) {
+													// Successfully deleted, remove the row from the table
+													this.closest("tr").remove();
+													Swal.fire(
+														'Deleted!',
+														'Quotation has been deleted successfully.',
+														'success'
+													);
+												} else {
+													Swal.fire(
+														'Error!',
+														'Failed to delete quotation. Please try again.',
+														'error'
+													);
+												}
+											})
+											.catch(error => {
+												console.error("Error deleting quotation:", error);
+												Swal.fire(
+													'Error!',
+													'An error occurred while deleting the quotation.',
+													'error'
+												);
+											});
+										}
+									});
+								});
 							});
 						})
 						.catch(error => {
@@ -1087,3 +1149,125 @@
 	});
 </script>
 <?php include("footer.php"); ?>
+
+
+
+
+<!-- Quotations Fetch Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const authToken = localStorage.getItem("auth_token");
+        if (!authToken) {
+            console.log("User not logged in.");
+            return;
+        }
+
+        fetch("<?php echo BASE_URL; ?>/quotation/fetch", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${authToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(responseData => {
+            console.log("API Response:", responseData); // Debugging - Check API response in Console
+
+            // Extract quotations from responseData
+            const quotations = responseData.data; // Now correctly accessing the quotations array
+            const tableBody = document.querySelector(".table-quotation tbody");
+            tableBody.innerHTML = ""; // Clear table content
+
+            if (!Array.isArray(quotations) || quotations.length === 0) {
+                console.log("No quotations found.");
+                tableBody.innerHTML = `<tr><td colspan="6" class="text-center">No Quotations Found</td></tr>`; // Updated for 6 columns
+                return;
+            }
+            quotations.forEach(quotation => {
+                const quotationId = quotation.items.length > 0 ? quotation.items[0].quotation_id : "N/A"; 
+                const quotationStatus = quotation.status || "Pending"; // Set dynamic status here
+                const quotationBill = quotation.q_address || "NA";
+                const totalAmount = `₹${quotation.total_amount || '0.00'}`;
+
+                // Debugging
+                // console.log(`Quotation ID: ${quotationId}, Total: ${totalAmount}`);
+
+                tableBody.innerHTML += `
+                    <tr>
+                        <td class="text-center">#${quotationId}</td>
+                        <td class="addressess">${quotationBill}</td>
+                        <td class="text-center">${quotationStatus}</td>
+                        <td class="text-center">${totalAmount}</td>
+                        <td class="text-center">
+                            <a href="${quotation.invoice_quotation || '#'}" class="btn btn-default" target="_blank">
+                                ${quotation.invoice_quotation ? "View Invoice" : "No Invoice Available"}
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-danger delete-quotation" data-id="${quotationId}">Delete</button> <!-- Delete Button -->
+                        </td>
+                    </tr>
+                `;
+            });
+
+            // Attach event listeners for delete buttons
+            const deleteButtons = document.querySelectorAll(".delete-quotation");
+            deleteButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const quotationId = this.getAttribute("data-id");
+
+                    // SweetAlert for delete confirmation
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: `Do you want to delete quotation #${quotationId}?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Send DELETE request to API
+                            fetch(`{{base_url}}/quotation/${quotationId}`, {
+                                method: "DELETE",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${authToken}`
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    // Successfully deleted, remove the row from the table
+                                    this.closest("tr").remove();
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Quotation has been deleted successfully.',
+                                        'success'
+                                    );
+                                } else {
+                                    Swal.fire(
+                                        'Error!',
+                                        'Failed to delete quotation. Please try again.',
+                                        'error'
+                                    );
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error deleting quotation:", error);
+                                Swal.fire(
+                                    'Error!',
+                                    'An error occurred while deleting the quotation.',
+                                    'error'
+                                );
+                            });
+                        }
+                    });
+                });
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching quotations:", error);
+        });
+    });
+</script>
