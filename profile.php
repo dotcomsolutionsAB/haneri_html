@@ -385,12 +385,12 @@
 										icon: 'warning',
 										showCancelButton: true,
 										confirmButtonColor: '#d33',
-										cancelButtonColor: '#3085d6',
+										cancelButtonColor: '#204948',
 										confirmButtonText: 'Yes, delete it!'
 									}).then((result) => {
 										if (result.isConfirmed) {
 											// Send DELETE request to API
-											fetch(`{{base_url}}/quotation/${quotationId}`, {
+											fetch(`<?php echo BASE_URL; ?>/quotation/${quotationId}`, {
 												method: "DELETE",
 												headers: {
 													"Content-Type": "application/json",
