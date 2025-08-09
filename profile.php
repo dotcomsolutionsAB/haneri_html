@@ -285,89 +285,92 @@
 				</script>
 
 				<!-- Quotation Showing For each Profile -->
-				<div class="tab-pane fade" id="quotation" role="tabpanel">
-					<div class="quotation-content">
-						<h3 class="account-sub-title d-none d-md-block">
-							<i class="sicon-doc align-middle mr-3"></i>Quotation
-						</h3>
-						<div class="quotation-table-container text-center">
-							<table class="table table-quotation text-left">
-								<thead>
-									<tr>
-										<th class="quotation-id">ORDER</th>
-										<th class="quotation-date">BILLING</th>
-										<th class="quotation-status">STATUS</th>
-										<th class="quotation-price">TOTAL</th>
-										<th class="quotation-action">ACTIONS</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr> This is quotation</tr>
-								</tbody>
-							</table>
-							<hr class="mt-0 mb-3 pb-2" />
-						</div>
-						<!-- <a href="shop.php" class="btn btn-dark">Go Shop</a> -->
-					</div>
-				</div>
-				<!-- Quotations Fetch Script -->
-				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-						const authToken = localStorage.getItem("auth_token");
-						if (!authToken) {
-							console.log("User not logged in.");
-							return;
-						}
+<div class="tab-pane fade" id="quotation" role="tabpanel">
+    <div class="quotation-content">
+        <h3 class="account-sub-title d-none d-md-block">
+            <i class="sicon-doc align-middle mr-3"></i>Quotation
+        </h3>
+        <div class="quotation-table-container text-center">
+            <table class="table table-quotation text-left">
+                <thead>
+                    <tr>
+                        <th class="quotation-id">ORDER</th>
+                        <th class="quotation-date">BILLING</th>
+                        <th class="quotation-status">STATUS</th>
+                        <th class="quotation-price">TOTAL</th>
+                        <th class="quotation-action">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> This is quotation</tr>
+                </tbody>
+            </table>
+            <hr class="mt-0 mb-3 pb-2" />
+        </div>
+    </div>
+</div>
 
-						fetch("<?php echo BASE_URL; ?>/quotation/fetch", {
-							method: "GET",
-							headers: {
-								"Content-Type": "application/json",
-								"Authorization": `Bearer ${authToken}`
-							}
-						})
-						.then(response => response.json())
-						.then(responseData => {
-							console.log("API Response:", responseData); // Debugging - Check API response in Console
+<!-- Quotations Fetch Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const authToken = localStorage.getItem("auth_token");
+        if (!authToken) {
+            console.log("User not logged in.");
+            return;
+        }
 
-							// Extract quotations from responseData
-							const quotations = responseData.data; // Now correctly accessing the quotations array
-							const tableBody = document.querySelector(".table-quotation tbody");
-							tableBody.innerHTML = ""; // Clear table content
+        fetch("<?php echo BASE_URL; ?>/quotation/fetch", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${authToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(responseData => {
+            console.log("API Response:", responseData); // Debugging - Check API response in Console
 
-							if (!Array.isArray(quotations) || quotations.length === 0) {
-								console.log("No quotations found.");
-								tableBody.innerHTML = `<tr><td colspan="5" class="text-center">No Quotations Found</td></tr>`;
-								return;
-							}
+            // Extract quotations from responseData
+            const quotations = responseData.data; // Now correctly accessing the quotations array
+            const tableBody = document.querySelector(".table-quotation tbody");
+            tableBody.innerHTML = ""; // Clear table content
 
-							quotations.forEach(quotation => {
-								const quotationId = quotation.items.length > 0 ? quotation.items[0].quotation_id : "N/A"; 
-								const quotationStatus = "Pending"; // You can set this dynamically if needed
-								const quotationBill = quotation.q_address || "NA";
-								const totalAmount = `₹${quotation.total_amount || '0.00'}`;
-								
-								// Debugging
-								// console.log(`Quotation ID: ${quotationId}, Total: ${totalAmount}`);
+            if (!Array.isArray(quotations) || quotations.length === 0) {
+                console.log("No quotations found.");
+                tableBody.innerHTML = `<tr><td colspan="5" class="text-center">No Quotations Found</td></tr>`;
+                return;
+            }
 
-								tableBody.innerHTML += `
-									<tr>
-										<td class="text-center">#${quotationId}</td>
-										<td class="addressess">${quotationBill}</td>
-										<td class="text-center">${quotationStatus}</td>
-										<td class="text-center">${totalAmount}</td>
-										<td class="text-center">
-											<a href="${quotation.invoice_quotation || '#'}" class="btn btn-default" target="_blank">View Invoice</a>
-										</td>
-									</tr>
-								`;
-							});
-						})
-						.catch(error => {
-							console.error("Error fetching quotations:", error);
-						});
-					});
-				</script>
+            quotations.forEach(quotation => {
+                const quotationId = quotation.items.length > 0 ? quotation.items[0].quotation_id : "N/A"; 
+                const quotationStatus = quotation.status || "Pending"; // Set dynamic status here
+                const quotationBill = quotation.q_address || "NA";
+                const totalAmount = `₹${quotation.total_amount || '0.00'}`;
+
+                // Debugging
+                // console.log(`Quotation ID: ${quotationId}, Total: ${totalAmount}`);
+
+                tableBody.innerHTML += `
+                    <tr>
+                        <td class="text-center">#${quotationId}</td>
+                        <td class="addressess">${quotationBill}</td>
+                        <td class="text-center">${quotationStatus}</td>
+                        <td class="text-center">${totalAmount}</td>
+                        <td class="text-center">
+                            <a href="${quotation.invoice_quotation || '#'}" class="btn btn-default" target="_blank">
+                                ${quotation.invoice_quotation ? "View Invoice" : "No Invoice Available"}
+                            </a>
+                        </td>
+                    </tr>
+                `;
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching quotations:", error);
+        });
+    });
+</script>
+
 
 
 				<div class="tab-pane fade" id="address" role="tabpanel">
