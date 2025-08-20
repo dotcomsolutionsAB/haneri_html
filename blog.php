@@ -52,9 +52,7 @@
                 <div class="image-gallerys">
                     <h3>Image Gallery</h3>
                     <div class="gallery-containers">
-                        <img src="image1.jpg" alt="BLDC Fan Image 1" class="gallery-images">
-                        <img src="image2.jpg" alt="BLDC Fan Image 2" class="gallery-images">
-                        <img src="image3.jpg" alt="BLDC Fan Image 3" class="gallery-images">
+                        <img src="images/blog.jpg" alt="BLDC Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
                     </div>
                 </div>
@@ -189,9 +187,7 @@
                 <div class="image-gallerys">
                     <h3>Image Gallery</h3>
                     <div class="gallery-containers">
-                        <img src="image1.jpg" alt="BLDC Fan Image 1" class="gallery-images">
-                        <img src="image2.jpg" alt="BLDC Fan Image 2" class="gallery-images">
-                        <img src="image3.jpg" alt="BLDC Fan Image 3" class="gallery-images">
+                        <img src="images/blog.jpg" alt="BLDC Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
                     </div>
                 </div>
@@ -293,9 +289,7 @@
                 <div class="image-gallerys">
                     <h3>Image Gallery</h3>
                     <div class="gallery-containers">
-                        <img src="image1.jpg" alt="Haneri Fan Image 1" class="gallery-images">
-                        <img src="image2.jpg" alt="Haneri Fan Image 2" class="gallery-images">
-                        <img src="image3.jpg" alt="Haneri Fan Image 3" class="gallery-images">
+                        <img src="images/blog.jpg" alt="Haneri Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
                     </div>
                 </div>
