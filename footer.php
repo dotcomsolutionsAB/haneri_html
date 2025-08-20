@@ -168,7 +168,7 @@
     <!-- Main JS File -->
     <script src="assets/js/main.min.js"></script>
     <!-- Loader JS -->
-    <script>
+    <!-- <script>
         const letters = document.querySelectorAll('.dc-letter');
         let stopAnimation = false;
 
@@ -267,7 +267,7 @@
         //     }
         // }, 15000); // failsafe after 15s
         // });
-    </script>
+    </script> -->
 
 </body>
 
