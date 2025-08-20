@@ -16,7 +16,7 @@
     
     <!-- Styling for the image gallery -->
     <style>
-        .blog-content p {
+        .blog-content ul {
             /* display: flex; */
             /* text-align: justify; */
             padding: 0px 45px;
