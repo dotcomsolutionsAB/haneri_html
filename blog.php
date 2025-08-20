@@ -16,7 +16,7 @@
     
     <!-- Styling for the image gallery -->
     <style>
-        .blog-content h3 {
+        .blog-content h2 {
             margin-top: 5px;
             color: #315858;
             display: flex;
@@ -62,7 +62,7 @@
             case 1:
                 ?>
             <!-- Blog Section -->
-            <section id="blog1" class="blog-content">
+            <section id="blog1" class="blog-contents">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
                     <!-- <h3>Image Gallery</h3> -->
