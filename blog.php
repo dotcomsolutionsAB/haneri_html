@@ -28,9 +28,9 @@
         }
 
         .gallery-images {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -50,7 +50,7 @@
             <section id="blog1" class="blog-content">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
-                    <h3>Image Gallery</h3>
+                    <!-- <h3>Image Gallery</h3> -->
                     <div class="gallery-containers">
                         <img src="images/blog.jpg" alt="BLDC Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
@@ -185,7 +185,7 @@
             <section id="blog2" class="blog-content">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
-                    <h3>Image Gallery</h3>
+                    <!-- <h3>Image Gallery</h3> -->
                     <div class="gallery-containers">
                         <img src="images/blog.jpg" alt="BLDC Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
@@ -287,7 +287,7 @@
             <section id="blog3" class="blog-content">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
-                    <h3>Image Gallery</h3>
+                    <!-- <h3>Image Gallery</h3> -->
                     <div class="gallery-containers">
                         <img src="images/blog.jpg" alt="Haneri Fan Image 1" class="gallery-images">
                         <!-- Add more images as needed -->
