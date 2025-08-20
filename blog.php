@@ -16,6 +16,13 @@
     
     <!-- Styling for the image gallery -->
     <style>
+        .blog-content h3 {
+            margin-top: 5px;
+            color: #315858;
+            display: flex;
+            margin: 20px 30px;
+            font-weight: 600;
+        }
         .blog-content ul {
             /* display: flex; */
             /* text-align: justify; */
