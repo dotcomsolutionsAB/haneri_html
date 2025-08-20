@@ -114,22 +114,22 @@
 
                             <script>
                                 $(document).ready(function () {
-    // Fetch categories when document is ready
+    // Fetch categories when the document is ready
     fetchCategories();
 
     // Check URL for category parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling Fan"
-    
+    const categoryFromURL = urlParams.get('category'); // e.g., "Table%20Wall%20Pedestals"
+
     if (categoryFromURL) {
-        // Decode URL encoded string if needed
-        const decodedCategory = decodeURIComponent(categoryFromURL);
+        // Decode URL encoded string to match with category names
+        const decodedCategory = decodeURIComponent(categoryFromURL); // "Table Wall Pedestals"
 
         // Pre-select category checkbox
         $('input[name="category"]').each(function() {
-            const categoryName = $(this).val(); // e.g., "Ceiling Fan"
+            const categoryName = $(this).val(); // e.g., "Table Wall Pedestals"
             
-            // Match category and check the checkbox
+            // Match the decoded category from URL with checkbox value and check it
             if (categoryName === decodedCategory) {
                 $(this).prop('checked', true);
             }
