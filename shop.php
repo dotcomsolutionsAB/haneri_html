@@ -114,20 +114,23 @@
 
                             <script>
                                 $(document).ready(function () {
-    // Fetch categories when the document is ready
+    // Fetch categories when document is ready
     fetchCategories();
 
     // Check URL for category parameter
     const urlParams = new URLSearchParams(window.location.search);
     const categoryFromURL = urlParams.get('category'); // e.g., "Table%20Wall%20Pedestals"
+    console.log("Category from URL:", categoryFromURL); // Debugging line
 
     if (categoryFromURL) {
         // Decode URL encoded string to match with category names
         const decodedCategory = decodeURIComponent(categoryFromURL); // "Table Wall Pedestals"
+        console.log("Decoded Category:", decodedCategory); // Debugging line
 
         // Pre-select category checkbox
         $('input[name="category"]').each(function() {
             const categoryName = $(this).val(); // e.g., "Table Wall Pedestals"
+            console.log("Checkbox Category Name:", categoryName); // Debugging line
             
             // Match the decoded category from URL with checkbox value and check it
             if (categoryName === decodedCategory) {
@@ -159,6 +162,7 @@ function fetchCategories() {
 function populateCategories(categories) {
     let htmlStr = '';
     categories.forEach(category => {
+        console.log("Category from API:", category.name); // Debugging line
         htmlStr += `
             <li>
                 <label>
