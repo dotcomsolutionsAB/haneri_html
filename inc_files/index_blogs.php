@@ -12,8 +12,7 @@
                 [
                     'image'   => 'images/blog.jpg',
                     'title'   => 'BLDC vs Traditional Ceiling Fans: Which One Should You Choose?',
-                    'content' => "Understanding the Basics: Electric Fans vs. BLDC Fans
-As energy efficiency and smart technology take center stage in modern homes, the humble ceiling fan is undergoing a remarkable transformation. Today, homeowners are increasingly choosing BLDC fans over traditional electric fans for their performance, savings, and smart features. If you’re considering upgrading your cooling system, this detailed guide will help you understand why a smart fan like the Haneri Fan might be the right choice for you.",
+                    'content' => "Understanding the Basics: Electric Fans vs. BLDC Fans As energy efficiency and smart technology take center stage in modern homes, the humble ceiling fan is undergoing a remarkable transformation. Today, homeowners are increasingly choosing BLDC fans over traditional electric fans for their performance, savings, and smart features. If you’re considering upgrading your cooling system, this detailed guide will help you understand why a smart fan like the Haneri Fan might be the right choice for you.",
                     'link'    => '#'
                 ],
                 [
@@ -24,8 +23,20 @@ As energy efficiency and smart technology take center stage in modern homes, the
                 ]
             ];
 
-            // Loop through each blog item
+            // Function to truncate blog content to 500 words
+            function truncate_content($content, $word_limit = 500) {
+                $words = explode(' ', $content);
+                if (count($words) > $word_limit) {
+                    $content = implode(' ', array_slice($words, 0, $word_limit)) . '...';
+                }
+                return $content;
+            }
+
+            // Loop through each blog item and display
             foreach ($blogs as $blog) {
+                // Truncate content if it exceeds 500 words
+                $truncated_content = truncate_content($blog['content']);
+                
                 echo "
                     <div class='blog-item'>
                         <div class='contents'>
@@ -34,7 +45,7 @@ As energy efficiency and smart technology take center stage in modern homes, the
                             </div>
                             <div class='blog-content'>
                                 <h3 class='blog-title'>{$blog['title']}</h3>
-                                <p class='blog-snippet'>{$blog['content']}</p>
+                                <p class='blog-snippet'>{$truncated_content}</p>
                             </div>
                             <a href='{$blog['link']}' class='btn btn_darkGreen read-more-button'>Read More</a>
                         </div>
@@ -42,5 +53,6 @@ As energy efficiency and smart technology take center stage in modern homes, the
                 ";
             }
         ?>
+
     </div>
 </section>
