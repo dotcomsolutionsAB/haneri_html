@@ -13,9 +13,17 @@
 			</ol>
 		</div>
 	</nav>
-
+    
     <!-- Styling for the image gallery -->
     <style>
+        .blog-content p {
+            /* display: flex; */
+            /* text-align: justify; */
+            padding: 0px 45px;
+            /* color: #000; */
+            /* font-size: 16px; */
+            list-style: outside;
+        }
         .image-gallerys {
             margin-bottom: 20px;
             text-align: center;
