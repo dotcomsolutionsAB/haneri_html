@@ -113,9 +113,9 @@
                         <div class="sidebar-wrapper">
 
                             <script>
-                                $(document).ready(function() {
-                                    fetchCategories();
-                                });
+                                // $(document).ready(function() {
+                                //     fetchCategories();
+                                // });
                                 // 1. Fetch Categories
                                 function fetchCategories() {
                                     $.ajax({
@@ -151,13 +151,13 @@
                                 }
                             </script>
                             <script>
-                                $(document).ready(function() {
-                                    // If you already have `fetchCategories()` somewhere
-                                    fetchCategories();
-                                    // 1. Fetch and display brands
-                                    fetchBrands();
+                                // $(document).ready(function() {
+                                //     // If you already have `fetchCategories()` somewhere
+                                //     fetchCategories();
+                                //     // 1. Fetch and display brands
+                                //     fetchBrands();
 
-                                });
+                                // });
 
                                 // -------------------------------------------
                                 // 1. Fetch Brands from your API
@@ -226,28 +226,28 @@
                             </div><!-- End .widget -->
 
                             <script>
-                                $(document).ready(function() {
-                                    // 1. Initialize noUiSlider
-                                    const priceSlider = document.getElementById('price-slider');
-                                    noUiSlider.create(priceSlider, {
-                                        start: [100, 20000],  // Initial slider handles: [min, max]
-                                        connect: true,     // Fill the bar between handles
-                                        range: {
-                                            min: 100,
-                                            max: 50000      // Adjust as per your upper price limit
-                                        },
-                                        step: 100          // Adjust step if you like
-                                    });
+                                // $(document).ready(function() {
+                                //     // 1. Initialize noUiSlider
+                                //     const priceSlider = document.getElementById('price-slider');
+                                //     noUiSlider.create(priceSlider, {
+                                //         start: [100, 20000],  // Initial slider handles: [min, max]
+                                //         connect: true,     // Fill the bar between handles
+                                //         range: {
+                                //             min: 100,
+                                //             max: 50000      // Adjust as per your upper price limit
+                                //         },
+                                //         step: 100          // Adjust step if you like
+                                //     });
                                     
-                                    // 2. Update the text display whenever slider changes
-                                    priceSlider.noUiSlider.on('update', function(values) {
-                                        // values = [minValue, maxValue]
-                                        const min = parseFloat(values[0]).toFixed(2);
-                                        const max = parseFloat(values[1]).toFixed(2);
+                                //     // 2. Update the text display whenever slider changes
+                                //     priceSlider.noUiSlider.on('update', function(values) {
+                                //         // values = [minValue, maxValue]
+                                //         const min = parseFloat(values[0]).toFixed(2);
+                                //         const max = parseFloat(values[1]).toFixed(2);
 
-                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-                                    });
-                                });
+                                //         $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
+                                //     });
+                                // });
                             </script>
                             <div class="widget widget-price wid">
                                 <h3 class="widget-title wid_title">
@@ -275,9 +275,9 @@
 
                             <!-- Get Variant Name -->
                             <script>
-                                $(document).ready(function() {
-                                    fetchVariants()
-                                });
+                                // $(document).ready(function() {
+                                //     fetchVariants()
+                                // });
                                 function fetchVariants() {
                                     $.ajax({
                                         url: '<?php echo BASE_URL; ?>/products/unique_variant', // GET
@@ -341,21 +341,62 @@
 
 
         <script>
-            $(document).ready(function () {
+            
+            $(document).ready(function() {
+
+                // Pre-select category filters based on URL params
                 const urlParams = new URLSearchParams(window.location.search);
-                const categoryFromURL = urlParams.get('category');
+                const categoryFromURL = urlParams.get('category');  // Get category from URL
+                
                 if (categoryFromURL) {
+                    const selectedCategories = categoryFromURL.split(',');  // Split by commas if multiple categories
+
+                    // Loop through category checkboxes and pre-select the ones that match the URL categories
                     $('input[name="category"]').each(function() {
-                        if ($(this).val() === categoryFromURL) {
-                            $(this).prop('checked', true);
+                        if (selectedCategories.includes($(this).val())) {
+                            $(this).prop('checked', true);  // Mark checkbox as checked if it matches
                         }
                     });
                 }
+
+                // Trigger product fetch after setting the selected filters
                 fetchProducts();
-            });
 
-            $(document).ready(function() {
 
+                // If you already have `fetchCategories()` somewhere
+                fetchCategories();
+                // 1. Fetch and display brands
+                fetchBrands();
+
+                // 1. Initialize noUiSlider
+                const priceSlider = document.getElementById('price-slider');
+                noUiSlider.create(priceSlider, {
+                    start: [100, 20000],  // Initial slider handles: [min, max]
+                    connect: true,     // Fill the bar between handles
+                    range: {
+                        min: 100,
+                        max: 50000      // Adjust as per your upper price limit
+                    },
+                    step: 100          // Adjust step if you like
+                });
+                
+                // 2. Update the text display whenever slider changes
+                priceSlider.noUiSlider.on('update', function(values) {
+                    // values = [minValue, maxValue]
+                    const min = parseFloat(values[0]).toFixed(2);
+                    const max = parseFloat(values[1]).toFixed(2);
+
+                    $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
+                });
+
+                fetchVariants()
+
+                // Handle category change event
+                $('input[name="category"]').on('change', function() {
+                    updateURLWithFilters();  // Update URL with selected filters
+                    fetchProducts();  // Fetch products based on updated filters
+                });
+                
                 // Global or higher scope variables
                 let currentPage = 1;
                 let itemsPerPage = 10;
