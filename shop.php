@@ -341,62 +341,65 @@
 
 
         <script>
-            
+            $(document).ready(function () {
+    // Pre-select category filters based on URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get('category');  // Get category from URL
+    
+    if (categoryFromURL) {
+        const selectedCategories = categoryFromURL.split(',');  // Split by commas if multiple categories
+
+        // Loop through category checkboxes and pre-select the ones that match the URL categories
+        $('input[name="category"]').each(function() {
+            if (selectedCategories.includes($(this).val())) {
+                $(this).prop('checked', true);  // Mark checkbox as checked if it matches
+            }
+        });
+    }
+
+    // Trigger product fetch after setting the selected filters
+    fetchProducts();
+
+    // Fetch categories, brands, and variants (as you already have these functions)
+    fetchCategories();  // Existing function to fetch categories
+    fetchBrands();      // Existing function to fetch brands
+    fetchVariants();    // Existing function to fetch variants
+
+    // Initialize price slider
+    const priceSlider = document.getElementById('price-slider');
+    noUiSlider.create(priceSlider, {
+        start: [100, 20000],  // Initial slider handles: [min, max]
+        connect: true,     // Fill the bar between handles
+        range: {
+            min: 100,
+            max: 50000      // Adjust as per your upper price limit
+        },
+        step: 100          // Adjust step if you like
+    });
+
+    // Update price display when slider changes
+    priceSlider.noUiSlider.on('update', function(values) {
+        const min = parseFloat(values[0]).toFixed(2);
+        const max = parseFloat(values[1]).toFixed(2);
+        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
+    });
+
+    // Event listener for category checkbox changes
+    $('input[name="category"]').on('change', function() {
+        updateURLWithFilters();  // Update URL with selected filters
+        fetchProducts();  // Fetch products based on updated filters
+    });
+
+    // Event listener for apply filters button
+    $('#apply-filters').on('click', function() {
+        currentPage = 1; // reset to first page if needed
+        fetchProducts();
+    });
+});
+
             $(document).ready(function() {
 
-                // Pre-select category filters based on URL params
-                const urlParams = new URLSearchParams(window.location.search);
-                const categoryFromURL = urlParams.get('category');  // Get category from URL
-                
-                if (categoryFromURL) {
-                    const selectedCategories = categoryFromURL.split(',');  // Split by commas if multiple categories
-
-                    // Loop through category checkboxes and pre-select the ones that match the URL categories
-                    $('input[name="category"]').each(function() {
-                        if (selectedCategories.includes($(this).val())) {
-                            $(this).prop('checked', true);  // Mark checkbox as checked if it matches
-                        }
-                    });
-                }
-
-                // Trigger product fetch after setting the selected filters
-                fetchProducts();
-
-
-                // If you already have `fetchCategories()` somewhere
-                fetchCategories();
-                // 1. Fetch and display brands
-                fetchBrands();
-
-                // 1. Initialize noUiSlider
-                const priceSlider = document.getElementById('price-slider');
-                noUiSlider.create(priceSlider, {
-                    start: [100, 20000],  // Initial slider handles: [min, max]
-                    connect: true,     // Fill the bar between handles
-                    range: {
-                        min: 100,
-                        max: 50000      // Adjust as per your upper price limit
-                    },
-                    step: 100          // Adjust step if you like
-                });
-                
-                // 2. Update the text display whenever slider changes
-                priceSlider.noUiSlider.on('update', function(values) {
-                    // values = [minValue, maxValue]
-                    const min = parseFloat(values[0]).toFixed(2);
-                    const max = parseFloat(values[1]).toFixed(2);
-
-                    $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-                });
-
-                fetchVariants()
-
-                // Handle category change event
-                $('input[name="category"]').on('change', function() {
-                    updateURLWithFilters();  // Update URL with selected filters
-                    fetchProducts();  // Fetch products based on updated filters
-                });
-                
+                                
                 // Global or higher scope variables
                 let currentPage = 1;
                 let itemsPerPage = 10;
