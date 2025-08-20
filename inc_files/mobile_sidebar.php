@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="air_curve_design.php">Air Curve Design</a></li>
                     <li><a href="turbosilent_bldc.php">TurboSilent BLDC</a></li>
-                    <li><a href="mass.php">M.A.S.S®</a></li>
+                    <li><a href="hass">M.A.S.S®</a></li>
                     <li><a href="lumiambience.php">LumiAmbience</a></li>
                     <li><a href="scan.php">S.C.A.N</a></li>
                 </ul>

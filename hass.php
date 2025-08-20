@@ -15,7 +15,7 @@
     
     <div class="container">                        
         <section id="mass" class="mass">
-            <?php include("inc_files/pillar_technology/mass_tech.php"); ?>
+            <?php include("inc_files/pillar_technology/hass_tech.php"); ?>
         </section>
     </div>
 </main><!-- End .main -->

@@ -144,7 +144,7 @@
                                                 <ul class="submenu">
                                                     <li><a href="air_curve_design">Air Curve Design</a></li>
                                                     <li><a href="turbosilent_bldc">TurboSilent BLDC</a></li>
-                                                    <li><a href="mass">H.A.S.S®</a></li>
+                                                    <li><a href="hass">H.A.S.S®</a></li>
                                                     <li><a href="lumiambience">LumiAmbience</a></li>
                                                     <li><a href="scan">S.C.A.N</a></li>
                                                 </ul>
@@ -264,8 +264,7 @@
                 </div>
             </div>
 
-        </header><!-- End .header -->
-
+        </header>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
