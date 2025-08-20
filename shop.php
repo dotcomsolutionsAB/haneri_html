@@ -181,7 +181,12 @@ function populateCategories(categories) {
 }
 
                             </script>
-
+<style>
+    input[type="checkbox"]:checked {
+        background-color: green;
+        border-color: green;
+    }
+</style>
                             <script>
                                 $(document).ready(function() {
                                     // If you already have `fetchCategories()` somewhere
