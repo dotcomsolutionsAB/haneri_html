@@ -170,7 +170,7 @@
                                         console.log("Category from API:", category.name); // Debugging line
                                         htmlStr += `
                                             <li>
-                                                <label>
+                                                <label class="filter_label">
                                                     <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
                                                     <span>${category.name}</span>
                                                 </label>
@@ -181,6 +181,13 @@
                                 }
                             </script>
 <style>
+
+    .filter_label{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
     /* Style the default checkbox */
     input[type="checkbox"] {
         -webkit-appearance: none;
@@ -197,23 +204,23 @@
 
     /* Style when checkbox is checked */
     input[type="checkbox"]:checked {
-        background-color: green;  /* Green background */
-        border-color: green;      /* Green border */
+        background-color: #00473e;
+        border-color: #00473e;
     }
 
     /* Add the checkmark */
     input[type="checkbox"]:checked::after {
         content: '✔';  /* Unicode checkmark */
         position: absolute;
-        top: 0;
-        left: 4px;
+        top: 1px;
+        left: 6px;
         color: white;   /* White checkmark */
         font-size: 14px;
     }
 
     /* Style when checkbox is hovered */
     input[type="checkbox"]:hover {
-        border-color: #4CAF50;  /* Slightly lighter green on hover */
+        border-color: #fff;  /* Slightly lighter green on hover */
     }
 </style>
 
