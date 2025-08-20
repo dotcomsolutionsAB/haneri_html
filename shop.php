@@ -119,21 +119,21 @@
 
     // Check URL for category parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const categoryFromURL = urlParams.get('category'); // e.g., "Table%20Wall%20Pedestals"
+    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling%20Fan"
     console.log("Category from URL:", categoryFromURL); // Debugging line
 
     if (categoryFromURL) {
         // Decode URL encoded string to match with category names
-        const decodedCategory = decodeURIComponent(categoryFromURL); // "Table Wall Pedestals"
+        const decodedCategory = decodeURIComponent(categoryFromURL); // "Ceiling Fan"
         console.log("Decoded Category:", decodedCategory); // Debugging line
 
         // Pre-select category checkbox
         $('input[name="category"]').each(function() {
-            const categoryName = $(this).val(); // e.g., "Table Wall Pedestals"
+            const categoryName = $(this).val(); // e.g., "CEILING FAN"
             console.log("Checkbox Category Name:", categoryName); // Debugging line
-            
-            // Match the decoded category from URL with checkbox value and check it
-            if (categoryName === decodedCategory) {
+
+            // Normalize both decodedCategory and categoryName to lowercase for comparison
+            if (categoryName.toLowerCase() === decodedCategory.toLowerCase()) {
                 $(this).prop('checked', true);
             }
         });
