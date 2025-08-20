@@ -127,15 +127,18 @@
         const decodedCategory = decodeURIComponent(categoryFromURL); // "Ceiling Fan"
         console.log("Decoded Category:", decodedCategory); // Debugging line
 
-        // Pre-select category checkbox
-        $('input[name="category"]').each(function() {
-            const categoryName = $(this).val(); // e.g., "CEILING FAN"
-            console.log("Checkbox Category Name:", categoryName); // Debugging line
+        // Pre-select category checkbox after categories are rendered
+        $(document).on('categoriesRendered', function () {
+            $('input[name="category"]').each(function() {
+                const categoryName = $(this).val(); // e.g., "CEILING FAN"
+                console.log("Checkbox Category Name:", categoryName); // Debugging line
 
-            // Normalize both decodedCategory and categoryName to lowercase for comparison
-            if (categoryName.toLowerCase() === decodedCategory.toLowerCase()) {
-                $(this).prop('checked', true);
-            }
+                // Normalize both decodedCategory and categoryName to lowercase for comparison
+                if (categoryName.toLowerCase() === decodedCategory.toLowerCase()) {
+                    console.log("Category Matched: ", categoryName);
+                    $(this).prop('checked', true);
+                }
+            });
         });
     }
 });
@@ -148,6 +151,8 @@ function fetchCategories() {
         success: function(response) {
             if (response && response.data) {
                 populateCategories(response.data);
+                // Trigger an event after categories are rendered
+                $(document).trigger('categoriesRendered');
             } else {
                 console.error("Unexpected categories response format:", response);
             }
@@ -253,54 +258,28 @@ function populateCategories(categories) {
                             </div><!-- End .widget -->
 
                             <script>
-                                // $(document).ready(function() {
-                                //     // 1. Initialize noUiSlider
-                                //     const priceSlider = document.getElementById('price-slider');
-                                //     noUiSlider.create(priceSlider, {
-                                //         start: [100, 20000],  // Initial slider handles: [min, max]
-                                //         connect: true,     // Fill the bar between handles
-                                //         range: {
-                                //             min: 100,
-                                //             max: 50000      // Adjust as per your upper price limit
-                                //         },
-                                //         step: 100          // Adjust step if you like
-                                //     });
+                                $(document).ready(function() {
+                                    // 1. Initialize noUiSlider
+                                    const priceSlider = document.getElementById('price-slider');
+                                    noUiSlider.create(priceSlider, {
+                                        start: [100, 20000],  // Initial slider handles: [min, max]
+                                        connect: true,     // Fill the bar between handles
+                                        range: {
+                                            min: 100,
+                                            max: 50000      // Adjust as per your upper price limit
+                                        },
+                                        step: 100          // Adjust step if you like
+                                    });
                                     
-                                //     // 2. Update the text display whenever slider changes
-                                //     priceSlider.noUiSlider.on('update', function(values) {
-                                //         // values = [minValue, maxValue]
-                                //         const min = parseFloat(values[0]).toFixed(2);
-                                //         const max = parseFloat(values[1]).toFixed(2);
+                                    // 2. Update the text display whenever slider changes
+                                    priceSlider.noUiSlider.on('update', function(values) {
+                                        // values = [minValue, maxValue]
+                                        const min = parseFloat(values[0]).toFixed(2);
+                                        const max = parseFloat(values[1]).toFixed(2);
 
-                                //         $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-                                //     });
-                                // });
-                                $(document).ready(function () {
-    // Initialize noUiSlider only once
-    if (!$('#price-slider').data('noUiSlider')) {
-        const priceSlider = document.getElementById('price-slider');
-        noUiSlider.create(priceSlider, {
-            start: [100, 20000],  // Initial slider handles: [min, max]
-            connect: true,         // Fill the bar between handles
-            range: {
-                min: 100,
-                max: 50000         // Adjust as per your upper price limit
-            },
-            step: 100              // Adjust step if you like
-        });
-
-        // Update the text display whenever slider changes
-        priceSlider.noUiSlider.on('update', function(values) {
-            const min = parseFloat(values[0]).toFixed(2);
-            const max = parseFloat(values[1]).toFixed(2);
-            $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
-        });
-
-        // Store the noUiSlider instance in the data attribute to prevent re-initialization
-        $('#price-slider').data('noUiSlider', priceSlider);
-    }
-});
-
+                                        $('#filter-price-range').text(`Rs.${min} - Rs.${max}`);
+                                    });
+                                });
                             </script>
                             <div class="widget widget-price wid">
                                 <h3 class="widget-title wid_title">
