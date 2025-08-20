@@ -114,79 +114,109 @@
 
                             <script>
                                 $(document).ready(function () {
-    // Fetch categories when document is ready
-    fetchCategories();
+                                    // Fetch categories when document is ready
+                                    fetchCategories();
 
-    // Check URL for category parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling%20Fan"
-    console.log("Category from URL:", categoryFromURL); // Debugging line
+                                    // Check URL for category parameter
+                                    const urlParams = new URLSearchParams(window.location.search);
+                                    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling%20Fan"
+                                    console.log("Category from URL:", categoryFromURL); // Debugging line
 
-    if (categoryFromURL) {
-        // Decode URL encoded string to match with category names
-        const decodedCategory = decodeURIComponent(categoryFromURL); // "Ceiling Fan"
-        console.log("Decoded Category:", decodedCategory); // Debugging line
+                                    if (categoryFromURL) {
+                                        // Decode URL encoded string to match with category names
+                                        const decodedCategory = decodeURIComponent(categoryFromURL); // "Ceiling Fan"
+                                        console.log("Decoded Category:", decodedCategory); // Debugging line
 
-        // Pre-select category checkbox after categories are rendered
-        $(document).on('categoriesRendered', function () {
-            $('input[name="category"]').each(function() {
-                const categoryName = $(this).val(); // e.g., "CEILING FAN"
-                console.log("Checkbox Category Name:", categoryName); // Debugging line
+                                        // Pre-select category checkbox after categories are rendered
+                                        $(document).on('categoriesRendered', function () {
+                                            $('input[name="category"]').each(function() {
+                                                const categoryName = $(this).val(); // e.g., "CEILING FAN"
+                                                console.log("Checkbox Category Name:", categoryName); // Debugging line
 
-                // Normalize both decodedCategory and categoryName to lowercase for comparison
-                if (categoryName.toLowerCase() === decodedCategory.toLowerCase()) {
-                    console.log("Category Matched: ", categoryName);
-                    $(this).prop('checked', true);
-                }
-            });
-        });
-    }
-});
+                                                // Normalize both decodedCategory and categoryName to lowercase for comparison
+                                                if (categoryName.toLowerCase() === decodedCategory.toLowerCase()) {
+                                                    console.log("Category Matched: ", categoryName);
+                                                    $(this).prop('checked', true);
+                                                }
+                                            });
+                                        });
+                                    }
+                                });
 
-// Fetch categories from the backend
-function fetchCategories() {
-    $.ajax({
-        url: '<?php echo BASE_URL; ?>/categories/fetch',
-        type: 'POST',
-        success: function(response) {
-            if (response && response.data) {
-                populateCategories(response.data);
-                // Trigger an event after categories are rendered
-                $(document).trigger('categoriesRendered');
-            } else {
-                console.error("Unexpected categories response format:", response);
-            }
-        },
-        error: function(err) {
-            console.error("Error fetching categories:", err);
-        }
-    });
-}
+                                // Fetch categories from the backend
+                                function fetchCategories() {
+                                    $.ajax({
+                                        url: '<?php echo BASE_URL; ?>/categories/fetch',
+                                        type: 'POST',
+                                        success: function(response) {
+                                            if (response && response.data) {
+                                                populateCategories(response.data);
+                                                // Trigger an event after categories are rendered
+                                                $(document).trigger('categoriesRendered');
+                                            } else {
+                                                console.error("Unexpected categories response format:", response);
+                                            }
+                                        },
+                                        error: function(err) {
+                                            console.error("Error fetching categories:", err);
+                                        }
+                                    });
+                                }
 
-// Render Categories (with checkboxes) into the sidebar
-function populateCategories(categories) {
-    let htmlStr = '';
-    categories.forEach(category => {
-        console.log("Category from API:", category.name); // Debugging line
-        htmlStr += `
-            <li>
-                <label>
-                    <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
-                    <span>${category.name}</span>
-                </label>
-            </li>
-        `;
-    });
-    $('#categories-list').html(htmlStr);
-}
-
+                                // Render Categories (with checkboxes) into the sidebar
+                                function populateCategories(categories) {
+                                    let htmlStr = '';
+                                    categories.forEach(category => {
+                                        console.log("Category from API:", category.name); // Debugging line
+                                        htmlStr += `
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
+                                                    <span>${category.name}</span>
+                                                </label>
+                                            </li>
+                                        `;
+                                    });
+                                    $('#categories-list').html(htmlStr);
+                                }
                             </script>
 <style>
+    /* Style the default checkbox */
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ccc;
+        border-radius: 3px;
+        background-color: #fff;
+        position: relative;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Style when checkbox is checked */
     input[type="checkbox"]:checked {
-        background-color: green;
-        border-color: green;
+        background-color: green;  /* Green background */
+        border-color: green;      /* Green border */
+    }
+
+    /* Add the checkmark */
+    input[type="checkbox"]:checked::after {
+        content: '✔';  /* Unicode checkmark */
+        position: absolute;
+        top: 0;
+        left: 4px;
+        color: white;   /* White checkmark */
+        font-size: 14px;
+    }
+
+    /* Style when checkbox is hovered */
+    input[type="checkbox"]:hover {
+        border-color: #4CAF50;  /* Slightly lighter green on hover */
     }
 </style>
+
                             <script>
                                 $(document).ready(function() {
                                     // If you already have `fetchCategories()` somewhere
