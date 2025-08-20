@@ -2071,7 +2071,7 @@ footer .social-icon {
     min-height: 300px;
     display: flex;
     /* background: antiquewhite; */
-    /* justify-content: space-between; */
+    justify-content: space-around;
     flex-direction: column;
  }  
  .blog-content{
