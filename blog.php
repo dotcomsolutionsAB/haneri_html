@@ -16,14 +16,29 @@
     
     <!-- Styling for the image gallery -->
     <style>
-        .blog-content h2 {
+        .blog-contents h2 {
             margin-top: 5px;
             color: #315858;
             display: flex;
-            margin: 20px 30px;
+            /* margin: 20px 30px; */
             font-weight: 600;
         }
-        .blog-content ul {
+        .blog-contents p {
+            display: flex;
+            text-align: justify;
+            /* padding: 0px 30px; */
+            color: #000;
+            font-size: 16px;
+        }
+        .blog-contents h3 {
+            /* margin-top: 5px; */
+            font-family: 'Barlow Condensed';
+            color: #315858;
+            display: flex;
+            /* margin: 20px 30px; */
+            font-weight: 300;
+        }
+        .blog-contents ul {
             /* display: flex; */
             /* text-align: justify; */
             padding: 0px 45px;
@@ -62,7 +77,7 @@
             case 1:
                 ?>
             <!-- Blog Section -->
-            <section id="blog1" class="blog-content">
+            <section id="blog1" class="blog-contents">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
                     <!-- <h3>Image Gallery</h3> -->
