@@ -342,100 +342,25 @@
 
         <script>
             $(document).ready(function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoryFromURL = urlParams.get('category');
+                if (categoryFromURL) {
+                    $('input[name="category"]').each(function() {
+                        if ($(this).val() === categoryFromURL) {
+                            $(this).prop('checked', true);
+                        }
+                    });
+                }
+                fetchProducts();
+            });
+
+            $(document).ready(function() {
 
                 // Global or higher scope variables
                 let currentPage = 1;
                 let itemsPerPage = 10;
                 // If you need them for pagination
                 let totalItems = 0;
-
-                
-                // function fetchProducts() {
-                //     const offset = (currentPage - 1) * itemsPerPage;
-
-                //     // 1. Product name search
-                //     const searchProduct = $('#search-product-input').val() || '';
-
-                //     // 2. Brand filters
-                //     const selectedBrands = [];
-                //     $('input[name="brand"]:checked').each(function() {
-                //         selectedBrands.push($(this).val());
-                //     });
-                //     const searchBrand = selectedBrands.join(',');
-
-                //     // 3. Category filters from checkboxes
-                //     const selectedCategories = [];
-                //     $('input[name="category"]:checked').each(function() {
-                //         selectedCategories.push($(this).val());
-                //     });
-
-                //     // --- Extract category from URL if exists ---
-                //     const urlParams = new URLSearchParams(window.location.search);
-                //     const categoryFromURL = urlParams.get('category');
-
-                //     let searchCategory = selectedCategories.join(',');
-                //     if (categoryFromURL && !searchCategory) {
-                //         searchCategory = categoryFromURL;
-                //     }
-
-                //     // 4. Price range slider
-                //     const priceSlider = document.getElementById('price-slider');
-                //     const sliderValues = priceSlider.noUiSlider.get(); // [min, max]
-                //     const minPrice = parseFloat(sliderValues[0]);
-                //     const maxPrice = parseFloat(sliderValues[1]);
-
-                //     // 5. Static price range select (optional)
-                //     const priceRange = $('#price-range-select').val();
-
-                //     // 6. Sorting option
-                //     const orderValue = $('#orderby-select').val();
-                //     const orderPrice = orderValue === 'ascending' ? 'Ascending' :
-                //                     orderValue === 'descending' ? 'Descending' : '';
-
-                //     // 7. Variant filters
-                //     const selectedVariants = [];
-                //     $('input[name="variant"]:checked').each(function() {
-                //         selectedVariants.push($(this).val());
-                //     });
-                //     const variantType = selectedVariants.join(',');
-                //     const getAuthToken = localStorage.getItem("auth_token");
-                //     console.log(getAuthToken);
-                //     // ---- AJAX Request ----
-                //     $.ajax({
-                //         url: '<?php echo BASE_URL; ?>/products/get_products',
-                //         type: 'POST',
-                //         headers: {
-                //             "Content-Type": "application/json",
-                //             "Authorization": `Bearer ${getAuthToken}`
-                //         }
-                //     data: JSON.stringify({
-                //             search_product: searchProduct,
-                //             search_brand: searchBrand,
-                //             search_category: searchCategory,
-                //             price_range: priceRange,
-                //             limit: itemsPerPage,
-                //             offset: offset,
-                //             order_price: orderPrice,
-                //             min_priceFilter: minPrice,
-                //             max_priceFilter: maxPrice,
-                //             variant_type: variantType,
-                //         }),
-                //         success: (response) => {
-                //             if (response && response.data) {
-                //                 totalItems = response.total_records || 0;
-                //                 populateTable(response.data);
-                //                 updatePagination();
-                //             } else {
-                //                 totalItems = 0;
-                //                 updatePagination();
-                //                 populateTable([]);  // Trigger "Coming Soon!" by passing an empty array
-                //             }
-                //         },
-                //         error: (error) => {
-                //             console.error("Error fetching products:", error);
-                //         }
-                //     });
-                // }
 
                 function fetchProducts() {
                     const offset = (currentPage - 1) * itemsPerPage;
@@ -525,7 +450,6 @@
                         }
                     });
                 }
-
 
                 // When the user clicks "Apply Filters", fetch products again using selected filters
                 $('#apply-filters').on('click', function() {
@@ -621,94 +545,6 @@
                         });
                     });
                 };
-                // const populateTable = (data) => {
-                //     const tbody = $("#products-table");
-                //     tbody.empty();
-
-                //     // Grab role from localStorage
-                //     const userRole = localStorage.getItem("user_role");
-
-                //     data.forEach((product) => {
-                //         for (let i = 0; i < 4; i++) {  // Repeat 4 times
-                //             // Check if the product has an image; otherwise, use a placeholder
-                //             let productImage = product.image?.length > 0 
-                //                 ? product.image[0] 
-                //                 : "assets/images/placeholder.jpg";
-
-                //             // Safely extract prices (default to "00" if unavailable)
-                //             let regularPrice = product.variants?.[0]?.regular_price || "00";
-                //             let sellingPrice = product.variants?.[0]?.selling_price || "00";
-                //             let vendor_price = product.variants?.[0]?.sales_price_vendor || "00";
-
-                //             // Determine which price HTML snippet to use
-                //             let priceSnippet = "";
-                //             if (userRole === "vendor") {
-                //                 priceSnippet = `
-                //                     <div class="price-box">
-                //                         <div class="c_price">
-                //                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                //                             <span class="product-price cross paragraph1">MRP ₹${sellingPrice}</span>
-                //                         </div>
-                //                         <div class="sp_price">
-                //                             Special Price : <span class="special_price">MRP ₹${vendor_price}</span>
-                //                         </div>
-                //                     </div>
-                //                 `;
-                //             } else {
-                //                 priceSnippet = `
-                //                     <div class="price-box">
-                //                         <div class="c_price">
-                //                             <span class="old-price paragraph1">MRP ₹${regularPrice}</span>
-                //                             <span class="product-price paragraph1">MRP ₹${sellingPrice}</span>
-                //                         </div>
-                //                         <div class="sp_price none">
-                //                             Special Price : <span class="special_price paragraph1">MRP ₹${vendor_price}</span>
-                //                         </div>
-                //                     </div>
-                //                 `;
-                //             }
-
-                //             // Append the row for each product
-                //             tbody.append(`
-                //                 <div class="col-6 col-sm-4 col-md-3 col-xl-5col shop_products">
-                //                     <div class="card featured pro-card" id="pro-table" data-product-id="${product.variants?.[0]?.product_id || ''}">
-                //                         <div class="card_image">
-                //                             <img src="${
-                //                                     product.variants[0]?.product_id === 14 ? 'images/Natural_Pine.png' :
-                //                                     product.category?.id === 1 ? 'images/f1.png' :
-                //                                     product.category?.id === 2 ? 'images/f2.png' :
-                //                                     product.category?.id === 3 ? 'images/f3.png' :                                                    
-                //                                     'assets/images/products/product-1.jpg'
-                //                                 }" alt="Product 1" class="img-fluid-card"
-                //                             />
-                //                         </div>
-                //                         <h4 class="heading4 mbo">${product.category?.name || "Uncategorized"}</h4>
-                //                         <h4 class="heading2">
-                //                             <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')">
-                //                                 ${product.name}
-                //                             </a>
-                //                             <span>Ceiling Fan</span>
-                //                         </h4>
-                //                         <div class="ratings-container">
-                //                             <div class="product-ratings">
-                //                                 <span class="ratings" style="width:100%"></span>
-                //                                 <span class="tooltiptext tooltip-top"></span>
-                //                             </div>
-                //                         </div>
-                //                         ${priceSnippet}
-                //                         <div class="cart_view_add">
-                //                             <a href="javascript:void(0)" onclick="openProductDetail('${product.variants[0]?.product_id || "NA"}')" class="btn bgremoved view rounded-pill px-4">View Details</a>
-                //                             <a href="javascript:void(0)" onclick="addToCartFromList(event, '${product.id}', '${product.variants?.[0]?.id || ''}')" class="btn bgremoved rounded-pill px-4">
-                //                                 Add to Cart
-                //                             </a>
-
-                //                         </div>
-                //                     </div>
-                //                 </div>
-                //             `);
-                //         }
-                //     });
-                // };
 
                 // Attach click handler after rendering
                 $('#products-table').on('click', '.pro-card', function (event) {
@@ -840,6 +676,7 @@
                 window.location.href = 'product_detail.php?id=' + productId;
             }
         </script>
+
         <style>
             .none{
                 display:none;
