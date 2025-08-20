@@ -1,7 +1,7 @@
 
 
 <!-- Row 1: Haneri -->
-<div class="brand-row-container">
+<div class="brand-row-container" id="haneri">
     <div class="brand-row">
         <div class="brand-content">
             <p class="paragraph1">
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Row 2: Haneri Bespoke -->
-<div class="brand-row-container">
+<div class="brand-row-container" id="bespoke">
     <div class="brand-row reverse">
         <div class="brand-content">
             <p class="paragraph1">
@@ -29,7 +29,7 @@
 </div>
 
 <!-- Row 3: Haneri Professional -->
-<div class="brand-row-container">
+<div class="brand-row-container" id="professional">
     <div class="brand-row">
         <div class="brand-content">
             <p class="paragraph1">

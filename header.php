@@ -183,7 +183,7 @@
                                                     <li class="submenu-item">
                                                         <a href="our_brands.php">Our Brands</a>
                                                         <div class="submenu-description">
-                                                            <a href="our_brands.php#haner" class="description-link">Haneri</a> |
+                                                            <a href="our_brands.php#haneri" class="description-link">Haneri</a> |
                                                             <a href="our_brands.php#bespoke" class="description-link"> Bespoke</a> |
                                                             <a href="our_brands.php#professional" class="description-link"> Professional</a>
                                                         </div>

@@ -36,7 +36,7 @@
     </div>
 
     <!-- Values Block -->
-    <div class="our_108">
+    <div class="our_108" id="values">
         <div class="our_109">
             <img src="images/section/Haneri_heart_Image.jpg" alt="Values" class="our_106" />
         </div>
@@ -48,8 +48,3 @@
         </div>
     </div>
 </div>
-
-<style>
-    
-
-</style>
