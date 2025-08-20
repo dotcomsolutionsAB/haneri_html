@@ -255,18 +255,18 @@
         }
 
         // Start animation when HTML & assets are loaded
-        window.addEventListener("load", function () {
-        console.log("⚡ Page loaded – starting HANERI animation...");
-        animateLetters();
+        // window.addEventListener("load", function () {
+        // console.log("⚡ Page loaded – starting HANERI animation...");
+        // animateLetters();
 
-        // Optional fallback: hide loader after X sec in worst case
-        setTimeout(() => {
-            if (!document.body.classList.contains('dc-loaded')) {
-            console.warn("⏱️ Force hiding loader after timeout...");
-            dcHideLoader();
-            }
-        }, 15000); // failsafe after 15s
-        });
+        // // Optional fallback: hide loader after X sec in worst case
+        // setTimeout(() => {
+        //     if (!document.body.classList.contains('dc-loaded')) {
+        //     console.warn("⏱️ Force hiding loader after timeout...");
+        //     dcHideLoader();
+        //     }
+        // }, 15000); // failsafe after 15s
+        // });
     </script>
 
 </body>
