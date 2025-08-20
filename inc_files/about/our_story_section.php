@@ -10,7 +10,7 @@
     </div>
 
     <!-- Vision Block -->
-    <div class="our_108">
+    <div class="our_108" id="vision">
         <div class="our_109">
         <img src="images/section/Haneri_haVision_Image.jpg" alt="Vision" class="our_106" />
         </div>
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Mission Block -->
-    <div class="our_108">
+    <div class="our_108" id="mission">
         <div class="our_109">
         <h3 class="our_103 green">Our Mission</h3>
         <p class="our_104">

@@ -206,7 +206,7 @@
                                                     <li>
                                                         <a href="#">Product Help</a>
                                                         <div class="submenu-description">
-                                                            <a href="#" class="description-link">FAQs</a> |
+                                                            <a href="faqs" class="description-link">FAQs</a> |
                                                             <a href="#" class="description-link">Videos</a> |
                                                             <a href="#" class="description-link">Catalogues</a> |
                                                             <a href="#" class="description-link">Manuals</a>
@@ -215,10 +215,10 @@
                                                     <li>
                                                         <a href="#">Corporate Enquiry</a>
                                                         <div class="submenu-description">
-                                                            <a href="#" class="description-link">FORM</a> 
+                                                            <a href="contact" class="description-link">FORM</a> 
                                                         </div>
                                                     </li>
-                                                    <li><a href="contact.php">Contact Us</a></li>
+                                                    <li><a href="contact">Contact Us</a></li>
                                                 </ul>
                                             </div>
                                             
