@@ -24,7 +24,7 @@
             ];
 
             // Function to truncate blog content to 500 words
-            function truncate_content($content, $word_limit = 500) {
+            function truncate_content($content, $word_limit = 200) {
                 $words = explode(' ', $content);
                 if (count($words) > $word_limit) {
                     $content = implode(' ', array_slice($words, 0, $word_limit)) . '...';
