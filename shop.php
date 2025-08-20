@@ -114,57 +114,63 @@
 
                             <script>
                                 $(document).ready(function () {
-                                    // Fetch categories when document is ready
-                                    fetchCategories();
+    // Fetch categories when document is ready
+    fetchCategories();
 
-                                    // Check URL for category parameter
-                                    const urlParams = new URLSearchParams(window.location.search);
-                                    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling Fan"
-                                    
-                                    if (categoryFromURL) {
-                                        // Pre-select category checkbox
-                                        $('input[name="category"]').each(function() {
-                                            const categoryName = $(this).val();
-                                            if (categoryName === categoryFromURL) {
-                                                $(this).prop('checked', true);
-                                            }
-                                        });
-                                    }
-                                });
+    // Check URL for category parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromURL = urlParams.get('category'); // e.g., "Ceiling Fan"
+    
+    if (categoryFromURL) {
+        // Decode URL encoded string if needed
+        const decodedCategory = decodeURIComponent(categoryFromURL);
 
-                                // Fetch categories from the backend
-                                function fetchCategories() {
-                                    $.ajax({
-                                        url: '<?php echo BASE_URL; ?>/categories/fetch',
-                                        type: 'POST',
-                                        success: function(response) {
-                                            if (response && response.data) {
-                                                populateCategories(response.data);
-                                            } else {
-                                                console.error("Unexpected categories response format:", response);
-                                            }
-                                        },
-                                        error: function(err) {
-                                            console.error("Error fetching categories:", err);
-                                        }
-                                    });
-                                }
+        // Pre-select category checkbox
+        $('input[name="category"]').each(function() {
+            const categoryName = $(this).val(); // e.g., "Ceiling Fan"
+            
+            // Match category and check the checkbox
+            if (categoryName === decodedCategory) {
+                $(this).prop('checked', true);
+            }
+        });
+    }
+});
 
-                                // Render Categories (with checkboxes) into the sidebar
-                                function populateCategories(categories) {
-                                    let htmlStr = '';
-                                    categories.forEach(category => {
-                                        htmlStr += `
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
-                                                    <span>${category.name}</span>
-                                                </label>
-                                            </li>
-                                        `;
-                                    });
-                                    $('#categories-list').html(htmlStr);
-                                }
+// Fetch categories from the backend
+function fetchCategories() {
+    $.ajax({
+        url: '<?php echo BASE_URL; ?>/categories/fetch',
+        type: 'POST',
+        success: function(response) {
+            if (response && response.data) {
+                populateCategories(response.data);
+            } else {
+                console.error("Unexpected categories response format:", response);
+            }
+        },
+        error: function(err) {
+            console.error("Error fetching categories:", err);
+        }
+    });
+}
+
+// Render Categories (with checkboxes) into the sidebar
+function populateCategories(categories) {
+    let htmlStr = '';
+    categories.forEach(category => {
+        htmlStr += `
+            <li>
+                <label>
+                    <input type="checkbox" class="category_list_check" name="category" value="${category.name}">
+                    <span>${category.name}</span>
+                </label>
+            </li>
+        `;
+    });
+    $('#categories-list').html(htmlStr);
+}
+
                             </script>
 
                             <script>
