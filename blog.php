@@ -62,7 +62,7 @@
             case 1:
                 ?>
             <!-- Blog Section -->
-            <section id="blog1" class="blog-contents">
+            <section id="blog1" class="blog-content">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
                     <!-- <h3>Image Gallery</h3> -->
