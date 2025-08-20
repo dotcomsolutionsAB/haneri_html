@@ -212,7 +212,7 @@
                     break;
                 case 2:
             ?>
-            <section id="blog2" class="blog-content">
+            <section id="blog2" class="blog-contents">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
                     <!-- <h3>Image Gallery</h3> -->
@@ -314,7 +314,7 @@
                     break;
                 case 3:
             ?>
-            <section id="blog3" class="blog-content">
+            <section id="blog3" class="blog-contents">
                 <!-- Image Gallery Section -->
                 <div class="image-gallerys">
                     <!-- <h3>Image Gallery</h3> -->
