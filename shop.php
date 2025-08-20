@@ -132,7 +132,7 @@
                                     }
                                 });
 
-                                // 1. Fetch Categories
+                                // Fetch categories from the backend
                                 function fetchCategories() {
                                     $.ajax({
                                         url: '<?php echo BASE_URL; ?>/categories/fetch',
@@ -149,11 +149,11 @@
                                         }
                                     });
                                 }
-                                // 2. Render Categories (with checkboxes) into the sidebar
+
+                                // Render Categories (with checkboxes) into the sidebar
                                 function populateCategories(categories) {
                                     let htmlStr = '';
                                     categories.forEach(category => {
-                                        // Example: each category gets a checkbox and a label
                                         htmlStr += `
                                             <li>
                                                 <label>
@@ -166,6 +166,7 @@
                                     $('#categories-list').html(htmlStr);
                                 }
                             </script>
+
                             <script>
                                 $(document).ready(function() {
                                     // If you already have `fetchCategories()` somewhere
@@ -476,7 +477,6 @@
                     // --- Extract category from URL if exists ---
                     const urlParams = new URLSearchParams(window.location.search);
                     const categoryFromURL = urlParams.get('category');
-                    
                     let searchCategory = selectedCategories.join(',');
                     if (categoryFromURL && !searchCategory) {
                         searchCategory = categoryFromURL;
@@ -510,7 +510,7 @@
                         url: '<?php echo BASE_URL; ?>/products/get_products',
                         type: 'POST',
                         headers: {
-                            "Content-Type": "application/json",  // Ensuring Content-Type is JSON
+                            "Content-Type": "application/json",
                             "Authorization": `Bearer ${getAuthToken}`
                         },
                         data: JSON.stringify({
