@@ -180,10 +180,6 @@
                                     $('#categories-list').html(htmlStr);
                                 }
                             </script>
-<style>
-
-    
-</style>
 
                             <script>
                                 $(document).ready(function() {

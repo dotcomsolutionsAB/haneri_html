@@ -434,8 +434,6 @@
 					});
 				</script>
 
-
-
 				<div class="tab-pane fade" id="address" role="tabpanel">
 					<h3 class="account-sub-title d-none d-md-block mb-1">
 						<i class="sicon-location-pin align-middle mr-3"></i>Addresses</h3>
@@ -901,7 +899,7 @@
 								</div>
 							</div>
 
-							<div class="form-group mb-2">
+							<div class="form-group mb-2 pl-3">
 								<label for="acc-text">Display name <span class="required">*</span></label>
 								<input type="text" class="form-control" id="acc-mobile" name="acc-mobile" readonly
 									placeholder="Editor" required />
@@ -909,13 +907,13 @@
 							</div>
 
 
-							<div class="form-group mb-4">
+							<div class="form-group mb-4 pl-3">
 								<label for="acc-email">Email address <span class="required">*</span></label>
 								<input type="email" class="form-control" id="acc-email" name="acc-email"
 									placeholder="editor@gmail.com" required />
 							</div>
 
-							<div class="change-password">
+							<div class="change-password pl-3">
 								<h3 class="text-uppercase mb-2">Password Change</h3>
 
 								<div class="form-group">
@@ -939,7 +937,7 @@
 								</div>
 							</div>
 
-							<div class="form-footer mt-3 mb-0">
+							<div class="form-footer mt-3 mb-0 pl-3">
 								<button type="button" class="btn profile_save mr-0" id="saveProfileBtn">
 									Save changes
 								</button>
