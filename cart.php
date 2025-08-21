@@ -362,7 +362,7 @@
                                     <div class="float-right">
                                         <div class="cart-discount">
                                             <div class="input-group-append">
-                                                <button class="btn btn-sm" type="submit">Apply Coupon</button>
+                                                <button class="btn btn-danger" type="submit">Clear Cart</button>
                                             </div>
                                         </div>
                                     </div>
