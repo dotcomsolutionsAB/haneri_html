@@ -1212,14 +1212,20 @@
 
                     // SweetAlert for delete confirmation
                     Swal.fire({
-                        title: 'Are you sure?',
-                        text: `Do you want to delete quotation #${quotationId}?`,
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#d33',
-                        cancelButtonColor: '#3085d6',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
+						title: 'Are you sure?',
+						text: `Do you want to delete quotation #${quotationId}?`,
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#d33',
+						cancelButtonColor: '#3085d6',
+						confirmButtonText: 'Yes, delete it!',
+						customClass: {
+							title: 'swal-title-custom',
+							htmlContainer: 'swal-text-custom',
+							confirmButton: 'swal-confirm-btn-custom',
+							cancelButton: 'swal-cancel-btn-custom'
+						}
+					}).then((result) => {
                         if (result.isConfirmed) {
                             // Send DELETE request to API
                             fetch(`<?php echo BASE_URL; ?>/quotation/${quotationId}`, {

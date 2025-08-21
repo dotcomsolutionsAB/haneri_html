@@ -67,3 +67,17 @@
         gap: 15px;
     }
 }
+
+
+.swal-title-custom {
+    font-size: 16px !important;
+}
+
+.swal-text-custom {
+    font-size: 16px !important;
+}
+
+.swal-confirm-btn-custom,
+.swal-cancel-btn-custom {
+    font-size: 16px !important;
+}
