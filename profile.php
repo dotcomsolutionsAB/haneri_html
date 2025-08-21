@@ -1222,7 +1222,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Send DELETE request to API
-                            fetch(`{{base_url}}/quotation/${quotationId}`, {
+                            fetch(`<?php echo BASE_URL; ?>/quotation/${quotationId}`, {
                                 method: "DELETE",
                                 headers: {
                                     "Content-Type": "application/json",
