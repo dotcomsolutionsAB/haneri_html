@@ -4442,3 +4442,12 @@ footer .social-icon {
             color: #00473e;
             box-shadow: none;
         }
+        .tab_data{
+            min-height: 70vh;
+        }
+
+        @media (max-width: 520px) {
+            .tab_data{
+                min-height: 45vh;
+            }
+        }

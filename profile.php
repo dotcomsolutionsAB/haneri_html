@@ -49,7 +49,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-lg-9 order-lg-last order-1 tab-content">
+			<div class="col-lg-9 order-lg-last order-1 tab-content tab_data">
 				<div class="tab-pane fade show active" id="dashboard" role="tabpanel">
 					<div class="dashboard-content">
 						<h6>
@@ -313,7 +313,7 @@
 				</div>
 
 				<!-- Quotations Fetch Script -->
-				<script>
+				<!-- <script>
 					document.addEventListener("DOMContentLoaded", function () {
 						const authToken = localStorage.getItem("auth_token");
 						if (!authToken) {
@@ -433,7 +433,7 @@
 							console.error("Error fetching quotations:", error);
 						});
 					});
-				</script>
+				</script> -->
 
 				<div class="tab-pane fade" id="address" role="tabpanel">
 					<h3 class="account-sub-title d-none d-md-block mb-1">
@@ -1198,7 +1198,7 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-danger delete-quotation" data-id="${quotationId}">Delete</button> <!-- Delete Button -->
+                            <button class="btn btn-danger delete-quotation" data-id="${quotationId}"><i class="fa fa-trash"></i></button> 
                         </td>
                     </tr>
                 `;
