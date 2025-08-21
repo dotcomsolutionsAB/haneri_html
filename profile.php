@@ -139,19 +139,19 @@
 
 <!-- Hiding Tabs -->
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		// Get role from localStorage
-		const role = localStorage.getItem('role');
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	// Get role from localStorage
+	// 	const role = localStorage.getItem('role');
 
-		// Check if role is 'customer'
-		if (role === 'customer') {
-			// Hide the nav item
-			const quotationTab = document.querySelector('#quotation-tab');
-			if (quotationTab) {
-				quotationTab.parentElement.style.display = 'none';
-			}
-		}
-	});
+	// 	// Check if role is 'customer'
+	// 	if (role === 'customer') {
+	// 		// Hide the nav item
+	// 		const quotationTab = document.querySelector('#quotation-tab');
+	// 		if (quotationTab) {
+	// 			quotationTab.parentElement.style.display = 'none';
+	// 		}
+	// 	}
+	// });
 </script>
 
 				<style>
