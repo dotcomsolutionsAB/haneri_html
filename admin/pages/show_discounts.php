@@ -498,7 +498,7 @@
             const variantValue = discountData.product_variant?.variant_value || 'Unknown Variant'; // Fallback if variant_value is undefined
 
             Swal.fire({
-                title: 'Edit Category',
+                title: 'Edit Discount',
                 customClass: {
                     popup: 'swal2-my-small-popup',
                     confirmButton: 'swal2-confirm-btn',
