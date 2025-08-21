@@ -523,7 +523,7 @@
                                             <tr>
                                                 <td class="product-col">
                                                     <h3 class="product-title">
-                                                        ${item.product_name} × <span class="product-qty">${quantity}</span>
+                                                        ${item.product_name}-${item.variant_value} × <span class="product-qty">${quantity}</span>
                                                     </h3>
                                                 </td>
                                                 <td class="price-col">
@@ -627,50 +627,6 @@
 
                         return shippingAddress;
                     }
-
-                    // $("#placeOrderBtn").click(function (event) {
-                    //     event.preventDefault(); // Prevent form from submitting normally
-
-                    //     let shippingAddress = getSelectedAddress();
-                    //     if (!shippingAddress) return;
-
-                    //     let orderData = {
-                    //         status: "pending",
-                    //         payment_status: "pending",
-                    //         shipping_address: shippingAddress
-                    //     };
-
-                    //     $.ajax({
-                    //         url: orderUrl,
-                    //         type: "POST",
-                    //         headers: {
-                    //             "Authorization": `Bearer ${authToken}`,
-                    //             "Content-Type": "application/json"
-                    //         },
-                    //         data: JSON.stringify(orderData),
-                    //         success: function (response) {
-                    //             if (response.message.includes("success")) {
-                    //                 let orderDetails = response.data.data;
-
-                    //                 let orderId = orderDetails.order_id;
-                    //                 let razorpayOrderId = orderDetails.razorpay_order_id;
-                    //                 let totalAmount = orderDetails.total_amount;
-                    //                 let userName = orderDetails.name;
-                    //                 let userEmail = orderDetails.email;
-                    //                 let userPhone = orderDetails.phone;
-                    //                 let userId = orderDetails.user_id;
-
-                    //                 // Open Razorpay Payment Popup
-                    //                 openRazorpayPopup(razorpayOrderId, totalAmount, orderId, userId, userName, userEmail, userPhone, shippingAddress);
-                    //             } else {
-                    //                 alert("Failed to place order. Please try again.");
-                    //             }
-                    //         },
-                    //         error: function () {
-                    //             alert("Failed to place order. Please try again.");
-                    //         }
-                    //     });
-                    // });
 
                     $("#placeOrderBtn").click(function (event) {
                         event.preventDefault();
