@@ -500,30 +500,108 @@
                             type: "POST",
                             contentType: "application/json",
                             success: function (response) {
+                                // if (response.data.length > 0) {
+                                //     let cartHTML = "";
+                                //     let subtotal = 0;
+                                //     let totalTax = 0;
+                                //     let total = 0;
+
+                                //     response.data.forEach(item => {
+                                //         const quantity = item.quantity;
+                                //         const fullPrice = parseFloat(item.selling_price); // inclusive of tax
+                                //         const basePrice = fullPrice / 1.18;
+                                //         const tax = fullPrice - basePrice;
+                                //         const itemBaseTotal = basePrice * quantity;
+                                //         const itemTaxTotal = tax * quantity;
+                                //         const itemTotal = fullPrice * quantity;
+
+                                //         subtotal += itemBaseTotal;
+                                //         totalTax += itemTaxTotal;
+                                //         total += itemTotal;
+
+                                //         cartHTML += `
+                                //             <tr>
+                                //                 <td class="product-col">
+                                //                     <h3 class="product-title">
+                                //                         ${item.product_name} - ${item.variant_value} × <span class="product-qty">${quantity}</span>
+                                //                     </h3>
+                                //                 </td>
+                                //                 <td class="price-col">
+                                //                     <span>₹ ${itemTotal.toFixed(2)}</span>
+                                //                 </td>
+                                //             </tr>
+                                //         `;
+                                //     });
+
+                                //     // Shipping Logic
+                                //     let shippingCharge = 0;
+                                //     let shippingHTML = "";
+                                //     if (total > 5000) {
+                                //         shippingHTML = `
+                                //             <div class="custom-control custom-radio d-flex">
+                                //                 <input type="radio" class="custom-control-input" name="radio" checked />
+                                //                 <label class="custom-control-label">Free Shipping</label>
+                                //             </div>
+                                //         `;
+                                //     } else {
+                                //         shippingCharge = 120;
+                                //         total += shippingCharge;
+                                //         shippingHTML = `
+                                //             <div class="custom-control custom-radio d-flex">
+                                //                 <input type="radio" class="custom-control-input" name="radio" checked />
+                                //                 <label class="custom-control-label">Shipping Charges ₹120.00</label>
+                                //             </div>
+                                //         `;
+                                //     }
+
+                                //     $("#cart-items").html(cartHTML);
+                                //     $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
+                                //     $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
+                                //     $("#total").text(`₹ ${total.toFixed(2)}`);
+                                //     $(".order-shipping td .form-group-custom-control").html(shippingHTML);
+                                // } else {
+                                //     $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
+                                //     $("#subtotal").text("₹ 0.00");
+                                //     $("#total-tax").text("₹ 0.00");
+                                //     $("#total").text("₹ 0.00");
+                                //     $(".order-shipping td .form-group-custom-control").html(`
+                                //         <div class="custom-control custom-radio d-flex">
+                                //             <input type="radio" class="custom-control-input" name="radio" checked />
+                                //             <label class="custom-control-label">Free Shipping</label>
+                                //         </div>
+                                //     `);
+                                // }
                                 if (response.data.length > 0) {
                                     let cartHTML = "";
                                     let subtotal = 0;
                                     let totalTax = 0;
                                     let total = 0;
+                                    const GST_RATE = 0.18; // 18% GST
 
                                     response.data.forEach(item => {
                                         const quantity = item.quantity;
-                                        const fullPrice = parseFloat(item.selling_price); // inclusive of tax
-                                        const basePrice = fullPrice / 1.18;
+                                        const fullPrice = parseFloat(item.selling_price); // price inclusive of GST
+                                        
+                                        // Calculate base price and tax per item
+                                        const basePrice = fullPrice / (1 + GST_RATE);
                                         const tax = fullPrice - basePrice;
+
+                                        // Totals for this line item
                                         const itemBaseTotal = basePrice * quantity;
                                         const itemTaxTotal = tax * quantity;
                                         const itemTotal = fullPrice * quantity;
 
+                                        // Add to overall totals
                                         subtotal += itemBaseTotal;
                                         totalTax += itemTaxTotal;
                                         total += itemTotal;
 
+                                        // Build HTML for cart
                                         cartHTML += `
                                             <tr>
                                                 <td class="product-col">
                                                     <h3 class="product-title">
-                                                        ${item.product_name}-${item.variant_value} × <span class="product-qty">${quantity}</span>
+                                                        ${item.product_name} - ${item.variant_value} × <span class="product-qty">${quantity}</span>
                                                     </h3>
                                                 </td>
                                                 <td class="price-col">
@@ -554,12 +632,15 @@
                                         `;
                                     }
 
+                                    // Render to DOM
                                     $("#cart-items").html(cartHTML);
                                     $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
                                     $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
                                     $("#total").text(`₹ ${total.toFixed(2)}`);
                                     $(".order-shipping td .form-group-custom-control").html(shippingHTML);
+
                                 } else {
+                                    // Empty cart
                                     $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
                                     $("#subtotal").text("₹ 0.00");
                                     $("#total-tax").text("₹ 0.00");
@@ -571,6 +652,7 @@
                                         </div>
                                     `);
                                 }
+
                             },
                             error: function () {
                                 console.error("Error fetching cart items.");
