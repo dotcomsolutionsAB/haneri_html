@@ -250,146 +250,7 @@
                             Swal.fire("Error", "Something went wrong. Please try again.", "error");
                         }
                     });
-                };
-
-                // new approach
-                // window.openAddAddressForm = function () {
-                //     const showCreateUserCheckbox = !localStorage.getItem('auth_token');
-
-                //     Swal.fire({
-                //         title: 'Add New Address',
-                //         width: '700px', // Wider popup
-                //         customClass: {
-                //             confirmButton: 'add-address-btn',
-                //             cancelButton: 'cancel-address-btn'
-                //         },
-
-                //         html: `			
-                //             <form id="swal-address-form">
-                //                 <input type="text" id="swal_name" placeholder="Name*" required>
-                //                 <input type="text" id="swal_contact_no" placeholder="Contact No*" required>
-                //                 <input type="text" id="swal_address_line1" placeholder="Address Line 1*" required>
-                //                 <input type="text" id="swal_address_line2" placeholder="Address Line 2 (optional)">
-                //                 <input type="text" id="swal_city" placeholder="City*" required>
-
-                //                 <select id="swal_state" required>
-                //                     <option value="">Select State*</option>
-                //                     <option value="Mumbai">Mumbai</option>
-                //                     <option value="Delhi">Delhi</option>
-                //                     <option value="West Bengal">West Bengal</option>
-                //                 </select>
-
-                //                 <select id="swal_country" required>
-                //                     <option value="India">India</option>
-                //                     <option value="Australia">Australia</option>
-                //                 </select>
-
-                //                 <input type="text" id="swal_postal_code" placeholder="Pincode*" required>
-
-                //                 ${showCreateUserCheckbox ? `
-                //                 <div class="create_user_checkbox">
-                //                     <label for="swal_create_user">Create as User</label>
-                //                     <input type="checkbox" id="swal_create_user" name="create_user" required>                                    
-                //                 </div>
-                //                 ` : ''}
-                //             </form>
-                //         `,
-                //         showCancelButton: true,
-                //         confirmButtonText: 'Add Address',
-                //         cancelButtonText: 'Cancel',
-                //         focusConfirm: false,
-                //         preConfirm: () => {
-                //             const name = document.getElementById('swal_name').value.trim();
-                //             const contact_no = document.getElementById('swal_contact_no').value.trim();
-                //             const address_line1 = document.getElementById('swal_address_line1').value.trim();
-                //             const address_line2 = document.getElementById('swal_address_line2').value.trim();
-                //             const city = document.getElementById('swal_city').value.trim();
-                //             const state = document.getElementById('swal_state').value;
-                //             const country = document.getElementById('swal_country').value;
-                //             const postal_code = document.getElementById('swal_postal_code').value.trim();
-
-                //             if (!name || !contact_no || !address_line1 || !city || !state || !country || !postal_code) {
-                //                 Swal.showValidationMessage('Please fill all required fields.');
-                //                 return false;
-                //             }
-
-                //             if (showCreateUserCheckbox) {
-                //                 const createUserChecked = document.getElementById('swal_create_user').checked;
-                //                 if (!createUserChecked) {
-                //                     Swal.showValidationMessage('Please check "Create as User" to proceed.');
-                //                     return false;
-                //                 }
-                //             }
-
-                //             return {
-                //                 name,
-                //                 contact_no,
-                //                 address_line1,
-                //                 address_line2,
-                //                 city,
-                //                 state,
-                //                 country,
-                //                 postal_code,
-                //                 create_user: showCreateUserCheckbox ? document.getElementById('swal_create_user').checked : false
-                //             };
-                //         }
-                //     }).then((result) => {
-                //         if (result.isConfirmed && result.value) {
-                //             submitAddress(result.value);
-                //         }
-                //     });
-                // };
-
-                // function submitAddress(data) {
-                //     const authToken = localStorage.getItem("auth_token");
-                //     if (!authToken) {
-                //         Swal.fire("Error", "User not logged in.", "error");
-                //         return;
-                //     }
-
-                //     const addressData = {
-                //         ...data,
-                //         is_default: true
-                //     };
-
-                //     Swal.fire({
-                //         title: "Saving...",
-                //         text: "Please wait",
-                //         allowOutsideClick: false,
-                //         didOpen: () => Swal.showLoading()
-                //     });
-
-                //     fetch("<?php echo BASE_URL; ?>/address/register", {
-                //         method: "POST",
-                //         headers: {
-                //             "Content-Type": "application/json",
-                //             "Authorization": `Bearer ${authToken}`
-                //         },
-                //         body: JSON.stringify(addressData)
-                //     })
-                //     .then(response => response.json())
-                //     .then(responseData => {
-                //         Swal.close();
-                //         if (responseData.message && responseData.message.includes("success")) {
-                //             Swal.fire({
-                //                 title: "Success",
-                //                 text: "Address added successfully!",
-                //                 icon: "success",
-                //                 showConfirmButton: false,
-                //                 timer: 1500
-                //             }).then(() => {
-                //                 location.reload();
-                //             });
-                //         } else {
-                //             Swal.fire("Error", responseData.message || "Failed to add address.", "error");
-                //         }
-                //     })
-                //     .catch(error => {
-                //         console.error("Error:", error);
-                //         Swal.close();
-                //         Swal.fire("Error", "Something went wrong. Please try again.", "error");
-                //     });
-                // }
+                };               
 
                 window.openAddAddressForm = function () {
                     const authToken = localStorage.getItem('auth_token');
@@ -629,63 +490,6 @@
                     const cartUrl = "<?php echo BASE_URL; ?>/cart/fetch";
                     const orderUrl = "<?php echo BASE_URL; ?>/orders";
 
-                    // function fetchCartItems() {
-                    //     $.ajax({
-                    //         url: cartUrl,
-                    //         type: "POST",
-                    //         headers: {
-                    //             "Authorization": `Bearer ${authToken}`,
-                    //             "Content-Type": "application/json"
-                    //         },
-                    //         success: function (response) {
-                    //             if (response.data.length > 0) {
-                    //                 let cartHTML = "";
-                    //                 let subtotal = 0;
-                    //                 let totalTax = 0;
-                    //                 let total = 0;
-
-                    //                 response.data.forEach(item => {
-                    //                     let productName = item.product.name;
-                    //                     let quantity = item.quantity;
-                    //                     let price = parseFloat(item.variant.selling_price);
-                    //                     let tax = parseFloat(item.variant.selling_tax);
-                    //                     let itemTotal = (price + tax) * quantity;
-
-                    //                     subtotal += (price * quantity);
-                    //                     totalTax += (tax * quantity);
-                    //                     total += itemTotal;
-
-                    //                     cartHTML += `
-                    //                         <tr>
-                    //                             <td class="product-col">
-                    //                                 <h3 class="product-title">
-                    //                                     ${productName} × <span class="product-qty">${quantity}</span>
-                    //                                 </h3>
-                    //                             </td>
-                    //                             <td class="price-col">
-                    //                                 <span>₹ ${itemTotal.toFixed(2)}</span>
-                    //                             </td>
-                    //                         </tr>
-                    //                     `;
-                    //                 });
-
-                    //                 $("#cart-items").html(cartHTML);
-                    //                 $("#subtotal").text(`₹ ${subtotal.toFixed(2)}`);
-                    //                 $("#total-tax").text(`₹ ${totalTax.toFixed(2)}`);
-                    //                 $("#total").text(`₹ ${total.toFixed(2)}`);
-                    //             } else {
-                    //                 $("#cart-items").html("<tr><td colspan='2'>No items in cart.</td></tr>");
-                    //                 $("#subtotal").text("₹ 0.00");
-                    //                 $("#total-tax").text("₹ 0.00");
-                    //                 $("#total").text("₹ 0.00");
-                    //             }
-                    //         },
-                    //         error: function () {
-                    //             console.error("Error fetching cart items.");
-                    //         }
-                    //     });
-                    // }
-
                     function fetchCartItems() {
                         const authToken = localStorage.getItem('auth_token');
                         const authTemp = localStorage.getItem('temp_id');
@@ -704,7 +508,7 @@
 
                                     response.data.forEach(item => {
                                         const quantity = item.quantity;
-                                        const fullPrice = parseFloat(item.variant.selling_price); // inclusive of tax
+                                        const fullPrice = parseFloat(item.selling_price); // inclusive of tax
                                         const basePrice = fullPrice / 1.18;
                                         const tax = fullPrice - basePrice;
                                         const itemBaseTotal = basePrice * quantity;
@@ -719,7 +523,7 @@
                                             <tr>
                                                 <td class="product-col">
                                                     <h3 class="product-title">
-                                                        ${item.product.name} × <span class="product-qty">${quantity}</span>
+                                                        ${item.product_name} × <span class="product-qty">${quantity}</span>
                                                     </h3>
                                                 </td>
                                                 <td class="price-col">
