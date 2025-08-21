@@ -499,62 +499,95 @@
 
             Swal.fire({
                 title: 'Edit Category',
-                // Use our custom class to reduce font size (except width)
                 customClass: {
-                popup: 'swal2-my-small-popup'
+                    popup: 'swal2-my-small-popup',
+                    confirmButton: 'swal2-confirm-btn',
+                    cancelButton: 'swal2-cancel-btn',
                 },
-                // Build the popup HTML with labels
                 html: `
-                    <div class="swal2-field-row">
-                        <label for="swal-dis-us-id">User ID</label>
-                        <input id="swal-dis-us-id" type="text" value="${discountData.user_id || null }" readonly>
-                    </div>
-                    
-                    <div class="swal2-field-row">
-                        <label for="swal-dis-var-id">Variant ID</label>
-                        <input id="swal-dis-var-id" type="text" value="${discountData.product_variant_id || null }" readonly>
-                    </div>
+                    <style>
+                        .swal2-grid {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 12px;
+                            margin-top: 15px;
+                        }
+                        .swal2-field {
+                            display: flex;
+                            flex-direction: column;
+                            text-align: left;
+                            font-size: 13px;
+                        }
+                        .swal2-field label {
+                            margin-bottom: 4px;
+                            font-weight: 600;
+                            color: #444;
+                        }
+                        .swal2-field input {
+                            padding: 6px 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            font-size: 13px;
+                            width: 100%;
+                        }
+                        .swal2-confirm-btn {
+                            background-color: orange !important;
+                            color: #fff !important;
+                            border: none !important;
+                        }
+                        .swal2-cancel-btn {
+                            background-color: red !important;
+                            color: #fff !important;
+                            border: none !important;
+                        }
+                    </style>
 
-                    <div class="swal2-field-row">
-                        <label for="swal-dis-cat-id">Category ID</label>
-                        <input id="swal-dis-cat-id" type="text" value="${discountData.category_id || null }" readonly>
-                    </div>
-                    
-                    <div class="swal2-field-row">
-                        <label for="swal-cat-photo">User</label>
-                        <input id="swal-cat-photo" type="text" value="${userName}" readonly>
-                    </div>
-                    
-                    <div class="swal2-field-row">
-                        <label for="swal-cat-sort">Product</label>
-                        <input id="swal-cat-sort" type="text" value="${productName}" readonly>
-                    </div>
+                    <div class="swal2-grid">
+                        <div class="swal2-field">
+                            <label for="swal-dis-us-id">User ID</label>
+                            <input id="swal-dis-us-id" type="text" value="${discountData.user_id || ''}" readonly>
+                        </div>
+                        <div class="swal2-field">
+                            <label for="swal-dis-var-id">Variant ID</label>
+                            <input id="swal-dis-var-id" type="text" value="${discountData.product_variant_id || ''}" readonly>
+                        </div>
+                        <div class="swal2-field">
+                            <label for="swal-dis-cat-id">Category ID</label>
+                            <input id="swal-dis-cat-id" type="text" value="${discountData.category_id || ''}" readonly>
+                        </div>
 
-                    <div class="swal2-field-row">
-                        <label for="swal-cat-sort">Variant</label>
-                        <input id="swal-cat-sort" type="text" value="${variantValue}" readonly>
-                    </div>
-                    
-                    <div class="swal2-field-row">
-                        <label for="swal-dis-val">Discount</label>
-                        <input id="swal-dis-val" type="text" value="${discountData.discount || ''}"> %
+                        <div class="swal2-field">
+                            <label for="swal-cat-photo">User</label>
+                            <input id="swal-cat-photo" type="text" value="${userName}" readonly>
+                        </div>
+                        <div class="swal2-field">
+                            <label for="swal-cat-sort">Product</label>
+                            <input id="swal-cat-sort" type="text" value="${productName}" readonly>
+                        </div>
+                        <div class="swal2-field">
+                            <label for="swal-variant">Variant</label>
+                            <input id="swal-variant" type="text" value="${variantValue}" readonly>
+                        </div>
+
+                        <div class="swal2-field">
+                            <label for="swal-dis-val">Discount (%)</label>
+                            <input id="swal-dis-val" type="text" value="${discountData.discount || ''}">
+                        </div>
                     </div>
                 `,
                 focusConfirm: false,
                 showCancelButton: true,
                 confirmButtonText: 'Update',
-                // Collect values before closing
+                cancelButtonText: 'Cancel',
                 preConfirm: () => {
                     const user_id = document.getElementById('swal-dis-us-id').value.trim();
                     const product_variant_id = document.getElementById('swal-dis-var-id').value.trim() || null;
                     const category_id = document.getElementById('swal-dis-cat-id').value.trim() || null;
                     const discount = document.getElementById('swal-dis-val').value.trim() || 0;
-                    return { user_id, product_variant_id, category_id, discount};
+                    return { user_id, product_variant_id, category_id, discount };
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // You said you are updating via /products/:id
-                    // We use discountData.id from the fetch
                     updateDiscountViaProductsApi(discountData.id, result.value);
                 }
             });
