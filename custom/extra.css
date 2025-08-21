@@ -4429,3 +4429,10 @@ footer .social-icon {
         input[type="checkbox"]:hover {
             border-color: #fff;  /* Slightly lighter green on hover */
         }
+
+        .btn-grey{
+            border-color: #706f6f;
+            background-color: #706f6f;
+            color: #fff;
+            box-shadow: none;
+        }

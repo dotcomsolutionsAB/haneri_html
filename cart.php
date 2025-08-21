@@ -343,7 +343,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="5" class="clearfix">
+                                <!-- <td colspan="5" class="clearfix">
                                     <div class="float-right">
                                         <div class="cart-discount">
                                             <form action="#">
@@ -357,10 +357,10 @@
                                             </form>
                                         </div>
                                     </div>
-                                </td>
-                                <td colspan="5" class="clearfix">
+                                </td> -->
+                                <td colspan="6" class="pt-3">
                                     <div class="float-right">
-                                        <div class="cart-discount">
+                                        <div class="cart-clear">
                                             <div class="input-group-append">
                                                 <button class="btn btn-danger" type="submit">Clear Cart</button>
                                             </div>
@@ -406,7 +406,7 @@
                     </div>
                     <br>
                     <div class="quotation-methods" id="quotation-methods">
-                        <a href="#" class="btn btn-block btn-danger" id="get-quotation-btn">
+                        <a href="#" class="btn btn-block btn-grey" id="get-quotation-btn">
                             📃 Get Quotation <i class="fa fa-arrow-down"></i>
                         </a>
                     </div>
