@@ -1124,50 +1124,84 @@
 </script>
 
 <script>
+	// document.addEventListener("DOMContentLoaded", function() {
+	// 	const authToken = localStorage.getItem("auth_token");
+	// 	const userName = localStorage.getItem("user_name");
+	// 	const userEmail = localStorage.getItem("user_email"); // Store email if available
+	// 	// const pwd001 = localStorage.getItem("pwd_000"); // Store password if available
+
+	// 	if (!authToken) {
+	// 		// Redirect to login page if not logged in
+	// 		window.location.href = "login.php";
+	// 	} else {
+	// 		// Update Profile Details
+	// 		document.getElementById("user-name").textContent = userName ? userName : "Not Showing !";
+	// 		// document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
+	// 		// document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
+	// 		// document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
+	// 		// document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
+	// 	}
+
+	// 	// Logout functionality
+	// 	document.getElementById("logout-btn").addEventListener("click", function() {
+	// 		logoutUser();
+	// 	});
+
+	// 	document.getElementById("logout-btn-alt").addEventListener("click", function() {
+	// 		logoutUser();
+	// 	});
+
+	// 	function logoutUser() {
+	// 		localStorage.removeItem("auth_token");
+	// 		localStorage.removeItem("user_name");
+	// 		localStorage.removeItem("user_email");
+	// 		localStorage.removeItem("user_role");
+	// 		localStorage.removeItem("user_id");
+	// 		// localStorage.removeItem("pwd_000");
+	// 		window.location.href = "login.php"; // Redirect to login page after logout
+	// 	}
+
+		
+	// });
+
 	document.addEventListener("DOMContentLoaded", function() {
 		const authToken = localStorage.getItem("auth_token");
 		const userName = localStorage.getItem("user_name");
-		const userEmail = localStorage.getItem("user_email"); // Store email if available
-		const pwd001 = localStorage.getItem("pwd_000"); // Store password if available
+		const userEmail = localStorage.getItem("user_email");
 
 		if (!authToken) {
 			// Redirect to login page if not logged in
 			window.location.href = "login.php";
 		} else {
 			// Update Profile Details
-			document.getElementById("user-name").textContent = userName ? userName : "Not Showing !";
-			// document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
-			// document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
-			// document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
-			// document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
+			const userNameEl = document.getElementById("user-name");
+			if (userNameEl) userNameEl.textContent = userName ? userName : "Not Showing !";
 		}
 
 		// Logout functionality
-		document.getElementById("logout-btn").addEventListener("click", function() {
-			logoutUser();
-		});
+		const logoutBtn = document.getElementById("logout-btn");
+		if (logoutBtn) {
+			logoutBtn.addEventListener("click", logoutUser);
+		}
 
-		document.getElementById("logout-btn-alt").addEventListener("click", function() {
-			logoutUser();
-		});
+		const logoutBtnAlt = document.getElementById("logout-btn-alt");
+		if (logoutBtnAlt) {
+			logoutBtnAlt.addEventListener("click", logoutUser);
+		}
 
 		function logoutUser() {
-			localStorage.removeItem("auth_token");
-			localStorage.removeItem("user_name");
-			localStorage.removeItem("user_email");
-			localStorage.removeItem("user_role");
-			localStorage.removeItem("user_id");
-			localStorage.removeItem("pwd_000");
+			localStorage.clear(); // Remove all localStorage data
 			window.location.href = "login.php"; // Redirect to login page after logout
 		}
 
-		
+		// Hide Quotation tab for customers
+		const role = localStorage.getItem("user_role");
+		if (role === "customer") {
+			const quotationTab = document.querySelector("#quotation-tab");
+			if (quotationTab) quotationTab.parentElement.style.display = "none";
+		}
 	});
 </script>
-<?php include("footer.php"); ?>
-
-
-
 
 <!-- Quotations Fetch Script -->
 <script>
@@ -1287,3 +1321,10 @@
         });
     });
 </script>
+
+<?php include("footer.php"); ?>
+
+
+
+
+
