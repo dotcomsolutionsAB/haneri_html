@@ -137,23 +137,6 @@
 					});
 				</script>
 
-<!-- Hiding Tabs -->
-<script>
-	// document.addEventListener('DOMContentLoaded', function() {
-	// 	// Get role from localStorage
-	// 	const role = localStorage.getItem('role');
-
-	// 	// Check if role is 'customer'
-	// 	if (role === 'customer') {
-	// 		// Hide the nav item
-	// 		const quotationTab = document.querySelector('#quotation-tab');
-	// 		if (quotationTab) {
-	// 			quotationTab.parentElement.style.display = 'none';
-	// 		}
-	// 	}
-	// });
-</script>
-
 				<style>
 					.table-order tbody {
 						display: block;
@@ -1123,47 +1106,8 @@
 	});
 </script>
 
+<!-- Logout Logic -->
 <script>
-	// document.addEventListener("DOMContentLoaded", function() {
-	// 	const authToken = localStorage.getItem("auth_token");
-	// 	const userName = localStorage.getItem("user_name");
-	// 	const userEmail = localStorage.getItem("user_email"); // Store email if available
-	// 	// const pwd001 = localStorage.getItem("pwd_000"); // Store password if available
-
-	// 	if (!authToken) {
-	// 		// Redirect to login page if not logged in
-	// 		window.location.href = "login.php";
-	// 	} else {
-	// 		// Update Profile Details
-	// 		document.getElementById("user-name").textContent = userName ? userName : "Not Showing !";
-	// 		// document.getElementById("user-name-again").textContent = userName ? userName : "Not Showing !";
-	// 		// document.getElementById("profile-user-name").textContent = userName ? userName : "Not Showing !";
-	// 		// document.getElementById("profile-user-email").textContent = userEmail ? userEmail : "Not Available";
-	// 		// document.getElementById("acc-password").textContent = pwd001 ? pwd001 : "Not Available";
-	// 	}
-
-	// 	// Logout functionality
-	// 	document.getElementById("logout-btn").addEventListener("click", function() {
-	// 		logoutUser();
-	// 	});
-
-	// 	document.getElementById("logout-btn-alt").addEventListener("click", function() {
-	// 		logoutUser();
-	// 	});
-
-	// 	function logoutUser() {
-	// 		localStorage.removeItem("auth_token");
-	// 		localStorage.removeItem("user_name");
-	// 		localStorage.removeItem("user_email");
-	// 		localStorage.removeItem("user_role");
-	// 		localStorage.removeItem("user_id");
-	// 		// localStorage.removeItem("pwd_000");
-	// 		window.location.href = "login.php"; // Redirect to login page after logout
-	// 	}
-
-		
-	// });
-
 	document.addEventListener("DOMContentLoaded", function() {
 		const authToken = localStorage.getItem("auth_token");
 		const userName = localStorage.getItem("user_name");
