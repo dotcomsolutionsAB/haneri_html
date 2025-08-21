@@ -193,8 +193,8 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         border: 2px solid #ccc;
         border-radius: 3px;
         background-color: #fff;
@@ -213,9 +213,9 @@
         content: '✔';  /* Unicode checkmark */
         position: absolute;
         top: 1px;
-        left: 6px;
+        left: 4px;
         color: white;   /* White checkmark */
-        font-size: 14px;
+        font-size: 10px;
     }
 
     /* Style when checkbox is hovered */
