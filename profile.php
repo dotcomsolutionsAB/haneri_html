@@ -901,7 +901,7 @@
 							</div>
 
 							<div class="form-group mb-2 pl-3">
-								<label for="acc-text">Display name <span class="required">*</span></label>
+								<label for="acc-text">Mobile Number <span class="required">*</span></label>
 								<input type="text" class="form-control" id="acc-mobile" name="acc-mobile" readonly
 									placeholder="Editor" required />
 								<p>Mobile Number can not be changed</p>
@@ -988,7 +988,7 @@
 			// Populate form fields
 			document.getElementById("acc-name").value = user.name || "";
 			document.getElementById("acc-email").value = user.email || "";
-			document.getElementById("acc-mobile").value = user.mobile || ""; // Display name same as name
+			document.getElementById("acc-mobile").value = user.mobile || ""; // Mobile Number same as name
 		})
 		.catch(error => {
 			console.error("Error fetching profile:", error);
