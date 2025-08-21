@@ -358,6 +358,15 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td colspan="5" class="clearfix">
+                                    <div class="float-right">
+                                        <div class="cart-discount">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-sm" type="submit">Apply Coupon</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tfoot>
                     </table>
