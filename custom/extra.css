@@ -4436,3 +4436,9 @@ footer .social-icon {
             color: #fff;
             box-shadow: none;
         }
+        .btn-grey:hover {
+            border-color: #706f6f;
+            background-color: #ffffff;
+            color: #00473e;
+            box-shadow: none;
+        }
