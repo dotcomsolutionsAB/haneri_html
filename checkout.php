@@ -90,9 +90,9 @@
                             } else {
                                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
                                 // 🔥 Auto open add address popup if no address found
-                                // setTimeout(() => {
-                                //     openAddAddressForm();
-                                // }, 500);
+                                setTimeout(() => {
+                                    openAddAddressForm();
+                                }, 500);
                             }
                         },
                         error: function () {
