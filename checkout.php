@@ -92,7 +92,7 @@
                                 // 🔥 Auto open add address popup if no address found
                                 setTimeout(() => {
                                     openAddAddressForm();
-                                }, 1500);
+                                }, 500);
                             }
                         },
                         error: function () {
