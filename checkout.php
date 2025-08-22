@@ -26,14 +26,14 @@
             $(document).ready(function () {
                 const authToken = localStorage.getItem('auth_token'); // Replace with actual token
                 // If not logged in, don't call /address. Go straight to Add Address form.
-                if (!authToken) {
-                    setTimeout(() => openAddAddressForm(), 300);
-                    // you may also want to show an empty list placeholder
-                    $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
-                    // continue with other initializations if needed, but skip fetchAddresses
-                } else {
-                    fetchAddresses(); // logged-in users only
-                }
+                // if (!authToken) {
+                //     setTimeout(() => openAddAddressForm(), 300);
+                //     // you may also want to show an empty list placeholder
+                //     $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
+                //     // continue with other initializations if needed, but skip fetchAddresses
+                // } else {
+                //     fetchAddresses(); // logged-in users only
+                // }
 
                 const baseUrl = "<?php echo BASE_URL; ?>/address";
                 let addressList = []; // Store addresses in memory
