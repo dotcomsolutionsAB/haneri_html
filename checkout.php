@@ -86,13 +86,13 @@
                                         </label>
                                     `;
                                 });
-                                // $("#collapseNew").html(addressHTML).addClass("show");
+                                $("#collapseNew").html(addressHTML).addClass("show");
                             } else {
                                 $("#collapseNew").html("<p>No addresses found.</p>").addClass("show");
                                 // 🔥 Auto open add address popup if no address found
                                 setTimeout(() => {
                                     openAddAddressForm();
-                                }, 500);
+                                }, 1500);
                             }
                         },
                         error: function () {
