@@ -145,6 +145,7 @@
                 });
             </script>
 
+            <?php include("inc_files/video_section.php"); ?>
             <?php include("inc_files/best_sellers.php"); ?>
     </div>
     
