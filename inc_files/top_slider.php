@@ -7,38 +7,26 @@
     <div class="track" id="vsTrack">
       <!-- Slide 1 -->
       <div class="video-slide" data-index="0" aria-roledescription="slide" aria-label="1 of 3">
-        <iframe
-          class="yt-frame"
-          title="Video 1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          data-src="https://www.youtube.com/embed/h1NYXQkYO8Q?autoplay=1&mute=1&loop=1&playlist=h1NYXQkYO8Q&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3">
-        </iframe>
+        <div class="skeleton"></div>
+        <div class="anti-overlay"></div>
+        <div class="player-host" id="yt-host-0"
+             data-video="h1NYXQkYO8Q"></div>
       </div>
 
       <!-- Slide 2 -->
       <div class="video-slide" data-index="1" aria-roledescription="slide" aria-label="2 of 3">
-        <iframe
-          class="yt-frame"
-          title="Video 2"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          data-src="https://www.youtube.com/embed/Ahkt6Wrg1GI?autoplay=1&mute=1&loop=1&playlist=Ahkt6Wrg1GI&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3">
-        </iframe>
+        <div class="skeleton"></div>
+        <div class="anti-overlay"></div>
+        <div class="player-host" id="yt-host-1"
+             data-video="Ahkt6Wrg1GI"></div>
       </div>
 
       <!-- Slide 3 -->
       <div class="video-slide" data-index="2" aria-roledescription="slide" aria-label="3 of 3">
-        <iframe
-          class="yt-frame"
-          title="Video 3"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          data-src="https://www.youtube.com/embed/KrCYPR5_Vt8?autoplay=1&mute=1&loop=1&playlist=KrCYPR5_Vt8&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&iv_load_policy=3">
-        </iframe>
+        <div class="skeleton"></div>
+        <div class="anti-overlay"></div>
+        <div class="player-host" id="yt-host-2"
+             data-video="KrCYPR5_Vt8"></div>
       </div>
     </div>
 
@@ -49,50 +37,39 @@
 </section>
 
 <style>
-  /* Layout */
   .video-gallery-slider { width: 100%; }
-  .video-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
+  .video-slider { position: relative; width: 100%; overflow: hidden; }
   .video-slider .track {
-    display: flex;
-    transition: transform 450ms ease;
-    will-change: transform;
+    display: flex; transition: transform 450ms ease; will-change: transform;
   }
   .video-slide {
-    min-width: 100%;
-    position: relative;
-    aspect-ratio: 16 / 9; /* full-width responsive */
-    background: #000;
+    min-width: 100%; position: relative; aspect-ratio: 16/9; background:#000; overflow: hidden;
   }
-  .video-slide .yt-frame {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: 0;
-    /* prevent hover overlays when you *do* allow pointer events elsewhere */
-    pointer-events: none;
+  .player-host, .player-host iframe {
+    width:100%; height:100%;
   }
+
+  /* --- Skeleton shimmer --- */
+  .skeleton {
+    position:absolute; inset:0;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 37%, #1a1a1a 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.3s infinite;
+  }
+  @keyframes shimmer { 0% {background-position: 100% 0;} 100% {background-position: 0 0;} }
+
+  /* --- Anti overlay (hides YT title/UI flash for ~1s on start) --- */
+  .anti-overlay {
+    position:absolute; inset:0; background:#000; opacity:1; pointer-events:none;
+    transition: opacity .35s ease;
+  }
+  .video-slide.ready .anti-overlay { opacity:0; }
 
   /* Arrows */
   .video-slider .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    font-size: 26px;
-    line-height: 44px;
-    text-align: center;
-    padding: 0;
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+    background: rgba(0,0,0,0.45); color: #fff; font-size: 26px; line-height: 44px; text-align: center; padding: 0;
   }
   .video-slider .prev { left: 12px; }
   .video-slider .next { right: 12px; }
@@ -100,34 +77,26 @@
 
   /* Dots */
   .video-slider .dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    gap: 8px;
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 3; display:flex; gap:8px;
   }
   .video-slider .dots button {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    padding: 0;
+    width: 10px; height:10px; border-radius:50%; border:none; background: rgba(255,255,255,0.5); cursor:pointer; padding:0;
   }
-  .video-slider .dots button[aria-selected="true"] {
-    background: #fff;
-  }
+  .video-slider .dots button[aria-selected="true"] { background:#fff; }
 
-  /* Mobile: 1 per view (already full width). Desktop also full-width single slide. */
+  /* Responsive: full width one slide view on all sizes */
   @media (min-width: 768px) {
-    .video-slide { aspect-ratio: 16 / 9; }
+    .video-slide { aspect-ratio: 16/9; }
   }
 </style>
 
 <script>
 (function(){
+  // 1) Load YouTube Iframe API
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
   const slider = document.getElementById('videoSlider');
   const track  = document.getElementById('vsTrack');
   const slides = Array.from(track.children);
@@ -137,7 +106,9 @@
 
   let index = 0;
   let autoplayTimer = null;
-  const AUTOPLAY_MS = 7000; // slide every 7s
+  const AUTOPLAY_MS = 5000; // 2) slide after 5 seconds
+  const players = new Array(slides.length).fill(null);
+  const initialized = new Array(slides.length).fill(false);
 
   // Build dots
   slides.forEach((_, i) => {
@@ -154,15 +125,64 @@
     });
   }
 
-  function lazyLoad(i){
+  // Create a player for a given slide (lazy)
+  function createPlayer(i){
+    if (initialized[i]) return;
+    initialized[i] = true;
+
+    const host = slides[i].querySelector('.player-host');
+    const vid  = host.dataset.video;
+
+    players[i] = new YT.Player(host, {
+      videoId: vid,
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        loop: 1,
+        playlist: vid,          // loop needs playlist=videoId
+        controls: 0,
+        modestbranding: 1,
+        rel: 0,
+        fs: 0,
+        disablekb: 1,
+        iv_load_policy: 3,
+        playsinline: 1
+      },
+      events: {
+        onReady: (e) => {
+          // Hide skeleton, then briefly keep overlay to suppress initial YT title/options
+          slides[i].classList.add('ready');
+          const skel = slides[i].querySelector('.skeleton');
+          if (skel) skel.style.display = 'none';
+
+          // start playback
+          try { e.target.mute(); e.target.playVideo(); } catch(e){}
+          // allow a short mask to avoid the initial hover/title flash
+          setTimeout(() => {
+            // overlay will fade via CSS when .ready is present (already set)
+          }, 1000);
+        },
+        onStateChange: (e) => {
+          // If video ended (shouldn't with loop=1), replay
+          if (e.data === YT.PlayerState.ENDED) {
+            try { e.target.playVideo(); } catch(err){}
+          }
+        }
+      }
+    });
+  }
+
+  // Play/pause management so only active slide plays
+  function activate(i){
     slides.forEach((slide, sIdx) => {
-      const iframe = slide.querySelector('iframe');
       if (sIdx === i) {
-        // activate current
-        if (!iframe.src) iframe.src = iframe.dataset.src;
+        if (!players[sIdx]) createPlayer(sIdx);
+        // If already ready, ensure it's playing
+        const p = players[sIdx];
+        if (p && p.playVideo) { try { p.playVideo(); } catch(e){} }
       } else {
-        // stop videos on non-active slides by removing src
-        if (iframe.src) iframe.src = '';
+        const p = players[sIdx];
+        if (p && p.pauseVideo) { try { p.pauseVideo(); } catch(e){} }
       }
     });
   }
@@ -171,8 +191,8 @@
     index = (i + slides.length) % slides.length;
     const x = -index * 100;
     track.style.transform = `translateX(${x}%)`;
-    lazyLoad(index);
     updateDots();
+    activate(index);
     restartAutoplay();
   }
 
@@ -182,7 +202,7 @@
   prev.addEventListener('click', prevSlide);
   next.addEventListener('click', nextSlide);
 
-  // Autoplay
+  // 3) Autoplay carousel
   function startAutoplay(){
     stopAutoplay();
     autoplayTimer = setInterval(nextSlide, AUTOPLAY_MS);
@@ -191,11 +211,9 @@
     if (autoplayTimer) clearInterval(autoplayTimer);
     autoplayTimer = null;
   }
-  function restartAutoplay(){
-    startAutoplay();
-  }
+  function restartAutoplay(){ startAutoplay(); }
 
-  // Pause on hover / focus (desktop)
+  // Pause on hover/focus (desktop)
   slider.addEventListener('mouseenter', stopAutoplay);
   slider.addEventListener('mouseleave', startAutoplay);
   slider.addEventListener('focusin', stopAutoplay);
@@ -204,13 +222,11 @@
   // Swipe support (mobile)
   let startX = 0, isDown = false;
   slider.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].clientX;
+    isDown = true; startX = e.touches[0].clientX;
   }, {passive: true});
   slider.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const dx = e.touches[0].clientX - startX;
-    // do not drag; just detect swipe threshold
     if (Math.abs(dx) > 50) {
       isDown = false;
       if (dx < 0) nextSlide(); else prevSlide();
@@ -218,8 +234,12 @@
   }, {passive: true});
   slider.addEventListener('touchend', () => { isDown = false; }, {passive: true});
 
-  // Init
-  goTo(0);        // load first slide, stop the others
-  startAutoplay(); // begin carousel
+  // Expose init after YT API loads
+  window.onYouTubeIframeAPIReady = function(){
+    // Pre-create the first player so skeleton disappears quickly
+    createPlayer(0);
+    goTo(0);
+    startAutoplay();
+  };
 })();
 </script>
