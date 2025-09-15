@@ -1,5 +1,5 @@
 <section class="video-gallery">
-  <h2 class="heading_1">Featured Videos</h2>
+  <h2 class="heading_1">Innovations that take Haneri further</h2>
 
   <div class="video-gallery-grid">
     <!-- Video 1 -->
