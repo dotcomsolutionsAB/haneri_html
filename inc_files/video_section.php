@@ -5,7 +5,7 @@
     <!-- Video 1 -->
     <div class="video-card">
       <iframe width="100%" height="100%" 
-        src="https://www.youtube.com/embed/ysz5S6PUM-U" 
+        src="https://www.youtube.com/embed/h1NYXQkYO8Q" 
         title="Video 1" frameborder="0" allowfullscreen>
       </iframe>
     </div>
@@ -13,7 +13,7 @@
     <!-- Video 2 -->
     <div class="video-card">
       <iframe width="100%" height="100%" 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        src="https://www.youtube.com/embed/Ahkt6Wrg1GI" 
         title="Video 2" frameborder="0" allowfullscreen>
       </iframe>
     </div>
@@ -21,7 +21,7 @@
     <!-- Video 3 -->
     <div class="video-card">
       <iframe width="100%" height="100%" 
-        src="https://www.youtube.com/embed/jNQXAC9IVRw" 
+        src="https://www.youtube.com/embed/KrCYPR5_Vt8" 
         title="Video 3" frameborder="0" allowfullscreen>
       </iframe>
     </div>
