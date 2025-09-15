@@ -61,7 +61,7 @@
     <div class="container">
         <!-- Featured Products section -->
             <?php include("inc_files/featured_products.php"); ?>
-
+            <?php include("inc_files/video_section.php"); ?>
             <!-- About Haneri section -->
             <section class="about-haneri">
                 <div class="about-content">
@@ -145,7 +145,6 @@
                 });
             </script>
 
-            <?php include("inc_files/video_section.php"); ?>
             <?php include("inc_files/best_sellers.php"); ?>
     </div>
     
