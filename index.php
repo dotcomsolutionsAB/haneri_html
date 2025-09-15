@@ -19,7 +19,7 @@
         </div>
     </div> -->
 
-        <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
+        <!-- <div class="home-slider desktop-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
             <div class="home-slide home-slide1 banner d-flex align-items-center">
                 <img class="slide-bg" src="images/Slider1.jpg" style="background-color: #ecc;" alt="home banner">
                 <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
@@ -39,9 +39,9 @@
                     <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Mobile Slider -->
-        <div class="home-slider mobile-slider owl-carousel owl-theme">
+        <!-- <div class="home-slider mobile-slider owl-carousel owl-theme">
             <div class="home-slide">
                 <img src="images/Slider1.jpg" alt="Mobile Slide 1">
                 <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
@@ -56,8 +56,9 @@
                     <a href="#" class="btn btn-dark slider_btn btn-xl" role="button">Buy Now</a>
                 </div>
             </div>
-        </div>
-
+        </div> -->
+    <?php include("inc_files/top_slider.php"); ?>
+    
     <div class="container">
         <!-- Featured Products section -->
             <?php include("inc_files/featured_products.php"); ?>
@@ -122,7 +123,7 @@
                 <div class="home-slide"><img src="images/Slide3_mobile.jpg" alt="Mobile Slide 3"></div>
             </div> -->
 
-            <script>
+            <!-- <script>
                 $(document).ready(function(){
                     
                     // $(".desktop-slider1").owlCarousel({
@@ -143,7 +144,7 @@
                         autoplayTimeout: 5000
                     });
                 });
-            </script>
+            </script> -->
 
             <?php include("inc_files/best_sellers.php"); ?>
     </div>

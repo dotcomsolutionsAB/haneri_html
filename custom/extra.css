@@ -4455,7 +4455,6 @@ footer .social-icon {
 
 
         /* Video Section */
-
         .video-gallery-grid {
             display: grid;
             grid-template-columns: 1fr; /* Mobile: 1 per row */
@@ -4469,7 +4468,7 @@ footer .social-icon {
         }
         .video-card {
             position: relative;
-            aspect-ratio: 16/9; /* Responsive ratio */
+            aspect-ratio: 16/9; /* Keeps video responsive */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 6px 16px rgba(0,0,0,0.08);
@@ -4478,4 +4477,5 @@ footer .social-icon {
             width: 100%;
             height: 100%;
             display: block;
+            pointer-events: none; /* 🚀 disables hover/click overlays */
         }
